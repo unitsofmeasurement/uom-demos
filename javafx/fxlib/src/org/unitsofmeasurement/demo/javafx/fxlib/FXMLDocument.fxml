@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="265.0" prefWidth="553.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="org.unitsofmeasurement.demo.javafx.fxlib.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="-1.0" prefWidth="413.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="org.unitsofmeasurement.demo.javafx.fxlib.FXMLDocumentController">
   <children>
-    <SplitPane dividerPositions="0.492436974789916" focusTraversable="true" prefHeight="233.0" prefWidth="429.0" AnchorPane.bottomAnchor="-33.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-44.0" AnchorPane.topAnchor="0.0">
+    <SplitPane dividerPositions="0.49391727493917276" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <items>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="198.0" prefWidth="213.0">
           <children>
@@ -25,7 +25,7 @@
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="229.0" prefWidth="169.0">
           <children>
-            <GridPane prefHeight="198.0" prefWidth="185.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+            <GridPane prefHeight="198.0" prefWidth="185.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
               <children>
                 <GridPane id="GridPane" GridPane.columnIndex="0" GridPane.rowIndex="0">
                   <children>
@@ -65,7 +65,7 @@
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <padding>
-                <Insets right="5.0" />
+                <Insets right="3.0" />
               </padding>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
