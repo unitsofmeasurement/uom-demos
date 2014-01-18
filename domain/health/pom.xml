@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>unit-api-health-demos</artifactId>
+	<name>Units of Measurement API Health Demos</name>
+	<packaging>bundle</packaging>
+	<url>http://github.com/unitsofmeasurement/demos</url>
+	<parent>
+		<version>0.3-SNAPSHOT</version>
+		<groupId>org.unitsofmeasurement.demos</groupId>
+		<artifactId>unit-api-domain-demos</artifactId>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.measure</groupId>
+			<artifactId>unit-api-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.measure</groupId>
+			<artifactId>unit-api-format</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.measure</groupId>
+			<artifactId>unit-api-quantity</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.unitsofmeasurement.impl</groupId>
+			<artifactId>unit-api-full-impl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- ======================================================= -->
+			<!-- Compilation -->
+			<!-- ======================================================= -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${project.build.javaVersion}</source>
+					<target>${project.build.javaVersion}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+
+			<!-- ======================================================= -->
+			<!-- JAR packaging -->
+			<!-- ======================================================= -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+						</manifest>
+						<manifestEntries>
+							<Specification-Title>Units of Measurement Demos</Specification-Title>
+							<Specification-Version>${project.version}</Specification-Version>
+							<Specification-Vendor>${project.organization.name}</Specification-Vendor>
+							<Implementation-Vendor>Unit-API contributors</Implementation-Vendor>
+							<Implementation-URL>${project.organization.url}</Implementation-URL>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+
+
+			<!-- ======================================================= -->
+			<!-- Packaging (OSGi bundle) -->
+			<!-- ======================================================= -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.3.5</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Export-Package>org.unitsofmeasurement.demo.health.*</Export-Package>
+						<Private-Package>!*</Private-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
