@@ -3,17 +3,23 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.unitsofmeasurement.demos</groupId>
 	<artifactId>unit-api-demos</artifactId>
-	<version>0.2-SNAPSHOT</version>
+	<version>0.3-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
 	<name>Units of Measurement API Demos</name>
-	<url>http://code.google.com/p/unitsofmeasure/</url>
+	<url>http://github.com/unitsofmeasurement/demos</url>
 	<organization>
 		<name>Units of Measurement project</name>
 		<url>http://www.unitsofmeasurement.org</url>
 	</organization>
 	<description>An intial (Spec Lead) draft of Unit Standard Demos.</description>
-
+    <licenses>
+        <license>
+            <name>BSD</name>
+            <url>LICENSE</url>
+        </license>
+    </licenses>
+    
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
@@ -101,7 +107,7 @@
 	</build>
 	<modules>
 		<module>console</module>
+		<module>domain</module>
 		<module>javafx</module>
-		<module>health</module>
 	</modules>
 </project>

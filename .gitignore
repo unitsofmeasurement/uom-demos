@@ -5,3 +5,6 @@
 *.war
 *.ear
 /.settings
+/javafx/fxlib/nbproject/private/
+/javafx/fxlib/build/
+/javafx/fxlib/dist/
