@@ -37,9 +37,11 @@ import javafx.scene.input.KeyEvent;
 import javax.measure.Unit;
 import javax.measure.function.UnitConverter;
 import org.unitsofmeasurement.impl.AbstractUnit;
+import org.unitsofmeasurement.impl.system.CommonUnits;
 import org.unitsofmeasurement.impl.system.SI;
 import static org.unitsofmeasurement.impl.system.SI.*;
 import static org.unitsofmeasurement.impl.system.SIPrefix.*;
+import org.unitsofmeasurement.impl.system.UCUM;
 import static org.unitsofmeasurement.impl.system.US.*;
 
 /**
@@ -160,6 +162,12 @@ public class FXlibController implements Initializable {
                     INCH,
                     YARD 
                 };
+             case "energy":
+                return new Unit[] {
+                    JOULE,
+                    SI.ELECTRON_VOLT,                       
+                    UCUM.BTU
+                };
             case "area":
                 return new Unit[] {
                     SQUARE_METRE,
@@ -167,6 +175,26 @@ public class FXlibController implements Initializable {
                     ARE,
                     HECTARE,
                     ACRE
+                };
+             case "data":
+                return new Unit[] {
+                    BIT,
+                    BYTE,                       
+                    KILO(BIT),
+                    MEGA(BIT),
+                    KILO(BYTE),
+                    MEGA(BYTE),
+                    GIGA(BYTE),
+                    TERA(BYTE),
+                    EXA(BYTE),
+                };      
+             case "mass":
+                return new Unit[] {
+                    KILOGRAM,
+                    GRAM,                       
+                    POUND,
+                    OUNCE,
+                    TON
                 };
             case "power":
                 return new Unit[] {
@@ -181,6 +209,18 @@ public class FXlibController implements Initializable {
                     CENTIRADIAN,
                     GRADE,
                     SI.REVOLUTION
+                };
+            case "speed":
+                return new Unit[] {
+                    CommonUnits.KILOMETRES_PER_HOUR,
+                    MILES_PER_HOUR
+                };
+            case "temperature":
+                return new Unit[] {
+                    CELSIUS,
+                    FAHRENHEIT,
+                    KELVIN,
+                    RANKINE
                 };
             default:
                 return null;
