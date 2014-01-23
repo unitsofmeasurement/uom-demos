@@ -62,20 +62,50 @@ public class ThePerfectStorm {
 				AbstractMeasurement.of(157, MILES_PER_HOUR), null, FIVE);
 		System.out.println(s5);
 		
-		final SaffirSimpsonHurricaneWindScale scale = s4;
+		int argument = -1;
+		if (args!= null && args.length>0) {
+			argument = Integer.valueOf(args[0]).intValue();
+		}
 		
-		final AbstractMeasurement<Speed> metricSpeed = scale.hasMaximum() ?
-				(AbstractMeasurement<Speed>) scale.getMaximum().to(KILOMETRES_PER_HOUR) :
-					(AbstractMeasurement<Speed>) scale.getMinimum().to(KILOMETRES_PER_HOUR);
-				
-		System.out.print(metricSpeed);
-		System.out.println(" (" + scale.getCategory() + ")");
-		AbstractMeasurement<Length> l = AbstractMeasurement.of(500, KILO(METRE));
-		System.out.println(String.format("Distance: %s", l));
+		SaffirSimpsonHurricaneWindScale scale = null;
+		switch (argument) {
+			case 0:
+				scale = sts;
+				break;
+			case 1:
+				scale = s1;
+				break;
+			case 2:
+				scale = s2;
+				break;
+			case 3:
+				scale = s3;
+				break;
+			case 4:
+				scale = s4;
+				break;
+			case 5:
+				scale = s5;
+				break;
+			default:
+				scale = std;
+		}
 		
-		@SuppressWarnings("unchecked")
-		AbstractMeasurement<Time> timeToEvacuate = (AbstractMeasurement<Time>) l.divide(metricSpeed);
-		System.out.println(String.format("Time to evacuate: %s", timeToEvacuate));
+		if (scale !=null) {
+			final AbstractMeasurement<Speed> metricSpeed = scale.hasMaximum() ?
+					(AbstractMeasurement<Speed>) scale.getMaximum().to(KILOMETRES_PER_HOUR) :
+						(AbstractMeasurement<Speed>) scale.getMinimum().to(KILOMETRES_PER_HOUR);
+					
+			System.out.print(metricSpeed);
+			System.out.println(" (" + scale.getCategory() + ")");
+			AbstractMeasurement<Length> l = AbstractMeasurement.of(500, KILO(METRE));
+			System.out.println(String.format("Distance: %s", l));
+			
+			@SuppressWarnings("unchecked")
+			AbstractMeasurement<Time> timeToEvacuate = (AbstractMeasurement<Time>) l.divide(metricSpeed);
+			System.out.println(String.format("Time to evacuate: %s", timeToEvacuate));
+		} else {
+			System.out.println("No scale given.");
+		}
 	}
-
 }

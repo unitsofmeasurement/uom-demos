@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) 2013-2014 Werner Keil and others.
+ * All rights reserved.
+ *
+ * See LICENSE.txt for details.
+ */
 package org.unitsofmeasurement.demo.types;
 
 import static org.unitsofmeasurement.impl.AbstractMeasurement.NONE;
@@ -12,7 +18,7 @@ import org.unitsofmeasurement.impl.AbstractMeasurement;
 
 /**
  * @author Werner Keil
- * @version 0.3
+ * @version 0.4
  * @see <a href="http://en.wikipedia.org/wiki/Saffir%E2%80%93Simpson_hurricane_wind_scale"> Wikipedia:
  *      Saffir–Simpson hurricane wind scale</a>
  */

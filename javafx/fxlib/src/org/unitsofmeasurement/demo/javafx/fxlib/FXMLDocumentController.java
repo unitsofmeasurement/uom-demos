@@ -7,7 +7,6 @@
 
 package org.unitsofmeasurement.demo.javafx.fxlib;
 
-import java.math.BigDecimal;
 import java.net.URL;
 import java.text.NumberFormat;
 import java.util.ResourceBundle;
@@ -20,11 +19,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javax.measure.Measurement;
 import javax.measure.Unit;
 import javax.measure.function.UnitConverter;
-import org.unitsofmeasurement.impl.AbstractMeasurement;
 import org.unitsofmeasurement.impl.AbstractUnit;
+import org.unitsofmeasurement.impl.system.SI;
 import static org.unitsofmeasurement.impl.system.SI.*;
 import static org.unitsofmeasurement.impl.system.SIPrefix.*;
 import static org.unitsofmeasurement.impl.system.US.*;
@@ -47,6 +45,9 @@ public class FXMLDocumentController implements Initializable {
     private ComboBox<Unit> toCombo;
     
     @FXML
+    private TextField fromFld;
+    
+    @FXML
     private TextField toFld;
     
     @FXML
@@ -58,7 +59,12 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You selected " + event.getSource().toString());
-        label.setText(((Button)event.getSource()).getText());
+        final String selection = ((Button)event.getSource()).getText();
+        if (selection != null && !selection.equals(label.getText())) {
+            label.setText(selection);
+            clearAll();
+            updateForSelection(selection);
+        }
     }
     
     @FXML
@@ -103,27 +109,85 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        fromCombo.getItems().clear();
-        fromCombo.getItems().addAll(
-            MILE,
-            KILO(METRE),
-            METRE,
-            CENTI(METRE),
-            FOOT,
-            INCH
-        );
-        
-        
-        toCombo.getItems().clear();
-        toCombo.getItems().addAll(
-            MILE,
-            KILO(METRE),
-            METRE,
-            CENTI(METRE),
-            FOOT,
-            INCH
-        );
+        clearAll();
+        updateForSelection("length");
     }    
+    
+    private void clearAll() {
+        fromCombo.getItems().clear();
+        toCombo.getItems().clear();
+        fromFld.clear();
+        toFld.clear();
+    }
+    
+    private void updateForSelection(String selection) {
+        switch (selection) {
+            case "length":
+                fromCombo.getItems().addAll(
+                    MILE,
+                    KILO(METRE),
+                    METRE,
+                    CENTI(METRE),
+                    FOOT,
+                    INCH,
+                    YARD
+                );
+                toCombo.getItems().addAll(
+                    MILE,
+                    KILO(METRE),
+                    METRE,
+                    CENTI(METRE),
+                    FOOT,
+                    INCH,
+                    YARD
+                );
+                break;
+            case "area":
+                fromCombo.getItems().addAll(
+                    SQUARE_METRE,
+                    SQUARE_FOOT,
+                    ARE,
+                    HECTARE
+                );
+                toCombo.getItems().addAll(
+                    SQUARE_METRE,
+                    SQUARE_FOOT,                       
+                    ARE,
+                    HECTARE
+                );
+                break;
+            case "power":
+                fromCombo.getItems().addAll(
+                    HORSEPOWER,
+                    WATT
+                );
+                toCombo.getItems().addAll(
+                    HORSEPOWER,
+                    WATT
+                );
+                break;
+            case "angle":
+                fromCombo.getItems().addAll(
+                    SI.DEGREE_ANGLE,
+                    SI.MINUTE_ANGLE,
+                    SI.SECOND_ANGLE,
+                    CENTIRADIAN,
+                    GRADE,
+                    SI.REVOLUTION
+                );
+                toCombo.getItems().addAll(
+                    SI.DEGREE_ANGLE,
+                    SI.MINUTE_ANGLE,
+                    SI.SECOND_ANGLE,
+                    CENTIRADIAN,
+                    GRADE,
+                    SI.REVOLUTION
+                );
+                break;
+            default:
+                break;
+        }
+    }
     
     public Unit getFromUnit() {
             String symbol = fromCombo.getSelectionModel().getSelectedItem().getSymbol();
