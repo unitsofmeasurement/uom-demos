@@ -3,6 +3,21 @@
  * All rights reserved.
  *
  * See LICENSE.txt for details.
+ *//**
+ * Copyright (c) 2013-2014 Werner Keil and others.
+ * All rights reserved.
+ *
+ * See LICENSE.txt for details.
+ *//**
+ * Copyright (c) 2013-2014 Werner Keil and others.
+ * All rights reserved.
+ *
+ * See LICENSE.txt for details.
+ *//**
+ * Copyright (c) 2013-2014 Werner Keil and others.
+ * All rights reserved.
+ *
+ * See LICENSE.txt for details.
  */
 
 package org.unitsofmeasurement.demo.javafx.fxlib;
@@ -27,13 +42,12 @@ import static org.unitsofmeasurement.impl.system.SI.*;
 import static org.unitsofmeasurement.impl.system.SIPrefix.*;
 import static org.unitsofmeasurement.impl.system.US.*;
 
-
 /**
  *
- * @author Werner
+ * @author Werner Keil
  */
-public class FXMLDocumentController implements Initializable {
-    private static NumberFormat FORMAT = NumberFormat.getNumberInstance();
+public class FXlibController implements Initializable {
+    private static final NumberFormat FORMAT = NumberFormat.getNumberInstance();
     
     @FXML
     private Label label;
@@ -100,17 +114,24 @@ public class FXMLDocumentController implements Initializable {
                 System.out.println("From " + from);
                 Measurement to = from.to(toCombo.getValue());
                 System.out.println("To " + to);*/
-                UnitConverter converter = fromCombo.getValue().getConverterTo(toCombo.getValue());
-                Number convertedValue = converter.convert(Double.valueOf(text));
-                System.out.println("Converted: " + convertedValue);
-                toFld.setText(FORMAT.format(convertedValue));
+                if (fromCombo != null && fromCombo.getValue() != null &&
+                      toCombo != null && toCombo.getValue() != null) {
+                    UnitConverter converter = fromCombo.getValue().getConverterTo(toCombo.getValue());
+                    if (text != null && !text.isEmpty()) {
+                        Number convertedValue = converter.convert(Double.valueOf(text));
+                        System.out.println("Converted: " + convertedValue);
+                        toFld.setText(FORMAT.format(convertedValue));
+                    } else 
+                        if (toFld.getText() != null && !toFld.getText().isEmpty()) {
+                            toFld.clear();
+                        }
+                }
             }
         }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         clearAll();
-        updateForSelection("length");
     }    
     
     private void clearAll() {
@@ -121,72 +142,49 @@ public class FXMLDocumentController implements Initializable {
     }
     
     private void updateForSelection(String selection) {
-        switch (selection) {
+        fromCombo.getItems().addAll(getUnits(selection));
+        toCombo.getItems().addAll(getUnits(selection));
+    }
+    
+    private Unit[] getUnits(String selection) {
+          switch (selection) {
             case "length":
-                fromCombo.getItems().addAll(
+                return new Unit[] {
                     MILE,
                     KILO(METRE),
                     METRE,
                     CENTI(METRE),
+                    DECI(METRE),
+                    MILLI(METRE),
                     FOOT,
                     INCH,
-                    YARD
-                );
-                toCombo.getItems().addAll(
-                    MILE,
-                    KILO(METRE),
-                    METRE,
-                    CENTI(METRE),
-                    FOOT,
-                    INCH,
-                    YARD
-                );
-                break;
+                    YARD 
+                };
             case "area":
-                fromCombo.getItems().addAll(
-                    SQUARE_METRE,
-                    SQUARE_FOOT,
-                    ARE,
-                    HECTARE
-                );
-                toCombo.getItems().addAll(
+                return new Unit[] {
                     SQUARE_METRE,
                     SQUARE_FOOT,                       
                     ARE,
-                    HECTARE
-                );
-                break;
+                    HECTARE,
+                    ACRE
+                };
             case "power":
-                fromCombo.getItems().addAll(
+                return new Unit[] {
                     HORSEPOWER,
                     WATT
-                );
-                toCombo.getItems().addAll(
-                    HORSEPOWER,
-                    WATT
-                );
-                break;
+                };
             case "angle":
-                fromCombo.getItems().addAll(
+                return new Unit[] {
                     SI.DEGREE_ANGLE,
                     SI.MINUTE_ANGLE,
                     SI.SECOND_ANGLE,
                     CENTIRADIAN,
                     GRADE,
                     SI.REVOLUTION
-                );
-                toCombo.getItems().addAll(
-                    SI.DEGREE_ANGLE,
-                    SI.MINUTE_ANGLE,
-                    SI.SECOND_ANGLE,
-                    CENTIRADIAN,
-                    GRADE,
-                    SI.REVOLUTION
-                );
-                break;
+                };
             default:
-                break;
-        }
+                return null;
+          }
     }
     
     public Unit getFromUnit() {

@@ -3,6 +3,11 @@
  * All rights reserved.
  *
  * See LICENSE.txt for details.
+ *//**
+ * Copyright (c) 2013-2014 Werner Keil and others.
+ * All rights reserved.
+ *
+ * See LICENSE.txt for details.
  */
 
 package org.unitsofmeasurement.demo.javafx.fxlib;
@@ -16,13 +21,13 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Werner
+ * @author Werner Keil
  */
-public class Fxlib extends Application {
+public class FXlib extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FXlibDocument.fxml"));
         stage.setTitle("Unit API - JavaFX Converter Demo");
         stage.getIcons().add(new Image("/images/flib.png"));
         Scene scene = new Scene(root);
