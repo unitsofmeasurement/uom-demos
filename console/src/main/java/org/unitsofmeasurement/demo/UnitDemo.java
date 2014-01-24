@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2013 Werner Keil and others.
+ * Copyright (c) 2013-2014 Werner Keil and others.
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -8,7 +8,6 @@ package org.unitsofmeasurement.demo;
 
 import static org.unitsofmeasurement.impl.system.SI.*;
 
-import javax.measure.quantity.Area;
 import javax.measure.quantity.Length;
 
 import org.unitsofmeasurement.impl.AbstractMeasurement;
