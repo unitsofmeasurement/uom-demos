@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+*** GENERATED FROM project.xml - DO NOT EDIT  ***
+***         EDIT ../build.xml INSTEAD         ***
+
+For the purpose of easier reading the script
+is divided into following sections:
+
+  - initialization
+  - compilation
+  - jar
+  - execution
+  - debugging
+  - javadoc
+  - test compilation
+  - test execution
+  - test debugging
+  - applet
+  - cleanup
+
+        -->
+<project basedir=".." default="default" name="hellome-impl">
+    <fail message="Please build using Ant 1.8.0 or higher.">
+        <condition>
+            <not>
+                <antversion atleast="1.8.0"/>
+            </not>
+        </condition>
+    </fail>
+    <target depends="jar,javadoc" description="Build whole project." name="default"/>
+    <!--
+                ======================
+                INITIALIZATION SECTION
+                ======================
+            -->
+    <target name="-pre-init">
+        <!-- Empty placeholder for easier customization. -->
+        <!-- You can override this target in the ../build.xml file. -->
+    </target>
+    <target depends="-pre-init" name="-init-private">
+        <property file="nbproject/private/config.properties"/>
+        <property file="nbproject/private/configs/${config}.properties"/>
+        <property file="nbproject/private/private.properties"/>
+    </target>
+    <target depends="-pre-init,-init-private" name="-check-platform-home">
+        <condition property="has.platform.home">
+            <and>
+                <isset property="platform.home"/>
+                <length length="0" string="${platform.home}" trim="true" when="gt"/>
+                <available file="${platform.home}"/>
+            </and>
+        </condition>
+    </target>
+    <target depends="-pre-init,-init-private,-check-platform-home" name="-init-platform-home" unless="has.platform.home">
+        <loadproperties srcFile="nbproject/project.properties">
+            <filterchain>
+                <containsregex pattern="^platform.active="/>
+            </filterchain>
+        </loadproperties>
+        <loadproperties srcFile="${user.properties.file}">
+            <filterchain>
+                <containsregex pattern="^platforms\.${platform.active}\.home="/>
+                <replaceregex pattern="^platforms\.${platform.active}\." replace="platform."/>
+            </filterchain>
+        </loadproperties>
+        <echo level="warning" message="Missing platform.home property, defined as ${platform.home}"/>
+    </target>
+    <target depends="-pre-init,-init-private,-init-platform-home" name="-init-user">
+        <property file="${user.properties.file}"/>
+        <!-- The two properties below are usually overridden -->
+        <!-- by the active platform. Just a fallback. -->
+        <property name="default.javac.source" value="1.3"/>
+        <property name="default.javac.target" value="1.3"/>
+    </target>
+    <target depends="-pre-init,-init-private,-init-user" name="-init-project">
+        <property file="nbproject/configs/${config}.properties"/>
+        <property file="nbproject/project.properties"/>
+    </target>
+    <target depends="-pre-init,-init-private,-init-user,-init-project,-init-macrodef-property" name="-do-init">
+        <j2meproject1:property xmlns:j2meproject1="http://www.netbeans.org/ns/j2me-embedded-project/1" name="platform.sdk.home.tmp" value="platforms.${platform.sdk}.home"/>
+        <condition property="platform.sdk.home" value="${jdk.home}">
+            <equals arg1="${platform.sdk.home.tmp}" arg2="$${platforms.${platform.sdk}.home}"/>
+        </condition>
+        <property name="platform.sdk.home" value="${platform.sdk.home.tmp}"/>
+        <j2meproject1:property xmlns:j2meproject1="http://www.netbeans.org/ns/j2me-embedded-project/1" name="platform.java.tmp" value="platforms.${platform.sdk}.java"/>
+        <condition property="platform.java" value="${platform.sdk.home}/bin/java">
+            <equals arg1="${platform.java.tmp}" arg2="$${platforms.${platform.sdk}.java}"/>
+        </condition>
+        <property name="platform.java" value="${platform.java.tmp}"/>
+        <j2meproject1:property xmlns:j2meproject1="http://www.netbeans.org/ns/j2me-embedded-project/1" name="platform.javac.tmp" value="platforms.${platform.sdk}.javac"/>
+        <condition property="platform.javac" value="${platform.sdk.home}/bin/javac">
+            <equals arg1="${platform.javac.tmp}" arg2="$${platforms.${platform.sdk}.javac}"/>
+        </condition>
+        <property name="platform.javac" value="${platform.javac.tmp}"/>
+        <j2meproject1:property xmlns:j2meproject1="http://www.netbeans.org/ns/j2me-embedded-project/1" name="platform.javadoc.tmp" value="platforms.${platform.sdk}.javadoc"/>
+        <condition property="platform.javadoc" value="${platform.sdk.home}/bin/javadoc">
+            <equals arg1="${platform.javadoc.tmp}" arg2="$${platforms.${platform.sdk}.javadoc}"/>
+        </condition>
+        <property name="platform.javadoc" value="${platform.javadoc.tmp}"/>
+        <condition property="platform.invalid" value="true">
+            <or>
+                <contains string="${platform.javac}" substring="$${platforms."/>
+                <contains string="${platform.javadoc}" substring="$${platforms."/>
+            </or>
+        </condition>
+        <fail unless="platform.home">Must set platform.home</fail>
+        <fail unless="platform.bootcp">Must set platform.bootcp</fail>
+        <fail unless="platform.java">Must set platform.java</fail>
+        <fail unless="platform.javac">Must set platform.javac</fail>
+        <fail unless="platform.javadoc">Must set platform.javadoc</fail>
+        <fail if="platform.invalid">
+                    The Compile Platform is not correctly set up.
+                    Your active compile platform is: ${platform.sdk}, but the corresponding property "platforms.${platform.sdk}.home" is not found in the project's properties files.
+                    Either open the project in the IDE and setup the Platform with the same name or add it manually.
+                    For example like this:
+                    ant -Duser.properties.file=&lt;path_to_property_file&gt; jar (where you put the property "platforms.${platform.sdk}.home" in a .properties file)
+                    or ant -Dplatforms.${platform.sdk}.home=&lt;path_to_JDK_home&gt; jar (where no properties file is used)
+                </fail>
+        <available file="${manifest.file}" property="manifest.available"/>
+        <condition property="do.archive">
+            <not>
+                <istrue value="${jar.archive.disabled}"/>
+            </not>
+        </condition>
+        <condition property="do.archive+manifest.available">
+            <and>
+                <isset property="manifest.available"/>
+                <istrue value="${do.archive}"/>
+            </and>
+        </condition>
+        <condition property="have.sources">
+            <or>
+                <available file="${src.dir}"/>
+            </or>
+        </condition>
+        <condition property="netbeans.home+have.tests">
+            <and>
+                <isset property="netbeans.home"/>
+                <isset property="have.tests"/>
+            </and>
+        </condition>
+        <condition property="no.javadoc.preview">
+            <and>
+                <isset property="javadoc.preview"/>
+                <isfalse value="${javadoc.preview}"/>
+            </and>
+        </condition>
+        <property name="run.jvmargs" value=""/>
+        <property name="run.jvmargs.ide" value=""/>
+        <property name="javac.compilerargs" value=""/>
+        <property name="work.dir" value="${basedir}"/>
+        <condition property="no.deps">
+            <and>
+                <istrue value="${no.dependencies}"/>
+            </and>
+        </condition>
+        <property name="javac.debug" value="true"/>
+        <property name="javadoc.preview" value="true"/>
+        <property name="application.args" value=""/>
+        <property name="source.encoding" value="${file.encoding}"/>
+        <property name="runtime.encoding" value="${source.encoding}"/>
+        <condition property="javadoc.encoding.used" value="${javadoc.encoding}">
+            <and>
+                <isset property="javadoc.encoding"/>
+                <not>
+                    <equals arg1="${javadoc.encoding}" arg2=""/>
+                </not>
+            </and>
+        </condition>
+        <property name="javadoc.encoding.used" value="${source.encoding}"/>
+        <property name="includes" value="**"/>
+        <property name="excludes" value=""/>
+        <property name="do.depend" value="false"/>
+        <condition property="do.depend.true">
+            <istrue value="${do.depend}"/>
+        </condition>
+        <path id="endorsed.classpath.path" path="${endorsed.classpath}"/>
+        <condition else="" property="endorsed.classpath.cmd.line.arg" value="-Xbootclasspath/p:'${toString:endorsed.classpath.path}'">
+            <and>
+                <isset property="endorsed.classpath"/>
+                <not>
+                    <equals arg1="${endorsed.classpath}" arg2="" trim="true"/>
+                </not>
+            </and>
+        </condition>
+        <property name="jar.index" value="false"/>
+        <property name="jar.index.metainf" value="${jar.index}"/>
+    </target>
+    <target name="-post-init">
+        <!-- Empty placeholder for easier customization. -->
+        <!-- You can override this target in the ../build.xml file. -->
+    </target>
+    <target depends="-pre-init,-init-private,-init-user,-init-project,-do-init" name="-init-check">
+        <fail unless="src.dir">Must set src.dir</fail>
+        <fail unless="build.dir">Must set build.dir</fail>
+        <fail unless="dist.dir">Must set dist.dir</fail>
+        <fail unless="build.classes.dir">Must set build.classes.dir</fail>
+        <fail unless="dist.javadoc.dir">Must set dist.javadoc.dir</fail>
+        <fail unless="build.classes.excludes">Must set build.classes.excludes</fail>
+        <fail unless="dist.jar">Must set dist.jar</fail>
+    </target>
+    <target name="-init-macrodef-property">
+        <macrodef name="property" uri="http://www.netbeans.org/ns/j2me-embedded-project/1">
+            <attribute name="name"/>
+            <attribute name="value"/>
+            <sequential>
+                <property name="@{name}" value="${@{value}}"/>
+            </sequential>
+        </macrodef>
+    </target>
+    <target depends="-init-ap-cmdline-properties" if="ap.supported.internal" name="-init-macrodef-javac-with-processors">
+        <macrodef name="javac" uri="http://www.netbeans.org/ns/j2me-embedded-project/1">
+            <attribute default="${src.dir}" name="srcdir"/>
+            <attribute default="${build.classes.dir}" name="destdir"/>
+            <attribute default="${javac.classpath}" name="classpath"/>
+            <attribute default="${javac.processorpath}" name="processorpath"/>
+            <attribute default="${build.generated.sources.dir}/ap-source-output" name="apgeneratedsrcdir"/>
+            <attribute default="${includes}" name="includes"/>
+            <attribute default="${excludes}" name="excludes"/>
+            <attribute default="${javac.debug}" name="debug"/>
+            <attribute default="${empty.dir}" name="sourcepath"/>
+            <attribute default="${empty.dir}" name="gensrcdir"/>
+            <element name="customize" optional="true"/>
+            <sequential>
+                <property location="${build.dir}/empty" name="empty.dir"/>
+                <mkdir dir="${empty.dir}"/>
+                <mkdir dir="@{apgeneratedsrcdir}"/>
+                <javac bootclasspath="${platform.bootcp}" debug="@{debug}" deprecation="${javac.deprecation}" destdir="@{destdir}" encoding="${source.encoding}" excludes="@{excludes}" executable="${platform.javac}" fork="yes" includeantruntime="false" includes="@{includes}" source="${javac.source}" sourcepath="@{sourcepath}" srcdir="@{srcdir}" target="${javac.target}" tempdir="${java.io.tmpdir}">
+                    <src>
+                        <dirset dir="@{gensrcdir}" erroronmissingdir="false">
+                            <include name="*"/>
+                        </dirset>
+                    </src>
+                    <classpath>
+                        <path path="@{classpath}"/>
+                    </classpath>
+                    <compilerarg line="${endorsed.classpath.cmd.line.arg}"/>
+                    <compilerarg line="${javac.compilerargs}"/>
+                    <compilerarg value="-processorpath"/>
+                    <compilerarg path="@{processorpath}:${empty.dir}"/>
+                    <compilerarg line="${ap.processors.internal}"/>
+                    <compilerarg line="${annotation.processing.processor.options}"/>
+                    <compilerarg value="-s"/>
+                    <compilerarg path="@{apgeneratedsrcdir}"/>
+                    <compilerarg line="${ap.proc.none.internal}"/>
+                    <customize/>
+                </javac>
+            </sequential>
+        </macrodef>
+    </target>
+    <target depends="-init-ap-cmdline-properties" name="-init-macrodef-javac-without-processors" unless="ap.supported.internal">
+        <macrodef name="javac" uri="http://www.netbeans.org/ns/j2me-embedded-project/1">
+            <attribute default="${src.dir}" name="srcdir"/>
+            <attribute default="${build.classes.dir}" name="destdir"/>
+            <attribute default="${javac.classpath}" name="classpath"/>
+            <attribute default="${javac.processorpath}" name="processorpath"/>
+            <attribute default="${build.generated.sources.dir}/ap-source-output" name="apgeneratedsrcdir"/>
+            <attribute default="${includes}" name="includes"/>
+            <attribute default="${excludes}" name="excludes"/>
+            <attribute default="${javac.debug}" name="debug"/>
+            <attribute default="${empty.dir}" name="sourcepath"/>
+            <attribute default="${empty.dir}" name="gensrcdir"/>
+            <element name="customize" optional="true"/>
+            <sequential>
+                <property location="${build.dir}/empty" name="empty.dir"/>
+                <mkdir dir="${empty.dir}"/>
+                <javac bootclasspath="${platform.bootcp}" debug="@{debug}" deprecation="${javac.deprecation}" destdir="@{destdir}" encoding="${source.encoding}" excludes="@{excludes}" executable="${platform.javac}" fork="yes" includeantruntime="false" includes="@{includes}" source="${javac.source}" sourcepath="@{sourcepath}" srcdir="@{srcdir}" target="${javac.target}" tempdir="${java.io.tmpdir}">
+                    <src>
+                        <dirset dir="@{gensrcdir}" erroronmissingdir="false">
+                            <include name="*"/>
+                        </dirset>
+                    </src>
+                    <classpath>
+                        <path path="@{classpath}"/>
+                    </classpath>
+                    <compilerarg line="${endorsed.classpath.cmd.line.arg}"/>
+                    <compilerarg line="${javac.compilerargs}"/>
+                    <customize/>
+                </javac>
+            </sequential>
+        </macrodef>
+    </target>
+    <target depends="-init-macrodef-javac-with-processors,-init-macrodef-javac-without-processors" name="-init-macrodef-javac">
+        <macrodef name="depend" uri="http://www.netbeans.org/ns/j2me-embedded-project/1">
+            <attribute default="${src.dir}" name="srcdir"/>
+            <attribute default="${build.classes.dir}" name="destdir"/>
+            <attribute default="${javac.classpath}" name="classpath"/>
+            <sequential>
+                <depend cache="${build.dir}/depcache" destdir="@{destdir}" excludes="${excludes}" includes="${includes}" srcdir="@{srcdir}">
+                    <classpath>
+                        <path path="@{classpath}"/>
+                    </classpath>
+                </depend>
+            </sequential>
+        </macrodef>
+        <macrodef name="force-recompile" uri="http://www.netbeans.org/ns/j2me-embedded-project/1">
+            <attribute default="${build.classes.dir}" name="destdir"/>
+            <sequential>
+                <fail unless="javac.includes">Must set javac.includes</fail>
+                <pathconvert pathsep="${line.separator}" property="javac.includes.binary">
+                    <path>
+                        <filelist dir="@{destdir}" files="${javac.includes}"/>
+                    </path>
+                    <globmapper from="*.java" to="*.class"/>
+                </pathconvert>
+                <tempfile deleteonexit="true" property="javac.includesfile.binary"/>
+                <echo file="${javac.includesfile.binary}" message="${javac.includes.binary}"/>
+                <delete>
+                    <files includesfile="${javac.includesfile.binary}"/>
+                </delete>
+                <delete>
+                    <fileset file="${javac.includesfile.binary}"/>
+                </delete>
+            </sequential>
+        </macrodef>
+    </target>
+    <target name="-init-presetdef-jar">
+        <presetdef name="jar" uri="http://www.netbeans.org/ns/j2me-embedded-project/1">
+            <jar compress="${jar.compress}" index="${jar.index}" jarfile="${dist.jar}">
+                <j2meproject1:fileset xmlns:j2meproject1="http://www.netbeans.org/ns/j2me-embedded-project/1" dir="${build.fatjar.dir}" excludes="${dist.archive.excludes}"/>
+            </jar>
+        </presetdef>
+    </target>
+    <target name="-init-ap-cmdline-properties">
+        <property name="annotation.processing.enabled" value="true"/>
+        <property name="annotation.processing.processors.list" value=""/>
+        <property name="annotation.processing.processor.options" value=""/>
+        <property name="annotation.processing.run.all.processors" value="true"/>
+        <property name="javac.processorpath" value="${javac.classpath}"/>
+        <property name="javac.test.processorpath" value="${javac.test.classpath}"/>
+        <condition property="ap.supported.internal" value="true">
+            <not>
+                <matches pattern="1\.[0-5](\..*)?" string="${javac.source}"/>
+            </not>
+        </condition>
+    </target>
+    <target depends="-init-ap-cmdline-properties" if="ap.supported.internal" name="-init-ap-cmdline-supported">
+        <condition else="" property="ap.processors.internal" value="-processor ${annotation.processing.processors.list}">
+            <isfalse value="${annotation.processing.run.all.processors}"/>
+        </condition>
+        <condition else="" property="ap.proc.none.internal" value="-proc:none">
+            <isfalse value="${annotation.processing.enabled}"/>
+        </condition>
+    </target>
+    <target depends="-init-ap-cmdline-properties,-init-ap-cmdline-supported" name="-init-ap-cmdline">
+        <property name="ap.cmd.line.internal" value=""/>
+    </target>
+    <target depends="-init-user,-init-project,-init-passwords" name="-init-javame">
+        <fail unless="libs.j2me_common_ant.classpath">Classpath to Java ME Common Ant library (libs.j2me_common_ant.classpath) is not set. For example: location of javame/modules/org-netbeans-j2me-common-ant.jar file in the IDE installation directory.</fail>
+        <taskdef resource="org/netbeans/modules/j2me/common/ant/defs.properties">
+            <classpath>
+                <pathelement path="${libs.j2me_common_ant.classpath}"/>
+            </classpath>
+        </taskdef>
+    </target>
+    <target depends="-pre-init,-init-private,-init-user,-init-project,-do-init,-post-init,-init-check,-init-macrodef-property,-init-macrodef-javac,-init-presetdef-jar,-init-ap-cmdline,-init-javame" name="init"/>
+    <!--
+                ===================
+                COMPILATION SECTION
+                ===================
+            -->
+    <target name="-deps-jar-init" unless="built-jar.properties">
+        <property location="${build.dir}/built-jar.properties" name="built-jar.properties"/>
+        <delete file="${built-jar.properties}" quiet="true"/>
+    </target>
+    <target if="already.built.jar.${basedir}" name="-warn-already-built-jar">
+        <echo level="warn" message="Cycle detected: hellome was already built"/>
+    </target>
+    <target depends="init,-deps-jar-init" name="deps-jar" unless="no.deps">
+        <mkdir dir="${build.dir}"/>
+        <touch file="${built-jar.properties}" verbose="false"/>
+        <property file="${built-jar.properties}" prefix="already.built.jar."/>
+        <antcall target="-warn-already-built-jar"/>
+        <propertyfile file="${built-jar.properties}">
+            <entry key="${basedir}" value=""/>
+        </propertyfile>
+    </target>
+    <target depends="init,-check-automatic-build,-clean-after-automatic-build" name="-verify-automatic-build"/>
+    <target depends="init" name="-check-automatic-build">
+        <available file="${build.classes.dir}/.netbeans_automatic_build" property="netbeans.automatic.build"/>
+    </target>
+    <target depends="init" if="netbeans.automatic.build" name="-clean-after-automatic-build">
+        <antcall target="clean"/>
+    </target>
+    <target depends="init,deps-jar" name="-pre-pre-compile">
+        <mkdir dir="${build.classes.dir}"/>
+    </target>
+    <target name="-pre-compile">
+        <!-- Empty placeholder for easier customization. -->
+        <!-- You can override this target in the ../build.xml file. -->
+    </target>
+    <target if="do.depend.true" name="-compile-depend">
+        <pathconvert property="build.generated.subdirs">
+            <dirset dir="${build.generated.sources.dir}" erroronmissingdir="false">
+                <include name="*"/>
+            </dirset>
+        </pathconvert>
+        <j2meproject1:depend xmlns:j2meproject1="http://www.netbeans.org/ns/j2me-embedded-project/1" srcdir="${src.dir}:${build.generated.subdirs}"/>
+    </target>
+    <target depends="init,deps-jar,-pre-pre-compile,-pre-compile,-compile-depend" if="have.sources" name="-do-compile">
+        <j2meproject1:javac xmlns:j2meproject1="http://www.netbeans.org/ns/j2me-embedded-project/1" gensrcdir="${build.generated.sources.dir}"/>
+        <copy todir="${build.classes.dir}">
+            <fileset dir="${src.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+        </copy>
+    </target>
+    <target name="-post-compile">
+        <!-- Empty placeholder for easier customization. -->
+        <!-- You can override this target in the ../build.xml file. -->
+    </target>
+    <target depends="init,deps-jar,-verify-automatic-build,-pre-pre-compile,-pre-compile,-do-compile,-post-compile" description="Compile project." name="compile"/>
+    <target name="-pre-compile-single">
+        <!-- Empty placeholder for easier customization. -->
+        <!-- You can override this target in the ../build.xml file. -->
+    </target>
+    <target depends="init,deps-jar,-pre-pre-compile" name="-do-compile-single">
+        <fail unless="javac.includes">Must select some files in the IDE or set javac.includes</fail>
+        <j2meproject1:force-recompile xmlns:j2meproject1="http://www.netbeans.org/ns/j2me-embedded-project/1"/>
+        <j2meproject1:javac xmlns:j2meproject1="http://www.netbeans.org/ns/j2me-embedded-project/1" excludes="" gensrcdir="${build.generated.sources.dir}" includes="${javac.includes}" sourcepath="${src.dir}"/>
+    </target>
+    <target name="-post-compile-single">
+        <!-- Empty placeholder for easier customization. -->
+        <!-- You can override this target in the ../build.xml file. -->
+    </target>
+    <target depends="init,deps-jar,-verify-automatic-build,-pre-pre-compile,-pre-compile-single,-do-compile-single,-post-compile-single" name="compile-single"/>
+    <!--
+                ====================
+                JAR BUILDING SECTION
+                ====================
+            -->
+    <target depends="init" name="-pre-pre-jar">
+        <dirname file="${dist.jar}" property="dist.jar.dir"/>
+        <mkdir dir="${dist.jar.dir}"/>
+    </target>
+    <target name="-pre-jar">
+        <!-- Empty placeholder for easier customization. -->
+        <!-- You can override this target in the ../build.xml file. -->
+    </target>
+    <target depends="init" if="do.archive" name="-do-jar-create-manifest" unless="manifest.available">
+        <tempfile deleteonexit="true" destdir="${build.dir}" property="tmp.manifest.file"/>
+        <touch file="${tmp.manifest.file}" verbose="false"/>
+    </target>
+    <target depends="init" if="do.archive+manifest.available" name="-do-jar-copy-manifest">
+        <tempfile deleteonexit="true" destdir="${build.dir}" property="tmp.manifest.file"/>
+        <copy file="${manifest.file}" tofile="${tmp.manifest.file}"/>
+    </target>
+    <target depends="init,compile,-pre-pre-jar,-pre-jar,-do-jar-create-manifest,-do-jar-copy-manifest,-do-jar-extract-libs" if="do.archive" name="-do-jar-jar">
+        <j2meproject1:jar xmlns:j2meproject1="http://www.netbeans.org/ns/j2me-embedded-project/1" manifest="${tmp.manifest.file}"/>
+    </target>
+    <target description="Extracts all bundled libraries." name="-do-jar-extract-libs">
+        <mkdir dir="${build.fatjar.dir}"/>
+        <nb-extract classpath="${javac.classpath}" dir="${build.fatjar.dir}" excludeManifest="true" excludeclasspath="${extra.classpath}"/>
+        <copy todir="${build.fatjar.dir}">
+            <fileset dir="${build.classes.dir}"/>
+        </copy>
+    </target>
+    <target if="do.archive" name="-do-jar-delete-manifest">
+        <delete>
+            <fileset file="${tmp.manifest.file}"/>
+        </delete>
+    </target>
+    <target depends="init,compile,-pre-pre-jar,-pre-jar,-do-jar-create-manifest,-do-jar-copy-manifest,-do-jar-jar,-do-jar-delete-manifest" name="-do-jar-with-libraries"/>
+    <target name="-post-jar">
+        <!-- Empty placeholder for easier customization. -->
+        <!-- You can override this target in the ../build.xml file. -->
+    </target>
+    <target depends="init,compile,-do-jar-update-manifest,-pre-jar,-do-jar-with-libraries,-post-jar" name="-do-jar"/>
+    <target depends="init,compile,obfuscate,-pre-jar,-do-jar,-post-jar,create-jad" description="Build JAR." name="jar"/>
+    <target description="Creates JAD file." name="create-jad">
+        <fail unless="dist.jad">Must set dist.jad</fail>
+        <echo encoding="UTF-8" file="${dist.dir}/${dist.jad}" message="${manifest.others}"/>
+        <antcall inheritall="true" inheritrefs="true" target="-add-midlets"/>
+        <antcall inheritall="true" inheritrefs="true" target="-add-optional-attributes"/>
+        <antcall inheritall="true" inheritrefs="true" target="-add-configuration"/>
+        <antcall inheritall="true" inheritrefs="true" target="-add-profile"/>
+        <condition property="jad.jarurl" value="${deployment.jarurl}">
+            <istrue value="${deployment.override.jarurl}"/>
+        </condition>
+        <property name="jad.jarurl" value="${dist.jar.file}"/>
+        <nb-jad alias="${sign.alias}" aliaspassword="${sign.alias.password}" encoding="UTF-8" jadfile="${dist.dir}/${dist.jad}" jarfile="${dist.jar}" keystore="${sign.keystore}" keystorepassword="${sign.keystore.password}" sign="${sign.enabled}" url="${jad.jarurl}"/>
+    </target>
+    <target name="-add-midlets" unless="manifest.is.liblet">
+        <echo append="true" encoding="UTF-8" file="${dist.dir}/${dist.jad}" message="${manifest.midlets}"/>
+    </target>
+    <target depends="-add-apipermissions,-add-pushregistry,-add-jad-extra" name="-add-optional-attributes"/>
+    <target if="manifest.apipermissions" name="-add-apipermissions">
+        <echo append="true" encoding="UTF-8" file="${dist.dir}/${dist.jad}" message="${manifest.apipermissions}"/>
+    </target>
+    <target if="manifest.pushregistry" name="-add-pushregistry">
+        <echo append="true" encoding="UTF-8" file="${dist.dir}/${dist.jad}" message="${manifest.pushregistry}"/>
+    </target>
+    <target if="manifest.jad" name="-add-jad-extra">
+        <echo append="true" encoding="UTF-8" file="${dist.dir}/${dist.jad}" message="${manifest.jad}"/>
+    </target>
+    <target name="-add-configuration" unless="contains.manifest.configuration">
+        <echo append="true" encoding="UTF-8" file="${dist.dir}/${dist.jad}" message="MicroEdition-Configuration: ${platform.configuration}"/>
+        <echo append="true" file="${dist.dir}/${dist.jad}" message="${line.separator}"/>
+    </target>
+    <target name="-add-profile" unless="contains.manifest.profile">
+        <echo append="true" encoding="UTF-8" file="${dist.dir}/${dist.jad}" message="MicroEdition-Profile: ${platform.profile}"/>
+        <echo append="true" file="${dist.dir}/${dist.jad}" message="${line.separator}"/>
+    </target>
+    <target depends="-do-jar-create-manifest,-do-jar-copy-manifest" name="-do-jar-update-manifest">
+        <manifest file="${tmp.manifest.file}" mode="update">
+            <attribute name="Microedition-Profile" value="${platform.profile}"/>
+            <attribute name="MicroEdition-Configuration" value="${platform.configuration}"/>
+        </manifest>
+        <script language="javascript"><![CDATA[
+                function isTrue(prop) {
+                    return prop != null &&
+                    (prop.toLowerCase() == "true" || prop.toLowerCase() == "yes" || prop.toLowerCase() == "on");
+                }
+                function updateManifest(entries) {
+                    var src = new String(project.getProperty("tmp.manifest.file"));
+                    var srf = new java.io.File(src);
+                    var manifest = project.createTask("manifest");
+                    var mode = new org.apache.tools.ant.taskdefs.ManifestTask.Mode();
+                    mode.setValue("update");
+                    manifest.setMode(mode);
+                    manifest.setFile(srf);
+                    if(manifest != null) {
+                        var propertyArray = entries.split("\n");
+                        for (var i = 0; i < propertyArray.length; i++) {
+                            if (propertyArray[i].indexOf(":") == -1) {
+                                continue;
+                            }
+                            var splitted = propertyArray[i].split(":");
+                            var propertyAttr = new org.apache.tools.ant.taskdefs.Manifest.Attribute();
+                            propertyAttr.setName(splitted[0].trim());
+                            propertyAttr.setValue(splitted[1].trim());
+                            manifest.addConfiguredAttribute(propertyAttr);
+                        }
+                        manifest.perform();
+                    }
+                }
+                if (!isTrue(project.getProperty("manifest.is.liblet"))) {
+                    var midlets = new String(project.getProperty("manifest.midlets"));
+                    updateManifest(midlets);
+                }
+                var others = new String(project.getProperty("manifest.others"));
+                updateManifest(others);
+                var apipermissions = new String(project.getProperty("manifest.apipermissions"));
+                updateManifest(apipermissions);
+                var pushregistry = new String(project.getProperty("manifest.pushregistry"));
+                updateManifest(pushregistry);
+                var manifestExtra = new String(project.getProperty("manifest.manifest"));
+                updateManifest(manifestExtra);
+                ]]></script>
+    </target>
+    <!--
+                =================
+                SIGNING SECTION
+                =================
+            -->
+    <target name="-set-password">
+        <property name="sign.enabled" value="false"/>
+        <condition property="skip-sign-keystore-password-input">
+            <or>
+                <isfalse value="${sign.enabled}"/>
+                <and>
+                    <isset property="sign.keystore"/>
+                    <isset property="sign.keystore.password"/>
+                    <not>
+                        <equals arg1="${sign.keystore}" arg2="" trim="true"/>
+                    </not>
+                    <not>
+                        <equals arg1="${sign.keystore.password}" arg2="" trim="true"/>
+                    </not>
+                </and>
+            </or>
+        </condition>
+        <condition property="skip-sign-alias-password-input">
+            <or>
+                <isfalse value="${sign.enabled}"/>
+                <and>
+                    <isset property="sign.keystore"/>
+                    <isset property="sign.alias"/>
+                    <isset property="sign.alias.password"/>
+                    <not>
+                        <equals arg1="${sign.keystore}" arg2="" trim="true"/>
+                    </not>
+                    <not>
+                        <equals arg1="${sign.alias}" arg2="" trim="true"/>
+                    </not>
+                    <not>
+                        <equals arg1="${sign.alias.password}" arg2="" trim="true"/>
+                    </not>
+                </and>
+            </or>
+        </condition>
+    </target>
+    <target if="netbeans.home" name="-set-keystore-password" unless="skip-sign-keystore-password-input">
+        <nb-enter-password keystore="${sign.keystore}" passwordproperty="sign.keystore.password"/>
+    </target>
+    <target if="netbeans.home" name="-set-alias-password" unless="skip-sign-alias-password-input">
+        <nb-enter-password keyalias="${sign.alias}" keystore="${sign.keystore}" passwordproperty="sign.alias.password"/>
+    </target>
+    <target depends="-set-password,-set-keystore-password,-set-alias-password" name="-init-passwords"/>
+    <!--
+                =================
+                OBFUSCATING SECTION
+                =================
+            -->
+    <target name="-pre-obfuscate"/>
+    <target name="-post-obfuscate"/>
+    <target depends="compile,-pre-obfuscate,-do-obfuscate,-post-obfuscate" description="Obfuscate project classes." name="obfuscate"/>
+    <target name="-init-obfuscate">
+        <property name="obfuscation.level" value="0"/>
+        <condition property="no.obfusc">
+            <equals arg1="${obfuscation.level}" arg2="0"/>
+        </condition>
+    </target>
+    <target depends="-init-obfuscate" name="-do-obfuscate" unless="no.obfusc">
+        <property name="obfuscator.classpath" value=""/>
+        <property name="obfuscation.custom" value=""/>
+        <property name="obfuscator.srcjar" value="${build.dir}/unobfuscated.jar"/>
+        <property name="obfuscator.destjar" value="${build.dir}/obfuscated.jar"/>
+        <jar basedir="${build.classes.dir}" jarfile="${obfuscator.srcjar}"/>
+        <nb-obfuscate classpath="${platform.bootcp}:${javac.classpath}" destjar="${obfuscator.destjar}" extraScript="${obfuscation.custom}" obfuscationLevel="${obfuscation.level}" obfuscatorclasspath="${obfuscator.classpath}" srcjar="${obfuscator.srcjar}"/>
+        <delete includeEmptyDirs="true">
+            <fileset defaultexcludes="no" dir="${build.classes.dir}" includes="**/*"/>
+        </delete>
+        <unjar dest="${build.classes.dir}" src="${obfuscator.destjar}"/>
+        <delete dir="${build.classes.dir}/META-INF"/>
+        <delete file="${obfuscator.srcjar}"/>
+        <delete file="${obfuscator.destjar}"/>
+    </target>
+    <!--
+                =================
+                EXECUTION SECTION
+                =================
+            -->
+    <target depends="init,clean,jar" name="run">
+        <nb-run classpath="${platform.bootclasspath}:${dist.dir}/${dist.jar}" cmdoptions="${run.cmd.options}" commandline="${platform.runcommandline}" device="${platform.device}" execmethod="${run.method}" jadfile="${dist.dir}/${dist.jad}" jadurl="${dist.jad.url}" jarfile="{dist.jar.file}" platformhome="${platform.home}" platformtype="${platform.type}"/>
+    </target>
+    <!--
+                =================
+                DEBUGGING SECTION
+                =================
+            -->
+    <target depends="-debug-javame" description="Debug project in IDE." if="netbeans.home" name="debug"/>
+    <target depends="init" name="-pre-debug-fix">
+        <fail unless="fix.includes">Must set fix.includes</fail>
+        <property name="javac.includes" value="${fix.includes}.java"/>
+    </target>
+    <target depends="init,-pre-debug-fix,compile-single" if="netbeans.home" name="-do-debug-fix">
+        <j2meproject1:nbjpdareload xmlns:j2meproject1="http://www.netbeans.org/ns/j2me-embedded-project/1"/>
+    </target>
+    <target depends="init,-pre-debug-fix,-do-debug-fix" if="netbeans.home" name="debug-fix"/>
+    <target depends="init,clean,jar" name="-debug-javame">
+        <parallel>
+            <nb-run classpath="${platform.bootclasspath}:${dist.dir}/${dist.jar}" cmdoptions="${run.cmd.options}" commandline="${platform.debugcommandline}" debug="true" debuggeraddressproperty="jpda.port" debugserver="true" debugsuspend="true" device="${platform.device}" execmethod="${run.method}" jadfile="${dist.dir}/${dist.jad}" jadurl="${dist.jad.url}" jarfile="${dist.jar.file}" platformhome="${platform.home}" platformtype="${platform.type}"/>
+            <sequential>
+                <sleep seconds="5"/>
+                <antcall target="-nbdebug"/>
+            </sequential>
+        </parallel>
+    </target>
+    <target description="Start NetBeans debugger" if="netbeans.home" name="-nbdebug">
+        <property name="debug.delay" value="5000"/>
+        <nb-mobility-debug address="${jpda.port}" delay="${debug.delay}" name="${app.codename}" period="2000" timeout="${debugger.timeout}"/>
+    </target>
+    <!--
+                =================
+                PROFILING SECTION
+                =================
+            -->
+    <!--
+                ===============
+                JAVADOC SECTION
+                ===============
+            -->
+    <target depends="init" if="have.sources" name="-javadoc-build">
+        <mkdir dir="${dist.javadoc.dir}"/>
+        <condition else="" property="javadoc.endorsed.classpath.cmd.line.arg" value="-J${endorsed.classpath.cmd.line.arg}">
+            <and>
+                <isset property="endorsed.classpath.cmd.line.arg"/>
+                <not>
+                    <equals arg1="${endorsed.classpath.cmd.line.arg}" arg2=""/>
+                </not>
+            </and>
+        </condition>
+        <javadoc additionalparam="${javadoc.additionalparam}" author="${javadoc.author}" charset="UTF-8" destdir="${dist.javadoc.dir}" docencoding="UTF-8" encoding="${javadoc.encoding.used}" executable="${platform.javadoc}" failonerror="true" noindex="${javadoc.noindex}" nonavbar="${javadoc.nonavbar}" notree="${javadoc.notree}" private="${javadoc.private}" source="${javac.source}" splitindex="${javadoc.splitindex}" use="${javadoc.use}" useexternalfile="true" version="${javadoc.version}" windowtitle="${javadoc.windowtitle}">
+            <classpath>
+                <path path="${javac.classpath}"/>
+            </classpath>
+            <fileset dir="${src.dir}" excludes="*.java,${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${build.generated.sources.dir}" erroronmissingdir="false">
+                <include name="**/*.java"/>
+                <exclude name="*.java"/>
+            </fileset>
+            <arg line="${javadoc.endorsed.classpath.cmd.line.arg}"/>
+        </javadoc>
+        <copy todir="${dist.javadoc.dir}">
+            <fileset dir="${src.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${build.generated.sources.dir}" erroronmissingdir="false">
+                <include name="**/doc-files/**"/>
+            </fileset>
+        </copy>
+    </target>
+    <target depends="init,-javadoc-build" if="netbeans.home" name="-javadoc-browse" unless="no.javadoc.preview">
+        <nbbrowse file="${dist.javadoc.dir}/index.html"/>
+    </target>
+    <target depends="init,-javadoc-build,-javadoc-browse" description="Build Javadoc." name="javadoc"/>
+    <!--
+                ===============
+                CLEANUP SECTION
+                ===============
+            -->
+    <target name="-deps-clean-init" unless="built-clean.properties">
+        <property location="${build.dir}/built-clean.properties" name="built-clean.properties"/>
+        <delete file="${built-clean.properties}" quiet="true"/>
+    </target>
+    <target if="already.built.clean.${basedir}" name="-warn-already-built-clean">
+        <echo level="warn" message="Cycle detected: hellome was already built"/>
+    </target>
+    <target depends="init,-deps-clean-init" name="deps-clean" unless="no.deps">
+        <mkdir dir="${build.dir}"/>
+        <touch file="${built-clean.properties}" verbose="false"/>
+        <property file="${built-clean.properties}" prefix="already.built.clean."/>
+        <antcall target="-warn-already-built-clean"/>
+        <propertyfile file="${built-clean.properties}">
+            <entry key="${basedir}" value=""/>
+        </propertyfile>
+    </target>
+    <target depends="init" name="-do-clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}" followsymlinks="false" includeemptydirs="true"/>
+    </target>
+    <target name="-post-clean">
+        <!-- Empty placeholder for easier customization. -->
+        <!-- You can override this target in the ../build.xml file. -->
+    </target>
+    <target depends="init,deps-clean,-do-clean,-post-clean" description="Clean build products." name="clean"/>
+    <target name="-check-call-dep">
+        <property file="${call.built.properties}" prefix="already.built."/>
+        <condition property="should.call.dep">
+            <and>
+                <not>
+                    <isset property="already.built.${call.subproject}"/>
+                </not>
+                <available file="${call.script}"/>
+            </and>
+        </condition>
+    </target>
+    <target depends="-check-call-dep" if="should.call.dep" name="-maybe-call-dep">
+        <ant antfile="${call.script}" inheritall="false" target="${call.target}">
+            <propertyset>
+                <propertyref prefix="transfer."/>
+                <mapper from="transfer.*" to="*" type="glob"/>
+            </propertyset>
+        </ant>
+    </target>
+</project>
