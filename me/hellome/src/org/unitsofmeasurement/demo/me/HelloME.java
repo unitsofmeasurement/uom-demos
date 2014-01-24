@@ -24,8 +24,8 @@ public class HelloME extends MIDlet {
     public void startApp() {
         
         Temperature t =  new TemperatureQuantity(23.5, TemperatureUnit.CELSIUS);
-        System.out.println("Hello Java ME");
-        System.out.println(t);
+        //System.out.println("Hello Java ME");
+        System.out.println("Temperature: " + t);
     }
     
     public void pauseApp() {
