@@ -1,8 +1,17 @@
 /**
- * Copyright (c) 2013 Werner Keil and others.
- * All rights reserved.
+ *  Unit-API - Units of Measurement API for Java
+ *  Copyright 2013-2014, Jean-Marie Dautelle, Werner Keil, V2COM and individual
+ *  contributors by the @author tag.
  *
- * See LICENSE.txt for details.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 package org.unitsofmeasurement.demo.types;
 
@@ -22,9 +31,6 @@ import org.unitsofmeasurement.impl.model.quantity.MassAmount;
 
 
 /**
- * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.1
- * 
  * This <type>enum</type> is inspired by Josh Bloch's example in <a href="http://www.oracle.com/technetwork/java/effectivejava-136174.html">Effective Java Second Edition</a>
  * 
  * <p>
@@ -33,6 +39,8 @@ import org.unitsofmeasurement.impl.model.quantity.MassAmount;
  * Each planet knows its mass and radius, and can calculate its surface gravity and the weight of an object on the planet. 
  * Here is how it looks:
  * </p>
+ * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 1.2
  */
 public enum DwarfPlanet {
 	CERES(newMass(9.43e+20, KILOGRAM), newLength(0.4873e6, METRE)),

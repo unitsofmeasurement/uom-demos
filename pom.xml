@@ -13,13 +13,13 @@
 		<url>http://www.unitsofmeasurement.org</url>
 	</organization>
 	<description>An intial (Spec Lead) draft of Unit Standard Demos.</description>
-    <licenses>
-        <license>
-            <name>BSD</name>
-            <url>LICENSE</url>
-        </license>
-    </licenses>
-    
+	<licenses>
+		<license>
+			<name>BSD</name>
+			<url>LICENSE</url>
+		</license>
+	</licenses>
+
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
@@ -48,10 +48,10 @@
 				<version>${jsr.version}</version>
 			</dependency>
 			<dependency>
-                <groupId>javax.measure</groupId>
-                <artifactId>unit-api-format</artifactId>
-                <version>${jsr.version}</version>
-            </dependency>
+				<groupId>javax.measure</groupId>
+				<artifactId>unit-api-format</artifactId>
+				<version>${jsr.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>javax.measure</groupId>
 				<artifactId>unit-api-quantity</artifactId>
@@ -110,4 +110,64 @@
 		<module>domain</module>
 		<module>javafx</module>
 	</modules>
+	
+	<profiles>
+		<profile>
+			<id>license</id>
+			<activation>
+				<property>
+					<name>license</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<!-- ======================================================= -->
+						<!-- License -->
+						<!-- ======================================================= -->
+						<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>license-maven-plugin</artifactId> 
+							<version>1.4</version> </plugin> -->
+						<plugin>
+							<groupId>com.google.code.maven-license-plugin</groupId>
+							<artifactId>maven-license-plugin</artifactId>
+							<version>1.4.0</version>
+							<configuration>
+								<basedir>${basedir}</basedir>
+								<header>src/etc/header.txt</header>
+								<quiet>false</quiet>
+								<failIfMissing>true</failIfMissing>
+								<aggregate>false</aggregate>
+								<encoding>UTF-8</encoding>
+								<excludes>
+									<exclude>target/**</exclude>
+									<exclude>nbproject/**</exclude>
+									<exclude>LICENSE*.txt</exclude>
+									<exclude>README.*</exclude>
+									<exclude>checkstyle*.*</exclude>
+									<exclude>*.css</exclude>
+								</excludes>
+							</configuration>
+						</plugin>
+						<!-- TODO enable this only for major upgrades (ensure to copy LICENSE.txt 
+							to LICENSE.bak first) -->
+					</plugins>
+				</pluginManagement>
+				<plugins>
+					<plugin>
+						<groupId>com.google.code.maven-license-plugin</groupId>
+						<artifactId>maven-license-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>compile</phase>
+								<goals>
+									<goal>format</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
