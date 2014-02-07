@@ -6,7 +6,7 @@
 	<packaging>bundle</packaging>
 	<url>http://github.com/unitsofmeasurement/demos</url>
 	<parent>
-		<version>0.3</version>
+		<version>0.4-SNAPSHOT</version>
 		<groupId>org.unitsofmeasurement.demos</groupId>
 		<artifactId>unit-api-domain-demos</artifactId>
 	</parent>
