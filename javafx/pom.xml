@@ -6,7 +6,7 @@
 	<packaging>pom</packaging>
 	<url>http://github.com/unitsofmeasurement/demos</url>
 	<parent>
-		<version>0.3-SNAPSHOT</version>
+		<version>0.3</version>
 		<groupId>org.unitsofmeasurement.demos</groupId>
 		<artifactId>unit-api-demos</artifactId>
 	</parent>

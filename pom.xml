@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.unitsofmeasurement.demos</groupId>
 	<artifactId>unit-api-demos</artifactId>
-	<version>0.3-SNAPSHOT</version>
+	<version>0.3</version>
 
 	<packaging>pom</packaging>
 	<name>Units of Measurement API Demos</name>
@@ -15,7 +15,7 @@
 	<description>An intial (Spec Lead) draft of Unit Standard Demos.</description>
 	<licenses>
 		<license>
-			<name>BSD</name>
+			<name>Apache 2.0</name>
 			<url>LICENSE</url>
 		</license>
 	</licenses>
@@ -28,7 +28,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>${sourceEncoding}</project.reporting.outputEncoding>
 		<project.build.javaVersion>1.7</project.build.javaVersion>
-		<jsr.version>0.4-SNAPSHOT</jsr.version>
+		<jsr.version>0.4</jsr.version>
 		<jdkVersion>1.7</jdkVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
