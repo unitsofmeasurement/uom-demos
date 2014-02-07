@@ -19,19 +19,19 @@ import static org.unitsofmeasurement.impl.AbstractMeasurement.NONE;
 import static org.unitsofmeasurement.demo.types.SaffirSimpsonHurricaneWindScale.Category.*;
 
 import javax.measure.Measurement;
-import javax.measure.MeasurementRange;
 import javax.measure.function.Nameable;
 import javax.measure.quantity.Speed;
+import javax.measure.util.Range;
 
 import org.unitsofmeasurement.impl.AbstractMeasurement;
 
 /**
  * @author Werner Keil
- * @version 0.4
+ * @version 0.4.1
  * @see <a href="http://en.wikipedia.org/wiki/Saffir%E2%80%93Simpson_hurricane_wind_scale"> Wikipedia:
  *      Saffir–Simpson hurricane wind scale</a>
  */
-public class SaffirSimpsonHurricaneWindScale extends MeasurementRange<Measurement<Speed, Number>>
+public class SaffirSimpsonHurricaneWindScale extends Range<Measurement<Speed, Number>>
 	implements Nameable {
 
 	public static enum Category {

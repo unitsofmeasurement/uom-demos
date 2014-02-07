@@ -15,12 +15,13 @@
  */
 package org.unitsofmeasurement.demo.health;
 
-import javax.measure.SystemOfUnits;
 import javax.measure.Unit;
+import javax.measure.util.SystemOfUnits;
+
 import org.unitsofmeasurement.impl.AbstractUnit;
 import org.unitsofmeasurement.impl.BaseUnit;
-import org.unitsofmeasurement.impl.system.AbstractSystemOfUnits;
-import org.unitsofmeasurement.impl.system.SI;
+import org.unitsofmeasurement.impl.util.AbstractSystemOfUnits;
+import org.unitsofmeasurement.impl.util.SI;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>

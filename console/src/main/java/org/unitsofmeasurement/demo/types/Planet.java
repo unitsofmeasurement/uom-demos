@@ -15,7 +15,7 @@
  */
 package org.unitsofmeasurement.demo.types;
 
-import static org.unitsofmeasurement.impl.system.SI.*;
+import static org.unitsofmeasurement.impl.util.SI.*;
 import static org.unitsofmeasurement.demo.types.SolarSystem.G;
 
 import javax.measure.Unit;

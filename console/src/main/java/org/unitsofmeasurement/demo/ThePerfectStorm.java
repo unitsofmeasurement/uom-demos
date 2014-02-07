@@ -15,10 +15,10 @@
  */
 package org.unitsofmeasurement.demo;
 
-import static org.unitsofmeasurement.impl.system.CommonUnits.KILOMETRES_PER_HOUR;
-import static org.unitsofmeasurement.impl.system.SIPrefix.*;
-import static org.unitsofmeasurement.impl.system.SI.METRE;
-import static org.unitsofmeasurement.impl.system.US.MILES_PER_HOUR;
+import static org.unitsofmeasurement.impl.util.CommonUnits.KILOMETRES_PER_HOUR;
+import static org.unitsofmeasurement.impl.util.SI.METRE;
+import static org.unitsofmeasurement.impl.util.SIPrefix.*;
+import static org.unitsofmeasurement.impl.util.US.MILES_PER_HOUR;
 import static org.unitsofmeasurement.demo.types.SaffirSimpsonHurricaneWindScale.Category.*;
 
 import javax.measure.quantity.Length;

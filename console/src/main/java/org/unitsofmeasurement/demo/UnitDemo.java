@@ -15,7 +15,7 @@
  */
 package org.unitsofmeasurement.demo;
 
-import static org.unitsofmeasurement.impl.system.SI.*;
+import static org.unitsofmeasurement.impl.util.SI.*;
 
 import javax.measure.quantity.Length;
 
