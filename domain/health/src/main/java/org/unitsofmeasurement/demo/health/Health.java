@@ -25,7 +25,7 @@ import org.unitsofmeasurement.impl.util.SI;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.2
+ * @version 0.3
  */
 public class Health extends AbstractSystemOfUnits {
 	
@@ -80,7 +80,7 @@ public class Health extends AbstractSystemOfUnits {
 	 *            the name of the unit.
 	 * @return <code>unit</code>.
 	 */
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "unused" })
 	private static <U extends Unit<?>> U addUnit(U unit, String name) {
 		if (name != null && unit instanceof AbstractUnit) {
 			AbstractUnit<?> aUnit = (AbstractUnit<?>) unit;
