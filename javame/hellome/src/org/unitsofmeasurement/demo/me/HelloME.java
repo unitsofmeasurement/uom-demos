@@ -28,7 +28,6 @@ import org.unitsofmeasurement.impl.enums.quantity.TemperatureQuantity;
 public class HelloME extends MIDlet {
     
     public void startApp() {
-        
         Temperature t =  new TemperatureQuantity(23.5, CELSIUS);
         System.out.println("Temperature: " + t);
     }
