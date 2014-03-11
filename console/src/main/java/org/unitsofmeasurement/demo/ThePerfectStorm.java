@@ -30,7 +30,8 @@ import org.unitsofmeasurement.impl.AbstractMeasurement;
 
 /**
  * @author Werner Keil
- *@see {@link SaffirSimpsonHurricaneWindScale}
+ * @version 0.6
+ * @see {@link SaffirSimpsonHurricaneWindScale}
  */
 public class ThePerfectStorm {
 
@@ -101,7 +102,7 @@ public class ThePerfectStorm {
 		}
 		
 		if (scale !=null) {
-			final AbstractMeasurement<Speed> metricSpeed = scale.hasMaximum() ?
+			final AbstractMeasurement<Speed> metricSpeed = scale.hasUpperBound() ?
 					(AbstractMeasurement<Speed>) scale.getMaximum().to(KILOMETRES_PER_HOUR) :
 						(AbstractMeasurement<Speed>) scale.getMinimum().to(KILOMETRES_PER_HOUR);
 					
