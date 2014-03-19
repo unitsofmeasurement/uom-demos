@@ -3,8 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.unitsofmeasurement.demos</groupId>
 	<artifactId>unit-api-demos</artifactId>
-	<version>0.4-SNAPSHOT</version>
-
+    <parent>
+        <version>0.4-SNAPSHOT</version>
+        <artifactId>unitsofmeasurement-parent</artifactId>
+        <groupId>org.unitsofmeasurement</groupId>
+    </parent>
 	<packaging>pom</packaging>
 	<name>Units of Measurement API Demos</name>
 	<url>http://github.com/unitsofmeasurement/demos</url>
@@ -28,7 +31,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>${sourceEncoding}</project.reporting.outputEncoding>
 		<project.build.javaVersion>1.7</project.build.javaVersion>
-		<jsr.version>0.5-SNAPSHOT</jsr.version>
 		<jdkVersion>1.7</jdkVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
@@ -73,7 +75,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
 				<configuration>
 					<source>${project.build.javaVersion}</source>
 					<target>${project.build.javaVersion}</target>
@@ -87,7 +88,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.3.2</version>
 				<configuration>
 					<archive>
 						<manifest>
