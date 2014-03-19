@@ -5,6 +5,8 @@
 *.war
 *.ear
 /.settings
+/domain/target
+/javafx/target
 /javafx/fxlib/nbproject/private/
 /javafx/fxlib/build/
 /javafx/fxlib/dist/
@@ -13,3 +15,4 @@
 /me/MEApplication1/dist/
 /me/hellome/build/
 /me/hellome/dist/
+/target
