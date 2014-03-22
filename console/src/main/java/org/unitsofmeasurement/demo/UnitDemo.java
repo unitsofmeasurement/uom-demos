@@ -1,6 +1,6 @@
 /**
  *  Unit-API - Units of Measurement API for Java
- *  Copyright 2013-2014, Jean-Marie Dautelle, Werner Keil, V2COM and individual
+ *  Copyright 2010-2014, Jean-Marie Dautelle, Werner Keil, V2COM and individual
  *  contributors by the @author tag.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +16,9 @@
 package org.unitsofmeasurement.demo;
 
 import static org.unitsofmeasurement.impl.util.SI.*;
+import static org.unitsofmeasurement.impl.util.US.*;
 
+import javax.measure.quantity.Area;
 import javax.measure.quantity.Length;
 
 import org.unitsofmeasurement.impl.AbstractMeasurement;
@@ -33,8 +35,12 @@ public class UnitDemo {
 	public static void main(String[] args) {
 		AbstractMeasurement<Length> l = AbstractMeasurement.of(100d, METRE);
 		System.out.println(l);
-//		AbstractMeasurement<Area> a = AbstractMeasurement.of(10, HECTAR);
-//		System.out.println(a);
+		l = AbstractMeasurement.of(74L, FOOT);
+		System.out.println(l);
+		l = l.to(METRE);
+		System.out.println(l);
+		AbstractMeasurement<Area> a = AbstractMeasurement.of(10, HECTARE);
+		System.out.println(a);
 	}
 
 }
