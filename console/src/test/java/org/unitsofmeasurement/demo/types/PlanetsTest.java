@@ -16,36 +16,36 @@
 package org.unitsofmeasurement.demo.types;
 
 import static org.unitsofmeasurement.impl.format.OutputHelper.println;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
 
 /**
  * @author Werner Keil
- * @version 1.0.1
+ * @version 1.1
  */
 public class PlanetsTest {
 
 	@Test
 	public void testPlanets() {
 		Planet[] planets = Planet.values();
-		
+		assertNotNull(planets);
+		println("Planets");
 		for (Planet planet : planets) {
 			println(planet);
 		}
-		
 		assertEquals(8, planets.length);
 	}
 	
 	@Test
 	public void testDwarfPlanets() {
 		DwarfPlanet[] dwarfPlanets = DwarfPlanet.values();
-		
+		assertNotNull(dwarfPlanets);
+		println("Dwarf Planets");
 		for (DwarfPlanet planet : dwarfPlanets) {
 			println(planet);
 		}
-		
 		assertEquals(5, dwarfPlanets.length);
 	}
 }

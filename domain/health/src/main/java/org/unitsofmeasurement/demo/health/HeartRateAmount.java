@@ -17,7 +17,7 @@ package org.unitsofmeasurement.demo.health;
 
 import javax.measure.Unit;
 
-import org.unitsofmeasurement.impl.BaseMeasurement;
+import org.unitsofmeasurement.impl.BaseQuantity;
 
 /**
  * Represents the speed of heart beat.
@@ -26,7 +26,7 @@ import org.unitsofmeasurement.impl.BaseMeasurement;
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.1, Date: 2013-12-30
  */
-public final class HeartRateAmount extends BaseMeasurement<HeartRate> implements HeartRate {
+public final class HeartRateAmount extends BaseQuantity<HeartRate> implements HeartRate {
 
 	/**
 	 * 

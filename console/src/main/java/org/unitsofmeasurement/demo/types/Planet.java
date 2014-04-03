@@ -18,20 +18,21 @@ package org.unitsofmeasurement.demo.types;
 import static org.unitsofmeasurement.impl.util.SI.*;
 import static org.unitsofmeasurement.demo.types.SolarSystem.G;
 
+import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Acceleration;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
-import org.unitsofmeasurement.impl.AbstractMeasurement;
-import org.unitsofmeasurement.impl.model.quantity.AccelerationAmount;
-import org.unitsofmeasurement.impl.model.quantity.LengthAmount;
-import org.unitsofmeasurement.impl.model.quantity.MassAmount;
+import org.unitsofmeasurement.impl.AbstractQuantity;
+import org.unitsofmeasurement.impl.quantity.AccelerationAmount;
+import org.unitsofmeasurement.impl.quantity.LengthAmount;
+import org.unitsofmeasurement.impl.quantity.MassAmount;
 
 
 /**
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.1
+ * @version 1.2
  * 
  * This <type>enum</type> is inspired by Josh Bloch's example in <a href="http://www.oracle.com/technetwork/java/effectivejava-136174.html">Effective Java Second Edition</a>
  * 
@@ -53,20 +54,20 @@ public enum Planet {
     URANUS(newMass(8.686e+25, KILOGRAM), newLength(2.5559e7, METRE)),
     NEPTUNE(newMass(1.024e+26, KILOGRAM), newLength(2.4746e7, METRE));
 
-    private final AbstractMeasurement<Mass> mass;   // in kilograms
+    private final AbstractQuantity<Mass> mass;   // in kilograms
 
-    private final AbstractMeasurement<Length> radius; // in meters
+    private final AbstractQuantity<Length> radius; // in meters
 
-    Planet(AbstractMeasurement<Mass> mass, AbstractMeasurement<Length> radius) {
+    Planet(AbstractQuantity<Mass> mass, AbstractQuantity<Length> radius) {
         this.mass = mass;
         this.radius = radius;
     }
 
-    public AbstractMeasurement<Mass> getMass() {
+    public Quantity<Mass> getMass() {
         return mass;
     }
 
-    public AbstractMeasurement<Length> getRadius() {
+    public Quantity<Length> getRadius() {
         return radius;
     }
 
@@ -77,11 +78,11 @@ public enum Planet {
                 G * m / (r * r), METRES_PER_SQUARE_SECOND);
     }
 
-    private static AbstractMeasurement<Mass> newMass(double value, Unit<Mass> unit) {
+    private static AbstractQuantity<Mass> newMass(double value, Unit<Mass> unit) {
         return new MassAmount(value, unit);
     }
 
-    private static AbstractMeasurement<Length> newLength(double value, Unit<Length> unit) {
+    private static AbstractQuantity<Length> newLength(double value, Unit<Length> unit) {
         return new LengthAmount(value, unit);
     }
 
