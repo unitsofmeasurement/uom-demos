@@ -27,7 +27,7 @@ import org.unitsofmeasurement.ri.AbstractMeasurement;
 
 /**
  * @author Werner Keil
- * @version 0.4.2
+ * @version 0.4.3
  * @see <a href="http://en.wikipedia.org/wiki/Saffir%E2%80%93Simpson_hurricane_wind_scale"> Wikipedia:
  *      Saffir–Simpson hurricane wind scale</a>
  */
@@ -92,13 +92,11 @@ public class SaffirSimpsonHurricaneWindScale extends Range<Measurement<Speed, Nu
 		return new SaffirSimpsonHurricaneWindScale(min, max, cat);
 	}
 	
-	@Override
 	public boolean hasLowerBound() {
 		return getMinimum() != null && !NONE.equals(getMinimum()) && 
 				!(getMinimum().getUnit() == null || getMinimum().getValue() == null);
 	}
 
-	@Override
 	public boolean hasUpperBound() {
 		return getMaximum() != null && !NONE.equals(getMaximum()) &&
 				!(getMaximum().getUnit() == null || getMaximum().getValue() == null) ;
