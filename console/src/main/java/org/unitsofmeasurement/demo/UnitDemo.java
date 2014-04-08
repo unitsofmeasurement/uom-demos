@@ -15,13 +15,13 @@
  */
 package org.unitsofmeasurement.demo;
 
-import static org.unitsofmeasurement.impl.util.SI.*;
-import static org.unitsofmeasurement.impl.util.US.*;
+import static org.unitsofmeasurement.ri.util.SI.*;
+import static org.unitsofmeasurement.ri.util.US.*;
 
 import javax.measure.quantity.Area;
 import javax.measure.quantity.Length;
 
-import org.unitsofmeasurement.impl.AbstractMeasurement;
+import org.unitsofmeasurement.ri.AbstractMeasurement;
 
 /**
  * @author Werner Keil

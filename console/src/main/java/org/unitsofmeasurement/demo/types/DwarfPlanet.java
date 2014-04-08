@@ -15,8 +15,8 @@
  */
 package org.unitsofmeasurement.demo.types;
 
-import static org.unitsofmeasurement.impl.util.SI.*;
-import static org.unitsofmeasurement.impl.util.SIPrefix.*;
+import static org.unitsofmeasurement.ri.util.SI.*;
+import static org.unitsofmeasurement.ri.util.SIPrefix.*;
 import static org.unitsofmeasurement.demo.types.SolarSystem.G;
 
 import javax.measure.Quantity;
@@ -25,10 +25,10 @@ import javax.measure.quantity.Acceleration;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
-import org.unitsofmeasurement.impl.AbstractQuantity;
-import org.unitsofmeasurement.impl.quantity.AccelerationAmount;
-import org.unitsofmeasurement.impl.quantity.LengthAmount;
-import org.unitsofmeasurement.impl.quantity.MassAmount;
+import org.unitsofmeasurement.ri.AbstractQuantity;
+import org.unitsofmeasurement.ri.quantity.AccelerationAmount;
+import org.unitsofmeasurement.ri.quantity.LengthAmount;
+import org.unitsofmeasurement.ri.quantity.MassAmount;
 
 
 /**

@@ -15,7 +15,7 @@
  */
 package org.unitsofmeasurement.demo.types;
 
-import static org.unitsofmeasurement.impl.AbstractMeasurement.NONE;
+import static org.unitsofmeasurement.ri.AbstractMeasurement.NONE;
 import static org.unitsofmeasurement.demo.types.SaffirSimpsonHurricaneWindScale.Category.*;
 
 import javax.measure.Measurement;
@@ -23,7 +23,7 @@ import javax.measure.function.Nameable;
 import javax.measure.quantity.Speed;
 import javax.measure.util.Range;
 
-import org.unitsofmeasurement.impl.AbstractMeasurement;
+import org.unitsofmeasurement.ri.AbstractMeasurement;
 
 /**
  * @author Werner Keil

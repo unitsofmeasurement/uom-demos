@@ -17,7 +17,7 @@ package org.unitsofmeasurement.demo.health;
 
 import javax.measure.Unit;
 
-import org.unitsofmeasurement.impl.BaseQuantity;
+import org.unitsofmeasurement.ri.BaseQuantity;
 
 /**
  * Represents the speed of heart beat.

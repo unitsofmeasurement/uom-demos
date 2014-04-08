@@ -25,8 +25,8 @@
 			<artifactId>unit-api-quantity</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.unitsofmeasurement.impl</groupId>
-			<artifactId>unit-api-full-impl</artifactId>
+			<groupId>org.unitsofmeasurement</groupId>
+			<artifactId>unit-ri</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>

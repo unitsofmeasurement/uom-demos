@@ -18,10 +18,10 @@ package org.unitsofmeasurement.demo.health;
 import javax.measure.Unit;
 import javax.measure.util.SystemOfUnits;
 
-import org.unitsofmeasurement.impl.AbstractUnit;
-import org.unitsofmeasurement.impl.BaseUnit;
-import org.unitsofmeasurement.impl.util.AbstractSystemOfUnits;
-import org.unitsofmeasurement.impl.util.SI;
+import org.unitsofmeasurement.ri.AbstractUnit;
+import org.unitsofmeasurement.ri.BaseUnit;
+import org.unitsofmeasurement.ri.util.AbstractSystemOfUnits;
+import org.unitsofmeasurement.ri.util.SI;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
