@@ -4,7 +4,7 @@
 	<groupId>org.unitsofmeasurement.demos</groupId>
 	<artifactId>unit-api-demos</artifactId>
     <parent>
-        <version>0.4-SNAPSHOT</version>
+        <version>0.5-SNAPSHOT</version>
         <artifactId>unitsofmeasurement-parent</artifactId>
         <groupId>org.unitsofmeasurement</groupId>
     </parent>
@@ -167,5 +167,4 @@
 			</build>
 		</profile>
 	</profiles>
-	<version>0.4</version>
 </project>
