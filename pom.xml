@@ -27,9 +27,6 @@
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
 	<properties>
-		<sourceEncoding>UTF-8</sourceEncoding> <!-- in Maven 3. -->
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>${sourceEncoding}</project.reporting.outputEncoding>
 		<project.build.javaVersion>1.7</project.build.javaVersion>
 		<jdkVersion>1.7</jdkVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
