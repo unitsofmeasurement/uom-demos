@@ -167,4 +167,5 @@
 			</build>
 		</profile>
 	</profiles>
+	<version>0.4</version>
 </project>
