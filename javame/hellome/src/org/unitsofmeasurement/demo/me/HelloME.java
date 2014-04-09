@@ -19,7 +19,7 @@ import static org.unitsofmeasurement.impl.enums.unit.TemperatureUnit.*;
 
 import javax.measure.quantity.Temperature;
 import javax.microedition.midlet.MIDlet;
-import org.unitsofmeasurement.impl.enums.quantity.TemperatureQuantity;
+import org.unitsofmeasurement.impl.enums.quantity.TemperatureAmount;
 
 
 /**
@@ -28,7 +28,7 @@ import org.unitsofmeasurement.impl.enums.quantity.TemperatureQuantity;
 public class HelloME extends MIDlet {
     
     public void startApp() {
-        Temperature t =  new TemperatureQuantity(23.5, CELSIUS);
+        Temperature t =  new TemperatureAmount(23.5, CELSIUS);
         System.out.println("Temperature: " + t);
     }
     
