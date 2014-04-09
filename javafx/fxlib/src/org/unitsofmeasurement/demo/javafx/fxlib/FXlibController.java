@@ -29,13 +29,13 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javax.measure.Unit;
 import javax.measure.function.UnitConverter;
-import org.unitsofmeasurement.impl.AbstractUnit;
-import org.unitsofmeasurement.impl.system.CommonUnits;
-import org.unitsofmeasurement.impl.system.SI;
-import static org.unitsofmeasurement.impl.system.SI.*;
-import static org.unitsofmeasurement.impl.system.SIPrefix.*;
-import org.unitsofmeasurement.impl.system.UCUM;
-import static org.unitsofmeasurement.impl.system.US.*;
+import org.unitsofmeasurement.ri.AbstractUnit;
+import org.unitsofmeasurement.ri.util.CommonUnits;
+import org.unitsofmeasurement.ri.util.SI;
+import static org.unitsofmeasurement.ri.util.SI.*;
+import static org.unitsofmeasurement.ri.util.SIPrefix.*;
+import org.unitsofmeasurement.ri.util.UCUM;
+import static org.unitsofmeasurement.ri.util.US.*;
 
 /**
  *

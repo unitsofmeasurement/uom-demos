@@ -20,7 +20,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javax.measure.Unit;
 import javax.measure.function.UnitSupplier;
-import org.unitsofmeasurement.impl.AbstractUnit;
+import org.unitsofmeasurement.ri.AbstractUnit;
 
 
 /**
