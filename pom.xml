@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.unitsofmeasurement.demos</groupId>
-	<artifactId>unit-api-demos</artifactId>
+	<artifactId>unit-demos</artifactId>
     <parent>
         <version>0.5-SNAPSHOT</version>
         <artifactId>unitsofmeasurement-parent</artifactId>
@@ -15,7 +15,7 @@
 		<name>Units of Measurement project</name>
 		<url>http://www.unitsofmeasurement.org</url>
 	</organization>
-	<description>An intial (Spec Lead) draft of Unit Standard Demos.</description>
+	<description>An intial draft of Unit Standard Demos.</description>
 	<licenses>
 		<license>
 			<name>Apache 2.0</name>

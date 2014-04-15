@@ -4,11 +4,11 @@
 	<artifactId>unit-api-console-demos</artifactId>
 	<packaging>bundle</packaging>
 	<name>Units of Measurement API Console Demos</name>
-	<description>An intial (Spec Lead) draft of a Unit Standard Demo.</description>
+	<description>An intial draft of a Unit Standard Demo.</description>
 	<parent>
 		<version>0.5-SNAPSHOT</version>
 		<groupId>org.unitsofmeasurement.demos</groupId>
-		<artifactId>unit-api-demos</artifactId>
+		<artifactId>unit-demos</artifactId>
 	</parent>
 
 	<dependencies>
