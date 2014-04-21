@@ -12,7 +12,7 @@ import org.unitsofmeasurement.domain.health.types.HeartRateAmount;
 public class HealthDemo {
 
 	public static void main(String[] args) {
-		HeartRateAmount amount =  HeartRateAmount.of(Integer.valueOf(60), BPM);
+		HeartRateAmount amount =  HeartRateAmount.of(Double.valueOf(90), BPM);
 		System.out.println(amount);
 	}
 
