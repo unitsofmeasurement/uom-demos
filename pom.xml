@@ -10,12 +10,12 @@
     </parent>
 	<packaging>pom</packaging>
 	<name>Units of Measurement API Demos</name>
-	<url>http://github.com/unitsofmeasurement/demos</url>
+	<url>http://github.com/unitsofmeasurement/unit-demos</url>
 	<organization>
 		<name>Units of Measurement project</name>
 		<url>http://www.unitsofmeasurement.org</url>
 	</organization>
-	<description>An Intial Draft of Unit API Demos.</description>
+	<description>An Initial Draft of Unit API Demos.</description>
 	<licenses>
 		<license>
 			<name>Apache 2.0</name>
