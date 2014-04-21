@@ -9,7 +9,7 @@
         <groupId>org.unitsofmeasurement</groupId>
     </parent>
 	<packaging>pom</packaging>
-	<name>Units of Measurement API Demos</name>
+	<name>Units of Measurement Demos</name>
 	<url>http://github.com/unitsofmeasurement/unit-demos</url>
 	<organization>
 		<name>Units of Measurement project</name>
@@ -32,16 +32,11 @@
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<ri.version>0.2-SNAPSHOT</ri.version>
+		<lib.version>0.1-SNAPSHOT</lib.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>4.11</version>
-				<scope>test</scope>
-			</dependency>
 			<dependency>
 				<groupId>javax.measure</groupId>
 				<artifactId>unit-api-core</artifactId>
@@ -62,6 +57,11 @@
 				<artifactId>unit-ri</artifactId>
 				<version>${ri.version}</version>
 			</dependency>
+			<dependency>
+                <groupId>org.unitsofmeasurement.lib</groupId>
+                <artifactId>unit-lib</artifactId>
+                <version>${lib.version}</version>
+            </dependency>
 		</dependencies>
 	</dependencyManagement>
 

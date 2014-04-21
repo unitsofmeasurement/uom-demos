@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>unit-api-domain-demos</artifactId>
-	<name>Units of Measurement API Domain Specific Demos</name>
+	<artifactId>unit-domain-demos</artifactId>
+	<name>Units of Measurement Domain Specific Demos</name>
 	<packaging>pom</packaging>
 	<url>http://code.google.com/p/unitsofmeasure/</url>
 	<parent>
@@ -10,6 +10,16 @@
 		<groupId>org.unitsofmeasurement.demos</groupId>
 		<artifactId>unit-demos</artifactId>
 	</parent>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.unitsofmeasurement.lib</groupId>
+				<artifactId>unit-lib-domain</artifactId>
+				<version>${lib.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<dependencies>
 		<dependency>

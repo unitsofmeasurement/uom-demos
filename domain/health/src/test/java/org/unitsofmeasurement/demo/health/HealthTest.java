@@ -16,16 +16,16 @@
 package org.unitsofmeasurement.demo.health;
 
 import static org.junit.Assert.*;
+import static org.unitsofmeasurement.domain.health.Health.BPM;
 
-import org.junit.Ignore;
 import org.junit.Test;
+import org.unitsofmeasurement.domain.health.types.HeartRateAmount;
 
 public class HealthTest {
 
 	@Test
-	@Ignore
 	public void test() {
-		HeartRateAmount amount =  HeartRateAmount.of(Integer.valueOf(60), Health.BPM);
+		HeartRateAmount amount =  HeartRateAmount.of(Integer.valueOf(60), BPM);
 		assertNotNull(amount);
 		assertEquals("b", amount.getUnit().getSymbol());
 		assertEquals(60, amount.getValue().intValue());
