@@ -107,6 +107,7 @@
 		<module>console</module>
 		<module>domain</module>
 		<module>javafx</module>
+		<module>web</module>
 	</modules>
 	
 	<profiles>
