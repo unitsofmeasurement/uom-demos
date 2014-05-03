@@ -15,7 +15,7 @@
 
     <groupId>org.jboss.as.quickstarts</groupId>
     <artifactId>jboss-as-temperature-converter</artifactId>
-    <version>7.1.2-SNAPSHOT</version>
+    <version>7.1.5-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>JBoss AS Quickstarts: Temperature Converter</name>
     <description>JBoss AS Quickstarts: Temperature Converter. Given Celsius return Fahrenheit; Given Fahrenheit return Celsius</description>
@@ -41,8 +41,6 @@
         <version.org.jboss.spec.jboss.javaee.6.0>3.0.0.Final</version.org.jboss.spec.jboss.javaee.6.0>
 
         <!-- other plugin versions -->
-        <version.compiler.plugin>2.3.1</version.compiler.plugin>
-        <version.war.plugin>2.1.1</version.war.plugin>
 		<version.uomo>0.7.0-SNAPSHOT</version.uomo>
 		<icu4j-version>50.1.1</icu4j-version>
         <!-- maven-compiler-plugin -->
@@ -139,7 +137,6 @@
         <plugins>
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>${version.war.plugin}</version>
                 <configuration>
                <!-- Java EE 6 doesn't require web.xml, Maven needs to catch 
                   up! -->
@@ -156,7 +153,6 @@
             annotation processors -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${version.compiler.plugin}</version>
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
@@ -165,5 +161,10 @@
         </plugins>
     </build>
 
+    <parent>
+    	<groupId>org.unitsofmeasurement.demos</groupId>
+    	<artifactId>unit-web-demos</artifactId>
+    	<version>0.5-SNAPSHOT</version>
+    </parent>
 </project>
 

@@ -9,7 +9,10 @@
 		<groupId>org.unitsofmeasurement.demos</groupId>
 		<artifactId>unit-demos</artifactId>
 	</parent>
-
+    <description>Web-based Demos of the Units of Measurement API</description>
+    <modules>
+        <module>temperature-converter</module>
+    </modules>
 	<dependencies>
 		<dependency>
 			<groupId>javax.measure</groupId>
@@ -91,5 +94,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<description>Web-based Demos of the Units of Measurement API</description>
 </project>
