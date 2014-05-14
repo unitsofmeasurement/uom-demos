@@ -15,7 +15,7 @@
  */
 package org.unitsofmeasurement.demo.types;
 
-import static org.unitsofmeasurement.ri.format.OutputHelper.println;
+import static org.unitsofmeasurement.ri.util.OutputHelper.println;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
