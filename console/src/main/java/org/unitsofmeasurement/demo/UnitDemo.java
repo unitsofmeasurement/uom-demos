@@ -18,10 +18,12 @@ package org.unitsofmeasurement.demo;
 import static org.unitsofmeasurement.ri.util.SI.*;
 import static org.unitsofmeasurement.ri.util.US.*;
 
+import javax.measure.Measurement;
 import javax.measure.quantity.Area;
 import javax.measure.quantity.Length;
 
 import org.unitsofmeasurement.ri.AbstractMeasurement;
+import org.unitsofmeasurement.ri.AbstractQuantity;
 
 /**
  * @author Werner Keil
@@ -32,15 +34,18 @@ public class UnitDemo {
 	/**
 	 * @param args
 	 */
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
-		AbstractMeasurement<Length> l = AbstractMeasurement.of(100d, METRE);
+		AbstractQuantity<Length> l = AbstractQuantity.of(100d, METRE);
 		System.out.println(l);
-		l = AbstractMeasurement.of(74L, FOOT);
+		l = AbstractQuantity.of(74L, FOOT);
 		System.out.println(l);
 		l = l.to(METRE);
 		System.out.println(l);
-		AbstractMeasurement<Area> a = AbstractMeasurement.of(10, HECTARE);
+		AbstractMeasurement<Area, Number> a = (AbstractMeasurement<Area, Number>) AbstractMeasurement
+				.of(10, HECTARE);
 		System.out.println(a);
+		Measurement<Area, Number> na = a.to(SQUARE_FOOT);
 	}
 
 }

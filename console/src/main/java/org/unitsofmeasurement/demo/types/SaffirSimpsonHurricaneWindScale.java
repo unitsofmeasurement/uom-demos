@@ -15,7 +15,7 @@
  */
 package org.unitsofmeasurement.demo.types;
 
-import static org.unitsofmeasurement.ri.AbstractMeasurement.NONE;
+import static org.unitsofmeasurement.ri.AbstractQuantity.NONE;
 import static org.unitsofmeasurement.demo.types.SaffirSimpsonHurricaneWindScale.Category.*;
 
 import javax.measure.Quantity;
