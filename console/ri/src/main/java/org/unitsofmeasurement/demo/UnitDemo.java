@@ -45,7 +45,7 @@ public class UnitDemo {
 		l = l.to(METRE);
 		System.out.println(l);
 		AbstractMeasurement<Area, Number> a = (AbstractMeasurement<Area, Number>) AbstractMeasurement
-				.of(10, SI.HECTARE);
+				.of(10, HECTARE);
 		System.out.println(a);
 		Measurement<Area, Number> na = a.to(SQUARE_FOOT);
 		AbstractQuantity<Mass> m = AbstractQuantity.of(12, SI.KILOGRAM);
