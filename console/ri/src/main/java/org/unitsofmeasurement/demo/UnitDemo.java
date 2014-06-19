@@ -21,9 +21,11 @@ import static org.unitsofmeasurement.ri.util.US.*;
 import javax.measure.Measurement;
 import javax.measure.quantity.Area;
 import javax.measure.quantity.Length;
+import javax.measure.quantity.Mass;
 
 import org.unitsofmeasurement.ri.AbstractMeasurement;
 import org.unitsofmeasurement.ri.AbstractQuantity;
+import org.unitsofmeasurement.ri.util.SI;
 
 /**
  * @author Werner Keil
@@ -43,9 +45,11 @@ public class UnitDemo {
 		l = l.to(METRE);
 		System.out.println(l);
 		AbstractMeasurement<Area, Number> a = (AbstractMeasurement<Area, Number>) AbstractMeasurement
-				.of(10, HECTARE);
+				.of(10, SI.HECTARE);
 		System.out.println(a);
 		Measurement<Area, Number> na = a.to(SQUARE_FOOT);
+		AbstractQuantity<Mass> m = AbstractQuantity.of(12, SI.KILOGRAM);
+		System.out.println(m);
 	}
 
 }
