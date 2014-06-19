@@ -4,7 +4,7 @@
 	<groupId>org.unitsofmeasurement.demos</groupId>
 	<artifactId>unit-demos</artifactId>
     <parent>
-        <version>0.5-SNAPSHOT</version>
+        <version>0.5</version>
         <artifactId>unitsofmeasurement-parent</artifactId>
         <groupId>org.unitsofmeasurement</groupId>
     </parent>

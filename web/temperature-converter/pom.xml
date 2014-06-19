@@ -164,7 +164,7 @@
     <parent>
     	<groupId>org.unitsofmeasurement.demos</groupId>
     	<artifactId>unit-web-demos</artifactId>
-    	<version>0.5-SNAPSHOT</version>
+    	<version>0.5</version>
     </parent>
 </project>
 

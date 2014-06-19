@@ -6,7 +6,7 @@
 	<name>Units of Measurement API Console Demos</name>
 	<description>An intial draft of a Unit Standard Demo.</description>
 	<parent>
-		<version>0.5-SNAPSHOT</version>
+		<version>0.5</version>
 		<groupId>org.unitsofmeasurement.demos</groupId>
 		<artifactId>unit-demos</artifactId>
 	</parent>
