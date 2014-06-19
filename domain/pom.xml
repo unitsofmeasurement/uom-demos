@@ -6,7 +6,7 @@
 	<packaging>pom</packaging>
 	<url>http://code.google.com/p/unitsofmeasure/</url>
 	<parent>
-		<version>0.5</version>
+		<version>0.6-SNAPSHOT</version>
 		<groupId>org.unitsofmeasurement.demos</groupId>
 		<artifactId>unit-demos</artifactId>
 	</parent>

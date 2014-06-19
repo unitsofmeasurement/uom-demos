@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.unitsofmeasurement.demos</groupId>
 		<artifactId>unit-console-demos</artifactId>
-		<version>0.5</version>
+		<version>0.6-SNAPSHOT</version>
 	</parent>
 	<artifactId>unit-se-console-demos</artifactId>
 
@@ -14,12 +14,11 @@
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 	</properties>
-	
+
 	<dependencies>
-	       <dependency>
-            <groupId>org.unitsofmeasurement.impl</groupId>
-            <artifactId>unit-impl-se</artifactId>
-            <version>0.2-SNAPSHOT</version>
-        </dependency>
+		<dependency>
+			<groupId>org.unitsofmeasurement.impl</groupId>
+			<artifactId>unit-impl-se</artifactId>
+		</dependency>
 	</dependencies>
 </project>

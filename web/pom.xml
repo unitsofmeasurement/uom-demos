@@ -5,7 +5,7 @@
 	<name>Units of Measurement Web-based Demos</name>
 	<packaging>pom</packaging>
 	<parent>
-		<version>0.5</version>
+		<version>0.6-SNAPSHOT</version>
 		<groupId>org.unitsofmeasurement.demos</groupId>
 		<artifactId>unit-demos</artifactId>
 	</parent>
