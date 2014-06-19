@@ -31,8 +31,8 @@
 		<jdkVersion>1.7</jdkVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>0.2-SNAPSHOT</ri.version>
-		<lib.version>0.1-SNAPSHOT</lib.version>
+		<ri.version>0.2</ri.version>
+		<lib.version>0.2-SNAPSHOT</lib.version>
 	</properties>
 
 	<dependencyManagement>
