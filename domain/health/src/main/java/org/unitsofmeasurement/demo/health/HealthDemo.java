@@ -17,18 +17,19 @@ package org.unitsofmeasurement.demo.health;
 
 import static org.unitsofmeasurement.domain.health.Health.BPM;
 
+import org.unitsofmeasurement.domain.health.types.HeartRate;
 import org.unitsofmeasurement.domain.health.types.HeartRateAmount;
 
 /**
- * @version 0.2
+ * @version 0.3
  * @author Werner Keil
  *
  */
 public class HealthDemo {
 
 	public static void main(String[] args) {
-		HeartRateAmount amount =  HeartRateAmount.of(Double.valueOf(90), BPM);
-		System.out.println(amount);
+		HeartRate rate =  HeartRateAmount.of(Double.valueOf(90), BPM);
+		System.out.println(rate);
 	}
 
 }
