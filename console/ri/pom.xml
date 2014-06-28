@@ -8,6 +8,10 @@
 	</parent>
 	<artifactId>unit-ri-console-demos</artifactId>
 	<dependencies>
+	    <dependency>
+	       <groupId>javax.measure</groupId>
+	       <artifactId>unit-api</artifactId>
+	    </dependency>
 		<dependency>
 			<groupId>org.unitsofmeasurement</groupId>
 			<artifactId>unit-ri</artifactId>

@@ -14,15 +14,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>javax.measure</groupId>
-			<artifactId>unit-api-core</artifactId>
-		</dependency>
-		<dependency>
-            <groupId>javax.measure</groupId>
-            <artifactId>unit-api-format</artifactId>
-        </dependency>
-		<dependency>
-			<groupId>javax.measure</groupId>
-			<artifactId>unit-api-quantity</artifactId>
+			<artifactId>unit-api</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -86,6 +78,6 @@
 	</build>
 	<modules>
 		<module>ri</module>
-		<module>se</module>
+		<!--  >module>se</module -->
 	</modules>
 </project>
