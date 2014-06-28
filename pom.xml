@@ -3,9 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.unitsofmeasurement.demos</groupId>
 	<artifactId>unit-demos</artifactId>
-	<version>0.6-SNAPSHOT</version>
     <parent>
-        <version>0.5</version>
+        <version>0.6-SNAPSHOT</version>
         <artifactId>unitsofmeasurement-parent</artifactId>
         <groupId>org.unitsofmeasurement</groupId>
     </parent>
@@ -38,21 +37,6 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
-				<groupId>javax.measure</groupId>
-				<artifactId>unit-api-core</artifactId>
-				<version>${jsr.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>javax.measure</groupId>
-				<artifactId>unit-api-format</artifactId>
-				<version>${jsr.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>javax.measure</groupId>
-				<artifactId>unit-api-quantity</artifactId>
-				<version>${jsr.version}</version>
-			</dependency>
 			<dependency>
 				<groupId>org.unitsofmeasurement</groupId>
 				<artifactId>unit-ri</artifactId>
@@ -110,8 +94,8 @@
 		</plugins>
 	</build>
 	<modules>
-		<module>console</module>
-		<module>domain</module>
+		<!-- module>console</module>
+		<  >module>domain</module -->
 		<module>javafx</module>
 		<module>web</module>
 	</modules>
