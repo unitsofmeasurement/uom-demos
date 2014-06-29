@@ -3,8 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>unit-console-demos</artifactId>
 	<packaging>pom</packaging>
-	<name>Units of Measurement API Console Demos</name>
-	<description>A Unit Standard Console Demo.</description>
+	<name>Units of Measurement Console Demos</name>
+	<description>Unit Standard Console based Demos.</description>
 	<parent>
 		<version>0.6-SNAPSHOT</version>
 		<groupId>org.unitsofmeasurement.demos</groupId>
@@ -78,6 +78,6 @@
 	</build>
 	<modules>
 		<module>ri</module>
-		<!--  >module>se</module -->
+		<module>se</module>
 	</modules>
 </project>

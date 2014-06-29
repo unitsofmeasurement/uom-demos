@@ -6,15 +6,17 @@
 		<artifactId>unit-console-demos</artifactId>
 		<version>0.6-SNAPSHOT</version>
 	</parent>
+	<name>Units of Measurement Console Demos for RI</name>
 	<artifactId>unit-ri-console-demos</artifactId>
-	<dependencies>
-	    <dependency>
-	       <groupId>javax.measure</groupId>
-	       <artifactId>unit-api</artifactId>
-	    </dependency>
-		<dependency>
-			<groupId>org.unitsofmeasurement</groupId>
-			<artifactId>unit-ri</artifactId>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.unitsofmeasurement</groupId>
+            <artifactId>unit-ri</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>

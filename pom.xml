@@ -37,6 +37,11 @@
 
 	<dependencyManagement>
 		<dependencies>
+		    <dependency>
+                <groupId>javax.measure</groupId>
+                <artifactId>unit-api</artifactId>
+                <version>${jsr.version}</version>
+            </dependency>
 			<dependency>
 				<groupId>org.unitsofmeasurement</groupId>
 				<artifactId>unit-ri</artifactId>
@@ -94,8 +99,8 @@
 		</plugins>
 	</build>
 	<modules>
-		<!-- module>console</module>
-		<  >module>domain</module -->
+		<module>console</module>
+		<module>domain</module>
 		<module>javafx</module>
 		<module>web</module>
 	</modules>
