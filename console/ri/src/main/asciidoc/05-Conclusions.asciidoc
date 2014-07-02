@@ -1,0 +1,38 @@
+=== Conclusions
+
+Now that’s the basics out of the way now you can try a few things that demonstrate the power of JSR 363, the Units of Measurement API...
+
+. Try changing the units used in your unit test for mass or acceleration to units of other quantities (i.e. seconds, metres, amperes, volts... ). +
+You will see the compiler error created because your unit is not the correct type... cool!
+. The same is true when we try to extract a value - change the +force.doubleValue+ line in the unit test to use units that are not a force... +
+same, the compiler error because the unit is not for a force! cool!
+
+This is important, it protects clients of your NewtonsSecondLaw API from making mistakes when they create values to pass to you. They can only pass in legitimate masses or accelerations.
+
+As an example we can add another test method to our test case:
+
+[source,java]
+----
+@Test
+public void testWithOddUnits() {
+   // We create a mass in US Pounds!
+   MassAmount m = new MassAmount(100, USCustomary.POUND);
+   // Now let’s create a whacky acceleration unit of our own...
+   @SuppressWarnings("unchecked") // we know this creates an acceleration!
+   Unit<Acceleration> inch_per_square_second = (Unit<Acceleration>)USCustomary.INCH.divide(SI.SECOND).divide(SI.SECOND);
+   // Note our N2L API does not know this unit at all!
+   AccelerationAmount a = new AccelerationAmount(100, inch_per_square_second);
+   ForceAmount force = NewtonsSecondLaw.calculateForce(m, a);
+   // Yet our API is able to calculate the corresponding force without change
+   // Nice...
+   assertEquals(867961.6621451874, force.doubleValue(SI.NEWTON), 0.0000000001);
+   // Now let’s try to get the result in a weird unit...
+   // The “pound-force” is a unit for Force in English engineering units 
+     // and British gravitational units (http://en.wikipedia.org/wiki/Pound-force)
+   Unit<Force> poundForce = SI.NEWTON.multiply(4.448222);
+   // and we can now extract the result of our previous calc in that new unit!
+   assertEquals(3860886.16071079, force.doubleValue(poundForce), 0.0000000001);
+}
+----
+
+Nice! Our API can handle weird and wonderful unit values as input and we can extract weird and wonderful unit values as output! And we didn't have to lift a finger.
