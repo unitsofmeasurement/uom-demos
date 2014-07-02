@@ -27,8 +27,8 @@
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
 	<properties>
-		<project.build.javaVersion>1.7</project.build.javaVersion>
 		<jdkVersion>1.7</jdkVersion>
+	    <project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<ri.version>0.3-SNAPSHOT</ri.version>
@@ -69,8 +69,8 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>${project.build.javaVersion}</source>
-					<target>${project.build.javaVersion}</target>
+					<source>${maven.compile.sourceLevel}</source>
+					<target>${maven.compile.targetLevel}</target>
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
