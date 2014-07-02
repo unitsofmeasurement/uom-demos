@@ -15,10 +15,10 @@
  */
 package org.unitsofmeasurement.demo.health;
 
-import static org.unitsofmeasurement.domain.health.Health.BPM;
+import static org.unitsofmeasurement.domain.health.ri.Health.BPM;
 
-import org.unitsofmeasurement.domain.health.types.HeartRate;
-import org.unitsofmeasurement.domain.health.types.HeartRateAmount;
+import org.unitsofmeasurement.domain.health.HeartRate;
+import org.unitsofmeasurement.domain.health.ri.HeartRateAmount;
 
 /**
  * @version 0.3

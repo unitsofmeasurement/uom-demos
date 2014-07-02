@@ -16,10 +16,10 @@
 package org.unitsofmeasurement.demo.health;
 
 import static org.junit.Assert.*;
-import static org.unitsofmeasurement.domain.health.Health.BPM;
+import static org.unitsofmeasurement.domain.health.ri.Health.BPM;
 
 import org.junit.Test;
-import org.unitsofmeasurement.domain.health.types.HeartRateAmount;
+import org.unitsofmeasurement.domain.health.ri.HeartRateAmount;
 
 public class HealthTest {
 
