@@ -16,6 +16,7 @@
 package org.unitsofmeasurement.demo.types;
 
 import static org.junit.Assert.assertEquals;
+import static org.unitsofmeasurement.ri.util.OutputHelper.println;
 
 import javax.measure.Unit;
 import javax.measure.quantity.Acceleration;
@@ -49,10 +50,11 @@ public class NewtonsSecondLawTest {
 	
 	@Test
 	public void testCalculateForce() {
+		println("Calculate Force");
 		MassAmount m = new MassAmount(1000, SI.GRAM);
 		AccelerationAmount a = new AccelerationAmount(2.5, SI.METRES_PER_SQUARE_SECOND);
 		ForceAmount force = NewtonsSecondLaw.calculateForce(m, a);
-		System.out.println("ForceAmount = " + force.doubleValue(SI.NEWTON));
+		println("ForceAmount = " + force.doubleValue(SI.NEWTON));
 		assertEquals(2.5, force.doubleValue(SI.NEWTON), 0.0001);
 	}
 	
@@ -61,22 +63,25 @@ public class NewtonsSecondLawTest {
 		MassAmount m = new MassAmount(1, SI.KILOGRAM);
 		AccelerationAmount a = new AccelerationAmount(2.5, SI.METRES_PER_SQUARE_SECOND);
 		ForceAmount force = NewtonsSecondLaw.calculateForce(m, a);
-		System.out.println("ForceAmount = " + force.doubleValue(SI.NEWTON));
+//		println("ForceAmount = " + force.doubleValue(SI.NEWTON));
 		assertEquals(2.5, force.doubleValue(SI.NEWTON), 0.0001);
 	}
 	
 	@Test
 	public void testWithOddUnits() {
-		MassAmount m = new MassAmount(100, US.POUND);
+		println("Test with Odd Units");
+		final MassAmount m = new MassAmount(100, US.POUND);
 		@SuppressWarnings("unchecked") // we know this creates an acceleration!
 		Unit<Acceleration> inch_per_square_second = (Unit<Acceleration>)US.INCH.divide(SI.SECOND).divide(SI.SECOND);
-		System.out.println(inch_per_square_second);
+		println(inch_per_square_second);
 		AccelerationAmount a = new AccelerationAmount(100, inch_per_square_second);
 		ForceAmount force = NewtonsSecondLaw.calculateForce(m, a);
+		println(force);
 		assertEquals(867961.6621451874, force.doubleValue(SI.NEWTON), 0.0000000001);
 		// Pound-force (http://en.wikipedia.org/wiki/Pound-force) is a unit for Force in English engineering units and British gravitational units 
 		Unit<Force> poundForce = SI.NEWTON.multiply(4.448222);
-		assertEquals(3860886.16071079, force.doubleValue(poundForce), 0.0000000001);				
+		assertEquals(3860886.16071079, force.doubleValue(poundForce), 0.0000000001);
+		println(poundForce);
 	}
 	
 }

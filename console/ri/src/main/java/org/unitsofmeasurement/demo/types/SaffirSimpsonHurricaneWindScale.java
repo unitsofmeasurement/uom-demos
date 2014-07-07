@@ -25,7 +25,7 @@ import javax.measure.util.Range;
 
 /**
  * @author Werner Keil
- * @version 0.4.5
+ * @version 0.5
  * @see <a
  *      href="http://en.wikipedia.org/wiki/Saffir%E2%80%93Simpson_hurricane_wind_scale">
  *      Wikipedia: Saffir–Simpson hurricane wind scale</a>
@@ -33,6 +33,9 @@ import javax.measure.util.Range;
 public class SaffirSimpsonHurricaneWindScale extends Range<Quantity<Speed>>
 		implements Nameable {
 
+	/** 
+	 * The storm category
+	 */
 	public static enum Category {
 		UNKNOWN, TROPICAL_DEPRESSION, TROPICAL_STORM, ONE, TWO, THREE, FOUR, FIVE
 	}
