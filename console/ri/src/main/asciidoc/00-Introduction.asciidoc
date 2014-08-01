@@ -5,7 +5,7 @@ _______
 The acceleration of a body is directly proportional to, and in the same direction as, the net force acting on the body, and inversely proportional to its mass.
 _______
 
-image:images/image20.jpg[]
+image:image20.jpg[]
 
 Otherwise written as:
 

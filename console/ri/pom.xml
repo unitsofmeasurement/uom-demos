@@ -40,7 +40,7 @@
 									<sourceHighlighter>highlightjs</sourceHighlighter> <!-- coderay -->
 									<backend>html</backend>
 									<embedAssets>true</embedAssets>
-									<imagesDir>arc/main/asciidoc/images</imagesDir>
+									<imagesDir>src/main/asciidoc/images/</imagesDir>
 								</configuration>
 							</execution>
 							<!-- execution> <id>output-pdf</id> <phase>generate-resources</phase> 
