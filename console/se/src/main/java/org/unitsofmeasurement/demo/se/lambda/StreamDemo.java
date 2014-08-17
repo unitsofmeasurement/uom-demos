@@ -10,9 +10,9 @@ import org.unitsofmeasurement.impl.util.SI;
 public class StreamDemo {
 
 	public static void main(String[] args) {
-		//Set<Unit> units = SI.getInstance().getUnits();
-		//Stream<String> names = units.stream().map(Unit::getName);
-
+		Set<Unit<?>> units = SI.getInstance().getUnits();
+		Stream<String> names = units.stream().map(Unit::getSymbol);
+		names.forEach( System.out::println );
 	}
 
 }
