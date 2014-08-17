@@ -21,7 +21,8 @@ import static org.unitsofmeasurement.demo.types.SaffirSimpsonHurricaneWindScale.
 import javax.measure.Quantity;
 import javax.measure.function.Nameable;
 import javax.measure.quantity.Speed;
-import javax.measure.util.Range;
+
+import org.unitsofmeasurement.ri.util.Range;
 
 /**
  * @author Werner Keil

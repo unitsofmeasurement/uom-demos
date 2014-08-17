@@ -4,7 +4,7 @@
 	<groupId>org.unitsofmeasurement.demos</groupId>
 	<artifactId>unit-demos</artifactId>
     <parent>
-        <version>0.6</version>
+        <version>0.7-SNAPSHOT</version>
         <artifactId>unitsofmeasurement-parent</artifactId>
         <groupId>org.unitsofmeasurement</groupId>
     </parent>
@@ -31,8 +31,8 @@
 	    <project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>0.3</ri.version>
-		<lib.version>0.2</lib.version>
+		<ri.version>0.4-SNAPSHOT</ri.version>
+		<lib.version>0.3-SNAPSHOT</lib.version>
 	</properties>
 
 	<dependencyManagement>

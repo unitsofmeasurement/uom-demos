@@ -5,7 +5,7 @@
 	<name>Units of Measurement JavaFX Demos</name>
 	<packaging>pom</packaging>
 	<parent>
-		<version>0.6</version>
+		<version>0.7-SNAPSHOT</version>
 		<groupId>org.unitsofmeasurement.demos</groupId>
 		<artifactId>unit-demos</artifactId>
 	</parent>
