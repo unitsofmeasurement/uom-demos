@@ -6,7 +6,7 @@
 	<name>Units of Measurement Console Demos</name>
 	<description>Unit Standard Console based Demos.</description>
 	<parent>
-		<version>0.6-SNAPSHOT</version>
+		<version>0.6</version>
 		<groupId>org.unitsofmeasurement.demos</groupId>
 		<artifactId>unit-demos</artifactId>
 	</parent>
