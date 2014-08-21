@@ -1,10 +1,9 @@
-package org.unitsofmeasurement.demo.se.lambda;
+package tec.uom.demo.se.lambda;
 
 import java.util.Set;
 import java.util.stream.Stream;
 
 import javax.measure.Unit;
-
 import org.unitsofmeasurement.impl.util.SI;
 
 public class StreamDemo {
