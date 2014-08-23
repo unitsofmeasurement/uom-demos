@@ -15,7 +15,7 @@
 
     <groupId>org.jboss.as.quickstarts</groupId>
     <artifactId>jboss-as-temperature-converter</artifactId>
-    <version>7.1.5-SNAPSHOT</version>
+    <version>6.3.0</version>
     <packaging>war</packaging>
     <name>JBoss AS Quickstarts: Temperature Converter</name>
     <description>JBoss AS Quickstarts: Temperature Converter. Given Celsius return Fahrenheit; Given Fahrenheit return Celsius</description>
@@ -111,7 +111,7 @@
 		<dependency>
 			<groupId>org.unitsofmeasurement</groupId>
 			<artifactId>unit-api</artifactId>
-			<version>0.7-SNAPSHOT</version>
+			<version>${jsr.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.ibm.icu</groupId>
@@ -164,7 +164,7 @@
     <parent>
     	<groupId>org.unitsofmeasurement.demos</groupId>
     	<artifactId>unit-web-demos</artifactId>
-    	<version>0.7-SNAPSHOT</version>
+    	<version>0.6.3</version>
     </parent>
 </project>
 
