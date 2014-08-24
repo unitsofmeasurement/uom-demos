@@ -109,7 +109,7 @@
 			<version>${version.uomo}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.unitsofmeasurement</groupId>
+			<groupId>javax.measure</groupId>
 			<artifactId>unit-api</artifactId>
 			<version>${jsr.version}</version>
 		</dependency>
@@ -161,10 +161,10 @@
         </plugins>
     </build>
 
-    <parent>
-    	<groupId>org.unitsofmeasurement.demos</groupId>
-    	<artifactId>unit-web-demos</artifactId>
-    	<version>0.6.3</version>
-    </parent>
+  	 <parent>
+		<groupId>tec.uom</groupId>
+		<artifactId>uom-web-demos</artifactId>
+		<version>0.7-SNAPSHOT</version>
+	</parent>
 </project>
 

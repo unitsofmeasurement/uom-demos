@@ -4,7 +4,8 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 import javax.measure.Unit;
-import org.unitsofmeasurement.impl.util.SI;
+
+import tec.uom.se.util.SI;
 
 public class StreamDemo {
 

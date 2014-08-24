@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>unit-console-demos</artifactId>
+	<artifactId>console</artifactId>
 	<packaging>pom</packaging>
 	<name>Units of Measurement Console Demos</name>
 	<description>Unit Standard Console based Demos.</description>
 	<parent>
-		<version>0.6.3</version>
-		<groupId>org.unitsofmeasurement.demos</groupId>
-		<artifactId>unit-demos</artifactId>
+		<groupId>tec.uom</groupId>
+		<artifactId>uom-demos</artifactId>
+		<version>0.7-SNAPSHOT</version>
 	</parent>
 
 	<dependencies>
@@ -69,7 +69,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
-						<Export-Package>org.unitsofmeasurement.demo.*</Export-Package>
+						<Export-Package>tec.uom.demo.*</Export-Package>
 						<Private-Package>!*</Private-Package>
 					</instructions>
 				</configuration>
