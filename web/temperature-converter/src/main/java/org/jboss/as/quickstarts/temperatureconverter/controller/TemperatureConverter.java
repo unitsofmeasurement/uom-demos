@@ -22,12 +22,12 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.eclipse.uomo.units.IMeasure;
-import org.eclipse.uomo.units.SI;
+import javax.measure.Quantity;
+import javax.measure.Unit;
+import javax.measure.quantity.Temperature;
+import tec.uom.ri.util.SI;
 import org.jboss.as.quickstarts.temperatureconverter.ejb.TemperatureAmount;
 import org.jboss.as.quickstarts.temperatureconverter.ejb.TemperatureConvertEJB;
-import org.unitsofmeasurement.quantity.Temperature;
-import org.unitsofmeasurement.unit.Unit;
 
 import com.ibm.icu.text.DecimalFormat;
 
@@ -71,9 +71,9 @@ public class TemperatureConverter implements Serializable {
         		TemperatureAmount.parse(sourceTemperature, defaultScale)));
     }
 
-    private String formatTemperature(IMeasure<Temperature> temperature) {
-    	return new DecimalFormat("###.00").format(temperature.value()) + " " + 
-          String.valueOf(temperature.unit());
+    private String formatTemperature(Quantity<Temperature> temperature) {
+    	return new DecimalFormat("###.00").format(temperature.getValue()) + " " + 
+          String.valueOf(temperature.getUnit());
     }
     
     public String getSourceTemperature() {

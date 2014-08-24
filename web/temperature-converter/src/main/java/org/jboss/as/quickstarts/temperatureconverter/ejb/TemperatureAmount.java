@@ -19,11 +19,11 @@ package org.jboss.as.quickstarts.temperatureconverter.ejb;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.eclipse.uomo.units.SI;
-import org.eclipse.uomo.units.impl.BaseAmount;
-import org.eclipse.uomo.units.impl.system.USCustomary;
-import org.unitsofmeasurement.quantity.Temperature;
-import org.unitsofmeasurement.unit.Unit;
+import tec.uom.ri.util.SI;
+import tec.uom.ri.util.US;
+import tec.uom.ri.BaseQuantity;
+import javax.measure.quantity.Temperature;
+import javax.measure.Unit;
 
 /**
  * A domain object that can store a temperature and scale. Additionally, it can parse a string to a temperature and scale.
@@ -33,7 +33,7 @@ import org.unitsofmeasurement.unit.Unit;
  * @author Werner Keil
  * 
  */
-public class TemperatureAmount extends BaseAmount<Temperature>{
+public class TemperatureAmount extends BaseQuantity<Temperature>{
 
     static final double ABSOLUTE_ZERO_C = -273.150;
     static final double ABSOLUTE_ZERO_F = -459.670;
@@ -85,7 +85,7 @@ public class TemperatureAmount extends BaseAmount<Temperature>{
     }
 
     public  Unit<Temperature> getScale() {
-        return unit();
+        return getUnit();
     }
 
     private static Unit<Temperature> valueOfAbbreviation(String value) {
@@ -94,14 +94,14 @@ public class TemperatureAmount extends BaseAmount<Temperature>{
         } else if ("C".equals(value.toUpperCase())) {
             return SI.CELSIUS;
         } else if ("F".equals(value.toUpperCase())) {
-            return USCustomary.FAHRENHEIT;
+            return US.FAHRENHEIT;
         } else {
             throw new IllegalArgumentException(value + " not recognized as a valid scale");
         }
     }
     
     public double getTemperature() {
-        return value().doubleValue();
+        return getValue().doubleValue();
     }
 
 //    @Override

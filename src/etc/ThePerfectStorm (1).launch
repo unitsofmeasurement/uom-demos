@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/unit-ri-console-demos/src/main/java/org/unitsofmeasurement/demo/ThePerfectStorm.java"/>
+<listEntry value="/uom-ri-console-demos/src/main/java/tec/uom/demo/ThePerfectStorm.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
@@ -10,8 +10,8 @@
 <listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.unitsofmeasurement.demo.ThePerfectStorm"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="tec.uom.demo.ThePerfectStorm"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="1"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="unit-ri-console-demos"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="uom-ri-console-demos"/>
 <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
 </launchConfiguration>

@@ -17,4 +17,4 @@
  * @author Werner Keil
  *
  */
-package tec.uomdemo.health;
+package tec.uom.demo.health;

@@ -24,12 +24,12 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.inject.Named;
 
-import org.eclipse.uomo.units.AbstractUnit;
-import org.eclipse.uomo.units.SI;
-import org.eclipse.uomo.units.impl.DimensionImpl;
-import org.eclipse.uomo.units.impl.system.USCustomary;
-import org.unitsofmeasurement.quantity.Temperature;
-import org.unitsofmeasurement.unit.Unit;
+import tec.uom.ri.AbstractUnit;
+import tec.uom.ri.util.SI;
+import tec.uom.ri.model.QuantityDimension;
+import tec.uom.ri.util.US;
+import javax.measure.quantity.Temperature;
+import javax.measure.Unit;
 
 /**
  * A JSF converter that can handle the {@link Temperature} unit.
@@ -40,11 +40,11 @@ import org.unitsofmeasurement.unit.Unit;
  */
 @Named
 public class ScaleConverter implements Converter {
-	Unit<?>[] temps = new Unit<?>[]{ SI.CELSIUS, USCustomary.FAHRENHEIT };
+	Unit<?>[] temps = new Unit<?>[]{ SI.CELSIUS, US.FAHRENHEIT };
 	
     @SuppressWarnings("unchecked")
 	public Unit<?>[] getScales() {
-        return ((Set<? extends Unit<Temperature>>) USCustomary.getInstance().getUnits(DimensionImpl.TEMPERATURE)).toArray(temps);
+        return ((Set<? extends Unit<Temperature>>) US.getInstance().getUnits(QuantityDimension.TEMPERATURE)).toArray(temps);
     }
 
     @Override
@@ -52,7 +52,7 @@ public class ScaleConverter implements Converter {
         if ("on".equals(value)) {
         	return SI.CELSIUS;
         }
-    	return AbstractUnit.valueOf(value);
+    	return AbstractUnit.of(value);
     }
 
     @Override

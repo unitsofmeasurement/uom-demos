@@ -17,15 +17,15 @@
 
 package org.jboss.as.quickstarts.temperatureconverter.ejb;
 
-import static org.eclipse.uomo.units.SI.CELSIUS;
-import static org.eclipse.uomo.units.impl.system.USCustomary.FAHRENHEIT;
+import static tec.uom.ri.util.SI.CELSIUS;
+import static tec.uom.ri.util.US.FAHRENHEIT;
 
 import javax.ejb.Stateless;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
-import org.eclipse.uomo.units.IMeasure;
-import org.unitsofmeasurement.quantity.Temperature;
+import javax.measure.Quantity;
+import javax.measure.quantity.Temperature;
 
 /**
  * A simple SLSB EJB. The EJB does not use an interface.
@@ -42,7 +42,7 @@ public class TemperatureConvertEJB {
      * @param source the temperature to convert from
      * @return the converted temperature.
      */
-    public IMeasure<Temperature> convert(TemperatureAmount source) {
+    public Quantity<Temperature> convert(TemperatureAmount source) {
         
         // Convert our Temperature
         if (source.getScale() == CELSIUS) { // Celsius to Fahrenheit

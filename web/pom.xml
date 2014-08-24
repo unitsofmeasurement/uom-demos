@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>unit-web-demos</artifactId>
+	<artifactId>uom-web-demos</artifactId>
 	<name>Units of Measurement Web-based Demos</name>
 	<packaging>pom</packaging>
 	<parent>
-		<groupId>tec.uom</groupId>
+		<groupId>tec.uom.demo</groupId>
 		<artifactId>uom-demos</artifactId>
 		<version>0.7-SNAPSHOT</version>
 	</parent>
@@ -20,7 +20,7 @@
 		</dependency>
 		<dependency>
 			<groupId>tec.uom</groupId>
-			<artifactId>uom-ri</artifactId>
+			<artifactId>unit-ri</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -37,7 +37,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
 				<configuration>
 					<source>${project.build.javaVersion}</source>
 					<target>${project.build.javaVersion}</target>
@@ -51,7 +50,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.3.2</version>
 				<configuration>
 					<archive>
 						<manifest>
@@ -75,7 +73,6 @@
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
-				<version>2.3.5</version>
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>

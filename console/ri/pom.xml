@@ -2,8 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>tec.uom</groupId>
-		<artifactId>console</artifactId>
+		<groupId>tec.uom.demo</groupId>
+		<artifactId>uom-console-demos</artifactId>
 		<version>0.7-SNAPSHOT</version>
 	</parent>
 	<name>Units of Measurement Console Demos for RI</name>
@@ -11,7 +11,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>tec.uom</groupId>
-			<artifactId>uom-ri</artifactId>
+			<artifactId>unit-ri</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>

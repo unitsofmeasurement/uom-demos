@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package tec.uomdemo.health;
+package tec.uom.demo.health;
 
 import static tec.uom.lib.domain.health.ri.Health.BPM;
 

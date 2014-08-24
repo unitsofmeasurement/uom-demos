@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>domain</artifactId>
+	<artifactId>uom-domain-demos</artifactId>
 	<name>Units of Measurement Domain Specific Demos</name>
 	<packaging>pom</packaging>
-	<url>http://code.google.com/p/unitsofmeasure/</url>
+	<url>http://unitsofmeasurement.github.io/</url>
 	<parent>
-		<groupId>tec.uom</groupId>
+		<groupId>tec.uom.demo</groupId>
 		<artifactId>uom-demos</artifactId>
 		<version>0.7-SNAPSHOT</version>
 	</parent>
@@ -28,7 +28,7 @@
 		</dependency>
 		<dependency>
 			<groupId>tec.uom</groupId>
-			<artifactId>uom-ri</artifactId>
+			<artifactId>unit-ri</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>

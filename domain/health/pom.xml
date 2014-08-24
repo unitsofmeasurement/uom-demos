@@ -6,21 +6,21 @@
 	<packaging>bundle</packaging>
 	<url>http://github.com/unitsofmeasurement/demos</url>
 	<parent>
-		<groupId>tec.uom</groupId>
-		<artifactId>domain</artifactId>
+		<groupId>tec.uom.demo</groupId>
+		<artifactId>uom-domain-demos</artifactId>
 		<version>0.7-SNAPSHOT</version>
 	</parent>
 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>org.unitsofmeasurement.lib</groupId>
-				<artifactId>unit-lib-health</artifactId>
+				<groupId>tec.uom.lib</groupId>
+				<artifactId>uom-lib-health</artifactId>
 				<version>${lib.version}</version>
 			</dependency>
 			<dependency>
-                <groupId>org.unitsofmeasurement.lib</groupId>
-                <artifactId>unit-lib-health-ri</artifactId>
+                <groupId>tec.uom.lib</groupId>
+                <artifactId>uom-lib-health-ri</artifactId>
                 <version>${lib.version}</version>
             </dependency>
 		</dependencies>
@@ -32,17 +32,17 @@
 			<artifactId>unit-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.unitsofmeasurement.lib</groupId>
-			<artifactId>unit-lib-health</artifactId>
+			<groupId>tec.uom.lib</groupId>
+			<artifactId>uom-lib-health</artifactId>
 		</dependency>
 		
 		<dependency>
-            <groupId>org.unitsofmeasurement</groupId>
+            <groupId>tec.uom</groupId>
             <artifactId>unit-ri</artifactId>
         </dependency>
 		<dependency>
-            <groupId>org.unitsofmeasurement.lib</groupId>
-            <artifactId>unit-lib-health-ri</artifactId>
+            <groupId>tec.uom.lib</groupId>
+            <artifactId>uom-lib-health-ri</artifactId>
         </dependency>
         
 		<dependency>
@@ -99,7 +99,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
-						<Export-Package>org.unitsofmeasurement.demo.health.*</Export-Package>
+						<Export-Package>tec.uom.demo.health.*</Export-Package>
 						<Private-Package>!*</Private-Package>
 					</instructions>
 				</configuration>
