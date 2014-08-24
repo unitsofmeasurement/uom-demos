@@ -5,9 +5,9 @@
 	<name>Units of Measurement Web-based Demos</name>
 	<packaging>pom</packaging>
 	<parent>
-		<version>0.6.3</version>
-		<groupId>org.unitsofmeasurement.demos</groupId>
-		<artifactId>unit-demos</artifactId>
+		<groupId>tec.uom</groupId>
+		<artifactId>uom-demos</artifactId>
+		<version>0.7-SNAPSHOT</version>
 	</parent>
     <description>Web-based Demos of the Units of Measurement API</description>
     <modules>
@@ -19,8 +19,8 @@
 			<artifactId>unit-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.unitsofmeasurement</groupId>
-			<artifactId>unit-ri</artifactId>
+			<groupId>tec.uom</groupId>
+			<artifactId>uom-ri</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -79,7 +79,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
-						<Export-Package>org.unitsofmeasurement.demo.health.*</Export-Package>
+						<Export-Package>tec.uom.demo.health.*</Export-Package>
 						<Private-Package>!*</Private-Package>
 					</instructions>
 				</configuration>

@@ -2,11 +2,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.unitsofmeasurement.demos</groupId>
-		<artifactId>unit-console-demos</artifactId>
-		<version>0.6.3</version>
+		<groupId>tec.uom</groupId>
+		<artifactId>console</artifactId>
+		<version>0.7-SNAPSHOT</version>
 	</parent>
-	<artifactId>unit-se-console-demos</artifactId>
+	<artifactId>uom-se-console-demos</artifactId>
     <name>Units of Measurement Console Demos for Java SE</name>
 	<properties>
 		<jdkVersion>1.8</jdkVersion>
@@ -17,8 +17,8 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.unitsofmeasurement.impl</groupId>
-			<artifactId>unit-impl-se</artifactId>
+			<groupId>tec.uom</groupId>
+			<artifactId>uom-se</artifactId>
 		</dependency>
 	</dependencies>
 </project>
