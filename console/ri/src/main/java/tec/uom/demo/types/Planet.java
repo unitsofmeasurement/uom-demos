@@ -16,7 +16,7 @@
 package tec.uom.demo.types;
 
 import static tec.uom.demo.types.SolarSystem.G;
-import static tec.uom.ri.util.SI.*;
+import static tec.units.ri.util.SI.*;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
@@ -24,10 +24,10 @@ import javax.measure.quantity.Acceleration;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
-import tec.uom.ri.AbstractQuantity;
-import tec.uom.ri.quantity.AccelerationAmount;
-import tec.uom.ri.quantity.LengthAmount;
-import tec.uom.ri.quantity.MassAmount;
+import tec.units.ri.AbstractQuantity;
+import tec.units.ri.quantity.AccelerationAmount;
+import tec.units.ri.quantity.LengthAmount;
+import tec.units.ri.quantity.MassAmount;
 
 
 /**

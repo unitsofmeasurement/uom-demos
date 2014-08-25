@@ -1,11 +1,11 @@
 package tec.uom.demo;
 
-import static tec.uom.ri.util.SI.*;
+import static tec.units.ri.util.SI.*;
 
 import javax.measure.Unit;
 import javax.measure.quantity.Mass;
 
-import tec.uom.ri.AbstractQuantity;
+import tec.units.ri.AbstractQuantity;
 
 public class SIDemo {
 

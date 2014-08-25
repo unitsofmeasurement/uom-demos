@@ -1,12 +1,12 @@
 package tec.uom.demo;
 
-import static tec.uom.ri.util.UCUM.ATOMIC_MASS_UNIT;
+import static tec.units.ri.util.UCUM.ATOMIC_MASS_UNIT;
 
 import javax.measure.Unit;
 import javax.measure.quantity.Mass;
 
-import tec.uom.ri.AbstractQuantity;
-import tec.uom.ri.util.SI;
+import tec.units.ri.AbstractQuantity;
+import tec.units.ri.util.SI;
 
 public class UCUMDemo {
 

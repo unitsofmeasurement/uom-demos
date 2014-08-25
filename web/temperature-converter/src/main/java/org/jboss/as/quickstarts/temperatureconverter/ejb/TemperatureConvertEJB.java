@@ -17,8 +17,8 @@
 
 package org.jboss.as.quickstarts.temperatureconverter.ejb;
 
-import static tec.uom.ri.util.SI.CELSIUS;
-import static tec.uom.ri.util.US.FAHRENHEIT;
+import static tec.units.ri.util.SI.CELSIUS;
+import static tec.units.ri.util.US.FAHRENHEIT;
 
 import javax.ejb.Stateless;
 import javax.faces.application.FacesMessage;

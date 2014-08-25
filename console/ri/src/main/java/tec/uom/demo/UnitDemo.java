@@ -15,18 +15,18 @@
  */
 package tec.uom.demo;
 
-import static tec.uom.ri.util.SI.*;
-import static tec.uom.ri.util.US.*;
+import static tec.units.ri.util.SI.*;
+import static tec.units.ri.util.US.*;
 
 import javax.measure.Measurement;
 import javax.measure.quantity.Area;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
-import tec.uom.ri.AbstractMeasurement;
-import tec.uom.ri.AbstractQuantity;
-import tec.uom.ri.util.SI;
-import tec.uom.ri.util.US;
+import tec.units.ri.AbstractMeasurement;
+import tec.units.ri.AbstractQuantity;
+import tec.units.ri.util.SI;
+import tec.units.ri.util.US;
 
 /**
  * @author Werner Keil

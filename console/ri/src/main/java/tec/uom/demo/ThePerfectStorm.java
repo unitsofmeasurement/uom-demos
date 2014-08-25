@@ -22,17 +22,17 @@ import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.THREE;
 import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_DEPRESSION;
 import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_STORM;
 import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TWO;
-import static tec.uom.ri.util.CommonUnits.KILOMETRES_PER_HOUR;
-import static tec.uom.ri.util.SI.METRE;
-import static tec.uom.ri.util.SIPrefix.KILO;
-import static tec.uom.ri.util.US.MILES_PER_HOUR;
+import static tec.units.ri.util.CommonUnits.KILOMETRES_PER_HOUR;
+import static tec.units.ri.util.SI.METRE;
+import static tec.units.ri.util.SIPrefix.KILO;
+import static tec.units.ri.util.US.MILES_PER_HOUR;
 
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
 
+import tec.units.ri.AbstractQuantity;
 import tec.uom.demo.types.SaffirSimpsonHurricaneWindScale;
-import tec.uom.ri.AbstractQuantity;
 
 /**
  * @author Werner Keil

@@ -25,7 +25,7 @@ import javax.inject.Named;
 import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Temperature;
-import tec.uom.ri.util.SI;
+import tec.units.ri.util.SI;
 import org.jboss.as.quickstarts.temperatureconverter.ejb.TemperatureAmount;
 import org.jboss.as.quickstarts.temperatureconverter.ejb.TemperatureConvertEJB;
 

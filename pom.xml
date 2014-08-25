@@ -14,11 +14,11 @@
 		<name>Units of Measurement project</name>
 		<url>http://www.unitsofmeasurement.org</url>
 	</organization>
-	<description>An Initial Draft of Unit API Demos.</description>
+	<description>Parent for Units of Measurement Demos.</description>
 	<licenses>
 		<license>
 			<name>Apache 2.0</name>
-			<url>LICENSE</url>
+			<url>LICENSE.txt</url>
 		</license>
 	</licenses>
 
@@ -42,7 +42,7 @@
                 <version>${jsr.version}</version>
             </dependency>
 			<dependency>
-				<groupId>tec.uom</groupId>
+				<groupId>tec.units</groupId>
 				<artifactId>unit-ri</artifactId>
 				<version>${ri.version}</version>
 			</dependency>

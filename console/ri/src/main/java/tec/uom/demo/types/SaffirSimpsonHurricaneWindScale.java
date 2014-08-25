@@ -16,13 +16,13 @@
 package tec.uom.demo.types;
 
 import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.*;
-import static tec.uom.ri.AbstractQuantity.NONE;
+import static tec.units.ri.AbstractQuantity.NONE;
 
 import javax.measure.Quantity;
 import javax.measure.function.Nameable;
 import javax.measure.quantity.Speed;
 
-import tec.uom.ri.util.Range;
+import tec.units.ri.util.Range;
 
 /**
  * @author Werner Keil

@@ -16,7 +16,7 @@
 package tec.uom.demo.types;
 
 import static org.junit.Assert.assertEquals;
-import static tec.uom.ri.util.OutputHelper.println;
+import static tec.units.ri.util.OutputHelper.println;
 
 import javax.measure.Unit;
 import javax.measure.quantity.Acceleration;
@@ -25,11 +25,11 @@ import javax.measure.quantity.Force;
 import org.junit.Test;
 
 import tec.uom.demo.types.NewtonsSecondLaw;
-import tec.uom.ri.quantity.AccelerationAmount;
-import tec.uom.ri.quantity.ForceAmount;
-import tec.uom.ri.quantity.MassAmount;
-import tec.uom.ri.util.SI;
-import tec.uom.ri.util.US;
+import tec.units.ri.quantity.AccelerationAmount;
+import tec.units.ri.quantity.ForceAmount;
+import tec.units.ri.quantity.MassAmount;
+import tec.units.ri.util.SI;
+import tec.units.ri.util.US;
 
 /**
  *

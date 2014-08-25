@@ -10,7 +10,7 @@
 	<artifactId>uom-ri-console-demos</artifactId>
 	<dependencies>
 		<dependency>
-			<groupId>tec.uom</groupId>
+			<groupId>tec.units</groupId>
 			<artifactId>unit-ri</artifactId>
 		</dependency>
 		<dependency>

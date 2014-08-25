@@ -24,10 +24,10 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.inject.Named;
 
-import tec.uom.ri.AbstractUnit;
-import tec.uom.ri.util.SI;
-import tec.uom.ri.model.QuantityDimension;
-import tec.uom.ri.util.US;
+import tec.units.ri.AbstractUnit;
+import tec.units.ri.util.SI;
+import tec.units.ri.model.QuantityDimension;
+import tec.units.ri.util.US;
 import javax.measure.quantity.Temperature;
 import javax.measure.Unit;
 

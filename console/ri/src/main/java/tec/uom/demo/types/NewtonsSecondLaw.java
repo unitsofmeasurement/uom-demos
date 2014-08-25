@@ -15,10 +15,10 @@
  */
 package tec.uom.demo.types;
 
-import tec.uom.ri.quantity.AccelerationAmount;
-import tec.uom.ri.quantity.ForceAmount;
-import tec.uom.ri.quantity.MassAmount;
-import tec.uom.ri.util.SI;
+import tec.units.ri.quantity.AccelerationAmount;
+import tec.units.ri.quantity.ForceAmount;
+import tec.units.ri.quantity.MassAmount;
+import tec.units.ri.util.SI;
 
 /**
  *
