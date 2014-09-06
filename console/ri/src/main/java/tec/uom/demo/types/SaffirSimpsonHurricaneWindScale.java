@@ -19,9 +19,9 @@ import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.*;
 import static tec.units.ri.AbstractQuantity.NONE;
 
 import javax.measure.Quantity;
-import javax.measure.function.Nameable;
 import javax.measure.quantity.Speed;
 
+import tec.units.ri.function.Nameable;
 import tec.units.ri.util.Range;
 
 /**
