@@ -13,13 +13,13 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.unitsofmeasurement.demo.me;
+package tec.uom.demo.me;
 
-import static org.unitsofmeasurement.impl.enums.unit.TemperatureUnit.*;
+import static tec.uom.impl.enums.unit.TemperatureUnit.*;
 
 import javax.measure.quantity.Temperature;
 import javax.microedition.midlet.MIDlet;
-import org.unitsofmeasurement.impl.enums.quantity.TemperatureAmount;
+import tec.uom.impl.enums.quantity.TemperatureAmount;
 
 
 /**
