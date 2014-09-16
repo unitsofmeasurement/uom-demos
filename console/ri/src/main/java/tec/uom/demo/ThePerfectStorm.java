@@ -27,6 +27,7 @@ import static tec.units.ri.util.SI.METRE;
 import static tec.units.ri.util.SIPrefix.KILO;
 import static tec.units.ri.util.US.MILES_PER_HOUR;
 
+import javax.measure.Quantity;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
@@ -108,17 +109,17 @@ public class ThePerfectStorm {
 		}
 
 		if (scale !=null) {
-			final AbstractQuantity<Speed> metricSpeed = scale.hasMaximum() ?
+			final Quantity<Speed> metricSpeed = scale.hasMaximum() ?
 					(AbstractQuantity<Speed>) scale.getMaximum().to(KILOMETRES_PER_HOUR) :
 						(AbstractQuantity<Speed>) scale.getMinimum().to(KILOMETRES_PER_HOUR);
 
 			System.out.print(metricSpeed);
 			System.out.println(" (" + scale.getCategory() + ")");
-			AbstractQuantity<Length> l = AbstractQuantity.of(500, KILO(METRE));
+			Quantity<Length> l = AbstractQuantity.of(500, KILO(METRE));
 			System.out.println(String.format("Distance: %s", l));
 
 			@SuppressWarnings("unchecked")
-			AbstractQuantity<Time> timeToEvacuate = (AbstractQuantity<Time>) l.divide(metricSpeed);
+			Quantity<Time> timeToEvacuate = (AbstractQuantity<Time>) l.divide(metricSpeed);
 			System.out.println(String.format("Time to evacuate: %s", timeToEvacuate));
 		} else {
 			System.out.println("No scale given.");
