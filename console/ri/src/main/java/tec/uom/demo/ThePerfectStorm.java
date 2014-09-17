@@ -110,8 +110,8 @@ public class ThePerfectStorm {
 
 		if (scale !=null) {
 			final Quantity<Speed> metricSpeed = scale.hasMaximum() ?
-					(AbstractQuantity<Speed>) scale.getMaximum().to(KILOMETRES_PER_HOUR) :
-						(AbstractQuantity<Speed>) scale.getMinimum().to(KILOMETRES_PER_HOUR);
+					scale.getMaximum().to(KILOMETRES_PER_HOUR) :
+					scale.getMinimum().to(KILOMETRES_PER_HOUR);
 
 			System.out.print(metricSpeed);
 			System.out.println(" (" + scale.getCategory() + ")");
@@ -119,7 +119,7 @@ public class ThePerfectStorm {
 			System.out.println(String.format("Distance: %s", l));
 
 			@SuppressWarnings("unchecked")
-			Quantity<Time> timeToEvacuate = (AbstractQuantity<Time>) l.divide(metricSpeed);
+			Quantity<Time> timeToEvacuate = (Quantity<Time>) l.divide(metricSpeed);
 			System.out.println(String.format("Time to evacuate: %s", timeToEvacuate));
 		} else {
 			System.out.println("No scale given.");
