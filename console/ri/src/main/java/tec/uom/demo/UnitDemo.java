@@ -37,7 +37,6 @@ public class UnitDemo {
 	/**
 	 * @param args
 	 */
-	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		AbstractQuantity<Length> l = AbstractQuantity.of(100d, METRE);
 		System.out.println(l);
@@ -45,10 +44,10 @@ public class UnitDemo {
 		System.out.println(l);
 		l = l.to(METRE);
 		System.out.println(l);
-		AbstractMeasurement<Area, Number> a = (AbstractMeasurement<Area, Number>) AbstractMeasurement
+		Measurement<Area> a = AbstractMeasurement
 				.of(10, US.HECTARE);
 		System.out.println(a);
-		Measurement<Area, Number> na = a.to(SQUARE_FOOT);
+		Measurement<Area> na = a.to(SQUARE_FOOT);
 		AbstractQuantity<Mass> m = AbstractQuantity.of(12, SI.KILOGRAM);
 		System.out.println(m);
 	}
