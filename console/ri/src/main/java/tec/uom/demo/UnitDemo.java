@@ -23,8 +23,9 @@ import javax.measure.quantity.Area;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
-import tec.units.ri.AbstractMeasurement;
 import tec.units.ri.AbstractQuantity;
+import tec.units.ri.BaseMeasurement;
+import tec.units.ri.BaseQuantity;
 import tec.units.ri.util.SI;
 import tec.units.ri.util.US;
 
@@ -38,17 +39,17 @@ public class UnitDemo {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		AbstractQuantity<Length> l = AbstractQuantity.of(100d, METRE);
+		AbstractQuantity<Length> l = BaseQuantity.of(100d, METRE);
 		System.out.println(l);
-		l = AbstractQuantity.of(74L, FOOT);
+		l = BaseQuantity.of(74L, FOOT);
 		System.out.println(l);
 		l = l.to(METRE);
 		System.out.println(l);
-		Measurement<Area> a = AbstractMeasurement
+		Measurement<Area> a = BaseMeasurement
 				.of(10, US.HECTARE);
 		System.out.println(a);
 		Measurement<Area> na = a.to(SQUARE_FOOT);
-		AbstractQuantity<Mass> m = AbstractQuantity.of(12, SI.KILOGRAM);
+		AbstractQuantity<Mass> m = BaseQuantity.of(12, SI.KILOGRAM);
 		System.out.println(m);
 	}
 

@@ -32,7 +32,7 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
 
-import tec.units.ri.AbstractQuantity;
+import tec.units.ri.BaseQuantity;
 import tec.uom.demo.types.SaffirSimpsonHurricaneWindScale;
 
 /**
@@ -47,36 +47,36 @@ public class ThePerfectStorm {
 	 */
 	public static void main(String[] args) {
 		final SaffirSimpsonHurricaneWindScale std = SaffirSimpsonHurricaneWindScale.of(
-				null, AbstractQuantity.of(38, MILES_PER_HOUR), TROPICAL_DEPRESSION);
+				null, BaseQuantity.of(38, MILES_PER_HOUR), TROPICAL_DEPRESSION);
 		System.out.println(std);
 
 		final SaffirSimpsonHurricaneWindScale sts = SaffirSimpsonHurricaneWindScale.of(
-				AbstractQuantity.of(39, MILES_PER_HOUR),
-				AbstractQuantity.of(73, MILES_PER_HOUR), TROPICAL_STORM);
+				BaseQuantity.of(39, MILES_PER_HOUR),
+				BaseQuantity.of(73, MILES_PER_HOUR), TROPICAL_STORM);
 		System.out.println(sts);
 
 		final SaffirSimpsonHurricaneWindScale s1 = SaffirSimpsonHurricaneWindScale.of(
-				AbstractQuantity.of(74, MILES_PER_HOUR),
-				AbstractQuantity.of(95, MILES_PER_HOUR), ONE);
+				BaseQuantity.of(74, MILES_PER_HOUR),
+				BaseQuantity.of(95, MILES_PER_HOUR), ONE);
 		System.out.println(s1);
 
 		final SaffirSimpsonHurricaneWindScale s2 = SaffirSimpsonHurricaneWindScale.of(
-				AbstractQuantity.of(96, MILES_PER_HOUR),
-				AbstractQuantity.of(110, MILES_PER_HOUR), TWO);
+				BaseQuantity.of(96, MILES_PER_HOUR),
+				BaseQuantity.of(110, MILES_PER_HOUR), TWO);
 		System.out.println(s2);
 
 		final SaffirSimpsonHurricaneWindScale s3 = SaffirSimpsonHurricaneWindScale.of(
-				AbstractQuantity.of(111, MILES_PER_HOUR),
-				AbstractQuantity.of(129, MILES_PER_HOUR), THREE);
+				BaseQuantity.of(111, MILES_PER_HOUR),
+				BaseQuantity.of(129, MILES_PER_HOUR), THREE);
 		System.out.println(s3);
 
 		final SaffirSimpsonHurricaneWindScale s4 = SaffirSimpsonHurricaneWindScale.of(
-				AbstractQuantity.of(130, MILES_PER_HOUR),
-				AbstractQuantity.of(156, MILES_PER_HOUR), FOUR);
+				BaseQuantity.of(130, MILES_PER_HOUR),
+				BaseQuantity.of(156, MILES_PER_HOUR), FOUR);
 		System.out.println(s4);
 
 		final SaffirSimpsonHurricaneWindScale s5 = SaffirSimpsonHurricaneWindScale.of(
-				AbstractQuantity.of(157, MILES_PER_HOUR), null, FIVE);
+				BaseQuantity.of(157, MILES_PER_HOUR), null, FIVE);
 		System.out.println(s5);
 
 		int argument = -1;
@@ -115,7 +115,7 @@ public class ThePerfectStorm {
 
 			System.out.print(metricSpeed);
 			System.out.println(" (" + scale.getCategory() + ")");
-			Quantity<Length> l = AbstractQuantity.of(500, KILO(METRE));
+			Quantity<Length> l = BaseQuantity.of(500, KILO(METRE));
 			System.out.println(String.format("Distance: %s", l));
 
 			@SuppressWarnings("unchecked")

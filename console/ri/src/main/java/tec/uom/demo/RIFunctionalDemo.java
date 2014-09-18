@@ -5,7 +5,7 @@ import javax.measure.Unit;
 import javax.measure.function.ConversionOperator;
 import javax.measure.quantity.Length;
 
-import tec.units.ri.AbstractQuantity;
+import tec.units.ri.BaseQuantity;
 import tec.units.ri.util.SI;
 import tec.units.ri.util.US;
 
@@ -23,7 +23,7 @@ public class RIFunctionalDemo {
 //		System.out.println(converted3);
 		//Quantity<Length> conv2 = (from) -> Integer.valueOf(from);
 		
-		Quantity<Length> len = AbstractQuantity.of(10, SI.METRE);
+		Quantity<Length> len = BaseQuantity.of(10, SI.METRE);
 		Quantity<Length> len2 = len.to(US.FOOT);
 		System.out.println(len2);
 	}
