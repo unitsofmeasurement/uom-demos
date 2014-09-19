@@ -77,8 +77,6 @@ public class JavaMEApplication extends MIDlet {
         System.out.println();
         System.out.println();
         System.out.println("Hello ME"); 
-        System.out.println(System.getProperty("java.class.version"));
-         System.out.println();
         System.out.println();
         System.out.println(quantity);
         System.out.println(temp);
