@@ -1,4 +1,4 @@
-demos
+uom-demos
 =====
 
-Units of Measurement API Demos
+Units of Measurement Demos

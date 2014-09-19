@@ -1,7 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *  Unit-API - Units of Measurement API for Java
+ *  Copyright 2013-2014, Jean-Marie Dautelle, Werner Keil, V2COM and individual
+ *  contributors by the @author tag.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package javameapplication;
@@ -14,12 +24,18 @@ import javax.measure.quantity.Temperature;
 import javax.microedition.midlet.MIDlet;
 import javax.microedition.rms.RecordEnumeration;
 import javax.microedition.rms.RecordStore;
-import org.unitsofmeasurement.impl.enums.quantity.TemperatureQuantity;
-//import tec.uom.impl.enums.quantity.TimeAmount;
-//import tec.uom.impl.enums.unit.TimeUnit;
+/*
+import tec.uom.impl.enums.quantity.TemperatureAmount;
+import tec.uom.impl.enums.quantity.TimeAmount;
+import tec.uom.impl.enums.unit.TimeUnit;
+import tec.uom.impl.enums.unit.TemperatureUnit;
+*/
+
 import org.unitsofmeasurement.impl.enums.quantity.TimeQuantity;
 import org.unitsofmeasurement.impl.enums.unit.TemperatureUnit;
 import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
+import org.unitsofmeasurement.impl.enums.quantity.TemperatureQuantity;
+
 //import tec.units.ri.quantity.QuantityFactory;
 //import tec.units.ri.util.SI;
 
@@ -30,10 +46,8 @@ import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
 public class JavaMEApplication extends MIDlet {
     
    // private Display display;
-    private String appName = "ConvertMe";
+    private String appName = "MEDemo";
     private boolean firstTime;
-
-    private UnitCollection[] collection;
 
     private Measurement measure;
     private Quantity quantity;
@@ -52,13 +66,19 @@ public class JavaMEApplication extends MIDlet {
         
         //measure = ShirtSizeEnum.L;
         //quantity = QuantityFactory.getInstance(Mass.class).create(10, SI.KILOGRAM);
-        quantity = new TimeQuantity(10d, TimeUnit.MINUTE);
         //quantity = new AreaQuantity(10d, AreaUnit.sqmetre);
-        Quantity<Temperature> temp = new TemperatureQuantity(10d, 
+        
+        quantity = new TimeQuantity(10d, TimeUnit.MINUTE);
+        //quantity = new TimeAmount(10d, TimeUnit.MINUTE);
+        
+        Quantity<Temperature> temp = new TemperatureQuantity(10d,
+        //Quantity<Temperature> temp = new TemperatureAmount(10d, 
                 TemperatureUnit.CELSIUS);
         System.out.println();
         System.out.println();
-        System.out.println("Hello");
+        System.out.println("Hello ME"); 
+        System.out.println(System.getProperty("java.class.version"));
+         System.out.println();
         System.out.println();
         System.out.println(quantity);
         System.out.println(temp);
