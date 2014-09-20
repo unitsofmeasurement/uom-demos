@@ -31,7 +31,6 @@ import org.unitsofmeasurement.impl.enums.unit.TemperatureUnit;
 import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
 import org.unitsofmeasurement.impl.enums.quantity.TemperatureQuantity;
 
-
 /**
  * ME Demo using JSR 363
  * @author Werner
