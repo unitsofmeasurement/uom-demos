@@ -15,24 +15,21 @@
  */
 package tec.uom.demo.types;
 
-import static tec.uom.demo.types.SolarSystem.G;
+import static tec.uom.demo.types.SolarSystem.*;
 import static tec.units.ri.util.SI.*;
 
 import javax.measure.Quantity;
-import javax.measure.Unit;
 import javax.measure.quantity.Acceleration;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
 import tec.units.ri.AbstractQuantity;
-import tec.units.ri.quantity.AccelerationAmount;
-import tec.units.ri.quantity.LengthAmount;
-import tec.units.ri.quantity.MassAmount;
+import tec.units.ri.quantity.AbstractQuantityFactory;
 
 
 /**
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.2
+ * @version 1.3
  *
  * This <type>enum</type> is inspired by Josh Bloch's example in <a href="http://www.oracle.com/technetwork/java/effectivejava-136174.html">Effective Java Second Edition</a>
  *
@@ -74,16 +71,8 @@ public enum Planet {
     public Acceleration surfaceGravity() {
         double m = mass.doubleValue(KILOGRAM);
         double r = radius.doubleValue(METRE);
-        return new AccelerationAmount(
+        return AbstractQuantityFactory.getInstance(Acceleration.class).create(
                 G * m / (r * r), METRES_PER_SQUARE_SECOND);
-    }
-
-    private static AbstractQuantity<Mass> newMass(double value, Unit<Mass> unit) {
-        return new MassAmount(value, unit);
-    }
-
-    private static AbstractQuantity<Length> newLength(double value, Unit<Length> unit) {
-        return new LengthAmount(value, unit);
     }
 
 	@Override
