@@ -6,7 +6,7 @@ import javax.measure.Unit;
 import javax.measure.quantity.Mass;
 
 import tec.units.ri.AbstractQuantity;
-import tec.units.ri.BaseQuantity;
+import tec.units.ri.quantity.BaseQuantity;
 
 public class SIDemo {
 

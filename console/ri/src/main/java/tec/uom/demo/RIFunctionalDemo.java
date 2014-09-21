@@ -5,7 +5,7 @@ import javax.measure.Unit;
 import javax.measure.function.ConversionOperator;
 import javax.measure.quantity.Length;
 
-import tec.units.ri.BaseQuantity;
+import tec.units.ri.quantity.BaseQuantity;
 import tec.units.ri.util.SI;
 import tec.units.ri.util.US;
 

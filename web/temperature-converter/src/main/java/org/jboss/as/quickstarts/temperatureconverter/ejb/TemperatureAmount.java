@@ -19,9 +19,10 @@ package org.jboss.as.quickstarts.temperatureconverter.ejb;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import tec.units.ri.quantity.BaseQuantity;
 import tec.units.ri.util.SI;
 import tec.units.ri.util.US;
-import tec.units.ri.BaseQuantity;
+
 import javax.measure.quantity.Temperature;
 import javax.measure.Unit;
 

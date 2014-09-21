@@ -24,8 +24,8 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
 import tec.units.ri.AbstractQuantity;
-import tec.units.ri.BaseMeasurement;
-import tec.units.ri.BaseQuantity;
+import tec.units.ri.model.BaseMeasurement;
+import tec.units.ri.quantity.BaseQuantity;
 import tec.units.ri.util.SI;
 import tec.units.ri.util.US;
 

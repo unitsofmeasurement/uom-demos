@@ -6,7 +6,7 @@ import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Mass;
 
-import tec.uom.se.BaseQuantity;
+import tec.uom.se.quantity.BaseQuantity;
 import tec.uom.se.util.SI;
 import static tec.uom.se.util.UCUM.ATOMIC_MASS_UNIT;
 public class UCUMDemoSE {

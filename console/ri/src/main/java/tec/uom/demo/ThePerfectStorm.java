@@ -32,7 +32,7 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
 
-import tec.units.ri.BaseQuantity;
+import tec.units.ri.quantity.BaseQuantity;
 import tec.uom.demo.types.SaffirSimpsonHurricaneWindScale;
 
 /**
