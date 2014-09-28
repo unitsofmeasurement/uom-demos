@@ -1,8 +1,6 @@
 package tec.uom.demo;
 
 import javax.measure.Quantity;
-import javax.measure.Unit;
-import javax.measure.function.ConversionOperator;
 import javax.measure.quantity.Length;
 
 import tec.units.ri.quantity.BaseQuantity;
