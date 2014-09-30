@@ -19,18 +19,18 @@ package medemo;
 import javax.measure.Quantity;
 import javax.measure.quantity.Temperature;
 import javax.microedition.midlet.MIDlet;
-
+/*
 import tec.uom.impl.enums.quantity.TemperatureAmount;
 import tec.uom.impl.enums.quantity.TimeAmount;
 import tec.uom.impl.enums.unit.TimeUnit;
 import tec.uom.impl.enums.unit.TemperatureUnit;
+*/
 
-/*
 import org.unitsofmeasurement.impl.enums.quantity.TimeQuantity;
 import org.unitsofmeasurement.impl.enums.unit.TemperatureUnit;
 import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
 import org.unitsofmeasurement.impl.enums.quantity.TemperatureQuantity;
-*/
+
 /**
  * ME Demo using JSR 363
  * @author Werner
@@ -40,11 +40,11 @@ public class JavaMEApplication extends MIDlet {
     private Quantity quantity;
   
     public void startApp() {
-        quantity = new TimeAmount(10d, TimeUnit.MINUTE);
-        //quantity = new TimeQuantity(10d, TimeUnit.MINUTE);
+        //quantity = new TimeAmount(10d, TimeUnit.MINUTE);
+        quantity = new TimeQuantity(10d, TimeUnit.MINUTE);
         
-        Quantity<Temperature> temp = new TemperatureAmount(10d,
-        //Quantity<Temperature> temp = new TemperatureQuantity(10d,
+        //Quantity<Temperature> temp = new TemperatureAmount(10d,
+        Quantity<Temperature> temp = new TemperatureQuantity(10d,
                 TemperatureUnit.CELSIUS);
 
         System.out.println();

@@ -3703,7 +3703,7 @@
     <target name="jfxsa-debug" depends="-mark-project-state-debugging,-clean-if-config-changed,jar,-check-jfx-runtime,-warn-of-preloader,jfx-project-debug"/>
     <target name="jfxsa-debug-noscript" depends="-set-fallback-no-javascript, jfxsa-debug"/>
     
-    <target name="jfxsa-profile" depends="-mark-project-state-profiling,-check-jfx-runtime,-warn-of-preloader,jfx-project-profile"/>
+    <target name="jfxsa-profile" depends="-mark-project-state-profiling,-check-jfx-runtime,-warn-of-preloader,profile"/>
     <target name="jfxsa-profile-noscript" depends="-set-fallback-no-javascript, jfxsa-profile"/>
 
     <target name="-check-clean-if-config-changed" depends="-init-project">
@@ -3724,11 +3724,7 @@
         <echo message="Config change detected. Invoking clean." level="verbose"/>
         <antcall target="clean"/>
     </target>
-    
-    <target depends="-profile-check-1,-profile-pre72" description="Profile a project in the IDE." if="profiler.configured" name="jfx-project-profile" unless="profiler.info.jvmargs.agent">
-        <startprofiler/>
-        <antcall target="jfxsa-run"/>
-    </target>
+
 
     <!-- Shared Debugging init -->
 
@@ -3946,9 +3942,7 @@
             description="Start JavaFX execution in browser">
         <echo message="Executing ${temp.run.html} using ${javafx.run.inbrowser}"/>
         <echo message="(${javafx.run.inbrowser.path})"/>
-        <property name="javafx.run.inbrowser.arguments" value=""/>
         <exec executable="${javafx.run.inbrowser.path}">
-            <arg line="${javafx.run.inbrowser.arguments}"/>
             <arg file="${temp.run.html}"/>
         </exec>
         <antcall target="-warn-concurrent-html-runs"/>
@@ -3965,9 +3959,7 @@
     <target name="-debug-jfxbe-debuggee" depends="-init-debug-args">
         <echo message="Executing ${jfx.deployment.html} in debug mode using ${javafx.run.inbrowser}"/>
         <echo message="(${javafx.run.inbrowser.path})"/>
-        <property name="javafx.run.inbrowser.arguments" value=""/>
         <exec executable="${javafx.run.inbrowser.path}">
-            <arg line="${javafx.run.inbrowser.arguments}"/>
             <env key="_JPI_VM_OPTIONS" value="-agentlib:jdwp=transport=${debug-transport},address=${jpda.address}"/>
             <arg file="${jfx.deployment.html}"/>
         </exec>
@@ -3981,10 +3973,8 @@
             -check-jdk-7u4or5-mac,jar,-check-selected-browser-path,-set-html-file,-check-jfx-runtime,-warn-insufficient-signing">
         <echo message="Executing ${jfx.deployment.html} in profile mode using ${javafx.run.inbrowser}"/>
         <echo message="(${javafx.run.inbrowser.path})"/>
-        <property name="run.jvmargs.ide" value=""/>
-        <property name="javafx.run.inbrowser.arguments" value=""/>
+        <property name="run.jvmargs.ide" value=""/>        
         <exec executable="${javafx.run.inbrowser.path}">
-            <arg line="${javafx.run.inbrowser.arguments}"/>
             <env key="_JPI_VM_OPTIONS" value="${run.jvmargs.ide}"/>
             <arg file="${jfx.deployment.html}"/>
         </exec>
