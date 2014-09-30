@@ -15,23 +15,22 @@
  */
 package tec.uom.demo.health.se;
 
+import static org.junit.Assert.*;
 import static tec.uom.lib.domain.health.se.Health.BPM;
 
-import java.math.BigDecimal;
-
-import tec.uom.lib.domain.health.HeartRate;
+import org.junit.Test;
 import tec.uom.lib.domain.health.se.HeartRateAmount;
 
-/**
- * @version 0.1
- * @author Werner Keil
- *
- */
-public class HealthDemoSE {
+public class SEHealthTest {
 
-	public static void main(String[] args) {
-		HeartRate rate =  HeartRateAmount.of(BigDecimal.valueOf(90), BPM);
-		System.out.println(rate);
+	@Test
+	public void test() {
+		HeartRateAmount amount =  HeartRateAmount.of(Integer.valueOf(60), BPM);
+		assertNotNull(amount);
+		assertEquals("b", amount.getUnit().getSymbol());
+		assertEquals(60, amount.getValue().intValue());
+		
+		assertEquals("60 b/min", amount.toString());
 	}
 
 }
