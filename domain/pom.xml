@@ -10,6 +10,11 @@
 		<artifactId>uom-demos</artifactId>
 		<version>0.7-SNAPSHOT</version>
 	</parent>
+	
+	<modules>
+        <module>health</module>
+        <module>health-se</module>
+    </modules>
 
 	<dependencyManagement>
 		<dependencies>
@@ -92,7 +97,4 @@
 		</plugins>
 	</build>
 	<description>Domain Specific Demos of the Units of Measurement API</description>
-	<modules>
-		<module>health</module>
-	</modules>
 </project>

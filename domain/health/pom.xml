@@ -2,9 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>uom-health-demos</artifactId>
-	<name>Units of Measurement API Health Demos</name>
+	<name>Units of Measurement Health Demos</name>
 	<packaging>bundle</packaging>
-	<url>http://github.com/unitsofmeasurement/demos</url>
 	<parent>
 		<groupId>tec.uom.demo</groupId>
 		<artifactId>uom-domain-demos</artifactId>

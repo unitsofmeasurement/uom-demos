@@ -6,7 +6,7 @@
 		<artifactId>uom-console-demos</artifactId>
 		<version>0.7-SNAPSHOT</version>
 	</parent>
-	<artifactId>uom-se-console-demos</artifactId>
+	<artifactId>uom-console-demos-se</artifactId>
     <name>Units of Measurement Console Demos for Java SE</name>
 	<properties>
 		<jdkVersion>1.8</jdkVersion>

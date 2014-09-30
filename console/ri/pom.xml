@@ -7,7 +7,7 @@
 		<version>0.7-SNAPSHOT</version>
 	</parent>
 	<name>Units of Measurement Console Demos for RI</name>
-	<artifactId>uom-ri-console-demos</artifactId>
+	<artifactId>uom-console-demos-ri</artifactId>
 	<dependencies>
 		<dependency>
 			<groupId>tec.units</groupId>
