@@ -13,7 +13,6 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-
 package medemo;
 
 import javax.measure.Quantity;
@@ -31,15 +30,17 @@ import org.unitsofmeasurement.impl.enums.unit.TemperatureUnit;
 import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
 import org.unitsofmeasurement.impl.enums.quantity.TemperatureQuantity;
 
+
 /**
- * ME Demo using JSR 363
+ *
  * @author Werner
  */
-public class JavaMEApplication extends MIDlet {
+public class Medemo extends MIDlet {
     private final String appName = "MEDemo";
     private Quantity quantity;
-  
-    public void startApp() {
+    
+    @Override
+       public void startApp() {
         //quantity = new TimeAmount(10d, TimeUnit.MINUTE);
         quantity = new TimeQuantity(10d, TimeUnit.MINUTE);
         
@@ -54,9 +55,7 @@ public class JavaMEApplication extends MIDlet {
         System.out.println(temp);
     }
     
-    public void pauseApp() {
-    }
-   
+    @Override
     public void destroyApp(boolean unconditional) {
     }
 }
