@@ -45,6 +45,7 @@ public class ThePerfectStorm {
 	/**
 	 * @param args
 	 */
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		final SaffirSimpsonHurricaneWindScale std = SaffirSimpsonHurricaneWindScale.of(
 				null, BaseQuantity.of(38, MILES_PER_HOUR), TROPICAL_DEPRESSION);
@@ -118,8 +119,8 @@ public class ThePerfectStorm {
 			Quantity<Length> l = BaseQuantity.of(500, KILO(METRE));
 			System.out.println(String.format("Distance: %s", l));
 
-			@SuppressWarnings("unchecked")
 			Quantity<Time> timeToEvacuate = (Quantity<Time>) l.divide(metricSpeed);
+			//Quantity<?> timeToEvacuate = l.divide(metricSpeed); if you don't want to cast ;-)
 			System.out.println(String.format("Time to evacuate: %s", timeToEvacuate));
 		} else {
 			System.out.println("No scale given.");
