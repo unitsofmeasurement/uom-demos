@@ -30,7 +30,7 @@ import tec.uom.lib.domain.health.se.HeartRateAmount;
 public class SEHealthDemo {
 
 	public static void main(String[] args) {
-		HeartRate rate =  HeartRateAmount.of(BigDecimal.valueOf(90), BPM);
+		HeartRate rate =  new HeartRateAmount(BigDecimal.valueOf(90), BPM);
 		System.out.println(rate);
 	}
 
