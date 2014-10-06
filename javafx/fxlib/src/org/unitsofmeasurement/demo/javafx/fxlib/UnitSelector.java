@@ -19,14 +19,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javax.measure.Unit;
-import javax.measure.function.UnitSupplier;
-import org.unitsofmeasurement.ri.AbstractUnit;
+//import tec.uom.se.function.UnitSupplier;
+import tec.uom.se.AbstractUnit;
 
 
 /**
  * @author Werner Keil
  */
-public class UnitSelector extends AbstractFXMLComponent implements UnitSupplier {
+public class UnitSelector extends AbstractFXMLComponent { //implements UnitSupplier {
 
 	@FXML
 	private ComboBox<Unit> codeBox;
