@@ -19,6 +19,7 @@ import static tec.units.ri.util.SI.METRE;
 import static tec.units.ri.util.SI.KILOGRAM;
 
 import javax.measure.Quantity;
+import javax.measure.quantity.Area;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
@@ -36,7 +37,7 @@ public class BMIDemo {
 		Quantity<Length> height = Quantities.getQuantity(1.87d, METRE);
 		Quantity<Mass> mass = Quantities.getQuantity(85d, KILOGRAM);
 		
-		Quantity<?> squareHeight = height.multiply(height);
+		Quantity<Area> squareHeight = height.multiply(height);
 		Quantity<?> bmi = mass.divide(squareHeight);
 		System.out.println(bmi);
 	}
