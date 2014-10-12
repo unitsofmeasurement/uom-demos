@@ -27,7 +27,7 @@ import tec.uom.lib.domain.health.se.HeartRateAmount;
  * @author Werner Keil
  *
  */
-public class SEHealthDemo {
+public class HealthDemoSE {
 
 	public static void main(String[] args) {
 		HeartRate rate =  new HeartRateAmount(BigDecimal.valueOf(90), BPM);
