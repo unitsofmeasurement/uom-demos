@@ -38,6 +38,7 @@ public class BMIDemoSE {
 		Quantity<Mass> mass = Quantities.getQuantity(85d, KILOGRAM);
 		
 		Quantity<Area> squareHeight = height.multiply(height);
+		Quantity<?> squareHeight2 = height.multiply(height);
 		Quantity<?> bmi = mass.divide(squareHeight);
 		System.out.println(bmi);
 	}
