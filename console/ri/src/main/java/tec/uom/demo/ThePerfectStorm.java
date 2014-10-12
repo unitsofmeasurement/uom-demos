@@ -28,6 +28,7 @@ import static tec.units.ri.util.SIPrefix.KILO;
 import static tec.units.ri.util.US.MILES_PER_HOUR;
 
 import javax.measure.Quantity;
+import javax.measure.quantity.Energy;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
@@ -118,8 +119,9 @@ public class ThePerfectStorm {
 			System.out.println(" (" + scale.getCategory() + ")");
 			Quantity<Length> l = BaseQuantity.of(500, KILO(METRE));
 			System.out.println(String.format("Distance: %s", l));
-
+			
 			Quantity<Time> timeToEvacuate = (Quantity<Time>) l.divide(metricSpeed);
+			//Quantity<Energy> timeToEvacuate = (Quantity<Energy>) l.divide(metricSpeed); this would also work.
 			//Quantity<?> timeToEvacuate = l.divide(metricSpeed); if you don't want to cast ;-)
 			System.out.println(String.format("Time to evacuate: %s", timeToEvacuate));
 		} else {
