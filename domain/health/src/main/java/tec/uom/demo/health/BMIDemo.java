@@ -20,6 +20,7 @@ import static tec.units.ri.util.SI.KILOGRAM;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Area;
+import javax.measure.quantity.Energy;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
@@ -27,7 +28,7 @@ import tec.units.ri.quantity.Quantities;
 
 /**
  * This is a simple BMI (Body Mass Index) calculator
- * @version 0.1
+ * @version 0.2
  * @author Werner
  *
  */
@@ -39,6 +40,7 @@ public class BMIDemo {
 		
 		Quantity<Area> squareHeight = height.multiply(height);
 		Quantity<?> bmi = mass.divide(squareHeight);
+		//Energy e = (Energy) mass.divide(squareHeight);
 		System.out.println(bmi);
 	}
 
