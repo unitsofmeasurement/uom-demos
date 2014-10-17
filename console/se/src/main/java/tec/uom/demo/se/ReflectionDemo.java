@@ -11,10 +11,13 @@ import tec.uom.se.unit.BaseUnit;
 public class ReflectionDemo {
 	public static void reflect(final Unit<?> aUnit) {
 		// Here I'd like to get the Class-Object 'Length'
+		System.out.print("aUnit: ");
 		System.out.println(aUnit.getClass().getGenericSuperclass());
 		System.out.println(((ParameterizedType) aUnit.getClass()
 				.getGenericSuperclass()).getActualTypeArguments()[0]);
 		System.out.println(aUnit);
+		
+		System.out.print("anotherUnit: ");
 		Unit<?> anotherUnit = aUnit.multiply(aUnit).asType(Volume.class);
 		System.out.println(anotherUnit.getClass().getGenericSuperclass());
 		System.out.println(((ParameterizedType) anotherUnit.getClass()
