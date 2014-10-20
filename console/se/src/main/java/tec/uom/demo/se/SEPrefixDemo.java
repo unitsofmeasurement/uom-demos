@@ -8,7 +8,7 @@ import tec.uom.se.util.IndianPrefix;
 import tec.uom.se.util.SI;
 
 public class SEPrefixDemo {
-	public static void main(String[] args) {
+	public static void main(String... args) {
 		Quantity<Length> len = Quantities.getQuantity(10, IndianPrefix.LAKH(SI.METRE));
 		System.out.println(len);
 	}

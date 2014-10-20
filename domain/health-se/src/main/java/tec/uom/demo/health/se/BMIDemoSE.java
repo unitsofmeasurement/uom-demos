@@ -23,11 +23,11 @@ import javax.measure.quantity.Area;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
-import tec.units.ri.quantity.Quantities;
+import tec.uom.se.quantity.Quantities;
 
 /**
  * This is a simple BMI (Body Mass Index) calculator
- * @version 0.1
+ * @version 0.3
  * @author Werner
  *
  */
@@ -37,7 +37,8 @@ public class BMIDemoSE {
 		Quantity<Length> height = Quantities.getQuantity(1.87d, METRE);
 		Quantity<Mass> mass = Quantities.getQuantity(85d, KILOGRAM);
 		
-		Quantity<Area> squareHeight = height.multiply(height);
+		@SuppressWarnings("unchecked")
+		Quantity<Area> squareHeight = (Quantity<Area>) height.multiply(height);
 		Quantity<?> squareHeight2 = height.multiply(height);
 		Quantity<?> bmi = mass.divide(squareHeight);
 		System.out.println(bmi);
