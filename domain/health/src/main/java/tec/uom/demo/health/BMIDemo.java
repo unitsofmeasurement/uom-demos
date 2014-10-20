@@ -37,10 +37,8 @@ public class BMIDemo {
 		Quantity<Length> height = Quantities.getQuantity(1.87d, METRE);
 		Quantity<Mass> mass = Quantities.getQuantity(85d, KILOGRAM);
 		
-		@SuppressWarnings("unchecked")
-		Quantity<Area> squareHeight = (Quantity<Area>) height.multiply(height);
+		Quantity<Area> squareHeight = height.multiply(height).asType(Area.class);
 		Quantity<?> bmi = mass.divide(squareHeight);
-		//Energy e = (Energy) mass.divide(squareHeight);
 		System.out.println(bmi);
 	}
 
