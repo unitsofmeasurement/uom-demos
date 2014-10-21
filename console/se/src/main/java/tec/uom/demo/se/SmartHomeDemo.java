@@ -1,12 +1,12 @@
-package tec.uom.demo;
+package tec.uom.demo.se;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Energy;
 import javax.measure.quantity.Temperature;
 import javax.measure.quantity.Volume;
 
-import tec.units.ri.quantity.Quantities;
-import tec.units.ri.util.SI;
+import tec.uom.se.quantity.Quantities;
+import tec.uom.se.util.SI;
 
 public class SmartHomeDemo {
 
