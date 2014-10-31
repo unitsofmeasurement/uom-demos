@@ -8,6 +8,11 @@ import javax.measure.quantity.Volume;
 import tec.uom.se.quantity.Quantities;
 import tec.uom.se.util.SI;
 
+/**
+ * 
+ * @author Werner
+ * @see <a href="http://www.dagego.de/info_waermebedarf.html">Dageto Wärmebedarfsermittlung (DE)</a>
+ */
 public class SmartHomeDemo {
 
 	public static void main(String[] args) {
