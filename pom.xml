@@ -30,7 +30,7 @@
 	    <project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>0.5-SNAPSHOT</ri.version>
+		<ri.version>0.5</ri.version>
 		<lib.version>0.4-SNAPSHOT</lib.version>
 	</properties>
 
@@ -163,4 +163,5 @@
 		</profile>
 	</profiles>
 	<groupId>tec.uom.demo</groupId>
+	<version>0.6.4</version>
 </project>
