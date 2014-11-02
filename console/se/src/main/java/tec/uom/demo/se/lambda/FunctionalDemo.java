@@ -1,7 +1,6 @@
 package tec.uom.demo.se.lambda;
 
 import javax.measure.Quantity;
-import javax.measure.function.MeasurementConverter;
 import javax.measure.quantity.Length;
 
 import tec.uom.se.function.QuantityConverter;
