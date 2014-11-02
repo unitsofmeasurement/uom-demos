@@ -19,14 +19,12 @@ import static tec.uom.lib.domain.health.se.Health.BPM;
 
 import java.math.BigDecimal;
 
-import javax.measure.quantity.Length;
-
 import tec.uom.lib.domain.health.HeartRate;
 import tec.uom.lib.domain.health.se.HeartRateAmount;
-import tec.uom.se.quantity.ProxyQuantityFactory;
+//import tec.uom.se.quantity.ProxyQuantityFactory;
 
 /**
- * @version 0.2
+ * @version 0.3
  * @author Werner Keil
  *
  */

@@ -3,7 +3,7 @@ package tec.uom.demo;
 import javax.measure.Quantity;
 import javax.measure.quantity.Length;
 
-import tec.units.ri.quantity.BaseQuantity;
+import tec.units.ri.quantity.NumberQuantity;
 import tec.units.ri.util.SI;
 import tec.units.ri.util.US;
 
@@ -21,7 +21,7 @@ public class RIFunctionalDemo {
 //		System.out.println(converted3);
 		//Quantity<Length> conv2 = (from) -> Integer.valueOf(from);
 		
-		Quantity<Length> len = BaseQuantity.of(10, SI.METRE);
+		Quantity<Length> len = NumberQuantity.of(10, SI.METRE);
 		Quantity<Length> len2 = len.to(US.FOOT);
 		System.out.println(len2);
 	}
