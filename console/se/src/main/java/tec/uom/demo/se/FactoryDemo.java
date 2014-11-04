@@ -1,9 +1,9 @@
 package tec.uom.demo.se;
 
 import javax.measure.Quantity;
-import javax.measure.function.QuantityFactory;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
+import javax.measure.spi.QuantityFactory;
 
 import tec.uom.se.quantity.QuantityFactoryProvider;
 import tec.uom.se.quantity.internal.OldProxyQuantityFactory;
