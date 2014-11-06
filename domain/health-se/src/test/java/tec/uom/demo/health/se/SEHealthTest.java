@@ -25,7 +25,7 @@ public class SEHealthTest {
 
 	@Test
 	public void test() {
-		HeartRateAmount amount = new HeartRateAmount(Integer.valueOf(60), BPM);
+		HeartRateAmount amount = HeartRateAmount.of(Integer.valueOf(60), BPM);
 		assertNotNull(amount);
 		assertEquals("b", amount.getUnit().getSymbol());
 		assertEquals(60, amount.getValue().intValue());

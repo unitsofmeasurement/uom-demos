@@ -31,7 +31,7 @@ import tec.uom.lib.domain.health.se.HeartRateAmount;
 public class HealthDemoSE {
 
 	public static void main(String[] args) {
-		HeartRate rate =  new HeartRateAmount(BigDecimal.valueOf(90), BPM);
+		HeartRate rate =  HeartRateAmount.of(BigDecimal.valueOf(90), BPM);
 		System.out.println(rate);
 //		HeartRate rate2 = ProxyQuantityFactory<HeartRate> rateFactory = ProxyQuantityFactory.getInstance(HeartRate.class);
 	}
