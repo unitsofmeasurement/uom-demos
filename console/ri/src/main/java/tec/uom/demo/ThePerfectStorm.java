@@ -121,7 +121,6 @@ public class ThePerfectStorm {
 			System.out.println(String.format("Distance: %s", l));
 			
 			Quantity<Time> timeToEvacuate = (Quantity<Time>) l.divide(metricSpeed);
-			//Quantity<Energy> timeToEvacuate = (Quantity<Energy>) l.divide(metricSpeed); this would also work.
 			//Quantity<?> timeToEvacuate = l.divide(metricSpeed); if you don't want to cast ;-)
 			System.out.println(String.format("Time to evacuate: %s", timeToEvacuate));
 		} else {
