@@ -27,19 +27,28 @@ import tec.uom.se.quantity.Quantities;
 
 /**
  * This is a simple BMI (Body Mass Index) calculator
- * @version 0.3
+ * @version 0.4
  * @author Werner
  *
  */
 public class BMIDemoSE {
 
 	public static void main(String[] args) {
-		Quantity<Length> height = Quantities.getQuantity(1.87d, METRE);
-		Quantity<Mass> mass = Quantities.getQuantity(85d, KILOGRAM);
+		Double dHeight;
+		Double dWeight;
+		if(args.length > 0) {
+			dHeight = Double.parseDouble(args[0]);
+			dWeight = Double.parseDouble(args[1]);
+		} else {
+			dHeight = 1.85d;
+			dWeight = 85d;
+		}
+
+		Quantity<Length> height = Quantities.getQuantity(dHeight, METRE);
+		Quantity<Mass> mass = Quantities.getQuantity(dWeight, KILOGRAM);
 		
-		@SuppressWarnings("unchecked")
-		Quantity<Area> squareHeight = (Quantity<Area>) height.multiply(height);
-		Quantity<?> squareHeight2 = height.multiply(height);
+		Quantity<Area> squareHeight = height.multiply(height).asType(Area.class);
+//		Quantity<?> squareHeight2 = height.multiply(height);
 		Quantity<?> bmi = mass.divide(squareHeight);
 		System.out.println(bmi);
 	}
