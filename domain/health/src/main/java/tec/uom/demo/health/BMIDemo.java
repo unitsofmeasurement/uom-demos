@@ -17,6 +17,7 @@ package tec.uom.demo.health;
 
 import static tec.units.ri.util.SI.METRE;
 import static tec.units.ri.util.SI.KILOGRAM;
+import static tec.units.ri.util.US.FOOT;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Area;
@@ -36,20 +37,22 @@ public class BMIDemo {
 	public static void main(String[] args) {
 		Double dHeight;
 		Double dWeight;
-		if(args.length>0) {
+		if(args.length > 0) {
 			dHeight = Double.parseDouble(args[0]);
 			dWeight = Double.parseDouble(args[1]);
 		} else {
-			dHeight = 1.80d;
+			dHeight = 1.85d;
 			dWeight = 85d;
 		}
+		
 		Quantity<Length> height = Quantities.getQuantity(dHeight, METRE);
+//		Quantity<Length> heightUS = Quantities.getQuantity(dHeight, FOOT);  // for US measure units, just add a single line, see below:-)
+//		Quantity<Length> height = heightUS.to(METRE);
 		Quantity<Mass> mass = Quantities.getQuantity(dWeight, KILOGRAM);
 		
-//		Quantity<Area> squareHeight = height.multiply(dheight).asType(Area.class);
+//		Quantity<Area> squareHeight = height.multiply(dHeight).asType(Area.class); // this would fail, as Double value results in Length, not Area
 		Quantity<Area> squareHeight = height.multiply(height).asType(Area.class);
 		Quantity<?> bmi = mass.divide(squareHeight);
 		System.out.println(bmi);
 	}
-
 }
