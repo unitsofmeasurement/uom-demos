@@ -52,7 +52,7 @@ public class ScaleConverter implements Converter {
         if ("on".equals(value)) {
         	return SI.CELSIUS;
         }
-    	return AbstractUnit.of(value);
+    	return AbstractUnit.parse(value);
     }
 
     @Override

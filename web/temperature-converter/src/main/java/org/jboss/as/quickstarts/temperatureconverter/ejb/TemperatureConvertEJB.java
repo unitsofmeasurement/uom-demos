@@ -23,9 +23,10 @@ import static tec.units.ri.util.US.FAHRENHEIT;
 import javax.ejb.Stateless;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
-
 import javax.measure.Quantity;
 import javax.measure.quantity.Temperature;
+
+import tec.units.ri.function.Converter;
 
 /**
  * A simple SLSB EJB. The EJB does not use an interface.
@@ -34,7 +35,7 @@ import javax.measure.quantity.Temperature;
  * @author Werner Keil
  */
 @Stateless
-public class TemperatureConvertEJB {
+public class TemperatureConvertEJB implements Converter<TemperatureAmount, Quantity<Temperature>> {
 
     /**
      * This method takes a temperature in Celsius or Fahrenheit and converts it to the other value.
