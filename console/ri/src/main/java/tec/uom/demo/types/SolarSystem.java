@@ -20,7 +20,7 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
 import tec.units.ri.AbstractQuantity;
-import tec.units.ri.quantity.AbstractQuantityFactory;
+import tec.units.ri.AbstractQuantityFactory;
 
 class SolarSystem {
     // universal gravitational constant  (m3 kg-1 s-2)

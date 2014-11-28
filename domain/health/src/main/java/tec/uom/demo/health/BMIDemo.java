@@ -18,6 +18,7 @@ package tec.uom.demo.health;
 import static tec.units.ri.util.SI.METRE;
 import static tec.units.ri.util.SI.KILOGRAM;
 import static tec.units.ri.util.US.FOOT;
+import static tec.units.ri.util.SI.SQUARE_METRE;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Area;
@@ -28,31 +29,81 @@ import tec.units.ri.quantity.Quantities;
 
 /**
  * This is a simple BMI (Body Mass Index) calculator
+ * 
  * @version 0.3
  * @author Werner
  *
  */
 public class BMIDemo {
+	private static final BMIRange VERY_SEVERELY_UNDERWEIGHT_BMI = BMIRange.of(
+			Quantities.getQuantity(30, SQUARE_METRE).divide(
+					Quantities.getQuantity(2, KILOGRAM)), null);
+	private static final BMIRange SEVERELY_UNDERWEIGHT_BMI = BMIRange.of(
+			Quantities.getQuantity(30, SQUARE_METRE).divide(
+					Quantities.getQuantity(2, KILOGRAM)),
+			Quantities.getQuantity(32, SQUARE_METRE).divide(
+					Quantities.getQuantity(2, KILOGRAM)));
+	private static final BMIRange NORMAL_BMI = BMIRange.of(
+			Quantities.getQuantity(18.5, SQUARE_METRE).divide(
+					Quantities.getQuantity(1, KILOGRAM)),
+			Quantities.getQuantity(25, SQUARE_METRE).divide(
+					Quantities.getQuantity(1, KILOGRAM)));
+	private static final BMIRange OVERWEIGHT_BMI = BMIRange.of(
+			Quantities.getQuantity(25, SQUARE_METRE).divide(
+					Quantities.getQuantity(1, KILOGRAM)),
+			Quantities.getQuantity(60, SQUARE_METRE).divide(
+					Quantities.getQuantity(2, KILOGRAM)));
 
 	public static void main(String[] args) {
 		Double dHeight;
 		Double dWeight;
-		if(args.length > 0) {
+		if (args.length > 0) {
 			dHeight = Double.parseDouble(args[0]);
 			dWeight = Double.parseDouble(args[1]);
 		} else {
 			dHeight = 1.85d;
 			dWeight = 85d;
 		}
-		
+
 		Quantity<Length> height = Quantities.getQuantity(dHeight, METRE);
-//		Quantity<Length> heightUS = Quantities.getQuantity(dHeight, FOOT);  // for US measure units, just add a single line, see below:-)
-//		Quantity<Length> height = heightUS.to(METRE);
+		// Quantity<Length> heightUS = Quantities.getQuantity(dHeight, FOOT); //
+		// for US measure units, just add a single line, see below:-)
+		// Quantity<Length> height = heightUS.to(METRE);
 		Quantity<Mass> mass = Quantities.getQuantity(dWeight, KILOGRAM);
-		
-//		Quantity<Area> squareHeight = height.multiply(dHeight).asType(Area.class); // this would fail, as Double value results in Length, not Area
-		Quantity<Area> squareHeight = height.multiply(height).asType(Area.class);
+
+		// Quantity<Area> squareHeight =
+		// height.multiply(dHeight).asType(Area.class); // this would fail, as
+		// Double value results in Length, not Area
+		Quantity<Area> squareHeight = height.multiply(height)
+				.asType(Area.class);
 		Quantity<?> bmi = mass.divide(squareHeight);
 		System.out.println(bmi);
+		printCategory(bmi);
+	}
+
+	private static final void printCategory(final Quantity<?> bmi) {
+		if (bmi.getValue().doubleValue() <= VERY_SEVERELY_UNDERWEIGHT_BMI
+				.getMinimum().getValue().doubleValue()) {
+			System.out.println(VERY_SEVERELY_UNDERWEIGHT_BMI.getCategory());
+		}
+		if (bmi.getValue().doubleValue() >= SEVERELY_UNDERWEIGHT_BMI
+				.getMinimum().getValue().doubleValue()
+				&& bmi.getValue().doubleValue() <= SEVERELY_UNDERWEIGHT_BMI
+						.getMaximum().getValue().doubleValue()) {
+			System.out.println(SEVERELY_UNDERWEIGHT_BMI.getCategory());
+		}
+		if (bmi.getValue().doubleValue() >= NORMAL_BMI.getMinimum().getValue()
+				.doubleValue()
+				&& bmi.getValue().doubleValue() <= NORMAL_BMI.getMaximum()
+						.getValue().doubleValue()) {
+			System.out.println(NORMAL_BMI.getCategory());
+		}
+		if (bmi.getValue().doubleValue() >= OVERWEIGHT_BMI.getMinimum()
+				.getValue().doubleValue()
+				&& bmi.getValue().doubleValue() <= OVERWEIGHT_BMI.getMaximum()
+						.getValue().doubleValue()) {
+			System.out.println(OVERWEIGHT_BMI.getCategory());
+		}
+
 	}
 }
