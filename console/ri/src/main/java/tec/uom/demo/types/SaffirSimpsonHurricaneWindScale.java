@@ -22,16 +22,16 @@ import javax.measure.Quantity;
 import javax.measure.quantity.Speed;
 
 import tec.units.ri.function.Nameable;
-import tec.units.ri.util.Range;
+import tec.units.ri.util.QuantityRange;
 
 /**
  * @author Werner Keil
- * @version 0.5
+ * @version 0.6
  * @see <a
  *      href="http://en.wikipedia.org/wiki/Saffir%E2%80%93Simpson_hurricane_wind_scale">
  *      Wikipedia: Saffir–Simpson hurricane wind scale</a>
  */
-public class SaffirSimpsonHurricaneWindScale extends Range<Quantity<Speed>>
+public class SaffirSimpsonHurricaneWindScale extends QuantityRange<Speed>
 		implements Nameable {
 
 	/**

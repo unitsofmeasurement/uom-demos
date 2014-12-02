@@ -19,12 +19,13 @@ import static tec.uom.demo.health.BMIRange.Category.*;
 import static tec.units.ri.AbstractQuantity.NONE;
 
 import javax.measure.Quantity;
+
 import tec.units.ri.function.Nameable;
 import tec.units.ri.util.Range;
 
 /**
  * @author Werner Keil
- * @version 0.1
+ * @version 0.2
  * @see <a href="http://en.wikipedia.org/wiki/Body_Mass_index"> Wikipedia:
  *      BMI</a>
  */
@@ -122,5 +123,17 @@ public class BMIRange extends Range<Quantity<?>> implements Nameable {
 	@Override
 	public String getName() {
 		return getClass().getSimpleName();
+	}
+
+	@Override
+	public boolean contains(Quantity<?> q) {
+		if (q.getUnit().equals(getMinimum().getUnit())) {
+			// TODO better null checks
+			if (q.getValue().doubleValue() >= getMinimum().getValue().doubleValue() &&
+					q.getValue().doubleValue() <= getMaximum().getValue().doubleValue()) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

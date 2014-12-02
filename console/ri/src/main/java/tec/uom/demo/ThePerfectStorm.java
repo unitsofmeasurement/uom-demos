@@ -28,7 +28,7 @@ import static tec.units.ri.util.SIPrefix.KILO;
 import static tec.units.ri.util.US.MILES_PER_HOUR;
 
 import javax.measure.Quantity;
-import javax.measure.quantity.Energy;
+//import javax.measure.quantity.Energy;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
@@ -38,7 +38,7 @@ import tec.uom.demo.types.SaffirSimpsonHurricaneWindScale;
 
 /**
  * @author Werner Keil
- * @version 0.7.1
+ * @version 0.7.2
  * @see {@link SaffirSimpsonHurricaneWindScale}
  */
 public class ThePerfectStorm {
