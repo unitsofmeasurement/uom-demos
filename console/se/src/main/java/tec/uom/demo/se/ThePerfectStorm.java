@@ -13,19 +13,19 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package tec.uom.demo;
+package tec.uom.demo.se;
 
-import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.FIVE;
-import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.FOUR;
-import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.ONE;
-import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.THREE;
-import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_DEPRESSION;
-import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_STORM;
-import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TWO;
-import static tec.units.ri.util.CommonUnits.KILOMETRES_PER_HOUR;
-import static tec.units.ri.util.SI.METRE;
-import static tec.units.ri.util.SIPrefix.KILO;
-import static tec.units.ri.util.US.MILES_PER_HOUR;
+import static tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale.Category.FIVE;
+import static tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale.Category.FOUR;
+import static tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale.Category.ONE;
+import static tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale.Category.THREE;
+import static tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_DEPRESSION;
+import static tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_STORM;
+import static tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale.Category.TWO;
+import static tec.uom.se.util.CommonUnits.KILOMETRES_PER_HOUR;
+import static tec.uom.se.util.SI.METRE;
+import static tec.uom.se.util.SIPrefix.KILO;
+import static tec.uom.se.util.US.MILES_PER_HOUR;
 
 import javax.measure.Quantity;
 //import javax.measure.quantity.Energy;
@@ -33,8 +33,8 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
 
-import tec.units.ri.quantity.NumberQuantity;
-import tec.uom.demo.types.SaffirSimpsonHurricaneWindScale;
+import tec.uom.se.quantity.Quantities;
+import tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale;
 
 /**
  * @author Werner Keil
@@ -49,36 +49,36 @@ public class ThePerfectStorm {
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		final SaffirSimpsonHurricaneWindScale std = SaffirSimpsonHurricaneWindScale.of(
-				null, NumberQuantity.of(38, MILES_PER_HOUR), TROPICAL_DEPRESSION);
+				null, Quantities.getQuantity(38, MILES_PER_HOUR), TROPICAL_DEPRESSION);
 		System.out.println(std);
 
 		final SaffirSimpsonHurricaneWindScale sts = SaffirSimpsonHurricaneWindScale.of(
-				NumberQuantity.of(39, MILES_PER_HOUR),
-				NumberQuantity.of(73, MILES_PER_HOUR), TROPICAL_STORM);
+				Quantities.getQuantity(39, MILES_PER_HOUR),
+				Quantities.getQuantity(73, MILES_PER_HOUR), TROPICAL_STORM);
 		System.out.println(sts);
 
 		final SaffirSimpsonHurricaneWindScale s1 = SaffirSimpsonHurricaneWindScale.of(
-				NumberQuantity.of(74, MILES_PER_HOUR),
-				NumberQuantity.of(95, MILES_PER_HOUR), ONE);
+				Quantities.getQuantity(74, MILES_PER_HOUR),
+				Quantities.getQuantity(95, MILES_PER_HOUR), ONE);
 		System.out.println(s1);
 
 		final SaffirSimpsonHurricaneWindScale s2 = SaffirSimpsonHurricaneWindScale.of(
-				NumberQuantity.of(96, MILES_PER_HOUR),
-				NumberQuantity.of(110, MILES_PER_HOUR), TWO);
+				Quantities.getQuantity(96, MILES_PER_HOUR),
+				Quantities.getQuantity(110, MILES_PER_HOUR), TWO);
 		System.out.println(s2);
 
 		final SaffirSimpsonHurricaneWindScale s3 = SaffirSimpsonHurricaneWindScale.of(
-				NumberQuantity.of(111, MILES_PER_HOUR),
-				NumberQuantity.of(129, MILES_PER_HOUR), THREE);
+				Quantities.getQuantity(111, MILES_PER_HOUR),
+				Quantities.getQuantity(129, MILES_PER_HOUR), THREE);
 		System.out.println(s3);
 
 		final SaffirSimpsonHurricaneWindScale s4 = SaffirSimpsonHurricaneWindScale.of(
-				NumberQuantity.of(130, MILES_PER_HOUR),
-				NumberQuantity.of(156, MILES_PER_HOUR), FOUR);
+				Quantities.getQuantity(130, MILES_PER_HOUR),
+				Quantities.getQuantity(156, MILES_PER_HOUR), FOUR);
 		System.out.println(s4);
 
 		final SaffirSimpsonHurricaneWindScale s5 = SaffirSimpsonHurricaneWindScale.of(
-				NumberQuantity.of(157, MILES_PER_HOUR), null, FIVE);
+				Quantities.getQuantity(157, MILES_PER_HOUR), null, FIVE);
 		System.out.println(s5);
 
 		int argument = -1;
@@ -117,7 +117,7 @@ public class ThePerfectStorm {
 
 			System.out.print(metricSpeed);
 			System.out.println(" (" + scale.getCategory() + ")");
-			Quantity<Length> l = NumberQuantity.of(500, KILO(METRE));
+			Quantity<Length> l = Quantities.getQuantity(500, KILO(METRE));
 			System.out.println(String.format("Distance: %s", l));
 			
 			Quantity<Time> timeToEvacuate = l.divide(metricSpeed).asType(Time.class);
