@@ -38,7 +38,7 @@ import tec.uom.demo.types.SaffirSimpsonHurricaneWindScale;
 
 /**
  * @author Werner Keil
- * @version 0.7.3
+ * @version 0.7.4
  * @see {@link SaffirSimpsonHurricaneWindScale}
  */
 public class ThePerfectStorm {
@@ -46,7 +46,6 @@ public class ThePerfectStorm {
 	/**
 	 * @param args
 	 */
-	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		final SaffirSimpsonHurricaneWindScale std = SaffirSimpsonHurricaneWindScale.of(
 				null, Quantities.getQuantity(38, MILES_PER_HOUR), TROPICAL_DEPRESSION);
@@ -117,7 +116,7 @@ public class ThePerfectStorm {
 
 			System.out.print(metricSpeed);
 			System.out.println(" (" + scale.getCategory() + ")");
-			Quantity<Length> l = Quantities.getQuantity(500, METRE);
+			Quantity<Length> l = Quantities.getQuantity(500, KILO(METRE));
 			System.out.println(String.format("Distance: %s", l));
 			
 			Quantity<Time> timeToEvacuate = l.divide(metricSpeed).asType(Time.class);
