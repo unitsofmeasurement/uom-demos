@@ -2,11 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>uom-demos</artifactId>
-   	<parent>
-	<groupId>tec.uom</groupId>
-	<artifactId>uom-parent</artifactId>
-	<version>0.7-SNAPSHOT</version>
+	<parent>
+		<groupId>tec.uom</groupId>
+		<artifactId>uom-parent</artifactId>
+		<version>0.7-SNAPSHOT</version>
 	</parent>
+	<groupId>tec.uom.demo</groupId>
 	<packaging>pom</packaging>
 	<name>Units of Measurement Demos</name>
 	<url>http://github.com/unitsofmeasurement/unit-demos</url>
@@ -27,7 +28,7 @@
 	<!-- ======================================================= -->
 	<properties>
 		<jdkVersion>1.7</jdkVersion>
-	    <project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
+		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<ri.version>0.6-SNAPSHOT</ri.version>
@@ -36,26 +37,26 @@
 
 	<dependencyManagement>
 		<dependencies>
-		    <dependency>
-                <groupId>javax.measure</groupId>
-                <artifactId>unit-api</artifactId>
-                <version>${jsr.version}</version>
-            </dependency>
+			<dependency>
+				<groupId>javax.measure</groupId>
+				<artifactId>unit-api</artifactId>
+				<version>${jsr.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>tec.units</groupId>
 				<artifactId>unit-ri</artifactId>
 				<version>${ri.version}</version>
 			</dependency>
 			<dependency>
-                <groupId>tec.uom</groupId>
-                <artifactId>uom-se</artifactId>
-                <version>${ri.version}</version> <!-- currently match -->
-            </dependency>
+				<groupId>tec.uom</groupId>
+				<artifactId>uom-se</artifactId>
+				<version>${ri.version}</version> <!-- currently match -->
+			</dependency>
 			<dependency>
-                <groupId>tec.uom</groupId>
-                <artifactId>uom-lib</artifactId>
-                <version>${lib.version}</version>
-            </dependency>
+				<groupId>tec.uom</groupId>
+				<artifactId>uom-lib</artifactId>
+				<version>${lib.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -102,16 +103,16 @@
 		<module>domain</module>
 		<module>web</module>
 	</modules>
-	
+
 	<!-- Additional repositories -->
-    <repositories>
-        <repository>
-            <id>unitsofmeasurement-github-repo</id>
-            <name>Local repository for Unit-API or other Units of Measurement artifacts we depend on</name>
-            <url>https://github.com/unitsofmeasurement/repository/raw/master</url>
-        </repository>
-    </repositories>
-    
+	<repositories>
+		<repository>
+			<id>unitsofmeasurement-github-repo</id>
+			<name>Local repository for Unit-API or other Units of Measurement artifacts we depend on</name>
+			<url>https://github.com/unitsofmeasurement/repository/raw/master</url>
+		</repository>
+	</repositories>
+
 	<profiles>
 		<profile>
 			<id>license</id>
@@ -171,5 +172,4 @@
 			</build>
 		</profile>
 	</profiles>
-	<groupId>tec.uom.demo</groupId>
 </project>
