@@ -106,11 +106,6 @@
 	<!-- Additional repositories -->
     <repositories>
         <repository>
-            <id>geotoolkit</id>
-            <name>Geotoolkit.org project</name>
-            <url>http://maven.geotoolkit.org</url>
-        </repository>
-        <repository>
             <id>unitsofmeasurement-github-repo</id>
             <name>Local repository for Unit-API or other Units of Measurement artifacts we depend on</name>
             <url>https://github.com/unitsofmeasurement/repository/raw/master</url>

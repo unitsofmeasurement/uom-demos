@@ -68,7 +68,7 @@ public enum Planet {
         return radius;
     }
 
-    public Acceleration surfaceGravity() {
+    public Quantity<Acceleration> surfaceGravity() {
         double m = mass.doubleValue(KILOGRAM);
         double r = radius.doubleValue(METRE);
         return AbstractQuantityFactory.getInstance(Acceleration.class).create(
