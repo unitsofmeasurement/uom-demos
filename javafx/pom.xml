@@ -71,12 +71,6 @@
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
 				<extensions>true</extensions>
-				<configuration>
-					<instructions>
-						<Export-Package>tec.uom.demo.health.*</Export-Package>
-						<Private-Package>!*</Private-Package>
-					</instructions>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
