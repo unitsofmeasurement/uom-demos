@@ -6,12 +6,11 @@
         <artifactId>uom-javafx-demos</artifactId>
         <version>0.7-SNAPSHOT</version>
     </parent>
-    <groupId>tec.uom.demo</groupId>
     <artifactId>uom-fxlib</artifactId>
     <version>0.7-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>FXlib</name>
+    <name>Units of Measurement FXlib</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
