@@ -32,6 +32,7 @@
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<ri.version>0.6-SNAPSHOT</ri.version>
+		<se.version>0.6-SNAPSHOT</se.version>
 		<lib.version>0.5-SNAPSHOT</lib.version>
 	</properties>
 
@@ -50,7 +51,7 @@
 			<dependency>
 				<groupId>tec.uom</groupId>
 				<artifactId>uom-se</artifactId>
-				<version>${ri.version}</version> <!-- currently match -->
+				<version>${se.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>tec.uom</groupId>
