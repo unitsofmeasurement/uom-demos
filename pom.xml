@@ -108,6 +108,11 @@
 
 	<!-- Additional repositories -->
 	<repositories>
+	   <repository>
+          <id>jcenter</id>
+          <name>JCenter</name>
+          <url>http://jcenter.bintray.com</url>
+        </repository>
 		<repository>
 			<id>unitsofmeasurement-github-repo</id>
 			<name>Local repository for Unit-API or other Units of Measurement artifacts we depend on</name>
