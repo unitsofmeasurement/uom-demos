@@ -26,13 +26,12 @@ import tec.units.ri.util.QuantityRange;
 
 /**
  * @author Werner Keil
- * @version 0.6
+ * @version 0.7, Dec 17, 2014
  * @see <a
  *      href="http://en.wikipedia.org/wiki/Saffir%E2%80%93Simpson_hurricane_wind_scale">
  *      Wikipedia: Saffir–Simpson hurricane wind scale</a>
  */
-public class SaffirSimpsonHurricaneWindScale extends QuantityRange<Speed>
-		implements Nameable {
+public class SaffirSimpsonHurricaneWindScale extends QuantityRange<Speed> implements Nameable {
 
 	/**
 	 * The storm category
@@ -123,7 +122,7 @@ public class SaffirSimpsonHurricaneWindScale extends QuantityRange<Speed>
 	}
 
 	@Override
-    public String getName() {
+    	public String getName() {
 		return "Saffir–Simpson hurricane wind scale";
 	}
 }
