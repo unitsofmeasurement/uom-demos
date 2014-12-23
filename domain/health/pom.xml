@@ -5,7 +5,7 @@
 	<name>Units of Measurement Health Demos</name>
 	<packaging>bundle</packaging>
 	<parent>
-		<groupId>tec.uom.demo</groupId>
+		<groupId>tec.uom.demo.domain</groupId>
 		<artifactId>uom-domain-demos</artifactId>
 		<version>0.8-SNAPSHOT</version>
 	</parent>

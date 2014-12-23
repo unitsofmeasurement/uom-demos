@@ -1,4 +1,4 @@
-package tec.uom.demo;
+package tec.uom.demo.energy;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Energy;

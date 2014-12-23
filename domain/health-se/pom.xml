@@ -2,12 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>tec.uom.demo</groupId>
+		<groupId>tec.uom.demo.domain</groupId>
 		<artifactId>uom-domain-demos</artifactId>
 		<version>0.8-SNAPSHOT</version>
 	</parent>
 	<artifactId>uom-health-demos-se</artifactId>
-
+    <name>Units of Measurement Health Demos for Java SE</name>
+    
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
@@ -17,7 +18,6 @@
 		<maven.compile.targetLevel>1.8</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 	</properties>
-
 
 	<dependencyManagement>
 		<dependencies>
@@ -97,7 +97,7 @@
 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 						</manifest>
 						<manifestEntries>
-							<Specification-Title>Units of Measurement Demos</Specification-Title>
+							<Specification-Title>Units of Measurement Health Demos</Specification-Title>
 							<Specification-Version>${project.version}</Specification-Version>
 							<Specification-Vendor>${project.organization.name}</Specification-Vendor>
 							<Implementation-Vendor>Unit-API contributors</Implementation-Vendor>
@@ -124,7 +124,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
-	<name>Units of Measurement Health Demos for Java SE</name>
 </project>
