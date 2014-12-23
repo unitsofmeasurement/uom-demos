@@ -17,8 +17,8 @@
 
 package org.jboss.as.quickstarts.temperatureconverter.ejb;
 
-import static tec.units.ri.util.SI.CELSIUS;
-import static tec.units.ri.util.US.FAHRENHEIT;
+import static tec.uom.se.util.SI.CELSIUS;
+import static tec.uom.se.util.US.FAHRENHEIT;
 
 import javax.ejb.Stateless;
 import javax.faces.application.FacesMessage;
@@ -26,7 +26,7 @@ import javax.faces.context.FacesContext;
 import javax.measure.Quantity;
 import javax.measure.quantity.Temperature;
 
-import tec.units.ri.function.Converter;
+import tec.uom.se.function.Converter;
 
 /**
  * A simple SLSB EJB. The EJB does not use an interface.

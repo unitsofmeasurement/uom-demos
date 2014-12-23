@@ -21,11 +21,13 @@ import java.io.Serializable;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-
 import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Temperature;
-import tec.units.ri.util.SI;
+
+import tec.uom.se.function.ValueSupplier;
+import tec.uom.se.util.SI;
+
 import org.jboss.as.quickstarts.temperatureconverter.ejb.TemperatureAmount;
 import org.jboss.as.quickstarts.temperatureconverter.ejb.TemperatureConvertEJB;
 
@@ -43,7 +45,7 @@ import com.ibm.icu.text.DecimalFormat;
 @SuppressWarnings("serial")
 @Named("temperatureConverter")
 @RequestScoped
-public class TemperatureConverter implements Serializable {
+public class TemperatureConverter implements Serializable, ValueSupplier<String> {
 
     /*
      * Injected TemperatureConvertEJB client
@@ -92,7 +94,7 @@ public class TemperatureConverter implements Serializable {
         this.defaultScale = defaultScale;
     }
 
-    public String getTemperature() {
+    public String getValue() {
         return temperature;
     }
 

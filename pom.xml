@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>tec.uom</groupId>
 		<artifactId>uom-parent</artifactId>
-		<version>0.7</version>
+		<version>0.8-SNAPSHOT</version>
 	</parent>
 	<groupId>tec.uom.demo</groupId>
 	<packaging>pom</packaging>
@@ -31,8 +31,8 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>0.7</ri.version>
-		<se.version>0.6</se.version>
+		<ri.version>0.8-SNAPSHOT</ri.version>
+		<se.version>0.7-SNAPSHOT</se.version>
 		<lib.version>0.5</lib.version>
 	</properties>
 
@@ -105,21 +105,16 @@
 		<module>domain</module>
 		<module>web</module>
 	</modules>
-
+	
 	<!-- Additional repositories -->
-	<repositories>
+    <repositories>
 	   <repository>
-          <id>jcenter</id>
-          <name>JCenter</name>
-          <url>http://jcenter.bintray.com</url>
+            <id>unitsofmeasurement-github-repo</id>
+            <name>Local repository for Unit-API or other Units of Measurement artifacts we depend on</name>
+            <url>https://github.com/unitsofmeasurement/repository/raw/master</url>
         </repository>
-		<repository>
-			<id>unitsofmeasurement-github-repo</id>
-			<name>Local repository for Unit-API or other Units of Measurement artifacts we depend on</name>
-			<url>https://github.com/unitsofmeasurement/repository/raw/master</url>
-		</repository>
-	</repositories>
-
+    </repositories>
+    
 	<profiles>
 		<profile>
 			<id>license</id>

@@ -19,9 +19,9 @@ package org.jboss.as.quickstarts.temperatureconverter.ejb;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import tec.units.ri.quantity.NumberQuantity;
-import tec.units.ri.util.SI;
-import tec.units.ri.util.US;
+import tec.uom.se.quantity.NumberQuantity;
+import tec.uom.se.util.SI;
+import tec.uom.se.util.US;
 
 import javax.measure.quantity.Temperature;
 import javax.measure.Unit;
@@ -36,7 +36,11 @@ import javax.measure.Unit;
  */
 public class TemperatureAmount extends NumberQuantity<Temperature>{
 
-    static final double ABSOLUTE_ZERO_C = -273.150;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 2441230969280534926L;
+	static final double ABSOLUTE_ZERO_C = -273.150;
     static final double ABSOLUTE_ZERO_F = -459.670;
 
     /*
