@@ -3,17 +3,22 @@ package tec.uom.demo.se;
 import static tec.uom.se.util.SI.*;
 import static tec.uom.se.util.SIPrefix.*;
 
+import java.math.BigInteger;
+
 import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.UnitConverter;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
+import tec.uom.se.function.RationalConverter;
 import tec.uom.se.quantity.Quantities;
 
 public class UnitConverterDemo {
 
 	public static void main(String[] args) {
+		UnitConverter c1 = new RationalConverter(1, 10^2);
+		UnitConverter c2 = new RationalConverter( BigInteger.ONE, BigInteger.TEN.pow(2));
 		Unit<Length> sourceUnit = METRE;
 		Unit<Length> targetUnit = CENTI(METRE);
 		UnitConverter converter = sourceUnit.getConverterTo(targetUnit);
