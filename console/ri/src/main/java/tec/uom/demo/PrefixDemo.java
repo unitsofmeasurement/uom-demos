@@ -12,7 +12,7 @@ import tec.units.ri.util.SI;
 public class PrefixDemo {
 	public static void main(String... args) {
 		Unit<Mass> kg = KILO(SI.GRAM);
-		Quantity<Mass> mass = Quantities.getQuantity(50, KILO(SI.GRAM));
-		System.out.println(kg);
+		Quantity<Mass> mass = Quantities.getQuantity(50, kg);
+		System.out.println(mass);
 	}
 }
