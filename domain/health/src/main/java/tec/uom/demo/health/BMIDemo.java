@@ -1,6 +1,6 @@
 /**
  *  Unit-API - Units of Measurement API for Java
- *  Copyright 2013-2014, Jean-Marie Dautelle, Werner Keil, V2COM and individual
+ *  Copyright 2013-2015, Jean-Marie Dautelle, Werner Keil, V2COM and individual
  *  contributors by the @author tag.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,6 @@ package tec.uom.demo.health;
 
 import static tec.units.ri.util.SI.METRE;
 import static tec.units.ri.util.SI.KILOGRAM;
-import static tec.units.ri.util.US.FOOT;
 import static tec.units.ri.util.SI.SQUARE_METRE;
 
 import javax.measure.Quantity;
