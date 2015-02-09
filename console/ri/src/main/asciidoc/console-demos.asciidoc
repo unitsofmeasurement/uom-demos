@@ -8,7 +8,7 @@ This is a quick start guide for users of Unit-API.
 
 toc::[]
 
-== Eclipse Plugin Tutorial
+== Demo Tutorial
 include::00-Introduction.asciidoc[]
 
 include::01-NewEclipseProject.asciidoc[]
