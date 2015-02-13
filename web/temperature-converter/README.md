@@ -1,13 +1,14 @@
 temperature-converter: Stateless Session EJB
 =================================================
-Author: Bruce Wolfe
+Author: Bruce Wolfe, Werner Keil
 Level: Beginner
-Technologies: EJB
+Technologies: EJB, JSR 363
 Summary: Demonstrates a stateless session bean 
 Target Product: EAP
 
 What is it?
 -----------
+*Based on quickstarts to demonstrate Java EE and a few additional technologies from the JBoss stack.*
 
 This example demonstrates the use of an *EJB 3.1 Stateless Session Bean* and *CDI* to access it via a *JSF*.
 Deployment occurs via a war archive for deployment to *JBoss AS 7*.
