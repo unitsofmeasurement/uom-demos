@@ -22,13 +22,13 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>tec.uom.lib</groupId>
-				<artifactId>uom-lib-health</artifactId>
+				<groupId>tec.uom.domain</groupId>
+				<artifactId>uom-health</artifactId>
 				<version>${lib.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>tec.uom.lib</groupId>
-				<artifactId>uom-lib-health-se</artifactId>
+				<groupId>tec.uom.domain</groupId>
+				<artifactId>uom-health-se</artifactId>
 				<version>${lib.version}</version>
 			</dependency>
 			<dependency>
@@ -45,8 +45,8 @@
 			<artifactId>unit-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>tec.uom.lib</groupId>
-			<artifactId>uom-lib-health</artifactId>
+			<groupId>tec.uom.domain</groupId>
+			<artifactId>uom-health</artifactId>
 		</dependency>
 
 		<dependency>
@@ -54,8 +54,8 @@
 			<artifactId>uom-se</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>tec.uom.lib</groupId>
-			<artifactId>uom-lib-health-se</artifactId>
+			<groupId>tec.uom.domain</groupId>
+			<artifactId>uom-health-se</artifactId>
 		</dependency>
 		
 		<dependency>
