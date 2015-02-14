@@ -6,7 +6,7 @@ import javax.measure.quantity.Temperature;
 import javax.measure.quantity.Volume;
 
 import tec.uom.se.quantity.Quantities;
-import tec.uom.se.util.SI;
+import tec.uom.se.spi.SI;
 
 /**
  * 

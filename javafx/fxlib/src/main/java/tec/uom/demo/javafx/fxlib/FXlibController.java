@@ -28,6 +28,7 @@ package tec.uom.demo.javafx.fxlib;
 import java.net.URL;
 import java.text.NumberFormat;
 import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -37,15 +38,17 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+
 import javax.measure.Unit;
 import javax.measure.UnitConverter;
+
 import tec.uom.se.AbstractUnit;
-import tec.uom.se.util.CommonUnits;
-import tec.uom.se.util.SI;
-import static tec.uom.se.util.SI.*;
-import static tec.uom.se.util.SIPrefix.*;
-import tec.uom.se.util.UCUM;
-import static tec.uom.se.util.US.*;
+import tec.uom.se.spi.CommonUnits;
+import tec.uom.se.spi.SI;
+import tec.uom.se.spi.UCUM;
+import static tec.uom.se.spi.SI.*;
+import static tec.uom.se.spi.SIPrefix.*;
+import static tec.uom.se.spi.US.*;
 
 /**
  *

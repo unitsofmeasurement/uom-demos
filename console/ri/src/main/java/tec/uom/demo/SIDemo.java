@@ -1,6 +1,6 @@
 package tec.uom.demo;
 
-import static tec.units.ri.util.SI.*;
+import static tec.units.ri.spi.SI.*;
 
 import javax.measure.Unit;
 import javax.measure.quantity.Mass;

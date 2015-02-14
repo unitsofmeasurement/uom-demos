@@ -3,6 +3,9 @@ package tec.uom.demo.se;
 import javax.measure.Unit;
 import javax.measure.quantity.Speed;
 
+import tec.uom.se.spi.SI;
+import tec.uom.se.spi.SIPrefix;
+import tec.uom.se.spi.UCUM;
 import tec.uom.se.util.*;
 
 

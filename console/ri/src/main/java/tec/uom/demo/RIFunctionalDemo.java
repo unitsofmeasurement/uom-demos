@@ -4,8 +4,8 @@ import javax.measure.Quantity;
 import javax.measure.quantity.Length;
 
 import tec.units.ri.quantity.NumberQuantity;
-import tec.units.ri.util.SI;
-import tec.units.ri.util.US;
+import tec.units.ri.spi.SI;
+import tec.units.ri.spi.US;
 
 public class RIFunctionalDemo {
 

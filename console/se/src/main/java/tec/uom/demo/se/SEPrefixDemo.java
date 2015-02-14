@@ -1,14 +1,14 @@
 package tec.uom.demo.se;
 
-import static tec.uom.se.util.SIPrefix.KILO;
+import static tec.uom.se.spi.SIPrefix.KILO;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
 import tec.uom.se.quantity.Quantities;
-import tec.uom.se.util.IndianPrefix;
-import tec.uom.se.util.SI;
+import tec.uom.se.spi.IndianPrefix;
+import tec.uom.se.spi.SI;
 
 public class SEPrefixDemo {
 	public static void main(String... args) {

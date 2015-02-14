@@ -21,7 +21,7 @@ import java.math.BigDecimal;
 
 import tec.uom.lib.domain.health.HeartRate;
 import tec.uom.lib.domain.health.se.HeartRateAmount;
-//import tec.uom.se.quantity.ProxyQuantityFactory;
+import tec.uom.se.quantity.internal.OldProxyQuantityFactory;
 
 /**
  * @version 0.3
@@ -31,9 +31,10 @@ import tec.uom.lib.domain.health.se.HeartRateAmount;
 public class HealthDemoSE {
 
 	public static void main(String[] args) {
-		HeartRate rate =  HeartRateAmount.of(BigDecimal.valueOf(90), BPM);
+//		HeartRate rate =  HeartRateAmount.of(BigDecimal.valueOf(90), BPM);
+		OldProxyQuantityFactory<HeartRate> rateFactory = OldProxyQuantityFactory.getInstance(HeartRate.class);
+		HeartRate rate = rateFactory.create(BigDecimal.valueOf(90), BPM);
 		System.out.println(rate);
-//		HeartRate rate2 = ProxyQuantityFactory<HeartRate> rateFactory = ProxyQuantityFactory.getInstance(HeartRate.class);
 	}
 
 }

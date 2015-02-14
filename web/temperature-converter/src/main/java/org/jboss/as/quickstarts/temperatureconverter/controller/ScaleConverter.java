@@ -25,9 +25,10 @@ import javax.faces.convert.Converter;
 import javax.inject.Named;
 
 import tec.uom.se.AbstractUnit;
-import tec.uom.se.util.SI;
+import tec.uom.se.spi.SI;
+import tec.uom.se.spi.US;
 import tec.uom.se.quantity.QuantityDimension;
-import tec.uom.se.util.US;
+
 import javax.measure.quantity.Temperature;
 import javax.measure.Unit;
 
