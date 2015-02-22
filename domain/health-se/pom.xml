@@ -31,11 +31,6 @@
 				<artifactId>uom-health-se</artifactId>
 				<version>${lib.version}</version>
 			</dependency>
-			<dependency>
-				<groupId>org.jstrava</groupId>
-				<artifactId>jstrava</artifactId>
-				<version>0.3-SNAPSHOT</version>
-			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -57,12 +52,6 @@
 			<groupId>tec.uom.domain</groupId>
 			<artifactId>uom-health-se</artifactId>
 		</dependency>
-		
-		<dependency>
-		  <groupId>org.jstrava</groupId>
-		  <artifactId>jstrava</artifactId>
-		</dependency>
-
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
