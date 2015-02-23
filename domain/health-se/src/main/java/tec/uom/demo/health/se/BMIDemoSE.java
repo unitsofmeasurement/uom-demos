@@ -1,6 +1,6 @@
 /**
  *  Unit-API - Units of Measurement API for Java
- *  Copyright 2013-2014, Jean-Marie Dautelle, Werner Keil, V2COM and individual
+ *  Copyright 2013-2015, Jean-Marie Dautelle, Werner Keil, V2COM and individual
  *  contributors by the @author tag.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,7 +27,7 @@ import tec.uom.se.quantity.Quantities;
 
 /**
  * This is a simple BMI (Body Mass Index) calculator
- * @version 0.4
+ * @version 0.5
  * @author Werner
  *
  */
@@ -48,7 +48,6 @@ public class BMIDemoSE {
 		Quantity<Mass> mass = Quantities.getQuantity(dWeight, KILOGRAM);
 		
 		Quantity<Area> squareHeight = height.multiply(height).asType(Area.class);
-//		Quantity<?> squareHeight2 = height.multiply(height);
 		Quantity<?> bmi = mass.divide(squareHeight);
 		System.out.println(bmi);
 	}
