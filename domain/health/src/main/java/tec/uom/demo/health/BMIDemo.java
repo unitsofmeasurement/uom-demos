@@ -29,7 +29,7 @@ import tec.units.ri.quantity.Quantities;
 /**
  * This is a simple BMI (Body Mass Index) calculator
  * 
- * @version 0.3
+ * @version 0.4
  * @author Werner
  *
  */
@@ -69,7 +69,10 @@ public class BMIDemo {
 		// for US measure units, just add a single line, see below:-)
 		// Quantity<Length> height = heightUS.to(METRE);
 		Quantity<Mass> mass = Quantities.getQuantity(dWeight, KILOGRAM);
-
+		calculateBMI(height, mass);
+	}
+	
+	private static final void calculateBMI(final Quantity<Length> height, final Quantity<Mass> mass) {
 		// Quantity<Area> squareHeight =
 		// height.multiply(dHeight).asType(Area.class); // this would fail, as
 		// Double value results in Length, not Area
