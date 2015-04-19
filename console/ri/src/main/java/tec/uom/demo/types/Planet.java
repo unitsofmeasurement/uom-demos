@@ -24,12 +24,12 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
 import tec.units.ri.AbstractQuantity;
-import tec.units.ri.AbstractQuantityFactory;
+import tec.units.ri.spi.DefaultQuantityFactory;
 
 
 /**
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.3
+ * @version 1.4
  *
  * This <type>enum</type> is inspired by Josh Bloch's example in <a href="http://www.oracle.com/technetwork/java/effectivejava-136174.html">Effective Java Second Edition</a>
  *
@@ -71,7 +71,7 @@ public enum Planet {
     public Quantity<Acceleration> surfaceGravity() {
         double m = mass.doubleValue(KILOGRAM);
         double r = radius.doubleValue(METRE);
-        return AbstractQuantityFactory.getInstance(Acceleration.class).create(
+        return DefaultQuantityFactory.getInstance(Acceleration.class).create(
                 G * m / (r * r), METRES_PER_SQUARE_SECOND);
     }
 

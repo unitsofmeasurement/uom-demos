@@ -25,7 +25,7 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
 import tec.units.ri.AbstractQuantity;
-import tec.units.ri.AbstractQuantityFactory;
+import tec.units.ri.spi.DefaultQuantityFactory;
 
 
 /**
@@ -67,7 +67,7 @@ public enum DwarfPlanet {
     public Quantity<Acceleration> surfaceGravity() {
         double m = mass.doubleValue(KILOGRAM);
         double r = radius.doubleValue(METRE);
-        return AbstractQuantityFactory.getInstance(Acceleration.class).create(
+        return DefaultQuantityFactory.getInstance(Acceleration.class).create(
                 G * m / (r * r), METRES_PER_SQUARE_SECOND);
     }
 

@@ -20,7 +20,7 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
 import tec.units.ri.AbstractQuantity;
-import tec.units.ri.AbstractQuantityFactory;
+import tec.units.ri.spi.DefaultQuantityFactory;
 
 class SolarSystem {
     // universal gravitational constant  (m3 kg-1 s-2)
@@ -28,11 +28,11 @@ class SolarSystem {
     
     @SuppressWarnings("unchecked")
 	static AbstractQuantity<Mass> newMass(double value, Unit<Mass> unit) {
-        return (AbstractQuantity<Mass>) AbstractQuantityFactory.getInstance(Mass.class).create(value, unit);
+        return (AbstractQuantity<Mass>) DefaultQuantityFactory.getInstance(Mass.class).create(value, unit);
     }
 
     @SuppressWarnings("unchecked")
 	static AbstractQuantity<Length> newLength(double value, Unit<Length> unit) {
-        return (AbstractQuantity<Length>) AbstractQuantityFactory.getInstance(Length.class).create(value, unit);
+        return (AbstractQuantity<Length>) DefaultQuantityFactory.getInstance(Length.class).create(value, unit);
     }
 }
