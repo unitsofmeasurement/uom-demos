@@ -1,13 +1,13 @@
 package tec.uom.demo;
 
-import static tec.units.ri.spi.SIPrefix.KILO;
+import static tec.units.ri.unit.MetricPrefix.KILO;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Mass;
 
 import tec.units.ri.quantity.Quantities;
-import tec.units.ri.spi.SI;
+import tec.units.ri.unit.SI;
 
 public class PrefixDemo {
 	public static void main(String... args) {

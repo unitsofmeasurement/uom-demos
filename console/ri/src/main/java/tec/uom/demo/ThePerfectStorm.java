@@ -22,9 +22,9 @@ import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.THREE;
 import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_DEPRESSION;
 import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_STORM;
 import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TWO;
-import static tec.units.ri.spi.SI.METRE;
-import static tec.units.ri.spi.SIPrefix.KILO;
-import static tec.units.ri.spi.US.MILES_PER_HOUR;
+import static tec.units.ri.unit.MetricPrefix.KILO;
+import static tec.units.ri.unit.SI.METRE;
+import static tec.units.ri.unit.US.MILES_PER_HOUR;
 import static tec.units.ri.unit.Units.KILOMETRES_PER_HOUR;
 
 import javax.measure.Quantity;

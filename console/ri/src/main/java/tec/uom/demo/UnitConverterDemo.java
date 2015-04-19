@@ -15,8 +15,8 @@
  */
 package tec.uom.demo;
 
-import static tec.units.ri.spi.SI.*;
-import static tec.units.ri.spi.SIPrefix.*;
+import static tec.units.ri.unit.MetricPrefix.*;
+import static tec.units.ri.unit.SI.*;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
