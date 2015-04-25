@@ -104,6 +104,7 @@
 		<module>javafx</module>
 		<module>domain</module>
 		<module>web</module>
+		<module>device</module>
 	</modules>
 	
 	<!-- Additional repositories -->
