@@ -29,6 +29,7 @@
  */
 package tec.uom.demo.se.sandbox;
 
+import static tec.uom.se.unit.MetricPrefix.KILO;
 
 import java.util.HashMap;
 
@@ -43,8 +44,8 @@ import javax.measure.quantity.VolumetricDensity;
 import tec.uom.se.AbstractSystemOfUnits;
 import tec.uom.se.AbstractUnit;
 import tec.uom.se.function.MultiplyConverter;
-import tec.uom.se.spi.SI;
-import tec.uom.se.spi.SIPrefix;
+import tec.uom.se.unit.SI;
+import tec.uom.se.unit.MetricPrefix;
 import tec.uom.se.unit.ProductUnit;
 import tec.uom.se.unit.TransformedUnit;
 
@@ -105,22 +106,21 @@ class AstronomicalSystemOfUnits extends AbstractSystemOfUnits {
 			"AU", SI.METRE, new MultiplyConverter(149597871000.0));
 
 	public static final ProductUnit<VolumetricDensity> GRAM_PER_CUBIC_CENTIMETRE = addUnit(
-			new ProductUnit<VolumetricDensity>(SI.GRAM.divide((SIPrefix
+			new ProductUnit<VolumetricDensity>(SI.GRAM.divide((MetricPrefix
 					.CENTI(SI.METRE)).pow(3))), VolumetricDensity.class);
 
 	/**
 	 * The SI unit for area quantities (standard name <code>m2</code>).
 	 */
 	public static final ProductUnit<Area> SQUARE_KILOMETRE = addUnit(
-			new ProductUnit<Area>(SIPrefix.KILO(SI.METRE).multiply(
-					SIPrefix.KILO(SI.METRE))), Area.class);
+			new ProductUnit<Area>(MetricPrefix.KILO(SI.METRE).multiply(
+					MetricPrefix.KILO(SI.METRE))), Area.class);
 
 	/**
 	 * The SI unit for volume quantities (standard name <code>m3</code>).
 	 */
 	public static final ProductUnit<Volume> CUBIC_KILOMETRE = addUnit(
-			new ProductUnit<Volume>(SQUARE_KILOMETRE.multiply(SIPrefix
-					.KILO(SI.METRE))), Volume.class);
+			new ProductUnit<Volume>(SQUARE_KILOMETRE.multiply(KILO(SI.METRE))), Volume.class);
 
 	// ///////////////////
 	// Collection View //

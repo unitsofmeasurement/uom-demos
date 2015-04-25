@@ -33,7 +33,7 @@ import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Length;
 
-import tec.uom.se.quantity.QuantityFactoryProvider;
+import tec.uom.se.spi.QuantityFactoryProvider;
 
 public class AstroDemo {
 

@@ -1,6 +1,6 @@
 /**
  *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2015, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -25,35 +25,21 @@
  */
 package tec.uom.demo.edison.hello;
 
-import java.text.MessageFormat;
+import javax.measure.Quantity;
 
-import javax.measure.Quantity; 
-import javax.measure.Unit;
-import javax.measure.quantity.LuminousFlux;
-import javax.measure.quantity.Power;
-
-import tec.uom.se.quantity.Quantities;
-import tec.uom.se.unit.SI;
-
-public class HelloEdison {
-
-	public static void main(String[] args) {
-		System.out.println("Hello Edison.");
-		System.out.println("How about a little lightbulb efficiency calculation?;-)");
-		final MessageFormat question = new MessageFormat(
-				"What is the power consumption of a lamp that has luminous flux of {0} and luminous efficacy of {1} lumens per watt (lm/W)?");
-		final MessageFormat answer = new MessageFormat("You need a {0} lightbulb.");
-		
-		Quantity<LuminousFlux> lm = Quantities.getQuantity(900, SI.LUMEN);
-		final Unit<LuminousEfficacy> LM_PER_WATT = SI.LUMEN.divide(SI.WATT).asType(LuminousEfficacy.class);
-		final Number LM_VALUE = 15;
-		final Object[] questionArgs = {lm, LM_VALUE};
-		System.out.println(question.format(questionArgs));
-		Quantity<LuminousEfficacy>  luminousEfficacy = Quantities.getQuantity(LM_VALUE, LM_PER_WATT);
-//		System.out.println(lm);
-		Quantity<Power> p = lm.divide(luminousEfficacy).asType(Power.class);
-		final Object[] answerArgs = {p};
-		System.out.println(answer.format(answerArgs));
-	}
-
+/**
+ * Luminous efficacy is a measure of how well a light source produces visible light.
+ * It is the ratio of luminous flux to power.
+ * The metric system unit for this quantity is "lm/W" (lumen per Watt).
+ *
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 0.1
+ * 
+ * @see <a href="http://en.wikipedia.org/wiki/Luminous_efficacy">Wikipedia: Luminous efficacy</a>
+ * 
+ * @see LuminousFlux
+ * @see Power
+ * 
+ */
+public interface LuminousEfficacy extends Quantity<LuminousEfficacy> {
 }

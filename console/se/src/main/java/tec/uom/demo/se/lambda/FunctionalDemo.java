@@ -5,8 +5,8 @@ import javax.measure.quantity.Length;
 
 import tec.uom.se.function.QuantityConverter;
 import tec.uom.se.quantity.Quantities;
-import tec.uom.se.spi.SI;
-import tec.uom.se.spi.US;
+import tec.uom.se.unit.SI;
+import tec.uom.se.unit.US;
 
 public class FunctionalDemo {
 

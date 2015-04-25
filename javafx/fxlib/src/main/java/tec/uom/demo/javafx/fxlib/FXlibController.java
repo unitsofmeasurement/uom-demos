@@ -43,12 +43,12 @@ import javax.measure.Unit;
 import javax.measure.UnitConverter;
 
 import tec.uom.se.AbstractUnit;
-import tec.uom.se.spi.CommonUnits;
-import tec.uom.se.spi.SI;
-import tec.uom.se.spi.UCUM;
-import static tec.uom.se.spi.SI.*;
-import static tec.uom.se.spi.SIPrefix.*;
-import static tec.uom.se.spi.US.*;
+import tec.uom.se.unit.CommonUnits;
+import tec.uom.se.unit.SI;
+import tec.uom.se.unit.ucum.UCUM;
+import static tec.uom.se.unit.SI.*;
+import static tec.uom.se.unit.MetricPrefix.*;
+import static tec.uom.se.unit.US.*;
 
 /**
  *

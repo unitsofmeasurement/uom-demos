@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 import javax.measure.Unit;
 
-import tec.uom.se.spi.SI;
+import tec.uom.se.unit.SI;
 
 public class StreamDemo {
 

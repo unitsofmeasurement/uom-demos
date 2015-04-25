@@ -20,8 +20,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import tec.uom.se.quantity.NumberQuantity;
-import tec.uom.se.spi.SI;
-import tec.uom.se.spi.US;
+import tec.uom.se.unit.SI;
+import tec.uom.se.unit.US;
 
 import javax.measure.quantity.Temperature;
 import javax.measure.Unit;

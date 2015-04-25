@@ -5,10 +5,10 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 import javax.measure.spi.QuantityFactory;
 
-import tec.uom.se.quantity.QuantityFactoryProvider;
+import tec.uom.se.spi.QuantityFactoryProvider;
 import tec.uom.se.quantity.internal.OldProxyQuantityFactory;
 //import tec.uom.se.quantity.ProxyQuantityFactory;
-import tec.uom.se.spi.SI;
+import tec.uom.se.unit.SI;
 
 public class FactoryDemo {
 	public static void main(String... args) {

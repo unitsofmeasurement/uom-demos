@@ -7,8 +7,8 @@ import javax.measure.Unit;
 import javax.measure.quantity.Mass;
 
 import tec.uom.se.quantity.Quantities;
-import tec.uom.se.spi.SI;
-import static tec.uom.se.spi.UCUM.ATOMIC_MASS_UNIT;
+import tec.uom.se.unit.SI;
+import static tec.uom.se.unit.ucum.UCUM.ATOMIC_MASS_UNIT;
 public class UCUMDemoSE {
 
 	public static void main(String[] args) {
