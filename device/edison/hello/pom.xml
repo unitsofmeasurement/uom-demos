@@ -1,11 +1,51 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>tec.uom.demo.device</groupId>
-    <artifactId>uom-edison-demos</artifactId>
-    <version>0.8-SNAPSHOT</version>
-  </parent>
-  <artifactId>uom-edison-hello</artifactId>
-  <name>Hello Edison Demo</name>
-  <description>A simple Hello Edison Demo on the console</description>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>tec.uom.demo.device</groupId>
+		<artifactId>uom-edison-demos</artifactId>
+		<version>0.8-SNAPSHOT</version>
+	</parent>
+	<artifactId>uom-edison-hello</artifactId>
+	<name>Hello Edison Demo</name>
+	<description>A simple Hello Edison Demo on the console</description>
+
+	<properties>
+		<jdkVersion>1.8</jdkVersion>
+		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
+		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
+		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>tec.uom</groupId>
+			<artifactId>uom-se</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<!--groupId>org.dstovall</groupId --> <!-- not available on the central -->
+				<groupId>com.jolira</groupId>
+				<artifactId>onejar-maven-plugin</artifactId>
+				<version>1.4.4</version>
+				<executions>
+					<execution>
+						<configuration>
+							<mainClass>tec.uom.demo.edison.hello.HelloEdison</mainClass>
+							<attachToBuild>true</attachToBuild>
+							<!-- https://code.google.com/p/onejar-maven-plugin/issues/detail?id=8 -->
+							<!--classifier>onejar</classifier -->
+							<filename>${project.build.finalName}-onejar.${project.packaging}</filename>
+						</configuration>
+						<goals>
+							<goal>one-jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>

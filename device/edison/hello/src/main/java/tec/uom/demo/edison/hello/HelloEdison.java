@@ -23,21 +23,37 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo;
+package tec.uom.demo.edison.hello;
 
-import static tec.units.ri.unit.MetricPrefix.KILO;
+import java.text.MessageFormat;
 
-import javax.measure.Quantity;
+import javax.measure.Quantity; 
 import javax.measure.Unit;
-import javax.measure.quantity.Mass;
+import javax.measure.quantity.LuminousFlux;
+import javax.measure.quantity.LuminousIntensity;
 
-import tec.units.ri.quantity.Quantities;
-import tec.units.ri.unit.SI;
+import tec.uom.se.quantity.Quantities;
+import tec.uom.se.spi.SI;
 
-public class PrefixDemo {
-	public static void main(String... args) {
-		Unit<Mass> kg = KILO(SI.GRAM);
-		Quantity<Mass> mass = Quantities.getQuantity(50, kg);
-		System.out.println(mass);
+public class HelloEdison {
+
+	public static void main(String[] args) {
+		System.out.println("Hello Edison");
+		System.out.println("How about a little lightbulb efficienciency calculation?;-)");
+		final MessageFormat question = new MessageFormat(
+				"What is the power consumption of a lamp that has luminous flux of {0} and luminous efficacy of {1} lumens per watt (lm/W)?");
+		final MessageFormat answer = new MessageFormat("You need a {0} lightbulb.");
+		
+		Quantity<LuminousFlux> lm = Quantities.getQuantity(900, SI.LUMEN);
+		final Unit<?> LM_PER_WATT = SI.LUMEN.divide(SI.WATT);
+		final Number LM_VALUE = 15;
+		final Object[] questionArgs = {lm, LM_VALUE};
+		System.out.println(question.format(questionArgs));
+		Quantity<?>  luminousEfficacy = Quantities.getQuantity(LM_VALUE, LM_PER_WATT);
+//		System.out.println(lm);
+		Quantity<?> P = lm.divide(luminousEfficacy);
+		final Object[] answerArgs = {P};
+		System.out.println(answer.format(answerArgs));
 	}
+
 }
