@@ -30,15 +30,13 @@ import java.text.MessageFormat;
 import javax.measure.Quantity; 
 import javax.measure.Unit;
 import javax.measure.quantity.LuminousFlux;
-import javax.measure.quantity.LuminousIntensity;
-
 import tec.uom.se.quantity.Quantities;
 import tec.uom.se.spi.SI;
 
 public class HelloEdison {
 
 	public static void main(String[] args) {
-		System.out.println("Hello Edison");
+		System.out.println("Hello Edison.");
 		System.out.println("How about a little lightbulb efficienciency calculation?;-)");
 		final MessageFormat question = new MessageFormat(
 				"What is the power consumption of a lamp that has luminous flux of {0} and luminous efficacy of {1} lumens per watt (lm/W)?");
