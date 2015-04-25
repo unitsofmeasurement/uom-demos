@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>tec.uom.demo.device</groupId>
+		<artifactId>uom-edison-demos</artifactId>
+		<version>0.8-SNAPSHOT</version>
+	</parent>
+	<artifactId>uom-edison-dio</artifactId>
+	<name>Device I/O for Edison</name>
+
+	<properties>
+		<jdkVersion>1.8</jdkVersion>
+		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
+		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
+		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+	</properties>
+	<description>A Demo for Java Device  I/O API and Units of Measurements on Intel Edison</description>
+</project>

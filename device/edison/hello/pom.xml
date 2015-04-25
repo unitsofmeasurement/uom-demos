@@ -2,15 +2,10 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>tec.uom.demo.device</groupId>
-    <artifactId>uom-device-demos</artifactId>
+    <artifactId>uom-edison-demos</artifactId>
     <version>0.8-SNAPSHOT</version>
   </parent>
-  <artifactId>uom-edison-demos</artifactId>
-  <packaging>pom</packaging>
-  <name>Edison Demos</name>
-  <description>Demos for Intel Edison</description>
-  <modules>
-  	<module>hello</module>
-  	<module>dio</module>
-  </modules>
+  <artifactId>uom-edison-hello</artifactId>
+  <name>Hello Edison Demo</name>
+  <description>A simple Hello Edison Demo on the console</description>
 </project>
