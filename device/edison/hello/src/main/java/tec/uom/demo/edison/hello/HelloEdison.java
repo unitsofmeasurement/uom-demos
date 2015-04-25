@@ -37,7 +37,7 @@ public class HelloEdison {
 
 	public static void main(String[] args) {
 		System.out.println("Hello Edison.");
-		System.out.println("How about a little lightbulb efficienciency calculation?;-)");
+		System.out.println("How about a little lightbulb efficiency calculation?;-)");
 		final MessageFormat question = new MessageFormat(
 				"What is the power consumption of a lamp that has luminous flux of {0} and luminous efficacy of {1} lumens per watt (lm/W)?");
 		final MessageFormat answer = new MessageFormat("You need a {0} lightbulb.");
