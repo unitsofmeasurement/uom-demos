@@ -34,7 +34,6 @@
 							<sourceHighlighter>highlightjs</sourceHighlighter> <!-- coderay -->
 							<backend>html</backend>
 							<embedAssets>true</embedAssets>
-							<imagesDir>src/main/asciidoc/images/</imagesDir>
 						</configuration>
 					</execution>
 					<execution>

@@ -1,10 +1,10 @@
-﻿Unit-API Edison Demos
-=====================
+﻿Unit-API Edison Tutorial
+========================
 Werner Keil
-v0.2, 2015-04-26
+v0.3, 2015-04-27
 :doctype: book
 
-This is a quick start guide for Java and Unit-API on Intel Edison.
+This is a tutorial for Java and Unit-API on Intel Edison.
 
 toc::[]
 
