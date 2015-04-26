@@ -1,16 +1,50 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>tec.uom.demo.device</groupId>
-    <artifactId>uom-device-demos</artifactId>
-    <version>0.8-SNAPSHOT</version>
-  </parent>
-  <artifactId>uom-edison-demos</artifactId>
-  <packaging>pom</packaging>
-  <name>Edison Demos</name>
-  <description>Demos for Intel Edison</description>
-  <modules>
-  	<module>hello</module>
-  	<module>dio</module>
-  </modules>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>tec.uom.demo.device</groupId>
+		<artifactId>uom-device-demos</artifactId>
+		<version>0.8-SNAPSHOT</version>
+	</parent>
+	<artifactId>uom-edison-demos</artifactId>
+	<packaging>pom</packaging>
+	<name>Edison Demos</name>
+	<description>Demos for Intel Edison</description>
+	<modules>
+		<module>hello</module>
+		<module>dio</module>
+	</modules>
+	<profiles>
+		<profile>
+			<id>documentation</id>
+			<build>
+	               <plugins>
+                    <plugin>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctor-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>output-html</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>process-asciidoc</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>target/docs</outputDirectory>
+                                    <sourceHighlighter>highlightjs</sourceHighlighter> <!-- coderay -->
+                                    <backend>html</backend>
+                                    <embedAssets>true</embedAssets>
+                                    <imagesDir>src/main/asciidoc/images/</imagesDir>
+                                </configuration>
+                            </execution>
+                            <!-- execution> <id>output-pdf</id> <phase>generate-resources</phase> 
+                                <goals> <goal>process-asciidoc</goal> </goals> <configuration> <outputDirectory>target/docs</outputDirectory> 
+                                <sourceHighlighter>highlightjs</sourceHighlighter> <backend>pdf</backend> 
+                                </configuration> </execution -->
+                        </executions>
+                    </plugin>
+                </plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>

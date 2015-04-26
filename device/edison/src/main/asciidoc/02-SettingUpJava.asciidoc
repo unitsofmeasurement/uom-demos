@@ -1,0 +1,10 @@
+=== Eclipse Build Platform Configuration
+
+Now we need to configure Eclipse so that it knows about UOMo and where it lives so it can build against it.
+
+NOTE: The default behavour of Eclipse when building plug-ins is to build against "itself"; that is to use the currently running plug-ins of the IDE as the build target.
+
+. Click the menu “Window -> Preferences”
+. Navigate to the “Plug-in Development -> Target Platform” section of the preferences dialog: +
+image:images/image00.png[] +
+Click “Add...”.
