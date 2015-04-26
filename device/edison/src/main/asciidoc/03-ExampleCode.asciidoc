@@ -24,9 +24,16 @@ Now you are ready to run a first "Hello World" project.
 ----
 +
 Calculates which light bulb you need to produce a certain "brightness".
-The units of these parameters are not defined; just that they are of quanity +Mass+ and +Acceleration+ respectively.
 +
-So our code needs to get the absolute value of these in a known unit for calculation - for simplicity we use the SI units Kilogram (kg) and Metres per second per second (m/s2).
-We then simply perform the multiplication, and create a result using the SI unit for Force - Newtons (N).
 
-. Now we have our example API implementation - we need to call it to see it do something. Let's create a unit test. (OK purists, we should have created this first to be truly TDD, but this is just a tutorial!)
+Based on the formula:
+
++P = LF/LE+
+
+Where:
+
+ * +P+ is Power in Watt
+ * +LF+ is Luminous Flux in lumen
+ * +LE+ is LuminousEfficacy in lumen per Watt
+
+Our example API will provide methods for computing any of the above, given the other two.

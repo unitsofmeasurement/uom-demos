@@ -6,19 +6,19 @@ NOTE: The default behavour of Eclipse when building plug-ins is to build against
 
 . Click the menu “Window -> Preferences”
 . Navigate to the “Plug-in Development -> Target Platform” section of the preferences dialog: +
-image:images/image10.png[] +
+image:image10.png[] +
 Click “Add...”
 . Select “Nothing: Start with an empty target definition” in the “New target definition” dialog: +
-image:images/image04.png[] +
+image:image04.png[] +
 Click “Next”
 . Give the new target a name, such as “UOMo”: +
-image:images/image03.png[] +
+image:image03.png[] +
 Click “Add...”
 . Select “Software Site” from the plug-in source options: +
 image:images/image17.png[] +
 Click “Next”
 . You should now be in the "Add Content" dialog. From here we can add plugins to our target platform:. +
-image:images/image02.png[] +
+image:image02.png[] +
 Firstly, we need to give our target definition a place to get Eclipse plug-ins from. Enter the URL http://download.eclipse.org/releases/juno into the “Work With” field. Ensure that the “Group by Category” field is un-checked. +
 Type “Eclipse Platform” into the search field: +
 Select the Eclipse Platform (without +M*+ at the end :- as this is a milestone release) +
@@ -26,13 +26,13 @@ Click “Finish”
 . Eclipse will do some loading/resolving... 
 . Now we need to add the UOMo libraries to our target. Click “Add..” again on the target platform editor window. +
 The select “Software Site” again. But this time enter the URL http://download.eclipse.org/uomo/0.6/repository/ +
-image:images/image14.png[] +
+image:image14.png[] +
 Select the EclipseUOMo feature.
 Click “Finish”
 . Eclipse will do some more loading/resolving. You are back at the target platform preferences page: +
-image:images/image21.png[] +
+image:image21.png[] +
 Select UOMo target and click “Apply”
 . *(Optional)* You can click “Share..” if you want to save this target definition as a file for use in the future. Pick a location and a name for the target file in the window as below: +
-image:images/image08.png[] +
+image:image08.png[] +
 Click “Finish” when you are done.
 . Click “OK” on the preferences page and go back to the main Eclipse IDE.

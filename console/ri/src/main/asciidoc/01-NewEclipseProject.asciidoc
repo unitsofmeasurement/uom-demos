@@ -4,20 +4,20 @@ Most of verbosity in the steps that follows are related to complexities of creat
 
 . In Eclipse click the +File -> New -> Project...+ menu 
 . Select Plug-in Project: +
-image:images/image09.png[] +
+image:image09.png[] +
 Click “Next”
 . Enter a name for the plugin project (e.g. +com.acme.n2l+): +
-image:images/image12.png[] +
+image:image12.png[] +
 Click “Next”
 . You can now customise the plugin details as follows: +
-image:images/image15.png[] +
+image:image15.png[] +
 Ensure that  all checkboxes under “Options” are de-selected. +
 Then click “Finish”. +
 . Eclipse will create your new project.
 [NOTE] 
 ========================================
 If the following dialog appears: +
-image:images/image13.png[] +
+image:image13.png[] +
 click “Yes” to open the PDE perspective.
 ========================================
 

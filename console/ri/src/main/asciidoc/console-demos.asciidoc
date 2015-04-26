@@ -1,10 +1,10 @@
-﻿Unit-API Console Demo
-=====================
-Chris Senior & Werner Keil
-v0.3, 2014-07-02
+﻿Unit-API Console Demo for RI
+============================
+Werner Keil
+v0.4, 2015-04-26
 :doctype: book
 
-This is a quick start guide for users of Unit-API.
+This is a quick start guide for users of the Unit-API RI Console Demos.
 
 toc::[]
 
