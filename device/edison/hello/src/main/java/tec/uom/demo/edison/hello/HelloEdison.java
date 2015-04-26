@@ -45,15 +45,13 @@ public class HelloEdison {
 		final MessageFormat answer = new MessageFormat("You need a {0} lightbulb.");
 		
 		Quantity<LuminousFlux> lm = Quantities.getQuantity(900, SI.LUMEN);
-		final Unit<LuminousEfficacy> LM_PER_WATT = SI.LUMEN.divide(SI.WATT).asType(LuminousEfficacy.class);
+		final Unit<LuminousEfficacy> LM_PER_WATT = SI.LUMEN.divide(SI.WATT).asType(LuminousEfficacy.class); // TODO make available in unit system
 		final Number LM_VALUE = 15;
 		final Object[] questionArgs = {lm, LM_VALUE};
 		System.out.println(question.format(questionArgs));
 		Quantity<LuminousEfficacy>  luminousEfficacy = Quantities.getQuantity(LM_VALUE, LM_PER_WATT);
-//		System.out.println(lm);
 		Quantity<Power> p = lm.divide(luminousEfficacy).asType(Power.class);
 		final Object[] answerArgs = {p};
 		System.out.println(answer.format(answerArgs));
 	}
-
 }
