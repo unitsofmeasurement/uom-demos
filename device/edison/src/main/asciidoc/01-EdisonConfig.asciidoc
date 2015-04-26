@@ -1,15 +1,15 @@
-=== New Eclipse Plugin Project
+=== Edison Configuration
 
 Most of verbosity in the steps that follows are related to complexities of creating Eclipse plug-ins rather than anything hard about using Unit-API...
 
 . In Eclipse click the +File -> New -> Project...+ menu 
 . Select Plug-in Project: +
-image:images/image00.png[] +
+image:image00.png[] +
 Click “Next”.
 [NOTE] 
 ========================================
 If the following dialog appears: +
-image:images/image00.png[] +
+image:image00.png[] +
 click “Yes” to open the PDE perspective.
 ========================================
 

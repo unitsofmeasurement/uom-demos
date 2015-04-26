@@ -1,10 +1,10 @@
-=== Eclipse Build Platform Configuration
+=== Setting up Java
 
-Now we need to configure Eclipse so that it knows about UOMo and where it lives so it can build against it.
+Now we need to install Java to your Edison board.
 
 NOTE: The default behavour of Eclipse when building plug-ins is to build against "itself"; that is to use the currently running plug-ins of the IDE as the build target.
 
 . Click the menu “Window -> Preferences”
 . Navigate to the “Plug-in Development -> Target Platform” section of the preferences dialog: +
-image:images/image00.png[] +
+image:image00.png[] +
 Click “Add...”.

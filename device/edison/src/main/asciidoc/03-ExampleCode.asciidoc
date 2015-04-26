@@ -1,8 +1,8 @@
 === Example Code
-Now you are ready to start work on our N2L plug-in.
+Now you are ready to run a first "Hello World" project.
 
-. Create a new class called +NewtonsSecondLaw+ in the package +com.acme.n2l+
-. Now add the following code: 
+. We called it +HelloEdison+ in the package +tec.uom.demo.edison.hello+
+. The following code: 
 +
 [source,java]
 ----
@@ -23,7 +23,7 @@ Now you are ready to start work on our N2L plug-in.
         System.out.println(answer.format(answerArgs));
 ----
 +
-The important part of this code is the +calculateForce+ method; it takes as parameters an amount of mass and an amount of acceleration - and returns an amount of force.
+Calculates which light bulb you need to produce a certain "brightness".
 The units of these parameters are not defined; just that they are of quanity +Mass+ and +Acceleration+ respectively.
 +
 So our code needs to get the absolute value of these in a known unit for calculation - for simplicity we use the SI units Kilogram (kg) and Metres per second per second (m/s2).
