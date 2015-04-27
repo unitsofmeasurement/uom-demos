@@ -24,3 +24,7 @@ The project currently contains the following modules:
 [![Stories in Progress](https://badge.waffle.io/unitsofmeasurement/uom-demos.png?label=in%20progress&title=In Progress)](https://waffle.io/unitsofmeasurement/uom-demos)
 
 [![Throughput Graph](https://graphs.waffle.io/unitsofmeasurement/uom-demos/throughput.svg)](https://waffle.io/unitsofmeasurement/uom-demos/metrics)
+
+Launch Config for JBoss Developer Studio or Eclipse
+-------------------------------------
+If you use JBoss Developer Studio, Intel® IoT Developer Kit (for C/C++) or another Eclipse based solution, there are some launch configurations for your convenience under [src/etc](src/etc/). 
