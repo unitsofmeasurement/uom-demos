@@ -3,7 +3,7 @@ uom-demos
 
 Units of Measurement Demos
 
-The current project structure contains the following modules:
+The project currently contains the following modules:
 
 - [Console examples](console)
   - [RI based Console Examples](console/ri)
