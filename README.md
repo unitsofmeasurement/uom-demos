@@ -9,8 +9,8 @@ The project currently contains the following modules:
   - [RI based Console Examples](console/ri)
   - [Java SE 8 Console Examples](console/se)
 - [Device specific examples](device)
-  - [Hello Edison for Intel Edison IoT Modules](device/edison/hello)
-  - [Device I/O for for Intel Edison IoT Modules](device/edison/dio) **TBD**
+  - [Hello Edison for Intel Edison IoT devices](device/edison/hello)
+  - [Device I/O for for Intel Edison IoT devices](device/edison/dio) **TBD**
 - [JavaFX examples](javafx)
  - [FXlib Demo application](javafx/fxlib)
 - [Java ME 8 examples](javame) **These are currently not Maven enabled and require NetBeans IDE**
