@@ -3,7 +3,7 @@ Edison Demos
 
 Demos for Intel Edison.
 
-To generate the tutorial with **Asciidoc** simply execute
+To generate the tutorial with **Asciidoc** execute
   
         mvn compile -P documents
 
