@@ -24,6 +24,7 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 package tec.uom.demo.edison.hello;
+// TODO make available in unit system and related library (either si.uom or other)
 
 import javax.measure.Quantity;
 
