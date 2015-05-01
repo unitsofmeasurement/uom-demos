@@ -1,7 +1,7 @@
 ﻿Unit-API Edison Tutorial
 ========================
 Werner Keil
-v0.3, 2015-04-27
+v0.4, 2015-05-01
 :doctype: book
 
 This is a tutorial for Java and Unit-API on Intel Edison.

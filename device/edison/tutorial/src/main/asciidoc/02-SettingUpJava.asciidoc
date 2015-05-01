@@ -2,9 +2,7 @@
 
 Now we need to install Java to your Edison board.
 
-NOTE: The default behavour of Eclipse when building plug-ins is to build against "itself"; that is to use the currently running plug-ins of the IDE as the build target.
-
-. Click the menu “Window -> Preferences”
-. Navigate to the “Plug-in Development -> Target Platform” section of the preferences dialog: +
-image:image00.png[] +
-Click “Add...”.
+. Change to the “bin” folder of your extracted JVM, e.g. +/mnt/java/jre1.8.0_45/bin+
+. Execute +./java -version+
+image:DSCF6524_800x205.jpg[] +
+Shows your Java installation is working.

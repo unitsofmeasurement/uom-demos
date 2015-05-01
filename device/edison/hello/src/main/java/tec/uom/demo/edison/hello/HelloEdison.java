@@ -44,13 +44,13 @@ public class HelloEdison {
 				"What is the power consumption of a lamp that has luminous flux of {0} and luminous efficacy of {1} lumens per watt (lm/W)?");
 		final MessageFormat answer = new MessageFormat("You need a {0} lightbulb.");
 		
-		Quantity<LuminousFlux> lm = Quantities.getQuantity(900, SI.LUMEN);
+		Quantity<LuminousFlux> luminousFlux = Quantities.getQuantity(900, SI.LUMEN);
 		final Unit<LuminousEfficacy> LM_PER_WATT = SI.LUMEN.divide(SI.WATT).asType(LuminousEfficacy.class); // TODO make available in unit system
-		final Number LM_VALUE = 15;
-		final Object[] questionArgs = {lm, LM_VALUE};
+		final Number LF_VALUE = 15;
+		final Object[] questionArgs = {luminousFlux, LF_VALUE};
 		System.out.println(question.format(questionArgs));
-		Quantity<LuminousEfficacy>  luminousEfficacy = Quantities.getQuantity(LM_VALUE, LM_PER_WATT);
-		Quantity<Power> p = lm.divide(luminousEfficacy).asType(Power.class);
+		Quantity<LuminousEfficacy>  luminousEfficacy = Quantities.getQuantity(LF_VALUE, LM_PER_WATT);
+		Quantity<Power> p = luminousFlux.divide(luminousEfficacy).asType(Power.class);
 		final Object[] answerArgs = {p};
 		System.out.println(answer.format(answerArgs));
 	}
