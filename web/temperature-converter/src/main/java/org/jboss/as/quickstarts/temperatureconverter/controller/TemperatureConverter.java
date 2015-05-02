@@ -17,6 +17,7 @@
 package org.jboss.as.quickstarts.temperatureconverter.controller;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -30,8 +31,6 @@ import tec.uom.se.unit.SI;
 
 import org.jboss.as.quickstarts.temperatureconverter.ejb.TemperatureAmount;
 import org.jboss.as.quickstarts.temperatureconverter.ejb.TemperatureConvertEJB;
-
-import com.ibm.icu.text.DecimalFormat;
 
 /**
  * A simple managed bean that is used to invoke the TemperatureConvertEJB and store the response. The response is obtained by

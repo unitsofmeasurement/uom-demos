@@ -44,9 +44,6 @@
 		<version.org.jboss.as.plugins.maven.plugin>7.3.Final</version.org.jboss.as.plugins.maven.plugin>
 		<version.org.jboss.spec.jboss.javaee.6.0>3.0.0.Final</version.org.jboss.spec.jboss.javaee.6.0>
 
-		<!-- other plugin versions -->
-		<version.uomo>0.7.0-SNAPSHOT</version.uomo>
-		<icu4j-version>50.1.1</icu4j-version>
 		<!-- maven-compiler-plugin -->
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -107,28 +104,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.eclipse.uomo</groupId>
-			<artifactId>org.eclipse.uomo.units</artifactId>
-			<version>${version.uomo}</version>
-		</dependency>
-		<dependency>
 			<groupId>javax.measure</groupId>
 			<artifactId>unit-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.ibm.icu</groupId>
-			<artifactId>icu4j</artifactId>
-			<version>${icu4j-version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse.uomo</groupId>
-			<artifactId>org.eclipse.uomo.core</artifactId>
-			<version>${version.uomo}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse</groupId>
-			<artifactId>osgi</artifactId>
-			<version>3.5.0.v20090520</version>
 		</dependency>
 	</dependencies>
 

@@ -25,7 +25,7 @@ These are the steps that occur:
 System requirements
 -------------------
 
-All you need to build this project is Java 6.0 (Java SDK 1.6) or better, Maven 3.0 or better.
+All you need to build this project is Java 8.0 (Java SDK 1.8) or better, due to running [UOM-SE](https://github.com/unitsofmeasurement/uom-se) and Maven 3.0 or better.
 
 The application this project produces is designed to be run on JBoss Enterprise Application Platform 6 or JBoss AS 7. 
 
