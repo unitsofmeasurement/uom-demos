@@ -1,6 +1,6 @@
 /**
  *  Unit-API - Units of Measurement API for Java
- *  Copyright 2013-2014, Jean-Marie Dautelle, Werner Keil, V2COM and individual
+ *  Copyright 2013-2015, Jean-Marie Dautelle, Werner Keil, V2COM and individual
  *  contributors by the @author tag.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,10 +16,10 @@
 package tec.uom.demo.health;
 
 import static org.junit.Assert.*;
-import static tec.uom.lib.domain.health.ri.Health.BPM;
+import static tec.uom.domain.health.ri.Health.BPM;
 
 import org.junit.Test;
-import tec.uom.lib.domain.health.ri.HeartRateAmount;
+import tec.uom.domain.health.ri.HeartRateAmount;
 
 public class HealthTest {
 
