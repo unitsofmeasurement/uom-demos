@@ -1,16 +1,8 @@
 === Edison Configuration
 
-Most of verbosity in the steps that follows are related to complexities of creating Eclipse plug-ins rather than anything hard about using Unit-API...
+This contains a nice intro on the Edison board http://www.codefoster.com/edison-setup/
+
+The following Instructable explains how to set up WIFI on the Edison board and prepare WinSCP http://www.instructables.com/id/Intel-Edison-UpdatingWiFi-and-WinSCP/ 
 
 NOTE: Disk space on the Edison board is roughly around 500 MB. It may be increased by using memory not allocated by default. Which will make installing and running some solutions easier without immediate lack of disk space.
 
-. In Eclipse click the +File -> New -> Project...+ menu 
-. Select Plug-in Project: +
-image:DSCF6524_800x205.jpg[] +
-Click “Next”.
-
-[source,linux]
-----
-        System.out.println("Hello Edison.");
-        System.out.println("How about a little lightbulb efficiency calculation?;-)");
-----
