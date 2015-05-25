@@ -16,9 +16,8 @@
 package tec.uom.demo.health;
 
 import static tec.uom.domain.health.ri.Health.BPM;
-
 import tec.uom.domain.health.HeartRate;
-import tec.uom.domain.health.ri.HeartRateAmount;
+import tec.uom.domain.health.ri.types.HeartRateAmount;
 
 /**
  * @version 0.4

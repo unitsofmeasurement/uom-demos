@@ -20,7 +20,7 @@ import static tec.uom.domain.health.se.Health.BPM;
 
 import org.junit.Test;
 
-import tec.uom.domain.health.se.HeartRateAmount;
+import tec.uom.domain.health.se.types.HeartRateAmount;
 
 public class SEHealthTest {
 

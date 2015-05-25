@@ -25,6 +25,7 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
 import tec.units.ri.quantity.Quantities;
+import tec.uom.domain.health.ri.util.BMIRange;
 
 /**
  * This is a simple BMI (Body Mass Index) calculator
@@ -106,6 +107,5 @@ public class BMIDemo {
 						.getValue().doubleValue()) {
 			System.out.println(OVERWEIGHT_BMI.getCategory());
 		}
-
 	}
 }

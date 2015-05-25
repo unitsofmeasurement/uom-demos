@@ -19,7 +19,8 @@ import static org.junit.Assert.*;
 import static tec.uom.domain.health.ri.Health.BPM;
 
 import org.junit.Test;
-import tec.uom.domain.health.ri.HeartRateAmount;
+
+import tec.uom.domain.health.ri.types.HeartRateAmount;
 
 public class HealthTest {
 

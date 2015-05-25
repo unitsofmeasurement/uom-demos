@@ -16,6 +16,7 @@
 package tec.uom.demo.health.se;
 
 import static tec.uom.se.unit.SI.KILOGRAM;
+import static tec.uom.se.unit.SI.SQUARE_METRE;
 import static tec.uom.se.unit.SI.METRE;
 
 import javax.measure.Quantity;
@@ -23,15 +24,34 @@ import javax.measure.quantity.Area;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
+import tec.uom.domain.health.se.util.BMIRange;
 import tec.uom.se.quantity.Quantities;
 
 /**
  * This is a simple BMI (Body Mass Index) calculator
- * @version 0.5
+ * @version 0.6
  * @author Werner
  *
  */
 public class BMIDemoSE {
+	private static final BMIRange VERY_SEVERELY_UNDERWEIGHT_BMI = BMIRange.of(
+			Quantities.getQuantity(30, SQUARE_METRE).divide(
+					Quantities.getQuantity(2, KILOGRAM)), null);
+	private static final BMIRange SEVERELY_UNDERWEIGHT_BMI = BMIRange.of(
+			Quantities.getQuantity(30, SQUARE_METRE).divide(
+					Quantities.getQuantity(2, KILOGRAM)),
+			Quantities.getQuantity(32, SQUARE_METRE).divide(
+					Quantities.getQuantity(2, KILOGRAM)));
+	private static final BMIRange NORMAL_BMI = BMIRange.of(
+			Quantities.getQuantity(18.5, SQUARE_METRE).divide(
+					Quantities.getQuantity(1, KILOGRAM)),
+			Quantities.getQuantity(25, SQUARE_METRE).divide(
+					Quantities.getQuantity(1, KILOGRAM)));
+	private static final BMIRange OVERWEIGHT_BMI = BMIRange.of(
+			Quantities.getQuantity(25, SQUARE_METRE).divide(
+					Quantities.getQuantity(1, KILOGRAM)),
+			Quantities.getQuantity(60, SQUARE_METRE).divide(
+					Quantities.getQuantity(2, KILOGRAM)));
 
 	public static void main(String[] args) {
 		Double dHeight;
@@ -50,6 +70,31 @@ public class BMIDemoSE {
 		Quantity<Area> squareHeight = height.multiply(height).asType(Area.class);
 		Quantity<?> bmi = mass.divide(squareHeight);
 		System.out.println(bmi);
+		printCategory(bmi);
 	}
-
+	
+	private static final void printCategory(final Quantity<?> bmi) {
+		if (bmi.getValue().doubleValue() <= VERY_SEVERELY_UNDERWEIGHT_BMI
+				.getMinimum().getValue().doubleValue()) {
+			System.out.println(VERY_SEVERELY_UNDERWEIGHT_BMI.getCategory());
+		}
+		if (bmi.getValue().doubleValue() >= SEVERELY_UNDERWEIGHT_BMI
+				.getMinimum().getValue().doubleValue()
+				&& bmi.getValue().doubleValue() <= SEVERELY_UNDERWEIGHT_BMI
+						.getMaximum().getValue().doubleValue()) {
+			System.out.println(SEVERELY_UNDERWEIGHT_BMI.getCategory());
+		}
+		if (bmi.getValue().doubleValue() >= NORMAL_BMI.getMinimum().getValue()
+				.doubleValue()
+				&& bmi.getValue().doubleValue() <= NORMAL_BMI.getMaximum()
+						.getValue().doubleValue()) {
+			System.out.println(NORMAL_BMI.getCategory());
+		}
+		if (bmi.getValue().doubleValue() >= OVERWEIGHT_BMI.getMinimum()
+				.getValue().doubleValue()
+				&& bmi.getValue().doubleValue() <= OVERWEIGHT_BMI.getMaximum()
+						.getValue().doubleValue()) {
+			System.out.println(OVERWEIGHT_BMI.getCategory());
+		}
+	}
 }
