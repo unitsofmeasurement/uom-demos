@@ -1,16 +1,35 @@
 === Edison Configuration
 
-Most of verbosity in the steps that follows are related to complexities of creating Eclipse plug-ins rather than anything hard about using Unit-API...
+This contains a nice intro on the Edison board http://www.codefoster.com/edison-setup/
+
+The following Instructable explains how to set up WIFI on the Edison board and prepare WinSCP http://www.instructables.com/id/Intel-Edison-UpdatingWiFi-and-WinSCP/ 
 
 NOTE: Disk space on the Edison board is roughly around 500 MB. It may be increased by using memory not allocated by default. Which will make installing and running some solutions easier without immediate lack of disk space.
 
-. In Eclipse click the +File -> New -> Project...+ menu 
-. Select Plug-in Project: +
-image:DSCF6524_800x205.jpg[] +
-Click “Next”.
+==== Get additional 800 MB disk space
+By default the update process works via an extra 800 MB VFAT partition where the new Linux installation files are copied to and which get flashed later on. 
+However, this space is unutilized. Here is how to format and use it for Edison Linux.
 
+. Eject the drive from your computer if it is mounted.
+. Apply the following commands as root on the Edison:
++
 [source,linux]
 ----
-        System.out.println("Hello Edison.");
-        System.out.println("How about a little lightbulb efficiency calculation?;-)");
+// Create a file system
+# mkfs.ext4 /dev/disk/by-partlabel/update
+
+// add the following single line at the end of 'fstab'
+# vi /etc/fstab
+/dev/disk/by-partlabel/update     /mnt      auto    noauto,x-systemd.automount,,
+nosuid,nodev,noatime,discard,barrier=1,data=ordered,noauto_da_alloc 1   1
+
+// Another option is to duplicate the line "/dev/disk/by-partlabel/home..." and replace home
+// with update, and replace the mount point from /home with /mnt
+
+// These commands will mount the drive and show the new disk space
+# mount /mnt
+# df -k
+...
+/dev/mmcblk0p9          757680       776    701856   0% /mnt
 ----
++
