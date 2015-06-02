@@ -1,6 +1,9 @@
 === Edison Configuration
 
+
 This contains a nice intro on the Edison board http://www.codefoster.com/edison-setup/
+
+A step-by-step installation guideline by Intel: https://software.intel.com/en-us/installing-drivers-intel-edison-board
 
 The following Instructable explains how to set up WIFI on the Edison board and prepare WinSCP http://www.instructables.com/id/Intel-Edison-UpdatingWiFi-and-WinSCP/ 
 
@@ -32,4 +35,4 @@ nosuid,nodev,noatime,discard,barrier=1,data=ordered,noauto_da_alloc 1   1
 ...
 /dev/mmcblk0p9          757680       776    701856   0% /mnt
 ----
-+
+

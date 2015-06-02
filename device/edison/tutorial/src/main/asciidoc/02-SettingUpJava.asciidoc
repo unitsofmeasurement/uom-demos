@@ -1,4 +1,5 @@
-=== Setting up Java
+=== Setting Up Java
+
 
 Now we need to install Java to your Edison board.
 
