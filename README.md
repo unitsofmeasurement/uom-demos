@@ -5,7 +5,7 @@ Units of Measurement Demos
 
 The project currently contains the following modules:
 
-- [Console Examples](console)
+- [Console Demos](console)
   - [RI based Console Demos](console/ri)
   - [Java SE 8 Console Demos](console/se)
 - [Device specific demos](device)
