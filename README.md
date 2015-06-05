@@ -6,17 +6,17 @@ Units of Measurement Demos
 The project currently contains the following modules:
 
 - [Console Examples](console)
-  - [RI based Console Examples](console/ri)
-  - [Java SE 8 Console Examples](console/se)
-- [Device specific examples](device)
+  - [RI based Console Demos](console/ri)
+  - [Java SE 8 Console Demos](console/se)
+- [Device specific demos](device)
   - [Hello Edison for Intel Edison IoT Devices](device/edison/hello)
   - [Device I/O for for Intel Edison IoT Devices](device/edison/dio) **TBD**
-- [JavaFX Examples](javafx)
+- [JavaFX Demos](javafx)
  - [FXlib Demo Application](javafx/fxlib)
-- [Java ME 8 Axamples](javame) **These are currently not Maven enabled and require NetBeans IDE**
+- [Java ME 8 Demos](javame) **These are currently not Maven enabled and require NetBeans IDE**
   - [Hello ME for Java ME 8](javame/hellome) **work in progress**
   - [Java ME 8 Demo](javame/medemo) **work in progress**
-- [Web Examples](web)
+- [Web Demos](web)
   - [Improved JBoss Temperature Converter](web/temperature-converter)
 
 
