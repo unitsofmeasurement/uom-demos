@@ -13,15 +13,15 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package tec.uom.demo.types;
+package space.uom.demo.planet;
 
 import static tec.units.ri.util.OutputHelper.println;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import tec.uom.demo.types.DwarfPlanet;
-import tec.uom.demo.types.Planet;
+import space.uom.demo.planet.DwarfPlanet;
+import space.uom.demo.planet.Planet;
 
 
 /**

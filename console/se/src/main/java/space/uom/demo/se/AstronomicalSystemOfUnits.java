@@ -27,7 +27,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.se.sandbox;
+package space.uom.demo.se;
 
 import static tec.uom.se.unit.MetricPrefix.KILO;
 
@@ -54,7 +54,7 @@ import tec.uom.se.unit.TransformedUnit;
  * @author Werner
  *
  */
-class AstronomicalSystemOfUnits extends AbstractSystemOfUnits {
+public final class AstronomicalSystemOfUnits extends AbstractSystemOfUnits {
 
 	/**
 	 * The singleton instance.

@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package tec.uom.demo.types;
+package space.uom.demo.planet;
 
 import javax.measure.Unit;
 import javax.measure.quantity.Length;

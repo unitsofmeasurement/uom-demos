@@ -27,9 +27,9 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.types;
+package space.uom.demo.planet;
 
-import static tec.uom.demo.types.SolarSystem.*;
+import static space.uom.demo.planet.SolarSystem.*;
 import static tec.units.ri.unit.SI.*;
 
 import javax.measure.Quantity;
