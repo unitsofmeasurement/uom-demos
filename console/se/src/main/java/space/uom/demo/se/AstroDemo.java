@@ -31,9 +31,13 @@ package space.uom.demo.se;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
+import javax.measure.quantity.Force;
 import javax.measure.quantity.Length;
+import javax.measure.quantity.Mass;
+import javax.measure.quantity.Volume;
 
 import tec.uom.se.spi.QuantityFactoryProvider;
+import tec.uom.se.unit.SI;
 
 public class AstroDemo {
 
@@ -42,6 +46,9 @@ public class AstroDemo {
 		Quantity<Length> peri = QuantityFactoryProvider.getQuantityFactory(
 				Length.class).create(0.9832687, au);
 		System.out.println(peri);
+		
+		Unit<Force> u = SI.NEWTON;
+		System.out.println(u);
 	}
 
 }

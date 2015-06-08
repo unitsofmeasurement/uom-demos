@@ -39,7 +39,7 @@ import javax.measure.quantity.Area;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 import javax.measure.quantity.Volume;
-import javax.measure.quantity.VolumetricDensity;
+import javax.measure.quantity.MassDensity;
 
 import tec.uom.se.AbstractSystemOfUnits;
 import tec.uom.se.AbstractUnit;
@@ -105,9 +105,9 @@ public final class AstronomicalSystemOfUnits extends AbstractSystemOfUnits {
 	public static final TransformedUnit<Length> ASTRONOMICAL_UNIT = new TransformedUnit<Length>(
 			"AU", SI.METRE, new MultiplyConverter(149597871000.0));
 
-	public static final ProductUnit<VolumetricDensity> GRAM_PER_CUBIC_CENTIMETRE = addUnit(
-			new ProductUnit<VolumetricDensity>(SI.GRAM.divide((MetricPrefix
-					.CENTI(SI.METRE)).pow(3))), VolumetricDensity.class);
+	public static final ProductUnit<MassDensity> GRAM_PER_CUBIC_CENTIMETRE = addUnit(
+			new ProductUnit<MassDensity>(SI.GRAM.divide((MetricPrefix
+					.CENTI(SI.METRE)).pow(3))), MassDensity.class);
 
 	/**
 	 * The SI unit for area quantities (standard name <code>m2</code>).
