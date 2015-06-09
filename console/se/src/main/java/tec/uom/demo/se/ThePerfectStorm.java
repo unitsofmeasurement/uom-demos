@@ -22,7 +22,7 @@ import static tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale.Category.THR
 import static tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_DEPRESSION;
 import static tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_STORM;
 import static tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale.Category.TWO;
-import static tec.uom.se.unit.CommonUnits.KILOMETRES_PER_HOUR;
+import static tec.uom.se.unit.Units.KILOMETRES_PER_HOUR;
 import static tec.uom.se.unit.SI.METRE;
 import static tec.uom.se.unit.MetricPrefix.KILO;
 import static tec.uom.se.unit.US.MILES_PER_HOUR;
