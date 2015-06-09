@@ -43,7 +43,7 @@ import javax.measure.Unit;
 import javax.measure.UnitConverter;
 
 import tec.uom.se.AbstractUnit;
-import tec.uom.se.unit.CommonUnits;
+import tec.uom.se.unit.Units;
 import tec.uom.se.unit.SI;
 import tec.uom.se.unit.ucum.UCUM;
 import static tec.uom.se.unit.SI.*;
@@ -218,7 +218,7 @@ public class FXlibController implements Initializable {
                 };
             case "speed":
                 return new Unit[] {
-                    CommonUnits.KILOMETRES_PER_HOUR,
+                    Units.KILOMETRES_PER_HOUR,
                     MILES_PER_HOUR
                 };
             case "temperature":
