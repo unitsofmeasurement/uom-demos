@@ -1,0 +1,65 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+<head>
+	<title>Temperature Checker Companion App</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+	<style type="text/css">
+		/* Prevent copy paste for all elements except text fields */
+		*  { -webkit-user-select:none; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); }
+		input, textarea  { -webkit-user-select:text; }
+		body { background-color:white; color:black }
+	</style>
+    <!--  jQuery  -->
+    <script src="lib/jquery/jquery-2.1.1.js"></script>
+    <!--  App Framework  -->
+    <link rel="stylesheet" type="text/css" href="lib/appframework/af.ui.css"></link>
+    <script type="text/javascript" src="lib/appframework/jq.appframework.min.js"></script>
+<!--    <script type="text/javascript" src="lib/appframework/appframework.js"></script>-->
+    <script type="text/javascript" charset="utf-8" src="lib/appframework/appframework.ui.min.js"></script>
+    
+    <script src="lib/d3/d3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css"></link>
+    <script src="intelxdk.js"></script>
+    <script src="cordova.js"></script>
+    
+    <script src='xhr.js'></script>
+    <script type="text/javascript">
+        var onDeviceReady=function(){                             // called when Cordova is ready
+           if( window.Cordova && navigator.splashscreen ) {     // Cordova API detected
+                navigator.splashscreen.hide() ;                 // hide splash screen
+            }
+        } ;
+        document.addEventListener("deviceready", onDeviceReady, false) ;
+    </script>
+</head>
+<body>
+	<div id="afui">
+        
+        <div id="content">
+            
+            <div id="main" title="LocalTemperature" class="panel" data-footer="none">
+                <div class="center">
+                    <h1>How Hot is It?(°F)</h1>               
+                    <div id="gauge"><span>Temp</span></div>
+                    <div id="chart"></div>
+                </div>     
+                <div>
+                    <b>Log:</b><br>
+                    <div id="feedback_log" class="redtext"></div>
+                </div>
+            </div>
+            
+            <div class="panel" data-title="LocalTemp Companion" modal="true" selected="true">
+                <p>Please provide an IP address & port to your LocalTemperature IoT project (Temperature Sensor) on your development platform.</p>
+                <em>Note:<em> This is needed for establishing a connection betweeen your Companion App and Node.js/IoT application.
+                <p>
+                <input id="ip_address" type="text" placeholder="Enter your IoT dev platform's IP Address">
+                <input id="port" type="text" placeholder="Enter your corresponding port number">
+                <a class="block button" onclick="validateIP()">Submit</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/main.js"></script>
+</html>
