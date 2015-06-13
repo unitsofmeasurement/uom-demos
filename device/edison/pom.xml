@@ -6,6 +6,7 @@
 		<artifactId>uom-device-demos</artifactId>
 		<version>0.8-SNAPSHOT</version>
 	</parent>
+	<groupId>tec.uom.demo.device.edison</groupId>
 	<artifactId>uom-edison-demos</artifactId>
 	<packaging>pom</packaging>
 	<name>Edison Demos</name>
