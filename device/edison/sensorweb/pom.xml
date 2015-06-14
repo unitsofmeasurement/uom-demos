@@ -5,10 +5,10 @@
     <artifactId>uom-edison-demos</artifactId>
     <version>0.8-SNAPSHOT</version>
   </parent>
-  <artifactId>sensorweb</artifactId>
+  <artifactId>uom-edison-sensorweb</artifactId>
   <version>0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>UoM Edison Sensor Web Demo</name>
+  <name>Edison Sensor Web Demo</name>
   <description>Sensor Web Demo for Intel Edison</description>
   <modules>
   	<module>mqttdemo</module>
