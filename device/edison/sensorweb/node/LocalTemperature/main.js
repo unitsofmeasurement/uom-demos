@@ -19,10 +19,14 @@ Article: https://software.intel.com/en-us/html5/articles/iot-local-temperature-n
 
 var B = 3975;
 var mraa = require("mraa");
+
 var mco = require("mco");
 var MetricSystem = mco.MetricSystem;
 var UsCustomarySystem = mco.UsCustomarySystem;
 
+//var mqtt    = require('mqtt');
+//var client  = mqtt.connect('mqtt://192.168.50.76:1883');
+      
 //GROVE Kit A0 Connector --> Aio(0)
 var myAnalogPin = new mraa.Aio(0);
 
@@ -33,21 +37,20 @@ Description: Read Temperature Sensor and send temperature in degrees of Fahrenhe
 */
 function startSensorWatch(socket) {
     'use strict';
+        
     setInterval(function () {
         var a = myAnalogPin.read();
-        console.log("Analog Pin (A0) Output: " + a);
+        //console.log("Analog Pin (A0) Output: " + a);
         //console.log("Checking....");
         
         var resistance = (1023 - a) * 10000 / a; //get the resistance of the sensor;
         //console.log("Resistance: "+resistance);
         var celsius_temperature = 1 / (Math.log(resistance / 10000) / B + 1 / 298.15) - 273.15;//convert to temperature via datasheet ;
-        console.log("Celsius Temperature "+celsius_temperature); 
-        //mco.Unit.
-        //var fahrenheit_temperature = (celsius_temperature * (9 / 5)) + 32;
         var celsius = new mco.UnitValue(celsius_temperature, MetricSystem.CELSIUS);
+        console.log("Celsius Temperature "+celsius); 
         var fahrenheit =  mco.UnitTransformer.transform(celsius, UsCustomarySystem.FAHRENHEIT);
         var fahrenheit_temperature = fahrenheit.getValue();
-        console.log("Fahrenheit Temperature: " + fahrenheit_temperature);
+        console.log("Fahrenheit Temperature: " + fahrenheit);
         socket.emit("message", fahrenheit_temperature);
     }, 4000);
 }
@@ -78,4 +81,3 @@ io.on('connection', function (socket) {
         console.log('user disconnected');
     });
 });
-

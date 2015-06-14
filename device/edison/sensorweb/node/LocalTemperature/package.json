@@ -8,6 +8,7 @@
   },
   "dependencies": {
       "socket.io":"latest",
-      "mco":"latest"
+      "mco":"latest",
+      "mqtt":"latest"
   }
 }
