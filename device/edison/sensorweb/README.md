@@ -9,7 +9,7 @@ The project contains the following modules:
   - [Local Temperature Node.js IoT App](node/LocalTemperature)
   - [Local Temperature Mobile Companion](mobile/LocalTemperatureApp)
 - Java
-  - [MQTT Demo](mqttdemo)
+  - [MQTT Demo](mqttdemo) **TBD**
 
 
 Links
