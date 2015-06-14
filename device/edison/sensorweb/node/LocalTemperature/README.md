@@ -2,7 +2,7 @@ Local Temperature Node.js IoT App
 ============================
 Based on the Local Temperature Node.js sample application distributed within Intel® XDK IoT Edition under the IoT with Node.js Projects project creation option showcases how to read analog data from a Grover Starter Kit Plus – IoT Intel® Edition Temperature Sensor, start a web server and communicate wirelessly using WebSockets.
 
-This improved version uses the [MCO library](https://github.com/StevenLooman/mco) for data quality and consistent Units of Measurement semantics under Node.js. 
+This improved version uses the [MCO library](https://github.com/StevenLooman/mco) adding data quality and consistent Units of Measurement semantics to Node.js. 
 
 Intel(R) XDK IoT Edition
 -------------------------------------------
