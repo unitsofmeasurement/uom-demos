@@ -23,7 +23,7 @@
 		<dependencies>
 			<dependency>
 				<groupId>tec.uom.domain</groupId>
-				<artifactId>uom-health</artifactId>
+				<artifactId>uom-health-api</artifactId>
 				<version>${lib.version}</version>
 			</dependency>
 			<dependency>
@@ -41,7 +41,7 @@
 		</dependency>
 		<dependency>
 			<groupId>tec.uom.domain</groupId>
-			<artifactId>uom-health</artifactId>
+			<artifactId>uom-health-api</artifactId>
 		</dependency>
 
 		<dependency>
