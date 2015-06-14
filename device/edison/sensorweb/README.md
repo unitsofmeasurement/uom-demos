@@ -5,10 +5,9 @@ Sensor Web Demos for Intel Edison.
 
 The project contains the following modules:
 
-- [Node.JS](node)
-  - [Local Temperature - XDK](node/LocalTemperature)
-- [Mobile Companion Apps](mobile)
-  - [Local Temperature Mobile Companion - XDK](mobile/LocalTemperatureApp)
+- [XDK](https://software.intel.com/en-us/html5/xdk-iot)
+  - [Local Temperature Node.js IoT App](node/LocalTemperature)
+  - [Local Temperature Mobile Companion](mobile/LocalTemperatureApp)
 - Java
   - [MQTT Demo](mqttdemo)
 
