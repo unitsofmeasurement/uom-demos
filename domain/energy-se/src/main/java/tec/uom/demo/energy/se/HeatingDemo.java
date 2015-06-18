@@ -38,7 +38,7 @@ import tec.uom.se.unit.SI;
  * @author Werner
  * @see <a href="http://www.dagego.de/info_waermebedarf.html">Dageto Wärmebedarfsermittlung (DE)</a>
  */
-public class SmartHomeDemo {
+public class HeatingDemo {
 
 	public static void main(String[] args) {
 		Quantity<Volume> volume = Quantities.getQuantity(1000, SI.LITRE);
