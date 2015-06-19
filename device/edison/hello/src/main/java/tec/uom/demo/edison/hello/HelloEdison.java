@@ -38,18 +38,28 @@ import tec.uom.se.unit.SI;
 public class HelloEdison {
 
 	public static void main(String[] args) {
+		int iLumen;
+		int iLumEfficiacy;
+		if(args.length > 0) {
+			iLumen = Integer.parseInt(args[0]);
+			iLumEfficiacy = Integer.parseInt(args[1]);
+		} else {
+			iLumen = 900;
+			iLumEfficiacy = 15;
+		}
+		
 		System.out.println("Hello Edison.");
 		System.out.println("How about a little lightbulb efficiency calculation?;-)");
 		final MessageFormat question = new MessageFormat(
 				"What is the power consumption of a lamp that has luminous flux of {0} and luminous efficacy of {1} lumens per watt (lm/W)?");
 		final MessageFormat answer = new MessageFormat("You need a {0} lightbulb.");
 		
-		Quantity<LuminousFlux> luminousFlux = Quantities.getQuantity(900, SI.LUMEN);
+		Quantity<LuminousFlux> luminousFlux = Quantities.getQuantity(iLumen, SI.LUMEN);
 		final Unit<LuminousEfficacy> LM_PER_WATT = SI.LUMEN.divide(SI.WATT).asType(LuminousEfficacy.class); // TODO make available in unit system
-		final Number LF_VALUE = 15;
-		final Object[] questionArgs = {luminousFlux, LF_VALUE};
+		final Integer LE_VALUE = iLumEfficiacy;
+		final Object[] questionArgs = {luminousFlux, LE_VALUE};
 		System.out.println(question.format(questionArgs));
-		Quantity<LuminousEfficacy>  luminousEfficacy = Quantities.getQuantity(LF_VALUE, LM_PER_WATT);
+		Quantity<LuminousEfficacy>  luminousEfficacy = Quantities.getQuantity(LE_VALUE, LM_PER_WATT);
 		Quantity<Power> p = luminousFlux.divide(luminousEfficacy).asType(Power.class);
 		final Object[] answerArgs = {p};
 		System.out.println(answer.format(answerArgs));
