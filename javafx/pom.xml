@@ -11,6 +11,21 @@
 	</parent>
 	<description>Demos of the Units of Measurement API using JavaFX</description>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>systems.uom</groupId>
+				<artifactId>uom-systems-common</artifactId>
+				<version>0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>systems.uom</groupId>
+				<artifactId>uom-systems-ucum</artifactId>
+				<version>0.1-SNAPSHOT</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<modules>
 		<module>fxlib</module>
 	</modules>

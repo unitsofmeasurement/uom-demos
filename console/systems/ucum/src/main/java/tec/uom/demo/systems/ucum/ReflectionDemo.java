@@ -1,4 +1,4 @@
-package tec.uom.demo.se;
+package tec.uom.demo.systems.ucum;
 
 import java.lang.reflect.ParameterizedType;
 
@@ -9,7 +9,7 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Volume;
 
 import tec.uom.se.unit.SI;
-import tec.uom.se.unit.ucum.UCUM;
+import systems.uom.ucum.UCUM;
 import tec.uom.se.unit.BaseUnit;
 
 public class ReflectionDemo {

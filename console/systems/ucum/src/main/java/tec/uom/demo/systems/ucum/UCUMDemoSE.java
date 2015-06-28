@@ -1,4 +1,4 @@
-package tec.uom.demo.se;
+package tec.uom.demo.systems.ucum;
 
 
 

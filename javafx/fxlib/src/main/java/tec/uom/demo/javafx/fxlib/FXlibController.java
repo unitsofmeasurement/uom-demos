@@ -1,6 +1,6 @@
 /**
  *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2014, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -45,14 +45,14 @@ import javax.measure.UnitConverter;
 import tec.uom.se.AbstractUnit;
 import tec.uom.se.unit.Units;
 import tec.uom.se.unit.SI;
-import tec.uom.se.unit.ucum.UCUM;
+import systems.uom.ucum.UCUM;
 import static tec.uom.se.unit.SI.*;
 import static tec.uom.se.unit.MetricPrefix.*;
-import static tec.uom.se.unit.US.*;
+import static systems.uom.common.US.*;
 
 /**
- *
  * @author Werner Keil
+ * @version 0.3
  */
 public class FXlibController implements Initializable {
     private static final NumberFormat FORMAT = NumberFormat.getNumberInstance();
