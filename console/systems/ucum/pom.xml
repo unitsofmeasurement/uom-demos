@@ -5,5 +5,5 @@
     <artifactId>systems</artifactId>
     <version>0.8-SNAPSHOT</version>
   </parent>
-  <artifactId>ucum</artifactId>
+  <artifactId>uom-cum-demos</artifactId>
 </project>
