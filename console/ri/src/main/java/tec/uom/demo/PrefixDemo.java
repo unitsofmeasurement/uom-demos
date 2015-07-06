@@ -1,4 +1,4 @@
-/**
+/*
  *  Unit-API - Units of Measurement API for Java
  *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
@@ -32,11 +32,11 @@ import javax.measure.Unit;
 import javax.measure.quantity.Mass;
 
 import tec.units.ri.quantity.Quantities;
-import tec.units.ri.unit.SI;
+import tec.units.ri.unit.Units;
 
 public class PrefixDemo {
 	public static void main(String... args) {
-		Unit<Mass> kg = KILO(SI.GRAM);
+		Unit<Mass> kg = KILO(Units.GRAM);
 		Quantity<Mass> mass = Quantities.getQuantity(50, kg);
 		System.out.println(mass);
 	}

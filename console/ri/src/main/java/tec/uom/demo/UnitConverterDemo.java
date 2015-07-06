@@ -1,4 +1,4 @@
-/**
+/*
  *  Unit-API - Units of Measurement API for Java
  *  Copyright 2013-2014, Jean-Marie Dautelle, Werner Keil, V2COM and individual
  *  contributors by the @author tag.
@@ -16,7 +16,7 @@
 package tec.uom.demo;
 
 import static tec.units.ri.unit.MetricPrefix.*;
-import static tec.units.ri.unit.SI.*;
+import static tec.units.ri.unit.Units.*;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;

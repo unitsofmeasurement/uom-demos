@@ -6,7 +6,7 @@ import javax.measure.quantity.Temperature;
 import javax.measure.quantity.Volume;
 
 import tec.units.ri.quantity.Quantities;
-import tec.units.ri.unit.SI;
+import tec.units.ri.unit.Units;
 
 /**
  * 
@@ -16,12 +16,11 @@ import tec.units.ri.unit.SI;
 public class SmartHomeDemo {
 
 	public static void main(String[] args) {
-		Quantity<Volume> volume = Quantities.getQuantity(1000, SI.LITRE);
-		Quantity<Temperature> temperature = Quantities.getQuantity(20, SI.KELVIN);
+		Quantity<Volume> volume = Quantities.getQuantity(1000, Units.LITRE);
+		Quantity<Temperature> temperature = Quantities.getQuantity(20, Units.KELVIN);
 		@SuppressWarnings("unchecked")
 		Quantity<Energy> energy = (Quantity<Energy>) volume.multiply(temperature);
 		Quantity<Energy> result = (energy.multiply(4200)).divide(3600);
 		System.out.println(result);
 	}
-
 }

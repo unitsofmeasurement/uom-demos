@@ -1,4 +1,4 @@
-/**
+/*
  *  Unit-API - Units of Measurement API for Java
  *  Copyright 2013-2015, Jean-Marie Dautelle, Werner Keil, V2COM and individual
  *  contributors by the @author tag.
@@ -15,9 +15,9 @@
  */
 package tec.uom.demo.health;
 
-import static tec.units.ri.unit.SI.KILOGRAM;
-import static tec.units.ri.unit.SI.METRE;
-import static tec.units.ri.unit.SI.SQUARE_METRE;
+import static tec.units.ri.unit.Units.KILOGRAM;
+import static tec.units.ri.unit.Units.METRE;
+import static tec.units.ri.unit.Units.SQUARE_METRE;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Area;
@@ -30,7 +30,7 @@ import tec.uom.domain.health.ri.util.BMIRange;
 /**
  * This is a simple BMI (Body Mass Index) calculator
  * 
- * @version 0.4
+ * @version 0.5
  * @author Werner
  *
  */
