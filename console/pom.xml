@@ -81,4 +81,5 @@
 		<module>se</module>
 		<!-- <module>systems</module>  -->
 	</modules>
+	<groupId>tec.uom.demo.console</groupId>
 </project>
