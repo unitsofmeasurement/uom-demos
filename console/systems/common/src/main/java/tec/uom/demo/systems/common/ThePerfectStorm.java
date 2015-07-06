@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package tec.uom.demo;
+package tec.uom.demo.systems.common;
 
 import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.FIVE;
 import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.FOUR;
