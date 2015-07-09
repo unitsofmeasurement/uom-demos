@@ -38,7 +38,7 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
 import tec.units.ri.AbstractQuantity;
-import tec.units.ri.spi.DefaultQuantityFactory;
+import tec.units.ri.quantity.DefaultQuantityFactory;
 
 
 /**
