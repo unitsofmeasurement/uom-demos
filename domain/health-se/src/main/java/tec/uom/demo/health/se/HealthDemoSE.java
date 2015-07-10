@@ -20,7 +20,7 @@ import static tec.uom.domain.health.se.Health.BPM;
 import java.math.BigDecimal;
 
 import tec.uom.domain.health.HeartRate;
-import tec.uom.se.quantity.internal.OldProxyQuantityFactory;
+import tec.uom.se.internal.quantity.OldProxyQuantityFactory;
 
 /**
  * @version 0.4
