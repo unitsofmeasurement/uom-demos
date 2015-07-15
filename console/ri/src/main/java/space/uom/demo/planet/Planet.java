@@ -40,7 +40,6 @@ import javax.measure.quantity.Mass;
 import tec.units.ri.AbstractQuantity;
 import tec.units.ri.quantity.DefaultQuantityFactory;
 
-
 /**
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.4.1
@@ -54,7 +53,7 @@ import tec.units.ri.quantity.DefaultQuantityFactory;
  * Here is how it looks:
  * </p>
  */
-public enum Planet {
+public enum Planet implements Celestial {
 
     MERCURY(newMass(3.303e+23, KILOGRAM), newLength(2.4397e6, METRE)),
     VENUS(newMass(4.869e+24, KILOGRAM), newLength(6.0518e6, METRE)),

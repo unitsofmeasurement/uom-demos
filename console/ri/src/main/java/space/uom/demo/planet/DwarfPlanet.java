@@ -37,7 +37,6 @@ import javax.measure.quantity.Mass;
 import tec.units.ri.AbstractQuantity;
 import tec.units.ri.quantity.DefaultQuantityFactory;
 
-
 /**
  * This <type>enum</type> is inspired by Josh Bloch's example in <a href="http://www.oracle.com/technetwork/java/effectivejava-136174.html">Effective Java Second Edition</a>
  *
@@ -48,22 +47,26 @@ import tec.units.ri.quantity.DefaultQuantityFactory;
  * Here is how it looks:
  * </p>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.4
+ * @version 1.5
  */
-public enum DwarfPlanet {
-	CERES(newMass(9.43e+20, KILOGRAM), newLength(0.4873e6, METRE)),
-    PLUTO(newMass(1.305e+22, KILOGRAM), newLength(1.153e6, METRE)),
-    HAUMEA(newMass(4.006e+21, KILOGRAM), newLength(620, KILO(METRE))),
-    MAKEMAKE(newMass(3e+21, KILOGRAM), newLength(715, KILO(METRE))),
-    ERIS(newMass(1.67e+22, KILOGRAM), newLength(1163, KILO(METRE)));
+public enum DwarfPlanet implements Celestial {
+	CERES(newMass(9.43e+20, KILOGRAM), newLength(0.4873e6, METRE), null),
+    PLUTO(newMass(1.305e+22, KILOGRAM), newLength(1.153e6, METRE), newLength(2368, KILO(METRE))),
+    HAUMEA(newMass(4.006e+21, KILOGRAM), newLength(620, KILO(METRE)), null),
+    MAKEMAKE(newMass(3e+21, KILOGRAM), newLength(715, KILO(METRE)), null),
+    ERIS(newMass(1.67e+22, KILOGRAM), newLength(1163, KILO(METRE)), null);
 
     private final AbstractQuantity<Mass> mass;   // in kilograms
 
     private final AbstractQuantity<Length> radius; // in meters
+    
+    private final AbstractQuantity<Length> diameter; // in meters
 
-    DwarfPlanet(AbstractQuantity<Mass> mass, AbstractQuantity<Length> radius) {
+
+    DwarfPlanet(AbstractQuantity<Mass> mass, AbstractQuantity<Length> radius, AbstractQuantity<Length> diameter) {
         this.mass = mass;
         this.radius = radius;
+        this.diameter = diameter;
     }
 
     public Quantity<Mass> getMass() {
@@ -72,6 +75,10 @@ public enum DwarfPlanet {
 
     public Quantity<Length> getRadius() {
         return radius;
+    }
+    
+    public Quantity<Length> getDiameter() {
+        return diameter;
     }
 
     public Quantity<Acceleration> surfaceGravity() {
