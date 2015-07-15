@@ -30,11 +30,10 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
 /**
+ * This interface defines a <b>Celestial</b> body, like a {@link Planet}, {@link DwarfPlanet}, Moon, etc.
+ *
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.0
- *
- * This interface defines a <b>Celestial</b> body, like a {@link Planet}, {@link DwarfPlanet}, Moon, etc.
- * </p>
  */
 public interface Celestial {
     Quantity<Mass> getMass();
