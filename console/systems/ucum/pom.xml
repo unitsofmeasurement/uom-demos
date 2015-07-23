@@ -3,7 +3,7 @@
   <parent>
     <groupId>tec.uom.demo.console</groupId>
     <artifactId>systems</artifactId>
-    <version>0.8-RC1</version>
+    <version>0.8-SNAPSHOT</version>
   </parent>
   <artifactId>uom-ucum-console-demos</artifactId>
 </project>

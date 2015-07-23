@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>tec.uom.demo.console</groupId>
 		<artifactId>uom-console-demos</artifactId>
-		<version>0.8-RC1</version>
+		<version>0.8-SNAPSHOT</version>
 	</parent>
 	<artifactId>uom-console-demos-se</artifactId>
     <name>Units of Measurement Console Demos for Java SE</name>
