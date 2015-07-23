@@ -5,8 +5,9 @@
 	<parent>
 		<groupId>tec.uom</groupId>
 		<artifactId>uom-parent</artifactId>
-		<version>0.8-SNAPSHOT</version>
+		<version>0.8-RC3</version>
 	</parent>
+	<version>0.8-RC1</version>
 	<groupId>tec.uom.demo</groupId>
 	<packaging>pom</packaging>
 	<name>Units of Measurement Demos</name>
