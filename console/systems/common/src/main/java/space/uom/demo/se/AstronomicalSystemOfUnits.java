@@ -100,7 +100,7 @@ public final class AstronomicalSystemOfUnits extends AbstractSystemOfUnits {
 	 * system, the heliocentric gravitation constant is (0.017 202 098 95)2
 	 * ua3·d-2. The value must be obtained by experiment, and is therefore not
 	 * known exactly. public static final Unit<Length> ASTRONOMIC_UNIT =
-	 * addUnit(SI.ASTRONOMICAL_UNIT);
+	 * addUnit(Units.ASTRONOMICAL_UNIT);
 	 */
 	public static final TransformedUnit<Length> ASTRONOMICAL_UNIT = new TransformedUnit<Length>(
 			"AU", Units.METRE, new MultiplyConverter(149597871000.0));

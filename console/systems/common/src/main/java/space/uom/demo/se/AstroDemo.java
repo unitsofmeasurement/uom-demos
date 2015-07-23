@@ -37,7 +37,7 @@ import javax.measure.quantity.Mass;
 import javax.measure.quantity.Volume;
 
 import tec.uom.se.spi.QuantityFactoryProvider;
-import tec.uom.se.unit.SI;
+import tec.uom.se.unit.Units;
 
 public class AstroDemo {
 
@@ -47,7 +47,7 @@ public class AstroDemo {
 				Length.class).create(0.9832687, au);
 		System.out.println(peri);
 		
-		Unit<Force> u = SI.NEWTON;
+		Unit<Force> u = Units.NEWTON;
 		System.out.println(u);
 	}
 

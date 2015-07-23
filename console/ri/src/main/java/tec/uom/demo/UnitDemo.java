@@ -11,7 +11,7 @@ public class UnitDemo {
 
 	public static void main(String[] args) {
 		Unit<Speed> kmh = MetricPrefix.KILO(Units.METRE).divide(Units.HOUR).asType(Speed.class);
-//		Unit<Velocity> kmh2 = SIPrefix.KILO(SI.METRE).multiply(UCUM.HOUR).asType(Velocity.class);
+//		Unit<Velocity> kmh2 = SIPrefix.KILO(Units.METRE).multiply(UCUM.HOUR).asType(Velocity.class);
 		Unit<?> kmh3 = MetricPrefix.KILO(Units.METRE).multiply(Units.HOUR);
 		
 		System.out.println(kmh);

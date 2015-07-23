@@ -27,9 +27,9 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.se.types;
+package tec.uom.demo.types;
 
-import static tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale.Category.*;
+import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.*;
 import static tec.uom.se.AbstractQuantity.NONE;
 
 import javax.measure.Quantity;

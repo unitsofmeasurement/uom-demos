@@ -13,17 +13,17 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package tec.uom.demo.se;
+package tec.uom.demo.systems;
 
-import static tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale.Category.FIVE;
-import static tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale.Category.FOUR;
-import static tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale.Category.ONE;
-import static tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale.Category.THREE;
-import static tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_DEPRESSION;
-import static tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_STORM;
-import static tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale.Category.TWO;
+import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.FIVE;
+import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.FOUR;
+import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.ONE;
+import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.THREE;
+import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_DEPRESSION;
+import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_STORM;
+import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TWO;
 import static tec.uom.se.unit.Units.KILOMETRES_PER_HOUR;
-import static tec.uom.se.unit.SI.METRE;
+import static tec.uom.se.unit.Units.METRE;
 import static tec.uom.se.unit.MetricPrefix.KILO;
 import static tec.uom.se.unit.US.MILES_PER_HOUR;
 
@@ -33,8 +33,8 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
 
+import tec.uom.demo.types.SaffirSimpsonHurricaneWindScale;
 import tec.uom.se.quantity.Quantities;
-import tec.uom.demo.se.types.SaffirSimpsonHurricaneWindScale;
 
 /**
  * @author Werner Keil

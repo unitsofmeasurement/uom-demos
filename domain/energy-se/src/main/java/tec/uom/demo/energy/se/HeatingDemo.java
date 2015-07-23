@@ -1,4 +1,4 @@
-/**
+/*
  *  Unit-API - Units of Measurement API for Java
  *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
@@ -31,7 +31,7 @@ import javax.measure.quantity.Temperature;
 import javax.measure.quantity.Volume;
 
 import tec.uom.se.quantity.Quantities;
-import tec.uom.se.unit.SI;
+import tec.uom.se.unit.Units;
 
 /**
  * 
@@ -41,8 +41,8 @@ import tec.uom.se.unit.SI;
 public class HeatingDemo {
 
 	public static void main(String[] args) {
-		Quantity<Volume> volume = Quantities.getQuantity(1000, SI.LITRE);
-		Quantity<Temperature> temperature = Quantities.getQuantity(20, SI.KELVIN);
+		Quantity<Volume> volume = Quantities.getQuantity(1000, Units.LITRE);
+		Quantity<Temperature> temperature = Quantities.getQuantity(20, Units.KELVIN);
 //		@SuppressWarnings("unchecked")
 		Quantity<Energy> energy = (Quantity<Energy>) volume.multiply(temperature);
 		Quantity<Energy> result = (energy.multiply(4200)).divide(3600);

@@ -15,9 +15,9 @@
  */
 package tec.uom.demo.health.se;
 
-import static tec.uom.se.unit.SI.KILOGRAM;
-import static tec.uom.se.unit.SI.SQUARE_METRE;
-import static tec.uom.se.unit.SI.METRE;
+import static tec.uom.se.unit.Units.KILOGRAM;
+import static tec.uom.se.unit.Units.SQUARE_METRE;
+import static tec.uom.se.unit.Units.METRE;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Area;

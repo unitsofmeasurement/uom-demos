@@ -31,8 +31,8 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>0.8-SNAPSHOT</ri.version>
-		<se.version>0.8-SNAPSHOT</se.version>
+		<ri.version>0.8-RC3</ri.version>
+		<se.version>0.8-RC1</se.version>
 		<lib.version>0.7</lib.version>
 	</properties>
 

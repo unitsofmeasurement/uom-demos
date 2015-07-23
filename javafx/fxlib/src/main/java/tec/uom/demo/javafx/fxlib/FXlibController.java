@@ -44,9 +44,9 @@ import javax.measure.UnitConverter;
 
 import tec.uom.se.AbstractUnit;
 import tec.uom.se.unit.Units;
-import tec.uom.se.unit.SI;
+import tec.uom.se.unit.Units;
 import systems.uom.ucum.UCUM;
-import static tec.uom.se.unit.SI.*;
+import static tec.uom.se.unit.Units.*;
 import static tec.uom.se.unit.MetricPrefix.*;
 import static systems.uom.common.US.*;
 
@@ -171,7 +171,7 @@ public class FXlibController implements Initializable {
              case "energy":
                 return new Unit[] {
                     JOULE,
-                    SI.ELECTRON_VOLT,                       
+                    //Units.ELECTRON_VOLT,                       
                     UCUM.BTU
                 };
             case "area":
@@ -209,12 +209,12 @@ public class FXlibController implements Initializable {
                 };
             case "angle":
                 return new Unit[] {
-                    SI.DEGREE_ANGLE,
-                    SI.MINUTE_ANGLE,
-                    SI.SECOND_ANGLE,
+                    Units.DEGREE_ANGLE,
+                    Units.MINUTE_ANGLE,
+                    Units.SECOND_ANGLE,
                     CENTIRADIAN,
-                    GRADE,
-                    SI.REVOLUTION
+                    GRADE //,
+                    //Units.REVOLUTION
                 };
             case "speed":
                 return new Unit[] {

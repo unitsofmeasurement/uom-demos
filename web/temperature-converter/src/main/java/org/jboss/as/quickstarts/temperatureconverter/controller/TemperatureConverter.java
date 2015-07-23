@@ -27,7 +27,7 @@ import javax.measure.Unit;
 import javax.measure.quantity.Temperature;
 
 import tec.uom.se.function.ValueSupplier;
-import tec.uom.se.unit.SI;
+import tec.uom.se.unit.Units;
 
 import org.jboss.as.quickstarts.temperatureconverter.ejb.TemperatureAmount;
 import org.jboss.as.quickstarts.temperatureconverter.ejb.TemperatureConvertEJB;
@@ -59,7 +59,7 @@ public class TemperatureConverter implements Serializable, ValueSupplier<String>
     
     private String sourceTemperature = "0.0";
     
-    private Unit<Temperature> defaultScale = SI.CELSIUS;
+    private Unit<Temperature> defaultScale = Units.CELSIUS;
 
     /**
      * Invoke temperatureConvertEJB.convert() and store the temperature

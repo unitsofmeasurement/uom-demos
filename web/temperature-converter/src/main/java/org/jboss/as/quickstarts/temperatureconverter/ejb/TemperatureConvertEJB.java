@@ -17,8 +17,9 @@
 
 package org.jboss.as.quickstarts.temperatureconverter.ejb;
 
-import static tec.uom.se.unit.SI.CELSIUS;
-import static tec.uom.se.unit.US.FAHRENHEIT;
+import static tec.uom.se.unit.Units.CELSIUS;
+import static tec.uom.se.unit.Units.KELVIN;
+//import static tec.uom.se.unit.US.FAHRENHEIT;
 
 import javax.ejb.Stateless;
 import javax.faces.application.FacesMessage;
@@ -46,7 +47,7 @@ public class TemperatureConvertEJB implements Converter<TemperatureAmount, Quant
     public Quantity<Temperature> convert(TemperatureAmount source) {
         
         // Convert our Temperature
-        if (source.getScale() == CELSIUS) { // Celsius to Fahrenheit
+        if (source.getScale() == CELSIUS) { // Celsius to Fahrenheit (Kelvin)
             // Easter egg for Absolute Zero.
             if (source.getTemperature() < TemperatureAmount.ABSOLUTE_ZERO_C) {
                 FacesContext.getCurrentInstance().addMessage(null,
@@ -55,9 +56,9 @@ public class TemperatureConvertEJB implements Converter<TemperatureAmount, Quant
                 FacesContext.getCurrentInstance().addMessage(null,
                         new FacesMessage("Absolute Zero!"));
             }
-            return source.to(FAHRENHEIT);
+            return source.to(KELVIN);
             //return new TemperatureAmount( (source.getTemperature() * 9 / 5) + 32, FAHRENHEIT);
-        } else if (source.getScale() == FAHRENHEIT) { // Fahrenheit to Celsius
+        } else if (source.getScale() == KELVIN) { // Fahrenheit to Celsius
             // Easter egg for Absolute Zero.
             if (source.getTemperature() < TemperatureAmount.ABSOLUTE_ZERO_F) {
                 FacesContext.getCurrentInstance().addMessage(null,

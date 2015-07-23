@@ -7,7 +7,7 @@ import javax.measure.Unit;
 import javax.measure.quantity.Mass;
 
 import tec.uom.se.quantity.Quantities;
-import tec.uom.se.unit.SI;
+import tec.uom.se.unit.Units;
 import static tec.uom.se.unit.ucum.UCUM.ATOMIC_MASS_UNIT;
 public class UCUMDemoSE {
 
@@ -18,7 +18,7 @@ public class UCUMDemoSE {
 		Quantity<Mass> mass = (Quantity<Mass>) Quantities.getQuantity(10, atomicMassUnit);
 		System.out.println(mass);
 
-		Quantity<Mass> massInKg = mass.to(SI.KILOGRAM);
+		Quantity<Mass> massInKg = mass.to(Units.KILOGRAM);
 		System.out.println(massInKg);
 	}
 

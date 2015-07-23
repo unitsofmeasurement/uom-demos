@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>tec.uom.demo.console</groupId>
+    <artifactId>systems</artifactId>
+    <version>0.8-SNAPSHOT</version>
+  </parent>
+  <artifactId>common-se</artifactId>
+  
+  <!-- ======================================================= -->
+    <!-- Build Settings -->
+    <!-- ======================================================= -->
+    <properties>
+        <jdkVersion>1.8</jdkVersion>
+        <project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
+        <maven.compile.targetLevel>1.8</maven.compile.targetLevel>
+        <maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+    </properties>
+    
+       <dependencies>
+        <dependency>
+            <groupId>javax.measure</groupId>
+            <artifactId>unit-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>tec.uom</groupId>
+            <artifactId>uom-se</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

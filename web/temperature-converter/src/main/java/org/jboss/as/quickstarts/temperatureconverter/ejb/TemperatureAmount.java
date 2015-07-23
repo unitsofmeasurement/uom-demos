@@ -20,8 +20,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import tec.uom.se.quantity.NumberQuantity;
-import tec.uom.se.unit.SI;
-import tec.uom.se.unit.US;
+import tec.uom.se.unit.Units;
+//import tec.uom.se.unit.US;
 
 import javax.measure.quantity.Temperature;
 import javax.measure.Unit;
@@ -97,9 +97,11 @@ public class TemperatureAmount extends NumberQuantity<Temperature>{
         if (value == null) {
             throw new IllegalArgumentException("value must not be null");
         } else if ("C".equals(value.toUpperCase())) {
-            return SI.CELSIUS;
-        } else if ("F".equals(value.toUpperCase())) {
-            return US.FAHRENHEIT;
+            return Units.CELSIUS;
+        } else if ("K".equals(value.toUpperCase())) {
+            return Units.KELVIN;
+//        } else if ("F".equals(value.toUpperCase())) {
+//            return US.FAHRENHEIT;
         } else {
             throw new IllegalArgumentException(value + " not recognized as a valid scale");
         }

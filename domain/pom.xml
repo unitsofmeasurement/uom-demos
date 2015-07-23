@@ -10,10 +10,12 @@
 		<artifactId>uom-demos</artifactId>
 		<version>0.8-SNAPSHOT</version>
 	</parent>
-	
+	   <description>Domain Specific Demos of the Units of Measurement API</description>
+    <groupId>tec.uom.demo.domain</groupId>
+    
 	<modules>
         <module>health</module>
-        <module>health-se</module>
+        <!--  <module>health-se</module> -->
         <module>energy</module>
         <module>energy-se</module>
 	</modules>
@@ -94,6 +96,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<description>Domain Specific Demos of the Units of Measurement API</description>
-	<groupId>tec.uom.demo.domain</groupId>
 </project>

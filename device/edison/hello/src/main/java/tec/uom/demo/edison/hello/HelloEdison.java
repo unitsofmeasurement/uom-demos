@@ -33,7 +33,7 @@ import javax.measure.quantity.LuminousFlux;
 import javax.measure.quantity.Power;
 
 import tec.uom.se.quantity.Quantities;
-import tec.uom.se.unit.SI;
+import tec.uom.se.unit.Units;
 
 public class HelloEdison {
 
@@ -54,8 +54,8 @@ public class HelloEdison {
 				"What is the power consumption of a lamp that has luminous flux of {0} and luminous efficacy of {1} lumens per watt (lm/W)?");
 		final MessageFormat answer = new MessageFormat("You need a {0} lightbulb.");
 		
-		Quantity<LuminousFlux> luminousFlux = Quantities.getQuantity(iLumen, SI.LUMEN);
-		final Unit<LuminousEfficacy> LM_PER_WATT = SI.LUMEN.divide(SI.WATT).asType(LuminousEfficacy.class); // TODO make available in unit system
+		Quantity<LuminousFlux> luminousFlux = Quantities.getQuantity(iLumen, Units.LUMEN);
+		final Unit<LuminousEfficacy> LM_PER_WATT = Units.LUMEN.divide(Units.WATT).asType(LuminousEfficacy.class); // TODO make available in unit system
 		final Integer LE_VALUE = iLumEfficiacy;
 		final Object[] questionArgs = {luminousFlux, LE_VALUE};
 		System.out.println(question.format(questionArgs));

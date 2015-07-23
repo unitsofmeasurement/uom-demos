@@ -25,8 +25,7 @@ import javax.faces.convert.Converter;
 import javax.inject.Named;
 
 import tec.uom.se.AbstractUnit;
-import tec.uom.se.unit.SI;
-import tec.uom.se.unit.US;
+import tec.uom.se.unit.Units;
 import tec.uom.se.quantity.QuantityDimension;
 
 import javax.measure.quantity.Temperature;
@@ -41,17 +40,17 @@ import javax.measure.Unit;
  */
 @Named
 public class ScaleConverter implements Converter {
-	Unit<?>[] temps = new Unit<?>[]{ SI.CELSIUS, US.FAHRENHEIT };
+	Unit<?>[] temps = new Unit<?>[]{ Units.CELSIUS, Units.KELVIN }; // TODO use .FAHRENHEIT again, to
 	
     @SuppressWarnings("unchecked")
 	public Unit<?>[] getScales() {
-        return ((Set<? extends Unit<Temperature>>) US.getInstance().getUnits(QuantityDimension.TEMPERATURE)).toArray(temps);
-    }
+        return ((Set<? extends Unit<Temperature>>) Units.getInstance().getUnits(QuantityDimension.TEMPERATURE)).toArray(temps);
+    } // TODO other unit systems like US?
 
     @Override
     public Object getAsObject(FacesContext ctx, UIComponent cmp, String value) {
         if ("on".equals(value)) {
-        	return SI.CELSIUS;
+        	return Units.CELSIUS;
         }
     	return AbstractUnit.parse(value);
     }

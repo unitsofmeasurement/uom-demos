@@ -14,7 +14,7 @@ public class CommonFunctionalDemo {
 //		Integer converted = converter.to("123");
 //		System.out.println(converted); // 123
 		
-//		ConversionOperator<Unit<Length>, Quantity<Length>> converter2 = (from) -> AbstractQuantity.of(10, SI.METRE);
+//		ConversionOperator<Unit<Length>, Quantity<Length>> converter2 = (from) -> AbstractQuantity.of(10, Units.METRE);
 //		Quantity<Length> converted2 = converter2.to(US.INCH);
 //		System.out.println(converted2); // XYZ
 //		Quantity<Length> converted3 = converter2.to(US.FOOT);
