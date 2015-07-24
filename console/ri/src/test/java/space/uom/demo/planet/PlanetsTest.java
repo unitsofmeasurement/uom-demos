@@ -15,7 +15,7 @@
  */
 package space.uom.demo.planet;
 
-import static tec.units.ri.util.OutputHelper.println;
+import static tec.units.ri.internal.format.OutputHelper.println;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
