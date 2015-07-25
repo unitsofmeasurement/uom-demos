@@ -2,14 +2,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>uom-web-demos</artifactId>
-	<name>Units of Measurement Web-based Demos</name>
+	<name>Units of Measurement Web Demos</name>
 	<packaging>pom</packaging>
 	<parent>
 		<groupId>tec.uom.demo</groupId>
 		<artifactId>uom-demos</artifactId>
 		<version>0.8-SNAPSHOT</version>
 	</parent>
-    <description>Web-based Demos of the Units of Measurement API</description>
+    <description>Web-based Demos for Units of Measurement</description>
     <modules>
         <module>temperature-converter</module>
     </modules>
@@ -83,4 +83,5 @@
 			</plugin>
 		</plugins>
 	</build>
+	<groupId>tec.uom.demo.web</groupId>
 </project>
