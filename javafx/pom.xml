@@ -29,4 +29,5 @@
 	<modules>
 		<module>fxlib</module>
 	</modules>
+	<groupId>tec.uom.demo.javafx</groupId>
 </project>

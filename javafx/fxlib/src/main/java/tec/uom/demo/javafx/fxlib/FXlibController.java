@@ -182,6 +182,7 @@ public class FXlibController implements Initializable {
                     HECTARE,
                     ACRE
                 };
+                /* TODO integrate with other systems like ISO
              case "data":
                 return new Unit[] {
                     BIT,
@@ -193,7 +194,7 @@ public class FXlibController implements Initializable {
                     GIGA(BYTE),
                     TERA(BYTE),
                     EXA(BYTE),
-                };      
+                }; */      
              case "mass":
                 return new Unit[] {
                     KILOGRAM,
