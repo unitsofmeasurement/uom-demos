@@ -19,7 +19,7 @@
 			</dependency>
 			<dependency>
                 <groupId>tec.uom.domain</groupId>
-                <artifactId>uom-health-ri</artifactId>
+                <artifactId>uom-health</artifactId>
                 <version>${lib.version}</version>
             </dependency>
 		</dependencies>
@@ -41,7 +41,7 @@
         </dependency>
 		<dependency>
             <groupId>tec.uom.domain</groupId>
-            <artifactId>uom-health-ri</artifactId>
+            <artifactId>uom-health</artifactId>
         </dependency>
         
 		<dependency>
@@ -87,7 +87,6 @@
 					</archive>
 				</configuration>
 			</plugin>
-
 
 			<!-- ======================================================= -->
 			<!-- Packaging (OSGi bundle) -->
