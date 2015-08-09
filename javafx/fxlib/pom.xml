@@ -33,11 +33,11 @@
 		</dependency>
 		<dependency>
             <groupId>systems.uom</groupId>
-            <artifactId>uom-systems-common</artifactId>
+            <artifactId>systems-common</artifactId>
         </dependency>
 		<dependency>
 			<groupId>systems.uom</groupId>
-			<artifactId>uom-systems-ucum</artifactId>
+			<artifactId>systems-ucum-java8</artifactId>
 		</dependency>
 	</dependencies>
 
