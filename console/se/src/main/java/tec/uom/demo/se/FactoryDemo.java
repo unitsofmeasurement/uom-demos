@@ -5,8 +5,8 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 import javax.measure.spi.Bootstrap;
 import javax.measure.spi.QuantityFactory;
+import javax.measure.spi.QuantityFactoryService;
 
-import tec.uom.se.spi.QuantityFactoryService;
 import tec.uom.se.internal.quantity.OldProxyQuantityFactory;
 //import tec.uom.se.quantity.ProxyQuantityFactory;
 import tec.uom.se.unit.Units;
