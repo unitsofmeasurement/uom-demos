@@ -5,23 +5,12 @@
 	<packaging>pom</packaging>
 	<name>Units of Measurement Console Demos</name>
 	<description>Unit Standard Console based Demos.</description>
+	<groupId>tec.uom.demo.console</groupId>
 	<parent>
 		<groupId>tec.uom.demo</groupId>
 		<artifactId>uom-demos</artifactId>
 		<version>0.8-SNAPSHOT</version>
 	</parent>
-
-	<dependencies>
-		<dependency>
-			<groupId>javax.measure</groupId>
-			<artifactId>unit-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
 
 	<build>
 		<plugins>
@@ -81,5 +70,4 @@
 		<module>se</module>
 		<!-- <module>systems</module>  -->
 	</modules>
-	<groupId>tec.uom.demo.console</groupId>
 </project>

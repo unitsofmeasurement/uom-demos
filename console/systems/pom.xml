@@ -1,16 +1,32 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>tec.uom.demo.console</groupId>
-    <artifactId>uom-console-demos</artifactId>
-    <version>0.8-SNAPSHOT</version>
-  </parent>
-  <artifactId>systems</artifactId>
-  <packaging>pom</packaging>
-  <modules>
-  	<module>common</module>
-  	<!--  <module>common-java8</module> -->
-  	<module>ucum</module>
-  	<module>si</module>
-  </modules>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>tec.uom.demo.console</groupId>
+		<artifactId>uom-console-demos</artifactId>
+		<version>0.8-SNAPSHOT</version>
+	</parent>
+	<artifactId>systems</artifactId>
+	<packaging>pom</packaging>
+	<modules>
+		<module>common</module>
+		<!-- <module>common-java8</module> -->
+		<module>ucum</module>
+		<module>si</module>
+	</modules>
+
+	<properties>
+		<si.version>0.4-SNAPSHOT</si.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>si.uom</groupId>
+				<artifactId>si-units</artifactId>
+				<version>${si.version}</version>
+			</dependency>
+		</dependencies>
+
+	</dependencyManagement>
 </project>
