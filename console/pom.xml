@@ -13,61 +13,63 @@
 	</parent>
 
 	<build>
-		<plugins>
-			<!-- ======================================================= -->
-			<!-- Compilation -->
-			<!-- ======================================================= -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>${maven.compile.sourceLevel}</source>
-					<target>${maven.compile.targetLevel}</target>
-					<encoding>${project.build.sourceEncoding}</encoding>
-				</configuration>
-			</plugin>
+		<pluginManagement>
+			<plugins>
+				<!-- ======================================================= -->
+				<!-- Compilation -->
+				<!-- ======================================================= -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>${maven.compile.sourceLevel}</source>
+						<target>${maven.compile.targetLevel}</target>
+						<encoding>${project.build.sourceEncoding}</encoding>
+					</configuration>
+				</plugin>
 
-			<!-- ======================================================= -->
-			<!-- JAR packaging -->
-			<!-- ======================================================= -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifest>
-							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-						</manifest>
-						<manifestEntries>
-							<Specification-Title>${project.name}</Specification-Title>
-							<Specification-Version>${project.version}</Specification-Version>
-							<Specification-Vendor>${project.organization.name}</Specification-Vendor>
-							<Implementation-Vendor>Unit-API contributors</Implementation-Vendor>
-							<Implementation-URL>${project.organization.url}</Implementation-URL>
-						</manifestEntries>
-					</archive>
-				</configuration>
-			</plugin>
+				<!-- ======================================================= -->
+				<!-- JAR packaging -->
+				<!-- ======================================================= -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<configuration>
+						<archive>
+							<manifest>
+								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							</manifest>
+							<manifestEntries>
+								<Specification-Title>${project.name}</Specification-Title>
+								<Specification-Version>${project.version}</Specification-Version>
+								<Specification-Vendor>${project.organization.name}</Specification-Vendor>
+								<Implementation-Vendor>Unit-API contributors</Implementation-Vendor>
+								<Implementation-URL>${project.organization.url}</Implementation-URL>
+							</manifestEntries>
+						</archive>
+					</configuration>
+				</plugin>
 
-			<!-- ======================================================= -->
-			<!-- Packaging (OSGi bundle) -->
-			<!-- ======================================================= -->
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<extensions>true</extensions>
-				<configuration>
-					<instructions>
-						<Export-Package>tec.uom.demo.*</Export-Package>
-						<Private-Package>!*</Private-Package>
-					</instructions>
-				</configuration>
-			</plugin>
-		</plugins>
+				<!-- ======================================================= -->
+				<!-- Packaging (OSGi bundle) -->
+				<!-- ======================================================= -->
+				<plugin>
+					<groupId>org.apache.felix</groupId>
+					<artifactId>maven-bundle-plugin</artifactId>
+					<extensions>true</extensions>
+					<configuration>
+						<instructions>
+							<Export-Package>tec.uom.demo.*</Export-Package>
+							<Private-Package>!*</Private-Package>
+						</instructions>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 	<modules>
 		<module>ri</module>
 		<module>se</module>
-		<!-- <module>systems</module>  -->
+		<!-- <module>systems</module> -->
 	</modules>
 </project>
