@@ -33,7 +33,7 @@
 		</dependency>
 		<dependency>
             <groupId>systems.uom</groupId>
-            <artifactId>systems-common</artifactId>
+            <artifactId>systems-common-java8</artifactId>
         </dependency>
 		<dependency>
 			<groupId>systems.uom</groupId>

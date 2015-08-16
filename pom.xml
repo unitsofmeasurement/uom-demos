@@ -36,6 +36,7 @@
 		<ri.version>0.8-SNAPSHOT</ri.version>
 		<se.version>0.8-SNAPSHOT</se.version>
 		<lib.version>0.8-SNAPSHOT</lib.version>
+		<systems.version>0.2-SNAPSHOT</systems.version>
 	</properties>
 
 	<dependencyManagement>
