@@ -6,6 +6,8 @@ Technologies: EJB, JSR 363
 Summary: Demonstrates a stateless session bean 
 Target Product: EAP
 
+[![License](http://img.shields.io/badge/license-Apache2-red.svg)](http://opensource.org/licenses/apache-2.0)
+
 What is it?
 -----------
 **Based on quickstarts to demonstrate Java EE and a few additional technologies from the JBoss stack.**
