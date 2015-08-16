@@ -1,4 +1,4 @@
-/**
+/*
  *  Unit-API - Units of Measurement API for Java
  *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
@@ -32,6 +32,7 @@ package space.uom.demo.se;
 import static tec.uom.se.unit.MetricPrefix.KILO;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
@@ -40,7 +41,7 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 import javax.measure.quantity.Volume;
 
-import si.uom.quantity.MassDensity;
+import si.uom.quantity.Density;
 import tec.uom.se.AbstractSystemOfUnits;
 import tec.uom.se.AbstractUnit;
 import tec.uom.se.function.MultiplyConverter;
@@ -64,7 +65,7 @@ public final class AstronomicalSystemOfUnits extends AbstractSystemOfUnits {
 	/**
 	 * Holds the mapping quantity to unit.
 	 */
-	private final HashMap<Class<? extends Quantity>, AbstractUnit> quantityToUnit = new HashMap<Class<? extends Quantity>, AbstractUnit>();
+	private final Map<Class<? extends Quantity>,Unit> quantityToUnit = new HashMap<>();
 
 	/**
 	 * Default constructor (prevents this class from being instantiated).
@@ -105,9 +106,9 @@ public final class AstronomicalSystemOfUnits extends AbstractSystemOfUnits {
 	public static final TransformedUnit<Length> ASTRONOMICAL_UNIT = new TransformedUnit<Length>(
 			"AU", Units.METRE, new MultiplyConverter(149597871000.0));
 
-	public static final ProductUnit<MassDensity> GRAM_PER_CUBIC_CENTIMETRE = addUnit(
-			new ProductUnit<MassDensity>(Units.GRAM.divide((MetricPrefix
-					.CENTI(Units.METRE)).pow(3))), MassDensity.class);
+	public static final ProductUnit<Density> GRAM_PER_CUBIC_CENTIMETRE = addUnit(
+			new ProductUnit<Density>(Units.GRAM.divide((MetricPrefix
+					.CENTI(Units.METRE)).pow(3))), Density.class);
 
 	/**
 	 * The SI unit for area quantities (standard name <code>m2</code>).

@@ -1,6 +1,6 @@
-/**
+/*
  *  Unit-API - Units of Measurement API for Java
- *  Copyright 2013-2014, Jean-Marie Dautelle, Werner Keil, V2COM and individual
+ *  Copyright 2013-2015, Jean-Marie Dautelle, Werner Keil, V2COM and individual
  *  contributors by the @author tag.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +24,7 @@ import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPIC
 import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TWO;
 import static tec.units.ri.unit.MetricPrefix.KILO;
 import static tec.units.ri.unit.Units.METRE;
-import static tec.units.ri.unit.US.MILES_PER_HOUR;
+import static systems.uom.common.US.MILES_PER_HOUR;
 import static tec.units.ri.unit.Units.KILOMETRES_PER_HOUR;
 
 import javax.measure.Quantity;

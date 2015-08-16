@@ -1,4 +1,4 @@
-/**
+/*
  *  Unit-API - Units of Measurement API for Java
  *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
@@ -36,11 +36,11 @@ import javax.measure.Quantity;
 import javax.measure.quantity.Speed;
 
 import tec.uom.se.function.Nameable;
-import tec.uom.se.util.QuantityRange;
+import tec.uom.se.quantity.QuantityRange;
 
 /**
  * @author Werner Keil
- * @version 0.6
+ * @version 0.7
  * @see <a
  *      href="http://en.wikipedia.org/wiki/Saffir%E2%80%93Simpson_hurricane_wind_scale">
  *      Wikipedia: Saffir–Simpson hurricane wind scale</a>

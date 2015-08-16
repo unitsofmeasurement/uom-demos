@@ -17,16 +17,46 @@
 
 	<properties>
 		<si.version>0.4-SNAPSHOT</si.version>
+		<systems.version>0.2-SNAPSHOT</systems.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
+		  <dependency>
+                <groupId>si.uom</groupId>
+                <artifactId>si-quantity</artifactId>
+                <version>${si.version}</version>
+            </dependency>
 			<dependency>
 				<groupId>si.uom</groupId>
 				<artifactId>si-units</artifactId>
 				<version>${si.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>si.uom</groupId>
+				<artifactId>si-units-java8</artifactId>
+				<version>${si.version}</version>
+			</dependency>
+			<dependency>
+                <groupId>systems.uom</groupId>
+                <artifactId>systems-quantity</artifactId>
+                <version>${systems.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>systems.uom</groupId>
+                <artifactId>systems-common</artifactId>
+                <version>${systems.version}</version>
+            </dependency>
+                <dependency>
+                <groupId>systems.uom</groupId>
+                <artifactId>systems-common-java8</artifactId>
+                <version>${systems.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>systems.uom</groupId>
+                <artifactId>systems-ucum-java8</artifactId>
+                <version>${systems.version}</version>
+            </dependency>
 		</dependencies>
-
 	</dependencyManagement>
 </project>

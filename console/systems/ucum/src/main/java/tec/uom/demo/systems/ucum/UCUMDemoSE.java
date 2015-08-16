@@ -1,14 +1,12 @@
 package tec.uom.demo.systems.ucum;
 
-
-
 import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Mass;
 
 import tec.uom.se.quantity.Quantities;
 import tec.uom.se.unit.Units;
-import static tec.uom.se.unit.ucum.UCUM.ATOMIC_MASS_UNIT;
+import static systems.uom.ucum.UCUM.ATOMIC_MASS_UNIT;
 public class UCUMDemoSE {
 
 	public static void main(String[] args) {

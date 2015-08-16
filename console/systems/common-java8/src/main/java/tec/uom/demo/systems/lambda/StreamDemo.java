@@ -10,7 +10,7 @@ import tec.uom.se.unit.Units;
 public class StreamDemo {
 
 	public static void main(String[] args) {
-		Set<Unit> units = (Set<Unit>) Units.getInstance().getUnits();
+		Set<Unit<?>> units = (Set<Unit<?>>) Units.getInstance().getUnits();
 		Stream<String> names = units.stream().map(Unit::getSymbol);
 		names.forEach( System.out::println );
 	}

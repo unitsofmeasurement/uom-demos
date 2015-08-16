@@ -1,4 +1,4 @@
-/**
+/*
  *  Unit-API - Units of Measurement API for Java
  *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
@@ -33,17 +33,17 @@ import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Force;
 import javax.measure.quantity.Length;
-import javax.measure.quantity.Mass;
-import javax.measure.quantity.Volume;
+import javax.measure.spi.Bootstrap;
+import javax.measure.spi.QuantityFactoryService;
 
-import tec.uom.se.spi.QuantityFactoryProvider;
 import tec.uom.se.unit.Units;
 
 public class AstroDemo {
 
 	public static void main(String[] args) {
+		QuantityFactoryService service = Bootstrap.getService(QuantityFactoryService.class);
 		Unit<Length> au = AstronomicalSystemOfUnits.ASTRONOMICAL_UNIT;
-		Quantity<Length> peri = QuantityFactoryProvider.getQuantityFactory(
+		Quantity<Length> peri = service.getQuantityFactory(
 				Length.class).create(0.9832687, au);
 		System.out.println(peri);
 		
