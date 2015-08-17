@@ -179,8 +179,6 @@
 								</excludes>
 							</configuration>
 						</plugin>
-						<!-- TODO enable this only for major upgrades (ensure to copy LICENSE.txt 
-							to LICENSE.bak first) -->
 					</plugins>
 				</pluginManagement>
 				<plugins>
