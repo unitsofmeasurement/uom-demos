@@ -13,6 +13,7 @@
 		<!-- <module>common-java8</module> -->
 		<module>ucum</module>
 		<module>si</module>
+		<!--  module>iso80k</module> -->
 	</modules>
 
 	<properties>
