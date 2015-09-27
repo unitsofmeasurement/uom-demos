@@ -1,6 +1,6 @@
-/**
+/*
  *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2014, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -29,11 +29,7 @@
  */
 package tec.uom.demo.types.iso;
 
-import static tec.uom.impl.enums.unit.Constants.*;
-import tec.uom.impl.enums.AbstractQuantityFactory;
-import tec.uom.impl.enums.DescriptiveEnum;
-import tec.uom.impl.enums.function.DoubleFactorSupplier;
-import tec.uom.impl.enums.quantity.SimpleDimension;
+import static tec.uom.demo.types.iso.Constants.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -44,12 +40,17 @@ import javax.measure.Quantity;
 import javax.measure.UnconvertibleException;
 import javax.measure.Unit;
 import javax.measure.UnitConverter;
-import javax.measure.quantity.InformationRate;
+
+import systems.uom.quantity.InformationRate;
+import tec.units.ri.quantity.DefaultQuantityFactory;
+import tec.units.ri.quantity.QuantityDimension;
+import tec.uom.lib.common.DescriptiveEnum;
+import tec.uom.lib.common.function.DoubleFactorSupplier;
 
 /**
  * Implements the speed of data-transmission. The system unit for this quantity is "bit/s" (bit per second).
  * @author Werner Keil
- * @version 1.8.1 ($Revision: 444 $), $Date: 2014-03-18 23:55:19 +0100 (Di, 18 Mär 2014) $
+ * @version 0.8.2, $Date: 2015-09-27 $
  */
 public enum BitRateUnit implements Unit<InformationRate>, DoubleFactorSupplier, DescriptiveEnum<BitRateUnit> {
 	bps("bps", BPS_NAME, 1.0), Kbps("Kbps", KBPS_NAME, 1.0e3), Mbps("Mbps", MBPS_NAME, 1.0e6),
@@ -147,7 +148,7 @@ public enum BitRateUnit implements Unit<InformationRate>, DoubleFactorSupplier, 
 	
     public <T extends Quantity<T>> Unit<T> asType(Class<T> type)
             throws ClassCastException {
-        Unit<T> metricUnit = AbstractQuantityFactory.getInstance(type).getMetricUnit();
+        Unit<T> metricUnit = DefaultQuantityFactory.getInstance(type).getSystemUnit();
         if ((metricUnit == null) || metricUnit.isCompatible(this))
          return (Unit<T>) this;
           throw new ClassCastException("The unit: " + this //$NON-NLS-1$
@@ -176,7 +177,7 @@ public enum BitRateUnit implements Unit<InformationRate>, DoubleFactorSupplier, 
     }
 
     public Dimension getDimension() {
-        return SimpleDimension.INSTANCE;
+        return QuantityDimension.getInstance(InformationRate.class);
     }
 
      public Unit<?> inverse() {
@@ -212,7 +213,7 @@ public enum BitRateUnit implements Unit<InformationRate>, DoubleFactorSupplier, 
         return description;
     }
 
-    public DescriptiveEnum<BitRateUnit>[] iValues() {
+    public DescriptiveEnum<BitRateUnit>[] dValues() {
 		return BitRateUnit.values();
 	}
 }

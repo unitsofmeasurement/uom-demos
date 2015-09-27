@@ -2,11 +2,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>tec.uom.demo.console</groupId>
-		<artifactId>systems</artifactId>
+		<groupId>tec.uom.demo.console.systems</groupId>
+		<artifactId>uom-console-system-demos</artifactId>
 		<version>0.8-SNAPSHOT</version>
 	</parent>
-	<artifactId>common-java8</artifactId>
+	<artifactId>uom-console-demos-common-java8</artifactId>
 
 	<!-- ======================================================= -->
 	<!-- Build Settings -->

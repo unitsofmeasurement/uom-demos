@@ -70,6 +70,6 @@
 	<modules>
 		<module>ri</module>
 		<module>se</module>
-		<!-- <module>systems</module> -->
+		<module>systems</module>
 	</modules>
 </project>

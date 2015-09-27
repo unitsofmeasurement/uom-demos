@@ -6,14 +6,15 @@
 		<artifactId>uom-console-demos</artifactId>
 		<version>0.8-SNAPSHOT</version>
 	</parent>
-	<artifactId>systems</artifactId>
+	<groupId>tec.uom.demo.console.systems</groupId>
+	<artifactId>uom-console-system-demos</artifactId>
 	<packaging>pom</packaging>
 	<modules>
 		<module>common</module>
 		<!-- <module>common-java8</module> -->
 		<module>ucum</module>
-		<module>si</module>
-		<!--  module>iso80k</module> -->
+		<!-- <module>si</module>  -->
+		<module>iso80k</module>
 	</modules>
 
 	<properties>
@@ -51,6 +52,11 @@
                 <dependency>
                 <groupId>systems.uom</groupId>
                 <artifactId>systems-common-java8</artifactId>
+                <version>${systems.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>systems.uom</groupId>
+                <artifactId>systems-iso80k</artifactId>
                 <version>${systems.version}</version>
             </dependency>
             <dependency>
