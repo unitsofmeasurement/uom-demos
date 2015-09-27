@@ -19,5 +19,4 @@ public class UCUMDemoSE {
 		Quantity<Mass> massInKg = mass.to(Units.KILOGRAM);
 		System.out.println(massInKg);
 	}
-
 }

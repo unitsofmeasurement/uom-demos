@@ -27,9 +27,9 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.types.iso;
+package tec.uom.demo.types.enums;
 
-import static tec.uom.demo.types.iso.Constants.*;
+import static tec.uom.demo.types.enums.Constants.*;
 
 import java.util.HashMap;
 import java.util.Map;
