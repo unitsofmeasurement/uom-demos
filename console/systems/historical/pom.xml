@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>tec.uom.demo.console.systems</groupId>
+    <artifactId>uom-console-system-demos</artifactId>
+    <version>0.8-SNAPSHOT</version>
+  </parent>
+  <artifactId>historical</artifactId>
+  <name>Historical Unit Systems</name>
+  
+    <dependencies>
+        <dependency>
+            <groupId>tec.units</groupId>
+            <artifactId>unit-ri</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>tec.uom.lib</groupId>
+            <artifactId>uom-lib-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>systems.uom</groupId>
+            <artifactId>systems-quantity</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>systems.uom</groupId>
+            <artifactId>systems-iso80k</artifactId>
+        </dependency>
+    </dependencies>
+</project>

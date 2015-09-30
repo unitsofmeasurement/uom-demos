@@ -15,6 +15,7 @@
 		<module>ucum</module>
 		<!-- <module>si</module>  -->
 		<module>iso80k</module>
+		<module>historical</module>
 	</modules>
 
 	<properties>
