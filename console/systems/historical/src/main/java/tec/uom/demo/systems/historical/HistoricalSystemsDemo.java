@@ -18,5 +18,4 @@ public class HistoricalSystemsDemo {
 		Quantity<Volume> inLiter = eimer.to(Units.LITRE);
 		System.out.println(inLiter);
 	}
-
 }
