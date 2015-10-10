@@ -37,6 +37,7 @@ import javax.measure.quantity.Speed;
 
 import tec.uom.se.AbstractUnit;
 import tec.uom.se.format.LocalUnitFormat;
+import tec.uom.se.format.SimpleUnitFormat;
 import tec.uom.se.unit.Units;
 
 public class UnitFormatDemo {
@@ -51,6 +52,8 @@ public class UnitFormatDemo {
 		Unit<?> parsed = AbstractUnit.parse("%");
 //		Unit<?> parsed = localFormat.parse("%");
 		System.out.println(parsed);
+		
+//		SimpleUnitFormat.getInstance(SimpleUnitFormat.Flavor.ASCII).label(Units.LUX, "l²");
 	}
 
 }
