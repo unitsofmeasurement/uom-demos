@@ -1,4 +1,4 @@
-package tec.uom.demo.energy;
+package tec.uom.demo.energy.se;
 
 import static tec.uom.se.unit.MetricPrefix.*;
 import javax.measure.Unit;
@@ -18,7 +18,7 @@ import tec.uom.se.unit.Units;
  * @noextend This class is not intended to be extended by clients.
  * 
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.1, $Date: 2015-10-15 $
+ * @version 0.2, $Date: 2015-10-16 $
  */
 public final class DemoUnitSystem extends AbstractSystemOfUnits {
     /**
