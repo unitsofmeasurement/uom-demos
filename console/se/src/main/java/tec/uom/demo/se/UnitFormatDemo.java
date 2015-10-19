@@ -58,8 +58,8 @@ public class UnitFormatDemo {
 		
 //		SimpleUnitFormat.getInstance(SimpleUnitFormat.Flavor.ASCII).label(Units.LUX, "l²");
 		
-		DecimalFormat df = new DecimalFormat();
-		System.out.println(df.toPattern());
+//		DecimalFormat df = new DecimalFormat();
+//		System.out.println(df.toPattern());
 	}
 
 }
