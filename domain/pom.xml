@@ -15,7 +15,7 @@
     
 	<modules>
         <module>health</module>
-        <!--  <module>health-se</module> -->
+        <module>health-se</module>
         <module>energy</module>
         <module>energy-se</module>
 	</modules>

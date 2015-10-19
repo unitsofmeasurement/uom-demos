@@ -28,7 +28,7 @@
 			</dependency>
 			<dependency>
 				<groupId>tec.uom.domain</groupId>
-				<artifactId>uom-health-se</artifactId>
+				<artifactId>uom-health-java8</artifactId>
 				<version>${lib.version}</version>
 			</dependency>
 		</dependencies>
@@ -50,7 +50,7 @@
 		</dependency>
 		<dependency>
 			<groupId>tec.uom.domain</groupId>
-			<artifactId>uom-health-se</artifactId>
+			<artifactId>uom-health-java8</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
