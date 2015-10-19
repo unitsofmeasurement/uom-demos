@@ -15,6 +15,7 @@ The project currently contains the following modules:
   - [Hello Edison for Intel Edison IoT Devices](device/edison/hello)
   - [Sensor Web Demos for Intel Edison IoT Devices](device/edison/sensorweb)
   - [Device I/O for for Intel Edison IoT Devices](device/edison/dio) **TBD**
+- [Domain specific demos](domain)
 - [JavaFX Demos](javafx)
  - [FXlib Demo Application](javafx/fxlib)
 - [Java ME 8 Demos](javame) **These are currently not Maven enabled and require NetBeans IDE**

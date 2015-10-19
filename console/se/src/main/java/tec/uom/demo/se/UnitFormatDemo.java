@@ -31,6 +31,9 @@ package tec.uom.demo.se;
 
 import static tec.uom.se.unit.MetricPrefix.KILO;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 import javax.measure.Unit;
 import javax.measure.format.UnitFormat;
 import javax.measure.quantity.Speed;
@@ -54,6 +57,9 @@ public class UnitFormatDemo {
 		System.out.println(parsed);
 		
 //		SimpleUnitFormat.getInstance(SimpleUnitFormat.Flavor.ASCII).label(Units.LUX, "l²");
+		
+		DecimalFormat df = new DecimalFormat();
+		System.out.println(df.toPattern());
 	}
 
 }
