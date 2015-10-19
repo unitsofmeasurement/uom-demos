@@ -20,9 +20,9 @@ public class EnergyDemo {
 		Quantity<Energy> energy = power.multiply(time).asType(Energy.class);
 		System.out.println(energy); //Ouput 15000.00 J/s·min -> correct
 		System.out.println(energy.to(Units.JOULE)); //Output 900.00 J -> correct
-		System.out.println(energy.to(WATTHOUR)); //Output 0.25 m·N -> Expected: 0.25 Wh
-		System.out.println(energy.to(MetricPrefix.KILO(Units.JOULE))); //Output 0.90 m·N -> Wrong, expected something like 0.90 kJ or 0.90 kNm
+		System.out.println(energy.to(WATTHOUR)); //Output expected: 0.25 Wh
+		System.out.println(energy.to(MetricPrefix.KILO(Units.JOULE))); //Output expected something like 0.90 kJ or 0.90 kNm
 		Quantity<Energy> result = energy.to(MetricPrefix.KILO(WATTHOUR));
-		System.out.println(result); //Output 0.00025 m·N -> Wrong, expected 0.00025 kWh
+		System.out.println(result); //Output expected 0.00025 kWh
 	}
 }
