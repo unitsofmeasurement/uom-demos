@@ -13,9 +13,10 @@ import tec.uom.se.unit.Units;
 public class SerialDemo {
 	public static void main(String[] args) throws IOException,
 			ClassNotFoundException {
-		byte[] serialized = serialize(Quantities.getQuantity(0, Units.JOULE));
+		byte[] serialized = serialize(Quantities.getQuantity(1, Units.JOULE));
 		Object obj = deserialize(serialized);
 		ComparableQuantity<?> quantity = (ComparableQuantity<?>) obj;
+		System.out.println(quantity);
 	}
 
 	public static Object deserialize(byte[] serialized) throws IOException,
