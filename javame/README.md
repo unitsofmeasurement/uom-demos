@@ -3,4 +3,4 @@ JavaME
 
 Units of Measurement API Java ME Demos
 
-- medemo
+- [Java ME 8 Demo](medemo)
