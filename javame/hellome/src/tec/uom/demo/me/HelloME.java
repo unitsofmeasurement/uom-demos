@@ -15,15 +15,15 @@
  */
 package tec.uom.demo.me;
 
-//import static tec.uom.impl.enums.unit.TemperatureUnit.*;
+import static tec.uom.impl.enums.unit.TemperatureUnit.*;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Temperature;
 import javax.measure.quantity.Time;
 import javax.microedition.midlet.MIDlet;
-import org.unitsofmeasurement.impl.enums.quantity.TimeQuantity;
-import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
-//import tec.uom.impl.enums.quantity.TemperatureAmount;
+//import org.unitsofmeasurement.impl.enums.quantity.TimeQuantity;
+//import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
+import tec.uom.impl.enums.quantity.TemperatureAmount;
 
 
 /**
@@ -32,10 +32,10 @@ import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
 public class HelloME extends MIDlet {
     
     public void startApp() {
-        //Temperature t =  new TemperatureAmount(23.5, CELSIUS);
-       //System.out.println("Temperature: " + t);
-       Quantity<Time> quantity = new TimeQuantity(10d, TimeUnit.MINUTE);
-       System.out.println("Time: " + quantity);
+       Temperature t =  new TemperatureAmount(23.5, CELSIUS);
+       System.out.println("Temperature: " + t);
+       //Quantity<Time> quantity = new TimeQuantity(10d, TimeUnit.MINUTE);
+       //System.out.println("Time: " + quantity);
     }
     
     public void pauseApp() {
