@@ -38,14 +38,6 @@ import javax.microedition.midlet.MIDlet;
 import tec.uom.impl.enums.quantity.TemperatureAmount;
 import tec.uom.impl.enums.quantity.TimeAmount;
 import tec.uom.impl.enums.unit.*;
-import tec.uom.impl.enums.unit.*;
-
-/*
- import org.unitsofmeasurement.impl.enums.quantity.TimeQuantity;
- import org.unitsofmeasurement.impl.enums.unit.TemperatureUnit;
- import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
- import org.unitsofmeasurement.impl.enums.quantity.TemperatureQuantity;
- */
 
 /**
  * @author Werner Keil
@@ -57,10 +49,8 @@ public class Medemo extends MIDlet {
 	@Override
 	public void startApp() {
 		quantity = new TimeAmount(10d, TimeUnit.MINUTE);
-		// quantity = new TimeQuantity(10d, TimeUnit.MINUTE);
 
 		Quantity<Temperature> temp = new TemperatureAmount(10d,
-		// Quantity<Temperature> temp = new TemperatureQuantity(10d,
 				TemperatureUnit.CELSIUS);
 
 		Unit<Length> dist = DistanceUnit.METRE;
