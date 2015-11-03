@@ -54,5 +54,7 @@
          </symbolSet>
       </configuration>
    </configurations>
-   <liblets/>
+   <liblets>
+      <liblet jadURL="" level="optional" name="liblet-name" projectName="" type="standard" vendor="liblet-vendor" version="1.0"/>
+   </liblets>
 </mtjMetadata>
