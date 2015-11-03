@@ -31,8 +31,10 @@ package medemo;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
+import javax.measure.format.UnitFormat;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Temperature;
+import javax.measure.quantity.Time;
 import javax.microedition.midlet.MIDlet;
 
 /*
@@ -42,36 +44,49 @@ import tec.uom.impl.enums.unit.*;
 */
 
 import tec.units.ri.unit.Units;
+import tec.units.ri.format.SimpleUnitFormat;
+import tec.units.ri.function.Nameable;
 import tec.units.ri.quantity.Quantities;
 
 /**
  * @author Werner Keil
+ * @version 0.5, November 3, 2015
  */
-public class Medemo extends MIDlet {
+public class Medemo extends MIDlet implements Nameable {
 	private final String appName = "MEDemo";
-	private Quantity quantity;
+	private Quantity<Time> time;
 
 	@Override
 	public void startApp() {
 		//quantity = new TimeAmount(10d, TimeUnit.MINUTE);
-                quantity = Quantities.getQuantity(10d, Units.MINUTE);
+                time = Quantities.getQuantity(10d, Units.MINUTE);
 		Quantity<Temperature> temp = 
                         //new TemperatureAmount(10d, TemperatureUnit.CELSIUS);
                         Quantities.getQuantity(10d, Units.CELSIUS);
-                    
+//        UnitFormat asciiFmt = SimpleUnitFormat.getInstance(SimpleUnitFormat.Flavor.ASCII);            
+//		String celAscii = asciiFmt.format(Units.CELSIUS);
+		
 		Unit<Length> dist = 
                         //DistanceUnit.METRE;
                         Units.METRE;
+		Quantity<Length> len = Quantities.getQuantity(10d, dist);
                 
 		System.out.println();
 		System.out.println("Hello " + appName);
 		System.out.println();
-		System.out.println(quantity);
+		System.out.println(time);
 		System.out.println(temp);
-		System.out.println(dist);
+//		System.out.println(celAscii);
+		System.out.println(len);
 	}
 
 	@Override
 	public void destroyApp(boolean unconditional) {
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return appName;
 	}
 }

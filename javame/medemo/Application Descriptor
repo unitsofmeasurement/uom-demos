@@ -1,0 +1,7 @@
+MIDlet-Version: 1.0.0
+MIDlet-Vendor: MIDlet Suite Vendor
+MIDlet-Jar-URL: medemo.jar
+MicroEdition-Configuration: CLDC-1.8
+MIDlet-1: Medemo,,medemo.Medemo
+MicroEdition-Profile: MEEP-8.0
+MIDlet-Name: medemo MIDlet Suite
