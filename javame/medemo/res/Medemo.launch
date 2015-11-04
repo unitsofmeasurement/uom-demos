@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="MTJ.emulatorLaunchConfigurationType">
+<booleanAttribute key="mtj.do_jad_launch" value="false"/>
+<booleanAttribute key="mtj.do_ota" value="false"/>
+<stringAttribute key="mtj.emulated_device" value="EmbeddedDevice1"/>
+<stringAttribute key="mtj.emulated_device_group" value="Oracle Java(TM) Platform Micro Edition SDK 8.2"/>
+<stringAttribute key="mtj.launch_params" value=""/>
+<stringAttribute key="mtj.specified_jad_url" value="C:/Users/Werner/git/uom-demos/javame/medemo/.mtj.tmp/emulation/medemo.jad"/>
+<booleanAttribute key="mtj.use_project_device" value="false"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="medemo.Medemo"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="medemo"/>
+</launchConfiguration>

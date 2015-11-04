@@ -6,7 +6,6 @@
    </signing>
    <configurations>
       <configuration active="true" name="EmbeddedDevice1">
-         <device group="Oracle Java(TM) Platform Micro Edition SDK 8.2" name="EmbeddedDevice1"/>
          <symbolSet name="EmbeddedDevice1">
             <symbol name="descriptor" value="Java ME Embedded Profile emulator"/>
             <symbol name="MEEP-CELLULAR" value="8.0"/>
