@@ -15,7 +15,7 @@ If you haven't done so, clone
 
 - [unit-api](../../../../../unit-api)
 - [unit-ri](../../../../../unit-ri)
-- [uom-demos](../../../) (if you're reading this online and not on your local filesystem;-)
+- [uom-demos](../../../../) (if you're reading this online and not on your local filesystem;-)
 
 ![Manual Device Installation](site/resources/images/MTS_Install2.png)
 
