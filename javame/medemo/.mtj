@@ -9,15 +9,15 @@
          <symbolSet name="EmbeddedDevice1">
             <symbol name="descriptor" value="Java ME Embedded Profile emulator"/>
             <symbol name="MEEP-CELLULAR" value="8.0"/>
-            <symbol name="apis.supported" value="CONFIGURATION-1.0,DEVICE-IO-1.1,DEVICE-IO-ADC-1.1,DEVICE-IO-ATCMD-1.1,DEVICE-IO-COUNTER-1.1,DEVICE-IO-DAC-1.1,DEVICE-IO-GENERIC-1.1,DEVICE-IO-GPIO-1.1,DEVICE-IO-I2CBUS-1.1,DEVICE-IO-MMIO-1.1,DEVICE-IO-MODEM-1.1,DEVICE-IO-PWM-1.1,DEVICE-IO-SPIBUS-1.1,DEVICE-IO-UART-1.1,DEVICE-IO-WATCHDOG-1.1,GCF-1.8,HTTPCLIENT-1.1,JSON-1.0,JSR172-1.0,JSR179-1.0,JSR280-1.0,JSR75-FileConnection-1.0,MEEP-CELLULAR-8.0,MEEP-EVENTS-8.0,MEEP-IO-8.0,MEEP-KEY-8.0,MEEP-LUI-8.0,MEEP-MEDIA-8.0,MEEP-POWER-MANAGEMENT-8.0,MEEP-RMS-8.0,MEEP-SWM-8.0,OAUTH2-1.0,SATSA-APDU-1.0,SATSA-CRYPTO-1.0,SATSA-EXTENSION-1.0,SSL-EXTENSION-1.0,WMA-1.1"/>
-            <symbol name="DEVICE-IO-MODEM" value="1.1"/>
             <symbol name="DEVICE-IO" value="1.1"/>
-            <symbol name="JSR280" value="1.0"/>
+            <symbol name="DEVICE-IO-MODEM" value="1.1"/>
+            <symbol name="apis.supported" value="CONFIGURATION-1.0,DEVICE-IO-1.1,DEVICE-IO-ADC-1.1,DEVICE-IO-ATCMD-1.1,DEVICE-IO-COUNTER-1.1,DEVICE-IO-DAC-1.1,DEVICE-IO-GENERIC-1.1,DEVICE-IO-GPIO-1.1,DEVICE-IO-I2CBUS-1.1,DEVICE-IO-MMIO-1.1,DEVICE-IO-MODEM-1.1,DEVICE-IO-PWM-1.1,DEVICE-IO-SPIBUS-1.1,DEVICE-IO-UART-1.1,DEVICE-IO-WATCHDOG-1.1,GCF-1.8,HTTPCLIENT-1.1,JSON-1.0,JSR172-1.0,JSR179-1.0,JSR280-1.0,JSR75-FileConnection-1.0,MEEP-CELLULAR-8.0,MEEP-EVENTS-8.0,MEEP-IO-8.0,MEEP-KEY-8.0,MEEP-LUI-8.0,MEEP-MEDIA-8.0,MEEP-POWER-MANAGEMENT-8.0,MEEP-RMS-8.0,MEEP-SWM-8.0,OAUTH2-1.0,SATSA-APDU-1.0,SATSA-CRYPTO-1.0,SATSA-EXTENSION-1.0,SSL-EXTENSION-1.0,WMA-1.1"/>
             <symbol name="DEVICE-IO-MMIO" value="1.1"/>
+            <symbol name="JSR280" value="1.0"/>
             <symbol name="SSL-EXTENSION" value="1.0"/>
             <symbol name="DEVICE-IO-I2CBUS" value="1.1"/>
-            <symbol name="CONFIGURATION" value="1.0"/>
             <symbol name="CLDC" value="1.8"/>
+            <symbol name="CONFIGURATION" value="1.0"/>
             <symbol name="DEVICE-IO-SPIBUS" value="1.1"/>
             <symbol name="JSR179" value="1.0"/>
             <symbol name="MEEP-SWM" value="8.0"/>
@@ -30,26 +30,26 @@
             <symbol name="OAUTH2" value="1.0"/>
             <symbol name="MEEP-RMS" value="8.0"/>
             <symbol name="MEEP-IO" value="8.0"/>
-            <symbol name="DEVICE-IO-GENERIC" value="1.1"/>
             <symbol name="JSON" value="1.0"/>
+            <symbol name="DEVICE-IO-GENERIC" value="1.1"/>
             <symbol name="MEEP-EVENTS" value="8.0"/>
             <symbol name="DEVICE-IO-COUNTER" value="1.1"/>
             <symbol name="JSR75-FileConnection" value="1.0"/>
             <symbol name="SATSA-APDU" value="1.0"/>
-            <symbol name="DEVICE-IO-DAC" value="1.1"/>
             <symbol name="GCF" value="1.8"/>
+            <symbol name="DEVICE-IO-DAC" value="1.1"/>
             <symbol name="SATSA-EXTENSION" value="1.0"/>
             <symbol name="DEVICE-IO-GPIO" value="1.1"/>
-            <symbol name="MEEP-LUI" value="8.0"/>
             <symbol name="MEEP-KEY" value="8.0"/>
+            <symbol name="MEEP-LUI" value="8.0"/>
             <symbol name="MEEP-MEDIA" value="8.0"/>
             <symbol name="DEVICE-IO-WATCHDOG" value="1.1"/>
-            <symbol name="HTTPCLIENT" value="1.1"/>
             <symbol name="SATSA-CRYPTO" value="1.0"/>
-            <symbol name="version.configuration" value="CLDC-1.8"/>
+            <symbol name="HTTPCLIENT" value="1.1"/>
             <symbol name="DEVICE-IO-ADC" value="1.1"/>
-            <symbol name="version.profile" value="MEEP-8.0"/>
+            <symbol name="version.configuration" value="CLDC-1.8"/>
             <symbol name="MEEP" value="8.0"/>
+            <symbol name="version.profile" value="MEEP-8.0"/>
          </symbolSet>
       </configuration>
       <configuration active="false" name="EmbeddedDevice2">
@@ -57,15 +57,15 @@
          <symbolSet name="EmbeddedDevice2">
             <symbol name="descriptor" value="Java ME Embedded Profile emulator"/>
             <symbol name="MEEP-CELLULAR" value="8.0"/>
-            <symbol name="DEVICE-IO" value="1.1"/>
-            <symbol name="DEVICE-IO-MODEM" value="1.1"/>
             <symbol name="apis.supported" value="CONFIGURATION-1.0,DEVICE-IO-1.1,DEVICE-IO-ADC-1.1,DEVICE-IO-ATCMD-1.1,DEVICE-IO-COUNTER-1.1,DEVICE-IO-DAC-1.1,DEVICE-IO-GENERIC-1.1,DEVICE-IO-GPIO-1.1,DEVICE-IO-I2CBUS-1.1,DEVICE-IO-MMIO-1.1,DEVICE-IO-MODEM-1.1,DEVICE-IO-PWM-1.1,DEVICE-IO-SPIBUS-1.1,DEVICE-IO-UART-1.1,DEVICE-IO-WATCHDOG-1.1,GCF-1.8,HTTPCLIENT-1.1,JSON-1.0,JSR172-1.0,JSR179-1.0,JSR280-1.0,JSR75-FileConnection-1.0,MEEP-CELLULAR-8.0,MEEP-EVENTS-8.0,MEEP-IO-8.0,MEEP-KEY-8.0,MEEP-LUI-8.0,MEEP-MEDIA-8.0,MEEP-POWER-MANAGEMENT-8.0,MEEP-RMS-8.0,MEEP-SWM-8.0,OAUTH2-1.0,SATSA-APDU-1.0,SATSA-CRYPTO-1.0,SATSA-EXTENSION-1.0,SSL-EXTENSION-1.0,WMA-1.1"/>
-            <symbol name="DEVICE-IO-MMIO" value="1.1"/>
+            <symbol name="DEVICE-IO-MODEM" value="1.1"/>
+            <symbol name="DEVICE-IO" value="1.1"/>
             <symbol name="JSR280" value="1.0"/>
+            <symbol name="DEVICE-IO-MMIO" value="1.1"/>
             <symbol name="SSL-EXTENSION" value="1.0"/>
             <symbol name="DEVICE-IO-I2CBUS" value="1.1"/>
-            <symbol name="CLDC" value="1.8"/>
             <symbol name="CONFIGURATION" value="1.0"/>
+            <symbol name="CLDC" value="1.8"/>
             <symbol name="DEVICE-IO-SPIBUS" value="1.1"/>
             <symbol name="JSR179" value="1.0"/>
             <symbol name="MEEP-SWM" value="8.0"/>
@@ -78,26 +78,26 @@
             <symbol name="OAUTH2" value="1.0"/>
             <symbol name="MEEP-RMS" value="8.0"/>
             <symbol name="MEEP-IO" value="8.0"/>
-            <symbol name="JSON" value="1.0"/>
             <symbol name="DEVICE-IO-GENERIC" value="1.1"/>
+            <symbol name="JSON" value="1.0"/>
             <symbol name="MEEP-EVENTS" value="8.0"/>
             <symbol name="DEVICE-IO-COUNTER" value="1.1"/>
             <symbol name="JSR75-FileConnection" value="1.0"/>
             <symbol name="SATSA-APDU" value="1.0"/>
-            <symbol name="GCF" value="1.8"/>
             <symbol name="DEVICE-IO-DAC" value="1.1"/>
+            <symbol name="GCF" value="1.8"/>
             <symbol name="SATSA-EXTENSION" value="1.0"/>
             <symbol name="DEVICE-IO-GPIO" value="1.1"/>
-            <symbol name="MEEP-KEY" value="8.0"/>
             <symbol name="MEEP-LUI" value="8.0"/>
+            <symbol name="MEEP-KEY" value="8.0"/>
             <symbol name="MEEP-MEDIA" value="8.0"/>
             <symbol name="DEVICE-IO-WATCHDOG" value="1.1"/>
-            <symbol name="SATSA-CRYPTO" value="1.0"/>
             <symbol name="HTTPCLIENT" value="1.1"/>
-            <symbol name="DEVICE-IO-ADC" value="1.1"/>
+            <symbol name="SATSA-CRYPTO" value="1.0"/>
             <symbol name="version.configuration" value="CLDC-1.8"/>
-            <symbol name="MEEP" value="8.0"/>
+            <symbol name="DEVICE-IO-ADC" value="1.1"/>
             <symbol name="version.profile" value="MEEP-8.0"/>
+            <symbol name="MEEP" value="8.0"/>
          </symbolSet>
       </configuration>
    </configurations>

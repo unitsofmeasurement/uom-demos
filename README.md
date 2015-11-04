@@ -18,7 +18,7 @@ The project currently contains the following modules:
 - [Domain specific demos](domain)
 - [JavaFX Demos](javafx)
  - [FXlib Demo Application](javafx/fxlib)
-- [Java ME 8 Demos](javame) **These are currently not Maven enabled and require NetBeans IDE**
+- [Java ME 8 Demos](javame) **These are currently not Maven enabled and require Eclipse or NetBeans IDE**
   - [Java ME 8 Demo](javame/medemo)
 - [Web Demos](web)
   - [Improved JBoss Temperature Converter](web/temperature-converter)
