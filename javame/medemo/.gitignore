@@ -4,3 +4,5 @@
 /bin/
 /deployed/
 /.settings/
+/build.properties
+/.mtj
