@@ -28,16 +28,32 @@ Import - Existing Projects into Workspace:
 
 You'll be promted to select an SDK and Device(s)
 ![SDK and Devices](site/resources/images/MTS_Devices.png)
+
 Click "Manage Devices..."
 And in the Device Management dialog "Manual Install..."
 
 Point to the installation folder of Java ME SDK 8.2, see:
 ![Manual Device Installation](site/resources/images/MTS_Install2.png)
 
-After scanning the SDK folder Device Management should look like this:
+After scanning the SDK folder, confirm with "Finish" and Device Management should look like this:
 ![SDK and Devices](site/resources/images/MTS_DeviceManagement.png)
 
-Confirming Device Management will populate the SDK and Device dropdown. Defaults normally do, it should be "EmbeddedDevice1" or the device marked as "Default" in the Device Management dialog.
+Confirming Device Management will populate the SDK and Device dropdown. Defaults normally do, try "EmbeddedDevice1" if not selected. You may check "Remember this match" before confirming SDK and Device with OK.
+
+In the "medemo" project double-click "Application Descriptor".
+From the "Running" panel on the right chose "Launch as Emulated Java ME MIDlet".
+
+After a few moments the Medemo MIDlet should start and you'll see its output in the Console: 
+
+```
+Hello MEDemo
+
+10 min
+
+10 °C
+
+10 m
+```
 
 ### NetBeans
 
