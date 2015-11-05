@@ -49,9 +49,7 @@ After a few moments the Medemo MIDlet should start and you'll see its output in 
 Hello MEDemo
 
 10 min
-
 10 °C
-
 10 m
 ```
 
