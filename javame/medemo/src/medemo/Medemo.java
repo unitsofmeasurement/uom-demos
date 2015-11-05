@@ -31,7 +31,6 @@ package medemo;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
-import javax.measure.format.UnitFormat;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Temperature;
 import javax.measure.quantity.Time;
@@ -44,13 +43,12 @@ import tec.uom.impl.enums.unit.*;
 */
 
 import tec.units.ri.unit.Units;
-import tec.units.ri.format.SimpleUnitFormat;
 import tec.units.ri.function.Nameable;
 import tec.units.ri.quantity.Quantities;
 
 /**
  * @author Werner Keil
- * @version 0.5, November 3, 2015
+ * @version 0.6, November 5, 2015
  */
 public class Medemo extends MIDlet implements Nameable {
 	private final String appName = "MEDemo";
@@ -86,7 +84,6 @@ public class Medemo extends MIDlet implements Nameable {
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
 		return appName;
 	}
 }
