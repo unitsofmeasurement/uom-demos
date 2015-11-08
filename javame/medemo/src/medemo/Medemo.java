@@ -48,10 +48,10 @@ import tec.units.ri.quantity.Quantities;
 
 /**
  * @author Werner Keil
- * @version 0.6, November 5, 2015
+ * @version 0.6.1, November 8, 2015
  */
 public class Medemo extends MIDlet implements Nameable {
-	private final String appName = "MEDemo";
+	private final String appName = "ME Demo";
 	private Quantity<Time> time;
 
 	@Override
