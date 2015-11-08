@@ -1,4 +1,4 @@
-MIDlet-Version: 1.0.0
+MIDlet-Version: 0.6.1
 MIDlet-Vendor: Units of Measurement
 MIDlet-Jar-URL: medemo.jar
 MicroEdition-Configuration: CLDC-1.8
