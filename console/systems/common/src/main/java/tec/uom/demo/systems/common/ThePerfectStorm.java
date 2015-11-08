@@ -33,6 +33,7 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
 
+import tec.units.ri.format.SimpleUnitFormat;
 import tec.units.ri.quantity.Quantities;
 import tec.uom.demo.types.SaffirSimpsonHurricaneWindScale;
 
@@ -121,6 +122,7 @@ public class ThePerfectStorm {
 			
 			Quantity<Time> timeToEvacuate = l.divide(metricSpeed).asType(Time.class);
 			//Quantity<?> timeToEvacuate = l.divide(metricSpeed); if you don't want to cast ;-)
+			SimpleUnitFormat.getInstance().label(timeToEvacuate.getUnit(), "h");
 			System.out.println(String.format("Time to evacuate: %s", timeToEvacuate));
 		} else {
 			System.out.println("No scale given.");
