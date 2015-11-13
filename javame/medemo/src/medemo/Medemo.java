@@ -32,6 +32,7 @@ package medemo;
 import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Length;
+import javax.measure.quantity.Mass;
 import javax.measure.quantity.Temperature;
 import javax.measure.quantity.Time;
 import javax.microedition.midlet.MIDlet;
@@ -68,7 +69,7 @@ public class Medemo extends MIDlet implements Nameable {
                         //DistanceUnit.METRE;
                         Units.METRE;
 		Quantity<Length> len = Quantities.getQuantity(10d, dist);
-                
+        Quantity<Mass> mass = Quantities.getQuantity(90, Units.KILOGRAM);
 		System.out.println();
 		System.out.println("Hello " + appName);
 		System.out.println();
@@ -76,6 +77,9 @@ public class Medemo extends MIDlet implements Nameable {
 		System.out.println(temp);
 //		System.out.println(celAscii);
 		System.out.println(len);
+		System.out.println(mass);
+		Quantity<Mass> inGram = mass.to(Units.GRAM);
+		System.out.println(inGram);
 	}
 
 	@Override
