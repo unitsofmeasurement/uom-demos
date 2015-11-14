@@ -40,8 +40,9 @@ public class AirplaneDemo {
 		Quantity<Length> distance = Quantities.getQuantity(5999, US.MILE);		
 		Quantity<Speed> airplaneSpeed = getAirplaneSpeed();
 		//Quantity<Time> eta = (Quantity<Time>)distance.divide(airplaneSpeed);
-		Quantity<Time> eta = distance.divide(airplaneSpeed).asType(Time.class);
-		System.out.println("ETA: " + eta.to(Units.HOUR));
+		Quantity<Time> timeToDest = distance.divide(airplaneSpeed).asType(Time.class);
+		System.out.println("TTD: " + timeToDest.to(Units.HOUR));
+		//System.out.println("ETA: " + eta.to(Units.HOUR)); // TODO ETA could be done based on current time
 	}
 	
 	private static final Quantity<Speed> getAirplaneSpeed() {
