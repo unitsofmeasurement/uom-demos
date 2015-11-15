@@ -1,4 +1,4 @@
-package tec.uom.demo.systems.lambda;
+package tec.uom.demo.se.systems.lambda;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Length;
