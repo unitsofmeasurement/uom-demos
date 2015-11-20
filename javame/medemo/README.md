@@ -43,7 +43,7 @@ Confirming Device Management will populate the SDK and Device dropdown. Defaults
 In the "medemo" project double-click "Application Descriptor".
 From the "Running" panel on the right chose "Launch as Emulated Java ME MIDlet".
 
-After a few moments the Medemo MIDlet should start and you'll see its output in the Console: 
+After a few moments the Medemo MIDlet should start and you'll see output like this in the Console: 
 
 ```
 Hello MEDemo
@@ -52,6 +52,7 @@ Hello MEDemo
 10 °C
 10 m
 ```
+(May change slightly as the demo evolves)
 
 ### NetBeans
 
