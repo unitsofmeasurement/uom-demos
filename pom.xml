@@ -5,9 +5,8 @@
 	<parent>
 		<groupId>tec.uom</groupId>
 		<artifactId>uom-parent</artifactId>
-		<version>0.8-RC3</version>
+		<version>0.8</version>
 	</parent>
-	<version>0.8-SNAPSHOT</version>
 	<groupId>tec.uom.demo</groupId>
 	<packaging>pom</packaging>
 	<name>Units of Measurement Demos</name>
@@ -32,10 +31,10 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<jsr.version>0.8-SNAPSHOT</jsr.version>
-		<ri.version>0.8-SNAPSHOT</ri.version>
-		<se.version>0.8-SNAPSHOT</se.version>
-		<lib.version>0.8-SNAPSHOT</lib.version>
+		<jsr.version>0.8</jsr.version>
+		<ri.version>0.8</ri.version>
+		<se.version>0.8</se.version>
+		<lib.version>0.8</lib.version>
 		<systems.version>0.2-SNAPSHOT</systems.version>
 	</properties>
 

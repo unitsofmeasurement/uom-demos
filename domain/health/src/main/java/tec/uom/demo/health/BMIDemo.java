@@ -25,7 +25,7 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
 import tec.units.ri.quantity.Quantities;
-import tec.uom.domain.health.ri.util.BMIRange;
+import tec.uom.domain.health.types.BMIRange;
 
 /**
  * This is a simple BMI (Body Mass Index) calculator

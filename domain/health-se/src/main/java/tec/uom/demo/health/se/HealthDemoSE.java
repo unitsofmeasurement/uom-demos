@@ -25,7 +25,7 @@
  */
 package tec.uom.demo.health.se;
 
-import static tec.uom.domain.health.se.Health.BPM;
+import static tec.uom.domain.health.unit.Health.BPM;
 
 import java.math.BigDecimal;
 

@@ -34,7 +34,7 @@ import javax.measure.quantity.Area;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
-import tec.uom.domain.health.se.util.BMIRange;
+import tec.uom.domain.health.types.BMIRange;
 import tec.uom.se.quantity.Quantities;
 
 /**

@@ -16,11 +16,11 @@
 package tec.uom.demo.health;
 
 import static org.junit.Assert.*;
-import static tec.uom.domain.health.ri.Health.BPM;
+import static tec.uom.domain.health.unit.Health.BPM;
 
 import org.junit.Test;
 
-import tec.uom.domain.health.ri.types.HeartRateAmount;
+import tec.uom.domain.health.types.HeartRateAmount;
 
 public class HealthTest {
 
