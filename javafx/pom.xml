@@ -10,13 +10,6 @@
 		<version>0.8</version>
 	</parent>
 	<description>Demos of the Units of Measurement API using JavaFX</description>
-	
-    <!-- ======================================================= -->
-    <!-- Build Settings -->
-    <!-- ======================================================= -->
-    <properties>
-        <systems.version>0.2-SNAPSHOT</systems.version>
-    </properties>
     
 	<dependencyManagement>
 		<dependencies>

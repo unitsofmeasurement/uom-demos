@@ -6,7 +6,7 @@
     <version>0.8</version>
   </parent>
   <artifactId>uom-edison-sensorweb</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.1</version>
   <packaging>pom</packaging>
   <name>Edison Sensor Web Demo</name>
   <description>Sensor Web Demo for Intel Edison</description>
