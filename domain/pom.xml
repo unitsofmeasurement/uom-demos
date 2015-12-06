@@ -18,6 +18,7 @@
         <module>health-se</module>
         <module>energy</module>
         <module>energy-se</module>
+        <module>retail-se</module>
 	</modules>
 
 	<dependencyManagement>
