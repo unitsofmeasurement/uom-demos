@@ -3,7 +3,6 @@
 These are domain specific demos mostly console-based at the moment. 
 
 Covering the following domains:
-
 - Energy
   - [Energy Demos](energy)
   - [Energy Demos for Java SE 8](energy-se) 
