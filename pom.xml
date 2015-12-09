@@ -161,8 +161,6 @@
 						<!-- ======================================================= -->
 						<!-- License -->
 						<!-- ======================================================= -->
-						<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>license-maven-plugin</artifactId> 
-							<version>1.4</version> </plugin> -->
 						<plugin>
 							<groupId>com.google.code.maven-license-plugin</groupId>
 							<artifactId>maven-license-plugin</artifactId>
