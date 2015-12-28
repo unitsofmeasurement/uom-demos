@@ -44,12 +44,12 @@ import tec.uom.impl.enums.unit.*;
 */
 
 import tec.units.ri.unit.Units;
-import tec.units.ri.function.Nameable;
+import tec.uom.lib.common.function.Nameable;
 import tec.units.ri.quantity.Quantities;
 
 /**
  * @author Werner Keil
- * @version 0.6.1, November 8, 2015
+ * @version 0.6.2, December 28, 2015
  */
 public class Medemo extends MIDlet implements Nameable {
 	private final String appName = "ME Demo";
