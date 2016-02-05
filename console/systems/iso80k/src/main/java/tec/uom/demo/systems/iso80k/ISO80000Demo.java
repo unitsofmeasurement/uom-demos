@@ -33,7 +33,9 @@ import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Mass;
 
+import si.uom.SI;
 import systems.uom.quantity.Information;
+import tec.units.ri.AbstractUnit;
 import tec.units.ri.quantity.Quantities;
 import tec.units.ri.unit.Units;
 import static systems.uom.iso80k.ISO80000.*;
@@ -57,6 +59,16 @@ public class ISO80000Demo {
 		System.out.println(bit);
 		Quantity<Information> bytes = bit.to(BYTE);
 		System.out.println(bytes);
+		
+		Unit x = AbstractUnit.parse("B");
+		System.out.println(x);
+		
+		Unit pressure = SI.PASCAL;
+		System.out.println(pressure);
+		
+		Unit y = AbstractUnit.parse("N");
+		System.out.println(y);
+		
 	}
 
 }
