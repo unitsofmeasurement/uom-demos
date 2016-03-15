@@ -32,7 +32,7 @@ package tec.uom.demo.retail.types;
 import javax.measure.Quantity;
 import javax.measure.quantity.Volume;
 
-import tec.uom.se.function.QuantitySupplier;
+import tec.uom.lib.common.function.QuantitySupplier;
 
 public class Bottle implements QuantitySupplier<Volume> {
 	private final Quantity<Volume> quantity;
@@ -45,5 +45,4 @@ public class Bottle implements QuantitySupplier<Volume> {
 	public Quantity<Volume> getQuantity() {
 		return quantity;
 	}
-
 }
