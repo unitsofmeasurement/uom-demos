@@ -29,14 +29,12 @@
  */
 package tec.uom.demo.se;
 
-import java.util.ServiceLoader;
-
 import javax.measure.Quantity;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
-import javax.measure.spi.Bootstrap;
 import javax.measure.spi.QuantityFactory;
 import javax.measure.spi.QuantityFactoryService;
+import javax.measure.spi.ServiceProvider;
 
 import tec.uom.se.internal.quantity.OldProxyQuantityFactory;
 //import tec.uom.se.quantity.ProxyQuantityFactory;
@@ -50,8 +48,8 @@ public class FactoryDemo {
 		System.out.println(len);
 //		Quantity<Length> len2 = len.multiply(2);
 //		System.out.println(len2);
-		QuantityFactoryService service = ServiceLoader.load(QuantityFactoryService.class).iterator().next();
-//		QuantityFactoryService service = Bootstrap.getService(QuantityFactoryService.class);
+//		QuantityFactoryService service = ServiceLoader.load(QuantityFactoryService.class).iterator().next();
+		QuantityFactoryService service = ServiceProvider.current().getQuantityFactoryService();
 		
 		QuantityFactory<Mass> massFactory = service.getQuantityFactory(Mass.class);
 		Quantity<Mass> mass = massFactory.create(50, Units.KILOGRAM);

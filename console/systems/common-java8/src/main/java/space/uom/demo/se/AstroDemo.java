@@ -33,15 +33,15 @@ import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Force;
 import javax.measure.quantity.Length;
-import javax.measure.spi.Bootstrap;
 import javax.measure.spi.QuantityFactoryService;
+import javax.measure.spi.ServiceProvider;
 
 import tec.uom.se.unit.Units;
 
 public class AstroDemo {
 
 	public static void main(String[] args) {
-		QuantityFactoryService service = Bootstrap.getService(QuantityFactoryService.class);
+		QuantityFactoryService service = ServiceProvider.current().getQuantityFactoryService();
 		Unit<Length> au = AstronomicalSystemOfUnits.ASTRONOMICAL_UNIT;
 		Quantity<Length> peri = service.getQuantityFactory(
 				Length.class).create(0.9832687, au);
