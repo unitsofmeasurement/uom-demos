@@ -25,11 +25,15 @@
  */
 package tec.uom.demo.energy.se;
 
+import static tec.uom.se.unit.MetricPrefix.KILO;
+
 import javax.measure.Quantity;
+import javax.measure.Unit;
 import javax.measure.quantity.Energy;
 import javax.measure.quantity.Temperature;
 import javax.measure.quantity.Volume;
 
+import tec.uom.se.format.SimpleUnitFormat;
 import tec.uom.se.quantity.Quantities;
 import tec.uom.se.unit.Units;
 
@@ -38,15 +42,20 @@ import tec.uom.se.unit.Units;
  * @author Werner
  * @see <a href="http://www.dagego.de/info_waermebedarf.html">Dageto Wärmebedarfsermittlung (DE)</a>
  */
-public class HeatingDemo {
+public class HeatRequirementDemo {
 
 	public static void main(String[] args) {
 		Quantity<Volume> volume = Quantities.getQuantity(1000, Units.LITRE);
 		Quantity<Temperature> temperature = Quantities.getQuantity(20, Units.KELVIN);
-//		@SuppressWarnings("unchecked")
+		@SuppressWarnings("unchecked")
 		Quantity<Energy> energy = (Quantity<Energy>) volume.multiply(temperature);
 		Quantity<Energy> result = (energy.multiply(4200)).divide(3600);
-		System.out.println(result);
+//		System.out.println(result);
+		Unit<Energy> WATTHOUR = result.getUnit();
+//		SimpleUnitFormat.getInstance().label(WATTHOUR, "Wh");
+//		System.out.println(result);
+		SimpleUnitFormat.getInstance().label(KILO(WATTHOUR), "KWh");
+		System.out.println(result.to(KILO(WATTHOUR)));
 	}
 
 }
