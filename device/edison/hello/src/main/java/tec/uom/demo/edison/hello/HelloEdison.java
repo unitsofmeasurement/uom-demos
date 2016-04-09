@@ -61,6 +61,7 @@ public class HelloEdison {
 		System.out.println(question.format(questionArgs));
 		Quantity<LuminousEfficacy>  luminousEfficacy = Quantities.getQuantity(LE_VALUE, LM_PER_WATT);
 		Quantity<Power> p = luminousFlux.divide(luminousEfficacy).asType(Power.class);
+		
 		final Object[] answerArgs = {p};
 		System.out.println(answer.format(answerArgs));
 	}

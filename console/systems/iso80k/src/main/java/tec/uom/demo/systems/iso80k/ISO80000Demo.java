@@ -66,8 +66,8 @@ public class ISO80000Demo {
 		Unit pressure = SI.PASCAL;
 		System.out.println(pressure);
 		
-		Unit y = AbstractUnit.parse("N");
-		System.out.println(y);
+		//Unit y = AbstractUnit.parse("N");
+		//System.out.println(y);
 		
 	}
 

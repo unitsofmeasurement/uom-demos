@@ -20,6 +20,7 @@ public class SmartHomeDemo {
 		Quantity<Temperature> temperature = Quantities.getQuantity(20, Units.KELVIN);
 		@SuppressWarnings("unchecked")
 		Quantity<Energy> energy = (Quantity<Energy>) volume.multiply(temperature);
+		//Quantity<Energy> energy = volume.multiply(temperature).asType(Energy.class);
 		Quantity<Energy> result = (energy.multiply(4200)).divide(3600);
 		System.out.println(result);
 	}
