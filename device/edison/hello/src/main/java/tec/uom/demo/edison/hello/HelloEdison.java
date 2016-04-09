@@ -1,6 +1,6 @@
-/**
- *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+/*
+ *  Units of Measurement Demos for Java
+ *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -51,7 +51,7 @@ public class HelloEdison {
 		System.out.println("Hello Edison.");
 		System.out.println("How about a little lightbulb efficiency calculation?;-)");
 		final MessageFormat question = new MessageFormat(
-				"What is the power consumption of a lamp that has luminous flux of {0} and luminous efficacy of {1} lumens per watt (lm/W)?");
+				"What is the power consumption of a lamp with a luminous flux of {0} and luminous efficacy of {1} lumens per watt (lm/W)?");
 		final MessageFormat answer = new MessageFormat("You need a {0} lightbulb.");
 		
 		Quantity<LuminousFlux> luminousFlux = Quantities.getQuantity(iLumen, Units.LUMEN);
