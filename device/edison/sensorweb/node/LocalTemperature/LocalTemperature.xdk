@@ -1,11 +1,11 @@
 {
   "project": {
-    "projectSettingsVersion": "1.2",
+    "projectSettingsVersion": "2.0.0",
     "creationData": {
       "projectTypeName": "com.intel.xdk.projecttype.iotapp",
       "src": "https://appcenter.html5tools-software.intel.com/api/v2.0/redirect/projectrenderers/release-2015-ww13/iotapp/templates-local-temperature-iot/sample.zip",
       "projectGuid": "b9162670-4653-414d-8a91-408a0ff01f64",
-      "lastModifiedDate": 1434224310070,
+      "lastModifiedDate": 1460400075398,
       "creationDate": 1434224309856
     },
     "sourceDirectory": "",
@@ -19,6 +19,7 @@
     "gameAssetDirectory": "asset",
     "gameMetadata": {},
     "projectTags": [],
-    "buildConfigurations": {}
+    "buildConfigurations": {},
+    "testDirectory": "test"
   }
 }

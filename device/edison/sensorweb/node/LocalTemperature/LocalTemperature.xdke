@@ -1,8 +1,9 @@
 {
   "project": {
-    "projectSettingsVersion": "1.2",
+    "projectSettingsVersion": "2.0.0",
     "currentBuildConfiguration": null,
     "projectFiles": {},
-    "projectDirectories": {}
+    "projectDirectories": {},
+    "initialAutoPluginCount": 0
   }
 }

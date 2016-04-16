@@ -1,18 +1,26 @@
 {
   "project": {
-    "projectSettingsVersion": "1.2",
+    "projectSettingsVersion": "2.0.0",
     "creationData": {
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "https://appcenter.html5tools-software.intel.com/api/v2.0/redirect/projectrenderers/release-2015-ww13/jsapp/samples-local-temperature-app/sample.zip",
       "projectGuid": "3fe1c771-c8dc-413c-8fd2-d2bd1201de0b",
-      "lastModifiedDate": 1434230294570,
+      "lastModifiedDate": 1460400098191,
       "creationDate": 1434230294337
     },
     "sourceDirectory": "www",
     "cordovaPluginsDirectory": "plugins",
     "startFile": "index.html",
     "projectFiles": {},
-    "projectDirectories": {},
+    "projectDirectories": {
+      "www/xdk": {
+        "settings": {
+          "project": {
+            "XDK-generated": "true"
+          }
+        }
+      }
+    },
     "libraries": [
       {
         "name": "Cordova",
@@ -37,7 +45,19 @@
         "data": {},
         "paramvals": {},
         "dependsOn": [],
-        "dependedBy": []
+        "dependedBy": [],
+        "originType": "cordova.io",
+        "origin": "org.apache.cordova.vibration",
+        "permissions": {
+          "android:name": [
+            "android.permission.VIBRATE"
+          ]
+        },
+        "topLevel": true,
+        "checksum": "323ba690",
+        "gitref": "",
+        "name": "Vibration",
+        "description": "Cordova Vibration Plugin"
       },
       {
         "id": "org.apache.cordova.dialogs",
@@ -46,7 +66,15 @@
         "data": {},
         "paramvals": {},
         "dependsOn": [],
-        "dependedBy": []
+        "dependedBy": [],
+        "originType": "cordova.io",
+        "origin": "org.apache.cordova.dialogs",
+        "permissions": {},
+        "topLevel": true,
+        "checksum": "ed2d60ae",
+        "gitref": "",
+        "name": "Notification",
+        "description": "Cordova Notification Plugin"
       },
       {
         "id": "org.apache.cordova.splashscreen",
@@ -55,7 +83,15 @@
         "data": {},
         "paramvals": {},
         "dependsOn": [],
-        "dependedBy": []
+        "dependedBy": [],
+        "originType": "cordova.io",
+        "origin": "org.apache.cordova.splashscreen",
+        "permissions": {},
+        "topLevel": true,
+        "checksum": "b3c1af48",
+        "gitref": "",
+        "name": "Splashscreen",
+        "description": "Cordova Splashscreen Plugin"
       },
       {
         "id": "org.apache.cordova.device",
@@ -64,7 +100,15 @@
         "data": {},
         "paramvals": {},
         "dependsOn": [],
-        "dependedBy": []
+        "dependedBy": [],
+        "originType": "cordova.io",
+        "origin": "org.apache.cordova.device",
+        "permissions": {},
+        "topLevel": true,
+        "checksum": "8869829",
+        "gitref": "",
+        "name": "Device",
+        "description": "Cordova Device Plugin"
       }
     ],
     "serviceMethods": [],
@@ -81,7 +125,12 @@
         "isActive_": true,
         "appName_": "LocalTemperatureApp",
         "appID_": "not.yet.specified",
-        "appAccess_": "*",
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -104,7 +153,12 @@
         "isActive_": true,
         "appName_": "LocalTemperatureApp",
         "appID_": "not.yet.specified",
-        "appAccess_": "*",
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -126,7 +180,12 @@
         "isActive_": true,
         "appName_": "LocalTemperatureApp",
         "appID_": "not.yet.specified",
-        "appAccess_": "*",
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -144,25 +203,12 @@
         "isActive_": true,
         "appName_": "LocalTemperatureApp",
         "appID_": "not.yet.specified",
-        "appAccess_": "*",
-        "icons_": [],
-        "splashes_": [],
-        "addlPermissions_": "",
-        "excludedLibraries_": "",
-        "iosProvs_": [],
-        "cordovaCLIVersion_": "4.1.2",
-        "crosswalkVersion_": "11",
-        "appVersion_": "1.0.0.0"
-      },
-      "WindowsPhone8": {
-        "platform_": "wp8",
-        "runtime_": "Cordova 3.x",
-        "name_": "WindowsPhone8",
-        "preferences_": {},
-        "isActive_": true,
-        "appName_": "LocalTemperatureApp",
-        "appID_": "not.yet.specified",
-        "appAccess_": "*",
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -180,11 +226,14 @@
         "isActive_": false,
         "appName_": "LocalTemperatureApp",
         "appID_": "not.yet.specified",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -199,11 +248,14 @@
         "isActive_": false,
         "appName_": "LocalTemperatureApp",
         "appID_": "not.yet.specified",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -218,11 +270,14 @@
         "isActive_": false,
         "appName_": "LocalTemperatureApp",
         "appID_": "not.yet.specified",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
@@ -237,20 +292,45 @@
         "isActive_": false,
         "appName_": "LocalTemperatureApp",
         "appID_": "not.yet.specified",
-        "appAccess_": [
-          {
-            "origin": "*"
-          }
-        ],
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "appVersion_": "0.0.1"
+      },
+      "WP81": {
+        "platform_": "wp81",
+        "runtime_": "Cordova 3.x",
+        "name_": "WP81",
+        "preferences_": {},
+        "isActive_": true,
+        "appName_": "LocalTemperatureApp",
+        "appID_": "not.yet.specified",
+        "appAccess_": {
+          "mode": "legacy",
+          "network": [],
+          "intents": [],
+          "navigation": []
+        },
+        "icons_": [],
+        "splashes_": [],
+        "addlPermissions_": "",
+        "excludedLibraries_": "",
+        "appVersion_": "0.0.0.1",
+        "cordovaCLIVersion_": "5.1.1"
       }
     },
     "gameAssetDirectory": "asset",
     "gameMetadata": {},
-    "projectTags": []
+    "projectTags": [],
+    "testDirectory": "test"
   }
 }
