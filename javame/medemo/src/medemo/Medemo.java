@@ -37,38 +37,34 @@ import javax.measure.quantity.Temperature;
 import javax.measure.quantity.Time;
 import javax.microedition.midlet.MIDlet;
 
-/*
-import tec.uom.impl.enums.quantity.TemperatureAmount;
-import tec.uom.impl.enums.quantity.TimeAmount;
-import tec.uom.impl.enums.unit.*;
-*/
-
 import tec.units.ri.unit.Units;
 import tec.uom.lib.common.function.Nameable;
 import tec.units.ri.quantity.Quantities;
 
 /**
  * @author Werner Keil
- * @version 0.6.2, December 28, 2015
+ * @version 0.7, April 18, 2016
  */
 public class Medemo extends MIDlet implements Nameable {
 	private final String appName = "ME Demo";
 	private Quantity<Time> time;
-
+	private Double d;
+	
 	@Override
 	public void startApp() {
+		d = Double.valueOf(10d);
 		//quantity = new TimeAmount(10d, TimeUnit.MINUTE);
-                time = Quantities.getQuantity(10d, Units.MINUTE);
+                time = Quantities.getQuantity(d, Units.MINUTE);
 		Quantity<Temperature> temp = 
                         //new TemperatureAmount(10d, TemperatureUnit.CELSIUS);
-                        Quantities.getQuantity(10d, Units.CELSIUS);
+                        Quantities.getQuantity(d, Units.CELSIUS);
 //        UnitFormat asciiFmt = SimpleUnitFormat.getInstance(SimpleUnitFormat.Flavor.ASCII);            
 //		String celAscii = asciiFmt.format(Units.CELSIUS);
 		
 		Unit<Length> dist = 
                         //DistanceUnit.METRE;
                         Units.METRE;
-		Quantity<Length> len = Quantities.getQuantity(10d, dist);
+		Quantity<Length> len = Quantities.getQuantity(d, dist);
         Quantity<Mass> mass = Quantities.getQuantity(90, Units.KILOGRAM);
 		System.out.println();
 		System.out.println("Hello " + appName);
@@ -84,6 +80,8 @@ public class Medemo extends MIDlet implements Nameable {
 
 	@Override
 	public void destroyApp(boolean unconditional) {
+		time = null;
+		d = null;
 	}
 
 	@Override
