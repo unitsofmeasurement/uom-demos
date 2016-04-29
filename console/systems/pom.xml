@@ -14,7 +14,6 @@
 		<!-- <module>common-java8</module> -->
 		<module>ucum</module>
 		<!-- <module>si</module>  -->
-		<module>iso80k</module>
 		<module>historical</module>
 	</modules>
 
@@ -48,11 +47,6 @@
                 <dependency>
                 <groupId>systems.uom</groupId>
                 <artifactId>systems-common-java8</artifactId>
-                <version>${systems.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>systems.uom</groupId>
-                <artifactId>systems-iso80k</artifactId>
                 <version>${systems.version}</version>
             </dependency>
             <dependency>

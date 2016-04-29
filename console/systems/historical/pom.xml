@@ -21,9 +21,5 @@
             <groupId>systems.uom</groupId>
             <artifactId>systems-quantity</artifactId>
         </dependency>
-        <dependency>
-            <groupId>systems.uom</groupId>
-            <artifactId>systems-iso80k</artifactId>
-        </dependency>
     </dependencies>
 </project>
