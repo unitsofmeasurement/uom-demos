@@ -30,14 +30,14 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
 
-import systems.uom.common.US;
+import systems.uom.common.USCustomary;
 import tec.units.ri.quantity.Quantities;
 import tec.units.ri.unit.Units;
 
 public class AirplaneDemo {
 
 	public static void main(String[] args) {
-		Quantity<Length> distance = Quantities.getQuantity(5999, US.MILE);		
+		Quantity<Length> distance = Quantities.getQuantity(5999, USCustomary.MILE);		
 		Quantity<Speed> airplaneSpeed = getAirplaneSpeed();
 		//Quantity<Time> eta = (Quantity<Time>)distance.divide(airplaneSpeed);
 		Quantity<Time> timeToDest = distance.divide(airplaneSpeed).asType(Time.class);

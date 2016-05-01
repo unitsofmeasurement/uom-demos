@@ -34,7 +34,7 @@ import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPIC
 import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TWO;
 import static tec.units.ri.unit.MetricPrefix.KILO;
 import static tec.units.ri.unit.Units.METRE;
-import static systems.uom.common.US.MILES_PER_HOUR;
+import static systems.uom.common.USCustomary.MILES_PER_HOUR;
 import static tec.units.ri.unit.Units.KILOMETRES_PER_HOUR;
 
 import javax.measure.Quantity;

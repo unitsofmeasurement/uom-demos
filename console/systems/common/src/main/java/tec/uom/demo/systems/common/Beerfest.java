@@ -36,7 +36,7 @@ import javax.measure.Quantity;
 import javax.measure.quantity.Volume;
 
 import systems.uom.common.Imperial;
-import systems.uom.common.US;
+import systems.uom.common.USCustomary;
 import tec.units.ri.quantity.Quantities;
 
 public class Beerfest {
@@ -44,16 +44,16 @@ public class Beerfest {
 	public static void main(String[] args) {
 		System.out.println("Ozapft is!");
 		System.out.println();
-		Quantity<Volume> v = Quantities.getQuantity(.5d, US.LITER);
+		Quantity<Volume> v = Quantities.getQuantity(.5d, USCustomary.LITER);
 		System.out.println(v);
 		System.out.println(v.to(Imperial.PINT)); 
-		System.out.println(v.to(US.FLUID_OUNCE)); 
+		System.out.println(v.to(USCustomary.FLUID_OUNCE)); 
 		
 		System.out.println();
 		v = Quantities.getQuantity(1, MASS_HISTORIC);
 		System.out.println(v);
 		System.out.println(v.to(SCHOPPEN_BAYERN));
-		System.out.println(v.to(US.LITER));
+		System.out.println(v.to(USCustomary.LITER));
 	}
 
 }

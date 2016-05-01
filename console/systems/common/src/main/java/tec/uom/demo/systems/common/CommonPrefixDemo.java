@@ -2,7 +2,7 @@ package tec.uom.demo.systems.common;
 
 import static tec.units.ri.unit.MetricPrefix.KILO;
 import static tec.units.ri.unit.MetricPrefix.NANO;
-import static systems.uom.common.US.LITER;
+import static systems.uom.common.USCustomary.LITER;
 
 import javax.measure.Quantity;
 import javax.measure.format.UnitFormat;
