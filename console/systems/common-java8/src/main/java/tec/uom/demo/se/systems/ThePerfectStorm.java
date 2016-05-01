@@ -25,7 +25,7 @@ import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TWO;
 import static tec.uom.se.unit.Units.KILOMETRES_PER_HOUR;
 import static tec.uom.se.unit.Units.METRE;
 import static tec.uom.se.unit.MetricPrefix.KILO;
-import static systems.uom.common.US.MILES_PER_HOUR;
+import static systems.uom.common.USCustomary.MILES_PER_HOUR;
 
 import javax.measure.Quantity;
 //import javax.measure.quantity.Energy;

@@ -48,7 +48,7 @@ import tec.uom.se.unit.Units;
 import systems.uom.ucum.UCUM;
 import static tec.uom.se.unit.Units.*;
 import static tec.uom.se.unit.MetricPrefix.*;
-import static systems.uom.common.US.*;
+import static systems.uom.common.USCustomary.*;
 
 /**
  * @author Werner Keil
