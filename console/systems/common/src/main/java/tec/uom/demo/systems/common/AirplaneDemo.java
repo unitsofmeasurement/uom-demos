@@ -37,7 +37,7 @@ import tec.units.ri.unit.Units;
 public class AirplaneDemo {
 
 	public static void main(String[] args) {
-		// TODO make that either configurable or at least optionally passing it with args.
+		// TODO make that either configurable or at least optionally passing it with arguments
 		Quantity<Length> distance = Quantities.getQuantity(6370.98d, USCustomary.MILE);		
 		Quantity<Speed> airplaneSpeed = getAirplaneSpeed();
 		//Quantity<Time> eta = (Quantity<Time>)distance.divide(airplaneSpeed);
