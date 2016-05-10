@@ -1,6 +1,6 @@
 /*
  *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -37,12 +37,13 @@ import tec.units.ri.unit.Units;
 public class AirplaneDemo {
 
 	public static void main(String[] args) {
+		// TODO make that either configurable or at least optionally passing it in args.
 		Quantity<Length> distance = Quantities.getQuantity(6370.98d, USCustomary.MILE);		
 		Quantity<Speed> airplaneSpeed = getAirplaneSpeed();
 		//Quantity<Time> eta = (Quantity<Time>)distance.divide(airplaneSpeed);
 		Quantity<Time> timeToDest = distance.divide(airplaneSpeed).asType(Time.class);
 		System.out.println("TTD: " + timeToDest.to(Units.HOUR));
-		//System.out.println("ETA: " + eta.to(Units.HOUR)); // TODO ETA could be done based on current time
+		//System.out.println("ETA: " + eta.to(Units.HOUR)); // XXX ETA could be done based on current time
 	}
 	
 	private static final Quantity<Speed> getAirplaneSpeed() {
