@@ -37,7 +37,7 @@ import tec.units.ri.unit.Units;
 public class AirplaneDemo {
 
 	public static void main(String[] args) {
-		Quantity<Length> distance = Quantities.getQuantity(5999, USCustomary.MILE);		
+		Quantity<Length> distance = Quantities.getQuantity(6370.98d, USCustomary.MILE);		
 		Quantity<Speed> airplaneSpeed = getAirplaneSpeed();
 		//Quantity<Time> eta = (Quantity<Time>)distance.divide(airplaneSpeed);
 		Quantity<Time> timeToDest = distance.divide(airplaneSpeed).asType(Time.class);
