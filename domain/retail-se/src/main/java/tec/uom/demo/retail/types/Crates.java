@@ -37,140 +37,143 @@ import javax.measure.Quantity;
 import javax.measure.UnconvertibleException;
 import javax.measure.Unit;
 import javax.measure.UnitConverter;
+
 import tec.uom.domain.retail.Crate;
 import tec.uom.lib.common.function.ValueSupplier;
 
 public enum Crates implements Unit<Crate>, ValueSupplier<Integer> {
     DOZEN("Dozen", "d", 12), // reference Unit
-	SIXPACK("Half a Dozen", "hd", 6);
+    SIXPACK("Half a Dozen", "hd", 6);
 
     private final String symbol;
     private final String name;
     private final Integer value;
-    
+
     private Crates(final String name, final String symbol, Integer val) {
-        this.symbol = symbol;
-    	this.name = name;
-        this.value = val;
+	this.symbol = symbol;
+	this.name = name;
+	this.value = val;
     }
-    
-	@Override
-	public Integer getValue() {
-		return value;
-	}
 
-	@Override
-	public String getSymbol() {
-		return symbol;
-	}
+    @Override
+    public Integer getValue() {
+	return value;
+    }
 
-	@Override
-	public String getName() {
-		return name;
-	}
+    @Override
+    public String getSymbol() {
+	return symbol;
+    }
 
-	@Override
-	public Dimension getDimension() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public String getName() {
+	return name;
+    }
 
-	@Override
-	public Unit<Crate> getSystemUnit() {
-		return DOZEN;
-	}
+    @Override
+    public Dimension getDimension() {
+	// TODO Auto-generated method stub
+	return null;
+    }
 
-	@Override
-	public Map<? extends Unit<?>, Integer> getProductUnits() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public Unit<Crate> getSystemUnit() {
+	return DOZEN;
+    }
 
-	@Override
-	public boolean isCompatible(Unit<?> that) {
-		return this.equals(that);
-	}
+    @Override
+    public Map<? extends Unit<?>, Integer> getBaseUnits() {
+	// TODO Auto-generated method stub
+	return null;
+    }
 
-	@Override
-	public <T extends Quantity<T>> Unit<T> asType(Class<T> type)
-			throws ClassCastException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public boolean isCompatible(Unit<?> that) {
+	return this.equals(that);
+    }
 
-	@Override
-	public UnitConverter getConverterTo(Unit<Crate> that)
-			throws UnconvertibleException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public <T extends Quantity<T>> Unit<T> asType(Class<T> type)
+	    throws ClassCastException {
+	// TODO Auto-generated method stub
+	return null;
+    }
 
-	@Override
-	public UnitConverter getConverterToAny(Unit<?> that)
-			throws IncommensurableException, UnconvertibleException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public UnitConverter getConverterTo(Unit<Crate> that)
+	    throws UnconvertibleException {
+	// TODO Auto-generated method stub
+	return null;
+    }
 
-	@Override
-	public Unit<Crate> alternate(String symbol) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public UnitConverter getConverterToAny(Unit<?> that)
+	    throws IncommensurableException, UnconvertibleException {
+	// TODO Auto-generated method stub
+	return null;
+    }
 
-	@Override
-	public Unit<Crate> shift(double offset) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public Unit<Crate> alternate(String symbol) {
+	// TODO Auto-generated method stub
+	return null;
+    }
 
-	@Override
-	public Unit<Crate> multiply(double multiplier) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public Unit<Crate> shift(double offset) {
+	// TODO Auto-generated method stub
+	return null;
+    }
 
-	@Override
-	public Unit<?> multiply(Unit<?> multiplier) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public Unit<Crate> multiply(double multiplier) {
+	// TODO Auto-generated method stub
+	return null;
+    }
 
-	@Override
-	public Unit<?> inverse() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public Unit<?> multiply(Unit<?> multiplier) {
+	// TODO Auto-generated method stub
+	return null;
+    }
 
-	@Override
-	public Unit<Crate> divide(double divisor) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public Unit<?> inverse() {
+	// TODO Auto-generated method stub
+	return null;
+    }
 
-	@Override
-	public Unit<?> divide(Unit<?> divisor) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public Unit<Crate> divide(double divisor) {
+	// TODO Auto-generated method stub
+	return null;
+    }
 
-	@Override
-	public Unit<?> root(int n) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public Unit<?> divide(Unit<?> divisor) {
+	// TODO Auto-generated method stub
+	return null;
+    }
 
-	@Override
-	public Unit<?> pow(int n) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public Unit<?> root(int n) {
+	// TODO Auto-generated method stub
+	return null;
+    }
 
-	@Override
-	public Unit<Crate> transform(UnitConverter converter) {
-		// TODO Auto-generated method stub
-		return null;
-	}
- 
+    @Override
+    public Unit<?> pow(int n) {
+	// TODO Auto-generated method stub
+	return null;
+    }
 
+    @Override
+    public Unit<Crate> transform(UnitConverter converter) {
+	// TODO Auto-generated method stub
+	return null;
+    }
+
+    public Map getProductUnits() {
+	throw new UnsupportedOperationException("Use getBaseUnits() instead");
+    }
 }

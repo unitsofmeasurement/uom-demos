@@ -96,7 +96,7 @@ public enum BitRateUnit implements Unit<InformationRate>, DoubleFactorSupplier, 
     }
 
     
-    public Map<Unit<?>, Integer> getProductUnits() {
+    public Map<Unit<?>, Integer> getBaseUnits() {
         Map<Unit<?>, Integer> prodUnits = new HashMap<Unit<?>, Integer>();
         prodUnits.put(Kbps, Integer.valueOf(3));
         prodUnits.put(Mbps, Integer.valueOf(6));

@@ -116,7 +116,7 @@ public enum BitUnit implements Unit<Information>, DoubleFactorSupplier, Descript
     }
 
     
-    public Map<Unit<?>, Integer> getProductUnits() {
+    public Map<Unit<?>, Integer> getBaseUnits() {
         Map<Unit<?>, Integer> prodUnits = new HashMap<Unit<?>, Integer>();
         prodUnits.put(kb, Integer.valueOf(3));
         prodUnits.put(Mb, Integer.valueOf(6));
