@@ -172,8 +172,4 @@ public enum Crates implements Unit<Crate>, ValueSupplier<Integer> {
 	// TODO Auto-generated method stub
 	return null;
     }
-
-    public Map getProductUnits() {
-	throw new UnsupportedOperationException("Use getBaseUnits() instead");
-    }
 }
