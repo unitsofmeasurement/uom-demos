@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>tec.uom</groupId>
 		<artifactId>uom-parent</artifactId>
-		<version>0.9</version>
+		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<groupId>tec.uom.demo</groupId>
 	<packaging>pom</packaging>
@@ -31,8 +31,8 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<jsr.version>0.9</jsr.version>
-		<ri.version>0.9</ri.version>
+		<jsr.version>1.0-SNAPSHOT</jsr.version>
+		<ri.version>1.0-SNAPSHOT</ri.version>
 		<se.version>0.9</se.version>
 		<lib.version>0.9-SNAPSHOT</lib.version>
 		<si.version>0.5-SNAPSHOT</si.version>
