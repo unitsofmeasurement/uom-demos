@@ -1,6 +1,6 @@
 /*
  *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -49,6 +49,9 @@ public class UnitFormatDemo {
 		
 //		DecimalFormat df = new DecimalFormat();
 //		System.out.println(df.toPattern());
+		
+		parsed = AbstractUnit.parse("V");
+		System.out.println(parsed);
 	}
 
 }
