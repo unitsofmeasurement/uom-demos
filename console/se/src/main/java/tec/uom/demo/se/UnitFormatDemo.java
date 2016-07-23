@@ -60,6 +60,9 @@ public class UnitFormatDemo {
 		
 //		DecimalFormat df = new DecimalFormat();
 //		System.out.println(df.toPattern());
+		
+		parsed = AbstractUnit.parse("W");
+		System.out.println(parsed);
 	}
 
 }
