@@ -61,8 +61,8 @@ public class CLDRDemo {
 	Unit y = AbstractUnit.parse("N");
 	System.out.println(y);
 	
-	Quantity<InformationRate> bps = Quantities.getQuantity(10, BIT_PER_SECOND);
-	System.out.println(bps);
+//	Quantity<InformationRate> bps = Quantities.getQuantity(10, BIT_PER_SECOND);
+//	System.out.println(bps);
     }
 
 }
