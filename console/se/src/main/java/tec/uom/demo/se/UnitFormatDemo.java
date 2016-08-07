@@ -33,6 +33,7 @@ import static tec.uom.se.unit.MetricPrefix.KILO;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.Locale;
 
 import javax.measure.Unit;
 import javax.measure.format.UnitFormat;
@@ -63,6 +64,14 @@ public class UnitFormatDemo {
 		
 		parsed = AbstractUnit.parse("W");
 		System.out.println(parsed);
+		
+		localFormat = LocalUnitFormat.getInstance(Locale.ENGLISH);
+		String output = localFormat.format(Units.LITRE);
+		System.out.println(output);
+		
+		localFormat = LocalUnitFormat.getInstance(Locale.JAPANESE);
+		output = localFormat.format(Units.METRE);
+		System.out.println(output);
 	}
 
 }
