@@ -46,7 +46,7 @@ public class AirplaneDemo {
 	    if (args != null && args.length>0) {
 		 model = args[0];
 	    } else {
-		model = "B777";
+		model = "A380";
 	    }
 	    // TODO make that either configurable or at least optionally passing it with arguments
 	    Quantity<Length> distance = Quantities.getQuantity(10427d, KILO(METRE));
