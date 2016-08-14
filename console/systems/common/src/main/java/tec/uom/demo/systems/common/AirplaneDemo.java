@@ -35,16 +35,25 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
 
+import systems.uom.common.USCustomary;
 import tec.units.ri.AbstractQuantity;
 import tec.units.ri.quantity.Quantities;
 
 public class AirplaneDemo {
 
 	public static void main(String[] args) {
+	    final String model;
+	    if (args != null && args.length>0) {
+		 model = args[0];
+	    } else {
+		model = "B777";
+	    }
 	    // TODO make that either configurable or at least optionally passing it with arguments
 	    Quantity<Length> distance = Quantities.getQuantity(10427d, KILO(METRE));
-	    Airplane airplane = new Airplane("B777");
+	    Airplane airplane = new Airplane(model);
 	    Quantity<Speed> airplaneSpeed = airplane.getSpeed();
+	    System.out.println(airplane + " flying " + airplaneSpeed);
+	    System.out.println(airplane + " flying " + airplaneSpeed.to(USCustomary.MILES_PER_HOUR));
 	    //Quantity<Time> eta = (Quantity<Time>)distance.divide(airplaneSpeed);
 	    Quantity<Time> timeToDest = distance.divide(airplaneSpeed).asType(Time.class);
 	    System.out.println("TTD: " + timeToDest.to(HOUR));
@@ -67,6 +76,11 @@ public class AirplaneDemo {
 		    default:
 			return AbstractQuantity.NONE.asType(Speed.class);
 		}
-	    }  
+	    }
+
+	    @Override
+	    public String toString() {
+		return "Airplane [" + id + "]";
+	    }
 	}
 }
