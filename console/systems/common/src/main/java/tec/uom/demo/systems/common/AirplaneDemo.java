@@ -25,28 +25,48 @@
  */
 package tec.uom.demo.systems.common;
 
+import static tec.units.ri.unit.MetricPrefix.KILO;
+import static tec.units.ri.unit.Units.HOUR;
+import static tec.units.ri.unit.Units.KILOMETRES_PER_HOUR;
+import static tec.units.ri.unit.Units.METRE;
+
 import javax.measure.Quantity;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
 
-import systems.uom.common.USCustomary;
+import tec.units.ri.AbstractQuantity;
 import tec.units.ri.quantity.Quantities;
-import tec.units.ri.unit.Units;
 
 public class AirplaneDemo {
 
 	public static void main(String[] args) {
-		// TODO make that either configurable or at least optionally passing it with arguments
-		Quantity<Length> distance = Quantities.getQuantity(6370.98d, USCustomary.MILE);		
-		Quantity<Speed> airplaneSpeed = getAirplaneSpeed();
-		//Quantity<Time> eta = (Quantity<Time>)distance.divide(airplaneSpeed);
-		Quantity<Time> timeToDest = distance.divide(airplaneSpeed).asType(Time.class);
-		System.out.println("TTD: " + timeToDest.to(Units.HOUR));
-		//System.out.println("ETA: " + eta.to(Units.HOUR)); // XXX ETA could be done based on current time
-	}
+	    // TODO make that either configurable or at least optionally passing it with arguments
+	    Quantity<Length> distance = Quantities.getQuantity(10427d, KILO(METRE));
+	    Airplane airplane = new Airplane("B777");
+	    Quantity<Speed> airplaneSpeed = airplane.getSpeed();
+	    //Quantity<Time> eta = (Quantity<Time>)distance.divide(airplaneSpeed);
+	    Quantity<Time> timeToDest = distance.divide(airplaneSpeed).asType(Time.class);
+	    System.out.println("TTD: " + timeToDest.to(HOUR));
+	    //System.out.println("ETA: " + eta.to(Units.HOUR)); // XXX ETA could be done based on current time
+	}	
 	
-	private static final Quantity<Speed> getAirplaneSpeed() {
-		return Quantities.getQuantity(945, Units.KILOMETRES_PER_HOUR); // Airbus A 380 Cruise speed
+	private static class Airplane {
+	    private final String id;
+	    private Airplane(String id) {
+		this.id = id;
+	    }
+	    
+	    final Quantity<Speed> getSpeed() {
+		switch (id) {
+		    case "A380":
+			return Quantities.getQuantity(945, KILOMETRES_PER_HOUR); // Airbus A 380 Cruise speed
+		    case "B777":
+			return Quantities.getQuantity(892, KILOMETRES_PER_HOUR); 
+			// Boeing 777 Cruise speed, see https://en.wikipedia.org/wiki/Boeing_777#Specifications
+		    default:
+			return AbstractQuantity.NONE.asType(Speed.class);
+		}
+	    }  
 	}
 }
