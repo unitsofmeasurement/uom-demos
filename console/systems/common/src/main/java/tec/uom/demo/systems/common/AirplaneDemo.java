@@ -39,6 +39,14 @@ import systems.uom.common.USCustomary;
 import tec.units.ri.AbstractQuantity;
 import tec.units.ri.quantity.Quantities;
 
+/**
+ * This is a simple example for an In-Flight Infotainment (IFI) system showing the plane's cruising speed or time to destination.
+ * 
+ * @author Werner Keil
+ * @see <a
+ *      href="https://en.wikipedia.org/wiki/In-flight_entertainment">Wikipedia:
+ *      In-flight entertainment</a>
+ */
 public class AirplaneDemo {
 
 	public static void main(String[] args) {
