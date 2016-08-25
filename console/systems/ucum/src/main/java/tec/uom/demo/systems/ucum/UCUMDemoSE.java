@@ -5,6 +5,7 @@ import javax.measure.Unit;
 import javax.measure.format.UnitFormat;
 import javax.measure.quantity.Mass;
 
+import systems.uom.ucum.UCUM;
 import systems.uom.ucum.format.UCUMFormat;
 import systems.uom.ucum.format.UCUMFormat.Variant;
 import tec.uom.se.quantity.Quantities;
@@ -28,5 +29,9 @@ public class UCUMDemoSE {
 		
 //		unit = format.parse("m^1*s^-1");
 //		System.out.println(unit);
+		
+		System.out.println(UCUM.PARSEC);
+		UnitFormat print = UCUMFormat.getInstance(Variant.PRINT);
+		System.out.println(print.format(UCUM.PARSEC));
 	}
 }
