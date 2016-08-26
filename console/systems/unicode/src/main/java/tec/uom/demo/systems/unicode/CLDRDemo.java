@@ -64,8 +64,8 @@ public class CLDRDemo {
 //	Quantity<InformationRate> bps = Quantities.getQuantity(10, BIT_PER_SECOND);
 //	System.out.println(bps);
 	
-//	Quantity<Length> len = Quantities.getQuantity(10, PARSEC);
-//	System.out.println(len);
+	Quantity<Length> len = Quantities.getQuantity(10, PARSEC);
+	System.out.println(len);
     }
 
 }
