@@ -31,10 +31,10 @@ package tec.uom.demo.systems.unicode;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
+import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
 import systems.uom.quantity.Information;
-import systems.uom.quantity.InformationRate;
 import tec.units.ri.AbstractUnit;
 import tec.units.ri.quantity.Quantities;
 import tec.units.ri.unit.Units;
@@ -63,6 +63,9 @@ public class CLDRDemo {
 	
 //	Quantity<InformationRate> bps = Quantities.getQuantity(10, BIT_PER_SECOND);
 //	System.out.println(bps);
+	
+//	Quantity<Length> len = Quantities.getQuantity(10, PARSEC);
+//	System.out.println(len);
     }
 
 }
