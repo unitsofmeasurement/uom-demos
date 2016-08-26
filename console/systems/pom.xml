@@ -11,7 +11,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<unicode.version>0.4-SNAPSHOT</unicode.version><!-- TODO try combine it with systems version -->
+		<unicode.version>0.4</unicode.version><!-- TODO try combine it with systems version -->
 	</properties>
 
 	<modules>
