@@ -9,18 +9,20 @@
 		<artifactId>uom-domain-demos</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-
+    <properties>
+        <domain.version>0.9</domain.version>
+    </properties>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>tec.uom.domain</groupId>
 				<artifactId>uom-health-api</artifactId>
-				<version>${lib.version}</version>
+				<version>${domain.version}</version>
 			</dependency>
 			<dependency>
                 <groupId>tec.uom.domain</groupId>
                 <artifactId>uom-health</artifactId>
-                <version>${lib.version}</version>
+                <version>${domain.version}</version>
             </dependency>
 		</dependencies>
 	</dependencyManagement>

@@ -145,4 +145,5 @@
 			<url>http://maven.geotoolkit.org</url>
 		</repository>
 	</repositories>
+	<version>1.0-SNAPSHOT</version>
 </project>
