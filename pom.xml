@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>tec.uom</groupId>
 		<artifactId>uom-parent</artifactId>
-		<version>1.0-SNAPSHOT</version>
+		<version>1.0</version>
 	</parent>
 	<groupId>tec.uom.demo</groupId>
 	<packaging>pom</packaging>
@@ -15,7 +15,7 @@
 		<name>Units of Measurement project</name>
 		<url>http://unitsofmeasurement.github.io</url>
 	</organization>
-	<description>Parent for Units of Measurement Demos.</description>
+	<description>Parent for Units of Measurement Demos</description>
 	<licenses>
 		<license>
 			<name>BSD</name>
@@ -31,11 +31,11 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<jsr.version>1.0-SNAPSHOT</jsr.version>
-		<ri.version>1.0-SNAPSHOT</ri.version>
-		<se.version>1.0-SNAPSHOT</se.version>
-		<lib.version>0.9-SNAPSHOT</lib.version>
-		<si.version>0.5-SNAPSHOT</si.version>
+		<jsr.version>1.0</jsr.version>
+		<ri.version>1.0</ri.version>
+		<se.version>1.0</se.version>
+		<lib.version>1.0</lib.version>
+		<si.version>0.5</si.version>
 		<systems.version>0.4</systems.version>
 	</properties>
 
@@ -62,10 +62,10 @@
 				<version>${lib.version}</version>
 			</dependency>
 			<dependency>
-                <groupId>tec.uom.lib</groupId>
-                <artifactId>uom-lib-common</artifactId>
-                <version>${lib.version}</version>
-            </dependency>
+				<groupId>tec.uom.lib</groupId>
+				<artifactId>uom-lib-common</artifactId>
+				<version>${lib.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -135,14 +135,14 @@
 			<url>http://oss.jfrog.org/artifactory/libs-snapshot</url>
 		</repository>
 		<repository>
-			<id>geotoolkit</id>
-			<name>Geotoolkit.org project</name>
-			<url>http://maven.geotoolkit.org</url>
-		</repository>
-		<repository>
 			<id>jcenter</id>
 			<name>JCenter</name>
 			<url>http://jcenter.bintray.com</url>
+		</repository>
+		<repository>
+			<id>geotoolkit</id>
+			<name>Geotoolkit.org project</name>
+			<url>http://maven.geotoolkit.org</url>
 		</repository>
 	</repositories>
 </project>
