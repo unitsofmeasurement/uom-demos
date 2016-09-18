@@ -32,7 +32,7 @@
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<jsr.version>1.0</jsr.version>
-		<ri.version>1.0</ri.version>
+		<ri.version>1.0.1-SNAPSHOT</ri.version>
 		<se.version>1.0</se.version>
 		<lib.version>1.0</lib.version>
 		<si.version>0.5</si.version>
