@@ -44,15 +44,13 @@ import javax.measure.UnitConverter;
 
 import tec.uom.se.AbstractUnit;
 import tec.uom.se.unit.Units;
-import tec.uom.se.unit.Units;
-import systems.uom.ucum.UCUM;
 import static tec.uom.se.unit.Units.*;
 import static tec.uom.se.unit.MetricPrefix.*;
 import static systems.uom.common.USCustomary.*;
 
 /**
  * @author Werner Keil
- * @version 0.3
+ * @version 0.4
  */
 public class FXlibController implements Initializable {
     private static final NumberFormat FORMAT = NumberFormat.getNumberInstance();
@@ -172,7 +170,7 @@ public class FXlibController implements Initializable {
                 return new Unit[] {
                     JOULE,
                     //Units.ELECTRON_VOLT,                       
-                    UCUM.BTU
+//                    UCUM.BTU
                 };
             case "area":
                 return new Unit[] {
