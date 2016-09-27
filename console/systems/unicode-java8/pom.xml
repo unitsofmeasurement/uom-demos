@@ -16,7 +16,7 @@
 	    </dependency>
 	    <dependency>
 	        <groupId>systems.uom</groupId>
-	        <artifactId>systems-ucum-java8</artifactId>
+	        <artifactId>systems-unicode-java8</artifactId>
 	    </dependency>
   </dependencies>
 </project>

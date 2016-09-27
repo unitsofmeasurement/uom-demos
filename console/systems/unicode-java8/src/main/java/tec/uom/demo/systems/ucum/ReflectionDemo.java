@@ -2,14 +2,10 @@ package tec.uom.demo.systems.ucum;
 
 import java.lang.reflect.ParameterizedType;
 
-import javax.measure.Quantity;
 import javax.measure.Unit;
-import javax.measure.quantity.Area;
 import javax.measure.quantity.Length;
-import javax.measure.quantity.Volume;
-
 import tec.uom.se.unit.Units;
-import systems.uom.ucum.UCUM;
+import systems.uom.unicode.CLDR;
 import tec.uom.se.unit.BaseUnit;
 
 public class ReflectionDemo {
@@ -46,7 +42,7 @@ public class ReflectionDemo {
 //			reflect(u);
 //		}
 		
-		for (Unit<?> u : UCUM.getInstance().getUnits()) {
+		for (Unit<?> u : CLDR.getInstance().getUnits()) {
 			reflect(u);
 		}
 	}
