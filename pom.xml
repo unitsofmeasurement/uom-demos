@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>tec.uom</groupId>
 		<artifactId>uom-parent</artifactId>
-		<version>1.0</version>
+		<version>1.0.1</version>
 	</parent>
 	<groupId>tec.uom.demo</groupId>
 	<packaging>pom</packaging>
@@ -15,6 +15,7 @@
 		<name>Units of Measurement project</name>
 		<url>http://unitsofmeasurement.github.io</url>
 	</organization>
+	<version>1.0-SNAPSHOT</version>
 	<description>Parent for Units of Measurement Demos</description>
 	<licenses>
 		<license>
@@ -32,11 +33,11 @@
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<jsr.version>1.0</jsr.version>
-		<ri.version>1.0.1-SNAPSHOT</ri.version>
+		<ri.version>1.0.1</ri.version>
 		<se.version>1.0</se.version>
 		<lib.version>1.0</lib.version>
-		<si.version>0.5</si.version>
-		<systems.version>0.5-SNAPSHOT</systems.version>
+		<si.version>0.6</si.version>
+		<systems.version>0.6-SNAPSHOT</systems.version>
 	</properties>
 
 	<dependencyManagement>
@@ -139,11 +140,5 @@
 			<name>JCenter</name>
 			<url>http://jcenter.bintray.com</url>
 		</repository>
-		<repository>
-			<id>geotoolkit</id>
-			<name>Geotoolkit.org project</name>
-			<url>http://maven.geotoolkit.org</url>
-		</repository>
 	</repositories>
-	<version>1.0-SNAPSHOT</version>
 </project>
