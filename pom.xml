@@ -37,7 +37,7 @@
 		<se.version>1.0</se.version>
 		<lib.version>1.0</lib.version>
 		<si.version>0.6</si.version>
-		<systems.version>0.6-SNAPSHOT</systems.version>
+		<systems.version>0.5.1-SNAPSHOT</systems.version>
 	</properties>
 
 	<dependencyManagement>
