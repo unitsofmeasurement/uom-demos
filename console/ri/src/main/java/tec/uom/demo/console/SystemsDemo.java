@@ -25,23 +25,22 @@
  */
 package tec.uom.demo.console;
 
-import static tec.units.ri.unit.Units.*;
+import javax.measure.Unit;
+import javax.measure.spi.SystemOfUnits;
 
-import javax.measure.Quantity;
-import javax.measure.quantity.Mass;
-import javax.measure.quantity.Volume;
+import tec.units.ri.unit.Units;
 
-import static tec.units.ri.unit.MetricPrefix.*;
-
-import tec.units.ri.quantity.Quantities;
-
-public class BlackForrestWaterDemo {
-
-	public static void main(String[] args) {
-		Quantity<Mass> mass = Quantities.getQuantity(38, MILLI(GRAM));
-		Quantity<Volume> volume = Quantities.getQuantity(1, LITRE);
-		Quantity<?> density = mass.divide(volume);
-		System.out.println("Natrium: " + density);
+public class SystemsDemo {
+	public static void main(String... args) {
+		SystemOfUnits sou = Units.getInstance();
+		testSoU(sou);
 	}
-
+	
+	// TODO move this in a generalized form to uom-lib-common
+	private static void testSoU(final SystemOfUnits sou) {
+		System.out.println("Testing " + sou.getName());
+		for (Unit<?> u : sou.getUnits()) {
+			System.out.println(u.getName() + "; " + u.getSymbol() + "; " + u);
+		}
+	}
 }
