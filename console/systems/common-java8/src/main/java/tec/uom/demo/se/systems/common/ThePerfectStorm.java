@@ -1,6 +1,6 @@
-/**
+/*
  *  Unit-API - Units of Measurement API for Java
- *  Copyright 2013-2014, Jean-Marie Dautelle, Werner Keil, V2COM and individual
+ *  Copyright 2013-2016, Jean-Marie Dautelle, Werner Keil, V2COM and individual
  *  contributors by the @author tag.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package tec.uom.demo.se.systems;
+package tec.uom.demo.se.systems.common;
 
 import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.FIVE;
 import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.FOUR;
