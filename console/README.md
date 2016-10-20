@@ -7,6 +7,6 @@ Console applications based on the RI or Java SE 8 Implementation.
 
 The project currently contains the following modules:
 
-- [RI based SI Console Demos](ri)
+- [RI based Console Demos](ri)
 - [Java SE 8 Console Demos](se)
 - [Unit System Console Demos](systems)
