@@ -3,7 +3,7 @@
   <parent>
     <groupId>tec.uom.demo.console.systems</groupId>
     <artifactId>uom-console-system-demos</artifactId>
-    <version>1.0</version>
+    <version>1.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>uom-console-demos-unicode</artifactId>
   <name>Unicode Console Demos</name>

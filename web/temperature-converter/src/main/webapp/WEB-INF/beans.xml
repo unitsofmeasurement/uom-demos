@@ -8,7 +8,7 @@
     License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS 
     OF ANY KIND, either express or implied. See the License for the specific 
     language governing permissions and limitations under the License. -->
-<!-- Marker file indicating CDI 1.0 should be enabled -->
+<!-- Marker file indicating CDI 1.0.1-SNAPSHOT should be enabled -->
 
 <beans xmlns="http://java.sun.com/xml/ns/javaee"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
