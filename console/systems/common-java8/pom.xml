@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>tec.uom.demo.console.systems</groupId>
 		<artifactId>uom-console-system-demos</artifactId>
-		<version>1.0-SNAPSHOT</version>
+		<version>1.0</version>
 	</parent>
 	<artifactId>uom-console-demos-common-java8</artifactId>
 

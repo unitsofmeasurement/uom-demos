@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>tec.uom.demo.device.edison</groupId>
 		<artifactId>uom-edison-demos</artifactId>
-		<version>1.0-SNAPSHOT</version>
+		<version>1.0</version>
 	</parent>
 	<artifactId>uom-edison-hello</artifactId>
 	<name>Hello Edison Demo</name>
