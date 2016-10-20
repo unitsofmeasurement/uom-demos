@@ -20,6 +20,7 @@
 		<!-- <module>si</module> -->
 		<module>unicode</module>
 		<module>historical</module>
+		<module>jscience</module>
 	</modules>
 
 	<dependencyManagement>
