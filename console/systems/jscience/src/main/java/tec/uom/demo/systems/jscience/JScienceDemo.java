@@ -27,10 +27,9 @@ package tec.uom.demo.systems.jscience;
 
 import javax.measure.Measurable;
 import javax.measure.quantity.*;
-import static javax.measure.unit.SI.*;
-
 import javax.measure.DecimalMeasure;
 
+import static javax.measure.unit.SI.*;
 import static javax.measure.unit.NonSI.*;
 
 public class JScienceDemo {
