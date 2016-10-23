@@ -40,55 +40,61 @@ import tec.units.ri.AbstractQuantity;
 import tec.units.ri.quantity.Quantities;
 
 /**
- * This is a simple example for an In-Flight Infotainment (IFI) system showing the plane's cruising speed or time to destination.
+ * This is a simple example for an In-Flight Infotainment (IFI) system showing
+ * the plane's cruising speed or time to destination.
  * 
  * @author Werner Keil
- * @see <a
- *      href="https://en.wikipedia.org/wiki/In-flight_entertainment">Wikipedia:
+ * @see <a href=
+ *      "https://en.wikipedia.org/wiki/In-flight_entertainment">Wikipedia:
  *      In-flight entertainment</a>
  */
 public class AirplaneDemo {
 
-	public static void main(String[] args) {
-	    final String model;
-	    if (args != null && args.length>0) {
-		 model = args[0];
-	    } else {
-		model = "A380";
-	    }
-	    // TODO make that either configurable or at least optionally passing it with arguments
-	    Quantity<Length> distance = Quantities.getQuantity(10427d, KILO(METRE));
-	    Airplane airplane = new Airplane(model);
-	    Quantity<Speed> airplaneSpeed = airplane.getSpeed();
-	    System.out.println(airplane + " flying " + airplaneSpeed);
-	    System.out.println(airplane + " flying " + airplaneSpeed.to(USCustomary.MILES_PER_HOUR));
-	    //Quantity<Time> eta = (Quantity<Time>)distance.divide(airplaneSpeed);
-	    Quantity<Time> timeToDest = distance.divide(airplaneSpeed).asType(Time.class);
-	    System.out.println("TTD: " + timeToDest.to(HOUR));
-	    //System.out.println("ETA: " + eta.to(Units.HOUR)); // XXX ETA could be done based on current time
-	}	
-	
-	private static class Airplane {
-	    private final String id;
-	    private Airplane(String id) {
-		this.id = id;
-	    }
-	    
-	    final Quantity<Speed> getSpeed() {
-		switch (id) {
-		    case "A380":
-			return Quantities.getQuantity(945, KILOMETRES_PER_HOUR); // Airbus A 380 Cruise speed
-		    case "B777":
-			return Quantities.getQuantity(892, KILOMETRES_PER_HOUR); 
-			// Boeing 777 Cruise speed, see https://en.wikipedia.org/wiki/Boeing_777#Specifications
-		    default:
-			return AbstractQuantity.NONE.asType(Speed.class);
-		}
-	    }
+    public static void main(String[] args) {
+	final String model;
+	if (args != null && args.length > 0) {
+	    model = args[0];
+	} else {
+	    model = "A380";
+	}
+	// TODO make that either configurable or at least optionally passing it
+	// with arguments
+	Quantity<Length> distance = Quantities.getQuantity(6089d, KILO(METRE));
+	Airplane airplane = new Airplane(model);
+	Quantity<Speed> airplaneSpeed = airplane.getSpeed();
+	System.out.println(airplane + " flying " + airplaneSpeed);
+	System.out.println(airplane + " flying " + airplaneSpeed.to(USCustomary.MILE_PER_HOUR));
+	// Quantity<Time> eta = (Quantity<Time>)distance.divide(airplaneSpeed);
+	Quantity<Time> timeToDest = distance.divide(airplaneSpeed).asType(Time.class);
+	System.out.println("TTD: " + timeToDest.to(HOUR));
+	// System.out.println("ETA: " + eta.to(Units.HOUR)); // XXX ETA could be
+	// done based on current time
+    }
 
-	    @Override
-	    public String toString() {
-		return "Airplane [" + id + "]";
+    private static class Airplane {
+	private final String id;
+
+	private Airplane(String id) {
+	    this.id = id;
+	}
+
+	final Quantity<Speed> getSpeed() {
+	    switch (id) {
+	    case "A380":
+		return Quantities.getQuantity(945, KILOMETRES_PER_HOUR);
+	    // Airbus A 380 Cruise speed
+	    case "B777":
+		return Quantities.getQuantity(892, KILOMETRES_PER_HOUR);
+	    // Boeing 777 Cruise speed, see
+	    // https://en.wikipedia.org/wiki/Boeing_777#Specifications
+	    default:
+		return AbstractQuantity.NONE.asType(Speed.class);
 	    }
 	}
+
+	@Override
+	public String toString() {
+	    return "Airplane [" + id + "]";
+	}
+    }
 }
