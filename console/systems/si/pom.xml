@@ -9,14 +9,19 @@
 	<artifactId>uom-si-console-demos</artifactId>
 
 	<dependencies>
-	    <dependency>
-	      <groupId>javax.measure</groupId>
-             <artifactId>unit-api</artifactId>
-	    </dependency>
-	    <dependency>
-	      <groupId>tec.units</groupId>
-	      <artifactId>unit-ri</artifactId>
-	    </dependency>
+		<dependency>
+			<groupId>javax.measure</groupId>
+			<artifactId>unit-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>tec.units</groupId>
+			<artifactId>unit-ri</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>si.uom</groupId>
+			<artifactId>si-quantity</artifactId>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>si.uom</groupId>
 			<artifactId>si-units</artifactId>
