@@ -23,31 +23,32 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.systems.jscience;
+package tec.uom.demo.systems.common;
 
-import javax.measure.Measurable;
-import javax.measure.Measure;
+import javax.measure.Quantity;
+import javax.measure.Unit;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
-import javax.measure.unit.NonSI;
-import javax.measure.unit.SI;
-import javax.measure.unit.Unit;
+
+import si.uom.SI;
+import systems.uom.common.USCustomary;
+import tec.units.ri.AbstractQuantity;
+import tec.units.ri.quantity.NumberQuantity;
+import tec.units.ri.quantity.Quantities;
 
 /**
- * This is a back-port of UOMo HelloUnits to prove similar behavior, especially
- * for Bugzilla item 338334
- * 
- * @author Werner Keil
+ * This is a back-port of UOMo HelloUnits to prove similar
+ *         behavior, especially for Bugzilla item 338334
+ * @author Werner Keil 
  */
 public class HelloUnits {
 
     /**
      * @param args
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public static void main(String[] args) {
-	@SuppressWarnings("rawtypes")
-	Measure length = Measure.valueOf(10, SI.METRE);
+	Quantity<Length> length = Quantities.getQuantity(10, SI.METRE);
 	// LengthAmount length = new LengthAmount(10, SI.KILOGRAM); 
 	// this won't work ;-)
 
@@ -55,15 +56,15 @@ public class HelloUnits {
 	Unit<Length> lenUnit = length.getUnit();
 	System.out.println(lenUnit);
 
-	System.out.println(length.doubleValue(NonSI.FOOT));
+	System.out.println(((AbstractQuantity)length).doubleValue(USCustomary.FOOT));
 	// System.out.println(length.doubleValue(USCustomary.POUND)); 
 	// this won't work either.
 	// UnitConverter footConverter = lenUnit.getConverterTo(NonSI.INCH);
-	System.out.print(((Measurable<Length>) length).doubleValue(NonSI.INCH));
-	System.out.println(" " + NonSI.FOOT);
+	System.out.print(((AbstractQuantity<Length>) length).doubleValue(USCustomary.INCH));
+	System.out.println(" " + USCustomary.FOOT);
 
-	Measurable<Mass> mass = Measure.valueOf(1000, SI.GRAM);
-	Measurable<Mass> mass2 = Measure.valueOf(1, SI.KILOGRAM);
+	Quantity<Mass> mass = Quantities.getQuantity(1000, SI.GRAM);
+	Quantity<Mass> mass2 = NumberQuantity.of(1, SI.KILOGRAM);
 	System.out.println(mass.equals(mass2));
     }
 }
