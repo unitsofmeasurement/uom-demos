@@ -48,7 +48,7 @@ public class HelloUnits {
     public static void main(String[] args) {
 	@SuppressWarnings("rawtypes")
 	Measure length = Measure.valueOf(10, SI.METRE);
-	// LengthAmount length = new LengthAmount(10, SI.KILOGRAM); 
+	// LengthAmount length = new LengthAmount(10, SI.KILOGRAM);
 	// this won't work ;-)
 
 	System.out.println(length);
@@ -56,9 +56,9 @@ public class HelloUnits {
 	System.out.println(lenUnit);
 
 	System.out.println(length.doubleValue(NonSI.FOOT));
-	// System.out.println(length.doubleValue(USCustomary.POUND)); 
+	// System.out.println(length.doubleValue(USCustomary.POUND));
 	// this won't work either.
-	// UnitConverter footConverter = lenUnit.getConverterTo(NonSI.INCH);
+	// UnitConverter footConv = lenUnit.getConverterTo(NonSI.INCH);
 	System.out.print(((Measurable<Length>) length).doubleValue(NonSI.INCH));
 	System.out.println(" " + NonSI.FOOT);
 

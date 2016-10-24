@@ -37,9 +37,10 @@ import tec.units.ri.quantity.NumberQuantity;
 import tec.units.ri.quantity.Quantities;
 
 /**
- * This is a back-port of UOMo HelloUnits to prove similar
- *         behavior, especially for Bugzilla item 338334
- * @author Werner Keil 
+ * This is a back-port of UOMo HelloUnits to prove similar behavior, especially
+ * for Bugzilla item 338334
+ * 
+ * @author Werner Keil
  */
 public class HelloUnits {
 
@@ -49,17 +50,17 @@ public class HelloUnits {
     @SuppressWarnings({ "unchecked", "rawtypes" })
     public static void main(String[] args) {
 	Quantity<Length> length = Quantities.getQuantity(10, SI.METRE);
-	// LengthAmount length = new LengthAmount(10, SI.KILOGRAM); 
+	// LengthAmount length = new LengthAmount(10, SI.KILOGRAM);
 	// this won't work ;-)
 
 	System.out.println(length);
 	Unit<Length> lenUnit = length.getUnit();
 	System.out.println(lenUnit);
 
-	System.out.println(((AbstractQuantity)length).doubleValue(USCustomary.FOOT));
-	// System.out.println(length.doubleValue(USCustomary.POUND)); 
+	System.out.println(((AbstractQuantity) length).doubleValue(USCustomary.FOOT));
+	// System.out.println(length.doubleValue(USCustomary.POUND));
 	// this won't work either.
-	// UnitConverter footConverter = lenUnit.getConverterTo(NonSI.INCH);
+	// UnitConverter footConv = lenUnit.getConverterTo(USCustomary.INCH);
 	System.out.print(((AbstractQuantity<Length>) length).doubleValue(USCustomary.INCH));
 	System.out.println(" " + USCustomary.FOOT);
 
