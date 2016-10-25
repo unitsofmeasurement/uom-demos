@@ -52,18 +52,25 @@ public class AirplaneDemo {
 
     public static void main(String[] args) {
 	final String model;
+	final double dist;
 	if (args != null && args.length > 0) {
-	    model = args[0];
+	    dist = Double.parseDouble(args[0]);
+	    if (args.length > 1) {
+		model = args[1];
+	    } else {
+		model = "A380";
+	    }
 	} else {
+	    dist = 6089d;
 	    model = "A380";
 	}
-	// TODO make that either configurable or at least optionally passing it
-	// with arguments
-	Quantity<Length> distance = Quantities.getQuantity(6089d, KILO(METRE));
+
+	Quantity<Length> distance = Quantities.getQuantity(dist, KILO(METRE));
 	Airplane airplane = new Airplane(model);
+	System.out.println(airplane + " flying " + distance);
 	Quantity<Speed> airplaneSpeed = airplane.getSpeed();
-	System.out.println(airplane + " flying " + airplaneSpeed);
-	System.out.println(airplane + " flying " + airplaneSpeed.to(USCustomary.MILE_PER_HOUR));
+	System.out.println(airplane + " flying at " + airplaneSpeed);
+	System.out.println(airplane + " flying at " + airplaneSpeed.to(USCustomary.MILE_PER_HOUR));
 	// Quantity<Time> eta = (Quantity<Time>)distance.divide(airplaneSpeed);
 	Quantity<Time> timeToDest = distance.divide(airplaneSpeed).asType(Time.class);
 	System.out.println("TTD: " + timeToDest.to(HOUR));
