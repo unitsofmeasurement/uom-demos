@@ -34,4 +34,4 @@ The project currently contains the following modules:
 
 Launch Config for JBoss Developer Studio or Eclipse
 -------------------------------------
-If you use JBoss Developer Studio, Intel® IoT Developer Kit (for C/C++) or another Eclipse based solution, there are some launch configurations for your convenience under [src/etc](src/etc/). 
+If you use JBoss Developer Studio, Intel® IoT Developer Kit (for C/C++) or another Eclipse based solution, there are some launch configurations for your convenience under [src/etc](src/etc/).
