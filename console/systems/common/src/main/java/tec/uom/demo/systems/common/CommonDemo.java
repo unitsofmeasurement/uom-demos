@@ -25,14 +25,16 @@
  */
 package tec.uom.demo.systems.common;
 
-import systems.uom.common.Imperial;
-import systems.uom.common.USCustomary;
+import javax.measure.spi.ServiceProvider;
+import javax.measure.spi.SystemOfUnits;
+
 import tec.uom.lib.common.util.SystemOfUnitsReporter;
 
 public class CommonDemo {
 	public static void main(String... args) {
-		SystemOfUnitsReporter.of(Imperial.getInstance()).report();
-		System.out.println();
-		SystemOfUnitsReporter.of(USCustomary.getInstance()).report();
+		for (SystemOfUnits s : ServiceProvider.current().getSystemOfUnitsService().getAvailableSystemsOfUnits()) {
+			SystemOfUnitsReporter.of(s).report();
+			System.out.println();
+		}
 	}
 }
