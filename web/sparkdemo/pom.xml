@@ -1,0 +1,110 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>tec.uom.demo.web</groupId>
+    <artifactId>uom-web-demos</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>sparkdemo</artifactId>
+  <name>Spark Sensor Web API Demo</name>
+  
+    <!-- ======================================================= -->
+    <!-- Build Settings -->
+    <!-- ======================================================= -->
+    <properties>
+        <jsr.version>1.0</jsr.version>
+        <lib.version>1.0.1</lib.version>
+        <sourceEncoding>UTF-8</sourceEncoding> <!-- in Maven 3. -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${sourceEncoding}</project.reporting.outputEncoding>
+        <jdkVersion>1.8</jdkVersion>
+        <project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
+        <maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
+        <maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+        <additionalparam>-Xdoclint:none</additionalparam>
+        <maven.source.version>3.0.1</maven.source.version>
+        <jsr.version>1.0</jsr.version>
+        <ri.version>1.0.2-SNAPSHOT</ri.version>
+        <se.version>1.0.2</se.version>
+        <lib.version>1.0.1</lib.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>javax.measure</groupId>
+                <artifactId>unit-api</artifactId>
+                <version>${jsr.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tec.units</groupId>
+                <artifactId>unit-ri</artifactId>
+                <version>${ri.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tec.uom</groupId>
+                <artifactId>uom-se</artifactId>
+                <version>${se.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tec.uom.lib</groupId>
+                <artifactId>uom-lib</artifactId>
+                <version>${lib.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tec.uom.lib</groupId>
+                <artifactId>uom-lib-common</artifactId>
+                <version>${lib.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.sparkjava</groupId>
+            <artifactId>spark-core</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.measure</groupId>
+            <artifactId>unit-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>tec.units</groupId>
+            <artifactId>unit-ri</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- ======================================================= -->
+            <!-- Compilation -->
+            <!-- ======================================================= -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${project.build.javaVersion}</source>
+                    <target>${project.build.javaVersion}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <description>Demo project for a Sensor Web API using Spark Framework</description>
+</project>

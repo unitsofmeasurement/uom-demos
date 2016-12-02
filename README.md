@@ -23,6 +23,7 @@ The project currently contains the following modules:
 - [Java ME 8 Demos](javame) **Currently not Maven enabled, require Eclipse or NetBeans IDE**
   - [Java ME 8 Demo](javame/medemo)
 - [Web Demos](web)
+  - [Spark Sensor Web API Demo](web/sparkdemo)
   - [Improved JBoss Temperature Converter](web/temperature-converter)
 
 
