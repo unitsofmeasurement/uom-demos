@@ -1,18 +1,25 @@
 package tec.uom.demo.web.spark;
 
-public class ResponseError {
+import javax.measure.MeasurementException;
 
-	private String message;
+public class ResponseError extends MeasurementException {
 
-	public ResponseError(String message, String... args) {
-		this.message = String.format(message, args);
-	}
+    /**
+     * 
+     */
+    private static final long serialVersionUID = -2150895368739236890L;
+    private String message;
 
-	public ResponseError(Exception e) {
-		this.message = e.getMessage();
-	}
+    public ResponseError(String message, String... args) {
+	this.message = String.format(message, args);
+    }
 
-	public String getMessage() {
-		return this.message;
-	}
+    public ResponseError(Exception e) {
+	super(e);
+	this.message = e.getMessage();
+    }
+
+    public String getMessage() {
+	return this.message;
+    }
 }

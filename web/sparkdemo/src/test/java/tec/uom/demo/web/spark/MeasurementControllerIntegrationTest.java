@@ -47,6 +47,7 @@ public class MeasurementControllerIntegrationTest {
 
     private TestResponse request(String method, String path) {
 	try {
+	    // FIXME this should work in a CI environment if possible
 	    URL url = new URL("http://localhost:4567" + path);
 	    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 	    connection.setRequestMethod(method);
@@ -70,6 +71,7 @@ public class MeasurementControllerIntegrationTest {
 	    this.body = body;
 	}
 
+	@SuppressWarnings("unchecked")
 	public Map<String, String> json() {
 	    return new Gson().fromJson(body, HashMap.class);
 	}
