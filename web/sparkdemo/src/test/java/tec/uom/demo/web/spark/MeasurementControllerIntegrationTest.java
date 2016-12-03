@@ -22,6 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MeasurementControllerIntegrationTest {
+    private static final String ENDPOINT = "sensors";
 
     @BeforeClass
     public static void beforeClass() {
@@ -36,8 +37,7 @@ public class MeasurementControllerIntegrationTest {
 
     @Test
     public void aNewMeasureShouldBeCreated() {
-	TestResponse res = request("POST",
-		"/measurements?name=temp1&value=10&unit=Cel");
+	TestResponse res = request("POST", String.format("/%s?name=temp1&value=10&unit=Cel", ENDPOINT));
 	Map<String, String> json = res.json();
 	assertEquals(200, res.status);
 	assertEquals("temp1", json.get("name"));
@@ -48,8 +48,7 @@ public class MeasurementControllerIntegrationTest {
     private TestResponse request(String method, String path) {
 	try {
 	    URL url = new URL("http://localhost:4567" + path);
-	    HttpURLConnection connection = (HttpURLConnection) url
-		    .openConnection();
+	    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 	    connection.setRequestMethod(method);
 	    connection.setDoOutput(true);
 	    connection.connect();
@@ -63,7 +62,6 @@ public class MeasurementControllerIntegrationTest {
     }
 
     private static class TestResponse {
-
 	public final String body;
 	public final int status;
 
