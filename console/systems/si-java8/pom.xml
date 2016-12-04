@@ -14,7 +14,7 @@
 			<artifactId>unit-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>tec.units</groupId>
+			<groupId>tec.uom</groupId>
 			<artifactId>uom-se</artifactId>
 		</dependency>
 		<dependency>
