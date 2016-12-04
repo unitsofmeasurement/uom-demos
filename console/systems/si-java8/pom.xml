@@ -27,4 +27,6 @@
 			<artifactId>si-units-java8</artifactId>
 		</dependency>
 	</dependencies>
+	<description>Console Demos of SI Units based on the Java SE 8 Implementation of JSR 363</description>
+	<name>UoM SI Java 8 Console Demos</name>
 </project>

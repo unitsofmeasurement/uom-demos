@@ -27,4 +27,6 @@
 			<artifactId>si-units</artifactId>
 		</dependency>
 	</dependencies>
+	<description>Console Demos of SI Units based on the JSR 363 RI</description>
+	<name>UoM SI Console Demos</name>
 </project>
