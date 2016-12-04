@@ -1,6 +1,6 @@
 package tec.uom.demo.systems.si;
 
-import static tec.units.ri.unit.Units.*;
+import static tec.uom.se.unit.Units.*;
 import static si.uom.SI.*;
 
 import javax.measure.Quantity;
@@ -10,9 +10,9 @@ import javax.measure.quantity.Mass;
 
 import si.uom.NonSI;
 import si.uom.SI;
-import tec.units.ri.AbstractQuantity;
-import tec.units.ri.quantity.NumberQuantity;
-import tec.units.ri.quantity.Quantities;
+import tec.uom.se.AbstractQuantity;
+import tec.uom.se.quantity.NumberQuantity;
+import tec.uom.se.quantity.Quantities;
 
 public class SIDemo {
     public static void main(String[] args) {

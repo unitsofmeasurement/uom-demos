@@ -12,6 +12,7 @@ The project currently contains the following modules:
   - [Java SE 8 Console Demos](common-java8)
 - [SI Units](https://en.wikipedia.org/wiki/International_System_of_Units)
   - [RI based SI Console Demos](si)
+  - [Java SE 8 based SI Console Demos](si-java8)
 - [Unicode](https://de.wikipedia.org/wiki/Unicode)
  - [RI based Unicode Console Demos](unicode)
  - [Java SE 8 Unicode Console Demos](unicode-java8)
