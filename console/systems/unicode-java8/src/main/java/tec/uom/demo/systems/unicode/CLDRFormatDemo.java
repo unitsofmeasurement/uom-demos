@@ -1,6 +1,6 @@
 /*
  *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2017, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -29,45 +29,29 @@
  */
 package tec.uom.demo.systems.unicode;
 
-import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.format.UnitFormat;
-import javax.measure.quantity.Length;
-import javax.measure.quantity.Mass;
-
 import systems.uom.quantity.Information;
-import tec.units.ri.AbstractUnit;
-import tec.units.ri.format.SimpleUnitFormat;
-import tec.units.ri.quantity.Quantities;
-import tec.units.ri.unit.Units;
+import tec.uom.se.AbstractUnit;
+import tec.uom.se.format.SimpleUnitFormat;
 import static systems.uom.unicode.CLDR.*;
 
-public class CLDRDemo {
+public class CLDRFormatDemo {
     public static void main(String[] args) {
-	Quantity<Mass> carat = Quantities.getQuantity(100, CARAT);
-	System.out.println(carat);
-	Quantity<Mass> caratsInKg = carat.to(Units.KILOGRAM);
-	System.out.println(caratsInKg);
-
-	Quantity<Information> bit = Quantities.getQuantity(20, BIT);
-	System.out.println(bit);
-	Quantity<Information> bytes = bit.to(BYTE);
-	System.out.println(bytes);
-
+	Unit test = BYTE;
 	Unit x = AbstractUnit.parse("B");
 	System.out.println(x);
-
-	Unit pressure = Units.PASCAL;
-	System.out.println(pressure);
 
 	Unit y = AbstractUnit.parse("N");
 	System.out.println(y);
 	
-//	Quantity<InformationRate> bps = Quantities.getQuantity(10, BIT_PER_SECOND);
-//	System.out.println(bps);
-	
-	Quantity<Length> len = Quantities.getQuantity(10, PARSEC);
-	System.out.println(len);
+        UnitFormat unitFormat = SimpleUnitFormat.getInstance();
+        Unit<Information> bit = unitFormat.parse("bit").asType(Information.class);
+        System.out.println(bit);
+        
+        Unit<Information> byteU = unitFormat.parse("byte").asType(Information.class);
+        System.out.println(byteU);
+        System.out.println(BYTE.equals(byteU));
     }
 
 }

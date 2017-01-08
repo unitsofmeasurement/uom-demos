@@ -10,10 +10,6 @@
 	<artifactId>uom-console-system-demos</artifactId>
 	<packaging>pom</packaging>
 
-	<properties>
-		<unicode.version>0.5</unicode.version><!-- TODO try combine it with systems version -->
-	</properties>
-
 	<modules>
 		<module>common</module>
 		<!-- <module>common-java8</module> -->
@@ -59,12 +55,12 @@
 			 <dependency>
                 <groupId>systems.uom</groupId>
                 <artifactId>systems-unicode</artifactId>
-                <version>${unicode.version}</version>
+                <version>${systems.version}</version>
             </dependency>
             <dependency>
                 <groupId>systems.uom</groupId>
                 <artifactId>systems-unicode-java8</artifactId>
-                <version>${unicode.version}</version>
+                <version>${systems.version}</version>
             </dependency>
 		</dependencies>
 	</dependencyManagement>

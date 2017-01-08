@@ -1,4 +1,4 @@
-package tec.uom.demo.systems.ucum;
+package tec.uom.demo.systems.unicode;
 
 import java.lang.reflect.ParameterizedType;
 
