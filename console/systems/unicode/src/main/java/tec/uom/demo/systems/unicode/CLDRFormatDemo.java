@@ -34,11 +34,11 @@ import javax.measure.format.UnitFormat;
 import systems.uom.quantity.Information;
 import tec.units.ri.AbstractUnit;
 import tec.units.ri.format.SimpleUnitFormat;
-import static systems.uom.unicode.CLDR.*;
+import static systems.uom.unicode.CLDR.BYTE;
 
 public class CLDRFormatDemo {
     public static void main(String[] args) {
-	Unit test = BYTE;
+	Unit test = BYTE; // To initialize the system (lazy loading, otherwise Format is not updated)
 	Unit x = AbstractUnit.parse("B");
 	System.out.println(x);
 
