@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>tec.uom</groupId>
 		<artifactId>uom-parent</artifactId>
-		<version>1.0.3-SNAPSHOT</version>
+		<version>1.0.2</version>
 	</parent>
 	<groupId>tec.uom.demo</groupId>
 	<packaging>pom</packaging>
@@ -140,4 +140,5 @@
 			<url>http://jcenter.bintray.com</url>
 		</repository>
 	</repositories>
+	<version>1.0.1-SNAPSHOT</version>
 </project>
