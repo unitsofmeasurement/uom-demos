@@ -31,14 +31,16 @@ package tec.uom.demo.systems.unicode;
 
 import javax.measure.Unit;
 import javax.measure.format.UnitFormat;
+import javax.measure.spi.ServiceProvider;
+
 import systems.uom.quantity.Information;
 import tec.uom.se.AbstractUnit;
 import tec.uom.se.format.SimpleUnitFormat;
-import static systems.uom.unicode.CLDR.*;
 
 public class CLDRFormatDemo {
     public static void main(String[] args) {
-	Unit test = BYTE;
+	ServiceProvider.current().getSystemOfUnitsService().getSystemOfUnits("CLDR");
+//	Unit test = BYTE;
 	Unit x = AbstractUnit.parse("B");
 	System.out.println(x);
 
@@ -51,7 +53,7 @@ public class CLDRFormatDemo {
         
         Unit<Information> byteU = unitFormat.parse("byte").asType(Information.class);
         System.out.println(byteU);
-        System.out.println(BYTE.equals(byteU));
+//        System.out.println(BYTE.equals(byteU));
     }
 
 }
