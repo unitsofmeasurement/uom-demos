@@ -42,7 +42,6 @@ public class BodyWeightDemo {
 	format.label(mg_per_25g, "bw25g");
 	Quantity mg_per_25g_Bodyweight = Quantities.getQuantity(new BigDecimal("1"), mg_per_25g);
 
-	System.out.println(mg_per_25g_Bodyweight.toString()); // ... the output
-							      // is 1 kg/2.5E7/g
+	System.out.println(mg_per_25g_Bodyweight.toString()); // the output is 1 kg/2.5E7/g
     }
 }
