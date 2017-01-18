@@ -49,6 +49,8 @@ public class QuantityFormatDemo {
 
     public static void main(String[] args) {
 	Quantity parsed = tec.uom.se.quantity.Quantities.getQuantity("300 d");
+	System.out.println(parsed);
+//	Quantity parsed2 = tec.uom.se.quantity.Quantities.getQuantity("300d");
     }
 
 }

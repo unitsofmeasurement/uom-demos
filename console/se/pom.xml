@@ -19,7 +19,6 @@
 		<dependency>
 			<groupId>tec.uom</groupId>
 			<artifactId>uom-se</artifactId>
-			<version>1.0.2-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>
