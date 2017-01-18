@@ -44,7 +44,7 @@ import javax.measure.UnitConverter;
 import systems.uom.quantity.Information;
 import tec.units.ri.quantity.DefaultQuantityFactory;
 import tec.units.ri.quantity.QuantityDimension;
-import tec.uom.lib.common.DescriptiveEnum;
+import tec.uom.lib.common.util.DescriptiveEnum;
 import tec.uom.lib.common.function.DoubleFactorSupplier;
 
 /**
