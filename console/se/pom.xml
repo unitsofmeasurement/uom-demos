@@ -20,5 +20,9 @@
 			<groupId>tec.uom</groupId>
 			<artifactId>uom-se</artifactId>
 		</dependency>
+		<dependency>
+		  <groupId>tec.uom.lib</groupId>
+		  <artifactId>uom-lib-common</artifactId>
+		</dependency>
 	</dependencies>
 </project>

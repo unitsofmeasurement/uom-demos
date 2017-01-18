@@ -34,7 +34,7 @@
 		<jsr.version>1.0</jsr.version>
 		<ri.version>1.0.1</ri.version>
 		<se.version>1.0.3-SNAPSHOT</se.version>
-		<lib.version>1.0.1</lib.version>
+		<lib.version>1.0.2-SNAPSHOT</lib.version>
 		<si.version>0.6.3-SNAPSHOT</si.version>
 		<systems.version>0.6-SNAPSHOT</systems.version>
 	</properties>
