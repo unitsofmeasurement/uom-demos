@@ -25,10 +25,10 @@
  */
 package tec.uom.demo.se.systems.common;
 
-import static systems.uom.common.USCustomary.MILES_PER_HOUR;
+import static systems.uom.common.USCustomary.MILE_PER_HOUR;
 import static tec.uom.se.unit.MetricPrefix.KILO;
 import static tec.uom.se.unit.Units.HOUR;
-import static tec.uom.se.unit.Units.KILOMETRES_PER_HOUR;
+import static tec.uom.se.unit.Units.KILOMETRE_PER_HOUR;
 import static tec.uom.se.unit.Units.METRE;
 
 import java.time.Duration;
@@ -68,7 +68,7 @@ public class AirplaneDemo {
 	Quantity<Speed> airplaneSpeed = airplane.getSpeed();
 	System.out.println(airplane + " flying " + airplaneSpeed);
 	System.out.println(airplane + " flying "
-		+ airplaneSpeed.to(MILES_PER_HOUR));
+		+ airplaneSpeed.to(MILE_PER_HOUR));
 	// Quantity<Time> eta = (Quantity<Time>)distance.divide(airplaneSpeed);
 	Quantity<Time> timeToDest = distance.divide(airplaneSpeed).asType(
 		Time.class);
@@ -92,10 +92,10 @@ public class AirplaneDemo {
 	final Quantity<Speed> getSpeed() {
 	    switch (id) {
 	    case "A380":
-		return Quantities.getQuantity(945, KILOMETRES_PER_HOUR); 
+		return Quantities.getQuantity(945, KILOMETRE_PER_HOUR); 
 		// Airbus A 380 Cruise speed
 	    case "B777":
-		return Quantities.getQuantity(892, KILOMETRES_PER_HOUR);
+		return Quantities.getQuantity(892, KILOMETRE_PER_HOUR);
 		// Boeing 777 Cruise speed, see
 		// https://en.wikipedia.org/wiki/Boeing_777#Specifications
 	    default:

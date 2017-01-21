@@ -50,7 +50,7 @@ import static systems.uom.common.USCustomary.*;
 
 /**
  * @author Werner Keil
- * @version 0.4
+ * @version 0.5
  */
 public class FXlibController implements Initializable {
     private static final NumberFormat FORMAT = NumberFormat.getNumberInstance();
@@ -217,8 +217,8 @@ public class FXlibController implements Initializable {
                 };
             case "speed":
                 return new Unit[] {
-                    Units.KILOMETRES_PER_HOUR,
-                    MILES_PER_HOUR
+                    Units.KILOMETRE_PER_HOUR,
+                    MILE_PER_HOUR
                 };
             case "temperature":
                 return new Unit[] {
