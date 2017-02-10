@@ -30,6 +30,9 @@
 package tec.uom.demo;
 
 import javax.measure.Unit;
+import javax.measure.format.UnitFormat;
+import javax.measure.spi.ServiceProvider;
+
 import tec.units.ri.AbstractUnit;
 
 public class UnitFormatDemo {
@@ -52,6 +55,8 @@ public class UnitFormatDemo {
 		
 		parsed = AbstractUnit.parse("W");
 		System.out.println(parsed);
+		
+		UnitFormat format = ServiceProvider.current().getUnitFormatService().getUnitFormat();
 	}
 
 }
