@@ -38,6 +38,7 @@ import java.util.Locale;
 import javax.measure.Unit;
 import javax.measure.format.UnitFormat;
 import javax.measure.quantity.Speed;
+import javax.measure.spi.ServiceProvider;
 
 import tec.uom.se.AbstractUnit;
 import tec.uom.se.format.LocalUnitFormat;
@@ -72,6 +73,8 @@ public class UnitFormatDemo {
 		localFormat = LocalUnitFormat.getInstance(Locale.JAPANESE);
 		output = localFormat.format(Units.METRE);
 		System.out.println(output);
+		
+		UnitFormat format = ServiceProvider.current().getUnitFormatService().getUnitFormat();
 	}
 
 }
