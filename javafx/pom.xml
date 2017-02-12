@@ -22,9 +22,9 @@
 				<version>${systems.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>systems.uom</groupId>
-				<artifactId>systems-ucum-java8</artifactId>
-				<version>${ucum.version}</version>
+				<groupId>si.uom</groupId>
+				<artifactId>si-units-java8</artifactId>
+				<version>${si.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

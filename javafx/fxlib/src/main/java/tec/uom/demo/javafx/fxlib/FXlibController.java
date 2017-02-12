@@ -38,6 +38,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import si.uom.NonSI;
 
 import javax.measure.Unit;
 import javax.measure.UnitConverter;
@@ -50,7 +51,7 @@ import static systems.uom.common.USCustomary.*;
 
 /**
  * @author Werner Keil
- * @version 0.5
+ * @version 0.6
  */
 public class FXlibController implements Initializable {
     private static final NumberFormat FORMAT = NumberFormat.getNumberInstance();
@@ -208,9 +209,9 @@ public class FXlibController implements Initializable {
                 };
             case "angle":
                 return new Unit[] {
-                    Units.DEGREE_ANGLE,
-                    Units.MINUTE_ANGLE,
-                    Units.SECOND_ANGLE,
+                    NonSI.DEGREE_ANGLE,
+                    NonSI.MINUTE_ANGLE,
+                    NonSI.SECOND_ANGLE,
                     CENTIRADIAN,
                     GRADE //,
                     //Units.REVOLUTION
