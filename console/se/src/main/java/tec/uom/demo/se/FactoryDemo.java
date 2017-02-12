@@ -35,7 +35,7 @@ import javax.measure.quantity.Mass;
 import javax.measure.spi.QuantityFactory;
 import javax.measure.spi.ServiceProvider;
 
-import tec.uom.se.internal.quantity.OldProxyQuantityFactory;
+import tec.uom.demo.se.quantity.OldProxyQuantityFactory;
 //import tec.uom.se.quantity.ProxyQuantityFactory;
 import tec.uom.se.unit.Units;
 

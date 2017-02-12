@@ -1,6 +1,6 @@
 /*
- *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Units of Measurement Demos for Java
+ *  Copyright (c) 2005-2017, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -30,19 +30,19 @@ import static tec.uom.domain.health.unit.Health.BPM;
 import java.math.BigDecimal;
 
 import tec.uom.domain.health.HeartRate;
-import tec.uom.se.internal.quantity.OldProxyQuantityFactory;
+import tec.uom.domain.health.types.HeartRateAmount;
 
 /**
- * @version 0.5
+ * @version 0.6
  * @author Werner Keil
  *
  */
 public class HealthDemoSE {
 
 	public static void main(String[] args) {
-//		HeartRate rate =  HeartRateAmount.of(BigDecimal.valueOf(90), BPM);
-		OldProxyQuantityFactory<HeartRate> rateFactory = OldProxyQuantityFactory.getInstance(HeartRate.class);
-		HeartRate rate = rateFactory.create(BigDecimal.valueOf(90), BPM);
+		HeartRate rate =  HeartRateAmount.of(BigDecimal.valueOf(90), BPM);
+//		OldProxyQuantityFactory<HeartRate> rateFactory = OldProxyQuantityFactory.getInstance(HeartRate.class);
+//		HeartRate rate = rateFactory.create(BigDecimal.valueOf(90), BPM);
 		System.out.println(rate);
 	}
 
