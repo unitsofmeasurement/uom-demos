@@ -1,6 +1,6 @@
 /*
  *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -27,29 +27,19 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.se;
-
-import static tec.uom.se.unit.MetricPrefix.KILO;
-
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.util.Locale;
+package tec.uom.demo.format;
 
 import javax.measure.Unit;
 import javax.measure.format.UnitFormat;
-import javax.measure.quantity.Speed;
 import javax.measure.spi.ServiceProvider;
 
-import tec.uom.se.AbstractUnit;
-import tec.uom.se.format.LocalUnitFormat;
-import tec.uom.se.format.SimpleUnitFormat;
-import tec.uom.se.unit.Units;
+import tec.units.ri.AbstractUnit;
 
 public class UnitFormatDemo {
 
 	public static void main(String[] args) {
 		
-		UnitFormat localFormat = LocalUnitFormat.getInstance();
+//		UnitFormat localFormat = LocalUnitFormat.getInstance();
 		
 //		Unit<Speed> kmh = KILO(Units.METRE).divide(Units.HOUR).asType(Speed.class);
 //		Unit<Speed> kmh2 = SIPrefix.KILO(Units.METRE).multiply(UCUM.HOUR).asType(Speed.class);
@@ -66,15 +56,11 @@ public class UnitFormatDemo {
 		parsed = AbstractUnit.parse("W");
 		System.out.println(parsed);
 		
-		localFormat = LocalUnitFormat.getInstance(Locale.ENGLISH);
-		String output = localFormat.format(Units.LITRE);
-		System.out.println(output);
-		
-		localFormat = LocalUnitFormat.getInstance(Locale.JAPANESE);
-		output = localFormat.format(Units.METRE);
-		System.out.println(output);
-		
 		UnitFormat format = ServiceProvider.current().getUnitFormatService().getUnitFormat();
+		
+//		Unit u = ServiceProvider.current().getUnitFormatService().getUnitFormat().parse("1/l");
+		Unit u = ServiceProvider.current().getUnitFormatService().getUnitFormat().parse("g/l");
+		System.out.println(u);
 	}
 
 }
