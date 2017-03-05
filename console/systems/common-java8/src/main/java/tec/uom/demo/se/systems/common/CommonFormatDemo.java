@@ -25,21 +25,27 @@
  */
 package tec.uom.demo.se.systems.common;
 
+import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.spi.ServiceProvider;
 import javax.measure.spi.SystemOfUnits;
 
 import systems.uom.common.USCustomary;
 import tec.uom.se.format.SimpleUnitFormat;
+import tec.uom.se.quantity.Quantities;
+import tec.uom.se.unit.Units;
 import tec.uom.lib.common.util.SystemOfUnitsReporter;
 
 public class CommonFormatDemo {
-	public static void main(String... args) {
-	    SimpleUnitFormat.getInstance().alias(USCustomary.MILE, "mile");
-	    
-	    Unit u = SimpleUnitFormat.getInstance().parse("mile");
-	    System.out.println(u);
-	    Unit v = SimpleUnitFormat.getInstance().parse("mi");
-	    System.out.println(v);
-	}
+    public static void main(String... args) {
+	SimpleUnitFormat.getInstance().alias(USCustomary.MILE, "mile");
+
+	Unit u = SimpleUnitFormat.getInstance().parse("mile");
+	System.out.println(u);
+	Unit v = SimpleUnitFormat.getInstance().parse("mi");
+	System.out.println(v);
+
+	Quantity q = Quantities.getQuantity("300 " + Units.DAY.getSymbol());
+	System.out.println(q);
+    }
 }
