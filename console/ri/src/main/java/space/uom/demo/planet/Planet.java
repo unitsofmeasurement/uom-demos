@@ -1,6 +1,6 @@
 /*
- *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+ * Units of Measurement Demos for Java
+ * Copyright (c) 2005-2017, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -13,7 +13,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
  *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363 nor the names of its contributors may be used to endorse or promote products
+ * 3. Neither the name of JSR-363, Units of Measurement nor the names of their contributors may be used to endorse or promote products
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -42,7 +42,7 @@ import tec.units.ri.quantity.DefaultQuantityFactory;
 
 /**
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.4.1
+ * @version 1.5
  *
  * This <type>enum</type> is inspired by Josh Bloch's example in <a href="http://www.oracle.com/technetwork/java/effectivejava-136174.html">Effective Java Second Edition</a>
  *
@@ -85,7 +85,7 @@ public enum Planet implements Celestial {
         double m = mass.doubleValue(KILOGRAM);
         double r = radius.doubleValue(METRE);
         return DefaultQuantityFactory.getInstance(Acceleration.class).create(
-                G * m / (r * r), METRES_PER_SQUARE_SECOND);
+                G * m / (r * r), METRE_PER_SQUARE_SECOND);
     }
 
 	@Override

@@ -27,7 +27,7 @@ package tec.uom.demo.systems.common;
 
 import static tec.units.ri.unit.MetricPrefix.KILO;
 import static tec.units.ri.unit.Units.HOUR;
-import static tec.units.ri.unit.Units.KILOMETRES_PER_HOUR;
+import static tec.units.ri.unit.Units.KILOMETRE_PER_HOUR;
 import static tec.units.ri.unit.Units.METRE;
 
 import javax.measure.Quantity;
@@ -88,10 +88,10 @@ public class AirplaneDemo {
 	final Quantity<Speed> getSpeed() {
 	    switch (id) {
 	    case "A380":
-		return Quantities.getQuantity(945, KILOMETRES_PER_HOUR);
+		return Quantities.getQuantity(945, KILOMETRE_PER_HOUR);
 	    // Airbus A 380 Cruise speed
 	    case "B777":
-		return Quantities.getQuantity(892, KILOMETRES_PER_HOUR);
+		return Quantities.getQuantity(892, KILOMETRE_PER_HOUR);
 	    // Boeing 777 Cruise speed, see
 	    // https://en.wikipedia.org/wiki/Boeing_777#Specifications
 	    default:
