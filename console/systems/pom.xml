@@ -16,6 +16,7 @@
 		<module>si</module>
 		<module>si-java8</module>
 		<module>unicode</module>
+		<module>ucum</module>
 		<module>historical</module>
 		<module>jscience</module>
 	</modules>
@@ -60,6 +61,11 @@
             <dependency>
                 <groupId>systems.uom</groupId>
                 <artifactId>systems-unicode-java8</artifactId>
+                <version>${systems.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>systems.uom</groupId>
+                <artifactId>systems-ucum-java8</artifactId>
                 <version>${systems.version}</version>
             </dependency>
 		</dependencies>
