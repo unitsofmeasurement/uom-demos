@@ -9,6 +9,7 @@ import javax.measure.quantity.Mass;
 import systems.uom.ucum.UCUM;
 import systems.uom.ucum.format.UCUMFormat;
 import systems.uom.ucum.format.UCUMFormat.Variant;
+import tec.uom.se.format.EBNFUnitFormat;
 import tec.uom.se.quantity.Quantities;
 import tec.uom.se.unit.Units;
 import static systems.uom.ucum.UCUM.ATOMIC_MASS_UNIT;
@@ -44,5 +45,14 @@ public class UCUMDemoSE {
 
 	Unit<Frequency> khz = KILO(hz);
 	System.out.println(khz.getBaseUnits());
+	
+	unit = format.parse("Hz");
+	System.out.println(unit);
+//	unit = format.parse("kHz");
+	
+	UnitFormat format2 = EBNFUnitFormat.getInstance();
+	unit = format2.parse("kHz");
+	System.out.println(unit);
+	
     }
 }
