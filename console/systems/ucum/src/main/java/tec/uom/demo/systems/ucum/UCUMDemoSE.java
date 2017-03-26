@@ -27,8 +27,8 @@ public class UCUMDemoSE {
 	Quantity<Mass> massInKg = mass.to(Units.KILOGRAM);
 	System.out.println(massInKg);
 
-	UnitFormat format = UCUMFormat.getInstance(Variant.CASE_SENSITIVE);
-	Unit<?> unit = format.parse("m/s");
+	UnitFormat cs = UCUMFormat.getInstance(Variant.CASE_SENSITIVE);
+	Unit<?> unit = cs.parse("m/s");
 	System.out.println(unit);
 
 	// unit = format.parse("m^1*s^-1");
@@ -46,12 +46,13 @@ public class UCUMDemoSE {
 	Unit<Frequency> khz = KILO(hz);
 	System.out.println(khz.getBaseUnits());
 	
-	unit = format.parse("Hz");
+	unit = cs.parse("Hz");
 	System.out.println(unit);
-//	unit = format.parse("kHz");
+	unit = cs.parse("kHz");
+	System.out.println(unit);
 	
-	UnitFormat format2 = EBNFUnitFormat.getInstance();
-	unit = format2.parse("kHz");
+	UnitFormat ebnf = EBNFUnitFormat.getInstance();
+	unit = ebnf.parse("kHz");
 	System.out.println(unit);
 	
     }
