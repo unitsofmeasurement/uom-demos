@@ -47,23 +47,26 @@ public class UCUMDemoSE {
 
 	Unit<Frequency> khz = KILO(hz);
 	System.out.println(khz.getBaseUnits());
-	
+
 	unit = cs.parse("Hz");
 	System.out.println(unit);
 	unit = cs.parse("kHz");
 	System.out.println(unit);
-	
+
 	UnitFormat ebnf = EBNFUnitFormat.getInstance();
 	unit = ebnf.parse("kHz");
 	System.out.println(unit);
-	
-	System.out.println("Litering...");
-	final UnitFormat unitFormat =
-		    ServiceProvider.current().getUnitFormatService().getUnitFormat("CI");
-		final Unit<?> microliter = MetricPrefix.MICRO(Units.LITRE);
-		System.out.println(unitFormat.format(microliter)); // prints "nst"!
 
-		final Unit<?> microliter2 = unitFormat.parse("uL");
-		System.out.println(unitFormat.format(microliter2)); // prints "nst"!
+	System.out.println("Litering...");
+	final UnitFormat unitFormat = ServiceProvider.current().getUnitFormatService().getUnitFormat("CI");
+	final Unit<?> microliter = MetricPrefix.MICRO(Units.LITRE);
+	System.out.println(unitFormat.format(microliter)); // prints "nst"!
+
+	final Unit<?> microliter2 = unitFormat.parse("uL");
+	System.out.println(unitFormat.format(microliter2)); // prints "nst"!
+	
+	final UnitFormat unitFormat2 = ServiceProvider.current().getUnitFormatService().getUnitFormat("CS");
+	final Unit<?> microliter3 = unitFormat2.parse("ul");
+	System.out.println(unitFormat2.format(microliter3)); // prints "nst"!
     }
 }
