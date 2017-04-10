@@ -5,12 +5,14 @@ import javax.measure.Unit;
 import javax.measure.format.UnitFormat;
 import javax.measure.quantity.Frequency;
 import javax.measure.quantity.Mass;
+import javax.measure.spi.ServiceProvider;
 
 import systems.uom.ucum.UCUM;
 import systems.uom.ucum.format.UCUMFormat;
 import systems.uom.ucum.format.UCUMFormat.Variant;
 import tec.uom.se.format.EBNFUnitFormat;
 import tec.uom.se.quantity.Quantities;
+import tec.uom.se.unit.MetricPrefix;
 import tec.uom.se.unit.Units;
 import static systems.uom.ucum.UCUM.ATOMIC_MASS_UNIT;
 import static tec.uom.se.unit.MetricPrefix.KILO;
@@ -55,5 +57,13 @@ public class UCUMDemoSE {
 	unit = ebnf.parse("kHz");
 	System.out.println(unit);
 	
+	System.out.println("Litering...");
+	final UnitFormat unitFormat =
+		    ServiceProvider.current().getUnitFormatService().getUnitFormat("CI");
+		final Unit<?> microliter = MetricPrefix.MICRO(Units.LITRE);
+		System.out.println(unitFormat.format(microliter)); // prints "nst"!
+
+		final Unit<?> microliter2 = unitFormat.parse("uL");
+		System.out.println(unitFormat.format(microliter2)); // prints "nst"!
     }
 }
