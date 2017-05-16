@@ -61,6 +61,12 @@ public class CLDRFormatDemo {
         System.out.println(format2.format(Units.AMPERE));
         System.out.println(format2.format(METER));
         System.out.println(format2.format(CENTIMETER));
+        System.out.println(format2.format(MILLIMETER));
+        System.out.println(format2.format(INCH));
+        System.out.println(format2.format(YARD));
+        
+        System.out.println(format2.format(KILOGRAM));
+        System.out.println(format2.format(GRAM));
     }
 
 }
