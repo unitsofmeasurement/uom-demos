@@ -36,7 +36,7 @@
 		<ri.version>1.0.3</ri.version>
 		<se.version>1.0.6-SNAPSHOT</se.version>
 		<lib.version>1.0.2-SNAPSHOT</lib.version>
-		<si.version>0.6.6-SNAPSHOT</si.version>
+		<si.version>0.6.6</si.version>
 		<systems.version>0.7.1-SNAPSHOT</systems.version>
 	</properties>
 
