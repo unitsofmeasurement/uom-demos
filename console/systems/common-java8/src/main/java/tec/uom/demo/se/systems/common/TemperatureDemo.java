@@ -31,6 +31,7 @@ import static systems.uom.common.USCustomary.FAHRENHEIT;
 
 public class TemperatureDemo {
     public static void main(String... args) {
+	System.out.println("Temperature Demo");
 	System.out.println(CELSIUS.toString());
 	System.out.println(CELSIUS.getSymbol());
 	System.out.println(KELVIN.toString());
