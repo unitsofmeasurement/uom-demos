@@ -81,8 +81,8 @@ public class UnitFormatDemo {
 		Unit u = ServiceProvider.current().getUnitFormatService().getUnitFormat().parse("g/l");
 		System.out.println(u);
 		
-		Unit v = EBNFUnitFormat.getInstance().parse("1/K");
-		System.out.println(v);
+//		Unit v = EBNFUnitFormat.getInstance().parse("1/K");
+//		System.out.println(v);
 	}
 
 }
