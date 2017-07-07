@@ -31,10 +31,13 @@ public class UCUMFormatDemo {
 	System.out.println(conv);
 	
 	final Unit<?> microliter2 = unitFormat.parse("uL");
-	System.out.println(unitFormat.format(microliter2)); // prints "nst"!
+	System.out.println(unitFormat.format(microliter2));
 	
 	final UnitFormat unitFormat2 = ServiceProvider.current().getUnitFormatService().getUnitFormat("CS");
 	final Unit<?> microliter3 = unitFormat2.parse("ul");
-	System.out.println(unitFormat2.format(microliter3)); // prints "nst"!
+	System.out.println(unitFormat2.format(microliter3));
+	
+	final Unit<?> invKelvin = unitFormat.parse("1/K");
+	System.out.println(invKelvin);
     }
 }

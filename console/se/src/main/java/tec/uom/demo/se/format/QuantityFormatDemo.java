@@ -43,12 +43,14 @@ import javax.measure.quantity.Speed;
 import tec.uom.se.AbstractUnit;
 import tec.uom.se.format.LocalUnitFormat;
 import tec.uom.se.format.SimpleUnitFormat;
+import tec.uom.se.quantity.Quantities;
 import tec.uom.se.unit.Units;
 
 public class QuantityFormatDemo {
 
     public static void main(String[] args) {
-	Quantity parsed = tec.uom.se.quantity.Quantities.getQuantity("300 d");
+	//Quantity parsed = tec.uom.se.quantity.Quantities.getQuantity("300 d");
+	Quantity parsed = Quantities.getQuantity("20 1/K");
 	System.out.println(parsed);
 //	Quantity parsed2 = tec.uom.se.quantity.Quantities.getQuantity("300d");
     }

@@ -41,6 +41,7 @@ import javax.measure.quantity.Speed;
 import javax.measure.spi.ServiceProvider;
 
 import tec.uom.se.AbstractUnit;
+import tec.uom.se.format.EBNFUnitFormat;
 import tec.uom.se.format.LocalUnitFormat;
 import tec.uom.se.format.SimpleUnitFormat;
 import tec.uom.se.unit.Units;
@@ -79,6 +80,9 @@ public class UnitFormatDemo {
 //		Unit u = ServiceProvider.current().getUnitFormatService().getUnitFormat().parse("1/l");
 		Unit u = ServiceProvider.current().getUnitFormatService().getUnitFormat().parse("g/l");
 		System.out.println(u);
+		
+		Unit v = EBNFUnitFormat.getInstance().parse("1/K");
+		System.out.println(v);
 	}
 
 }
