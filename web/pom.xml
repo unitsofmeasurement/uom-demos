@@ -12,7 +12,7 @@
     <description>Web-based Demos for Units of Measurement</description>
     <modules>
         <module>temperature-converter</module>
-        <module>sparkdemo</module>
+        <!--  module>sparkdemo</module TODO fix or permanently ignore sparkdemo -->
     </modules>
 	<dependencies>
 		<dependency>
