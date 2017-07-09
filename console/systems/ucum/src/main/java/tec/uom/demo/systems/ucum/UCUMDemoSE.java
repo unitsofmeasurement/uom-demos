@@ -52,7 +52,8 @@ public class UCUMDemoSE {
 	unit = cs.parse("kHz");
 	System.out.println(unit);
 
-	UnitFormat ebnf = EBNFUnitFormat.getInstance();
-	unit = ebnf.parse("kHz");
-	System.out.println(unit);    }
+//	UnitFormat ebnf = EBNFUnitFormat.getInstance();
+//	unit = ebnf.parse("MHz");
+//	System.out.println(unit);
+    }
 }
