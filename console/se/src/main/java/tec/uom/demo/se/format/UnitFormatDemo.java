@@ -67,6 +67,9 @@ public class UnitFormatDemo {
 		parsed = AbstractUnit.parse("W");
 		System.out.println(parsed);
 		
+		parsed = AbstractUnit.parse("kW");
+		System.out.println(parsed);
+		
 		localFormat = LocalUnitFormat.getInstance(Locale.ENGLISH);
 		String output = localFormat.format(Units.LITRE);
 		System.out.println(output);
@@ -82,6 +85,8 @@ public class UnitFormatDemo {
 		System.out.println(u);
 		
 //		Unit v = EBNFUnitFormat.getInstance().parse("1/K");
+//		System.out.println(v);
+//		Unit v = EBNFUnitFormat.getInstance().parse("kW");
 //		System.out.println(v);
 	}
 
