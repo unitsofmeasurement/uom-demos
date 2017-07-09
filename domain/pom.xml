@@ -15,7 +15,7 @@
     
 	<modules>
         <module>health</module>
-        <module>health-se</module>
+        <!--  module>health-se</module TODO fix Health SE -->
         <module>energy</module>
         <module>energy-se</module>
         <module>retail-se</module>

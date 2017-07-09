@@ -40,7 +40,7 @@ import tec.uom.se.quantity.QuantityRange;
 
 /**
  * @author Werner Keil
- * @version 0.8
+ * @version 0.9
  * @see <a
  *      href="http://en.wikipedia.org/wiki/Saffir%E2%80%93Simpson_hurricane_wind_scale">
  *      Wikipedia: Saffir–Simpson hurricane wind scale</a>
@@ -80,22 +80,6 @@ public class SaffirSimpsonHurricaneWindScale extends QuantityRange<Speed>
 	protected SaffirSimpsonHurricaneWindScale(Quantity<Speed> min,
 			Quantity<Speed> max) {
 		this(min, max, UNKNOWN);
-	}
-
-	/**
-	 * Returns an {@code SaffirSimpsonHurricaneWindScale} with the specified
-	 * values.
-	 *
-	 * @param min
-	 *            The minimum value for the wind scale.
-	 * @param max
-	 *            The maximum value for the wind scale.
-	 * @return an {@code SaffirSimpsonHurricaneWindScale} with the values
-	 *         present
-	 */
-	public static final SaffirSimpsonHurricaneWindScale of(Quantity<Speed> min,
-			Quantity<Speed> max) {
-		return new SaffirSimpsonHurricaneWindScale(min, max);
 	}
 
 	/**
