@@ -5,8 +5,6 @@ Units of Measurement Demos
 
 [![Circle CI](https://circleci.com/gh/unitsofmeasurement/uom-demos.svg?style=svg)](https://circleci.com/gh/unitsofmeasurement/uom-demos) 
 [![License](http://img.shields.io/badge/license-BSD3-blue.svg)](http://opensource.org/licenses/BSD-3-Clause)
-[![Issue Stats](http://issuestats.com/github/unitsofmeasurement/uom-demos/badge/pr?style=flat)](http://issuestats.com/github/unitsofmeasurement/uom-demos)
-[![Issue Stats](http://issuestats.com/github/unitsofmeasurement/uom-demos/badge/issue?style=flat)](http://issuestats.com/github/unitsofmeasurement/uom-demos)
 
 The project currently contains the following modules:
 
