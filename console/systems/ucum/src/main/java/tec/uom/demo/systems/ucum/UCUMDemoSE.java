@@ -1,6 +1,6 @@
 package tec.uom.demo.systems.ucum;
 
-import static systems.uom.ucum.UCUM.ATOMIC_MASS_UNIT;
+import static systems.uom.ucum.UCUM.*;
 import static tec.uom.se.unit.MetricPrefix.KILO;
 
 import javax.measure.Quantity;
@@ -8,6 +8,7 @@ import javax.measure.Unit;
 import javax.measure.format.UnitFormat;
 import javax.measure.quantity.Frequency;
 import javax.measure.quantity.Mass;
+import javax.measure.quantity.Volume;
 
 import systems.uom.ucum.UCUM;
 import systems.uom.ucum.format.UCUMFormat;
@@ -55,5 +56,8 @@ public class UCUMDemoSE {
 //	UnitFormat ebnf = EBNFUnitFormat.getInstance();
 //	unit = ebnf.parse("MHz");
 //	System.out.println(unit);
+	
+	Quantity<Volume> oneLiter = Quantities.getQuantity(1, LITER);
+	System.out.println(oneLiter.to(LITER_DM3).getValue());
     }
 }
