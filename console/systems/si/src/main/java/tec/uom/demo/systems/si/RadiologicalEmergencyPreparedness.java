@@ -1,26 +1,15 @@
 package tec.uom.demo.systems.si;
 
-import static tec.units.ri.unit.Units.*;
-import static tec.units.ri.unit.MetricPrefix.MILLI;
-import static si.uom.SI.*;
 import static si.uom.NonSI.ROENTGEN;
-
-import javax.measure.Quantity;
-import javax.measure.Unit;
-import javax.measure.quantity.Angle;
-import javax.measure.quantity.Mass;
-
-import si.uom.NonSI;
-import si.uom.SI;
-import tec.units.ri.AbstractQuantity;
-import tec.units.ri.quantity.NumberQuantity;
-import tec.units.ri.quantity.Quantities;
+import static tec.units.ri.unit.MetricPrefix.MILLI;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.measure.Quantity;
+
 import si.uom.quantity.IonizingRadiation;
+import tec.units.ri.quantity.Quantities;
 
 /**
  * @author <a href="mailto:uomo@catmedia.us">Werner Keil</a>
@@ -47,7 +36,5 @@ public class RadiologicalEmergencyPreparedness {
 		for (Quantity<IonizingRadiation> dosimeterLimit : repMap.keySet()) {			
 			System.out.println(dosimeterLimit + " :: " + repMap.get(dosimeterLimit));
 		}
-		
 	}
-
 }

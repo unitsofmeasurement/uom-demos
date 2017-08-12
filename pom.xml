@@ -34,9 +34,9 @@
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<jsr.version>1.0</jsr.version>
 		<ri.version>1.0.3</ri.version>
-		<se.version>1.0.8-SNAPSHOT</se.version>
+		<se.version>1.0.8</se.version>
 		<lib.version>1.0.2</lib.version>
-		<si.version>0.7</si.version>
+		<si.version>0.7.1-SNAPSHOT</si.version>
 		<systems.version>0.7.2-SNAPSHOT</systems.version>
 	</properties>
 
