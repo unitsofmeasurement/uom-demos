@@ -46,7 +46,7 @@ public class UnitDemo {
 		System.out.println(result);
 		Unit m = Units.MOLE.divide(Units.CUBIC_METRE);
 		System.out.println(m);
-		System.out.println(m);
+		System.out.println(m.getSymbol());
 	}
 
 }
