@@ -44,6 +44,9 @@ public class UnitDemo {
 //		System.out.println(kmh2);
 		System.out.println(kmh3);
 		System.out.println(result);
+		Unit m = Units.MOLE.divide(Units.CUBIC_METRE);
+		System.out.println(m);
+		System.out.println(m);
 	}
 
 }
