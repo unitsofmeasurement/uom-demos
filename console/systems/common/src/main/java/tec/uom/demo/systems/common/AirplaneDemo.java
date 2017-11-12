@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2017, Jean-Marie Dautelle, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -65,7 +65,8 @@ public class AirplaneDemo {
 	    model = "A380";
 	}
 
-	Quantity<Length> distance = Quantities.getQuantity(dist, KILO(METRE));
+	//Quantity<Length> distance = Quantities.getQuantity(dist, KILO(METRE));
+	Quantity<Length> distance = Quantities.getQuantity(dist, USCustomary.MILE);
 	Airplane airplane = new Airplane(model);
 	System.out.println(airplane + " flying " + distance);
 	Quantity<Speed> airplaneSpeed = airplane.getSpeed();

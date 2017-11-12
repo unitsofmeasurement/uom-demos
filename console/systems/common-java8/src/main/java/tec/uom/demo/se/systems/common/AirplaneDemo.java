@@ -26,6 +26,7 @@
 package tec.uom.demo.se.systems.common;
 
 import static systems.uom.common.USCustomary.MILE_PER_HOUR;
+import static systems.uom.common.USCustomary.MILE;
 import static tec.uom.se.unit.MetricPrefix.KILO;
 import static tec.uom.se.unit.Units.HOUR;
 import static tec.uom.se.unit.Units.KILOMETRE_PER_HOUR;
@@ -38,6 +39,7 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
 
+import systems.uom.common.USCustomary;
 import tec.uom.se.AbstractQuantity;
 import tec.uom.se.quantity.Quantities;
 import tec.uom.se.quantity.time.TemporalQuantity;
@@ -63,7 +65,8 @@ public class AirplaneDemo {
 	}
 	// TODO make that either configurable or at least optionally passing it
 	// with arguments
-	Quantity<Length> distance = Quantities.getQuantity(10427d, KILO(METRE));
+	//Quantity<Length> distance = Quantities.getQuantity(10427d, KILO(METRE));
+	Quantity<Length> distance = Quantities.getQuantity(5598, MILE);
 	Airplane airplane = new Airplane(model);
 	Quantity<Speed> airplaneSpeed = airplane.getSpeed();
 	System.out.println(airplane + " flying " + airplaneSpeed);

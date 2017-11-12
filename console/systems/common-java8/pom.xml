@@ -42,7 +42,6 @@
 		<dependency>
 			<groupId>tec.uom.lib</groupId>
 			<artifactId>uom-lib-common</artifactId>
-			<version>1.0.2-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
