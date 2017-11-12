@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2017, Jean-Marie Dautelle, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -57,16 +57,24 @@ import tec.uom.se.quantity.time.TimeQuantities;
 public class AirplaneDemo {
 
     public static void main(String[] args) {
-	final String model;
-	if (args != null && args.length > 0) {
-	    model = args[0];
-	} else {
-	    model = "A380";
-	}
+       final String model;
+	   final double dist;
+	   if (args != null && args.length > 0) {
+	        dist = Double.parseDouble(args[0]);
+	        if (args.length > 1) {
+	        model = args[1];
+	        } else {
+	        model = "A380";
+	        }
+	    } else {
+	        dist = 6089d;
+	        model = "A380";
+	    }
+
 	// TODO make that either configurable or at least optionally passing it
 	// with arguments
 	//Quantity<Length> distance = Quantities.getQuantity(10427d, KILO(METRE));
-	Quantity<Length> distance = Quantities.getQuantity(5598, MILE);
+	Quantity<Length> distance = Quantities.getQuantity(dist, MILE);
 	Airplane airplane = new Airplane(model);
 	Quantity<Speed> airplaneSpeed = airplane.getSpeed();
 	System.out.println(airplane + " flying " + airplaneSpeed);
@@ -85,30 +93,29 @@ public class AirplaneDemo {
 		+ Duration.from(tuqToDest.getTemporalAmount()));
     }
 
-    private static class Airplane {
-	private final String id;
+private static class Airplane {
+    private final String id;
 
-	private Airplane(String id) {
-	    this.id = id;
-	}
-
-	final Quantity<Speed> getSpeed() {
-	    switch (id) {
-	    case "A380":
-		return Quantities.getQuantity(945, KILOMETRE_PER_HOUR); 
-		// Airbus A 380 Cruise speed
-	    case "B777":
-		return Quantities.getQuantity(892, KILOMETRE_PER_HOUR);
-		// Boeing 777 Cruise speed, see
-		// https://en.wikipedia.org/wiki/Boeing_777#Specifications
-	    default:
-		return AbstractQuantity.NONE.asType(Speed.class);
-	    }
-	}
-
-	@Override
-	public String toString() {
-	    return "Airplane [" + id + "]";
-	}
+    private Airplane(String id) {
+        this.id = id;
     }
-}
+
+    final Quantity<Speed> getSpeed() {
+        switch (id) {
+            case "A380":
+                return Quantities.getQuantity(945, KILOMETRE_PER_HOUR);
+            // Airbus A 380 Cruise speed
+            case "B777":
+                return Quantities.getQuantity(892, KILOMETRE_PER_HOUR);
+            // Boeing 777 Cruise speed, see
+            // https://en.wikipedia.org/wiki/Boeing_777#Specifications
+            default:
+                return AbstractQuantity.NONE.asType(Speed.class);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Airplane [" + id + "]";
+    }
+}}
