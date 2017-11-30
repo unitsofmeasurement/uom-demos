@@ -71,11 +71,8 @@ public class AirplaneDemo {
         Quantity<Speed> airplaneSpeed = airplane.getSpeed();
         System.out.println(airplane + " flying " + airplaneSpeed);
         System.out.println(airplane + " flying " + airplaneSpeed.to(MILE_PER_HOUR));
-        // Quantity<Time> eta = (Quantity<Time>)distance.divide(airplaneSpeed);
         Quantity<Time> timeToDest = distance.divide(airplaneSpeed).asType(Time.class);
 
-        // System.out.println("ETA: " + eta.to(Units.HOUR)); // XXX ETA could be
-        // done based on current time
         TemporalQuantity tuqToDest = TimeQuantities.toTemporalSeconds(timeToDest);
         System.out.println("TTD: " + timeToDest.to(HOUR));
         System.out.println("TTD (Duration): " + Duration.from(tuqToDest.getTemporalAmount()));
