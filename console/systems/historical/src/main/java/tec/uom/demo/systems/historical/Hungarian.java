@@ -1,14 +1,14 @@
 package tec.uom.demo.systems.historical;
 
-import static tec.units.ri.unit.MetricPrefix.*;
-import static tec.units.ri.unit.Units.*;
+import static javax.measure.MetricPrefix.*;
+import static tech.units.indriya.unit.Units.*;
 
 import javax.measure.Unit;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Volume;
 
-import tec.units.ri.AbstractSystemOfUnits;
-import tec.units.ri.format.SimpleUnitFormat;
+import tech.units.indriya.AbstractSystemOfUnits;
+import tech.units.indriya.format.SimpleUnitFormat;
 
 /**
  * <p>

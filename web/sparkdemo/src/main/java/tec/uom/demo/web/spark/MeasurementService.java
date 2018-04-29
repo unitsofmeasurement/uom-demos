@@ -4,7 +4,7 @@ import java.util.*;
 
 import javax.measure.Unit;
 
-import tec.units.ri.AbstractUnit;
+import tech.units.indriya.AbstractUnit;
 
 public class MeasurementService {
 

@@ -25,7 +25,7 @@
  */
 package tec.uom.demo.energy;
 
-import static tec.units.ri.unit.MetricPrefix.KILO;
+import static javax.measure.MetricPrefix.KILO;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
@@ -35,9 +35,9 @@ import javax.measure.quantity.Temperature;
 import javax.measure.quantity.Time;
 import javax.measure.quantity.Volume;
 
-import tec.units.ri.format.SimpleUnitFormat;
-import tec.units.ri.quantity.Quantities;
-import tec.units.ri.unit.Units;
+import tech.units.indriya.format.SimpleUnitFormat;
+import tech.units.indriya.quantity.Quantities;
+import tech.units.indriya.unit.Units;
 
 /**
  * 

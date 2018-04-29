@@ -1,0 +1,32 @@
+=== Example Code
+Now you are ready to start work on our N2L plug-in.
+
+. Create a new class called +NewtonsSecondLaw+ in the package +com.acme.n2l+
+. Now add the following code: 
++
+[source,java]
+----
+package com.acme.n2l;
+
+import org.eclipse.uomo.units.SI;
+import org.eclipse.uomo.units.impl.quantity.AccelerationAmount;
+import org.eclipse.uomo.units.impl.quantity.ForceAmount;
+import org.eclipse.uomo.units.impl.quantity.MassAmount;
+
+public class NewtonsSecondLaw {
+
+    public static final ForceAmount calculateForce(MassAmount m, AccelerationAmount a) {
+        double m_kg = m.doubleValue(SI.KILOGRAM);
+        double a_si = a.doubleValue(SI.METRES_PER_SQUARE_SECOND);
+        return new ForceAmount(m_kg * a_si, SI.NEWTON);
+    }
+}
+----
++
+The important part of this code is the +calculateForce+ method; it takes as parameters an amount of mass and an amount of acceleration - and returns an amount of force.
+The units of these parameters are not defined; just that they are of quanity +Mass+ and +Acceleration+ respectively.
++
+So our code needs to get the absolute value of these in a known unit for calculation - for simplicity we use the SI units Kilogram (kg) and Metres per second per second (m/s2).
+We then simply perform the multiplication, and create a result using the SI unit for Force - Newtons (N).
+
+. Now we have our example API implementation - we need to call it to see it do something. Let's create a unit test. (OK purists, we should have created this first to be truly TDD, but this is just a tutorial!)

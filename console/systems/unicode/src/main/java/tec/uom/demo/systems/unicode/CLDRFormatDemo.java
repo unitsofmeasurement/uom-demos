@@ -34,8 +34,8 @@ import javax.measure.format.UnitFormat;
 import javax.measure.spi.ServiceProvider;
 
 import systems.uom.quantity.Information;
-import tec.units.ri.AbstractUnit;
-import tec.units.ri.format.SimpleUnitFormat;
+import tech.units.indriya.AbstractUnit;
+import tech.units.indriya.format.SimpleUnitFormat;
 
 public class CLDRFormatDemo {
     public static void main(String[] args) {

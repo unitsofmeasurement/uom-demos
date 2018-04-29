@@ -1,7 +1,7 @@
 package tec.uom.demo.systems.common;
 
-import static tec.units.ri.unit.MetricPrefix.KILO;
-import static tec.units.ri.unit.MetricPrefix.NANO;
+import static javax.measure.MetricPrefix.KILO;
+import static javax.measure.MetricPrefix.NANO;
 import static systems.uom.common.USCustomary.LITER;
 
 import javax.measure.Quantity;
@@ -11,9 +11,9 @@ import javax.measure.quantity.Mass;
 import javax.measure.quantity.Volume;
 
 import systems.uom.common.IndianPrefix;
-import tec.units.ri.format.SimpleUnitFormat;
-import tec.units.ri.quantity.Quantities;
-import tec.units.ri.unit.Units;
+import tech.units.indriya.format.SimpleUnitFormat;
+import tech.units.indriya.quantity.Quantities;
+import tech.units.indriya.unit.Units;
 
 public class CommonPrefixDemo {
 	public static void main(String... args) {

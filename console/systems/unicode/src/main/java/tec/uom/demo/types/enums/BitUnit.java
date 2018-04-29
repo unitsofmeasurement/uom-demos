@@ -36,21 +36,22 @@ import java.util.Map;
 
 import javax.measure.Dimension;
 import javax.measure.IncommensurableException;
+import javax.measure.Prefix;
 import javax.measure.Quantity;
 import javax.measure.UnconvertibleException;
 import javax.measure.Unit;
 import javax.measure.UnitConverter;
 
 import systems.uom.quantity.Information;
-import tec.units.ri.quantity.DefaultQuantityFactory;
-import tec.units.ri.quantity.QuantityDimension;
+import tech.units.indriya.quantity.DefaultQuantityFactory;
+import tech.units.indriya.quantity.QuantityDimension;
 import tec.uom.lib.common.util.DescriptiveEnum;
 import tec.uom.lib.common.function.DoubleFactorSupplier;
 
 /**
  * Implements a measure of information. The metric system unit for this quantity is "bit".
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.7.2, $Date: 2015-09-27 $
+ * @version 0.8, $Date: 2018-04-29 $
  */
 public enum BitUnit implements Unit<Information>, DoubleFactorSupplier, DescriptiveEnum<BitUnit> {
 	
@@ -176,7 +177,7 @@ public enum BitUnit implements Unit<Information>, DoubleFactorSupplier, Descript
 
     
     public Dimension getDimension() {
-        return QuantityDimension.getInstance(Information.class);
+        return QuantityDimension.of(Information.class);
     }
 
     
@@ -223,5 +224,12 @@ public enum BitUnit implements Unit<Information>, DoubleFactorSupplier, Descript
     
     public DescriptiveEnum<BitUnit>[] dValues() {
 		return BitUnit.values();
+	}
+
+
+	@Override
+	public Unit<Information> prefix(Prefix prefix) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

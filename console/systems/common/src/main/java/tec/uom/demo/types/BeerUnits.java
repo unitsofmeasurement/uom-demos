@@ -26,13 +26,13 @@
 package tec.uom.demo.types;
 
 import static systems.uom.common.Imperial.PINT;
-import static tec.units.ri.unit.Units.LITRE;
+import static tech.units.indriya.unit.Units.LITRE;
 
 import javax.measure.Unit;
 import javax.measure.quantity.Volume;
 
-import tec.units.ri.AbstractSystemOfUnits;
-import tec.units.ri.format.SimpleUnitFormat;
+import tech.units.indriya.AbstractSystemOfUnits;
+import tech.units.indriya.format.SimpleUnitFormat;
 
 /**
  * <p>

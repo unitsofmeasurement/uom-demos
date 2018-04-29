@@ -36,14 +36,15 @@ import java.util.Map;
 
 import javax.measure.Dimension;
 import javax.measure.IncommensurableException;
+import javax.measure.Prefix;
 import javax.measure.Quantity;
 import javax.measure.UnconvertibleException;
 import javax.measure.Unit;
 import javax.measure.UnitConverter;
 
 import systems.uom.quantity.InformationRate;
-import tec.units.ri.quantity.DefaultQuantityFactory;
-import tec.units.ri.quantity.QuantityDimension;
+import tech.units.indriya.quantity.DefaultQuantityFactory;
+import tech.units.indriya.quantity.QuantityDimension;
 import tec.uom.lib.common.util.DescriptiveEnum;
 import tec.uom.lib.common.function.DoubleFactorSupplier;
 
@@ -177,7 +178,7 @@ public enum BitRateUnit implements Unit<InformationRate>, DoubleFactorSupplier, 
     }
 
     public Dimension getDimension() {
-        return QuantityDimension.getInstance(InformationRate.class);
+        return QuantityDimension.of(InformationRate.class);
     }
 
      public Unit<?> inverse() {
@@ -215,5 +216,12 @@ public enum BitRateUnit implements Unit<InformationRate>, DoubleFactorSupplier, 
 
     public DescriptiveEnum<BitRateUnit>[] dValues() {
 		return BitRateUnit.values();
+	}
+
+
+	@Override
+	public Unit<InformationRate> prefix(Prefix prefix) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

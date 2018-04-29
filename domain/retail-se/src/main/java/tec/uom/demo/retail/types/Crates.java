@@ -33,6 +33,7 @@ import java.util.Map;
 
 import javax.measure.Dimension;
 import javax.measure.IncommensurableException;
+import javax.measure.Prefix;
 import javax.measure.Quantity;
 import javax.measure.UnconvertibleException;
 import javax.measure.Unit;
@@ -172,4 +173,10 @@ public enum Crates implements Unit<Crate>, ValueSupplier<Integer> {
 	// TODO Auto-generated method stub
 	return null;
     }
+
+	@Override
+	public Unit<Crate> prefix(Prefix prefix) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

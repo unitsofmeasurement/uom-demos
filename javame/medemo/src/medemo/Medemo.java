@@ -37,9 +37,9 @@ import javax.measure.quantity.Temperature;
 import javax.measure.quantity.Time;
 import javax.microedition.midlet.MIDlet;
 
-import tec.units.ri.unit.Units;
+import tech.units.indriya.unit.Units;
 import tec.uom.lib.common.function.Nameable;
-import tec.units.ri.quantity.Quantities;
+import tech.units.indriya.quantity.Quantities;
 
 /**
  * @author Werner Keil

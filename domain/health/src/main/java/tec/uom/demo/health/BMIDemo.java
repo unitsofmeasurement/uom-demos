@@ -15,16 +15,16 @@
  */
 package tec.uom.demo.health;
 
-import static tec.units.ri.unit.Units.KILOGRAM;
-import static tec.units.ri.unit.Units.METRE;
-import static tec.units.ri.unit.Units.SQUARE_METRE;
+import static tech.units.indriya.unit.Units.KILOGRAM;
+import static tech.units.indriya.unit.Units.METRE;
+import static tech.units.indriya.unit.Units.SQUARE_METRE;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Area;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
-import tec.units.ri.quantity.Quantities;
+import tech.units.indriya.quantity.Quantities;
 import tec.uom.domain.health.types.BMIRange;
 
 /**

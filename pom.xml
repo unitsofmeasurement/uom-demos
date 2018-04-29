@@ -2,16 +2,15 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>uom-demos</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
 	<parent>
-		<groupId>tec.uom</groupId>
+		<groupId>tech.uom</groupId>
 		<artifactId>uom-parent</artifactId>
-		<version>1.0.4</version>
+		<version>2.0-SNAPSHOT</version>
 	</parent>
 	<groupId>tec.uom.demo</groupId>
 	<packaging>pom</packaging>
 	<name>Units of Measurement Demos</name>
-	<url>http://github.com/unitsofmeasurement/unit-demos</url>
+	<url>http://github.com/unitsofmeasurement/uom-demos</url>
 	<organization>
 		<name>Units of Measurement project</name>
 		<url>http://unitsofmeasurement.github.io</url>
@@ -20,7 +19,7 @@
 	<licenses>
 		<license>
 			<name>BSD</name>
-			<url>LICENSE.txt</url>
+			<url>LICENSE</url>
 		</license>
 	</licenses>
 
@@ -28,14 +27,14 @@
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
 	<properties>
-		<jdkVersion>1.7</jdkVersion>
+		<jdkVersion>1.8</jdkVersion>
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<jsr.version>1.0</jsr.version>
-		<ri.version>1.0.3</ri.version>
+		<jsr.version>2.0-SNAPSHOT</jsr.version>
+		<ri.version>2.0-SNAPSHOT</ri.version>
 		<se.version>1.0.9</se.version>
-		<lib.version>1.0.2</lib.version>
+		<lib.version>2.0-SNAPSHOT</lib.version>
 		<si.version>0.8</si.version>
 		<systems.version>0.8-SNAPSHOT</systems.version>
 	</properties>
@@ -48,8 +47,8 @@
 				<version>${jsr.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>tec.units</groupId>
-				<artifactId>unit-ri</artifactId>
+				<groupId>tech.units</groupId>
+				<artifactId>indriya</artifactId>
 				<version>${ri.version}</version>
 			</dependency>
 			<dependency>
@@ -58,12 +57,12 @@
 				<version>${se.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>tec.uom.lib</groupId>
+				<groupId>tech.uom.lib</groupId>
 				<artifactId>uom-lib</artifactId>
 				<version>${lib.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>tec.uom.lib</groupId>
+				<groupId>tech.uom.lib</groupId>
 				<artifactId>uom-lib-common</artifactId>
 				<version>${lib.version}</version>
 			</dependency>
@@ -110,7 +109,9 @@
 	</build>
 	<modules>
 		<module>console</module>
+		<!--  
 		<module>javafx</module>
+		-->
 		<module>domain</module>
 		<module>web</module>
 		<module>device</module>

@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>tec.uom.demo.domain</groupId>
 		<artifactId>uom-domain-demos</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>2.0-SNAPSHOT</version>
 	</parent>
     <properties>
         <domain.version>0.9-SNAPSHOT</domain.version>
@@ -38,8 +38,8 @@
 		</dependency>
 		
 		<dependency>
-            <groupId>tec.units</groupId>
-            <artifactId>unit-ri</artifactId>
+            <groupId>tech.units</groupId>
+            <artifactId>indriya</artifactId>
         </dependency>
 		<dependency>
             <groupId>tec.uom.domain</groupId>

@@ -11,8 +11,8 @@ import org.junit.Test;
 
 import spark.Spark;
 import spark.utils.IOUtils;
-import tec.units.ri.format.SimpleUnitFormat;
-import tec.units.ri.unit.Units;
+import tech.units.indriya.format.SimpleUnitFormat;
+import tech.units.indriya.unit.Units;
 import tec.uom.demo.web.spark.Main;
 
 import java.io.IOException;

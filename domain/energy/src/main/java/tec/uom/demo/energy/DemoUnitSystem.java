@@ -25,16 +25,16 @@
  */
 package tec.uom.demo.energy;
 
-import static tec.units.ri.unit.MetricPrefix.*;
+import static javax.measure.MetricPrefix.*;
 
 import javax.measure.Unit;
 import javax.measure.quantity.Energy;
 
-import tec.units.ri.AbstractSystemOfUnits;
-import tec.units.ri.format.SimpleUnitFormat;
-import tec.units.ri.function.RationalConverter;
-import tec.units.ri.unit.TransformedUnit;
-import tec.units.ri.unit.Units;
+import tech.units.indriya.AbstractSystemOfUnits;
+import tech.units.indriya.format.SimpleUnitFormat;
+import tech.units.indriya.function.RationalConverter;
+import tech.units.indriya.unit.TransformedUnit;
+import tech.units.indriya.unit.Units;
 
 /**
  * <p>

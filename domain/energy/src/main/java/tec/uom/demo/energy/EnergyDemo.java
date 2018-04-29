@@ -32,9 +32,9 @@ import javax.measure.quantity.Energy;
 import javax.measure.quantity.Power;
 import javax.measure.quantity.Time;
 
-import tec.units.ri.quantity.Quantities;
-import tec.units.ri.unit.MetricPrefix;
-import tec.units.ri.unit.Units;
+import tech.units.indriya.quantity.Quantities;
+import javax.measure.MetricPrefix;
+import tech.units.indriya.unit.Units;
 
 public class EnergyDemo {
 
