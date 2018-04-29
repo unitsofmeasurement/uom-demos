@@ -28,11 +28,10 @@ package tec.uom.demo;
 import tech.uom.lib.common.util.SystemOfUnitsReporter;
 
 import javax.measure.spi.ServiceProvider;
-import javax.measure.spi.SystemOfUnits;
 
 public class SystemsDemo {
 	public static void main(String... args) {
-		for (SystemOfUnits s : ServiceProvider.current().getSystemOfUnitsService().getAvailableSystemsOfUnits()) {
+		for (var s : ServiceProvider.current().getSystemOfUnitsService().getAvailableSystemsOfUnits()) {
 			SystemOfUnitsReporter.of(s).report(true);
 			System.out.println();
 		}

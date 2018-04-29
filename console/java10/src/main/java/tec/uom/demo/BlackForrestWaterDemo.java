@@ -26,11 +26,6 @@
 package tec.uom.demo;
 
 import static tech.units.indriya.unit.Units.*;
-
-import javax.measure.Quantity;
-import javax.measure.quantity.Mass;
-import javax.measure.quantity.Volume;
-
 import static javax.measure.MetricPrefix.*;
 
 import tech.units.indriya.quantity.Quantities;
@@ -38,10 +33,9 @@ import tech.units.indriya.quantity.Quantities;
 public class BlackForrestWaterDemo {
 
 	public static void main(String[] args) {
-		Quantity<Mass> mass = Quantities.getQuantity(38, MILLI(GRAM));
-		Quantity<Volume> volume = Quantities.getQuantity(1, LITRE);
-		Quantity<?> density = mass.divide(volume);
-		System.out.println("Natrium: " + density);
+		var mass = Quantities.getQuantity(38, MILLI(GRAM));
+		var volume = Quantities.getQuantity(1, LITRE);
+		var density = mass.divide(volume);
+		System.out.println(String.format("Natrium: %s", density));
 	}
-
 }

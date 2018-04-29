@@ -27,17 +27,13 @@ package tec.uom.demo;
 
 import static javax.measure.MetricPrefix.KILO;
 
-import javax.measure.Quantity;
-import javax.measure.Unit;
-import javax.measure.quantity.Mass;
-
 import tech.units.indriya.quantity.Quantities;
 import tech.units.indriya.unit.Units;
 
 public class PrefixDemo {
 	public static void main(String... args) {
-		Unit<Mass> kg = KILO(Units.GRAM);
-		Quantity<Mass> mass = Quantities.getQuantity(50, kg);
+		var kg = KILO(Units.GRAM);
+		var mass = Quantities.getQuantity(50, kg);
 		System.out.println(mass);
 	}
 }

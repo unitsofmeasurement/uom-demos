@@ -29,22 +29,19 @@
  */
 package tec.uom.demo.format;
 
-import javax.measure.Unit;
-import javax.measure.format.UnitFormat;
 import javax.measure.spi.ServiceProvider;
 
 import tech.units.indriya.AbstractUnit;
 
 public class UnitFormatDemo {
 
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {		
 //		UnitFormat localFormat = LocalUnitFormat.getInstance();
 		
 //		Unit<Speed> kmh = KILO(Units.METRE).divide(Units.HOUR).asType(Speed.class);
 //		Unit<Speed> kmh2 = SIPrefix.KILO(Units.METRE).multiply(UCUM.HOUR).asType(Speed.class);
 		
-		Unit<?> parsed = AbstractUnit.parse("%");
+		var parsed = AbstractUnit.parse("%");
 //		Unit<?> parsed = localFormat.parse("%");
 		System.out.println(parsed);
 		
@@ -56,11 +53,12 @@ public class UnitFormatDemo {
 		parsed = AbstractUnit.parse("W");
 		System.out.println(parsed);
 		
-		UnitFormat format = ServiceProvider.current().getUnitFormatService().getUnitFormat();
+		var format = ServiceProvider.current().getFormatService().getUnitFormat();
+		parsed = format.parse("V");
+		System.out.println(parsed);
 		
 //		Unit u = ServiceProvider.current().getUnitFormatService().getUnitFormat().parse("1/l");
-		Unit u = ServiceProvider.current().getUnitFormatService().getUnitFormat().parse("g/l");
+		var u = ServiceProvider.current().getFormatService().getUnitFormat().parse("g/l");
 		System.out.println(u);
 	}
-
 }
