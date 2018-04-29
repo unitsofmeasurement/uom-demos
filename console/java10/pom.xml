@@ -42,9 +42,6 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
 					<release>10</release>
-					<source>${project.build.javaVersion}</source>
-					<target>${project.build.javaVersion}</target>
-					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 				<dependencies>
 					<dependency>

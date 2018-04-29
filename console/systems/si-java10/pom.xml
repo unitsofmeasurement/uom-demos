@@ -6,8 +6,8 @@
 		<artifactId>uom-console-system-demos</artifactId>
 		<version>2.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>uom-si-console-demos-java8</artifactId>
-
+	<artifactId>uom-si-console-demos-java10</artifactId>
+<!-- TODO change JVM to Java 10 -->
 	<dependencies>
 		<dependency>
 			<groupId>javax.measure</groupId>
@@ -28,5 +28,5 @@
 		</dependency>
 	</dependencies>
 	<description>Console Demos of SI Units based on the Java SE 8 Implementation of JSR 363</description>
-	<name>UoM SI Java 8 Console Demos</name>
+	<name>UoM SI Java 10 Console Demos</name>
 </project>

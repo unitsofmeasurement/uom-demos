@@ -28,8 +28,6 @@ package tec.uom.demo;
 import static javax.measure.MetricPrefix.NANO;
 import static tech.units.indriya.unit.Units.LITRE;
 
-import javax.measure.Unit;
-import javax.measure.quantity.Dimensionless;
 import javax.measure.quantity.Speed;
 
 import tech.units.indriya.quantity.Quantities;
@@ -39,18 +37,12 @@ import tech.units.indriya.unit.Units;
 public class UnitDemo {
 
 	public static void main(String[] args) {
-		Unit<Speed> kmh = MetricPrefix.KILO(Units.METRE).divide(Units.HOUR).asType(Speed.class);
-//		Unit<Velocity> kmh2 = SIPrefix.KILO(Units.METRE).multiply(UCUM.HOUR).asType(Velocity.class);
-		Unit<?> kmh3 = MetricPrefix.KILO(Units.METRE).multiply(Units.HOUR);
+		var kmh = MetricPrefix.KILO(Units.METRE).divide(Units.HOUR).asType(Speed.class);
+		var kmh3 = MetricPrefix.KILO(Units.METRE).multiply(Units.HOUR);
 		
 		System.out.println(kmh);
-//		System.out.println(kmh2);
 		System.out.println(kmh3);
-		
-//		System.out.println(UCUM.POUND);
-//		System.out.println(UCUM.POUND.getSymbol());
-//		System.out.println(UCUM.POUND.getName());
-		
+				
 		System.out.println(Units.KILOGRAM);
 		System.out.println(Units.KILOGRAM.getSymbol());
 		System.out.println(Units.KILOGRAM.getName());
@@ -61,9 +53,10 @@ public class UnitDemo {
 		
 //		Unit<Dimensionless> d = Units.METRE.asType(Dimensionless.class);
 //		System.out.println(d);
-		
-		System.out.println(Quantities.getQuantity(3.3, LITRE).toString());
-		System.out.println(Quantities.getQuantity(3.3, NANO(LITRE)).toString());
+		var l33 = Quantities.getQuantity(3.3, LITRE).toString();
+		System.out.println(l33);
+		var nl33 = Quantities.getQuantity(3.3, NANO(LITRE)).toString();
+		System.out.println(nl33);
 	}
 
 }

@@ -14,7 +14,7 @@
 		<module>common</module>
 		<!-- <module>common-java8</module> -->
 		<module>si</module>
-		<module>si-java8</module>
+		<module>si-java10</module>
 		<module>unicode</module>
 		<module>ucum</module>
 		<module>historical</module>
