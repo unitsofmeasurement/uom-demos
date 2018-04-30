@@ -12,10 +12,11 @@
 
 	<modules>
 		<module>common</module>
-		<!-- <module>common-java8</module> -->
+		<!--  module>common-java10</module -->
 		<module>si</module>
 		<module>si-java10</module>
 		<module>unicode</module>
+		<!--  module>unicode-java10</module -->
 		<module>ucum</module>
 		<module>historical</module>
 		<module>jscience</module>
