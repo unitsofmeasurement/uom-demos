@@ -23,7 +23,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo;
+package tech.uom.demo;
 
 import static tech.units.indriya.unit.Units.*;
 import static javax.measure.MetricPrefix.*;

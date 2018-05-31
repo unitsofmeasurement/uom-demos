@@ -1,6 +1,6 @@
 /*
- *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Unit-API - Units of Measurement API for Java
+ *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -23,17 +23,17 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo;
+package tech.uom.demo;
 
-import tech.uom.lib.common.util.SystemOfUnitsReporter;
+import static javax.measure.MetricPrefix.KILO;
 
-import javax.measure.spi.ServiceProvider;
+import tech.units.indriya.quantity.Quantities;
+import tech.units.indriya.unit.Units;
 
-public class SystemsDemo {
+public class PrefixDemo {
 	public static void main(String... args) {
-		for (var s : ServiceProvider.current().getSystemOfUnitsService().getAvailableSystemsOfUnits()) {
-			SystemOfUnitsReporter.of(s).report(true);
-			System.out.println();
-		}
+		var kg = KILO(Units.GRAM);
+		var mass = Quantities.getQuantity(50, kg);
+		System.out.println(mass);
 	}
 }

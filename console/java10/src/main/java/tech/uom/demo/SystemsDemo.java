@@ -1,6 +1,6 @@
 /*
- *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Units of Measurement Console Demos
+ *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -23,34 +23,17 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo;
+package tech.uom.demo;
 
-import static javax.measure.MetricPrefix.*;
-import static tech.units.indriya.unit.Units.*;
+import tech.uom.lib.common.util.SystemOfUnitsReporter;
 
-import tech.units.indriya.quantity.Quantities;
+import javax.measure.spi.ServiceProvider;
 
-public class UnitConverterDemo {
-
-	public static void main(String[] args) {
-		var sourceUnit = METRE;
-		var targetUnit = CENTI(METRE);
-		var converter = sourceUnit.getConverterTo(targetUnit);
-		double length1 = 4.0;
-		double length2 = 6.0;
-		double result1 = converter.convert(length1);
-		double result2 = converter.convert(length2);
-		System.out.println(result1);
-		System.out.println(result2);
-		var quantLength1 = Quantities.getQuantity(4.0, sourceUnit);
-		var quantLength2 = Quantities.getQuantity(6.0, targetUnit);
-		var quantResult1 = quantLength1.to(targetUnit);
-		System.out.println(quantResult1);
-		
-		double mass1 = 5.0;
-		double result3 = converter.convert(mass1); // does compile
-		System.out.println(result3);
-		var quantMass1 = Quantities.getQuantity(5.0, KILOGRAM);
-		//quantMass1.to(targetUnit); // won't compile
- 	}
+public class SystemsDemo {
+	public static void main(String... args) {
+		for (var s : ServiceProvider.current().getSystemOfUnitsService().getAvailableSystemsOfUnits()) {
+			SystemOfUnitsReporter.of(s).report(true);
+			System.out.println();
+		}
+	}
 }

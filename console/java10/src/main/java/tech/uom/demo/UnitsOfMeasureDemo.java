@@ -1,6 +1,6 @@
 /*
- *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+ * Units of Measurement Demos Java
+ * Copyright (c) 2005-2018, Jean-Marie Dautelle, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -10,7 +10,7 @@
  *
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363, Unit-API nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ * 3. Neither the name of JSR-385, Unit-API nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -23,17 +23,25 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo;
+package tech.uom.demo;
 
-import static javax.measure.MetricPrefix.KILO;
+import static javax.measure.MetricPrefix.NANO;
 
 import tech.units.indriya.quantity.Quantities;
 import tech.units.indriya.unit.Units;
 
-public class PrefixDemo {
+public class UnitsOfMeasureDemo {
 	public static void main(String... args) {
-		var kg = KILO(Units.GRAM);
-		var mass = Quantities.getQuantity(50, kg);
-		System.out.println(mass);
+
+		// "Seconds" should "be correctly converted to nanoseconds"
+		var ns = Units.SECOND.divide(1000000000.0);
+		System.out.println(ns);
+		var ns2 = NANO(Units.SECOND);
+		System.out.println(ns2);
+		var fiveSeconds = Quantities.getQuantity(5, Units.SECOND);
+		System.out.println(fiveSeconds);
+		var inNanos = fiveSeconds.to(ns2);
+		// inNanos.getValue.longValue() shouldBe 5000000000L
+		System.out.println(inNanos.getValue().longValue());
 	}
 }
