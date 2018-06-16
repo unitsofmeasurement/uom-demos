@@ -37,7 +37,7 @@ public class JScienceTemperatureDemo {
     Amount<Temperature> a2 = Amount.valueOf(1, KELVIN);
     System.out.println(a1);
     System.out.println(a2);
-    System.out.println(a1.plus(a2));
-    System.out.println(a2.plus(a1));
+    System.out.println(a1 + " + " + a2 + " = " + a1.plus(a2));
+    System.out.println(a2 + " + " + a1 + " = " + a2.plus(a1));
   }
 }
