@@ -9,8 +9,9 @@ Units of Measurement Demos
 The project currently contains the following modules:
 
 - [Console Demos](console)
-  - [RI based Console Demos](console/ri)
-  - [Java SE 8 Console Demos](console/se)
+  - [Basic Console Demos](console/basic)
+  - [Java 8 Console Demos](console/java8)
+  - [Java 10 Console Demos](console/java10)
 - [Device specific demos](device)
   - [Hello Edison for Intel Edison IoT Devices](device/edison/hello)
   - [Sensor Web Demos for Intel Edison IoT Devices](device/edison/sensorweb)
