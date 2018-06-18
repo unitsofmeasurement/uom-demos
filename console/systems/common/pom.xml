@@ -9,8 +9,9 @@
 	<artifactId>uom-console-demos-common</artifactId>
 	<dependencies>
 		<dependency>
-			<groupId>tech.units</groupId>
+			<groupId>tec.units</groupId>
 			<artifactId>indriya</artifactId>
+			<version>1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>systems.uom</groupId>
@@ -25,4 +26,5 @@
 			<artifactId>uom-lib-common</artifactId>
 		</dependency>
 	</dependencies>
+	<name>UoM Common Console Demos</name>
 </project>

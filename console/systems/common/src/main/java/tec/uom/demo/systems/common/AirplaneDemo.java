@@ -25,8 +25,8 @@
  */
 package tec.uom.demo.systems.common;
 
-import static tech.units.indriya.unit.Units.HOUR;
-import static tech.units.indriya.unit.Units.KILOMETRE_PER_HOUR;
+import static tec.units.indriya.unit.Units.HOUR;
+import static tec.units.indriya.unit.Units.KILOMETRE_PER_HOUR;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Length;
@@ -34,8 +34,8 @@ import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
 
 import systems.uom.common.USCustomary;
-import tech.units.indriya.AbstractQuantity;
-import tech.units.indriya.quantity.Quantities;
+import tec.units.indriya.AbstractQuantity;
+import tec.units.indriya.quantity.Quantities;
 
 /**
  * This is a simple example for an In-Flight Infotainment (IFI) system showing the plane's cruising speed or time to destination.

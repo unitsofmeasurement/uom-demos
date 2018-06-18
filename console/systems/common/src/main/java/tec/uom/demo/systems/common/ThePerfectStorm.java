@@ -33,9 +33,9 @@ import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPIC
 import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_STORM;
 import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TWO;
 import static javax.measure.MetricPrefix.KILO;
-import static tech.units.indriya.unit.Units.METRE;
+import static tec.units.indriya.unit.Units.METRE;
 import static systems.uom.common.USCustomary.MILE_PER_HOUR;
-import static tech.units.indriya.unit.Units.KILOMETRE_PER_HOUR;
+import static tec.units.indriya.unit.Units.KILOMETRE_PER_HOUR;
 
 import javax.measure.Quantity;
 //import javax.measure.quantity.Energy;
@@ -43,8 +43,8 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
 
-import tech.units.indriya.format.SimpleUnitFormat;
-import tech.units.indriya.quantity.Quantities;
+import tec.units.indriya.format.SimpleUnitFormat;
+import tec.units.indriya.quantity.Quantities;
 import tec.uom.demo.types.SaffirSimpsonHurricaneWindScale;
 
 /**

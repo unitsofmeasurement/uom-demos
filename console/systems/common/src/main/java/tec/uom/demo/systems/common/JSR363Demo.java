@@ -27,7 +27,7 @@ package tec.uom.demo.systems.common;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.*;
-import tech.units.indriya.quantity.NumberQuantity;
+import tec.units.indriya.quantity.NumberQuantity;
 
 import static si.uom.SI.*;
 import static systems.uom.common.USCustomary.METER;

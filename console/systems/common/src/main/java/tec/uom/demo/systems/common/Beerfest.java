@@ -37,7 +37,7 @@ import javax.measure.quantity.Volume;
 
 import systems.uom.common.Imperial;
 import systems.uom.common.USCustomary;
-import tech.units.indriya.quantity.Quantities;
+import tec.units.indriya.quantity.Quantities;
 
 public class Beerfest {
 

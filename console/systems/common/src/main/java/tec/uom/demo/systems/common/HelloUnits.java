@@ -32,9 +32,9 @@ import javax.measure.quantity.Mass;
 
 import si.uom.SI;
 import systems.uom.common.USCustomary;
-import tech.units.indriya.AbstractQuantity;
-import tech.units.indriya.quantity.NumberQuantity;
-import tech.units.indriya.quantity.Quantities;
+import tec.units.indriya.AbstractQuantity;
+import tec.units.indriya.quantity.NumberQuantity;
+import tec.units.indriya.quantity.Quantities;
 
 /**
  * This is a back-port of UOMo HelloUnits to prove similar behavior, especially

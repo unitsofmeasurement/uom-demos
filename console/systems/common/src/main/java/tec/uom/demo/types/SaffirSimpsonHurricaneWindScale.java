@@ -26,12 +26,12 @@
 package tec.uom.demo.types;
 
 import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.*;
-import static tech.units.indriya.AbstractQuantity.NONE;
+import static tec.units.indriya.AbstractQuantity.NONE;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Speed;
 
-import tech.units.indriya.quantity.QuantityRange;
+import tec.units.indriya.quantity.QuantityRange;
 import tec.uom.lib.common.function.Nameable;
 
 /**

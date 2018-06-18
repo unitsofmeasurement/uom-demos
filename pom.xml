@@ -35,8 +35,8 @@
 		<ri.version>2.0-SNAPSHOT</ri.version>
 		<se.version>1.0.9</se.version>
 		<lib.version>2.0-SNAPSHOT</lib.version>
-		<si.version>0.8</si.version>
-		<systems.version>0.8-SNAPSHOT</systems.version>
+		<si.version>0.9</si.version>
+		<systems.version>0.9</systems.version>
 	</properties>
 
 	<dependencyManagement>
@@ -99,7 +99,7 @@
 							<Specification-Title>Units of Measurement Demos</Specification-Title>
 							<Specification-Version>${project.version}</Specification-Version>
 							<Specification-Vendor>${project.organization.name}</Specification-Vendor>
-							<Implementation-Vendor>Unit-API contributors</Implementation-Vendor>
+							<Implementation-Vendor>Units of Measurement contributors</Implementation-Vendor>
 							<Implementation-URL>${project.organization.url}</Implementation-URL>
 						</manifestEntries>
 					</archive>

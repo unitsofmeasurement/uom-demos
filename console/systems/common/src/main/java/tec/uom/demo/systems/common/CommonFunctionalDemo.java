@@ -4,8 +4,8 @@ import javax.measure.Quantity;
 import javax.measure.quantity.Length;
 
 import systems.uom.common.USCustomary;
-import tech.units.indriya.quantity.NumberQuantity;
-import tech.units.indriya.unit.Units;
+import tec.units.indriya.quantity.NumberQuantity;
+import tec.units.indriya.unit.Units;
 
 public class CommonFunctionalDemo {
 

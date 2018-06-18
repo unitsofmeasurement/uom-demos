@@ -68,8 +68,8 @@
 		</pluginManagement>
 	</build>
 	<modules>
-		<module>ri</module>
-		<module>se</module>
+		<module>basic</module>
+		<module>java8</module>
 		<module>java10</module>
 		<module>systems</module>
 	</modules>

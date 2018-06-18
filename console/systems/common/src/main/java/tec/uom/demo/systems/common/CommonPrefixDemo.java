@@ -11,9 +11,9 @@ import javax.measure.quantity.Mass;
 import javax.measure.quantity.Volume;
 
 import systems.uom.common.IndianPrefix;
-import tech.units.indriya.format.SimpleUnitFormat;
-import tech.units.indriya.quantity.Quantities;
-import tech.units.indriya.unit.Units;
+import tec.units.indriya.format.SimpleUnitFormat;
+import tec.units.indriya.quantity.Quantities;
+import tec.units.indriya.unit.Units;
 
 public class CommonPrefixDemo {
 	public static void main(String... args) {

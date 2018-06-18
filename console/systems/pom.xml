@@ -71,4 +71,5 @@
             </dependency>
 		</dependencies>
 	</dependencyManagement>
+	<name>System Specific Units of Measurement Console Demos</name>
 </project>
