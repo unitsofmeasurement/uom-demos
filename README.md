@@ -12,11 +12,12 @@ The project currently contains the following modules:
   - [Basic Console Demos](console/basic)
   - [Java 8 Console Demos](console/java8)
   - [Java 10 Console Demos](console/java10)
-- [Device specific demos](device)
+- [System Specific demos](console/systems)
+- [Device Specific demos](device)
   - [Hello Edison for Intel Edison IoT Devices](device/edison/hello)
   - [Sensor Web Demos for Intel Edison IoT Devices](device/edison/sensorweb)
   - [Device I/O for for Intel Edison IoT Devices](device/edison/dio) **TBD**
-- [Domain specific demos](domain)
+- [Domain Specific demos](domain)
 - [JavaFX Demos](javafx)
  - [FXlib Demo Application](javafx/fxlib)
 - [Java ME 8 Demos](javame) **Currently not Maven enabled, require Eclipse or NetBeans IDE**
