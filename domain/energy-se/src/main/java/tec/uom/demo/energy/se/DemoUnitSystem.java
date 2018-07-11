@@ -27,6 +27,8 @@ package tec.uom.demo.energy.se;
 
 import static tec.uom.se.unit.MetricPrefix.*;
 
+import java.util.Objects;
+
 import javax.measure.Unit;
 import javax.measure.quantity.Energy;
 
@@ -84,5 +86,16 @@ public final class DemoUnitSystem extends AbstractSystemOfUnits {
 	static {
 		SimpleUnitFormat.getInstance().label(WATTHOUR, "Wh");
 		SimpleUnitFormat.getInstance().label(KILO(WATTHOUR), "KWh");
+	}
+	
+	// In future versions of Indriya this will be in the abstract base class
+	@Override
+	@Deprecated
+	public Unit<?> getUnit(String string) {
+		Objects.requireNonNull(string);
+		return this.getUnits().stream()
+	              .filter((u) -> string.equals(u.toString()))
+	              .findAny()
+	              .orElse(null);
 	}
 }

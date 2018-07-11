@@ -28,6 +28,8 @@ package tec.uom.demo.types;
 import static systems.uom.common.Imperial.PINT;
 import static tec.units.indriya.unit.Units.LITRE;
 
+import java.util.Objects;
+
 import javax.measure.Unit;
 import javax.measure.quantity.Volume;
 
@@ -43,7 +45,7 @@ import tec.units.indriya.format.SimpleUnitFormat;
  * @noextend This class is not intended to be extended by clients.
  * 
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.1, $Date: 2016-04-17 $
+ * @version 0.2, $Date: 2018-07-11 $
  * @see <a href="http://www.bier-entdecken.de/chubel/">Ich hätte gern ein Chübel</a>
  * @see <a href="https://en.wikipedia.org/wiki/Ma%C3%9F">Wikipedia:
  *      Maß</a>
@@ -105,5 +107,16 @@ public final class BeerUnits extends AbstractSystemOfUnits {
 	static {
 		SimpleUnitFormat.getInstance().label(SCHOPPEN_BAYERN, "sch");
 		SimpleUnitFormat.getInstance().label(MASS_HISTORIC, "mas");
+	}
+
+	// In future versions of Indriya this will be in the abstract base class
+	@Override
+	@Deprecated
+	public Unit<?> getUnit(String string) {
+		Objects.requireNonNull(string);
+		return this.getUnits().stream()
+	              .filter((u) -> string.equals(u.toString()))
+	              .findAny()
+	              .orElse(null);
 	}
 }
