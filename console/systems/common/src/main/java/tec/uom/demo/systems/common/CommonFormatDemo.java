@@ -26,20 +26,38 @@
 package tec.uom.demo.systems.common;
 
 import javax.measure.Unit;
-import javax.measure.spi.ServiceProvider;
-import javax.measure.spi.SystemOfUnits;
-
+import javax.measure.format.UnitFormat;
+import javax.measure.quantity.*;
 import systems.uom.common.USCustomary;
 import tec.units.indriya.format.SimpleUnitFormat;
-import tec.uom.lib.common.util.SystemOfUnitsReporter;
+import tec.units.indriya.format.EBNFUnitFormat;
+import tec.units.indriya.unit.Units;
 
 public class CommonFormatDemo {
 	public static void main(String... args) {
+		UnitFormat ebnf = EBNFUnitFormat.getInstance();
 	    SimpleUnitFormat.getInstance().alias(USCustomary.MILE, "mile");
 	    
 	    Unit u = SimpleUnitFormat.getInstance().parse("mile");
 	    System.out.println(u);
 	    Unit v = SimpleUnitFormat.getInstance().parse("mi");
 	    System.out.println(v);
+	    
+	    Unit<Force> lbf = Units.NEWTON.multiply(4.4482216152605); // pound-force
+	    Unit<Area> sqin = USCustomary.INCH.pow(2).asType(Area.class); // square inch
+	    Unit<Pressure> psi = lbf.divide(sqin).asType(Pressure.class); // pound-force per square inch
+	    System.out.println("Pounds per square inch: " + psi);
+	    SimpleUnitFormat.getInstance().label(psi, "psi");
+	    System.out.println("Pounds per square inch: " + psi);
+	    System.out.println("Square psi: " + psi.pow(2));
+	    System.out.println("Square psi (EBNF): " + ebnf.format(psi.pow(2)));
+	    System.out.println();
+
+	    Unit<Pressure> another_psi = Units.NEWTON.multiply(6895).divide(Units.SQUARE_METRE).asType(Pressure.class);
+	    System.out.println("Pounds per square inch: " + another_psi);
+	    SimpleUnitFormat.getInstance().label(another_psi, "psi");
+	    System.out.println("Pounds per square inch: " + another_psi);
+	    System.out.println("Square psi: " + another_psi.pow(2));
+	    System.out.println("Square psi (EBNF): " + ebnf.format(another_psi.pow(2)));
 	}
 }
