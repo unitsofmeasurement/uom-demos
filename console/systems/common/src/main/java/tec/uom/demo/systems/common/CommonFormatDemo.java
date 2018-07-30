@@ -42,7 +42,8 @@ public class CommonFormatDemo {
 	    System.out.println(u);
 	    Unit v = SimpleUnitFormat.getInstance().parse("mi");
 	    System.out.println(v);
-	    
+	    System.out.println();
+
 	    Unit<Force> lbf = Units.NEWTON.multiply(4.4482216152605); // pound-force
 	    Unit<Area> sqin = USCustomary.INCH.pow(2).asType(Area.class); // square inch
 	    Unit<Pressure> psi = lbf.divide(sqin).asType(Pressure.class); // pound-force per square inch
