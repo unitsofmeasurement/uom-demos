@@ -1,23 +1,18 @@
 package tec.uom.demo.systems.ucum;
 
-import javax.measure.Quantity;
+import static systems.uom.ucum.UCUM.*;
+
 import javax.measure.Unit;
 import javax.measure.UnitConverter;
 import javax.measure.format.UnitFormat;
-import javax.measure.quantity.Frequency;
-import javax.measure.quantity.Mass;
+import javax.measure.quantity.Pressure;
 import javax.measure.quantity.Volume;
 import javax.measure.spi.ServiceProvider;
 
-import systems.uom.ucum.UCUM;
-import systems.uom.ucum.format.UCUMFormat;
-import systems.uom.ucum.format.UCUMFormat.Variant;
+import tec.uom.se.format.SimpleUnitFormat;
 import tec.uom.se.format.EBNFUnitFormat;
-import tec.uom.se.quantity.Quantities;
 import tec.uom.se.unit.MetricPrefix;
 import tec.uom.se.unit.Units;
-import static systems.uom.ucum.UCUM.ATOMIC_MASS_UNIT;
-import static tec.uom.se.unit.MetricPrefix.KILO;
 
 public class UCUMFormatDemo {
 
@@ -25,7 +20,7 @@ public class UCUMFormatDemo {
 	final UnitFormat unitFormat = ServiceProvider.current().getUnitFormatService().getUnitFormat("CI");
 	final Unit<Volume> microliter = MetricPrefix.MICRO(Units.LITRE);
 	System.out.println(unitFormat.format(microliter)); // prints "nst"!
-	UnitConverter conv = microliter.getConverterTo(UCUM.STERE);
+	UnitConverter conv = microliter.getConverterTo(STERE);
 	System.out.println(conv);
 	UnitConverter conv2 = microliter.getConverterTo(Units.CUBIC_METRE);
 	System.out.println(conv);
@@ -39,5 +34,29 @@ public class UCUMFormatDemo {
 	
 	final Unit<?> invKelvin = unitFormat.parse("1/K");
 	System.out.println(invKelvin);
+	System.out.println();
+	 
+	final UnitFormat ebnf = EBNFUnitFormat.getInstance();
+	final UnitFormat unitFormat3 = ServiceProvider.current().getUnitFormatService().getUnitFormat("Print");
+
+    //Unit<Force> lbf = Units.NEWTON.multiply(4.4482216152605); // pound-force
+    //Unit<Area> sqin = USCustomary.INCH.pow(2).asType(Area.class); // square inch
+    Unit<Pressure> psi = POUND_FORCE.divide(SQUARE_INCH_INTERNATIONAL).asType(Pressure.class); // pound-force per square inch
+    System.out.println("Pounds per square inch: " + psi);
+    SimpleUnitFormat.getInstance().label(psi, "psi");
+    System.out.println("Pounds per square inch: " + psi);
+    System.out.println("Square psi: " + psi.pow(2));
+    System.out.println("Square psi (EBNF): " + ebnf.format(psi.pow(2)));
+    System.out.println("Square psi (UCUM): " + unitFormat3.format(psi.pow(2)));
+    System.out.println();
+
+    Unit<Pressure> another_psi = Units.NEWTON.multiply(6895).divide(Units.SQUARE_METRE).asType(Pressure.class);
+    System.out.println("Pounds per square inch: " + another_psi);
+    SimpleUnitFormat.getInstance().label(another_psi, "psi");
+    System.out.println("Pounds per square inch: " + another_psi);
+    System.out.println("Square psi: " + another_psi.pow(2));
+    System.out.println("Square psi (EBNF): " + ebnf.format(another_psi.pow(2)));
+    System.out.println("Square psi (UCUM): " + unitFormat3.format(another_psi.pow(2)));
+
     }
 }
