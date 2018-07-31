@@ -48,6 +48,17 @@ public class UCUMFormatDemo {
     System.out.println("Square psi: " + psi.pow(2));
     System.out.println("Square psi (EBNF): " + ebnf.format(psi.pow(2)));
     System.out.println("Square psi (UCUM): " + unitFormat3.format(psi.pow(2)));
+    System.out.println("Square psi (UCUM CS): " + unitFormat2.format(psi.pow(2)));
+    Unit u1 = SimpleUnitFormat.getInstance().parse("psi^2");
+    System.out.println("Square psi parsed: " + u1);
+    u1 = SimpleUnitFormat.getInstance().parse("psi²");
+    System.out.println("Square psi parsed (Unicode): " + u1);
+    u1 = ebnf.parse("psi^2");
+    System.out.println("Square psi parsed (EBNF): " + u1);
+    u1 = ebnf.parse("g_n²·lb_av²/in_i⁴");
+    System.out.println("Square psi parsed (EBNF 2): " + u1);
+    u1 = unitFormat2.parse("[g]2.[lb_av]2/[in_i]4");
+    System.out.println("Square psi parsed (UCUM CS): " + u1);
     System.out.println();
 
     Unit<Pressure> another_psi = Units.NEWTON.multiply(6895).divide(Units.SQUARE_METRE).asType(Pressure.class);
