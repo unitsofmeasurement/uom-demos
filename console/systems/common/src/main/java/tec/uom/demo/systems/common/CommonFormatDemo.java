@@ -52,6 +52,11 @@ public class CommonFormatDemo {
 	    System.out.println("Pounds per square inch: " + psi);
 	    System.out.println("Square psi: " + psi.pow(2));
 	    System.out.println("Square psi (EBNF): " + ebnf.format(psi.pow(2)));
+	    Unit u1 = SimpleUnitFormat.getInstance().parse("psi^2");
+	    System.out.println("Square psi parsed: " + u1);
+	    u1 = SimpleUnitFormat.getInstance().parse("psi²");
+	    System.out.println("Square psi parsed (Unicode): " + u1);
+	    //u1 = ebnf.parse("psi^2");
 	    System.out.println();
 
 	    Unit<Pressure> another_psi = Units.NEWTON.multiply(6895).divide(Units.SQUARE_METRE).asType(Pressure.class);
