@@ -53,6 +53,7 @@ public class UCUMFormatDemo {
     System.out.println("Square psi parsed: " + u1);
     u1 = SimpleUnitFormat.getInstance().parse("psi²");
     System.out.println("Square psi parsed (Unicode): " + u1);
+    //u1 = SimpleUnitFormat.getInstance().parse("lb²·(m/s²)*9.80665²/c(cm*254.0)^4");
     u1 = ebnf.parse("psi^2");
     System.out.println("Square psi parsed (EBNF): " + u1);
     u1 = ebnf.parse("g_n²·lb_av²/in_i⁴");
