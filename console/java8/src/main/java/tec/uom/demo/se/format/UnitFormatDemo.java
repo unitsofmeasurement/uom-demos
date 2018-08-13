@@ -84,6 +84,8 @@ public class UnitFormatDemo {
 //		System.out.println(v);
 //		Unit v = EBNFUnitFormat.getInstance().parse("kW");
 //		System.out.println(v);
+		Unit u2 = LocalUnitFormat.getInstance().parse("m");
+		System.out.println(u2);
 	}
 
 }

@@ -34,6 +34,7 @@ import javax.measure.format.UnitFormat;
 import javax.measure.spi.ServiceProvider;
 
 import tech.units.indriya.AbstractUnit;
+import tech.units.indriya.format.LocalUnitFormat;
 
 public class UnitFormatDemo {
 
@@ -61,6 +62,12 @@ public class UnitFormatDemo {
 //		Unit u = ServiceProvider.current().getUnitFormatService().getUnitFormat().parse("1/l");
 		Unit u = ServiceProvider.current().getUnitFormatService().getUnitFormat().parse("g/l");
 		System.out.println(u);
+		
+//		Unit u1 = format.parse("m*");
+//		System.out.println(u1);
+		
+		Unit u2 = LocalUnitFormat.getInstance().parse("m");
+		System.out.println(u2);
 	}
 
 }
