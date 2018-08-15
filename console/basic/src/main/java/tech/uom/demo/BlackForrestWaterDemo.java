@@ -1,6 +1,6 @@
 /*
- *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ * Units of Measurement Demos for Java
+ * Copyright (c) 2005-2018, Jean-Marie Dautelle, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -43,5 +43,4 @@ public class BlackForrestWaterDemo {
 		Quantity<?> density = mass.divide(volume);
 		System.out.println("Natrium: " + density);
 	}
-
 }
