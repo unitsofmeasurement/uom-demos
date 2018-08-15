@@ -1,5 +1,5 @@
 /*
- *  Units of Measurement Demos for Java
+ *  Units of Measurement Console Demos
  *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
@@ -23,24 +23,18 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.spi;
+package tech.uom.demo.spi;
 
-import javax.measure.Unit;
+import tech.uom.lib.common.util.SystemOfUnitsReporter;
+
+import javax.measure.spi.ServiceProvider;
 import javax.measure.spi.SystemOfUnits;
-
-import tech.units.indriya.unit.Units;
 
 public class SystemsDemo {
 	public static void main(String... args) {
-		SystemOfUnits sou = Units.getInstance();
-		testSoU(sou);
-	}
-	
-	// TODO move this in a generalized form to uom-lib-common
-	private static void testSoU(final SystemOfUnits sou) {
-		System.out.println("Testing " + sou.getName());
-		for (Unit<?> u : sou.getUnits()) {
-			System.out.println(u.getName() + "; " + u.getSymbol() + "; " + u);
+		for (SystemOfUnits s : ServiceProvider.current().getSystemOfUnitsService().getAvailableSystemsOfUnits()) {
+			SystemOfUnitsReporter.of(s).report(true);
+			System.out.println();
 		}
 	}
 }

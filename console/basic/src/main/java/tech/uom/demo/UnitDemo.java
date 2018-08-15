@@ -1,6 +1,6 @@
 /*
- *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Unit-API - Units of Measurement API for Java
+ *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -23,18 +23,46 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo;
+package tech.uom.demo;
 
-import tech.uom.lib.common.util.SystemOfUnitsReporter;
+import static javax.measure.MetricPrefix.NANO;
+import static tech.units.indriya.unit.Units.LITRE;
 
-import javax.measure.spi.ServiceProvider;
-import javax.measure.spi.SystemOfUnits;
+import javax.measure.Unit;
+import javax.measure.quantity.Speed;
 
-public class SystemsDemo {
-	public static void main(String... args) {
-		for (SystemOfUnits s : ServiceProvider.current().getSystemOfUnitsService().getAvailableSystemsOfUnits()) {
-			SystemOfUnitsReporter.of(s).report(true);
-			System.out.println();
-		}
+import tech.units.indriya.quantity.Quantities;
+import javax.measure.MetricPrefix;
+import tech.units.indriya.unit.Units;
+
+public class UnitDemo {
+
+	public static void main(String[] args) {
+		Unit<Speed> kmh = MetricPrefix.KILO(Units.METRE).divide(Units.HOUR).asType(Speed.class);
+//		Unit<Velocity> kmh2 = SIPrefix.KILO(Units.METRE).multiply(UCUM.HOUR).asType(Velocity.class);
+		Unit<?> kmh3 = MetricPrefix.KILO(Units.METRE).multiply(Units.HOUR);
+		
+		System.out.println(kmh);
+//		System.out.println(kmh2);
+		System.out.println(kmh3);
+		
+//		System.out.println(UCUM.POUND);
+//		System.out.println(UCUM.POUND.getSymbol());
+//		System.out.println(UCUM.POUND.getName());
+		
+		System.out.println(Units.KILOGRAM);
+		System.out.println(Units.KILOGRAM.getSymbol());
+		System.out.println(Units.KILOGRAM.getName());
+		
+		System.out.println(Units.GRAM);
+		System.out.println(Units.GRAM.getSymbol());
+		System.out.println(Units.GRAM.getName());
+		
+//		Unit<Dimensionless> d = Units.METRE.asType(Dimensionless.class);
+//		System.out.println(d);
+		
+		System.out.println(Quantities.getQuantity(3.3, LITRE).toString());
+		System.out.println(Quantities.getQuantity(3.3, NANO(LITRE)).toString());
 	}
+
 }

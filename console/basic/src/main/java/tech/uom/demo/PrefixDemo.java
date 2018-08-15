@@ -1,6 +1,6 @@
 /*
- *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2017, Werner Keil and others.
+ *  Unit-API - Units of Measurement API for Java
+ *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -23,47 +23,21 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo;
+package tech.uom.demo;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import static javax.measure.MetricPrefix.KILO;
 
-import tech.units.indriya.ComparableQuantity;
+import javax.measure.Quantity;
+import javax.measure.Unit;
+import javax.measure.quantity.Mass;
+
 import tech.units.indriya.quantity.Quantities;
 import tech.units.indriya.unit.Units;
 
-public class SerialDemo {
-	public static void main(String[] args) throws IOException,
-			ClassNotFoundException {
-		byte[] serialized = serialize(Quantities.getQuantity(1, Units.JOULE));
-		Object obj = deserialize(serialized);
-		ComparableQuantity<?> quantity = (ComparableQuantity<?>) obj;
-		System.out.println(quantity);
-		
-		serialized = serialize(Quantities.getQuantity(1, Units.HOUR));
-		obj = deserialize(serialized);
-		quantity = (ComparableQuantity<?>)obj;
-		System.out.println(quantity);
-	}
-
-	static Object deserialize(byte[] serialized) throws IOException,
-			ClassNotFoundException {
-		ByteArrayInputStream bis = new ByteArrayInputStream(serialized);
-		ObjectInputStream ois = new ObjectInputStream(bis);
-		Object obj = ois.readObject();
-		ois.close();
-		return obj;
-	}
-
-	static byte[] serialize(ComparableQuantity<?> quantity)
-			throws IOException {
-		ByteArrayOutputStream bos = new ByteArrayOutputStream();
-		ObjectOutputStream oos = new ObjectOutputStream(bos);
-		oos.writeObject(quantity);
-		bos.close();
-		return bos.toByteArray();
+public class PrefixDemo {
+	public static void main(String... args) {
+		Unit<Mass> kg = KILO(Units.GRAM);
+		Quantity<Mass> mass = Quantities.getQuantity(50, kg);
+		System.out.println(mass);
 	}
 }

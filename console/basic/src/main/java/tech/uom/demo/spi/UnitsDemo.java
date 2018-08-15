@@ -1,6 +1,6 @@
 /*
- *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Units of Measurement Demos for Java
+ *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -23,21 +23,24 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo;
+package tech.uom.demo.spi;
 
-import static javax.measure.MetricPrefix.KILO;
-
-import javax.measure.Quantity;
 import javax.measure.Unit;
-import javax.measure.quantity.Mass;
+import javax.measure.spi.SystemOfUnits;
 
-import tech.units.indriya.quantity.Quantities;
 import tech.units.indriya.unit.Units;
 
-public class PrefixDemo {
+public class UnitsDemo {
 	public static void main(String... args) {
-		Unit<Mass> kg = KILO(Units.GRAM);
-		Quantity<Mass> mass = Quantities.getQuantity(50, kg);
-		System.out.println(mass);
+		SystemOfUnits sou = Units.getInstance();
+		testSoU(sou);
+	}
+	
+	// TODO move this in a generalized form to uom-lib-common
+	private static void testSoU(final SystemOfUnits sou) {
+		System.out.println("Testing " + sou.getName());
+		for (Unit<?> u : sou.getUnits()) {
+			System.out.println(u.getName() + "; " + u.getSymbol() + "; " + u);
+		}
 	}
 }
