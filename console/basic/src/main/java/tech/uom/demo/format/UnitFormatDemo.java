@@ -27,13 +27,14 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.format;
+package tech.uom.demo.format;
 
 import javax.measure.Unit;
 import javax.measure.format.UnitFormat;
 import javax.measure.spi.ServiceProvider;
 
 import tech.units.indriya.AbstractUnit;
+import tech.units.indriya.format.EBNFUnitFormat;
 import tech.units.indriya.format.LocalUnitFormat;
 
 public class UnitFormatDemo {
@@ -66,8 +67,11 @@ public class UnitFormatDemo {
 //		Unit u1 = format.parse("m*");
 //		System.out.println(u1);
 		
-		Unit u2 = LocalUnitFormat.getInstance().parse("m");
+		Unit u2 = EBNFUnitFormat.getInstance().parse("m*");
 		System.out.println(u2);
+		
+		Unit u3 = LocalUnitFormat.getInstance().parse("m");
+		System.out.println(u3);
 	}
 
 }
