@@ -67,11 +67,11 @@ public class UnitFormatDemo {
 //		Unit u1 = format.parse("m*");
 //		System.out.println(u1);
 		
-		Unit u2 = EBNFUnitFormat.getInstance().parse("m*");
+		Unit u2 = EBNFUnitFormat.getInstance().parse("m-");
 		System.out.println(u2);
-		
-		Unit u3 = LocalUnitFormat.getInstance().parse("m");
-		System.out.println(u3);
+//		
+//		Unit u3 = LocalUnitFormat.getInstance().parse("m");
+//		System.out.println(u3);
 	}
 
 }
