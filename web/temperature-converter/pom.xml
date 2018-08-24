@@ -15,7 +15,7 @@
 	<parent>
 		<groupId>tec.uom.demo.web</groupId>
 		<artifactId>uom-web-demos</artifactId>
-		<version>2.0-SNAPSHOT</version>
+		<version>2.0-EDR</version>
 	</parent>
 	<groupId>org.jboss.as.quickstarts</groupId>
 	<artifactId>jboss-as-temperature-converter</artifactId>
