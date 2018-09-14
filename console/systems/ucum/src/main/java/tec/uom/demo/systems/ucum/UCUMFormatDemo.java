@@ -68,12 +68,6 @@ public class UCUMFormatDemo {
     System.out.println("Pounds per square inch: " + another_psi);
     System.out.println("Square psi: " + another_psi.pow(2));
     System.out.println("Square psi (EBNF): " + ebnf.format(another_psi.pow(2)));
-    System.out.println("Square psi (UCUM): " + ucumFormatPrint.format(another_psi.pow(2)));
-
-    //System.out.println("Square m (EBNF): " + ebnf.parse("m^2"));
-    final UnitFormat f = ServiceProvider.current().getUnitFormatService().getUnitFormat("Simple");
-    System.out.println("Square m: " + f.parse("m^2"));
-
-    
+    System.out.println("Square psi (UCUM): " + ucumFormatPrint.format(another_psi.pow(2)));    
     }
 }

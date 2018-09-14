@@ -8,7 +8,7 @@ public class UCUMServiceDemo {
 
     public static void main(String[] args) {
         for (ServiceProvider provider : ServiceProvider.available()) {
-            System.out.println(String.valueOf(provider));
+            System.out.println(String.valueOf(provider.getClass().getSimpleName()));
         }
         
         System.out.println();
@@ -25,5 +25,16 @@ public class UCUMServiceDemo {
     	System.out.println(cs);
     	Unit<?> unit = cs.parse("m/s");
     	System.out.println(unit);
+    	
+        //System.out.println("Square m (EBNF): " + ebnf.parse("m^2"));
+    	ServiceProvider defaultProvider = ServiceProvider.current();
+        for (ServiceProvider provider : ServiceProvider.available()) {
+            if ("DefaultServiceProvider".equals(provider.getClass().getSimpleName())) {
+                defaultProvider = provider;
+                break;
+            }
+        }
+        final UnitFormat f = defaultProvider.getUnitFormatService().getUnitFormat();
+        System.out.println("Square m: " + f.parse("m^2"));
     }
 }
