@@ -14,6 +14,7 @@ public class RoundTripDemo {
         Unit<?> parsed = format.parse(unit);
         String formatted = format.format(parsed);
         System.out.println("Formatted version: " + formatted);
+        // FIXME why does EBNFUnitFormat render "µmol·/m²" ?
         UnitFormat format2 = EBNFUnitFormat.getInstance();
         Unit<?> parsed2 = format2.parse(formatted);
     }
