@@ -23,7 +23,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.systems.ucum;
+package tech.uom.demo.systems.ucum;
 
 import javax.measure.Unit;
 import javax.measure.format.UnitFormat;

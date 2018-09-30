@@ -1,4 +1,4 @@
-package tec.uom.demo.systems.ucum;
+package tech.uom.demo.systems.ucum;
 
 import javax.measure.Unit;
 import javax.measure.format.UnitFormat;

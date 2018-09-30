@@ -1,6 +1,6 @@
 /*
  *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2017, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -27,33 +27,37 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.systems.unicode;
+package tech.uom.demo.systems.unicode;
 
+import javax.measure.Quantity;
 import javax.measure.Unit;
-import javax.measure.format.UnitFormat;
-import javax.measure.spi.ServiceProvider;
+import javax.measure.quantity.Length;
+import javax.measure.quantity.Mass;
 
 import systems.uom.quantity.Information;
-import tech.units.indriya.AbstractUnit;
-import tech.units.indriya.format.SimpleUnitFormat;
+import tech.units.indriya.quantity.Quantities;
+import tech.units.indriya.unit.Units;
+import static systems.uom.unicode.CLDR.*;
 
-public class CLDRFormatDemo {
+public class CLDRDemo {
     public static void main(String[] args) {
-	ServiceProvider.current().getSystemOfUnitsService().getSystemOfUnits("CLDR");
-//	Unit test = BYTE; // To initialize the system (lazy loading, otherwise Format is not updated)
-	Unit x = AbstractUnit.parse("B");
-	System.out.println(x);
+	Quantity<Mass> carat = Quantities.getQuantity(100, CARAT);
+	System.out.println(carat);
+	Quantity<Mass> caratsInKg = carat.to(Units.KILOGRAM);
+	System.out.println(caratsInKg);
 
-	Unit y = AbstractUnit.parse("N");
-	System.out.println(y);
+	Quantity<Information> bit = Quantities.getQuantity(20, BIT);
+	System.out.println(bit);
+	Quantity<Information> bytes = bit.to(BYTE);
+	System.out.println(bytes);
+
+	Unit pressure = Units.PASCAL;
+	System.out.println(pressure);
 	
-        UnitFormat unitFormat = SimpleUnitFormat.getInstance();
-        Unit<Information> bit = unitFormat.parse("bit").asType(Information.class);
-        System.out.println(bit);
-        
-        Unit<Information> byteU = unitFormat.parse("byte").asType(Information.class);
-        System.out.println(byteU);
-//        System.out.println(BYTE.equals(byteU));
+//	Quantity<InformationRate> bps = Quantities.getQuantity(10, BIT_PER_SECOND);
+//	System.out.println(bps);
+	
+	Quantity<Length> len = Quantities.getQuantity(10, PARSEC);
+	System.out.println(len);
     }
-
 }
