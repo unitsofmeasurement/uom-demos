@@ -19,6 +19,7 @@
 		<!--  module>unicode-java10</module -->
 		<module>ucum</module>
 		<module>ucum-java8</module>
+		<!--  module>ucum-java10</module -->
 		<module>historical</module>
 		<module>jscience</module>
 	</modules>
