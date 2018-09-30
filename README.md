@@ -27,7 +27,8 @@ The project currently contains the following modules:
   - [Spark Sensor Web API Demo](web/sparkdemo)
   - [Improved JBoss Temperature Converter](web/temperature-converter)
 
-
+Planning
+-------------------------------------
 [![Stories in Ready](https://badge.waffle.io/unitsofmeasurement/uom-demos.png?label=ready&title=Ready)](https://waffle.io/unitsofmeasurement/uom-demos)
 
 [![Throughput Graph](https://graphs.waffle.io/unitsofmeasurement/uom-demos/throughput.svg)](https://waffle.io/unitsofmeasurement/uom-demos/metrics)
