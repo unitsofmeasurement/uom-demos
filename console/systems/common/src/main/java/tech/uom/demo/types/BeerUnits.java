@@ -23,7 +23,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.types;
+package tech.uom.demo.types;
 
 import static systems.uom.common.Imperial.PINT;
 import static tec.units.indriya.unit.Units.LITRE;

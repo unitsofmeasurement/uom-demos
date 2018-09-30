@@ -1,4 +1,4 @@
-package tec.uom.demo.systems.common;
+package tech.uom.demo.systems.common;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Length;

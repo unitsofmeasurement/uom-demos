@@ -1,5 +1,5 @@
 /*
- *  Units of Measurement Console Demos
+ *  Units of Measurement Demos for Java
  *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
@@ -23,18 +23,29 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.systems.common;
+package tech.uom.demo.systems.common;
 
-import javax.measure.spi.ServiceProvider;
-import javax.measure.spi.SystemOfUnits;
+import javax.measure.Quantity;
+import javax.measure.quantity.*;
+import tec.units.indriya.quantity.NumberQuantity;
 
-import tec.uom.lib.common.util.SystemOfUnitsReporter;
+import static si.uom.SI.*;
+import static systems.uom.common.USCustomary.METER;
+import static systems.uom.common.USCustomary.MILE;
+import static javax.measure.MetricPrefix.*;
 
-public class CommonDemo {
-	public static void main(String... args) {
-		for (SystemOfUnits s : ServiceProvider.current().getSystemOfUnitsService().getAvailableSystemsOfUnits()) {
-			SystemOfUnitsReporter.of(s).report();
-			System.out.println();
-		}
-	}
+public class JSR363Demo {
+  public static void main(String[] args) {
+    // Conversion between units.
+    System.out.println(KILO(METER).getConverterTo(MILE).convert(10.0));
+    // Retrieval of the system unit (identifies the measurement type).
+    System.out.println(REVOLUTION.divide(MINUTE).getSystemUnit());
+    // Dimension checking (allows/disallows conversions)
+    System.out.println(ELECTRON_VOLT.isCompatible(WATT.multiply(HOUR)));
+    // Retrieval of the unit dimension (depends upon the current model).
+    System.out.println(ELECTRON_VOLT.getDimension());
+    
+    Quantity<Length> m = NumberQuantity.of(10, MILE);
+    System.out.println(m);
+  }
 }

@@ -23,7 +23,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.systems.common;
+package tech.uom.demo.systems.common;
 
 import static tec.units.indriya.unit.Units.HOUR;
 import static tec.units.indriya.unit.Units.KILOMETRE_PER_HOUR;

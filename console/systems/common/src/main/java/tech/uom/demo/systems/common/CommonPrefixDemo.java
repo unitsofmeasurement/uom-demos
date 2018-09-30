@@ -1,4 +1,4 @@
-package tec.uom.demo.systems.common;
+package tech.uom.demo.systems.common;
 
 import static javax.measure.MetricPrefix.KILO;
 import static javax.measure.MetricPrefix.NANO;

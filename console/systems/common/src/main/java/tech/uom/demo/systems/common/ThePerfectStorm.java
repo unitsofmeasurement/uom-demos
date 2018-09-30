@@ -23,17 +23,17 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.systems.common;
+package tech.uom.demo.systems.common;
 
-import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.FIVE;
-import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.FOUR;
-import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.ONE;
-import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.THREE;
-import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_DEPRESSION;
-import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_STORM;
-import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TWO;
 import static javax.measure.MetricPrefix.KILO;
 import static tec.units.indriya.unit.Units.METRE;
+import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.FIVE;
+import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.FOUR;
+import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.ONE;
+import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.THREE;
+import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_DEPRESSION;
+import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_STORM;
+import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TWO;
 import static systems.uom.common.USCustomary.MILE_PER_HOUR;
 import static tec.units.indriya.unit.Units.KILOMETRE_PER_HOUR;
 
@@ -45,7 +45,7 @@ import javax.measure.quantity.Time;
 
 import tec.units.indriya.format.SimpleUnitFormat;
 import tec.units.indriya.quantity.Quantities;
-import tec.uom.demo.types.SaffirSimpsonHurricaneWindScale;
+import tech.uom.demo.types.SaffirSimpsonHurricaneWindScale;
 
 /**
  * @author Werner Keil
