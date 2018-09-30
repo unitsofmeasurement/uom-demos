@@ -34,9 +34,9 @@ import javax.measure.quantity.Area;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Volume;
 
-import tec.units.indriya.unit.Units;
+import tec.uom.se.unit.Units;
 import systems.uom.ucum.UCUM;
-import tec.units.indriya.unit.BaseUnit;
+import tec.uom.se.unit.BaseUnit;
 
 public class ReflectionDemo {
 	public static void reflect(final Unit<?> aUnit) {

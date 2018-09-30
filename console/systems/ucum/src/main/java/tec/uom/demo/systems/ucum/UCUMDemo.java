@@ -1,7 +1,7 @@
 package tec.uom.demo.systems.ucum;
 
 import static systems.uom.ucum.UCUM.*;
-import static tec.uom.se.unit.MetricPrefix.KILO;
+import static tec.units.indriya.unit.MetricPrefix.KILO;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
@@ -13,11 +13,11 @@ import javax.measure.quantity.Volume;
 import systems.uom.ucum.UCUM;
 import systems.uom.ucum.format.UCUMFormat;
 import systems.uom.ucum.format.UCUMFormat.Variant;
-import tec.uom.se.format.EBNFUnitFormat;
-import tec.uom.se.quantity.Quantities;
-import tec.uom.se.unit.Units;
+import tec.units.indriya.format.EBNFUnitFormat;
+import tec.units.indriya.quantity.Quantities;
+import tec.units.indriya.unit.Units;
 
-public class UCUMDemoSE {
+public class UCUMDemo {
 
     public static void main(String[] args) {
 	Unit<Mass> atomicMassUnit = ATOMIC_MASS_UNIT;

@@ -15,7 +15,8 @@ The project currently contains the following modules:
   - [Java 10 based SI Console Demos](si-java10)
 - [Unicode](https://de.wikipedia.org/wiki/Unicode)
  - [RI based Unicode Console Demos](unicode)
- - [Java SE 8 Unicode Console Demos](unicode-java8)
+ - [Java 10 based Unicode Console Demos](unicode-java10)
+- [Unified Code for Units of Measure](https://unitsofmeasure.org)
 - [Historical Unit Systems](https://en.wikipedia.org/wiki/History_of_measurement)
   - [Historical Unit System Console Demos](historical)
 - Legacy
