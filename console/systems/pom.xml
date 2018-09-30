@@ -2,11 +2,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>tec.uom.demo.console</groupId>
+		<groupId>tech.uom.demo.console</groupId>
 		<artifactId>uom-console-demos</artifactId>
 		<version>2.0-SNAPSHOT</version>
 	</parent>
-	<groupId>tec.uom.demo.console.systems</groupId>
+	<groupId>tech.uom.demo.console.systems</groupId>
 	<artifactId>uom-console-system-demos</artifactId>
 	<packaging>pom</packaging>
 	<name>System Specific Units of Measurement Console Demos</name>

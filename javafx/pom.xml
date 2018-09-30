@@ -5,7 +5,7 @@
 	<name>Units of Measurement JavaFX Demos</name>
 	<packaging>pom</packaging>
 	<parent>
-		<groupId>tec.uom.demo</groupId>
+		<groupId>tech.uom.demo</groupId>
 		<artifactId>uom-demos</artifactId>
 		<version>2.0-SNAPSHOT</version>
 	</parent>
@@ -32,5 +32,5 @@
 	<modules>
 		<module>fxlib</module>
 	</modules>
-	<groupId>tec.uom.demo.javafx</groupId>
+	<groupId>tech.uom.demo.javafx</groupId>
 </project>
