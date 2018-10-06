@@ -45,8 +45,8 @@ import javax.measure.UnitConverter;
 import systems.uom.quantity.Information;
 import tech.units.indriya.quantity.DefaultQuantityFactory;
 import tech.units.indriya.quantity.QuantityDimension;
-import tec.uom.lib.common.util.DescriptiveEnum;
-import tec.uom.lib.common.function.DoubleFactorSupplier;
+import tech.uom.lib.common.util.DescriptiveEnum;
+import tech.uom.lib.common.function.DoubleFactorSupplier;
 
 /**
  * Implements a measure of information. The metric system unit for this quantity is "bit".

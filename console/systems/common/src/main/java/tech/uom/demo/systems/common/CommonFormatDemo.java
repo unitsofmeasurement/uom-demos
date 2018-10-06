@@ -29,9 +29,9 @@ import javax.measure.Unit;
 import javax.measure.format.UnitFormat;
 import javax.measure.quantity.*;
 import systems.uom.common.USCustomary;
-import tec.units.indriya.format.SimpleUnitFormat;
-import tec.units.indriya.format.EBNFUnitFormat;
-import tec.units.indriya.unit.Units;
+import tech.units.indriya.format.SimpleUnitFormat;
+import tech.units.indriya.format.EBNFUnitFormat;
+import tech.units.indriya.unit.Units;
 
 public class CommonFormatDemo {
 	public static void main(String... args) {

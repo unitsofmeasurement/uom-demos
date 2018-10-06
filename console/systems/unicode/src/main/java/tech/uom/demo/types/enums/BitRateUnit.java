@@ -45,8 +45,8 @@ import javax.measure.UnitConverter;
 import systems.uom.quantity.InformationRate;
 import tech.units.indriya.quantity.DefaultQuantityFactory;
 import tech.units.indriya.quantity.QuantityDimension;
-import tec.uom.lib.common.util.DescriptiveEnum;
-import tec.uom.lib.common.function.DoubleFactorSupplier;
+import tech.uom.lib.common.util.DescriptiveEnum;
+import tech.uom.lib.common.function.DoubleFactorSupplier;
 
 /**
  * Implements the speed of data-transmission. The system unit for this quantity is "bit/s" (bit per second).

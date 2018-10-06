@@ -26,7 +26,7 @@
 package tech.uom.demo.systems.common;
 
 import static javax.measure.MetricPrefix.KILO;
-import static tec.units.indriya.unit.Units.METRE;
+import static tech.units.indriya.unit.Units.METRE;
 import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.FIVE;
 import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.FOUR;
 import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.ONE;
@@ -35,21 +35,20 @@ import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPI
 import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_STORM;
 import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TWO;
 import static systems.uom.common.USCustomary.MILE_PER_HOUR;
-import static tec.units.indriya.unit.Units.KILOMETRE_PER_HOUR;
+import static tech.units.indriya.unit.Units.KILOMETRE_PER_HOUR;
 
 import javax.measure.Quantity;
-//import javax.measure.quantity.Energy;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
 
-import tec.units.indriya.format.SimpleUnitFormat;
-import tec.units.indriya.quantity.Quantities;
+import tech.units.indriya.format.SimpleUnitFormat;
+import tech.units.indriya.quantity.Quantities;
 import tech.uom.demo.types.SaffirSimpsonHurricaneWindScale;
 
 /**
  * @author Werner Keil
- * @version 0.8
+ * @version 0.9
  * @see {@link SaffirSimpsonHurricaneWindScale}
  */
 public class ThePerfectStorm {
@@ -130,8 +129,8 @@ public class ThePerfectStorm {
 			Quantity<Length> l = Quantities.getQuantity(500, KILO(METRE));
 			System.out.println(String.format("Distance: %s", l));
 			
-			Quantity<Time> timeToEvacuate = l.divide(metricSpeed).asType(Time.class);
-			//Quantity<?> timeToEvacuate = l.divide(metricSpeed); if you don't want to cast ;-)
+			//Quantity<Time> timeToEvacuate = l.divide(metricSpeed).asType(Time.class);
+			Quantity<?> timeToEvacuate = l.divide(metricSpeed); //if you don't want to cast ;-)
 			SimpleUnitFormat.getInstance().label(timeToEvacuate.getUnit(), "h");
 			System.out.println(String.format("Time to evacuate: %s", timeToEvacuate));
 		} else {
