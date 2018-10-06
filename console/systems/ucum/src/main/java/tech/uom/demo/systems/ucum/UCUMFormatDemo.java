@@ -9,10 +9,10 @@ import javax.measure.quantity.Pressure;
 import javax.measure.quantity.Volume;
 import javax.measure.spi.ServiceProvider;
 
-import tec.units.indriya.format.SimpleUnitFormat;
-import tec.units.indriya.format.EBNFUnitFormat;
-import tec.units.indriya.unit.MetricPrefix;
-import tec.units.indriya.unit.Units;
+import tech.units.indriya.format.SimpleUnitFormat;
+import tech.units.indriya.format.EBNFUnitFormat;
+import javax.measure.MetricPrefix;
+import tech.units.indriya.unit.Units;
 
 public class UCUMFormatDemo {
 
