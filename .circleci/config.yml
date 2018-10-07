@@ -7,7 +7,7 @@ jobs:
   clean:
     docker:
       # specify the version you desire here
-      - image: circleci/openjdk:9.0.4
+      - image: circleci/openjdk:8-jdk
 
     working_directory: ~/repo
 
@@ -37,7 +37,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/openjdk:9.0.4
+      - image: circleci/openjdk:8-jdk
 
     working_directory: ~/repo
 
