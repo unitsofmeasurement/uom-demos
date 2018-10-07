@@ -3,7 +3,7 @@
   <parent>
     <groupId>tec.uom.demo.web</groupId>
     <artifactId>uom-web-demos</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
   </parent>
   <artifactId>sparkdemo</artifactId>
   <name>Spark Sensor Web API Demo</name>
@@ -13,7 +13,7 @@
     <!-- ======================================================= -->
     <properties>
         <jsr.version>1.0</jsr.version>
-        <lib.version>1.0.1</lib.version>
+        <lib.version>1.0.2-SNAPSHOT</lib.version>
         <sourceEncoding>UTF-8</sourceEncoding> <!-- in Maven 3. -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${sourceEncoding}</project.reporting.outputEncoding>
@@ -26,7 +26,7 @@
         <jsr.version>1.0</jsr.version>
         <ri.version>1.0.2-SNAPSHOT</ri.version>
         <se.version>1.0.2</se.version>
-        <lib.version>1.0.1</lib.version>
+        <lib.version>1.0.2-SNAPSHOT</lib.version>
     </properties>
 
     <dependencyManagement>

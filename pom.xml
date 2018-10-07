@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>uom-demos</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<parent>
 		<groupId>tec.uom</groupId>
 		<artifactId>uom-parent</artifactId>
@@ -20,7 +20,7 @@
 	<licenses>
 		<license>
 			<name>BSD</name>
-			<url>LICENSE.txt</url>
+			<url>LICENSE</url>
 		</license>
 	</licenses>
 

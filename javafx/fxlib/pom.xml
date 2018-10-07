@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>tec.uom.demo.javafx</groupId>
 		<artifactId>uom-javafx-demos</artifactId>
-		<version>1.0.1</version>
+		<version>1.0.2-SNAPSHOT</version>
 	</parent>
 	<artifactId>uom-fxlib</artifactId>
 	<packaging>jar</packaging>
