@@ -35,8 +35,8 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
 
 import systems.uom.quantity.Information;
-import tec.units.ri.quantity.Quantities;
-import tec.units.ri.unit.Units;
+import tec.units.indriya.quantity.Quantities;
+import tec.units.indriya.unit.Units;
 import static systems.uom.unicode.CLDR.*;
 
 public class CLDRDemo {

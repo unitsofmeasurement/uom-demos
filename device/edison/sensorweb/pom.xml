@@ -3,7 +3,7 @@
   <parent>
     <groupId>tec.uom.demo.device.edison</groupId>
     <artifactId>uom-edison-demos</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
   </parent>
   <artifactId>uom-edison-sensorweb</artifactId>
   <version>0.2-SNAPSHOT</version>

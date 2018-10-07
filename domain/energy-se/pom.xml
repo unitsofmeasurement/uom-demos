@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>tec.uom.demo.domain</groupId>
 		<artifactId>uom-domain-demos</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.0.1</version>
 	</parent>
 	<artifactId>uom-energy-demos-se</artifactId>
     <name>Units of Measurement Energy Demos for Java SE</name>

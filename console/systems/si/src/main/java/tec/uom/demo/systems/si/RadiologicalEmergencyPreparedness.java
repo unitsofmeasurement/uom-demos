@@ -1,7 +1,7 @@
 package tec.uom.demo.systems.si;
 
 import static si.uom.NonSI.ROENTGEN;
-import static tec.units.ri.unit.MetricPrefix.MILLI;
+import static tec.units.indriya.unit.MetricPrefix.MILLI;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,7 @@ import java.util.Map;
 import javax.measure.Quantity;
 
 import si.uom.quantity.IonizingRadiation;
-import tec.units.ri.quantity.Quantities;
+import tec.units.indriya.quantity.Quantities;
 
 /**
  * @author <a href="mailto:uomo@catmedia.us">Werner Keil</a>

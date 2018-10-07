@@ -30,7 +30,7 @@ import javax.measure.spi.ServiceProvider;
 import javax.measure.spi.SystemOfUnits;
 
 import systems.uom.common.USCustomary;
-import tec.units.ri.format.SimpleUnitFormat;
+import tec.units.indriya.format.SimpleUnitFormat;
 import tec.uom.lib.common.util.SystemOfUnitsReporter;
 
 public class CommonFormatDemo {

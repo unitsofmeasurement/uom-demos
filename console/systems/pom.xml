@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>tec.uom.demo.console</groupId>
 		<artifactId>uom-console-demos</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.0.1</version>
 	</parent>
 	<groupId>tec.uom.demo.console.systems</groupId>
 	<artifactId>uom-console-system-demos</artifactId>
@@ -23,6 +23,11 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>tec.units</groupId>
+				<artifactId>indriya</artifactId>
+				<version>${ri2.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>si.uom</groupId>
 				<artifactId>si-quantity</artifactId>

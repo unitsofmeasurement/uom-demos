@@ -42,8 +42,8 @@ import javax.measure.Unit;
 import javax.measure.UnitConverter;
 
 import systems.uom.quantity.InformationRate;
-import tec.units.ri.quantity.DefaultQuantityFactory;
-import tec.units.ri.quantity.QuantityDimension;
+import tec.units.indriya.quantity.DefaultQuantityFactory;
+import tec.units.indriya.quantity.QuantityDimension;
 import tec.uom.lib.common.util.DescriptiveEnum;
 import tec.uom.lib.common.function.DoubleFactorSupplier;
 

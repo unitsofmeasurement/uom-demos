@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>uom-demos</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<parent>
 		<groupId>tec.uom</groupId>
 		<artifactId>uom-parent</artifactId>
@@ -34,10 +34,11 @@
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<jsr.version>1.0</jsr.version>
 		<ri.version>1.0.3</ri.version>
+		<ri2.version>1.0</ri2.version>
 		<se.version>1.0.9</se.version>
 		<lib.version>1.0.2</lib.version>
-		<si.version>0.8</si.version>
-		<systems.version>0.8-SNAPSHOT</systems.version>
+		<si.version>0.9</si.version>
+		<systems.version>0.9</systems.version>
 	</properties>
 
 	<dependencyManagement>

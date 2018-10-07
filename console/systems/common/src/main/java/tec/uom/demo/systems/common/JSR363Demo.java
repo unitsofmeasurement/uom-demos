@@ -27,12 +27,12 @@ package tec.uom.demo.systems.common;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.*;
-import tec.units.ri.quantity.NumberQuantity;
+import tec.units.indriya.quantity.NumberQuantity;
 
 import static si.uom.SI.*;
 import static systems.uom.common.USCustomary.METER;
 import static systems.uom.common.USCustomary.MILE;
-import static tec.units.ri.unit.MetricPrefix.*;
+import static tec.units.indriya.unit.MetricPrefix.*;
 
 public class JSR363Demo {
   public static void main(String[] args) {

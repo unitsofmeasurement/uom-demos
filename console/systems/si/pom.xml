@@ -4,9 +4,19 @@
 	<parent>
 		<groupId>tec.uom.demo.console.systems</groupId>
 		<artifactId>uom-console-system-demos</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.0.1</version>
 	</parent>
 	<artifactId>uom-si-console-demos</artifactId>
+	
+	<!-- ======================================================= -->
+	<!-- Build Settings -->
+	<!-- ======================================================= -->
+	<properties>
+		<jdkVersion>1.8</jdkVersion>
+		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
+		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
+		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -15,7 +25,7 @@
 		</dependency>
 		<dependency>
 			<groupId>tec.units</groupId>
-			<artifactId>unit-ri</artifactId>
+			<artifactId>indriya</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>si.uom</groupId>
