@@ -29,13 +29,41 @@
  */
 package tec.uom.demo.retail;
 
+import static tec.uom.demo.retail.types.ContainerHeight.*;
+import static tec.uom.demo.retail.types.ContainerLength.*;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Length;
+
 import tec.uom.demo.retail.types.Container;
+import tec.uom.demo.retail.types.ContainerHeight;
+import tec.uom.se.function.QuantityFunctions;
+import tec.uom.se.function.QuantitySummaryStatistics;
+import tec.uom.se.unit.Units;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import javax.measure.Quantity;
+import javax.measure.quantity.Length;
+import tec.uom.demo.retail.types.ContainerHeight;
+import tec.uom.se.function.QuantityFunctions;
+import tec.uom.se.function.QuantitySummaryStatistics;
+import tec.uom.se.unit.Units;
+import static tec.uom.demo.retail.types.ContainerLength.*;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import javax.measure.Quantity;
+import javax.measure.quantity.Length;
+import tec.uom.demo.retail.types.ContainerHeight;
 import tec.uom.se.function.QuantityFunctions;
 import tec.uom.se.function.QuantitySummaryStatistics;
 import tec.uom.se.unit.Units;
@@ -44,14 +72,14 @@ public class ContainerDemo {
 
     public static void main(String[] args) {
         Collection<Container> terminal = new ArrayList<>();
-        Container container = Container.F8;
+        Container container = new Container(F20, F8);
         terminal.add(container);
-        container = Container.F16;
+        container = new Container(F40, F8);
         terminal.add(container);
 
         List<Quantity<Length>> lengths = new ArrayList<>();
         for (Container cont : terminal) {
-            lengths.add(cont.getQuantity());
+            lengths.add(cont.getLength().getQuantity());
         }
 
         QuantitySummaryStatistics<Length> summary = lengths.stream().collect(QuantityFunctions.summarizeQuantity(Units.METRE));
