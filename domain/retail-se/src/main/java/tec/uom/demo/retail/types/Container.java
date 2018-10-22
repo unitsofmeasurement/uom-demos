@@ -30,10 +30,13 @@
 
 package tec.uom.demo.retail.types;
 
+import tec.uom.lib.common.function.Coded;
+
 // TODO add remaining ISO parts as per https://www.csiu.co/resources-and-links/iso-container-size-and-type-iso-6346
-public class Container {
+public class Container implements Coded<String> {
     final ContainerLength length;
     final ContainerHeight height;
+    final String type;
     
     public ContainerLength getLength() {
         return length;
@@ -43,9 +46,19 @@ public class Container {
         return height;
     }
    
-    public Container(ContainerLength length, ContainerHeight height) {
+    public Container(final ContainerLength length, final ContainerHeight height, final String type) {
         super();
         this.length = length;
         this.height = height;
+        this.type = type;
+    }
+
+    @Override
+    public String getCode() {
+        final StringBuilder code = new StringBuilder();
+        code.append(length.getCode());
+        code.append(height.getCode());
+        code.append(type);
+        return code.toString();
     }
 }

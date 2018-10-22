@@ -29,7 +29,7 @@
  */
 package tec.uom.demo.retail;
 
-import static tec.uom.demo.retail.types.ContainerHeight.H1;
+import static tec.uom.demo.retail.types.ContainerHeight.H0;
 import static tec.uom.demo.retail.types.ContainerHeight.H2;
 import static tec.uom.demo.retail.types.ContainerLength.L2;
 import static tec.uom.demo.retail.types.ContainerLength.L4;
@@ -49,26 +49,27 @@ import tec.uom.se.unit.Units;
 public class ContainerDemo {
 
     public static void main(String[] args) {
-        Collection<Container> terminal = new ArrayList<>();
-        Container container = new Container(L2, H1);
+        final Collection<Container> terminal = new ArrayList<>();
+        Container container = new Container(L2, H0, "G0");
         terminal.add(container);
-        container = new Container(L2, H2);
+        container = new Container(L2, H2, "G1");
         terminal.add(container);
-        container = new Container(L4, H1);
+        container = new Container(L4, H2, "G0");
         terminal.add(container);
 
         List<Quantity<Length>> lengths = new ArrayList<>();
         for (Container cont : terminal) {
+            System.out.println("ISO: " + cont.getCode());
             lengths.add(cont.getLength().getQuantity());
         }
 
         QuantitySummaryStatistics<Length> summary = lengths.stream().collect(QuantityFunctions.summarizeQuantity(Units.METRE));
  
-        System.out.println(summary.getCount());
-        System.out.println(summary.getAverage());
-        System.out.println(summary.getMax());
-        System.out.println(summary.getMin());
-        System.out.println(summary.getSum());
+        System.out.println("Containers: " + summary.getCount());
+        System.out.println("Average length: " + summary.getAverage());
+        System.out.println("Max length: " + summary.getMax());
+        System.out.println("Min length: " + summary.getMin());
+        System.out.println("Total length: " +summary.getSum());
     }
 
 }

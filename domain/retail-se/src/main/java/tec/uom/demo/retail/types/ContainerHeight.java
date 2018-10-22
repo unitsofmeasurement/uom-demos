@@ -41,8 +41,8 @@ import tec.uom.lib.common.function.QuantitySupplier;
 import tec.uom.se.quantity.Quantities;
 
 public enum ContainerHeight implements QuantitySupplier<Length>, Nameable, Coded<String> {
-    H1("8 Foot Container Height", "1", Quantities.getQuantity(8, FOOT)), 
-    H2("8 Foot 6 Inch Container Height", "2", H1.getQuantity().add(Quantities.getQuantity(6, INCH)));
+    H0("8 Foot Container Height", "0", Quantities.getQuantity(8, FOOT)), 
+    H2("8 Foot 6 Inch Container Height", "2", H0.getQuantity().add(Quantities.getQuantity(6, INCH)));
 
     private final String name;
     private final String code;
