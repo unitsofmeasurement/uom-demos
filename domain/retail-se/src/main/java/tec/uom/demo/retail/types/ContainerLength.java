@@ -40,8 +40,8 @@ import tec.uom.lib.common.function.QuantitySupplier;
 import tec.uom.se.quantity.Quantities;
 
 public enum ContainerLength implements QuantitySupplier<Length>, Nameable, Coded<String> {
-    L2("20 Foot Container", "2", Quantities.getQuantity(20, FOOT)), 
-    L4("40 Foot Container", "4", Quantities.getQuantity(40, FOOT));
+    L2("20 Foot Container Length", "2", Quantities.getQuantity(20, FOOT)), 
+    L4("40 Foot Container Length", "4", Quantities.getQuantity(40, FOOT));
 
     private final String name;
     private final String code;

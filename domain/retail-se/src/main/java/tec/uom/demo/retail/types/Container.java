@@ -33,6 +33,8 @@ package tec.uom.demo.retail.types;
 // TODO add remaining ISO parts as per https://www.csiu.co/resources-and-links/iso-container-size-and-type-iso-6346
 public class Container {
     final ContainerLength length;
+    final ContainerHeight height;
+    
     public ContainerLength getLength() {
         return length;
     }
@@ -40,9 +42,7 @@ public class Container {
     public ContainerHeight getHeight() {
         return height;
     }
-
-    final ContainerHeight height;
-    
+   
     public Container(ContainerLength length, ContainerHeight height) {
         super();
         this.length = length;
