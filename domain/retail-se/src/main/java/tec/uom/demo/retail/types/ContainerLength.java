@@ -1,6 +1,6 @@
 /*
  * Units of Measurement Demos
- * Copyright © 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ * Copyright © 2005-2018, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -40,8 +40,8 @@ import tec.uom.lib.common.function.QuantitySupplier;
 import tec.uom.se.quantity.Quantities;
 
 public enum ContainerLength implements QuantitySupplier<Length>, Nameable, Coded<String> {
-    F20("20 Foot Container", "2", Quantities.getQuantity(20, FOOT)), 
-    F40("40 Foot Container", "4", Quantities.getQuantity(40, FOOT));
+    L2("20 Foot Container", "2", Quantities.getQuantity(20, FOOT)), 
+    L4("40 Foot Container", "4", Quantities.getQuantity(40, FOOT));
 
     private final String name;
     private final String code;

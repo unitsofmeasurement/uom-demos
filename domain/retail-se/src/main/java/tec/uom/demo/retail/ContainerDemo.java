@@ -29,8 +29,10 @@
  */
 package tec.uom.demo.retail;
 
-import static tec.uom.demo.retail.types.ContainerHeight.*;
-import static tec.uom.demo.retail.types.ContainerLength.*;
+import static tec.uom.demo.retail.types.ContainerHeight.H1;
+import static tec.uom.demo.retail.types.ContainerHeight.H2;
+import static tec.uom.demo.retail.types.ContainerLength.L2;
+import static tec.uom.demo.retail.types.ContainerLength.L4;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -40,30 +42,6 @@ import javax.measure.Quantity;
 import javax.measure.quantity.Length;
 
 import tec.uom.demo.retail.types.Container;
-import tec.uom.demo.retail.types.ContainerHeight;
-import tec.uom.se.function.QuantityFunctions;
-import tec.uom.se.function.QuantitySummaryStatistics;
-import tec.uom.se.unit.Units;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
-import javax.measure.Quantity;
-import javax.measure.quantity.Length;
-import tec.uom.demo.retail.types.ContainerHeight;
-import tec.uom.se.function.QuantityFunctions;
-import tec.uom.se.function.QuantitySummaryStatistics;
-import tec.uom.se.unit.Units;
-import static tec.uom.demo.retail.types.ContainerLength.*;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
-import javax.measure.Quantity;
-import javax.measure.quantity.Length;
-import tec.uom.demo.retail.types.ContainerHeight;
 import tec.uom.se.function.QuantityFunctions;
 import tec.uom.se.function.QuantitySummaryStatistics;
 import tec.uom.se.unit.Units;
@@ -72,9 +50,11 @@ public class ContainerDemo {
 
     public static void main(String[] args) {
         Collection<Container> terminal = new ArrayList<>();
-        Container container = new Container(F20, F8);
+        Container container = new Container(L2, H1);
         terminal.add(container);
-        container = new Container(F40, F8);
+        container = new Container(L2, H2);
+        terminal.add(container);
+        container = new Container(L4, H1);
         terminal.add(container);
 
         List<Quantity<Length>> lengths = new ArrayList<>();
@@ -83,9 +63,9 @@ public class ContainerDemo {
         }
 
         QuantitySummaryStatistics<Length> summary = lengths.stream().collect(QuantityFunctions.summarizeQuantity(Units.METRE));
+ 
         System.out.println(summary.getCount());
         System.out.println(summary.getAverage());
-        System.out.println(summary.getCount());
         System.out.println(summary.getMax());
         System.out.println(summary.getMin());
         System.out.println(summary.getSum());

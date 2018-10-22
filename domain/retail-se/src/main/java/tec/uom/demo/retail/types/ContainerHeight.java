@@ -1,6 +1,6 @@
 /*
  * Units of Measurement Demos
- * Copyright © 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ * Copyright © 2005-2018, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -30,6 +30,7 @@
 package tec.uom.demo.retail.types;
 
 import static systems.uom.common.USCustomary.FOOT;
+import static systems.uom.common.USCustomary.INCH;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Length;
@@ -40,8 +41,8 @@ import tec.uom.lib.common.function.QuantitySupplier;
 import tec.uom.se.quantity.Quantities;
 
 public enum ContainerHeight implements QuantitySupplier<Length>, Nameable, Coded<String> {
-    F8("Eight Foot ContainerHeight", "CF8", Quantities.getQuantity(8, FOOT)), 
-    F16("Sixteen Foot ContainerHeight", "CF16", Quantities.getQuantity(16, FOOT));
+    H1("Eight Foot Container Height", "1", Quantities.getQuantity(8, FOOT)), 
+    H2("8 Foot 6 Inch Container Height", "2", H1.getQuantity().add(Quantities.getQuantity(6, INCH)));
 
     private final String name;
     private final String code;
@@ -67,5 +68,4 @@ public enum ContainerHeight implements QuantitySupplier<Length>, Nameable, Coded
     public String getName() {
         return name;
     }
-
 }
