@@ -18,6 +18,7 @@
         <!--  module>health-se</module TODO fix Health SE -->
         <module>energy</module>
         <module>energy-se</module>
+        <module>retail</module>
         <module>retail-se</module>
 	</modules>
 
