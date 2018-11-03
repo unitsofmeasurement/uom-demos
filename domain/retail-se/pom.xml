@@ -8,7 +8,7 @@
 	</parent>
 	<artifactId>retail-se</artifactId>
     <version>0.1-SNAPSHOT</version>
-    <name>Retail Demo for Java SE 8</name>
+    <name>Retail Demos for Java SE 8</name>
     
 	<!-- ======================================================= -->
 	<!-- Build Settings -->

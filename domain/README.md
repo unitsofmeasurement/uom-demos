@@ -10,4 +10,5 @@ Covering the following domains:
   - [Health Demos](health)
   - [Health Demos for Java SE 8](health-se)
 - Retail
+  - [Retail Demos](retail-se)
   - [Retail Demos for Java SE 8](retail-se)
