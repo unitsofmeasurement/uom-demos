@@ -43,7 +43,7 @@ import javax.measure.Unit;
 import javax.measure.UnitConverter;
 
 import systems.uom.quantity.InformationRate;
-import tech.units.indriya.quantity.DefaultQuantityFactory;
+import tech.units.indriya.internal.DefaultQuantityFactory;
 import tech.units.indriya.quantity.QuantityDimension;
 import tech.uom.lib.common.util.DescriptiveEnum;
 import tech.uom.lib.common.function.DoubleFactorSupplier;

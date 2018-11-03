@@ -36,13 +36,13 @@ import javax.measure.Quantity;
 import javax.measure.quantity.Acceleration;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
+import javax.measure.spi.ServiceProvider;
 
 import tech.units.indriya.AbstractQuantity;
-import tech.units.indriya.quantity.DefaultQuantityFactory;
 
 /**
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.5
+ * @version 1.6
  *
  * This <type>enum</type> is inspired by Josh Bloch's example in <a href="http://www.oracle.com/technetwork/java/effectivejava-136174.html">Effective Java Second Edition</a>
  *
@@ -84,7 +84,7 @@ public enum Planet implements Celestial {
     public Quantity<Acceleration> surfaceGravity() {
         double m = mass.doubleValue(KILOGRAM);
         double r = radius.doubleValue(METRE);
-        return DefaultQuantityFactory.getInstance(Acceleration.class).create(
+        return ServiceProvider.current().getQuantityFactory(Acceleration.class).create(
                 G * m / (r * r), METRE_PER_SQUARE_SECOND);
     }
 

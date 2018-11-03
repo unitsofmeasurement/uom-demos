@@ -18,21 +18,19 @@ package space.uom.demo.planet;
 import javax.measure.Unit;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
+import javax.measure.spi.ServiceProvider;
 
 import tech.units.indriya.AbstractQuantity;
-import tech.units.indriya.quantity.DefaultQuantityFactory;
 
 class SolarSystem {
     // universal gravitational constant  (m3 kg-1 s-2)
     static final double G = 6.67300E-11;
     
-    @SuppressWarnings("unchecked")
-	static AbstractQuantity<Mass> newMass(double value, Unit<Mass> unit) {
-        return (AbstractQuantity<Mass>) DefaultQuantityFactory.getInstance(Mass.class).create(value, unit);
+    static AbstractQuantity<Mass> newMass(double value, Unit<Mass> unit) {
+        return (AbstractQuantity<Mass>) ServiceProvider.current().getQuantityFactory(Mass.class).create(value, unit);
     }
 
-    @SuppressWarnings("unchecked")
-	static AbstractQuantity<Length> newLength(double value, Unit<Length> unit) {
-        return (AbstractQuantity<Length>) DefaultQuantityFactory.getInstance(Length.class).create(value, unit);
+    static AbstractQuantity<Length> newLength(double value, Unit<Length> unit) {
+        return (AbstractQuantity<Length>) ServiceProvider.current().getQuantityFactory(Length.class).create(value, unit);
     }
 }
