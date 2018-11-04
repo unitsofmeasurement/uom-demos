@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="376.0" prefWidth="602.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tech.uom.demo.javafx.fxlib.FXlibController">
+  <children>
+    <SplitPane dividerPositions="0.4066666666666667" focusTraversable="true" prefHeight="369.0" prefWidth="579.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="198.0" prefWidth="213.0">
+          <children>
+            <Label fx:id="label" layoutY="70.0" minHeight="16.0" minWidth="69.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="68.0" />
+            <Button fx:id="button" layoutX="66.0" layoutY="14.0" onAction="#helloButtonAction" text="Click Me!" visible="false" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="7.0" maxWidth="1.7976931348623157E308" minHeight="61.0" prefHeight="74.0" prefWidth="290.0" text="FXlib" textFill="#bfbfbf" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <font>
+                <Font name="System Bold" size="48.0" />
+              </font>
+            </Label>
+            <GridPane layoutY="107.0" prefHeight="121.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <children>
+                <FlowPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                  <children>
+                    <Label text="From">
+                      <labelFor>
+                        <TextField id="" fx:id="fromFld" maxWidth="1.7976931348623157E308" onKeyReleased="#handleFromKey" prefWidth="180.0" />
+                      </labelFor>
+                    </Label>
+                    <fx:reference source="fromFld" />
+                    <ComboBox fx:id="fromCombo" prefHeight="21.0" prefWidth="100.0">
+                      <items>
+                        <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="Item 1" />
+                          <String fx:value="Item 2" />
+                          <String fx:value="Item 3" />
+                        </FXCollections>
+                      </items>
+                      <FlowPane.margin>
+                        <Insets left="100.0" fx:id="x2" />
+                      </FlowPane.margin>
+                    </ComboBox>
+                  </children>
+                </FlowPane>
+                <FlowPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                  <children>
+                    <Label text="To">
+                      <labelFor>
+                        <TextField fx:id="toFld" editable="false" maxWidth="1.7976931348623157E308" prefWidth="194.0" />
+                      </labelFor>
+                    </Label>
+                    <fx:reference source="toFld" />
+                    <ComboBox fx:id="toCombo" prefHeight="21.0" prefWidth="100.0" FlowPane.margin="$x2">
+                      <items>
+                        <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="Item 1" />
+                          <String fx:value="Item 2" />
+                          <String fx:value="Item 3" />
+                        </FXCollections>
+                      </items>
+                    </ComboBox>
+                  </children>
+                </FlowPane>
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+          </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="229.0" prefWidth="169.0">
+          <children>
+            <GridPane prefHeight="349.0" prefWidth="286.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <GridPane id="GridPane" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                  <children>
+                    <Button fx:id="b1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="-1.0" prefWidth="-1.0" text="length" GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.vgrow="ALWAYS" />
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                </GridPane>
+                <Button fx:id="b2" disable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="-1.0" prefWidth="-1.0" text="angle" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.vgrow="ALWAYS" />
+                <Button fx:id="b3" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="-1.0" prefWidth="-1.0" text="base" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.vgrow="ALWAYS" />
+                <Button disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="-1.0" prefWidth="-1.0" text="data" GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                <Button disable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="-1.0" prefWidth="-1.0" text="area" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                <Button disable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="-1.0" prefWidth="-1.0" text="energy" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                <Button fx:id="b4" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="-1.0" prefWidth="-1.0" text="↑" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.vgrow="ALWAYS">
+                  <font>
+                    <Font name="System Bold" size="24.0" fx:id="x1" />
+                  </font>
+                </Button>
+                <Button disable="true" font="$x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="-1.0" prefWidth="-1.0" text="↓" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                <Button disable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="-1.0" prefWidth="-1.0" text="mass" GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+                <Button disable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="-1.0" prefWidth="-1.0" text="power" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+                <Button disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="-1.0" prefWidth="-1.0" text="pressure" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <Button disable="true" font="$x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="-1.0" prefWidth="-1.0" text="X" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+                <Button disable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="-1.0" prefWidth="-1.0" text="speed" GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+                <Button disable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="-1.0" prefWidth="-1.0" text="temperature" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+                <Button disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="-1.0" prefWidth="-1.0" text="time" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <padding>
+                <Insets right="3.0" />
+              </padding>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+  </children>
+</AnchorPane>

@@ -20,7 +20,9 @@ The project currently contains the following modules:
   - [Device I/O for for Intel Edison IoT Devices](device/edison/dio) **TBD**
 - [Domain Specific demos](domain)
 - [JavaFX Demos](javafx)
- - [FXlib Demo Application](javafx/fxlib)
+ - [FXlib Demo Application](javafx)
+   - [Java 8 ] (javafx/fxlib)
+   - [Java 11 ] (javafx/fxlib-java11)
 - [Java ME 8 Demos](javame) **Currently not Maven enabled, require Eclipse or NetBeans IDE**
   - [Java ME 8 Demo](javame/medemo)
 - [Web Demos](web)
