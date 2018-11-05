@@ -109,7 +109,7 @@
 	</build>
 	<modules>
 		<module>console</module>	
-		<!--  >module>javafx</module -->	
+		<module>javafx</module>	
 		<module>domain</module>
 		<module>web</module>
 		<module>device</module>
