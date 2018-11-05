@@ -21,8 +21,8 @@ The project currently contains the following modules:
 - [Domain Specific demos](domain)
 - [JavaFX Demos](javafx)
   - FXlib Demo Application
-    - [Java 8 ] (javafx/fxlib)
-    - [Java 11 ] (javafx/fxlib-java11)
+    - [Java 8](javafx/fxlib)
+    - [Java 11](javafx/fxlib-java11)
 - [Java ME 8 Demos](javame) **Currently not Maven enabled, require Eclipse or NetBeans IDE**
   - [Java ME 8 Demo](javame/medemo)
 - [Web Demos](web)
