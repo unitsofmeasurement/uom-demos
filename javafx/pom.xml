@@ -30,7 +30,7 @@
 	</dependencyManagement>
 
 	<modules>
-		<!--  module>fxlib</module --> Fails above Java 8
+		<!--  module>fxlib</module  Fails above Java 8 -->
 		<module>fxlib-java11</module>
 	</modules>
 	<groupId>tech.uom.demo.javafx</groupId>
