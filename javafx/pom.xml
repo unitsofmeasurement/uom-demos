@@ -11,7 +11,7 @@
 	</parent>
 	<description>Demos of the Units of Measurement API using JavaFX</description>
     <properties>
-    	<ucum.version>0.4</ucum.version>
+    	<ucum.version>0.9</ucum.version>
     </properties>
     
 	<dependencyManagement>
@@ -30,7 +30,7 @@
 	</dependencyManagement>
 
 	<modules>
-		<module>fxlib</module>
+		<!--  module>fxlib</module --> Fails above Java 8
 		<module>fxlib-java11</module>
 	</modules>
 	<groupId>tech.uom.demo.javafx</groupId>
