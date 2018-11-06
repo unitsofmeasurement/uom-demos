@@ -7,8 +7,9 @@
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
 	<artifactId>retail-se</artifactId>
-    <version>0.1-SNAPSHOT</version>
-    
+    <version>0.2-SNAPSHOT</version>
+    <name>Units of Measurement Retail Demos for Java SE</name>
+    	
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
 	<!-- ======================================================= -->

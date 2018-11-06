@@ -7,7 +7,8 @@
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
 	<artifactId>jscience</artifactId>
-
+	<name>JScience Demos</name>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.jscience</groupId>
