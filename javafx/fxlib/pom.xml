@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
@@ -8,8 +8,6 @@
 		<version>2.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>uom-fxlib</artifactId>
-	<packaging>jar</packaging>
-
 	<name>Units of Measurement FXlib</name>
 
 	<properties>
@@ -24,21 +22,24 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>javax.measure</groupId>
-			<artifactId>unit-api</artifactId>
+			<groupId>tech.units</groupId>
+			<artifactId>indriya</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>tec.uom</groupId>
-			<artifactId>uom-se</artifactId>
+			<groupId>si.uom</groupId>
+			<artifactId>si-units</artifactId>
+			<version>${si.version}</version>
 		</dependency>
-		  <dependency>
-            <groupId>si.uom</groupId>
-            <artifactId>si-units-java8</artifactId>
-        </dependency>
 		<dependency>
-            <groupId>systems.uom</groupId>
-            <artifactId>systems-common-java8</artifactId>
-        </dependency>
+			<groupId>systems.uom</groupId>
+			<artifactId>systems-common</artifactId>
+			<version>${systems.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-fxml</artifactId>
+			<version>11.0.1-ea+1</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -65,62 +66,31 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.2.1</version>
+				<version>1.6.0</version>
 				<executions>
 					<execution>
-						<id>unpack-dependencies</id>
-
-						<phase>package</phase>
 						<goals>
-							<goal>exec</goal>
+							<goal>java</goal>
 						</goals>
-						<configuration>
-							<executable>${java.home}/../bin/javafxpackager</executable>
-							<arguments>
-								<argument>-createjar</argument>
-								<argument>-nocss2bin</argument>
-								<argument>-appclass</argument>
-								<argument>${mainClass}</argument>
-								<argument>-srcdir</argument>
-								<argument>${project.build.directory}/classes</argument>
-								<argument>-outdir</argument>
-								<argument>${project.build.directory}</argument>
-								<argument>-outfile</argument>
-								<argument>${project.build.finalName}.jar</argument>
-							</arguments>
-						</configuration>
-					</execution>
-					<execution>
-						<id>default-cli</id>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<configuration>
-							<executable>${java.home}/bin/java</executable>
-							<commandlineArgs>${runfx.args}</commandlineArgs>
-						</configuration>
 					</execution>
 				</executions>
+				<configuration>
+					<mainClass>${mainClass}</mainClass>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-					<compilerArguments>
-						<bootclasspath>${sun.boot.class.path}${path.separator}${java.home}/lib/jfxrt.jar</bootclasspath>
-					</compilerArguments>
+					<release>11</release>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<additionalClasspathElements>
-						<additionalClasspathElement>${java.home}/lib/jfxrt.jar</additionalClasspathElement>
-					</additionalClasspathElements>
-				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.ow2.asm</groupId>
+						<artifactId>asm</artifactId>
+						<version>6.2</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>

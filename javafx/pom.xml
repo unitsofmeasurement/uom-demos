@@ -9,6 +9,7 @@
 		<artifactId>uom-demos</artifactId>
 		<version>2.0-SNAPSHOT</version>
 	</parent>
+	<groupId>tech.uom.demo.javafx</groupId>
 	<description>Demos of the Units of Measurement API using JavaFX</description>
     <properties>
     	<ucum.version>0.9</ucum.version>
@@ -30,8 +31,6 @@
 	</dependencyManagement>
 
 	<modules>
-		<!--  module>fxlib</module  Fails above Java 8 -->
-		<module>fxlib-java11</module>
+		<module>fxlib</module>
 	</modules>
-	<groupId>tech.uom.demo.javafx</groupId>
 </project>
