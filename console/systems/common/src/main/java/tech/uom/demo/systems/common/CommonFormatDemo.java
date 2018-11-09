@@ -38,9 +38,9 @@ public class CommonFormatDemo {
 		UnitFormat ebnf = EBNFUnitFormat.getInstance();
 	    SimpleUnitFormat.getInstance().alias(USCustomary.MILE, "mile");
 	    
-	    Unit u = SimpleUnitFormat.getInstance().parse("mile");
+	    Unit<?> u = SimpleUnitFormat.getInstance().parse("mile");
 	    System.out.println(u);
-	    Unit v = SimpleUnitFormat.getInstance().parse("mi");
+	    Unit<?> v = SimpleUnitFormat.getInstance().parse("mi");
 	    System.out.println(v);
 	    System.out.println();
 
