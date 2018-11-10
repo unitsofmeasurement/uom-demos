@@ -28,6 +28,8 @@ package tech.uom.demo.systems.common;
 import javax.measure.Unit;
 import javax.measure.format.UnitFormat;
 import javax.measure.quantity.*;
+import javax.measure.spi.ServiceProvider;
+
 import systems.uom.common.USCustomary;
 import tech.units.indriya.format.SimpleUnitFormat;
 import tech.units.indriya.format.EBNFUnitFormat;
@@ -36,14 +38,16 @@ import tech.units.indriya.unit.Units;
 public class CommonFormatDemo {
 	public static void main(String... args) {
 		UnitFormat ebnf = EBNFUnitFormat.getInstance();
-	    SimpleUnitFormat.getInstance().alias(USCustomary.MILE, "mile");
-	    
+		System.out.println("Miles:");
+	    SimpleUnitFormat.getInstance().alias(USCustomary.MILE, "mile");	    
 	    Unit<?> u = SimpleUnitFormat.getInstance().parse("mile");
 	    System.out.println(u);
 	    Unit<?> v = SimpleUnitFormat.getInstance().parse("mi");
 	    System.out.println(v);
+	    Unit<?> w = ServiceProvider.current().getFormatService().getUnitFormat().parse("mi");
+	    System.out.println(w);
 	    System.out.println();
-
+	       
 	    Unit<Force> lbf = Units.NEWTON.multiply(4.4482216152605); // pound-force
 	    Unit<Area> sqin = USCustomary.INCH.pow(2).asType(Area.class); // square inch
 	    Unit<Pressure> psi = lbf.divide(sqin).asType(Pressure.class); // pound-force per square inch
@@ -52,7 +56,7 @@ public class CommonFormatDemo {
 	    System.out.println("Pounds per square inch: " + psi);
 	    System.out.println("Square psi: " + psi.pow(2));
 	    System.out.println("Square psi (EBNF): " + ebnf.format(psi.pow(2)));
-	    Unit u1 = SimpleUnitFormat.getInstance().parse("psi^2");
+	    Unit<?> u1 = SimpleUnitFormat.getInstance().parse("psi^2");
 	    System.out.println("Square psi parsed: " + u1);
 	    u1 = SimpleUnitFormat.getInstance().parse("psi²");
 	    System.out.println("Square psi parsed (Unicode): " + u1);
