@@ -112,7 +112,7 @@
 	<modules>
 		<module>console</module>
 		<module>domain</module>
-		<module>javafx</module>
+		<!-- >module>javafx</module-->
 		<module>web</module>
 		<module>device</module>
 	</modules>
