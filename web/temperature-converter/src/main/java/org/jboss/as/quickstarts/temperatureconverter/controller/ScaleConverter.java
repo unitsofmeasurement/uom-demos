@@ -43,7 +43,7 @@ public class ScaleConverter implements Converter {
 	Unit<?>[] temps = new Unit<?>[]{ Units.CELSIUS, Units.KELVIN }; // TODO use .FAHRENHEIT again, to
 	
     @SuppressWarnings("unchecked")
-	public Unit<?>[] getScales() {
+	public Unit<?>[] getReferences() {
         return ((Set<? extends Unit<Temperature>>) Units.getInstance().getUnits(QuantityDimension.TEMPERATURE)).toArray(temps);
     } // TODO other unit systems like US?
 

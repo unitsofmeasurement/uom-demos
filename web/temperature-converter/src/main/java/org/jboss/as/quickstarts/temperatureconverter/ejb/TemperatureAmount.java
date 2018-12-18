@@ -34,7 +34,7 @@ import javax.measure.Unit;
  * @author Werner Keil
  * 
  */
-public class TemperatureAmount extends NumberQuantity<Temperature>{
+public class TemperatureAmount extends NumberQuantity<Temperature> {
 
     /**
 	 * 
@@ -89,7 +89,7 @@ public class TemperatureAmount extends NumberQuantity<Temperature>{
 //        this.scale = scale;
     }
 
-    public  Unit<Temperature> getScale() {
+    public  Unit<Temperature> getReference() {
         return getUnit();
     }
 

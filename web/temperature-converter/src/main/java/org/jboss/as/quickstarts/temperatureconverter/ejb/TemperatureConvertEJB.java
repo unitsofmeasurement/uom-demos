@@ -47,7 +47,7 @@ public class TemperatureConvertEJB implements Converter<TemperatureAmount, Quant
     public Quantity<Temperature> convert(TemperatureAmount source) {
         
         // Convert our Temperature
-        if (source.getScale() == CELSIUS) { // Celsius to Fahrenheit (Kelvin)
+        if (source.getReference() == CELSIUS) { // Celsius to Fahrenheit (Kelvin)
             // Easter egg for Absolute Zero.
             if (source.getTemperature() < TemperatureAmount.ABSOLUTE_ZERO_C) {
                 FacesContext.getCurrentInstance().addMessage(null,
@@ -58,7 +58,7 @@ public class TemperatureConvertEJB implements Converter<TemperatureAmount, Quant
             }
             return source.to(KELVIN);
             //return new TemperatureAmount( (source.getTemperature() * 9 / 5) + 32, FAHRENHEIT);
-        } else if (source.getScale() == KELVIN) { // Fahrenheit to Celsius
+        } else if (source.getReference() == KELVIN) { // Fahrenheit to Celsius
             // Easter egg for Absolute Zero.
             if (source.getTemperature() < TemperatureAmount.ABSOLUTE_ZERO_F) {
                 FacesContext.getCurrentInstance().addMessage(null,

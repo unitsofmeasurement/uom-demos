@@ -59,7 +59,7 @@ public class TemperatureConverter implements Serializable, ValueSupplier<String>
     
     private String sourceTemperature = "0.0";
     
-    private Unit<Temperature> defaultScale = Units.CELSIUS;
+    private Unit<Temperature> referenceUnit = Units.CELSIUS;
 
     /**
      * Invoke temperatureConvertEJB.convert() and store the temperature
@@ -69,7 +69,7 @@ public class TemperatureConverter implements Serializable, ValueSupplier<String>
      */
     public void convert() {
         temperature = formatTemperature(temperatureConvertEJB.convert(
-        		TemperatureAmount.parse(sourceTemperature, defaultScale)));
+        		TemperatureAmount.parse(sourceTemperature, referenceUnit)));
     }
 
     private String formatTemperature(Quantity<Temperature> temperature) {
@@ -85,12 +85,12 @@ public class TemperatureConverter implements Serializable, ValueSupplier<String>
         this.sourceTemperature = sourceTemperature;
     }
 
-    public Unit<Temperature> getDefaultScale() {
-        return defaultScale;
+    public Unit<Temperature> getDefaultReference() {
+        return referenceUnit;
     }
 
-    public void setDefaultScale(Unit<Temperature> defaultScale) {
-        this.defaultScale = defaultScale;
+    public void setDefaultReference(Unit<Temperature> defaultReference) {
+        this.referenceUnit = defaultReference;
     }
 
     public String getValue() {
