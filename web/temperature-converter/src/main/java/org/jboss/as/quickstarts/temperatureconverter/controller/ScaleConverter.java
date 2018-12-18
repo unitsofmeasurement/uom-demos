@@ -32,7 +32,7 @@ import javax.measure.quantity.Temperature;
 import javax.measure.Unit;
 
 /**
- * A JSF converter that can handle the {@link Temperature} unit.
+ * A JSF converter that can handle the {@link Temperature} reference unit.
  * 
  * @author Pete Muir
  * @author Werner Keil
