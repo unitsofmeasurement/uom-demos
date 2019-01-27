@@ -32,6 +32,7 @@ import java.math.BigInteger;
 import javax.measure.MetricPrefix;
 
 import tech.units.indriya.quantity.NumberQuantity;
+import tech.units.indriya.quantity.Quantities;
 
 public class PrecisionDemo {
 	public static void main(String[] args)  {
@@ -39,7 +40,7 @@ public class PrecisionDemo {
         var value = Long.valueOf(valConst);
         var valueBig = BigInteger.valueOf(valConst);
         var milli = NumberQuantity.of(value, MetricPrefix.MILLI(SECOND));
-        var milliBig = NumberQuantity.of(valueBig, MetricPrefix.MILLI(SECOND));
+        var milliBig = Quantities.getQuantity(valueBig, MetricPrefix.MILLI(SECOND));
         var nano = milli.to(MetricPrefix.NANO(SECOND)).getValue();
         var nanoBig = milliBig.to(MetricPrefix.NANO(SECOND)).getValue();
         var nanoLong = nano.longValue();
