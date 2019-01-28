@@ -35,8 +35,8 @@ import tech.units.indriya.quantity.NumberQuantity;
 import tech.units.indriya.quantity.Quantities;
 
 public class PrecisionDemo {
-	public static void main(String[] args)  {
-	    final var valConst = 1548351392775L;
+    public static void main(String[] args) {
+        final var valConst = 1548351392775L;
         var value = Long.valueOf(valConst);
         var valueBig = BigInteger.valueOf(valConst);
         var milli = NumberQuantity.of(value, MetricPrefix.MILLI(SECOND));
@@ -44,9 +44,8 @@ public class PrecisionDemo {
         var nano = milli.to(MetricPrefix.NANO(SECOND)).getValue();
         var nanoBig = milliBig.to(MetricPrefix.NANO(SECOND)).getValue();
         var nanoLong = nano.longValue();
-        //assertEquals(value * 1000000, nanoLong);
-        System.out.println(String.format("%s = %s = %s (%s) = %s (%s) ?", value * 1000000, nanoLong, 
-                nano, nano instanceof BigInteger, 
-                nanoBig, nanoBig instanceof BigInteger));
-	}
+        // assertEquals(value * 1000000, nanoLong);
+        System.out.println(String.format("%s = %s = %s (%s) = %s (%s) ?", value * 1000000, nanoLong, nano, nano instanceof BigInteger, nanoBig,
+                nanoBig instanceof BigInteger));
+    }
 }
