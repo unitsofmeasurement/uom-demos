@@ -51,7 +51,7 @@ import tech.uom.lib.common.function.DoubleFactorSupplier;
 /**
  * Implements the speed of data-transmission. The system unit for this quantity is "bit/s" (bit per second).
  * @author Werner Keil
- * @version 0.8.2, $Date: 2015-09-27 $
+ * @version 0.9, $Date: 2019-03-21 $
  */
 public enum BitRateUnit implements Unit<InformationRate>, DoubleFactorSupplier, DescriptiveEnum<BitRateUnit> {
 	bps("bps", BPS_NAME, 1.0), Kbps("Kbps", KBPS_NAME, 1.0e3), Mbps("Mbps", MBPS_NAME, 1.0e6),
@@ -221,7 +221,12 @@ public enum BitRateUnit implements Unit<InformationRate>, DoubleFactorSupplier, 
 
 	@Override
 	public Unit<InformationRate> prefix(Prefix prefix) {
-		// TODO Auto-generated method stub
-		return null;
+		return this;
 	}
+
+
+    @Override
+    public Unit<InformationRate> mix(Unit<InformationRate> that) {
+        return this;
+    }
 }

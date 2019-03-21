@@ -179,4 +179,10 @@ public enum Crates implements Unit<Crate>, ValueSupplier<Integer> {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+    @Override
+    public Unit<Crate> mix(Unit<Crate> that) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }
