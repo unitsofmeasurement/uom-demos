@@ -43,15 +43,15 @@ import javax.measure.Unit;
 import javax.measure.UnitConverter;
 
 import systems.uom.quantity.Information;
-import tech.units.indriya.internal.DefaultQuantityFactory;
+import tech.units.indriya.quantity.DefaultQuantityFactory;
 import tech.units.indriya.quantity.QuantityDimension;
-import tech.uom.lib.common.util.DescriptiveEnum;
-import tech.uom.lib.common.function.DoubleFactorSupplier;
+import tec.uom.lib.common.util.DescriptiveEnum;
+import tec.uom.lib.common.function.DoubleFactorSupplier;
 
 /**
  * Implements a measure of information. The metric system unit for this quantity is "bit".
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.9, $Date: 2018-03-21 $
+ * @version 1.0, $Date: 2019-04-15 $
  */
 public enum BitUnit implements Unit<Information>, DoubleFactorSupplier, DescriptiveEnum<BitUnit> {
 	
@@ -232,11 +232,4 @@ public enum BitUnit implements Unit<Information>, DoubleFactorSupplier, Descript
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
-    @Override
-    public Unit<Information> mix(Unit<Information> that) {
-        // TODO Auto-generated method stub
-        return null;
-    }
 }

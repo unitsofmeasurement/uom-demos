@@ -27,6 +27,8 @@ package tec.uom.demo.energy;
 
 import static javax.measure.MetricPrefix.*;
 
+import java.util.Objects;
+
 import javax.measure.Unit;
 import javax.measure.quantity.Energy;
 
@@ -45,7 +47,7 @@ import tech.units.indriya.unit.Units;
  * @noextend This class is not intended to be extended by clients.
  * 
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.2, $Date: 2015-10-20 $
+ * @version 0.3, $Date: 2019-04-15 $
  */
 public final class DemoUnitSystem extends AbstractSystemOfUnits {
     /**
@@ -63,6 +65,13 @@ public final class DemoUnitSystem extends AbstractSystemOfUnits {
 	public String getName() {
 		return "Demo";
 	}
+	
+    // TODO can remove after upgrade to Indriya 2
+    @Override
+    public Unit<?> getUnit(String string) {
+        Objects.requireNonNull(string);
+        return this.getUnits().stream().filter((u) -> string.equals(u.toString())).findAny().orElse(null);
+    }
 	
     /**
      * Adds a new unit not mapped to any specified quantity type.

@@ -28,7 +28,7 @@ package tech.uom.demo.systems.common;
 import javax.measure.spi.ServiceProvider;
 import javax.measure.spi.SystemOfUnits;
 
-import tech.uom.lib.common.util.SystemOfUnitsReporter;
+import tec.uom.lib.common.util.SystemOfUnitsReporter;
 
 public class CommonDemo {
 	public static void main(String... args) {

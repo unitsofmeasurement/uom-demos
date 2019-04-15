@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
@@ -7,9 +8,9 @@
 		<version>2.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>retail</artifactId>
-    <version>0.1-SNAPSHOT</version>
-    <name>Retail Demos</name>
-    
+	<version>0.1-SNAPSHOT</version>
+	<name>Retail Demos</name>
+
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
@@ -26,8 +27,14 @@
 			<artifactId>unit-api</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>tech.uom.lib</groupId>
+			<artifactId>uom-lib-common</artifactId>
+			<version>${lib2.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>tech.units</groupId>
 			<artifactId>indriya</artifactId>
+			<version>${ri2.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>tec.uom.domain</groupId>
@@ -40,9 +47,9 @@
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.apache.commons</groupId>
-		    <artifactId>commons-lang3</artifactId>
-		    <version>3.4</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.4</version>
 		</dependency>
 	</dependencies>
 
@@ -62,30 +69,30 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 	<!-- Additional repositories -->
-    <!-- Helps to resolve Parent POM and Snapshot artifacts -->
-    <repositories>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>bintray-release</id>
-            <name>libs-release</name>
-            <url>http://oss.jfrog.org/artifactory/libs-release</url>
-        </repository>
-        <repository>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <id>bintray-snapshot</id>
-            <name>libs-snapshot</name>
-            <url>http://oss.jfrog.org/artifactory/libs-snapshot</url>
-        </repository>
-        <repository>
-            <id>jcenter</id>
-            <name>JCenter</name>
-            <url>http://jcenter.bintray.com</url>
-        </repository>
-    </repositories>
+	<!-- Helps to resolve Parent POM and Snapshot artifacts -->
+	<repositories>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>bintray-release</id>
+			<name>libs-release</name>
+			<url>http://oss.jfrog.org/artifactory/libs-release</url>
+		</repository>
+		<repository>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<id>bintray-snapshot</id>
+			<name>libs-snapshot</name>
+			<url>http://oss.jfrog.org/artifactory/libs-snapshot</url>
+		</repository>
+		<repository>
+			<id>jcenter</id>
+			<name>JCenter</name>
+			<url>http://jcenter.bintray.com</url>
+		</repository>
+	</repositories>
 </project>

@@ -22,8 +22,14 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>tech.uom.lib</groupId>
+			<artifactId>uom-lib-common</artifactId>
+			<version>${lib2.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>tech.units</groupId>
 			<artifactId>indriya</artifactId>
+			<version>${ri2.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>

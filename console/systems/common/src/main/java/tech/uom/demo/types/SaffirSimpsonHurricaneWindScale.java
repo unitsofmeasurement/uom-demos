@@ -32,11 +32,11 @@ import javax.measure.Quantity;
 import javax.measure.quantity.Speed;
 
 import tech.units.indriya.quantity.QuantityRange;
-import tech.uom.lib.common.function.Nameable;
+import tec.uom.lib.common.function.Nameable;
 
 /**
  * @author Werner Keil
- * @version 1.0, October 7, 2018
+ * @version 1.1, April 15, 2019
  * @see <a
  *      href="http://en.wikipedia.org/wiki/Saffir%E2%80%93Simpson_hurricane_wind_scale">
  *      Wikipedia: Saffir–Simpson hurricane wind scale</a>

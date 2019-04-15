@@ -43,15 +43,15 @@ import javax.measure.Unit;
 import javax.measure.UnitConverter;
 
 import systems.uom.quantity.InformationRate;
-import tech.units.indriya.internal.DefaultQuantityFactory;
+import tech.units.indriya.quantity.DefaultQuantityFactory;
 import tech.units.indriya.quantity.QuantityDimension;
-import tech.uom.lib.common.util.DescriptiveEnum;
-import tech.uom.lib.common.function.DoubleFactorSupplier;
+import tec.uom.lib.common.util.DescriptiveEnum;
+import tec.uom.lib.common.function.DoubleFactorSupplier;
 
 /**
  * Implements the speed of data-transmission. The system unit for this quantity is "bit/s" (bit per second).
  * @author Werner Keil
- * @version 0.9, $Date: 2019-03-21 $
+ * @version 1.0, $Date: 2019-04-15 $
  */
 public enum BitRateUnit implements Unit<InformationRate>, DoubleFactorSupplier, DescriptiveEnum<BitRateUnit> {
 	bps("bps", BPS_NAME, 1.0), Kbps("Kbps", KBPS_NAME, 1.0e3), Mbps("Mbps", MBPS_NAME, 1.0e6),
@@ -223,10 +223,4 @@ public enum BitRateUnit implements Unit<InformationRate>, DoubleFactorSupplier, 
 	public Unit<InformationRate> prefix(Prefix prefix) {
 		return this;
 	}
-
-
-    @Override
-    public Unit<InformationRate> mix(Unit<InformationRate> that) {
-        return this;
-    }
 }
