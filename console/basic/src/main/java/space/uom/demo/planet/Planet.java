@@ -82,8 +82,8 @@ public enum Planet implements Celestial {
     }
 
     public Quantity<Acceleration> surfaceGravity() {
-        double m = mass.doubleValue(KILOGRAM);
-        double r = radius.doubleValue(METRE);
+        double m = mass.to(KILOGRAM).getValue().doubleValue();
+        double r = radius.to(METRE).getValue().doubleValue();
         return ServiceProvider.current().getQuantityFactory(Acceleration.class).create(
                 G * m / (r * r), METRE_PER_SQUARE_SECOND);
     }

@@ -51,7 +51,7 @@ import tec.uom.lib.common.function.DoubleFactorSupplier;
 /**
  * Implements a measure of information. The metric system unit for this quantity is "bit".
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.0, $Date: 2019-04-15 $
+ * @version 1.1, $Date: 2019-05-02 $
  */
 public enum BitUnit implements Unit<Information>, DoubleFactorSupplier, DescriptiveEnum<BitUnit> {
 	
@@ -229,7 +229,24 @@ public enum BitUnit implements Unit<Information>, DoubleFactorSupplier, Descript
 
 	@Override
 	public Unit<Information> prefix(Prefix prefix) {
-		// TODO Auto-generated method stub
-		return null;
+		 return this;
+	}
+
+
+	@Override
+	public Unit<Information> shift(Number offset) {
+		 return this;
+	}
+
+
+	@Override
+	public Unit<Information> multiply(Number multiplier) {
+		 return this;
+	}
+
+
+	@Override
+	public Unit<Information> divide(Number divisor) {
+		 return this;
 	}
 }

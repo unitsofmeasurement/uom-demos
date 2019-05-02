@@ -47,7 +47,7 @@ import tech.units.indriya.AbstractQuantity;
  * Here is how it looks:
  * </p>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.7
+ * @version 1.8
  */
 public enum DwarfPlanet implements Celestial {
 	CERES(newMass(9.43e+20, KILOGRAM), newLength(0.4873e6, METRE), null),
@@ -82,8 +82,8 @@ public enum DwarfPlanet implements Celestial {
     }
 
     public Quantity<Acceleration> surfaceGravity() {
-        double m = mass.doubleValue(KILOGRAM);
-        double r = radius.doubleValue(METRE);
+        double m = mass.to(KILOGRAM).getValue().doubleValue();
+        double r = radius.to(METRE).getValue().doubleValue();
         return ServiceProvider.current().getQuantityFactory(Acceleration.class).create(
                 G * m / (r * r), METRE_PER_SQUARE_SECOND);
     }

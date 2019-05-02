@@ -31,7 +31,6 @@ import java.math.BigInteger;
 
 import javax.measure.MetricPrefix;
 
-import tech.units.indriya.quantity.NumberQuantity;
 import tech.units.indriya.quantity.Quantities;
 
 public class PrecisionDemo {
@@ -39,7 +38,7 @@ public class PrecisionDemo {
         final var valConst = 1548351392775L;
         var value = Long.valueOf(valConst);
         var valueBig = BigInteger.valueOf(valConst);
-        var milli = NumberQuantity.of(value, MetricPrefix.MILLI(SECOND));
+        var milli = Quantities.getQuantity(value, MetricPrefix.MILLI(SECOND));
         var milliBig = Quantities.getQuantity(valueBig, MetricPrefix.MILLI(SECOND));
         var nano = milli.to(MetricPrefix.NANO(SECOND)).getValue();
         var nanoBig = milliBig.to(MetricPrefix.NANO(SECOND)).getValue();

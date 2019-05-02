@@ -179,4 +179,22 @@ public enum Crates implements Unit<Crate>, ValueSupplier<Integer> {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public Unit<Crate> shift(Number offset) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Unit<Crate> multiply(Number multiplier) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Unit<Crate> divide(Number divisor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
