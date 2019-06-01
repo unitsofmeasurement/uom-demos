@@ -22,6 +22,5 @@ fun process(input: String?):String {
 }
 
 fun parseAndEvaluate(input: String):String {
-
     return "succes"
 }
