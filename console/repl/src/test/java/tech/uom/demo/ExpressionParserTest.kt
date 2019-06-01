@@ -1,12 +1,7 @@
 package tech.uom.demo
 
-import org.jboss.arquillian.container.test.api.Deployment
-import org.jboss.arquillian.junit.Arquillian
-import org.jboss.shrinkwrap.api.ShrinkWrap
-import org.jboss.shrinkwrap.api.asset.EmptyAsset
-import org.jboss.shrinkwrap.api.spec.JavaArchive
+import org.hamcrest.core.Is
 import org.junit.Test
-import org.junit.runner.RunWith
 
 import org.junit.Assert.*
 
@@ -16,8 +11,16 @@ class ExpressionParserTest {
     fun `can parse quantities`() {
         val tokens = listOf(Token("3"), Token("l") )
 
+        val parseTree = ExpressionParser().parse(tokens)
 
+        val expectedTree = QuantityElement(value = "3", unit = "1")
+
+        assertThat(parseTree , Is.`is`(expectedTree as ParseElement))
     }
+
+
+
+
 
 
 }

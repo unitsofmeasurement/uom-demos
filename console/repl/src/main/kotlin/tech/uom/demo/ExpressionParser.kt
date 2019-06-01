@@ -3,8 +3,8 @@ package tech.uom.demo
 class ExpressionParser {
 
 
-    fun parse(tokens: List<Token>): String {
-        return ""
+    fun parse(tokens: List<Token>): ParseElement {
+        return QuantityElement(value="", unit="")
     }
 
 }
