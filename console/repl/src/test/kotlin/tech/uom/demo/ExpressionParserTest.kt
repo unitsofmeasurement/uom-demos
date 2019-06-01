@@ -13,7 +13,7 @@ class ExpressionParserTest {
 
         val parseTree = ExpressionParser().parse(tokens)
 
-        val expectedTree = QuantityElement(value = "3", unit = "1")
+        val expectedTree = QuantityElement(value = "3", unit = "l")
 
         assertThat(parseTree , Is.`is`(expectedTree as ParseElement))
     }
