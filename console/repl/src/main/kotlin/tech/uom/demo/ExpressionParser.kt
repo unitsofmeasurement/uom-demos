@@ -3,7 +3,11 @@
 class ExpressionParser {
 
 
-    fun parse(tokens: List): String {
+    fun parse(tokens: List<Token>): String {
         return ""
     }
+
 }
+
+
+class Token
