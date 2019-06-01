@@ -1,7 +1,8 @@
+package tech.uom.demo
 
 class ExpressionTokerizer {
 
     fun tokenize(input: String): List<Token> {
-        return emptyList()
+        return input.split(" ")
     }
 }
