@@ -14,6 +14,8 @@ class ExpressionParserTest {
 
     @Test
     fun `can parse quantities`() {
+        val tokens = listOf(Token("3"), Token("l") )
+
 
     }
 
