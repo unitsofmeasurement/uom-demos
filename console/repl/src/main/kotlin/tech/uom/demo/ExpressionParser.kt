@@ -10,4 +10,4 @@ class ExpressionParser {
 }
 
 
-class Token
+data class Token(val value:String)
