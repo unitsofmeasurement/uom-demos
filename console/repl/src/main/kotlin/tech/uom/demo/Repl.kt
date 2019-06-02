@@ -1,5 +1,7 @@
 package tech.uom.demo
 
+import java.lang.Exception
+
 
 fun main() {
     Repl().run()
@@ -16,7 +18,14 @@ class Repl {
         while (true) {
             print("> ")
             val input = readLine()
-            println("< ${process(input)}")
+            if ( "exit" == input ){
+                break
+            }
+            try {
+                println("< ${process(input)}")
+            }catch(e:Exception){
+                println("< failure: ${e.localizedMessage}")
+            }
         }
     }
 
