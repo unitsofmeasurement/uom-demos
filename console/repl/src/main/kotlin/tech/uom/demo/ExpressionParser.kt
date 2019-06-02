@@ -8,7 +8,30 @@ class ExpressionParser {
 
 
     fun parse(tokens: List<Token>): ParseElement {
+        // Result := COMPUTATION
+
+        // VALUE = [-+]?[0-9]*(.[0-9]*)?
+        // UNIT = [a-zA-Z)+(^[0-9]+)?
+        // QUANTITY = VALUE | VALUE UNIT
+        // COMPUTATION = QUANTITY | ( COMPUTATION ) | COMPUTATION^VALUE | COMPUTATION [+-/*] COMPUTATION
+
+
+        return parseComputation(tokens)
+    }
+
+    private fun parseComputation(tokens: List<Token>): ParseElement {
+        return when(tokens[0]){
+            Token("(") -> parseNestedComputation(tokens.subList(1,tokens.size))
+            else -> stupidParse(tokens)
+        }
+    }
+
+    private fun stupidParse(tokens: List<Token>): ParseElement {
+
+
         val q1 = parseQuantity(tokens[0].value, tokens[1].value)
+
+
         val q2 = parseQuantity(tokens[3].value, tokens[4].value)
         val operator = Operation(tokens[2].value, q1, q2)
 
@@ -20,6 +43,11 @@ class ExpressionParser {
 //        }
         return operator
     }
+
+    private fun parseNestedComputation(tokens: List<Token>): ParseElement {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
 
     private fun parseQuantity(value: String, unit: String): QuantityElement {
 
