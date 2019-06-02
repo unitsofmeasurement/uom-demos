@@ -5,6 +5,7 @@ object Symbols {
     const val OPS_DIVIDE = "/"
     const val OPS_ADD = "+"
     const val OPS_SUBTRACT = "-"
+    const val POW = "^"
 
     val OPS: List<String>
 

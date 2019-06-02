@@ -19,19 +19,37 @@ class OperationEvaluator {
 
     private fun evaluateOperation(operation: Operation): Quantity<*>? {
 
-        val q1 = (operation.left as QuantityElement).toQuantity()
-        val q2 = (operation.right as QuantityElement).toQuantity()
-        q1.multiply(q2)
+        val q1 = if(  operation.left  is Operation ){
+            evaluateOperation( operation.left)
+        }else{
+            operation.left.toQuantity()
+        }
+
+        val q2 = if(  operation.right  is Operation ){
+            evaluateOperation( operation.right)
+        }else{
+            operation.right.toQuantity()
+        }
+
         return when (operation.value) {
-            Symbols.OPS_MULTIPLY -> q1.multiply(q2)
-            Symbols.OPS_DIVIDE -> q1.divide(q2)
+            Symbols.OPS_MULTIPLY -> q1?.multiply(q2)
+            Symbols.OPS_DIVIDE -> q1?.divide(q2)
             else -> null
         }
     }
 
+
 }
 
-fun QuantityElement.toQuantity() = Quantities.getQuantity("${this.value} ${this.unit}")
+fun ParseElement.toQuantity(): Quantity<*> {
+    return when {
+        this is QuantityElement -> Quantities.getQuantity("${this.value} ${this.unit}")
+        this is ValueElement -> Quantities.getQuantity("${this.value} one")
+        else -> throw java.lang.IllegalStateException("Cannot convert ${this.javaClass} to a quantity")
+    }
+
+
+}
 //fun QuantityElement.toQuantity2()  =  Quantities.getQuantity( this.value.toInt(), getUnit( this.unit) )
 //
 //fun getUnit(value:String)= Units.getInstance().getUnits().filter { unit -> unit.getSymbol() == value }.first()

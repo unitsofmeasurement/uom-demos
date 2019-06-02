@@ -33,7 +33,7 @@ class ExpressionParserTest {
         }.onSuccess {
             fail("Should throw an excecption")
         }.onFailure {
-            assertThat(it, instanceOf(IllegalArgumentException::class.java))
+            assertThat(it, instanceOf(IllegalStateException::class.java))
         }
 
     }
