@@ -17,12 +17,12 @@ class OperationEvaluator{
         }
     }
 
-    fun evaluateOperation(operation: Operation): Quantity<*>? {
+    private fun evaluateOperation(operation: Operation): Quantity<*>? {
 
         val q1 = (operation.left as QuantityElement).toQuantity()
         val q2 = (operation.right as QuantityElement).toQuantity()
         q1.multiply(q2)
-        return if ( operation.value == "*") {
+        return if ( operation.value == Symbols.OPS_MULTIPLY) {
             q1.multiply(q2)
         } else {
             null
