@@ -72,5 +72,6 @@
 		<module>java8</module>
 		<module>java10</module>
 		<module>systems</module>
-	</modules>
+        <module>repl</module>
+    </modules>
 </project>
