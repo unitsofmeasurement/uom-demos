@@ -29,10 +29,14 @@ import static javax.measure.MetricPrefix.NANO;
 import static tech.units.indriya.unit.Units.LITRE;
 
 import javax.measure.Unit;
+import javax.measure.quantity.Mass;
 import javax.measure.quantity.Speed;
+import javax.measure.quantity.Volume;
 
 import tech.units.indriya.quantity.Quantities;
 import javax.measure.MetricPrefix;
+import javax.measure.Quantity;
+
 import tech.units.indriya.unit.Units;
 
 public class UnitDemo {
@@ -60,8 +64,16 @@ public class UnitDemo {
 		
 //		Unit<Dimensionless> d = Units.METRE.asType(Dimensionless.class);
 //		System.out.println(d);
-		
-		System.out.println(Quantities.getQuantity(3.3, LITRE).toString());
+		Quantity<Volume> l6 = Quantities.getQuantity(6, LITRE);
+		Quantity<Volume> l33 = Quantities.getQuantity(3.3, LITRE);
+		System.out.println(l33.toString());
 		System.out.println(Quantities.getQuantity(3.3, NANO(LITRE)).toString());
+		Quantity<Mass> fiveKg = Quantities.getQuantity(5, Units.KILOGRAM);
+		System.out.println(fiveKg);
+		Quantity<?> fivedivFiveKg = fiveKg.divide(fiveKg);
+		System.out.println(fivedivFiveKg);
+		System.out.println(fivedivFiveKg.getValue());
+		Quantity<Volume> l3 = l6.divide(2);
+		System.out.println(l3);
 	}
 }

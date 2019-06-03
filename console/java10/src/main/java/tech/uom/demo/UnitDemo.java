@@ -53,10 +53,12 @@ public class UnitDemo {
 		
 //		Unit<Dimensionless> d = Units.METRE.asType(Dimensionless.class);
 //		System.out.println(d);
-		var l33 = Quantities.getQuantity(3.3, LITRE).toString();
-		System.out.println(l33);
+		var l33 = Quantities.getQuantity(3.3, LITRE);
+		System.out.println(l33.toString());
 		var nl33 = Quantities.getQuantity(3.3, NANO(LITRE)).toString();
 		System.out.println(nl33);
+		var l33div = l33.divide(2);
+		System.out.println(l33div);
 	}
 
 }

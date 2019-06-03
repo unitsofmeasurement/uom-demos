@@ -29,13 +29,22 @@
  */
 package tech.uom.demo.format;
 
+import static tech.units.indriya.unit.Units.LITRE;
+
+import java.text.DecimalFormat;
+
+import javax.measure.Quantity;
 import javax.measure.Unit;
+import javax.measure.format.QuantityFormat;
 import javax.measure.format.UnitFormat;
+import javax.measure.quantity.Volume;
 import javax.measure.spi.ServiceProvider;
 
 import tech.units.indriya.AbstractUnit;
 import tech.units.indriya.format.EBNFUnitFormat;
-import tech.units.indriya.format.LocalUnitFormat;
+import tech.units.indriya.format.NumberDelimiterQuantityFormat;
+import tech.units.indriya.format.SimpleUnitFormat;
+import tech.units.indriya.quantity.Quantities;
 
 public class UnitFormatDemo {
 
@@ -58,20 +67,31 @@ public class UnitFormatDemo {
 		parsed = AbstractUnit.parse("W");
 		System.out.println(parsed);
 		
-		UnitFormat format = ServiceProvider.current().getUnitFormatService().getUnitFormat();
+		UnitFormat format = ServiceProvider.current().getFormatService().getUnitFormat();
 		
 //		Unit u = ServiceProvider.current().getUnitFormatService().getUnitFormat().parse("1/l");
-		Unit u = ServiceProvider.current().getUnitFormatService().getUnitFormat().parse("g/l");
+		Unit u = ServiceProvider.current().getFormatService().getUnitFormat().parse("g/l");
 		System.out.println(u);
 		
 //		Unit u1 = format.parse("m*");
 //		System.out.println(u1);
 		
-		Unit u2 = EBNFUnitFormat.getInstance().parse("m-");
-		System.out.println(u2);
+//		Unit u2 = EBNFUnitFormat.getInstance().parse("m-");
+//		System.out.println(u2);
 //		
 //		Unit u3 = LocalUnitFormat.getInstance().parse("m");
 //		System.out.println(u3);
+		NumberDelimiterQuantityFormat ndqf = NumberDelimiterQuantityFormat.getInstance();
+		
+		Quantity<Volume> l6 = Quantities.getQuantity(6, LITRE);
+		Quantity<Volume> l3 = l6.divide(2);
+		System.out.println(ndqf.format(l3));
+		
+		QuantityFormat ndqf2 = NumberDelimiterQuantityFormat.builder().
+				setNumberFormat(new DecimalFormat("00.000")).
+				setUnitFormat(SimpleUnitFormat.getInstance()).
+				build();
+		System.out.println(ndqf2.format(l3));
 	}
 
 }
