@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<modelVersion>4.0.0</modelVersion>
+<parent>
+    <groupId>tech.uom.demo.web</groupId>
+    <artifactId>uom-web-demos</artifactId>
+    <version>2.0-SNAPSHOT</version>
+</parent>
+<artifactId>vaadindemo</artifactId>
+<name>Vaadin Web Demo</name>
+<description>Demo project for a Unit conversion using Vaadin</description>
+
+<properties>
+    <!--<jsr.version>1.0</jsr.version>-->
+    <!--<lib.version>1.0.1</lib.version>-->
+    <!--<sourceEncoding>UTF-8</sourceEncoding> &lt;!&ndash; in Maven 3. &ndash;&gt;-->
+    <!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+    <!--<project.reporting.outputEncoding>${sourceEncoding}</project.reporting.outputEncoding>-->
+    <!--<jdkVersion>1.8</jdkVersion>-->
+    <!--<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>-->
+    <!--<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>-->
+    <!--<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>-->
+    <!--<additionalparam>-Xdoclint:none</additionalparam>-->
+    <!--<maven.source.version>3.0.1</maven.source.version>-->
+    <!--<jsr.version>1.0</jsr.version>-->
+    <!--<ri.version>1.2</ri.version>-->
+    <!--<se.version>1.0.2</se.version>-->
+    <!--<lib.version>1.1</lib.version>-->
+
+    <vaadin.version>13.0.1</vaadin.version>
+    <vaadin.plugin.version>13.0.1</vaadin.plugin.version>
+    <vaadin-spring-boot-starter.version>10.0.11</vaadin-spring-boot-starter.version>
+    <jetty.plugin.version>9.3.9.v20160517</jetty.plugin.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <vaadin.widgetset.mode>local</vaadin.widgetset.mode>
+    <vaadin.theme>mytheme</vaadin.theme>
+    <maven-war-plugin.version>3.0.0</maven-war-plugin.version>
+    <maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
+
+</properties>
+
+<dependencyManagement>
+    <dependencies>
+
+
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-bom</artifactId>
+            <version>${vaadin.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+
+        <!--<dependency>
+            <groupId>javax.measure</groupId>
+            <artifactId>unit-api</artifactId>
+            <version>${jsr.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>tech.units</groupId>
+            <artifactId>indriya</artifactId>
+            <version>${ri.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>tec.uom</groupId>
+            <artifactId>uom-se</artifactId>
+            <version>${se.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>tech.uom.lib</groupId>
+            <artifactId>uom-lib</artifactId>
+            <version>${lib.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>tech.uom.lib</groupId>
+            <artifactId>uom-lib-common</artifactId>
+            <version>${lib.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-bom</artifactId>
+            <version>${vaadin.spring.boot.starter.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>-->
+    </dependencies>
+</dependencyManagement>
+
+<dependencies>
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>4.0.1</version>
+        <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>com.vaadin</groupId>
+        <artifactId>vaadin-spring-boot-starter</artifactId>
+        <version>${vaadin-spring-boot-starter.version}</version>
+    </dependency>
+
+
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <version>2.1.1.RELEASE</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <version>2.1.1.RELEASE</version>
+        <scope>test</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.4</version>
+    </dependency>
+</dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${maven-war-plugin.version}</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <!-- Exclude an unnecessary file generated by the GWT compiler. -->
+                    <packagingExcludes>WEB-INF/classes/VAADIN/widgetsets/WEB-INF/**</packagingExcludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.vaadin</groupId>
+                <artifactId>vaadin-maven-plugin</artifactId>
+                <version>${vaadin.plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>${maven-clean-plugin.version}</version>
+                <!-- Clean up also any pre-compiled themes -->
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>src/main/webapp/VAADIN/themes</directory>
+                            <includes>
+                                <include>**/styles.css</include>
+                                <include>**/styles.scss.cache</include>
+                            </includes>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+            <!-- The Jetty plugin allows us to easily test the development build by running jetty:run on the command line. -->
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>${jetty.plugin.version}</version>
+                <configuration>
+                    <scanIntervalSeconds>2</scanIntervalSeconds>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>vaadin-addons</id>
+            <url>http://maven.vaadin.com/vaadin-addons</url>
+        </repository>
+    </repositories>
+
+    <profiles>
+        <profile>
+            <!-- Vaadin pre-release repositories -->
+            <id>vaadin-prerelease</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+
+            <repositories>
+                <repository>
+                    <id>vaadin-prereleases</id>
+                    <url>http://maven.vaadin.com/vaadin-prereleases</url>
+                </repository>
+                <repository>
+                    <id>vaadin-snapshots</id>
+                    <url>https://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>vaadin-prereleases</id>
+                    <url>http://maven.vaadin.com/vaadin-prereleases</url>
+                </pluginRepository>
+                <pluginRepository>
+                    <id>vaadin-snapshots</id>
+                    <url>https://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+
+
+</project>
