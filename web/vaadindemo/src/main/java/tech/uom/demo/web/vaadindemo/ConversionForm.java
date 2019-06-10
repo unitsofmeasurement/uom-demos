@@ -60,18 +60,7 @@ public class ConversionForm extends FormLayout {
             }
         });
 
-
-/*        System.out.println("System of units :: " + ServiceProvider.current().getSystemOfUnitsService().getAvailableSystemsOfUnits());
-
-        Collection systemOfUnits = ServiceProvider.current().getSystemOfUnitsService().getAvailableSystemsOfUnits();
-
-        systemOfUnits.forEach(name -> System.out.println(((Units) name).getUnits()));*/
-
-
         Button btnConvert = new Button("Convert");
-
-//        binder.bindInstanceFields(this);
-
 
         HorizontalLayout fromPanel = new HorizontalLayout(baseUnits, fromSelect, toSelect);
         fromPanel.setSizeFull();
@@ -124,19 +113,6 @@ public class ConversionForm extends FormLayout {
                         HECTARE,
                         ACRE
                 };
-                /* TODO integrate with other systems like ISO
-             case "data":
-                return new Unit[] {
-                    BIT,
-                    BYTE,
-                    KILO(BIT),
-                    MEGA(BIT),
-                    KILO(BYTE),
-                    MEGA(BYTE),
-                    GIGA(BYTE),
-                    TERA(BYTE),
-                    EXA(BYTE),
-                }; */
             case "mass":
                 return new Unit[] {
                         KILOGRAM,
