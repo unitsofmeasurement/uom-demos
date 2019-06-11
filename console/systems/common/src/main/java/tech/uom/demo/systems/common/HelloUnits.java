@@ -25,6 +25,9 @@
  */
 package tech.uom.demo.systems.common;
 
+import java.time.Duration;
+import java.time.Period;
+
 import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Length;
@@ -44,28 +47,35 @@ import tech.units.indriya.quantity.Quantities;
  */
 public class HelloUnits {
 
-    /**
-     * @param args
-     */
-    @SuppressWarnings({ "unchecked", "rawtypes" })
-    public static void main(String[] args) {
-	Quantity<Length> length = Quantities.getQuantity(10, SI.METRE);
-	// LengthAmount length = new LengthAmount(10, SI.KILOGRAM);
-	// this won't work ;-)
+	/**
+	 * @param args
+	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public static void main(String[] args) {
+		Quantity<Length> length = Quantities.getQuantity(10, SI.METRE);
+		// LengthAmount length = new LengthAmount(10, SI.KILOGRAM);
+		// this won't work ;-)
 
-	System.out.println(length);
-	Unit<Length> lenUnit = length.getUnit();
-	System.out.println(lenUnit);
+		System.out.println(length);
+		Unit<Length> lenUnit = length.getUnit();
+		System.out.println(lenUnit);
 
-	System.out.println(((AbstractQuantity) length).doubleValue(USCustomary.FOOT));
-	// System.out.println(length.doubleValue(USCustomary.POUND));
-	// this won't work either.
-	// UnitConverter footConv = lenUnit.getConverterTo(USCustomary.INCH);
-	System.out.print(((AbstractQuantity<Length>) length).doubleValue(USCustomary.INCH));
-	System.out.println(" " + USCustomary.FOOT);
+		System.out.println(((AbstractQuantity) length).doubleValue(USCustomary.FOOT));
+		// System.out.println(length.doubleValue(USCustomary.POUND));
+		// this won't work either.
+		// UnitConverter footConv = lenUnit.getConverterTo(USCustomary.INCH);
+		System.out.print(((AbstractQuantity<Length>) length).doubleValue(USCustomary.INCH));
+		System.out.println(" " + USCustomary.FOOT);
 
-	Quantity<Mass> mass = Quantities.getQuantity(1000, SI.GRAM);
-	Quantity<Mass> mass2 = NumberQuantity.of(1, SI.KILOGRAM);
-	System.out.println(mass.equals(mass2));
-    }
+		Quantity<Mass> mass = Quantities.getQuantity(1000, SI.GRAM);
+		Quantity<Mass> mass2 = NumberQuantity.of(1, SI.KILOGRAM);
+		System.out.println(mass.equals(mass2));
+		
+		Period p1 = Period.parse("P1Y2M3D");
+		System.out.println(p1);
+		//Period p2 = Period.parse("P2M3D1Y"); fails
+		Duration d1 = Duration.parse("P2DT3H4M");
+		System.out.println(d1);
+		//Duration d2 = Duration.parse("P4M2DT3H");
+	}
 }
