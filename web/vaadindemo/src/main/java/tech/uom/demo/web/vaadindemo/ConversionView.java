@@ -1,14 +1,10 @@
 package tech.uom.demo.web.vaadindemo;
 
-
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.router.Route;
-
 import com.vaadin.flow.server.PWA;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
