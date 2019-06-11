@@ -24,8 +24,6 @@ import static tec.uom.se.unit.MetricPrefix.*;
 @UIScope
 public class ConversionForm extends FormLayout {
 
-//    private Binder<ConversionRequest> binder = new Binder<>(ConversionRequest.class);
-
 
     TextField result = new TextField("Result");
     TextField fromValue = new TextField("Value");
@@ -102,8 +100,6 @@ public class ConversionForm extends FormLayout {
             case "energy":
                 return new Unit[] {
                         JOULE,
-                        //Units.ELECTRON_VOLT,
-//                    UCUM.BTU
                 };
             case "area":
                 return new Unit[] {
@@ -130,7 +126,6 @@ public class ConversionForm extends FormLayout {
                 return new Unit[] {
                         CENTIRADIAN,
                         GRADE //,
-                        //Units.REVOLUTION
                 };
             case "speed":
                 return new Unit[] {
