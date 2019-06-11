@@ -27,6 +27,7 @@ The project currently contains the following modules:
 - [Web Demos](web)
   - [Spark Sensor Web API Demo](web/sparkdemo)
   - [Improved JBoss Temperature Converter](web/temperature-converter)
+  - [Vaadin] (web/vaadin)
 
 
 Launch Config for JBoss Developer Studio or Eclipse
