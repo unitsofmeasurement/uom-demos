@@ -14,7 +14,7 @@
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
 	<properties>
-		<jdkVersion>9</jdkVersion>
+		<jdkVersion>10</jdkVersion>
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
@@ -47,7 +47,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<release>10</release>
+					<release>${jdkversion}</release>
 				</configuration>
 				<dependencies>
 					<dependency>

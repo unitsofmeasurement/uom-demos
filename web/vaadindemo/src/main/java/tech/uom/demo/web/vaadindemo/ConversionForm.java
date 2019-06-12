@@ -11,14 +11,14 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.spring.annotation.SpringComponent;
 import com.vaadin.flow.spring.annotation.UIScope;
 import org.springframework.beans.factory.annotation.Autowired;
-import tec.uom.se.unit.Units;
+import tech.units.indriya.unit.Units;
 
 import javax.measure.Unit;
 import javax.measure.UnitConverter;
 
 import static systems.uom.common.USCustomary.*;
-import static tec.uom.se.unit.Units.*;
-import static tec.uom.se.unit.MetricPrefix.*;
+import static tech.units.indriya.unit.Units.*;
+import static tech.units.indriya.unit.MetricPrefix.*;
 
 @SpringComponent
 @UIScope

@@ -27,17 +27,20 @@ package tech.uom.demo.systems.common;
 
 import java.time.Duration;
 import java.time.Period;
+import java.time.temporal.TemporalUnit;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
+import javax.measure.quantity.Time;
 
 import si.uom.SI;
 import systems.uom.common.USCustomary;
 import tech.units.indriya.AbstractQuantity;
 import tech.units.indriya.quantity.NumberQuantity;
 import tech.units.indriya.quantity.Quantities;
+import tech.units.indriya.quantity.time.TimeQuantities;
 
 /**
  * This is a back-port of UOMo HelloUnits to prove similar behavior, especially
@@ -77,5 +80,9 @@ public class HelloUnits {
 		Duration d1 = Duration.parse("P2DT3H4M");
 		System.out.println(d1);
 		//Duration d2 = Duration.parse("P4M2DT3H");
+		for (TemporalUnit tu : p1.getUnits()) {
+			Quantity<Time> timeQuantity = TimeQuantities.getQuantity(Long.valueOf(p1.get(tu)).intValue(), tu);
+			System.out.println(timeQuantity);
+		}
 	}
 }
