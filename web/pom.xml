@@ -14,7 +14,8 @@
         <module>temperature-converter</module>
         <module>sparkdemo</module>
         <module>vaadindemo</module>
-    </modules>
+		<module>springbootdemo</module>
+	</modules>
 	<dependencies>
 		<dependency>
 			<groupId>javax.measure</groupId>
