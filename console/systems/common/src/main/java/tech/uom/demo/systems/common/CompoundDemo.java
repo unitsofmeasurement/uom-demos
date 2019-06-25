@@ -34,7 +34,7 @@ import static systems.uom.common.USCustomary.*;
 public class CompoundDemo {
 	public static void main(String[] args) {
 		MixedRadix<Length> mixedRadix = MixedRadix.of(FOOT).mix(INCH);
-
+		System.out.println(mixedRadix);
 		CompoundQuantity<Length> compoundLength = 
 				mixedRadix.createCompoundQuantity(6, 2);
 		System.out.println(compoundLength);
