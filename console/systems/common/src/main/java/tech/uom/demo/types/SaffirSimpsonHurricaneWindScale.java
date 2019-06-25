@@ -32,7 +32,7 @@ import javax.measure.Quantity;
 import javax.measure.quantity.Speed;
 
 import tech.units.indriya.quantity.QuantityRange;
-import tec.uom.lib.common.function.Nameable;
+import tech.uom.lib.common.function.Nameable;
 
 /**
  * @author Werner Keil

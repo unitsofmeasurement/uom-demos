@@ -63,15 +63,15 @@ public class HelloUnits {
 		Unit<Length> lenUnit = length.getUnit();
 		System.out.println(lenUnit);
 
-		System.out.println(((AbstractQuantity) length).doubleValue(USCustomary.FOOT));
+		//System.out.println(((AbstractQuantity) length).doubleValue(USCustomary.FOOT));
 		// System.out.println(length.doubleValue(USCustomary.POUND));
 		// this won't work either.
 		// UnitConverter footConv = lenUnit.getConverterTo(USCustomary.INCH);
-		System.out.print(((AbstractQuantity<Length>) length).doubleValue(USCustomary.INCH));
+		//System.out.print(((AbstractQuantity<Length>) length).doubleValue(USCustomary.INCH));
 		System.out.println(" " + USCustomary.FOOT);
 
 		Quantity<Mass> mass = Quantities.getQuantity(1000, SI.GRAM);
-		Quantity<Mass> mass2 = NumberQuantity.of(1, SI.KILOGRAM);
+		Quantity<Mass> mass2 = Quantities.getQuantity(1, SI.KILOGRAM);
 		System.out.println(mass.equals(mass2));
 		
 		Period p1 = Period.parse("P1Y2M3D");
@@ -81,7 +81,7 @@ public class HelloUnits {
 		System.out.println(d1);
 		//Duration d2 = Duration.parse("P4M2DT3H");
 		for (TemporalUnit tu : p1.getUnits()) {
-			Quantity<Time> timeQuantity = TimeQuantities.getQuantity(Long.valueOf(p1.get(tu)).intValue(), tu);
+			Quantity<Time> timeQuantity = TimeQuantities.getQuantity(Long.valueOf(p1.get(tu)).longValue(), tu);
 			System.out.println(timeQuantity);
 		}
 	}

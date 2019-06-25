@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
@@ -10,20 +11,29 @@
 	<artifactId>uom-console-demos-common</artifactId>
 	<dependencies>
 		<dependency>
+			<groupId>tech.uom.lib</groupId>
+			<artifactId>uom-lib-common</artifactId>
+			<version>${lib2.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>tech.units</groupId>
 			<artifactId>indriya</artifactId>
+			<version>${ri2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>si.uom</groupId>
+			<artifactId>si-units</artifactId>
+			<version>${ri2.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>systems.uom</groupId>
 			<artifactId>systems-quantity</artifactId>
+			<version>${ri2.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>systems.uom</groupId>
 			<artifactId>systems-common</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>tech.uom.lib</groupId>
-			<artifactId>uom-lib-common</artifactId>
+			<version>${ri2.version}</version>
 		</dependency>
 	</dependencies>
 </project>

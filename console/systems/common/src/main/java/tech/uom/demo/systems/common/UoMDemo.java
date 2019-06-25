@@ -27,7 +27,7 @@ package tech.uom.demo.systems.common;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.*;
-import tech.units.indriya.quantity.NumberQuantity;
+import tech.units.indriya.quantity.Quantities;
 
 import static si.uom.SI.*;
 import static systems.uom.common.USCustomary.METER;
@@ -45,7 +45,7 @@ public class UoMDemo {
     // Retrieval of the unit dimension (depends upon the current model).
     System.out.println(ELECTRON_VOLT.getDimension());
     
-    Quantity<Length> m = NumberQuantity.of(10, MILE);
+    Quantity<Length> m = Quantities.getQuantity(10, MILE);
     System.out.println(m);
   }
 }

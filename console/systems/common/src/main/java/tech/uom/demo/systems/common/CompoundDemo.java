@@ -1,6 +1,6 @@
 /*
- *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Units of Measurement Demos for Java
+ *  Copyright (c) 2005-2019, Jean-Marie Dautelle, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -10,7 +10,7 @@
  *
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363, Unit-API nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ * 3. Neither the name of JSR-385, Unit-API nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -25,16 +25,18 @@
  */
 package tech.uom.demo.systems.common;
 
-import javax.measure.spi.ServiceProvider;
-import javax.measure.spi.SystemOfUnits;
+import javax.measure.quantity.*;
 
-import tech.uom.lib.common.util.SystemOfUnitsReporter;
+import tech.units.indriya.function.MixedRadix;
+import tech.units.indriya.quantity.CompoundQuantity;
+import static systems.uom.common.USCustomary.*;
 
-public class CommonDemo {
-	public static void main(String... args) {
-		for (SystemOfUnits s : ServiceProvider.current().getSystemOfUnitsService().getAvailableSystemsOfUnits()) {
-			SystemOfUnitsReporter.of(s).report();
-			System.out.println();
-		}
+public class CompoundDemo {
+	public static void main(String[] args) {
+		MixedRadix<Length> mixedRadix = MixedRadix.of(FOOT).mix(INCH);
+
+		CompoundQuantity<Length> compoundLength = 
+				mixedRadix.createCompoundQuantity(6, 2);
+		System.out.println(compoundLength);
 	}
 }

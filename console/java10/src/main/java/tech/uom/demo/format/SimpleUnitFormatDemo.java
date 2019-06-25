@@ -30,7 +30,7 @@ import javax.measure.BinaryPrefix;
 import javax.measure.quantity.Dimensionless;
 
 import tech.units.indriya.format.SimpleUnitFormat;
-import tech.units.indriya.function.RationalConverter;
+import tech.units.indriya.function.MultiplyConverter;
 import tech.units.indriya.quantity.*;
 import tech.units.indriya.unit.BaseUnit;
 import tech.units.indriya.unit.TransformedUnit;
@@ -43,7 +43,7 @@ public class SimpleUnitFormatDemo {
     
     private void addKibiByte() {
         var bit = new BaseUnit<Dimensionless>("bit", QuantityDimension.NONE);
-        var byteV = new TransformedUnit<Dimensionless>("byte", bit, RationalConverter.of(8, 1));
+        var byteV = new TransformedUnit<Dimensionless>("byte", bit, MultiplyConverter.ofRational(8, 1));
         var kibiByte = BinaryPrefix.KIBI(byteV);
         System.out.println(kibiByte);
         SimpleUnitFormat.getInstance().label(kibiByte, kibiByte.toString());

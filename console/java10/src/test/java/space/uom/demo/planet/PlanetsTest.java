@@ -1,6 +1,6 @@
-/**
+/*
  *  Unit-API - Units of Measurement API for Java
- *  Copyright 2013-2016, Jean-Marie Dautelle, Werner Keil, V2COM and individual
+ *  Copyright 2013-2019, Jean-Marie Dautelle, Werner Keil and individual
  *  contributors by the @author tag.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,31 +27,30 @@ import space.uom.demo.planet.Planet;
 
 /**
  * @author Werner Keil
- * @version 1.3
+ * @version 1.4
  */
 public class PlanetsTest {
-    static final Logger logger = Logger.getLogger(PlanetsTest.class
-	    .getName());
+	static final Logger logger = Logger.getLogger(PlanetsTest.class.getName());
 
-    @Test
-    public void testPlanets() {
-	Celestial[] planets = Planet.values();
-	assertNotNull(planets);
-	logger.log(Level.INFO, "Planets");
-	for (Celestial planet : planets) {
-	    logger.log(Level.INFO, String.valueOf(planet));
+	@Test
+	public void testPlanets() {
+		Celestial[] planets = Planet.values();
+		assertNotNull(planets);
+		logger.log(Level.INFO, "Planets");
+		for (Celestial planet : planets) {
+			logger.log(Level.INFO, String.valueOf(planet));
+		}
+		assertEquals(8, planets.length);
 	}
-	assertEquals(8, planets.length);
-    }
 
-    @Test
-    public void testDwarfPlanets() {
-	Celestial[] dwarfPlanets = DwarfPlanet.values();
-	assertNotNull(dwarfPlanets);
-	logger.log(Level.INFO, "Dwarf Planets");
-	for (Celestial planet : dwarfPlanets) {
-	    logger.log(Level.INFO, String.valueOf(planet));
+	@Test
+	public void testDwarfPlanets() {
+		Celestial[] dwarfPlanets = DwarfPlanet.values();
+		assertNotNull(dwarfPlanets);
+		logger.log(Level.INFO, "Dwarf Planets");
+		for (Celestial planet : dwarfPlanets) {
+			logger.log(Level.INFO, String.valueOf(planet));
+		}
+		assertEquals(5, dwarfPlanets.length);
 	}
-	assertEquals(5, dwarfPlanets.length);
-    }
 }
