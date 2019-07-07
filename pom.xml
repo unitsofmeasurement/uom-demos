@@ -143,4 +143,5 @@
 			<url>http://jcenter.bintray.com</url>
 		</repository>
 	</repositories>
+	<version>2.0-SNAPSHOT</version>
 </project>
