@@ -2,9 +2,6 @@ package tech.uom.demo.valhalla;
 
 import static org.junit.Assert.*;
 
-import java.lang.ref.ReferenceQueue;
-import java.lang.ref.WeakReference;
-
 import org.junit.Test;
 
 	/*
