@@ -13,6 +13,7 @@ The project currently contains the following modules:
   - [Basic Console Demos](console/basic)
   - [Java 8 Console Demos](console/java8)
   - [Java 10 Console Demos](console/java10)
+  - [Valhalla Demos](console/valhalla) (**Early-Access Build**)
 - [Language Specific Demos](lang)
   - [Kotlin Repl Demos](lang/repl)
 - [System Specific demos](console/systems)
