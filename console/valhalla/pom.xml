@@ -12,7 +12,6 @@
 	<name>Project Valhalla Demos</name>
 	<properties>
 		<java.version>14</java.version>
-		<java.bin>C:/ProgramData/Java/jdk-14/bin</java.bin>
 	</properties>
 	<build>
 		<plugins>
