@@ -15,13 +15,13 @@ import org.junit.Test;
 	public class InlineReferenceTest {
 
 	    @Test(expected = IllegalArgumentException.class)
-	    static void test1() {
+	    public void test1() {
 	        VUnit? p = new VUnit("k","kilogram");
 	        WeakReference<VUnit?> r = new WeakReference<>(p);
 	    }
 
 	    @Test(expected = IllegalArgumentException.class)
-	    static void test2() {
+	    public void test2() {
 	        ReferenceQueue<Object> q = new ReferenceQueue<>();
 	        VUnit? p = new VUnit("k","kilogram");
 	        WeakReference<VUnit?> r = new WeakReference<>(p, q);

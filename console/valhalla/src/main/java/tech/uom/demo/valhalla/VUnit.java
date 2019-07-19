@@ -3,9 +3,10 @@ package tech.uom.demo.valhalla;
 import javax.measure.*;
 import java.util.Map;
 
-public inline class VUnit<Q extends Quantity<Q>> implements Unit<Q> {
+public inline class VUnit<Q extends Quantity<Q>> implements Unit?<Q> {
 
-        private final String x;
+
+		private final String x;
         private final String y;
 
         public static VUnit of(String x, String y) {
@@ -132,4 +133,10 @@ public inline class VUnit<Q extends Quantity<Q>> implements Unit<Q> {
     public UnitConverter getConverterTo(Unit<Q> that) throws UnconvertibleException {
         return null;
     }
+    
+    @Override
+    public String toString() {
+    	return "VUnit [symbol=" + x + ", name=" + y + "]";
+    }
+
 }
