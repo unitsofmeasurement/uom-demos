@@ -3,7 +3,7 @@
     <profile>
       <id>set-java-path</id>
       <properties>
-      	<java.bin>C:/ProgramData/Java/jdk-14/bin</java.bin>
+      	<java.bin>Path-to-your/jdk-14/bin</java.bin>
       </properties>
     </profile>
   </profiles>
