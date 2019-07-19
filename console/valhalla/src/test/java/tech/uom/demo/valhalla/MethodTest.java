@@ -7,7 +7,6 @@ import org.junit.Test;
 	/*
 	 * @test
 	 * @summary Test inline classes with Reference types
-	 * @run testng/othervm InlineReferenceTest
 	 */
 	public class MethodTest {
 
