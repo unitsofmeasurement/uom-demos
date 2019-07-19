@@ -11,5 +11,5 @@ How to Run
 -------------------------------------
 To run this demo:
 - First you need to download and install a Valhalla Early-Access Build from [Project Valhalla](https://jdk.java.net/valhalla/) 
-- Because of various Maven plugins not supporting Java 14 out of the box yet, please copy [settings-template.xml](settings-template.xml) to [settings.xml](settings.xml).
+- Because of various Maven plugins not supporting Java 14 out of the box yet, please copy [settings-template.xml](settings-template.xml) to `settings.xml`.
 - Change `<java.bin>Path-to-your/jdk-14/bin</java.bin>` in the new file to the `bin` folder of your Java 14 Early-Access Build installation.
