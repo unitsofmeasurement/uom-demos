@@ -13,7 +13,8 @@ The project currently contains the following modules:
   - [Basic Console Demos](console/basic)
   - [Java 8 Console Demos](console/java8)
   - [Java 10 Console Demos](console/java10)
-  - [Kotlin Repl Demos](console/repl)
+- [Language Specific Demos](language)
+  - [Kotlin Repl Demos](language/repl)
 - [System Specific demos](console/systems)
 - [Device Specific demos](device)
   - [Hello Edison for Intel Edison IoT Devices](device/edison/hello)
@@ -21,9 +22,7 @@ The project currently contains the following modules:
   - [Device I/O for for Intel Edison IoT Devices](device/edison/dio) **TBD**
 - [Domain Specific demos](domain)
 - [JavaFX Demos](javafx)
-  - [FXlib Demo Application](javafx/fxlib) (**Requires Java 11 because of OpenJFX**)
-- [Java ME 8 Demos](javame) **Currently not Maven enabled, require Eclipse or NetBeans IDE**
-  - [Java ME 8 Demo](javame/medemo)
+  - [FXlib Demo Application](javafx/fxlib) (**Requires Java 11 or higher because of OpenJFX**)
 - [Web Demos](web)
   - [Spark Sensor Web API Demo](web/sparkdemo)
   - [Improved JBoss Temperature Converter](web/temperature-converter)

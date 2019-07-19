@@ -1,7 +1,0 @@
-MIDlet-Version: 0.6.1
-MIDlet-Vendor: Units of Measurement
-MIDlet-Jar-URL: medemo.jar
-MicroEdition-Configuration: CLDC-1.8
-MIDlet-1: Medemo,,medemo.Medemo
-MicroEdition-Profile: MEEP-8.0
-MIDlet-Name: ME Demo MIDlet Suite

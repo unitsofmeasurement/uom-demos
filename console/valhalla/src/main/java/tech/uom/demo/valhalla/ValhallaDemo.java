@@ -1,11 +1,9 @@
 package tech.uom.demo.valhalla;
 
-import java.lang.ref.WeakReference;
-
 public class ValhallaDemo {
 
 	public static void main(String[] args) {
-        VUnit u = new VUnit("k","kilogram");
+        VUnit u = new VUnit("kg","kilogram");
         System.out.println(u);
 	}
 

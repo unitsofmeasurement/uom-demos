@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>uom-console-demos</artifactId>
+	<artifactId>uom-language-demos</artifactId>
 	<packaging>pom</packaging>
-	<name>Units of Measurement Console Demos</name>
-	<description>Unit Standard Console based Demos.</description>
-	<groupId>tech.uom.demo.console</groupId>
+	<name>Units of Measurement Language Demos</name>
+	<description>Unit Standard Language specific Demos.</description>
+	<groupId>tech.uom.demo.lang</groupId>
 	<parent>
 		<groupId>tech.uom.demo</groupId>
 		<artifactId>uom-demos</artifactId>
@@ -68,10 +68,6 @@
 		</pluginManagement>
 	</build>
 	<modules>
-		<module>basic</module>
-		<module>java8</module>
-		<module>java10</module>
-		<module>systems</module>
-        <!--  >module>valhalla</module currently disabled because it requires partial JDK 14+ preview -->
+        <module>repl</module>
     </modules>
 </project>
