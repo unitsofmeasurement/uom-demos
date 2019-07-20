@@ -13,7 +13,7 @@ public inline class VUnit<Q extends Quantity<Q>> implements Unit?<Q> {
             return new VUnit(x, y);
         }
 
-        public VUnit(String x, String y) {
+        private VUnit(String x, String y) {
             this.x = x;
             this.y = y;
         }

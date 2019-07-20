@@ -16,14 +16,14 @@ import org.junit.Test;
 
 	    @Test(expected = IllegalArgumentException.class)
 	    public void test1() {
-	        VUnit? p = new VUnit("k","kilogram");
+	        VUnit? p = VUnit.of("k","kilogram");
 	        WeakReference<VUnit?> r = new WeakReference<>(p);
 	    }
 
 	    @Test(expected = IllegalArgumentException.class)
 	    public void test2() {
 	        ReferenceQueue<Object> q = new ReferenceQueue<>();
-	        VUnit? p = new VUnit("k","kilogram");
+	        VUnit? p = VUnit.of("k","kilogram");
 	        WeakReference<VUnit?> r = new WeakReference<>(p, q);
 	    }
 
