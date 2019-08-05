@@ -15,8 +15,8 @@
         <h:form id="convertForm">
             <h:panelGrid columns="2">
                 <h:outputLabel for="radio">Scale (default):</h:outputLabel>
-                <h:selectOneRadio value="#{temperatureConverter.defaultScale}" id="radio" converter="#{scaleConverter}">
-                    <f:selectItems value="#{scaleConverter.scales}" var="scale" itemLabel="#{scale.symbol}" itemValue="#{scale}" />
+                <h:selectOneRadio value="#{temperatureConverter.defaultReference}" id="radio" converter="#{scaleConverter}">
+                    <f:selectItems value="#{scaleConverter.references}" var="scale" itemLabel="#{scale.symbol}" itemValue="#{scale}" />
                 </h:selectOneRadio>
                 <h:outputLabel for="sourceTemperature">Temperature:</h:outputLabel>
                 <h:inputText id="sourceTemperature" value="#{temperatureConverter.sourceTemperature}" />

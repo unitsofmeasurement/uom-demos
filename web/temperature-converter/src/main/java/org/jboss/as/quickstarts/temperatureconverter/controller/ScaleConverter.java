@@ -25,8 +25,8 @@ import javax.faces.convert.Converter;
 import javax.inject.Named;
 
 import tech.units.indriya.AbstractUnit;
+import tech.units.indriya.unit.UnitDimension;
 import tech.units.indriya.unit.Units;
-import tech.units.indriya.quantity.QuantityDimension;
 
 import javax.measure.quantity.Temperature;
 import javax.measure.Unit;
@@ -38,13 +38,13 @@ import javax.measure.Unit;
  * @author Werner Keil
  * 
  */
-@Named
+@Named("scaleConverter")
 public class ScaleConverter implements Converter {
 	Unit<?>[] temps = new Unit<?>[]{ Units.CELSIUS, Units.KELVIN }; // TODO use .FAHRENHEIT again, to
 	
     @SuppressWarnings("unchecked")
 	public Unit<?>[] getReferences() {
-        return ((Set<? extends Unit<Temperature>>) Units.getInstance().getUnits(QuantityDimension.TEMPERATURE)).toArray(temps);
+        return ((Set<? extends Unit<Temperature>>) Units.getInstance().getUnits(UnitDimension.TEMPERATURE)).toArray(temps);
     } // TODO other unit systems like US?
 
     @Override

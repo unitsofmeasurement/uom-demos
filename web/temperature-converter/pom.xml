@@ -45,7 +45,7 @@
 		<version.org.jboss.spec>1.1.1.Final</version.org.jboss.spec>
 
 		<!-- maven-compiler-plugin -->
-		<jdkVersion>9</jdkVersion>
+		<jdkVersion>1.8</jdkVersion>
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
@@ -70,27 +70,37 @@
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
 		</dependency>
-
+		
+				
+		<dependency>
+			<groupId>javax.measure</groupId>
+			<artifactId>unit-api</artifactId>
+		</dependency>
+  <!-- 
 		<dependency>
 			<groupId>tech.units</groupId>
 			<artifactId>indriya</artifactId>
 			<exclusions>
-				<exclusion>  <!-- declare the exclusion here -->
+				<exclusion>  < declare the exclusion here >
 					<groupId>tech.uom.lib</groupId>
 					<artifactId>uom-lib-common</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+	
 		<dependency>
 			<groupId>tech.uom.lib</groupId>
 			<artifactId>uom-lib-common</artifactId>
 			<version>2.0.1-SNAPSHOT</version>
 		</dependency>
-		
+		 -->
 	</dependencies>
 
 	<build>
+		<!-- Set the name of the war, used as the context root when the app is 
+			deployed -->
+		<finalName>temperature-converter</finalName>
+	
 		<plugins>
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
