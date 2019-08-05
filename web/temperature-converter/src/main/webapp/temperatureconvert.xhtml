@@ -24,15 +24,14 @@
 </head>
 
 <body>
-
     <h1>JBoss Temperature Converter Service</h1>
-    <p>Enter the temperature you wish to convert; optionally, type the scale as well ('C' for Celsius, 'F' for Fahrenheit).</p>
+    <p>Enter the temperature you wish to convert; optionally, type the scale as well ('C' for Celsius, 'K' for Kelvin).</p>
     <div id="container">
         <h:form id="convertForm">
             <h:panelGrid columns="2">
                 <h:outputLabel for="radio">Scale (default):</h:outputLabel>
                 <h:selectOneRadio value="#{temperatureConverter.defaultReference}" id="radio" converter="#{scaleConverter}">
-                    <f:selectItems value="#{scaleConverter.references}" var="scale" itemLabel="#{scale.symbol}" itemValue="#{scale}" />
+                    <f:selectItems value="#{scaleConverter.references}" var="reference" itemLabel="#{reference.symbol}" itemValue="#{reference}" />
                 </h:selectOneRadio>
                 <h:outputLabel for="sourceTemperature">Temperature:</h:outputLabel>
                 <h:inputText id="sourceTemperature" value="#{temperatureConverter.sourceTemperature}" />
