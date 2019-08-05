@@ -45,7 +45,7 @@
 		<version.org.jboss.spec>1.1.1.Final</version.org.jboss.spec>
 
 		<!-- maven-compiler-plugin -->
-		<jdkVersion>1.8</jdkVersion>
+		<jdkVersion>9</jdkVersion>
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
