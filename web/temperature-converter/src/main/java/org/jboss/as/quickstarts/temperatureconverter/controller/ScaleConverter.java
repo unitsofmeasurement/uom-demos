@@ -38,7 +38,7 @@ import javax.measure.Unit;
  * @author Werner Keil
  * 
  */
-@Named("scaleConverter")
+@Named
 public class ScaleConverter implements Converter {
 	Unit<?>[] temps = new Unit<?>[]{ Units.CELSIUS, Units.KELVIN }; // TODO use .FAHRENHEIT again, to
 	
