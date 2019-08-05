@@ -2,9 +2,8 @@ temperature-converter: Stateless Session EJB
 =================================================
 Author: Bruce Wolfe, Werner Keil
 Level: Beginner
-Technologies: EJB, JSR 385
+Technologies: CDI, JSF, SLSB EJB, JSR 385
 Summary: Demonstrates a stateless session bean 
-Target Product: Wildfly
 
 [![License](http://img.shields.io/badge/license-Apache2-red.svg)](http://opensource.org/licenses/apache-2.0)
 
@@ -12,12 +11,11 @@ What is it?
 -----------
 **Based on quickstarts to demonstrate Java EE and a few additional technologies from the JBoss stack.**
 
-This example demonstrates the use of an *EJB 3.1 Stateless Session Bean* and *CDI* to access it via a *JSF*.
-Deployment occurs via a war archive for deployment to *JBoss Wildfly*.
+The `temperature-converter` example demonstrates the use of an *EJB 3.1 Stateless Session Bean* (SLSB) and *CDI*, accessed using a *JSF*, converting temperatures via **JSR 385**, deployed to a compatible **Java EE 8** container like Wildfly.
 
 These are the steps that occur:
 
-1. The user interface is a JSF page that asks for a temperature and a scale (Fahrenheit or Celsius).
+1. The user interface is a JSF page that asks for a temperature and a scale (Kelvin or Celsius).
 2. When you click on `Convert`, the temperature string is passed to the TemperatureConverter controller (managed) bean.
 3. The managed bean then invokes the `convert()` method of the injected TemperatureConvertEJB (notice the field annotated with @Inject).
 4. The response from TemperatureConvertEJB is stored in the `temperature` field of the managed bean.
@@ -27,9 +25,9 @@ These are the steps that occur:
 System requirements
 -------------------
 
-All you need to build this project is Java 9.0 or higher, due to running [Indriya](https://github.com/unitsofmeasurement/indriya) and Maven 3.0 or better.
+All you need to build this project is Java 8.0 or above, running [Indriya](https://github.com/unitsofmeasurement/indriya) and Maven 3.0 or better.
 
-The application this project produces is designed to be run on Wildfly 15 or higher. 
+The application this project produces is designed to be run on Wildfly 13 or higher. 
 
  
 Configure Maven
@@ -69,7 +67,7 @@ The application will be running at the following URL: <http://localhost:8080/tem
 
 You will be presented with a simple form for temperature conversion.
 
-1. Optionally, Select a scale: Celsius or Fahrenheit.
+1. Optionally, Select a scale: Celsius or Kelvin.
 2. Enter a temperature.
 3. Press the `Convert` button to see the results.
 

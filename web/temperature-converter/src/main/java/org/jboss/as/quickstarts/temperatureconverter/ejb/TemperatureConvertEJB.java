@@ -27,8 +27,6 @@ import javax.faces.context.FacesContext;
 import javax.measure.Quantity;
 import javax.measure.quantity.Temperature;
 
-import tech.uom.lib.common.function.Converter;
-
 /**
  * A simple SLSB EJB. The EJB does not use an interface.
  * 
@@ -36,7 +34,7 @@ import tech.uom.lib.common.function.Converter;
  * @author Werner Keil
  */
 @Stateless
-public class TemperatureConvertEJB implements Converter<TemperatureAmount, Quantity<Temperature>> {
+public class TemperatureConvertEJB {
 
     /**
      * This method takes a temperature in Celsius or Fahrenheit and converts it to the other value.
