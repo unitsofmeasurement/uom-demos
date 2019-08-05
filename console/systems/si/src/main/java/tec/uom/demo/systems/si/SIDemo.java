@@ -9,8 +9,6 @@ import javax.measure.quantity.Mass;
 
 import si.uom.NonSI;
 import si.uom.SI;
-import tech.units.indriya.AbstractQuantity;
-import tech.units.indriya.quantity.NumberQuantity;
 import tech.units.indriya.quantity.Quantities;
 
 public class SIDemo {
@@ -18,7 +16,7 @@ public class SIDemo {
 		Unit<Mass> atomicMassUnit = SI.UNIFIED_ATOMIC_MASS;
 		System.out.println(atomicMassUnit + " (" + atomicMassUnit.getName() + "; " + atomicMassUnit.getSymbol() + ")");
 
-		AbstractQuantity<Mass> mass = NumberQuantity.of(10, atomicMassUnit);
+		Quantity<Mass> mass = Quantities.getQuantity(10, atomicMassUnit);
 		System.out.println(mass);
 
 		Quantity<Mass> massInKg = mass.to(KILOGRAM);

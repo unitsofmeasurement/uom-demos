@@ -19,8 +19,8 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>tec.uom</groupId>
-			<artifactId>uom-se</artifactId>
+			<groupId>tech.units</groupId>
+			<artifactId>indriya</artifactId>
 		</dependency>
 	</dependencies>
 

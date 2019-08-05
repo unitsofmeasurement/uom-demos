@@ -1,6 +1,6 @@
 === Introduction
 
-JSR 363 is an API for working with physical quantities and units. We are going to create demonstration applications that provides this API to work with Java on Intel Edison powered devices.
+JSR 385 is an API for working with physical quantities and units. We are going to create demonstration applications that provides this API to work with Java on Intel Edison powered devices.
 
 image:DSCF6587_800x594.jpg[]
 

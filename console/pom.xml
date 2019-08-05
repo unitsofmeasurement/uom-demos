@@ -69,7 +69,6 @@
 	</build>
 	<modules>
 		<module>basic</module>
-		<module>java8</module>
 		<module>java10</module>
 		<module>systems</module>
         <!--  >module>valhalla</module currently disabled because it requires partial JDK 14+ preview -->

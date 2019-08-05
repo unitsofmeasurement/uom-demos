@@ -16,9 +16,10 @@ import tech.units.indriya.unit.Units;
 import javax.measure.Unit;
 import javax.measure.UnitConverter;
 
+import static javax.measure.MetricPrefix.*;
 import static systems.uom.common.USCustomary.*;
 import static tech.units.indriya.unit.Units.*;
-import static tech.units.indriya.unit.MetricPrefix.*;
+
 
 @SpringComponent
 @UIScope

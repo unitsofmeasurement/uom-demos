@@ -1,6 +1,6 @@
 === Introduction
 
-JSR 363 is an API for working with physical quantities and units. We are going to create a demonstration application that provides an API to work with Newton’s Second Law of Motion:
+JSR 385 is an API for working with physical quantities and units. We are going to create a demonstration application that provides an API to work with Newton’s Second Law of Motion:
 _______
 The acceleration of a body is directly proportional to, and in the same direction as, the net force acting on the body, and inversely proportional to its mass.
 _______

@@ -1,6 +1,6 @@
 === Conclusions
 
-Now that’s the basics out of the way now you can try a few things that demonstrate the power of JSR 363, the Units of Measurement API...
+Now that’s the basics out of the way now you can try a few things that demonstrate the power of JSR 385, the Units of Measurement API...
 
 . Try changing the units used in your unit test for mass or acceleration to units of other quantities (i.e. seconds, metres, amperes, volts... ). +
 You will see the compiler error created because your unit is not the correct type... cool!

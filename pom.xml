@@ -32,13 +32,10 @@
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<jsr.version>2.0</jsr.version>
-		<ri.version>1.3</ri.version>
-		<ri2.version>2.0</ri2.version>
-		<se.version>1.0.10</se.version>
-		<lib.version>1.1</lib.version>
-		<lib2.version>2.0</lib2.version>
-		<si.version>1.0</si.version>
-		<systems.version>1.0-SNAPSHOT</systems.version>
+		<ri.version>2.0</ri.version>
+		<lib.version>2.0</lib.version>
+		<si.version>2.0-SNAPSHOT</si.version>
+		<systems.version>2.0-SNAPSHOT</systems.version>
 	</properties>
 
 	<dependencyManagement>
@@ -52,11 +49,6 @@
 				<groupId>tech.units</groupId>
 				<artifactId>indriya</artifactId>
 				<version>${ri.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>tec.uom</groupId>
-				<artifactId>uom-se</artifactId>
-				<version>${se.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>tech.uom.lib</groupId>
@@ -113,7 +105,6 @@
 		<module>console</module>
 		<module>javafx</module>
 		<module>lang</module>
-		<module>domain</module>
 		<module>web</module>
 		<module>device</module>
 	</modules>

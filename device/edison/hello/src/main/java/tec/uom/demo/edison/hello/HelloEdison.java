@@ -32,8 +32,8 @@ import javax.measure.Unit;
 import javax.measure.quantity.LuminousFlux;
 import javax.measure.quantity.Power;
 
-import tec.uom.se.quantity.Quantities;
-import tec.uom.se.unit.Units;
+import tech.units.indriya.quantity.Quantities;
+import tech.units.indriya.unit.Units;
 
 public class HelloEdison {
 

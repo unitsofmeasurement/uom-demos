@@ -2,9 +2,9 @@ temperature-converter: Stateless Session EJB
 =================================================
 Author: Bruce Wolfe, Werner Keil
 Level: Beginner
-Technologies: EJB, JSR 363
+Technologies: EJB, JSR 385
 Summary: Demonstrates a stateless session bean 
-Target Product: EAP
+Target Product: Wildfly
 
 [![License](http://img.shields.io/badge/license-Apache2-red.svg)](http://opensource.org/licenses/apache-2.0)
 
@@ -13,7 +13,7 @@ What is it?
 **Based on quickstarts to demonstrate Java EE and a few additional technologies from the JBoss stack.**
 
 This example demonstrates the use of an *EJB 3.1 Stateless Session Bean* and *CDI* to access it via a *JSF*.
-Deployment occurs via a war archive for deployment to *JBoss AS 7*.
+Deployment occurs via a war archive for deployment to *JBoss Wildfly*.
 
 These are the steps that occur:
 
@@ -27,9 +27,9 @@ These are the steps that occur:
 System requirements
 -------------------
 
-All you need to build this project is Java 8.0 (Java SDK 1.8) or better, due to running [UOM-SE](https://github.com/unitsofmeasurement/uom-se) and Maven 3.0 or better.
+All you need to build this project is Java 8.0 (Java SDK 1.8) or better, due to running [Indriya](https://github.com/unitsofmeasurement/indriya) and Maven 3.0 or better.
 
-The application this project produces is designed to be run on JBoss Enterprise Application Platform 6 or JBoss AS 7. 
+The application this project produces is designed to be run on Wildfly 13 or higher. 
 
  
 Configure Maven
@@ -38,7 +38,7 @@ Configure Maven
 If you have not yet done so, you must [Configure Maven](../README.md#mavenconfiguration) before testing the quickstarts.
 
 
-Start JBoss Enterprise Application Platform 6 or JBoss AS 7 with the Web Profile
+Start Wildfly with the Web Profile
 -------------------------
 
 1. Open a command line and navigate to the root of the JBoss server directory.
@@ -59,13 +59,13 @@ _NOTE: The following build command assumes you have configured your Maven user s
 
         mvn clean package jboss-as:deploy
 
-4. This will deploy `target/jboss-as-temperature-converter.war` to the running instance of the server.
+4. This will deploy `target/temperature-converter.war` to the running instance of the server.
  
 
 Access the application 
 ---------------------
 
-The application will be running at the following URL: <http://localhost:8080/jboss-as-temperature-converter/>.
+The application will be running at the following URL: <http://localhost:8080/temperature-converter/>.
 
 You will be presented with a simple form for temperature conversion.
 

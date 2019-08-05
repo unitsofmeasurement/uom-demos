@@ -17,15 +17,13 @@
         <module>health</module>
         <!--  module>health-se</module TODO fix Health SE -->
         <module>energy</module>
-        <module>energy-se</module>
         <module>retail</module>
-        <module>retail-se</module>
 	</modules>
 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>tec.uom</groupId>
+				<groupId>tech.uom</groupId>
 				<artifactId>uom-lib</artifactId>
 				<version>${lib.version}</version>
 			</dependency>

@@ -24,9 +24,9 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.inject.Named;
 
-import tec.uom.se.AbstractUnit;
-import tec.uom.se.unit.Units;
-import tec.uom.se.quantity.QuantityDimension;
+import tech.units.indriya.AbstractUnit;
+import tech.units.indriya.unit.Units;
+import tech.units.indriya.quantity.QuantityDimension;
 
 import javax.measure.quantity.Temperature;
 import javax.measure.Unit;

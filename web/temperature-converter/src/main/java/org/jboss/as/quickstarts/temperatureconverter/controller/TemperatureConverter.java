@@ -26,8 +26,8 @@ import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Temperature;
 
-import tec.uom.lib.common.function.ValueSupplier;
-import tec.uom.se.unit.Units;
+import tech.uom.lib.common.function.ValueSupplier;
+import tech.units.indriya.unit.Units;
 
 import org.jboss.as.quickstarts.temperatureconverter.ejb.TemperatureAmount;
 import org.jboss.as.quickstarts.temperatureconverter.ejb.TemperatureConvertEJB;

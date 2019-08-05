@@ -7,15 +7,25 @@
 		<version>2.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>uom-si-console-demos-java10</artifactId>
-<!-- TODO change JVM to Java 10 -->
+	
+	<!-- ======================================================= -->
+	<!-- Build Settings -->
+	<!-- ======================================================= -->
+	<properties>
+		<jdkVersion>10</jdkVersion>
+		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
+		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
+		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>javax.measure</groupId>
 			<artifactId>unit-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>tec.uom</groupId>
-			<artifactId>uom-se</artifactId>
+			<groupId>tech.units</groupId>
+			<artifactId>indriya</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>si.uom</groupId>
@@ -24,9 +34,9 @@
 		</dependency>
 		<dependency>
 			<groupId>si.uom</groupId>
-			<artifactId>si-units-java8</artifactId>
+			<artifactId>si-units</artifactId>
 		</dependency>
 	</dependencies>
-	<description>Console Demos of SI Units based on the Java SE 8 Implementation of JSR 363</description>
+	<description>Console Demos of SI Units based on the Java SE Implementation of JSR 385</description>
 	<name>UoM SI Java 10 Console Demos</name>
 </project>

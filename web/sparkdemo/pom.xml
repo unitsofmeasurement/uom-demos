@@ -43,11 +43,6 @@
                 <version>${ri.version}</version>
             </dependency>
             <dependency>
-                <groupId>tec.uom</groupId>
-                <artifactId>uom-se</artifactId>
-                <version>${se.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>tech.uom.lib</groupId>
                 <artifactId>uom-lib</artifactId>
                 <version>${lib.version}</version>

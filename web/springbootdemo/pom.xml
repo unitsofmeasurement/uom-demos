@@ -57,7 +57,7 @@
         <dependency>
             <groupId>tech.uom.lib</groupId>
             <artifactId>uom-lib-common</artifactId>
-            <version>${lib2.version}</version>
+            <version>${lib.version}</version>
         </dependency>
     </dependencies>
 

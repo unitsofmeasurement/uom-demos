@@ -175,12 +175,6 @@ public enum Crates implements Unit<Crate>, ValueSupplier<Integer> {
     }
 
 	@Override
-	public Unit<Crate> prefix(Prefix prefix) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public Unit<Crate> shift(Number offset) {
 		// TODO Auto-generated method stub
 		return null;
@@ -194,6 +188,12 @@ public enum Crates implements Unit<Crate>, ValueSupplier<Integer> {
 
 	@Override
 	public Unit<Crate> divide(Number divisor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Unit<Crate> prefix(Prefix prefix) {
 		// TODO Auto-generated method stub
 		return null;
 	}

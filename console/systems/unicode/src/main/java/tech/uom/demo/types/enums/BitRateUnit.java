@@ -43,15 +43,15 @@ import javax.measure.Unit;
 import javax.measure.UnitConverter;
 
 import systems.uom.quantity.InformationRate;
-import tech.units.indriya.quantity.DefaultQuantityFactory;
-import tech.units.indriya.quantity.QuantityDimension;
-import tec.uom.lib.common.util.DescriptiveEnum;
-import tec.uom.lib.common.function.DoubleFactorSupplier;
+import tech.units.indriya.internal.DefaultQuantityFactory; // FIXME use SPI
+import tech.units.indriya.unit.UnitDimension;
+import tech.uom.lib.common.util.DescriptiveEnum;
+import tech.uom.lib.common.function.DoubleFactorSupplier;
 
 /**
  * Implements the speed of data-transmission. The system unit for this quantity is "bit/s" (bit per second).
  * @author Werner Keil
- * @version 1.1, $Date: 2019-05-02 $
+ * @version 1.2, $Date: 2019-08-04 $
  */
 public enum BitRateUnit implements Unit<InformationRate>, DoubleFactorSupplier, DescriptiveEnum<BitRateUnit> {
 	bps("bps", BPS_NAME, 1.0), Kbps("Kbps", KBPS_NAME, 1.0e3), Mbps("Mbps", MBPS_NAME, 1.0e6),
@@ -181,7 +181,7 @@ public enum BitRateUnit implements Unit<InformationRate>, DoubleFactorSupplier, 
     }
 
     public Dimension getDimension() {
-        return QuantityDimension.of(InformationRate.class);
+        return UnitDimension.of(InformationRate.class);
     }
 
      public Unit<?> inverse() {

@@ -43,10 +43,10 @@ import javax.measure.Unit;
 import javax.measure.UnitConverter;
 
 import systems.uom.quantity.Information;
-import tech.units.indriya.quantity.DefaultQuantityFactory;
-import tech.units.indriya.quantity.QuantityDimension;
-import tec.uom.lib.common.util.DescriptiveEnum;
-import tec.uom.lib.common.function.DoubleFactorSupplier;
+import tech.units.indriya.internal.DefaultQuantityFactory; // FIXME use SPI
+import tech.units.indriya.unit.UnitDimension;
+import tech.uom.lib.common.util.DescriptiveEnum;
+import tech.uom.lib.common.function.DoubleFactorSupplier;
 
 /**
  * Implements a measure of information. The metric system unit for this quantity is "bit".
@@ -177,7 +177,7 @@ public enum BitUnit implements Unit<Information>, DoubleFactorSupplier, Descript
 
     
     public Dimension getDimension() {
-        return QuantityDimension.of(Information.class);
+        return UnitDimension.of(Information.class);
     }
 
     

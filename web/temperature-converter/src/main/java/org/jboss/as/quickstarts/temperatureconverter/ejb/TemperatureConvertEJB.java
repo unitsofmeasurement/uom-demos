@@ -17,8 +17,8 @@
 
 package org.jboss.as.quickstarts.temperatureconverter.ejb;
 
-import static tec.uom.se.unit.Units.CELSIUS;
-import static tec.uom.se.unit.Units.KELVIN;
+import static tech.units.indriya.unit.Units.CELSIUS;
+import static tech.units.indriya.unit.Units.KELVIN;
 //import static tec.uom.se.unit.US.FAHRENHEIT;
 
 import javax.ejb.Stateless;
@@ -27,7 +27,7 @@ import javax.faces.context.FacesContext;
 import javax.measure.Quantity;
 import javax.measure.quantity.Temperature;
 
-import tec.uom.se.function.Converter;
+import tech.uom.lib.common.function.Converter;
 
 /**
  * A simple SLSB EJB. The EJB does not use an interface.
@@ -72,6 +72,5 @@ public class TemperatureConvertEJB implements Converter<TemperatureAmount, Quant
         } else { // Should never get here!
             throw new IllegalStateException("This is embarrassing - this error should NOT occur!");
         }
-
     }
 }
