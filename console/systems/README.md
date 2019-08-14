@@ -9,7 +9,7 @@ The project currently contains the following modules:
 
 - Common Unit Systems
   - [RI based Console Demos](common)
-  - [Java SE 8 Console Demos](common-java8)
+  - [Java 10 Console Demos](common-java10)
 - [SI Units](https://en.wikipedia.org/wiki/International_System_of_Units)
   - [SI Console Demos](si)
   - [Java 10 based SI Console Demos](si-java10)
@@ -18,7 +18,7 @@ The project currently contains the following modules:
   - [Java 10 based Unicode Console Demos](unicode-java10)
 - [Unified Code for Units of Measure](http://unitsofmeasure.org)
   - [UCUM Console Demos](ucum)
-  - [Java 8 based UCUM Console Demos](ucum-java8)
+  - [Java 10 based UCUM Console Demos](ucum-java10)
 - [Historical Unit Systems](https://en.wikipedia.org/wiki/History_of_measurement)
   - [Historical Unit System Console Demos](historical)
 - Legacy
