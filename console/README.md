@@ -11,3 +11,4 @@ The project currently contains the following modules:
 - [Java 8 Console Demos](java8)
 - [Java 10 Console Demos](java10)
 - [Unit System Console Demos](systems)
+- [Valhalla Preview](valhalla)
