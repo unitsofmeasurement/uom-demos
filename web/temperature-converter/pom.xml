@@ -43,6 +43,7 @@
 		<!-- JBoss dependency versions -->
 		<version.org.jboss.as.plugins.maven.plugin>7.3.Final</version.org.jboss.as.plugins.maven.plugin>
 		<version.org.jboss.spec>1.1.1.Final</version.org.jboss.spec>
+		<version.thorntail>2.5.0.Final</version.thorntail>
 
 		<!-- maven-compiler-plugin -->
 		<jdkVersion>1.8</jdkVersion>
@@ -70,41 +71,27 @@
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
 		</dependency>
-				
+
 		<dependency>
 			<groupId>javax.measure</groupId>
 			<artifactId>unit-api</artifactId>
 		</dependency>
-  <!-- 
-		<dependency>
-			<groupId>tech.units</groupId>
-			<artifactId>indriya</artifactId>
-			<exclusions>
-				<exclusion>  < declare the exclusion here >
-					<groupId>tech.uom.lib</groupId>
-					<artifactId>uom-lib-common</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-	
-		<dependency>
-			<groupId>tech.uom.lib</groupId>
-			<artifactId>uom-lib-common</artifactId>
-			<version>2.0.1-SNAPSHOT</version>
-		</dependency>
-		 -->
+		<!-- <dependency> <groupId>tech.units</groupId> <artifactId>indriya</artifactId> 
+			<exclusions> <exclusion> < declare the exclusion here > <groupId>tech.uom.lib</groupId> 
+			<artifactId>uom-lib-common</artifactId> </exclusion> </exclusions> </dependency> 
+			<dependency> <groupId>tech.uom.lib</groupId> <artifactId>uom-lib-common</artifactId> 
+			<version>2.0.1-SNAPSHOT</version> </dependency> -->
 	</dependencies>
 
 	<build>
 		<!-- Set the name of the war, used as the context root when the app is 
 			deployed -->
 		<finalName>temperature-converter</finalName>
-	
+
 		<plugins>
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
-					<!-- Java EE 6 doesn't require web.xml, Maven needs to catch up! -->
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
@@ -114,7 +101,7 @@
 				<artifactId>jboss-as-maven-plugin</artifactId>
 				<version>${version.org.jboss.as.plugins.maven.plugin}</version>
 			</plugin>
-			<!-- Compiler plugin enforces Java 1.6 compatibility and activates annotation 
+			<!-- Compiler plugin enforces Java 8 compatibility and activates annotation 
 				processors -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -125,4 +112,40 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+	
+		 <!-- ### THORNTAIL ### -->
+
+		<profile>
+			<id>thorntail</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>io.thorntail</groupId>
+						<artifactId>thorntail-maven-plugin</artifactId>
+						<version>${version.thorntail}</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>package</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+			 <dependencyManagement>
+                <dependencies>
+                    <dependency>
+                        <groupId>io.thorntail</groupId>
+                        <artifactId>bom</artifactId>
+                        <version>${version.thorntail}</version>
+                        <scope>import</scope>
+                        <type>pom</type>
+                    </dependency>
+                </dependencies>
+            </dependencyManagement>
+		</profile>
+	</profiles>
 </project>

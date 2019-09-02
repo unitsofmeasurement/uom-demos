@@ -36,8 +36,9 @@ Configure Maven
 If you have not yet done so, you must [Configure Maven](../README.md#mavenconfiguration) before testing the quickstarts.
 
 
-Start Wildfly with the Web Profile
--------------------------
+## Wildfly
+
+### Start Wildfly with the Web Profile
 
 1. Open a command line and navigate to the root of the JBoss server directory.
 2. The following shows the command line to start the server with the web profile:
@@ -46,8 +47,7 @@ Start Wildfly with the Web Profile
         For Windows: JBOSS_HOME\bin\standalone.bat
 
 
-Build and Deploy the Quickstart
--------------------------
+### Build and Deploy the Quickstart
 
 _NOTE: The following build command assumes you have configured your Maven user settings. If you have not, you must include Maven setting arguments on the command line. See [Build and Deploy the Quickstarts](../README.md#buildanddeploy) for complete instructions and additional options._
 
@@ -64,8 +64,7 @@ _NOTE: The following build command assumes you have configured your Maven user s
 4. This will deploy `target/temperature-converter.war` to the running instance of the server.
  
 
-Access the application 
----------------------
+### Access the application 
 
 The application will be running at the following URL: <http://localhost:8080/temperature-converter/>.
 
@@ -76,14 +75,31 @@ You will be presented with a simple form for temperature conversion.
 3. Press the `Convert` button to see the results.
 
 
-Undeploy the Archive
---------------------
+### Undeploy the Archive
 
 1. Make sure you have started the JBoss Server as described above.
 2. Open a command line and navigate to the root directory of this quickstart.
 3. When you are finished testing, type this command to undeploy the archive:
 
         mvn package jboss-as:undeploy
+
+## Thorntail
+
+### Build and Run the Quickstart
+
+1. Open a command line and navigate to the root directory of this quickstart.
+2. Type this command to build and deploy the archive:
+
+        mvn clean thorntail:run -Pthorntail
+
+### Access the application 
+
+The application will be running at the following URL: <http://localhost:8080/>.
+
+### Undeploy the Archive
+
+Press Ctrl+C to kill the process.
+Note, on some OS especially Windows it may be necessary to kill it more explicitly due to problems described under https://stackoverflow.com/questions/53258699/thorntail-not-exiting-gracefully 
 
 
         
@@ -92,8 +108,7 @@ Run the Quickstart in JBoss Developer Studio or Eclipse
 You can also start the server and deploy the quickstarts from Eclipse using JBoss tools. For more information, see [Use JBoss Developer Studio or Eclipse to Run the Quickstarts](../README.md/#useeclipse) 
 
 
-Debug the Application
-------------------------------------
+## Debug the Application
 
 If you want to debug the source code or look at the Javadocs of any library in the project, run either of the following commands to pull them into your local repository. The IDE should then detect them.
 
