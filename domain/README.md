@@ -6,4 +6,4 @@ Covering the following domains:
 - Health
   - [Health Demos](health)
 - Retail
-  - [Retail Demos](retail-se)
+  - [Retail Demos](retail)
