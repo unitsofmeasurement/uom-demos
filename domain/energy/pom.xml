@@ -1,46 +1,40 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>uom-domain-demos</artifactId>
-	<name>Units of Measurement Domain Specific Demos</name>
-	<packaging>pom</packaging>
-	<url>http://unitsofmeasurement.github.io/</url>
 	<parent>
-		<groupId>tech.uom.demo</groupId>
-		<artifactId>uom-demos</artifactId>
+		<groupId>tech.uom.demo.domain</groupId>
+		<artifactId>uom-domain-demos</artifactId>
 		<version>2.0-SNAPSHOT</version>
 	</parent>
-	   <description>Domain Specific Demos of the Units of Measurement API</description>
-    <groupId>tech.uom.demo.domain</groupId>
+	<artifactId>uom-energy-demos</artifactId>
+    <name>Units of Measurement Energy Demos</name>
     
-	<modules>
-        <module>health</module>
-        <module>energy</module>
-        <module>retail</module>
-	</modules>
+	<!-- ======================================================= -->
+	<!-- Build Settings -->
+	<!-- ======================================================= -->
+	<properties>
+		<jdkVersion>1.8</jdkVersion>
+		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
+		<maven.compile.targetLevel>1.8</maven.compile.targetLevel>
+		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+	</properties>
+	
+    <dependencies>
+        <dependency>
+            <groupId>javax.measure</groupId>
+            <artifactId>unit-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>tech.units</groupId>
+            <artifactId>indriya</artifactId>
+        </dependency>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>tech.uom</groupId>
-				<artifactId>uom-lib</artifactId>
-				<version>${lib.version}</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
-	<dependencies>
-		<dependency>
-			<groupId>javax.measure</groupId>
-			<artifactId>unit-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 	<build>
 		<plugins>
 			<!-- ======================================================= -->
@@ -68,7 +62,7 @@
 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 						</manifest>
 						<manifestEntries>
-							<Specification-Title>Units of Measurement Demos</Specification-Title>
+							<Specification-Title>Units of Measurement Energy Demos</Specification-Title>
 							<Specification-Version>${project.version}</Specification-Version>
 							<Specification-Vendor>${project.organization.name}</Specification-Vendor>
 							<Implementation-Vendor>Unit-API contributors</Implementation-Vendor>
@@ -88,7 +82,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
-						<Export-Package>tech.uom.demo.*</Export-Package>
+						<Export-Package>tech.uom.demo.energy.*</Export-Package>
 						<Private-Package>!*</Private-Package>
 					</instructions>
 				</configuration>
