@@ -9,9 +9,9 @@ Summary: Demonstrates a stateless session bean
 
 What is it?
 -----------
-**Based on quickstarts to demonstrate Java EE and a few additional technologies from the JBoss stack.**
+**Based on quickstarts to demonstrate Java EE and a few additional technologies.**
 
-The `temperature-converter` example demonstrates the use of an *EJB 3.1 Stateless Session Bean* (SLSB) and *CDI*, accessed using a *JSF*, converting temperatures via **JSR 385**, deployed to a compatible **Java EE 8** container like Wildfly.
+The `temperature-converter` example demonstrates the use of an *EJB 3.1 Stateless Session Bean* (SLSB) and *CDI*, accessed using a *JSF*, converting temperatures via **JSR 385**, deployed to a compatible **Java EE** container like Wildfly.
 
 These are the steps that occur:
 
@@ -27,7 +27,7 @@ System requirements
 
 All you need to build this project is Java 8.0 or above, running [Indriya](https://github.com/unitsofmeasurement/indriya) and Maven 3.0 or better.
 
-The application this project produces is designed to be run on Wildfly 13 or higher. 
+The application this project produces is designed to be run in a Java EE (8) compatible environment like Wildfly 13 and above or Thorntail.
 
  
 Configure Maven
