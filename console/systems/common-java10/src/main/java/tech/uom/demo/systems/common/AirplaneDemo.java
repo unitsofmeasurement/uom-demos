@@ -23,12 +23,12 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.se.systems.common;
+package tech.uom.demo.systems.common;
 
 import static systems.uom.common.USCustomary.MILE_PER_HOUR;
 import static systems.uom.common.USCustomary.MILE;
-import static tec.uom.se.unit.Units.HOUR;
-import static tec.uom.se.unit.Units.KILOMETRE_PER_HOUR;
+import static tech.units.indriya.unit.Units.HOUR;
+import static tech.units.indriya.unit.Units.KILOMETRE_PER_HOUR;
 
 import java.time.Duration;
 
@@ -37,10 +37,10 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
 
-import tec.uom.se.AbstractQuantity;
-import tec.uom.se.quantity.Quantities;
-import tec.uom.se.quantity.time.TemporalQuantity;
-import tec.uom.se.quantity.time.TimeQuantities;
+import tech.units.indriya.AbstractQuantity;
+import tech.units.indriya.quantity.Quantities;
+import tech.units.indriya.quantity.time.TemporalQuantity;
+import tech.units.indriya.quantity.time.TimeQuantities;
 
 /**
  * This is a simple example for an In-Flight Infotainment (IFI) system showing the plane's cruising speed or time to destination.

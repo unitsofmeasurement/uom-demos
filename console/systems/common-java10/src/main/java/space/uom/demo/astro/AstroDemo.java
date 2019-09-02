@@ -1,6 +1,6 @@
 /*
- *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2017, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Units of Measurement Demos for Java
+ *  Copyright (c) 2005-2019, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -10,7 +10,7 @@
  *
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363, Unit-API nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ * 3. Neither the name of JSR-385, Units of Measurement nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -23,29 +23,26 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.se.systems.common;
+package space.uom.demo.astro;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
+import javax.measure.quantity.Force;
+import javax.measure.quantity.Length;
 import javax.measure.spi.ServiceProvider;
-import javax.measure.spi.SystemOfUnits;
 
-import systems.uom.common.USCustomary;
-import tec.uom.se.format.SimpleUnitFormat;
-import tec.uom.se.quantity.Quantities;
-import tec.uom.se.unit.Units;
-import tec.uom.lib.common.util.SystemOfUnitsReporter;
+import tech.units.indriya.unit.Units;
 
-public class CommonFormatDemo {
-    public static void main(String... args) {
-	SimpleUnitFormat.getInstance().alias(USCustomary.MILE, "mile");
+public class AstroDemo {
 
-	Unit u = SimpleUnitFormat.getInstance().parse("mile");
-	System.out.println(u);
-	Unit v = SimpleUnitFormat.getInstance().parse("mi");
-	System.out.println(v);
+	public static void main(String[] args) {
+		Unit<Length> au = AstronomicalSystemOfUnits.ASTRONOMICAL_UNIT;
+		Quantity<Length> peri = ServiceProvider.current().getQuantityFactory(
+				Length.class).create(0.9832687, au);
+		System.out.println(peri);
+		
+		Unit<Force> u = Units.NEWTON;
+		System.out.println(u);
+	}
 
-	Quantity q = Quantities.getQuantity("300 " + Units.DAY.getSymbol());
-	System.out.println(q);
-    }
 }

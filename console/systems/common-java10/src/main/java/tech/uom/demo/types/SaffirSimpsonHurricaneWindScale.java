@@ -1,20 +1,16 @@
 /*
- *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Units of Measurement Console Demos
+ *  Copyright (c) 2005-2019, Werner Keil and others.
  *
  * All rights reserved.
  *
- * Redistribution and use in source and binary forms, with or without modification,
- * are permitted provided that the following conditions are met:
+ * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
  *
- * 1. Redistributions of source code must retain the above copyright notice,
- *    this list of conditions and the following disclaimer.
+ * 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
  *
- * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
- *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363 nor the names of its contributors may be used to endorse or promote products
- *    derived from this software without specific prior written permission.
+ * 3. Neither the name of JSR-385, Units of Measurement nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -27,20 +23,20 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.types;
+package tech.uom.demo.types;
 
-import static tec.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.*;
-import static tec.uom.se.AbstractQuantity.NONE;
+import static tech.units.indriya.AbstractQuantity.NONE;
+import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.*;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Speed;
 
-import tec.uom.lib.common.function.Nameable;
-import tec.uom.se.quantity.QuantityRange;
+import tech.uom.lib.common.function.Nameable;
+import tech.units.indriya.quantity.QuantityRange;
 
 /**
  * @author Werner Keil
- * @version 0.9
+ * @version 1.0
  * @see <a
  *      href="http://en.wikipedia.org/wiki/Saffir%E2%80%93Simpson_hurricane_wind_scale">
  *      Wikipedia: Saffir–Simpson hurricane wind scale</a>

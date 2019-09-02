@@ -41,9 +41,9 @@ import javax.measure.Quantity;
 import javax.measure.UnconvertibleException;
 import javax.measure.Unit;
 import javax.measure.UnitConverter;
+import javax.measure.spi.ServiceProvider;
 
 import systems.uom.quantity.Information;
-import tech.units.indriya.internal.DefaultQuantityFactory; // FIXME use SPI
 import tech.units.indriya.unit.UnitDimension;
 import tech.uom.lib.common.util.DescriptiveEnum;
 import tech.uom.lib.common.function.DoubleFactorSupplier;
@@ -144,7 +144,7 @@ public enum BitUnit implements Unit<Information>, DoubleFactorSupplier, Descript
 	
     public <T extends Quantity<T>> Unit<T> asType(Class<T> type)
             throws ClassCastException {
-        Unit<T> metricUnit = DefaultQuantityFactory.getInstance(type).getSystemUnit();
+        Unit<T> metricUnit = ServiceProvider.current().getQuantityFactory(type).getSystemUnit();
         if ((metricUnit == null) || metricUnit.isCompatible(this))
          return (Unit<T>) this;
           throw new ClassCastException("The unit: " + this //$NON-NLS-1$

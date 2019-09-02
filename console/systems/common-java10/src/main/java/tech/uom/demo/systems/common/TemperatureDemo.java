@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2017, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -23,18 +23,20 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.se.systems.common;
+package tech.uom.demo.systems.common;
 
-import tec.uom.lib.common.util.SystemOfUnitsReporter;
+import static tech.units.indriya.unit.Units.CELSIUS;
+import static tech.units.indriya.unit.Units.KELVIN;
+import static systems.uom.common.USCustomary.FAHRENHEIT;
 
-import javax.measure.spi.ServiceProvider;
-import javax.measure.spi.SystemOfUnits;
-
-public class CommonDemo {
-	public static void main(String... args) {
-		for (SystemOfUnits s : ServiceProvider.current().getSystemOfUnitsService().getAvailableSystemsOfUnits()) {
-			SystemOfUnitsReporter.of(s).report();
-			System.out.println();
-		}
-	}
+public class TemperatureDemo {
+    public static void main(String... args) {
+	System.out.println("Temperature Demo");
+	System.out.println(CELSIUS.toString());
+	System.out.println(CELSIUS.getSymbol());
+	System.out.println(KELVIN.toString());
+	System.out.println(KELVIN.getSymbol());
+	System.out.println(FAHRENHEIT.toString());
+	System.out.println(FAHRENHEIT.getSymbol());
+    }
 }

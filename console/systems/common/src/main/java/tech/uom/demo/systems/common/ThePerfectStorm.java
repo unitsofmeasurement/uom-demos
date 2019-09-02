@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2017, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2019, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -10,7 +10,7 @@
  *
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363, Unit-API nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ * 3. Neither the name of JSR-385, Units of Measurement nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -48,7 +48,7 @@ import tech.uom.demo.types.SaffirSimpsonHurricaneWindScale;
 
 /**
  * @author Werner Keil
- * @version 0.9
+ * @version 1.0
  * @see {@link SaffirSimpsonHurricaneWindScale}
  */
 public class ThePerfectStorm {
@@ -129,8 +129,8 @@ public class ThePerfectStorm {
 			Quantity<Length> l = Quantities.getQuantity(500, KILO(METRE));
 			System.out.println(String.format("Distance: %s", l));
 			
-			//Quantity<Time> timeToEvacuate = l.divide(metricSpeed).asType(Time.class);
-			Quantity<?> timeToEvacuate = l.divide(metricSpeed); //if you don't want to cast ;-)
+			Quantity<Time> timeToEvacuate = l.divide(metricSpeed).asType(Time.class);
+			//Quantity<?> timeToEvacuate = l.divide(metricSpeed); //if you don't want to cast ;-)
 			SimpleUnitFormat.getInstance().label(timeToEvacuate.getUnit(), "h");
 			System.out.println(String.format("Time to evacuate: %s", timeToEvacuate));
 		} else {

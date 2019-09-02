@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2017, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2019, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -10,7 +10,7 @@
  *
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363, Unit-API nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ * 3. Neither the name of JSR-385, Units of Measurement nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -23,20 +23,25 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.se.systems.common;
+package tech.uom.demo.systems.common;
 
-import static tec.uom.se.unit.Units.CELSIUS;
-import static tec.uom.se.unit.Units.KELVIN;
-import static systems.uom.common.USCustomary.FAHRENHEIT;
+import javax.measure.Quantity;
+import javax.measure.Unit;
+import systems.uom.common.USCustomary;
+import tech.units.indriya.format.SimpleUnitFormat;
+import tech.units.indriya.quantity.Quantities;
+import tech.units.indriya.unit.Units;
 
-public class TemperatureDemo {
+public class CommonFormatDemo {
     public static void main(String... args) {
-	System.out.println("Temperature Demo");
-	System.out.println(CELSIUS.toString());
-	System.out.println(CELSIUS.getSymbol());
-	System.out.println(KELVIN.toString());
-	System.out.println(KELVIN.getSymbol());
-	System.out.println(FAHRENHEIT.toString());
-	System.out.println(FAHRENHEIT.getSymbol());
+	SimpleUnitFormat.getInstance().alias(USCustomary.MILE, "mile");
+
+	Unit u = SimpleUnitFormat.getInstance().parse("mile");
+	System.out.println(u);
+	Unit v = SimpleUnitFormat.getInstance().parse("mi");
+	System.out.println(v);
+
+	Quantity q = Quantities.getQuantity("300 " + Units.DAY.getSymbol());
+	System.out.println(q);
     }
 }

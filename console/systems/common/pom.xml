@@ -23,7 +23,7 @@
 		<dependency>
 			<groupId>si.uom</groupId>
 			<artifactId>si-units</artifactId>
-			<version>2.0-SNAPSHOT</version>
+			<version>2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>systems.uom</groupId>

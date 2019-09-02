@@ -29,7 +29,6 @@
 		<dependency>
 			<groupId>tech.units</groupId>
 			<artifactId>indriya</artifactId>
-			<version>${ri.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
