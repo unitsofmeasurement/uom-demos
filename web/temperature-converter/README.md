@@ -55,7 +55,11 @@ _NOTE: The following build command assumes you have configured your Maven user s
 2. Open a command line and navigate to the root directory of this quickstart.
 3. Type this command to build and deploy the archive:
 
-        mvn clean package jboss-as:deploy
+        mvn clean package jboss-as:deploy // older JBoss installations
+        
+      or
+      
+        mvn clean package jboss-as:deploy // WildFly installations
 
 4. This will deploy `target/temperature-converter.war` to the running instance of the server.
  
