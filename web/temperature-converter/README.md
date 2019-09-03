@@ -59,7 +59,7 @@ _NOTE: The following build command assumes you have configured your Maven user s
         
       or
       
-        mvn clean package jboss-as:deploy // WildFly installations
+        mvn clean package jboss:deploy // WildFly installations
 
 4. This will deploy `target/temperature-converter.war` to the running instance of the server.
  
