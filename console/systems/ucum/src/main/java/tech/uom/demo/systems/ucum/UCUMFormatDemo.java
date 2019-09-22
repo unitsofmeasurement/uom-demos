@@ -16,6 +16,7 @@ import javax.measure.spi.ServiceProvider;
 import systems.uom.ucum.UCUM;
 import tech.units.indriya.format.SimpleUnitFormat;
 import tech.units.indriya.quantity.Quantities;
+import tech.units.indriya.ComparableQuantity;
 import tech.units.indriya.format.EBNFUnitFormat;
 import tech.units.indriya.format.NumberDelimiterQuantityFormat;
 
@@ -83,17 +84,18 @@ public class UCUMFormatDemo {
 		System.out.println("Square psi (UCUM): " + ucumFormatPrint.format(another_psi.pow(2)));
 
 		// QuantityFormat for UCUM
-		
+
 		Quantity<Angle> originalQty = Quantities.getQuantity(2.0, UCUM.DEGREE);
-		//String originalQtyString = SimpleQuantityFormat.getInstance().format(originalQty);
-		//Quantity<Angle> parsedQty = Quantities.getQuantity(originalQtyString).asType(Angle.class);
-		QuantityFormat ucumQuantFormatCS = NumberDelimiterQuantityFormat.builder().
-				setNumberFormat(new DecimalFormat("00.000")).
-				setUnitFormat(ucumFormatCS).
-				build();
+		System.out.println(originalQty);
+		// String originalQtyString = SimpleQuantityFormat.getInstance().format(originalQty);
+		// Quantity<Angle> parsedQty = Quantities.getQuantity(originalQtyString).asType(Angle.class);
+		QuantityFormat ucumQuantFormatCS = NumberDelimiterQuantityFormat.builder()
+				.setNumberFormat(new DecimalFormat("00.000")).setUnitFormat(ucumFormatCS).build();
 		String originalQtyString = ucumQuantFormatCS.format(originalQty);
 		System.out.println(originalQtyString);
-		Quantity<Angle> parsedQty = ucumQuantFormatCS.parse(originalQtyString).asType(Angle.class);
-		System.out.println(parsedQty);
+		@SuppressWarnings("unchecked")
+		ComparableQuantity<Angle> parsedQty = (ComparableQuantity<Angle>) ucumQuantFormatCS.parse(originalQtyString);
+		System.out.println(parsedQty); // + "(" + parsedQty. .equals(originalQty) + ")");
+		System.out.println(parsedQty.isEquivalentTo(originalQty));
 	}
 }
