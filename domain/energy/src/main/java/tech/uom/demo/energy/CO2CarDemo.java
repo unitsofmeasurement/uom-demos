@@ -35,6 +35,8 @@ import javax.measure.quantity.Volume;
 
 import tech.units.indriya.format.SimpleUnitFormat;
 import tech.units.indriya.quantity.Quantities;
+import tech.uom.demo.energy.quantity.CarbonFootprint;
+import tech.uom.demo.energy.quantity.FuelConsumption;
 import tech.uom.lib.common.function.DoubleFactorSupplier;
 
 /**
@@ -52,18 +54,17 @@ public class CO2CarDemo {
 			FuelType fuelType = FuelType.valueOf(args[1]);
 			Quantity<Length> km100 = Quantities.getQuantity(100, KILO(METRE));
 			Quantity<Volume> fuel = Quantities.getQuantity(Double.valueOf(args[2]), LITRE);
-			Quantity<?> fuelConsumption = fuel.divide(km100).multiply(100);
-			SimpleUnitFormat.getInstance().label(fuelConsumption.getUnit(), "l/100km");
+			Quantity<FuelConsumption> fuelConsumption = fuel.divide(km100).multiply(100).asType(FuelConsumption.class);
+			SimpleUnitFormat.getInstance().label(fuelConsumption.getUnit(), "l/100 km");
 			System.out.println(fuelConsumption);
-			Quantity<?> carbon100 = fuelConsumption.multiply(fuelType.getFactor());
+			Quantity<Mass> factor = Quantities.getQuantity(fuelType.getFactor(), GRAM);
+			Quantity<CarbonFootprint> carbon100 = fuelConsumption.multiply(factor).asType(CarbonFootprint.class);
 			SimpleUnitFormat.getInstance().label(carbon100.getUnit(), "g CO2/km");
 			System.out.println(carbon100);
 			Quantity<Length> distance = Quantities.getQuantity(Double.valueOf(args[3]), KILO(METRE));
-			Quantity<?> carbonFootprint = carbon100.multiply(distance);
-			//SimpleUnitFormat.getInstance().label(carbonFootprint.getUnit(), "g CO2");
-			//System.out.println(carbonFootprint);
-			Quantity<Mass> gramCo2 = Quantities.getQuantity(carbonFootprint.getValue(), GRAM);
-			System.out.println(gramCo2.to(KILOGRAM));
+			Quantity<?> carbonTotal = carbon100.multiply(distance);
+			Quantity<Mass> carbonGrams = Quantities.getQuantity(carbonTotal.getValue(), GRAM);
+			System.out.println(carbonGrams.to(KILOGRAM));
 		}
 	}
 	
