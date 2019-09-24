@@ -37,7 +37,12 @@ import tech.units.indriya.format.SimpleUnitFormat;
 import tech.units.indriya.quantity.Quantities;
 import tech.uom.lib.common.function.DoubleFactorSupplier;
 
-public class CarbonFootprintDemo {
+/**
+ * 
+ * @author Werner
+ * @see <a href="https://spritrechner.biz/co2-rechner-fuer-autos.html">CO2-Rechner für Autos (DE)</a>
+ */
+public class CO2CarDemo {
 	
 	public static void main(String[] args) {
 		if (args == null || args.length < 4) {
@@ -63,7 +68,7 @@ public class CarbonFootprintDemo {
 	}
 	
 	private static void usage() {
-		System.out.println("Usage: CarbonFootprintDemo <Car> <FuelType> (PETROL/DIESEL) <Consumption per 100 km> <Distance in km>");
+		System.out.println("Usage: CO2CarDemo <Car> <FuelType> (PETROL/DIESEL) <Consumption per 100 km> <Distance in km>");
 	}
 
 	enum FuelType implements DoubleFactorSupplier {
