@@ -23,7 +23,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.energy;
+package tech.uom.demo.energy.unit;
 
 import static javax.measure.MetricPrefix.*;
 

@@ -10,7 +10,7 @@
  *
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-385, Unit-API nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ * 3. Neither the name of JSR-385, Units of Measurement nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -26,6 +26,7 @@
 package tech.uom.demo.energy;
 
 import static javax.measure.MetricPrefix.KILO;
+import static javax.measure.Quantity.Scale.*;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
@@ -42,27 +43,29 @@ import tech.units.indriya.unit.Units;
 /**
  * 
  * @author Werner
- * @see <a href="http://www.dagego.de/info_waermebedarf.html">Dageto Wärmebedarfsermittlung (DE)</a>
+ * @see <a href="http://www.dagego.de/info_waermebedarf.html">Dageto
+ *      Wärmebedarfsermittlung (DE)</a>
  */
 public class HeatRequirementDemo {
 
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		Quantity<Volume> volume = Quantities.getQuantity(1000, Units.LITRE);
-		Quantity<Temperature> temperature = Quantities.getQuantity(20, Units.KELVIN);
-		Quantity<Energy> energy = (Quantity<Energy>) volume.multiply(temperature);
-		Quantity<Energy> result = (energy.multiply(4200)).divide(3600);
-//		System.out.println(result);
-		final Unit<Energy> wattHour = result.getUnit();
+		System.out.println(String.format("Welche Arbeit ist nötig um %s Wasser von 50°C auf 70°C zu erhitzen?", 
+				volume));
+		Quantity<Temperature> deltaT = Quantities.getQuantity(20, Units.KELVIN, RELATIVE);
+		Quantity<Energy> energy = (Quantity<Energy>) volume.multiply(deltaT);
+		Quantity<Energy> W = (energy.multiply(4200)).divide(3600);
+		final Unit<Energy> wattHour = W.getUnit();
 		SimpleUnitFormat.getInstance().label(wattHour, "Wh");
-//		System.out.println(result);
-		Quantity<Energy> kwH = result.to(KILO(wattHour));
+		Quantity<Energy> kwH = W.to(KILO(wattHour));
 		SimpleUnitFormat.getInstance().label(KILO(wattHour), "KWh");
 		System.out.println(kwH);
 		Quantity<Power> kiloWatt = Quantities.getQuantity(9.5, KILO(Units.WATT));
-		Quantity<Time> time =  (Quantity<Time>) kwH.divide(kiloWatt);
+		Quantity<Time> time = (Quantity<Time>) kwH.divide(kiloWatt);
 		SimpleUnitFormat.getInstance().label(time.getUnit(), "h");
-		System.out.println(time);
+		System.out.println(String.format("Wenn nur %s zur Verfügung stehen dauert es entsprechend länger.",
+				kiloWatt));
+		System.out.println(String.format("Nämlich: %s",	time));
 	}
-
 }
