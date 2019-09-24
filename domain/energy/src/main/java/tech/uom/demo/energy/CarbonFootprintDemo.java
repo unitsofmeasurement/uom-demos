@@ -40,22 +40,30 @@ import tech.uom.lib.common.function.DoubleFactorSupplier;
 public class CarbonFootprintDemo {
 	
 	public static void main(String[] args) {
-		System.out.println(String.format("Car: %s", args[0]));
-		FuelType fuelType = FuelType.valueOf(args[1]);
-		Quantity<Length> km100 = Quantities.getQuantity(100, KILO(METRE));
-		Quantity<Volume> fuel = Quantities.getQuantity(Double.valueOf(args[2]), LITRE);
-		Quantity<?> fuelConsumption = fuel.divide(km100).multiply(100);
-		SimpleUnitFormat.getInstance().label(fuelConsumption.getUnit(), "l/100km");
-		System.out.println(fuelConsumption);
-		Quantity<?> carbon100 = fuelConsumption.multiply(fuelType.getFactor());
-		SimpleUnitFormat.getInstance().label(carbon100.getUnit(), "g CO2/km");
-		System.out.println(carbon100);
-		Quantity<Length> distance = Quantities.getQuantity(Double.valueOf(args[3]), KILO(METRE));
-		Quantity<?> carbonFootprint = carbon100.multiply(distance);
-		//SimpleUnitFormat.getInstance().label(carbonFootprint.getUnit(), "g CO2");
-		//System.out.println(carbonFootprint);
-		Quantity<Mass> gramCo2 = Quantities.getQuantity(carbonFootprint.getValue(), GRAM);
-		System.out.println(gramCo2.to(KILOGRAM));
+		if (args == null || args.length < 4) {
+			usage();
+		} else {
+			System.out.println(String.format("Car: %s", args[0]));
+			FuelType fuelType = FuelType.valueOf(args[1]);
+			Quantity<Length> km100 = Quantities.getQuantity(100, KILO(METRE));
+			Quantity<Volume> fuel = Quantities.getQuantity(Double.valueOf(args[2]), LITRE);
+			Quantity<?> fuelConsumption = fuel.divide(km100).multiply(100);
+			SimpleUnitFormat.getInstance().label(fuelConsumption.getUnit(), "l/100km");
+			System.out.println(fuelConsumption);
+			Quantity<?> carbon100 = fuelConsumption.multiply(fuelType.getFactor());
+			SimpleUnitFormat.getInstance().label(carbon100.getUnit(), "g CO2/km");
+			System.out.println(carbon100);
+			Quantity<Length> distance = Quantities.getQuantity(Double.valueOf(args[3]), KILO(METRE));
+			Quantity<?> carbonFootprint = carbon100.multiply(distance);
+			//SimpleUnitFormat.getInstance().label(carbonFootprint.getUnit(), "g CO2");
+			//System.out.println(carbonFootprint);
+			Quantity<Mass> gramCo2 = Quantities.getQuantity(carbonFootprint.getValue(), GRAM);
+			System.out.println(gramCo2.to(KILOGRAM));
+		}
+	}
+	
+	private static void usage() {
+		System.out.println("Usage: CarbonFootprintDemo <Car> <FuelType> (PETROL/DIESEL) <Consumption per 100 km> <Distance in km>");
 	}
 
 	enum FuelType implements DoubleFactorSupplier {
