@@ -57,8 +57,7 @@ public class CO2CarDemo {
 			Quantity<FuelConsumption> fuelConsumption = fuel.divide(km100).multiply(100).asType(FuelConsumption.class);
 			SimpleUnitFormat.getInstance().label(fuelConsumption.getUnit(), "l/100 km");
 			System.out.println(fuelConsumption);
-			Quantity<Mass> factor = Quantities.getQuantity(fuelType.getFactor(), GRAM);
-			Quantity<CarbonFootprint> carbon100 = fuelConsumption.multiply(factor).asType(CarbonFootprint.class);
+			Quantity<CarbonFootprint> carbon100 = fuelConsumption.multiply(fuelType.getFactor()).asType(CarbonFootprint.class);
 			SimpleUnitFormat.getInstance().label(carbon100.getUnit(), "g CO2/km");
 			System.out.println(carbon100);
 			Quantity<Length> distance = Quantities.getQuantity(Double.valueOf(args[3]), KILO(METRE));
