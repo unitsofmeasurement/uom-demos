@@ -35,7 +35,7 @@
 		<ri.version>2.0.1</ri.version>
 		<lib.version>2.0</lib.version>
 		<si.version>2.0.1</si.version>
-		<systems.version>2.0-SNAPSHOT</systems.version>
+		<systems.version>2.0</systems.version>
 	</properties>
 
 	<dependencyManagement>
