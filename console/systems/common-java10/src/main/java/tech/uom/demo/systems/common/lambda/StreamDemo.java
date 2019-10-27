@@ -23,28 +23,21 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.systems.lambda;
+package tech.uom.demo.systems.common.lambda;
 
-import javax.measure.Quantity;
-import javax.measure.quantity.Length;
+import java.util.Set;
+import java.util.stream.Stream;
 
-import tech.uom.lib.common.function.QuantityConverter;
-import tech.units.indriya.quantity.Quantities;
+import javax.measure.Unit;
+
 import tech.units.indriya.unit.Units;
-import systems.uom.common.USCustomary;
 
-public class FunctionalDemo {
+public class StreamDemo {
 
 	public static void main(String[] args) {
-		QuantityConverter<Length> converter2 = (from) -> (Quantity<Length>) Quantities.getQuantity(10, Units.METRE);
-		Quantity<Length> converted2 = converter2.to(USCustomary.INCH);
-		System.out.println(converted2); // XYZ
-		Quantity<Length> converted3 = converter2.to(USCustomary.FOOT);
-		System.out.println(converted3);
-		//Quantity<Length> conv2 = (from) -> Integer.valueOf(from);
-		
-		Quantity<Length> len = (Quantity<Length>) Quantities.getQuantity(10, Units.METRE);
-		Quantity<Length> len2 = len.to(USCustomary.FOOT);
-		System.out.println(len2);
+		@SuppressWarnings("unchecked")
+		Set<Unit<?>> units = (Set<Unit<?>>) Units.getInstance().getUnits();
+		Stream<String> symbols = units.stream().map(Unit::getSymbol);
+		symbols.forEach( System.out::println );
 	}
 }

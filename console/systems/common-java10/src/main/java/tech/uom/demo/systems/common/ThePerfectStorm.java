@@ -27,13 +27,13 @@ package tech.uom.demo.systems.common;
 
 import static tech.units.indriya.unit.Units.KILOMETRE_PER_HOUR;
 import static tech.units.indriya.unit.Units.METRE;
-import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.FIVE;
-import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.FOUR;
-import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.ONE;
-import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.THREE;
-import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_DEPRESSION;
-import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_STORM;
-import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.TWO;
+import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.FIVE;
+import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.FOUR;
+import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.ONE;
+import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.THREE;
+import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_DEPRESSION;
+import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_STORM;
+import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.TWO;
 import static javax.measure.MetricPrefix.KILO;
 import static systems.uom.common.USCustomary.MILE_PER_HOUR;
 
@@ -44,7 +44,7 @@ import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
 
 import tech.units.indriya.quantity.Quantities;
-import tech.uom.demo.types.SaffirSimpsonHurricaneWindScale;
+import tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale;
 
 /**
  * @author Werner Keil

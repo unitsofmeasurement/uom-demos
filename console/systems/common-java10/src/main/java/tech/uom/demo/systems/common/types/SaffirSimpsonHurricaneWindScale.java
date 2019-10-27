@@ -23,10 +23,10 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.types;
+package tech.uom.demo.systems.common.types;
 
 import static tech.units.indriya.AbstractQuantity.NONE;
-import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.*;
+import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.*;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Speed;

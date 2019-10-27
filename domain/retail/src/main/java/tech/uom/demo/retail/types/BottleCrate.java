@@ -1,6 +1,6 @@
 /*
  * Units of Measurement Demos
- * Copyright © 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+ * Copyright © 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -27,28 +27,40 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.retail;
+package tech.uom.demo.retail.types;
 
-import static javax.measure.MetricPrefix.MILLI;
-import static tech.units.indriya.unit.Units.LITRE;
-
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.function.Supplier;
 
-import tec.uom.demo.retail.types.Bottle;
-import tec.uom.demo.retail.types.BottleCrate;
-import tec.uom.demo.retail.types.Crates;
-import tech.units.indriya.quantity.Quantities;
+import javax.measure.Unit;
 
-public class BottleDemo {
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
-	public static void main(String[] args) {
-		Collection<Bottle> bottles = new ArrayList<>();
-		Bottle bottle = new Bottle(Quantities.getQuantity(250, MILLI(LITRE)));
-		bottles.add(bottle);
-		BottleCrate crate = new BottleCrate(bottles, Crates.SIXPACK);
-		
-		System.out.println(crate);
+import tec.uom.domain.retail.Crate;
+import tech.uom.lib.common.function.UnitSupplier;
+
+public class BottleCrate implements Supplier<Collection<Bottle>>, UnitSupplier<Crate> {
+
+	private final Collection<Bottle> bottles;
+	private final Unit<Crate> unit;
+	
+	public BottleCrate(Collection<Bottle> b, Unit<Crate> u) {
+		this.bottles = b;
+		this.unit = u;
+	}
+	
+	@Override
+	public Collection<Bottle> get() {
+		return bottles;
 	}
 
+	@Override
+	public Unit<Crate> getUnit() {
+		return unit;
+	}
+
+	@Override
+	public String toString() {
+		return ReflectionToStringBuilder.toString(this);
+	}
 }

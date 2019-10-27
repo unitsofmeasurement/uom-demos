@@ -28,7 +28,7 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package tec.uom.demo.retail.types;
+package tech.uom.demo.retail.types;
 
 import tech.uom.lib.common.function.Coded;
 

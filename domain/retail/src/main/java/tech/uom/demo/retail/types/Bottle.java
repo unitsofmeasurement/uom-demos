@@ -1,6 +1,6 @@
 /*
  * Units of Measurement Demos
- * Copyright © 2005-2018, Werner Keil and others.
+ * Copyright © 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -27,45 +27,22 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.retail.types;
-
-import static systems.uom.common.USCustomary.FOOT;
-import static systems.uom.common.USCustomary.INCH;
+package tech.uom.demo.retail.types;
 
 import javax.measure.Quantity;
-import javax.measure.quantity.Length;
+import javax.measure.quantity.Volume;
 
-import tech.uom.lib.common.function.Coded;
-import tech.uom.lib.common.function.Nameable;
 import tech.uom.lib.common.function.QuantitySupplier;
-import tech.units.indriya.quantity.Quantities;
 
-public enum ContainerHeight implements QuantitySupplier<Length>, Nameable, Coded<String> {
-    H0("8 Foot Container Height", "0", Quantities.getQuantity(8, FOOT)), 
-    H2("8 Foot 6 Inch Container Height", "2", H0.getQuantity().add(Quantities.getQuantity(6, INCH)));
-
-    private final String name;
-    private final String code;
-    private final Quantity<Length> quantity;
-
-    private ContainerHeight(final String name, final String code, final Quantity<Length> q) {
-        this.code = code;
-        this.name = name;
-        this.quantity = q;
-    }
-
-    @Override
-    public Quantity<Length> getQuantity() {
-        return quantity;
-    }
-
-    @Override
-    public String getCode() {
-        return code;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
+public class Bottle implements QuantitySupplier<Volume> {
+	private final Quantity<Volume> quantity;
+	
+	public Bottle(Quantity<Volume> volume) {
+		this.quantity = volume;
+	}
+	
+	@Override
+	public Quantity<Volume> getQuantity() {
+		return quantity;
+	}
 }

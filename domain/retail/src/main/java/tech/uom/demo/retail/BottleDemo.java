@@ -27,22 +27,28 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.retail.types;
+package tech.uom.demo.retail;
 
-import javax.measure.Quantity;
-import javax.measure.quantity.Volume;
+import static javax.measure.MetricPrefix.MILLI;
+import static tech.units.indriya.unit.Units.LITRE;
 
-import tech.uom.lib.common.function.QuantitySupplier;
+import java.util.ArrayList;
+import java.util.Collection;
 
-public class Bottle implements QuantitySupplier<Volume> {
-	private final Quantity<Volume> quantity;
-	
-	public Bottle(Quantity<Volume> volume) {
-		this.quantity = volume;
+import tech.units.indriya.quantity.Quantities;
+import tech.uom.demo.retail.types.Bottle;
+import tech.uom.demo.retail.types.BottleCrate;
+import tech.uom.demo.retail.types.Crates;
+
+public class BottleDemo {
+
+	public static void main(String[] args) {
+		Collection<Bottle> bottles = new ArrayList<>();
+		Bottle bottle = new Bottle(Quantities.getQuantity(250, MILLI(LITRE)));
+		bottles.add(bottle);
+		BottleCrate crate = new BottleCrate(bottles, Crates.SIXPACK);
+		
+		System.out.println(crate);
 	}
-	
-	@Override
-	public Quantity<Volume> getQuantity() {
-		return quantity;
-	}
+
 }

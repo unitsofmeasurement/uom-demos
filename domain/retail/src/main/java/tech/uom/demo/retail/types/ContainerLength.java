@@ -27,49 +27,45 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.retail;
+package tech.uom.demo.retail.types;
 
-import static tec.uom.demo.retail.types.ContainerHeight.H0;
-import static tec.uom.demo.retail.types.ContainerHeight.H2;
-import static tec.uom.demo.retail.types.ContainerLength.L2;
-import static tec.uom.demo.retail.types.ContainerLength.L4;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import static systems.uom.common.USCustomary.FOOT;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Length;
 
-import tec.uom.demo.retail.types.Container;
-import tech.units.indriya.function.QuantityStreams;
-import tech.units.indriya.function.QuantitySummaryStatistics;
-import tech.units.indriya.unit.Units;
+import tech.uom.lib.common.function.Coded;
+import tech.uom.lib.common.function.Nameable;
+import tech.uom.lib.common.function.QuantitySupplier;
+import tech.units.indriya.quantity.Quantities;
 
-public class ContainerDemo {
+public enum ContainerLength implements QuantitySupplier<Length>, Nameable, Coded<String> {
+    L2("20 Foot Container Length", "2", Quantities.getQuantity(20, FOOT)), 
+    L4("40 Foot Container Length", "4", Quantities.getQuantity(40, FOOT));
 
-    public static void main(String[] args) {
-        final Collection<Container> terminal = new ArrayList<>();
-        Container container = new Container(L2, H0, "G0");
-        terminal.add(container);
-        container = new Container(L2, H2, "G1");
-        terminal.add(container);
-        container = new Container(L4, H2, "G0");
-        terminal.add(container);
+    private final String name;
+    private final String code;
+    private final Quantity<Length> quantity;
 
-        List<Quantity<Length>> lengths = new ArrayList<>();
-        for (Container cont : terminal) {
-            System.out.println("ISO: " + cont.getCode());
-            lengths.add(cont.getLength().getQuantity());
-        }
+    private ContainerLength(final String name, final String code, final Quantity<Length> q) {
+        this.code = code;
+        this.name = name;
+        this.quantity = q;
+    }
 
-        QuantitySummaryStatistics<Length> summary = lengths.stream().collect(QuantityStreams.summarizeQuantity(Units.METRE));
- 
-        System.out.println("Containers: " + summary.getCount());
-        System.out.println("Average length: " + summary.getAverage());
-        System.out.println("Max length: " + summary.getMax());
-        System.out.println("Min length: " + summary.getMin());
-        System.out.println("Total length: " +summary.getSum());
+    @Override
+    public Quantity<Length> getQuantity() {
+        return quantity;
+    }
+
+    @Override
+    public String getCode() {
+        return code;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
 }
