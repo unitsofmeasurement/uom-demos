@@ -40,9 +40,10 @@ import tech.uom.demo.energy.quantity.FuelConsumption;
 import tech.uom.lib.common.function.DoubleFactorSupplier;
 
 /**
- * 
+ * Carbon Footprint calculator for cars
  * @author Werner
  * @see <a href="https://spritrechner.biz/co2-rechner-fuer-autos.html">CO2-Rechner für Autos (DE)</a>
+ * @version 1.5
  */
 public class CO2CarDemo {
 	
@@ -61,6 +62,7 @@ public class CO2CarDemo {
 			SimpleUnitFormat.getInstance().label(carbon100.getUnit(), "g CO2/km");
 			System.out.println(carbon100);
 			Quantity<Length> distance = Quantities.getQuantity(Double.valueOf(args[3]), KILO(METRE));
+			System.out.println(distance);
 			Quantity<?> carbonTotal = carbon100.multiply(distance);
 			Quantity<Mass> carbonGrams = Quantities.getQuantity(carbonTotal.getValue(), GRAM);
 			System.out.println(carbonGrams.to(KILOGRAM));
