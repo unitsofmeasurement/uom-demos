@@ -74,4 +74,5 @@
 			</plugin>
 		</plugins>
 	</build>
+		<name>UoM Common Console Demos for Java 10</name>
 </project>
