@@ -10,7 +10,7 @@
 		<version>2.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>helloworld</artifactId>
+	<artifactId>conference</artifactId>
 	<dependencies>
 		<dependency>
 			<groupId>tech.units</groupId>

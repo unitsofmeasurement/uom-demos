@@ -72,6 +72,6 @@
 		<module>java10</module>
 		<module>systems</module>
         <!--  >module>valhalla</module currently disabled because it requires partial JDK 14+ preview -->
-    	<module>helloworld</module>
+    	<module>conference</module>
     </modules>
 </project>

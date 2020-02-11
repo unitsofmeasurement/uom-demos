@@ -8,7 +8,7 @@ Console applications demonstrating Units of Measurement API.
 The project currently contains the following modules:
 
 - [Basic Console Demos](basic)
-- [Hello World Demos](helloworld)
+- [Conference Demos](conference)
 - [Java 10 Console Demos](java10)
 - [Unit System Console Demos](systems)
 - [Valhalla Preview](valhalla)
