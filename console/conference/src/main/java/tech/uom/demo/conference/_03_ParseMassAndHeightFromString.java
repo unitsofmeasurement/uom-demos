@@ -1,3 +1,4 @@
+package tech.uom.demo.conference;
 import javax.measure.Quantity;
 
 import tech.units.indriya.quantity.Quantities;

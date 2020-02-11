@@ -1,3 +1,4 @@
+package tech.uom.demo.conference;
 import javax.measure.Dimension;
 import javax.measure.Quantity;
 import javax.measure.Unit;

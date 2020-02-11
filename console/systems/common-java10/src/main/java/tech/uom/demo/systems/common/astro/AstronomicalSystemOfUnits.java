@@ -23,7 +23,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package space.uom.demo.astro;
+package tech.uom.demo.systems.common.astro;
 
 import static javax.measure.MetricPrefix.KILO;
 

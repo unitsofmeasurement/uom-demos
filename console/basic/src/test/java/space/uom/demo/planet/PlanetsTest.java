@@ -22,8 +22,9 @@ import java.util.logging.Logger;
 
 import org.junit.Test;
 
-import space.uom.demo.planet.DwarfPlanet;
-import space.uom.demo.planet.Planet;
+import tech.uom.demo.planet.Celestial;
+import tech.uom.demo.planet.DwarfPlanet;
+import tech.uom.demo.planet.Planet;
 
 /**
  * @author Werner Keil

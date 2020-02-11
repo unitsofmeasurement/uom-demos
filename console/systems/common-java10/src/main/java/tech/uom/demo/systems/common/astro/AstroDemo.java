@@ -1,6 +1,6 @@
 /*
- *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Units of Measurement Demos for Java
+ *  Copyright (c) 2005-2020, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -10,7 +10,7 @@
  *
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363, Unit-API nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ * 3. Neither the name of JSR-385, Units of Measurement nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -23,19 +23,26 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package space.uom.demo.planet;
+package tech.uom.demo.systems.common.astro;
 
 import javax.measure.Quantity;
+import javax.measure.Unit;
+import javax.measure.quantity.Force;
 import javax.measure.quantity.Length;
-import javax.measure.quantity.Mass;
+import javax.measure.spi.ServiceProvider;
 
-/**
- * This interface defines a <b>Celestial</b> body, like a {@link Planet}, {@link DwarfPlanet}, Moon, etc.
- *
- * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.0
- */
-public interface Celestial {
-    Quantity<Mass> getMass();
-    Quantity<Length> getRadius();
+import tech.units.indriya.unit.Units;
+
+public class AstroDemo {
+
+	public static void main(String[] args) {
+		Unit<Length> au = AstronomicalSystemOfUnits.ASTRONOMICAL_UNIT;
+		Quantity<Length> peri = ServiceProvider.current().getQuantityFactory(
+				Length.class).create(0.9832687, au);
+		System.out.println(peri);
+		
+		Unit<Force> u = Units.NEWTON;
+		System.out.println(u);
+	}
+
 }
