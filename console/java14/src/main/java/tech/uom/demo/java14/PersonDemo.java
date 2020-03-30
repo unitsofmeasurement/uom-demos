@@ -25,20 +25,20 @@
  */
 package tech.uom.demo.java14;
 
-import static tech.units.indriya.unit.Units.KILOGRAM;
-import static tech.units.indriya.unit.Units.METRE;
-
 import tech.units.indriya.quantity.Quantities;
 import tech.uom.demo.java14.rec.Person;
 
+import static tech.units.indriya.unit.Units.KILOGRAM;
+import static tech.units.indriya.unit.Units.METRE;
+
 public class PersonDemo {
 
-	public static void main(String[] args) {
-		var person1 = new Person("John", "Doe", 
-				Quantities.getQuantity(1.8, METRE),
-				Quantities.getQuantity(80, KILOGRAM));		
-		System.out.println(person1);
-		System.out.println(person1.getFirstName());
-	}
+    public static void main(String[] args) {
+        var person1 = new Person("John", "Doe",
+                Quantities.getQuantity(1.8, METRE),
+                Quantities.getQuantity(80, KILOGRAM));
+        System.out.println(person1);
+        System.out.println(person1.getFullName());
+    }
 
 }
