@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>tech.uom.demo.console.systems</groupId>
 		<artifactId>uom-console-system-demos</artifactId>
-		<version>2.0</version>
+		<version>2.0.1-SNAPSHOT</version>
 	</parent>
 	<name>UoM Common Console Demos</name>
 	<artifactId>uom-console-demos-common</artifactId>
@@ -13,27 +13,22 @@
 		<dependency>
 			<groupId>tech.uom.lib</groupId>
 			<artifactId>uom-lib-common</artifactId>
-			<version>${lib.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>tech.units</groupId>
 			<artifactId>indriya</artifactId>
-			<version>${ri.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>si.uom</groupId>
 			<artifactId>si-units</artifactId>
-			<version>2.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>systems.uom</groupId>
 			<artifactId>systems-quantity</artifactId>
-			<version>2.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>systems.uom</groupId>
 			<artifactId>systems-common</artifactId>
-			<version>2.0.1</version>
 		</dependency>
 	</dependencies>
 </project>

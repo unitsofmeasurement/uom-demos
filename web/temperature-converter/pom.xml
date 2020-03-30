@@ -2,9 +2,9 @@
 <!-- JBoss, Home of Professional Open Source Copyright 2015, Red Hat, Inc. 
 	and/or its affiliates, and individual contributors by the @authors tag. See 
 	the copyright.txt in the distribution for a full listing of individual contributors. 
-	Licensed under the Apache License, Version 2.0 (the "License"); you may not 
+	Licensed under the Apache License, Version 2.0.1-SNAPSHOT (the "License"); you may not 
 	use this file except in compliance with the License. You may obtain a copy 
-	of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required 
+	of the License at http://www.apache.org/licenses/LICENSE-2.0.1-SNAPSHOT Unless required 
 	by applicable law or agreed to in writing, software distributed under the 
 	License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS 
 	OF ANY KIND, either express or implied. See the License for the specific 
@@ -16,20 +16,20 @@
 	<parent>
 		<groupId>tech.uom.demo.web</groupId>
 		<artifactId>uom-web-demos</artifactId>
-		<version>2.0</version>
+		<version>2.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>org.wildfly.quickstarts</groupId>
 	<artifactId>temperature-converter</artifactId>
-	<version>18.0.1</version>
+	<version>19.0.1.Beta1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>Quickstart: temperature-converter</name>
 	<description>This project is a temperature converter. Given Celsius return Kelvin; Given Kelvin return Celsius</description>
 
 	<licenses>
 		<license>
-			<name>Apache License, Version 2.0</name>
+			<name>Apache License, Version 2.0.1-SNAPSHOT</name>
 			<distribution>repo</distribution>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.1-SNAPSHOT.html</url>
 		</license>
 	</licenses>
 
@@ -41,9 +41,12 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- JBoss dependency versions -->
-		<version.org.jboss.as.plugins.maven.plugin>7.3.Final</version.org.jboss.as.plugins.maven.plugin>
-		<version.org.jboss.spec>1.1.1.Final</version.org.jboss.spec>
+		<version.wildfly.maven.plugin>2.0.1-SNAPSHOT.0.Final</version.wildfly.maven.plugin>
 		<version.thorntail>2.5.0.Final</version.thorntail>
+  		<!-- Version of BOMs
+        	note: a SNAPSHOT version *requires* checkout of BOMs at https://github.com/wildfly/boms and build through "mvn clean install"
+        -->
+        <version.server.bom>19.0.0.Final</version.server.bom>
 
 		<!-- maven-compiler-plugin -->
 		<jdkVersion>1.8</jdkVersion>
@@ -54,23 +57,46 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
-				<groupId>javax</groupId>
-				<artifactId>javaee-api</artifactId>
-				<version>8.0</version>
-				<scope>provided</scope>
-			</dependency>
+		 <!-- importing the jakartaee8-with-tools BOM adds specs and other useful artifacts as managed dependencies -->
+            <dependency>
+                <groupId>org.wildfly.bom</groupId>
+                <artifactId>wildfly-jakartaee8-with-tools</artifactId>
+                <version>${version.server.bom}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 		</dependencies>
 	</dependencyManagement>
 
 	<dependencies>
 
-		<!-- Import the Java EE API, we use provided scope as the API is included 
-			in JBoss AS/Wildfly -->
-		<dependency>
-			<groupId>javax</groupId>
-			<artifactId>javaee-api</artifactId>
-		</dependency>
+    <!-- Import the CDI API, we use provided scope as the API is included in JBoss EAP -->
+        <dependency>
+            <groupId>jakarta.enterprise</groupId>
+            <artifactId>jakarta.enterprise.cdi-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Import the Common Annotations API (JSR-250), we use provided scope
+            as the API is included in JBoss EAP -->
+        <dependency>
+            <groupId>org.jboss.spec.javax.annotation</groupId>
+            <artifactId>jboss-annotations-api_1.3_spec</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Import the EJB API, we use provided scope as the API is included in JBoss EAP -->
+        <dependency>
+            <groupId>org.jboss.spec.javax.ejb</groupId>
+            <artifactId>jboss-ejb-api_3.2_spec</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Import the JSF API, we use provided scope as the API is included in JBoss EAP -->
+        <dependency>
+            <groupId>org.jboss.spec.javax.faces</groupId>
+            <artifactId>jboss-jsf-api_2.3_spec</artifactId>
+            <scope>provided</scope>
+        </dependency>
 
 		<dependency>
 			<groupId>javax.measure</groupId>
@@ -80,7 +106,7 @@
 			<exclusions> <exclusion> < declare the exclusion here > <groupId>tech.uom.lib</groupId> 
 			<artifactId>uom-lib-common</artifactId> </exclusion> </exclusions> </dependency> 
 			<dependency> <groupId>tech.uom.lib</groupId> <artifactId>uom-lib-common</artifactId> 
-			<version>2.0.1-SNAPSHOT</version> </dependency> -->
+			<version>2.0.1-SNAPSHOT.1-SNAPSHOT</version> </dependency> -->
 	</dependencies>
 
 	<build>
@@ -95,12 +121,12 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
-			<!-- JBoss AS plugin to deploy war -->
-			<plugin>
-				<groupId>org.jboss.as.plugins</groupId>
-				<artifactId>jboss-as-maven-plugin</artifactId>
-				<version>${version.org.jboss.as.plugins.maven.plugin}</version>
-			</plugin>
+			<!-- Wildfly plugin to deploy war -->
+			 <plugin>
+                    <groupId>org.wildfly.plugins</groupId>
+                    <artifactId>wildfly-maven-plugin</artifactId>
+                    <version>${version.wildfly.maven.plugin}</version>
+                </plugin>
 			<!-- Compiler plugin enforces Java 8 compatibility and activates annotation 
 				processors -->
 			<plugin>

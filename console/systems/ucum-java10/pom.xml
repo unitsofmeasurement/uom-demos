@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>tech.uom.demo.console.systems</groupId>
 		<artifactId>uom-console-system-demos</artifactId>
-		<version>2.0</version>
+		<version>2.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>uom-console-demos-ucum-java10</artifactId>
 
@@ -22,17 +22,14 @@
 		<dependency>
 			<groupId>systems.uom</groupId>
 			<artifactId>systems-quantity</artifactId>
-			<version>2.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>systems.uom</groupId>
 			<artifactId>systems-ucum</artifactId>
-			<version>2.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>systems.uom</groupId>
 			<artifactId>systems-common</artifactId>
-			<version>2.0.1</version>
 		</dependency>
 	</dependencies>
 	<name>UCUM Console Demos for Java 10</name>

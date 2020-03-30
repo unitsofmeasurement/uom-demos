@@ -3,6 +3,8 @@ valhalla
 
 Project Valhalla Demos
 
+[![Stability: Experimental](https://masterminds.github.io/stability/experimental.svg)](https://masterminds.github.io/stability/experimental.html)
+
 This project explores, how JDK [Project Valhalla](https://jdk.java.net/valhalla/) may work with Unit API.
 
 see [uom-demos#71](https://github.com/unitsofmeasurement/uom-demos/issues/71)

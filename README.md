@@ -4,7 +4,7 @@ uom-demos
 Units of Measurement Demos
 
 [![Circle CI](https://circleci.com/gh/unitsofmeasurement/uom-demos.svg?style=svg)](https://circleci.com/gh/unitsofmeasurement/uom-demos) 
-[![Stability: Sustained](https://masterminds.github.io/stability/sustained.svg)](https://masterminds.github.io/stability/sustained.html)
+[![Stability: Active](https://masterminds.github.io/stability/active.svg)](https://masterminds.github.io/stability/active.html)
 [![License](http://img.shields.io/badge/license-BSD3-blue.svg)](http://opensource.org/licenses/BSD-3-Clause)
 
 The project currently contains the following modules:

@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>tech.uom.demo.device</groupId>
 		<artifactId>uom-device-demos</artifactId>
-		<version>2.0</version>
+		<version>2.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>tech.uom.demo.device.edison</groupId>
 	<artifactId>uom-edison-demos</artifactId>
