@@ -25,29 +25,22 @@
  */
 package tech.uom.demo.systems.common14;
 
-import static tech.units.indriya.unit.Units.KILOMETRE_PER_HOUR;
-import static tech.units.indriya.unit.Units.METRE;
-import static tech.uom.demo.systems.common14.types.SaffirSimpsonHurricaneWindScale.Category.FIVE;
-import static tech.uom.demo.systems.common14.types.SaffirSimpsonHurricaneWindScale.Category.FOUR;
-import static tech.uom.demo.systems.common14.types.SaffirSimpsonHurricaneWindScale.Category.ONE;
-import static tech.uom.demo.systems.common14.types.SaffirSimpsonHurricaneWindScale.Category.THREE;
-import static tech.uom.demo.systems.common14.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_DEPRESSION;
-import static tech.uom.demo.systems.common14.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_STORM;
-import static tech.uom.demo.systems.common14.types.SaffirSimpsonHurricaneWindScale.Category.TWO;
-import static javax.measure.MetricPrefix.KILO;
-import static systems.uom.common.USCustomary.MILE_PER_HOUR;
-
-import javax.measure.Quantity;
-import javax.measure.quantity.Length;
-import javax.measure.quantity.Speed;
-import javax.measure.quantity.Time;
-
+import tech.units.indriya.format.SimpleUnitFormat;
 import tech.units.indriya.quantity.Quantities;
 import tech.uom.demo.systems.common14.types.SaffirSimpsonHurricaneWindScale;
 
+import javax.measure.quantity.Time;
+import java.util.regex.Pattern;
+
+import static javax.measure.MetricPrefix.KILO;
+import static systems.uom.common.USCustomary.MILE_PER_HOUR;
+import static tech.units.indriya.unit.Units.KILOMETRE_PER_HOUR;
+import static tech.units.indriya.unit.Units.METRE;
+import static tech.uom.demo.systems.common14.types.SaffirSimpsonHurricaneWindScale.Category.*;
+
 /**
  * @author Werner Keil
- * @version 1.0
+ * @version 1.1
  * @see {@link SaffirSimpsonHurricaneWindScale}
  */
 public class ThePerfectStorm {
@@ -56,6 +49,11 @@ public class ThePerfectStorm {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		boolean verbose = false;
+		if (args!=null && args.length>0 && !isNumeric(args[0])) {
+			if ("-v".equals(args[0])) verbose = true;
+		}
+
 		final SaffirSimpsonHurricaneWindScale std = SaffirSimpsonHurricaneWindScale.of(
 				null, Quantities.getQuantity(38, MILE_PER_HOUR), TROPICAL_DEPRESSION);
 		System.out.println(std);
@@ -63,38 +61,40 @@ public class ThePerfectStorm {
 		final var sts = SaffirSimpsonHurricaneWindScale.of(
 				Quantities.getQuantity(39, MILE_PER_HOUR),
 				Quantities.getQuantity(73, MILE_PER_HOUR), TROPICAL_STORM);
-		System.out.println(sts);
+		if (verbose) System.out.println(sts);
 
 		final var s1 = SaffirSimpsonHurricaneWindScale.of(
 				Quantities.getQuantity(74, MILE_PER_HOUR),
 				Quantities.getQuantity(95, MILE_PER_HOUR), ONE);
-		System.out.println(s1);
+		if (verbose) System.out.println(s1);
 
 		final var s2 = SaffirSimpsonHurricaneWindScale.of(
 				Quantities.getQuantity(96, MILE_PER_HOUR),
 				Quantities.getQuantity(110, MILE_PER_HOUR), TWO);
-		System.out.println(s2);
+		if (verbose) System.out.println(s2);
 
 		final var s3 = SaffirSimpsonHurricaneWindScale.of(
 				Quantities.getQuantity(111, MILE_PER_HOUR),
 				Quantities.getQuantity(129, MILE_PER_HOUR), THREE);
-		System.out.println(s3);
+		if (verbose) System.out.println(s3);
 
 		final var s4 = SaffirSimpsonHurricaneWindScale.of(
 				Quantities.getQuantity(130, MILE_PER_HOUR),
 				Quantities.getQuantity(156, MILE_PER_HOUR), FOUR);
-		System.out.println(s4);
+		if (verbose) System.out.println(s4);
 
 		final var s5 = SaffirSimpsonHurricaneWindScale.of(
 				Quantities.getQuantity(157, MILE_PER_HOUR), null, FIVE);
-		System.out.println(s5);
+		if (verbose) System.out.println(s5);
 
 		int argument = -1;
 		if (args!= null && args.length>0) {
-			argument = Integer.valueOf(args[0]).intValue();
+			if (isNumeric(args[0])) {
+				argument = Integer.valueOf(args[0]).intValue();
+			}
 		}
 
-		SaffirSimpsonHurricaneWindScale scale = switch (argument) {
+		var scale = switch (argument) {
 			case 0 -> sts;
 			case 1 -> s1;
 			case 2 -> s2;
@@ -104,16 +104,26 @@ public class ThePerfectStorm {
 			default -> std;
 		};
 
-		final Quantity<Speed> metricSpeed = scale.hasMaximum() ?
+		final var metricSpeed = scale.hasMaximum() ?
 				scale.getMaximum().to(KILOMETRE_PER_HOUR) :
 				scale.getMinimum().to(KILOMETRE_PER_HOUR);
 
 		System.out.print(metricSpeed);
 		System.out.println(" (" + scale.getCategory() + ")");
-		Quantity<Length> l = Quantities.getQuantity(500, KILO(METRE));
-		System.out.println(String.format("Distance: %s", l));
-		Quantity<Time> timeToEvacuate = l.divide(metricSpeed).asType(Time.class);
+		var distance = Quantities.getQuantity(500, KILO(METRE));
+		System.out.println(String.format("Distance: %s", distance));
+		var timeToEvacuate = distance.divide(metricSpeed).asType(Time.class);
 		//Quantity<?> timeToEvacuate = l.divide(metricSpeed); if you don't want to cast ;-)
+		SimpleUnitFormat.getInstance().label(timeToEvacuate.getUnit(), "h");
 		System.out.println(String.format("Time to evacuate: %s", timeToEvacuate));
+	}
+
+	private static final Pattern PATTERN = Pattern.compile("-?\\d+(\\.\\d+)?");
+
+	private static boolean isNumeric(String strNum) {
+		if (strNum == null) {
+			return false;
+		}
+		return PATTERN.matcher(strNum).matches();
 	}
 }
