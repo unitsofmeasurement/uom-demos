@@ -32,7 +32,7 @@ package tec.uom.demo.types.unicode;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
-import tech.uom.demo.types.enums.BitRateUnit;
+import tech.uom.demo.systems.common.types.enums.BitRateUnit;
 
 import static org.junit.Assert.assertThat;
 

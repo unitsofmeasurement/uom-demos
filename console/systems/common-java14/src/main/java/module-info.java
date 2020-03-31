@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2019, Werner Keil and others.
+ *  Copyright (c) 2005-2020, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -10,7 +10,7 @@
  *
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363, Unit-API nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ * 3. Neither the name of JSR-385, Unit-API nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -23,13 +23,11 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-module tech.uom.demo.systems.common {
+module tech.uom.demo.systems.common14 {
     requires transitive java.measure;
-    requires transitive si.uom.quantity;
-    requires transitive si.uom.units;
     requires transitive tech.units.indriya;
-    requires transitive systems.uom.quantity;
-    
-    exports space.uom.demo.astro;
-    exports tech.uom.demo.systems.common;
+    requires systems.uom.common;
+
+    exports tech.uom.demo.systems.common14;
+    exports tech.uom.demo.systems.common14.types;
 }

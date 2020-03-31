@@ -30,7 +30,7 @@
 
 package tech.uom.demo.systems.common;
 
-import static tech.uom.demo.types.BeerUnits.*;
+import static tech.uom.demo.systems.common.types.BeerUnits.*;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Volume;

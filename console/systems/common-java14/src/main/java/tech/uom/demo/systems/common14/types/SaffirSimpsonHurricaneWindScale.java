@@ -1,6 +1,6 @@
 /*
- *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Units of Measurement Console Demos
+ *  Copyright (c) 2005-2020, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -10,7 +10,7 @@
  *
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363, Unit-API nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ * 3. Neither the name of JSR-385, Units of Measurement nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -23,25 +23,26 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.types;
+package tech.uom.demo.systems.common14.types;
 
 import static tech.units.indriya.AbstractQuantity.NONE;
-import static tech.uom.demo.types.SaffirSimpsonHurricaneWindScale.Category.*;
+import static tech.uom.demo.systems.common14.types.SaffirSimpsonHurricaneWindScale.Category.*;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.Speed;
 
-import tech.units.indriya.quantity.QuantityRange;
 import tech.uom.lib.common.function.Nameable;
+import tech.units.indriya.quantity.QuantityRange;
 
 /**
  * @author Werner Keil
- * @version 1.1, April 15, 2019
+ * @version 1.1
  * @see <a
  *      href="http://en.wikipedia.org/wiki/Saffir%E2%80%93Simpson_hurricane_wind_scale">
  *      Wikipedia: Saffir–Simpson hurricane wind scale</a>
  */
-public class SaffirSimpsonHurricaneWindScale extends QuantityRange<Speed> implements Nameable {
+public class SaffirSimpsonHurricaneWindScale extends QuantityRange<Speed>
+		implements Nameable {
 
 	/**
 	 * The storm category
@@ -116,7 +117,7 @@ public class SaffirSimpsonHurricaneWindScale extends QuantityRange<Speed> implem
 	}
 
 	@Override
-    	public String getName() {
+    public String getName() {
 		return "Saffir–Simpson hurricane wind scale";
 	}
 }

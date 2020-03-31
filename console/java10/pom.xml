@@ -24,7 +24,6 @@
 		<dependency>
 			<groupId>tech.uom.lib</groupId>
 			<artifactId>uom-lib-common</artifactId>
-			<version>${lib.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>tech.units</groupId>

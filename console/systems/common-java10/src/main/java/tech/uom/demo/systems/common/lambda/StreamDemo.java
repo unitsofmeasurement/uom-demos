@@ -36,8 +36,13 @@ public class StreamDemo {
 
 	public static void main(String[] args) {
 		@SuppressWarnings("unchecked")
-		Set<Unit<?>> units = (Set<Unit<?>>) Units.getInstance().getUnits();
+		final Set<Unit<?>> units = (Set<Unit<?>>) Units.getInstance().getUnits();
 		Stream<String> symbols = units.stream().map(Unit::getSymbol);
+		Stream<String> names = units.stream().map(Unit::getName);
+		System.out.println("Symbols:");
 		symbols.forEach( System.out::println );
+		System.out.println();
+		System.out.println("Names:");
+		names.forEach( System.out::println );
 	}
 }

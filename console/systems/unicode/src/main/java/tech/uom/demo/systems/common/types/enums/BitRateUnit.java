@@ -27,9 +27,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.types.enums;
-
-import static tech.uom.demo.types.enums.Constants.*;
+package tech.uom.demo.systems.common.types.enums;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -43,59 +41,45 @@ import javax.measure.Unit;
 import javax.measure.UnitConverter;
 import javax.measure.spi.ServiceProvider;
 
-import systems.uom.quantity.Information;
+import systems.uom.quantity.InformationRate;
 import tech.units.indriya.unit.UnitDimension;
 import tech.uom.lib.common.util.DescriptiveEnum;
 import tech.uom.lib.common.function.DoubleFactorSupplier;
 
 /**
- * Implements a measure of information. The metric system unit for this quantity is "bit".
- * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.1, $Date: 2019-05-02 $
+ * Implements the speed of data-transmission. The system unit for this quantity is "bit/s" (bit per second).
+ * @author Werner Keil
+ * @version 1.2, $Date: 2019-08-04 $
  */
-public enum BitUnit implements Unit<Information>, DoubleFactorSupplier, DescriptiveEnum<BitUnit> {
-	
-    BIT(BIT_NAME, 1.0), // reference Unit
-    Byte(BYTE_NAME, BYTE_FACTOR),
-	kb(KB_NAME, 1.0e3),
-    Mb(MB_NAME, 1.0e6),
-    Gb(GB_NAME, 1.0e9),
-    Tb(TB_NAME, 1.012),
-    Pb(PB_NAME, 1.015),
-    Eb(EB_NAME, 1.018),
-    KB(KBYTE_NAME, BYTE_FACTOR * 1.0e3),
-    MB(MBYTE_NAME, BYTE_FACTOR * 1.0e6),
-    GB(GBYTE_NAME, BYTE_FACTOR * 1.0e9),
-    TB(TBYTE_NAME, BYTE_FACTOR * 1.0e12),
-    PB(PBYTE_NAME, BYTE_FACTOR * 1.0e15),
-    EB(EBYTE_NAME, BYTE_FACTOR * 1.0e18);
+public enum BitRateUnit implements Unit<InformationRate>, DoubleFactorSupplier, DescriptiveEnum<BitRateUnit> {
+	bps("bps", Constants.BPS_NAME, 1.0), Kbps("Kbps", Constants.KBPS_NAME, 1.0e3), Mbps("Mbps", Constants.MBPS_NAME, 1.0e6),
+    Gbps("Gbps", Constants.GBPS_NAME, 1.0e9), Tbps("Tbps", Constants.TBPS_NAME, 1.0e12), Pbps("Pbps", Constants.PBPS_NAME, 1.0e15), Ebps("Ebps", Constants.EBPS_NAME, 1.0e18),
+    K("K", Constants.KBPS_NAME, 1.0e3), M("M", Constants.MBPS_NAME, 1.0e6), G("G", Constants.GBPS_NAME, 1.0e9), T("T", Constants.TBPS_NAME, 1.0e12), P("P", Constants.PBPS_NAME, 1.0e15),
+    E("E", Constants.EBPS_NAME, 1.0e18), // aliases
+    NONE("", "", 0);
 
+	private final String symbol;
     private final String description;
     private final double multFactor;
 
-    private BitUnit(String name, double multF) {
-        this.description = name;
+    private BitRateUnit(final String symbol, final String name, double multF) {
+        this.symbol = symbol;
+    	this.description = name;
         this.multFactor = multF;
     }
 
     
     public String getSymbol() {
-        return name();
+        return symbol;
     }
 
-    
-    public String getDescription() {
-        return description;
-    }
-
-    
     public double getFactor() {
         return multFactor;
     }
 
     
-	public Unit<Information> getSystemUnit() {
-		return BIT;
+	public Unit<InformationRate> getSystemUnit() {
+		return bps;
     }
 
 	
@@ -103,40 +87,62 @@ public enum BitUnit implements Unit<Information>, DoubleFactorSupplier, Descript
 		return name();
 	}
 	
-    public static BitUnit getByName(String symbol) {
-        if (kb.name().equals(symbol)) {
-            return kb;
-        } else if (Mb.name().equals(symbol)) {
-            return Mb;
-        } else if (Gb.name().equals(symbol)) {
-            return Gb;
-        } else if (Tb.name().equals(symbol)) {
-            return Tb;
+    public static BitRateUnit getBySymbol(String symbol) {
+        for (BitRateUnit b : values()) {
+            if (b.getSymbol().equalsIgnoreCase(symbol)) return b;
         }
-        return BIT;
+        return bps;
     }
 
     
     public Map<Unit<?>, Integer> getBaseUnits() {
         Map<Unit<?>, Integer> prodUnits = new HashMap<Unit<?>, Integer>();
-        prodUnits.put(kb, Integer.valueOf(3));
-        prodUnits.put(Mb, Integer.valueOf(6));
-        prodUnits.put(Gb, Integer.valueOf(9));
-        prodUnits.put(Tb, Integer.valueOf(12));
-        prodUnits.put(Byte, Integer.valueOf((int)BYTE_FACTOR));
-        prodUnits.put(KB, Integer.valueOf(3 * (int)BYTE_FACTOR));
-        prodUnits.put(MB, Integer.valueOf(6 * (int)BYTE_FACTOR));
-        prodUnits.put(GB, Integer.valueOf(9 * (int)BYTE_FACTOR));
-        prodUnits.put(TB, Integer.valueOf(12 * (int)BYTE_FACTOR));
+        prodUnits.put(Kbps, Integer.valueOf(3));
+        prodUnits.put(Mbps, Integer.valueOf(6));
+        prodUnits.put(Gbps, Integer.valueOf(9));
+        prodUnits.put(Tbps, Integer.valueOf(12));
+        prodUnits.put(Pbps, Integer.valueOf(15));
+        prodUnits.put(Ebps, Integer.valueOf(18));
         return prodUnits;
-    }
-    
-    public Unit<Information> shift(double offset) {
-        return this;
     }
 
     
-    public Unit<Information> alternate(String symbol) {
+    public Unit<InformationRate> shift(double offset) {
+        return this;
+    }
+
+    public Unit<InformationRate> shift(Number offset) {
+        return this;
+    }
+    
+    public Unit<InformationRate> alternate(String symbol) {
+        if (Kbps.name().equals(symbol))
+            return K;
+        if (Mbps.name().equals(symbol))
+            return M;
+        if (Gbps.name().equals(symbol))
+            return G;
+        if (Tbps.name().equals(symbol))
+            return T;
+        if (Pbps.name().equals(symbol))
+            return P;
+        if (Ebps.name().equals(symbol))
+            return E;
+
+        // and reverse
+        if (K.name().equals(symbol))
+            return Kbps;
+        if (M.name().equals(symbol))
+            return Mbps;
+        if (G.name().equals(symbol))
+            return Gbps;
+        if (T.name().equals(symbol))
+            return Tbps;
+        if (P.name().equals(symbol))
+            return Pbps;
+        if (E.name().equals(symbol))
+            return Ebps;
+
         return this;
     }
 
@@ -152,101 +158,82 @@ public enum BitUnit implements Unit<Information>, DoubleFactorSupplier, Descript
     }
 
     
-    public Unit<Information> divide(double divisor) {
+    public Unit<InformationRate> divide(double divisor) {
         return this;
     }
 
-    
     public Unit<?> divide(Unit<?> that) {
         return this;
     }
 
-    
-    public UnitConverter getConverterTo(Unit<Information> that)
+    public UnitConverter getConverterTo(Unit<InformationRate> that)
             throws UnconvertibleException {
         // currently unused
         return null;
     }
 
-    
     public UnitConverter getConverterToAny(Unit<?> that)
             throws IncommensurableException, UnconvertibleException {
         // currently unused
         return null;
     }
 
-    
     public Dimension getDimension() {
-        return UnitDimension.of(Information.class);
+        return UnitDimension.of(InformationRate.class);
     }
 
-    
-    public Unit<?> inverse() {
+     public Unit<?> inverse() {
         return this;
     }
 
-    
     public boolean isCompatible(Unit<?> that) {
-        if (that instanceof BitUnit) return true;
+        if (that instanceof BitRateUnit) return true;
         return false;
     }
 
-    
-    public Unit<Information> multiply(double factor) {
+    public Unit<InformationRate> multiply(double factor) {
         return this;
     }
 
-    
     public Unit<?> multiply(Unit<?> that) {
-    	if (!(that instanceof BitUnit)) {
-    		throw new UnconvertibleException("Incompatible unit");
-    	}
-//        return new BitUnit(this.getSymbol(), this.longName(), 
-//        		this.getMultFactor() * ((BitUnit)that).getMultFactor());
-    	return this;
+        return this;
     }
 
-    
     public Unit<?> pow(int n) {
         return this;
     }
 
-    
     public Unit<?> root(int n) {
         return this;
     }
 
-    
-    public Unit<Information> transform(UnitConverter operation) {
+    public Unit<InformationRate> transform(UnitConverter operation) {
         return this;
     }
 
-    
-    public DescriptiveEnum<BitUnit>[] dValues() {
-		return BitUnit.values();
+    public String getDescription() {
+        return description;
+    }
+
+    public DescriptiveEnum<BitRateUnit>[] dValues() {
+		return BitRateUnit.values();
 	}
 
 
 	@Override
-	public Unit<Information> prefix(Prefix prefix) {
+	public Unit<InformationRate> prefix(Prefix prefix) {
+		return this;
+	}
+
+
+	@Override
+	public Unit<InformationRate> multiply(Number multiplier) {
 		 return this;
 	}
 
 
 	@Override
-	public Unit<Information> shift(Number offset) {
-		 return this;
-	}
-
-
-	@Override
-	public Unit<Information> multiply(Number multiplier) {
-		 return this;
-	}
-
-
-	@Override
-	public Unit<Information> divide(Number divisor) {
+	public Unit<InformationRate> divide(Number divisor) {
 		 return this;
 	}
 }

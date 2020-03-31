@@ -33,10 +33,10 @@
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<jsr.version>2.0</jsr.version>
-		<ri.version>2.0.2</ri.version>
+		<ri.version>2.0.3-SNAPSHOT</ri.version>
 		<lib.version>2.0</lib.version>
-		<si.version>2.0.1</si.version>
-		<systems.version>2.0.1</systems.version>
+		<si.version>2.0.2-SNAPSHOT</si.version>
+		<systems.version>2.1-SNAPSHOT</systems.version>
 	</properties>
 
 	<dependencyManagement>
@@ -121,7 +121,7 @@
 			</snapshots>
 			<id>bintray-release</id>
 			<name>libs-release</name>
-			<url>http://oss.jfrog.org/artifactory/libs-release</url>
+			<url>https://oss.jfrog.org/artifactory/libs-release</url>
 		</repository>
 		<repository>
 			<snapshots>
@@ -129,12 +129,12 @@
 			</snapshots>
 			<id>bintray-snapshot</id>
 			<name>libs-snapshot</name>
-			<url>http://oss.jfrog.org/artifactory/libs-snapshot</url>
+			<url>https://oss.jfrog.org/artifactory/libs-snapshot</url>
 		</repository>
 		<repository>
 			<id>jcenter</id>
 			<name>JCenter</name>
-			<url>http://jcenter.bintray.com</url>
+			<url>https://jcenter.bintray.com</url>
 		</repository>
 	</repositories>
 	<version>2.0.1-SNAPSHOT</version>
