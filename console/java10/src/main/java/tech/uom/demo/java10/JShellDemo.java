@@ -25,26 +25,42 @@
  */
 package tech.uom.demo.java10;
 
-import static tech.units.indriya.unit.Units.SECOND;
+import jdk.jshell.JShell;
+import jdk.jshell.SnippetEvent;
 
-import java.math.BigInteger;
+import java.util.List;
+import java.util.Scanner;
 
-import javax.measure.MetricPrefix;
-
-import tech.units.indriya.quantity.Quantities;
-
-public class PrecisionDemo {
+public class JShellDemo {
     public static void main(String[] args) {
-        final var valConst = 1548351392775L;
-        var value = Long.valueOf(valConst);
-        var valueBig = BigInteger.valueOf(valConst);
-        var milli = Quantities.getQuantity(value, MetricPrefix.MILLI(SECOND));
-        var milliBig = Quantities.getQuantity(valueBig, MetricPrefix.MILLI(SECOND));
-        var nano = milli.to(MetricPrefix.NANO(SECOND)).getValue();
-        var nanoBig = milliBig.to(MetricPrefix.NANO(SECOND)).getValue();
-        var nanoLong = nano.longValue();
-        // assertEquals(value * 1000000, nanoLong);
-        System.out.println(String.format("%s = %s = %s (%s) = %s (%s) ?", value * 1000000, nanoLong, nano, nano instanceof BigInteger, nanoBig,
-                nanoBig instanceof BigInteger));
+        JShell myShell = JShell.create();
+
+        System.out.println("Welcome to JShell Unit API Demo");
+        System.out.println("Please Enter a Snippet. Enter EXIT to exit:");
+        try(Scanner reader = new Scanner(System.in)){
+            while(true){
+                String snippet = reader.nextLine();
+                if ( "EXIT".equals(snippet)){
+                    break;
+                }
+                List<SnippetEvent> events = myShell.eval(snippet);
+                events.stream().forEach(se -> {
+                    System.out.print("Evaluation status: " + se.status());
+                    System.out.println(" Evaluation result: " + se.value());
+                });
+            }
+        }
+        System.out.println("Snippets processed: ");
+        myShell.snippets().forEach(s -> {
+            String msg = String.format("%s -> %s", s.kind(), s.source());
+            System.out.println(msg);
+        });
+
+        System.out.println("Methods: ");
+        myShell.methods().forEach(m -> System.out.println(m.name() + " " + m.signature()));
+
+        System.out.println("Variables: ");
+        myShell.variables().forEach(v -> System.out.println(v.typeName() + " " + v.name()));
+        myShell.close();
     }
 }

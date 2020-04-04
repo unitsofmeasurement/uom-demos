@@ -26,7 +26,8 @@
 module tech.uom.demo.java10 {
     requires transitive java.measure;
     requires transitive tech.units.indriya;
-    
+    requires jdk.jshell;
+
     exports tech.uom.demo.java10;
     exports tech.uom.demo.java10.format;
     exports tech.uom.demo.java10.spi;
