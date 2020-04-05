@@ -24,6 +24,8 @@ pom.xml.versionsBackup
 *.ipr
 
 ### NetBeans ###
+nbactions.xml
+nb-*.xml
 nbproject/private/
 build/
 nbbuild/
