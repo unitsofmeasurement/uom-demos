@@ -11,7 +11,7 @@
 	<artifactId>repl</artifactId>
 	<name>REPL</name>
 	<properties>
-		<kotlin.version>1.3.31</kotlin.version>
+		<kotlin.version>1.3.71</kotlin.version>
 	</properties>
 	<build>
 		<sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
