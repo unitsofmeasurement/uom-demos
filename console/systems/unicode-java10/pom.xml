@@ -7,7 +7,7 @@
   </parent>
   <artifactId>uom-console-demos-unicode-java10</artifactId>
   <properties>
-    <jdkVersion>1.8</jdkVersion>
+    <jdkVersion>10</jdkVersion>
   </properties>
   <dependencies>
 	  <dependency>
@@ -16,7 +16,7 @@
 	    </dependency>
 	    <dependency>
 	        <groupId>systems.uom</groupId>
-	        <artifactId>systems-unicode-java8</artifactId>
+	        <artifactId>systems-unicode</artifactId>
 	    </dependency>
   </dependencies>
   <name>Unicode Console Demos for Java 10</name>

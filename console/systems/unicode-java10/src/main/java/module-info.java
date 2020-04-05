@@ -23,12 +23,11 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-module tech.uom.demo.systems.ucum {
+module tech.uom.demo.systems.unicode {
     requires transitive java.measure;
-    requires transitive si.uom.quantity;
     requires transitive tech.units.indriya;
     requires transitive systems.uom.quantity;
-    requires systems.uom.ucum;
+    requires systems.uom.unicode;
     
-    exports tech.uom.demo.systems.ucum;
+    exports tech.uom.demo.systems.unicode;
 }

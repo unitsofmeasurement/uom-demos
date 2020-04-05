@@ -18,7 +18,7 @@
 		<module>si</module>
 		<module>si-java10</module>
 		<module>unicode</module>
-		<!--  module>unicode-java10</module -->
+		<module>unicode-java10</module>
 		<module>ucum</module>
 		<module>ucum-java10</module>
 		<module>historical</module>

@@ -1,12 +1,12 @@
-package tec.uom.demo.systems.unicode;
+package tech.uom.demo.systems.unicode;
 
 import java.lang.reflect.ParameterizedType;
 
 import javax.measure.Unit;
 import javax.measure.quantity.Length;
-import tec.uom.se.unit.Units;
 import systems.uom.unicode.CLDR;
-import tec.uom.se.unit.BaseUnit;
+import tech.units.indriya.unit.BaseUnit;
+import tech.units.indriya.unit.Units;
 
 public class ReflectionDemo {
 	public static void reflect(final Unit<?> aUnit) {
