@@ -31,6 +31,10 @@ import tech.uom.demo.java14.rec.Person;
 import static tech.units.indriya.unit.Units.KILOGRAM;
 import static tech.units.indriya.unit.Units.METRE;
 
+/**
+ * @version 0.2
+ * @author werner
+ */
 public class PersonDemo {
 
     public static void main(String[] args) {
@@ -40,5 +44,4 @@ public class PersonDemo {
         System.out.println(person1);
         System.out.println(person1.getFullName());
     }
-
 }
