@@ -1,4 +1,4 @@
-package tec.uom.demo.web.spark;
+package tech.uom.demo.web.spark;
 
 import com.google.gson.Gson;
 
@@ -14,7 +14,6 @@ import spark.Spark;
 import spark.utils.IOUtils;
 import tech.units.indriya.format.SimpleUnitFormat;
 import tech.units.indriya.unit.Units;
-import tec.uom.demo.web.spark.Main;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;

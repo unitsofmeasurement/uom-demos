@@ -23,7 +23,7 @@ The project currently contains the following modules:
 - [JavaFX Demos](javafx)
   - [FXlib Demo Application](javafx/fxlib) (**Requires Java 11 or higher because of OpenJFX**)
 - [Web Demos](web)
-  - [Spark Sensor Web API Demo](web/sparkdemo) (**Still using Unit-API Version 1**)
+  - [Spark Sensor Web API Demo](web/sparkdemo)
   - [Improved JBoss Temperature Converter](web/temperature-converter)
   - [Vaadin](web/vaadindemo)
   - [Spring Boot](/web/springbootdemo)

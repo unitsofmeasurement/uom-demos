@@ -14,7 +14,7 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 */
-package tec.uom.demo.web.spark;
+package tech.uom.demo.web.spark;
 
 import com.google.gson.Gson;
 import spark.ResponseTransformer;

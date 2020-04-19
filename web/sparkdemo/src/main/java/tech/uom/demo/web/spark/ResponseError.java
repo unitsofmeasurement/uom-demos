@@ -1,4 +1,4 @@
-package tec.uom.demo.web.spark;
+package tech.uom.demo.web.spark;
 
 import javax.measure.MeasurementException;
 
