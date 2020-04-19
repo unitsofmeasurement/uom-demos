@@ -9,7 +9,7 @@
 	<groupId>tech.uom.demo.console.systems</groupId>
 	<artifactId>uom-console-system-demos</artifactId>
 	<packaging>pom</packaging>
-	<name>System Specific Units of Measurement Console Demos</name>
+	<name>System Specific UoM Console Demos</name>
 	
 	<modules>
 		<module>common</module>
