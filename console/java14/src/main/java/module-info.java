@@ -26,7 +26,8 @@
 module tech.uom.demo.java14 {
     requires transitive java.measure;
     requires transitive tech.units.indriya;
-    
+    requires tech.uom.lib.common;
+
     exports tech.uom.demo.java14;
     exports tech.uom.demo.java14.rec;
 }
