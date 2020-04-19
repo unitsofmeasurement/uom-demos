@@ -10,6 +10,7 @@
 		<version>2.0.1-SNAPSHOT</version>
 	</parent>
 
+	<name>Conference Demo</name>
 	<artifactId>conference</artifactId>
 	<dependencies>
 		<dependency>
