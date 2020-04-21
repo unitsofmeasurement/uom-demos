@@ -61,12 +61,12 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
 					<release>${jdkVersion}</release>
-					<compilerArgs>
-						<arg>--enable-preview</arg>
-					</compilerArgs>
+					<compilerArgs>--enable-preview</compilerArgs>
 					<forceJavacCompilerUse>true</forceJavacCompilerUse>
 					<parameters>true</parameters>
-				</configuration>
+                    <source>14</source>
+                    <target>14</target>
+                </configuration>
 				<!-- <dependencies> <dependency> <groupId>org.ow2.asm</groupId> <artifactId>asm</artifactId> 
 					<version>6.1.1</version> <- Use newer version of ASM -> </dependency> </dependencies> -->
 			</plugin>
