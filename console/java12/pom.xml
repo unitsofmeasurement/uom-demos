@@ -24,7 +24,6 @@
 		<dependency>
 			<groupId>tech.uom.lib</groupId>
 			<artifactId>uom-lib-common</artifactId>
-			<version>2.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>tech.units</groupId>
@@ -52,8 +51,6 @@
 					<source>${jdkVersion}</source>
 					<target>${jdkVersion}</target>
 				</configuration>
-				<!-- <dependencies> <dependency> <groupId>org.ow2.asm</groupId> <artifactId>asm</artifactId> 
-					<version>6.1.1</version> <- Use newer version of ASM -> </dependency> </dependencies> -->
 			</plugin>
 		</plugins>
 	</build>
