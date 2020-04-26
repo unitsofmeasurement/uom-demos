@@ -29,6 +29,5 @@ module tech.uom.demo.java14 {
     requires tech.uom.lib.common;
 
     exports tech.uom.demo.java14;
-    exports tech.uom.demo.java14.format;
     exports tech.uom.demo.java14.rec;
 }
