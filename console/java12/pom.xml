@@ -7,14 +7,14 @@
 		<artifactId>uom-console-demos</artifactId>
 		<version>2.0.1-SNAPSHOT</version>
 	</parent>
-	<name>Basic UoM Console Demos for Java 14</name>
-	<artifactId>uom-console-demos-java14</artifactId>
+	<name>Basic UoM Console Demos for Java 12</name>
+	<artifactId>uom-console-demos-java12</artifactId>
 
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
 	<properties>
-		<jdkVersion>14</jdkVersion>
+		<jdkVersion>12</jdkVersion>
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
@@ -47,7 +47,6 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
 					<release>${jdkVersion}</release>
-					<compilerArgs>--enable-preview</compilerArgs>
 					<forceJavacCompilerUse>true</forceJavacCompilerUse>
 					<parameters>true</parameters>
 					<source>${jdkVersion}</source>
@@ -55,12 +54,6 @@
 				</configuration>
 				<!-- <dependencies> <dependency> <groupId>org.ow2.asm</groupId> <artifactId>asm</artifactId> 
 					<version>6.1.1</version> <- Use newer version of ASM -> </dependency> </dependencies> -->
-			</plugin>
-			<plugin>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<argLine>--enable-preview</argLine>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
