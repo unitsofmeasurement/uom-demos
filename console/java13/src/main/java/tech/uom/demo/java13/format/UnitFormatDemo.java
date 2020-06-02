@@ -27,7 +27,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.java12.format;
+package tech.uom.demo.java13.format;
 
 import tech.units.indriya.AbstractUnit;
 import tech.units.indriya.format.FormatBehavior;
@@ -51,7 +51,7 @@ public class UnitFormatDemo {
 
 		var u = ServiceProvider.current().getFormatService().getUnitFormat().parse("g/l");
 		System.out.println(u);
-
+		var formatStyle = NumberFormatStyle.DEFAULT;
 		var quantFormat = NumberDelimiterQuantityFormat.getCompactInstance(FormatBehavior.LOCALE_NEUTRAL);
 	}
 }

@@ -2,33 +2,25 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<parent>
 		<groupId>tech.uom.demo.console</groupId>
 		<artifactId>uom-console-demos</artifactId>
 		<version>2.0.1-SNAPSHOT</version>
 	</parent>
-	<name>JSR385-Java12</name>
-	<description>Java 12 Demos for JSR 385</description>
-	<artifactId>uom-console-demos-java12</artifactId>
+	<name>Basic UoM Console Demos for Java 13</name>
+	<artifactId>uom-console-demos-java13</artifactId>
 
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
 	<properties>
 		<jdkVersion>13</jdkVersion>
-		<sourceEncoding>UTF-8</sourceEncoding>
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<project.build.sourceEncoding>${sourceEncoding}</project.build.sourceEncoding>
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>javax.measure</groupId>
-			<artifactId>unit-api</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>tech.uom.lib</groupId>
 			<artifactId>uom-lib-common</artifactId>
@@ -49,30 +41,10 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
 					<release>${jdkVersion}</release>
-					<parameters>true</parameters>
 					<source>${jdkVersion}</source>
 					<target>${jdkVersion}</target>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-	
-	<repositories>
-		<repository>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<id>bintray-release</id>
-			<name>libs-release</name>
-			<url>https://oss.jfrog.org/artifactory/libs-release</url>
-		</repository>
-		<repository>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<id>bintray-snapshot</id>
-			<name>libs-snapshot</name>
-			<url>https://oss.jfrog.org/artifactory/libs-snapshot</url>
-		</repository>
-	</repositories>
 </project>

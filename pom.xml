@@ -11,6 +11,7 @@
 	<groupId>tech.uom.demo</groupId>
 	<packaging>pom</packaging>
 	<name>Units of Measurement Demos</name>
+	<version>2.0.1-SNAPSHOT</version>
 	<url>http://github.com/unitsofmeasurement/uom-demos</url>
 	<organization>
 		<name>Units of Measurement project</name>
@@ -137,5 +138,4 @@
 			<url>https://jcenter.bintray.com</url>
 		</repository>
 	</repositories>
-	<version>2.0.1-SNAPSHOT</version>
 </project>

@@ -1,6 +1,6 @@
 /*
- *  Units of Measurement Conference Demos for Java
- *  Copyright (c) 2019-2020, Werner Keil, Filip Van Laenen and others.
+ *  Units of Measurement Console Demos
+ *  Copyright (c) 2005-2020, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -10,7 +10,7 @@
  *
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of Units of Measurement nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ * 3. Neither the name of JSR-385, Unit-API nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -23,24 +23,11 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.conference;
-import javax.measure.Quantity;
-import javax.measure.quantity.Length;
-import javax.measure.quantity.Mass;
+module tech.uom.demo.java13 {
+    requires transitive java.measure;
+    requires transitive tech.units.indriya;
+    requires tech.uom.lib.common;
 
-import tech.units.indriya.quantity.Quantities;
-import tech.units.indriya.unit.Units;
-
-public class _02_DivideMassTwiceByHeight {
-
-	public static void main(String[] args) {
-		final Quantity<Mass> mass = Quantities.getQuantity(88, Units.KILOGRAM);
-		System.out.println(mass);
-		final Quantity<Length> height = Quantities.getQuantity(1.88, Units.METRE);
-		System.out.println(height);
-		final Quantity<?> bmi1 = mass.divide(height).divide(height);
-		System.out.println(bmi1);
-		final Quantity<?> bmi2 = mass.divide(height.multiply(height));
-		System.out.println(bmi2);
-	}
+    exports tech.uom.demo.java13.format;
+    exports tech.uom.demo.java13.function;
 }

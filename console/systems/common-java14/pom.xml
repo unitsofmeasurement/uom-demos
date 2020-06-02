@@ -64,8 +64,8 @@
 					<compilerArgs>--enable-preview</compilerArgs>
 					<forceJavacCompilerUse>true</forceJavacCompilerUse>
 					<parameters>true</parameters>
-                    <source>${jdkVersion}</source>
-                    <target>${jdkVersion}</target>
+                    <source>14</source>
+                    <target>14</target>
                 </configuration>
 				<!-- <dependencies> <dependency> <groupId>org.ow2.asm</groupId> <artifactId>asm</artifactId> 
 					<version>6.1.1</version> <- Use newer version of ASM -> </dependency> </dependencies> -->
@@ -76,6 +76,22 @@
 					<argLine>--enable-preview</argLine>
 				</configuration>
 			</plugin>
-		</plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>14</source>
+                    <target>14</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>14</source>
+                    <target>14</target>
+                </configuration>
+            </plugin>
+        </plugins>
 	</build>
 </project>
