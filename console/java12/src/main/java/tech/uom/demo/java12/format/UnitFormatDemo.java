@@ -27,12 +27,16 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.java13.format;
+package tech.uom.demo.java12.format;
 
 import tech.units.indriya.AbstractUnit;
 import tech.units.indriya.format.FormatBehavior;
 import tech.units.indriya.format.NumberFormatStyle;
+import tech.units.indriya.quantity.Quantities;
 import tech.units.indriya.format.NumberDelimiterQuantityFormat;
+
+import static javax.measure.MetricPrefix.KILO;
+import static tech.units.indriya.unit.Units.VOLT;
 
 import javax.measure.spi.ServiceProvider;
 
@@ -53,5 +57,11 @@ public class UnitFormatDemo {
 		System.out.println(u);
 		var formatStyle = NumberFormatStyle.DEFAULT;
 		var quantFormat = NumberDelimiterQuantityFormat.getCompactInstance(FormatBehavior.LOCALE_NEUTRAL);
+        System.out.println(formatStyle);
+        var vQuant = Quantities.getQuantity(10000, VOLT);
+        System.out.println(quantFormat.format(vQuant));
+        var vQuant2 = Quantities.getQuantity(10, KILO(VOLT));
+        System.out.println(quantFormat.format(vQuant2));
+        System.out.println(vQuant.isEquivalentTo(vQuant2));
 	}
 }
