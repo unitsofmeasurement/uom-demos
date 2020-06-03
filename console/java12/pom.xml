@@ -8,8 +8,8 @@
 		<artifactId>uom-console-demos</artifactId>
 		<version>2.0.1-SNAPSHOT</version>
 	</parent>
-	<name>JSR385-Java12</name>
-	<description>Java 12 Demos for JSR 385</description>
+	<name>Basic UoM Console Demos for Java 12</name>
+	<description>Java 12 Console Demos for JSR 385</description>
 	<artifactId>uom-console-demos-java12</artifactId>
 
 	<!-- ======================================================= -->
