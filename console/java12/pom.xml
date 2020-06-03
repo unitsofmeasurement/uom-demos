@@ -9,7 +9,7 @@
 		<version>2.0.1-SNAPSHOT</version>
 	</parent>
 	<name>Basic UoM Console Demos for Java 12</name>
-	<description>Java 12 Console Demos for JSR 385</description>
+	<description>Java 12 Units of Measurement Console Demos</description>
 	<artifactId>uom-console-demos-java12</artifactId>
 
 	<!-- ======================================================= -->
