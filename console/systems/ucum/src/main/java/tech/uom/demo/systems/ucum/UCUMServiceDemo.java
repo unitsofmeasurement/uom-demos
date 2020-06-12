@@ -45,7 +45,7 @@ public class UCUMServiceDemo {
         UnitFormatService ucumFormatService = ucumProvider.getUnitFormatService();
         UnitFormat ucumFormatter = ucumFormatService.getUnitFormat("CS");
         System.out.println("m3 dimension =" + ucumFormatter.parse("m3").getDimension());        
-        System.out.println("ft3 dimension =" + ucumFormatter.parse("ft3").getDimension());
+        System.out.println("ft3 (wrong) dimension =" + ucumFormatter.parse("ft3").getDimension());
         System.out.println("ft3 dimension =" + ucumFormatter.parse("[cft_i]").getDimension());
         
     }
