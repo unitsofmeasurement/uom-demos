@@ -23,53 +23,12 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.systems.ucum;
-
-import static systems.uom.ucum.UCUM.*;
-import static javax.measure.MetricPrefix.KILO;
-
-import systems.uom.ucum.UCUM;
-import systems.uom.ucum.format.UCUMFormat;
-import systems.uom.ucum.format.UCUMFormat.Variant;
-import tech.units.indriya.quantity.Quantities;
-import tech.units.indriya.unit.Units;
-
-public class UCUMDemo {
-
-    public static void main(String[] args) {
-	var atomicMassUnit = ATOMIC_MASS_UNIT;
-	System.out.println(atomicMassUnit.getSymbol());
-
-	var mass = Quantities.getQuantity(10, atomicMassUnit);
-	System.out.println(mass);
-
-	var massInKg = mass.to(Units.KILOGRAM);
-	System.out.println(massInKg);
-
-	var cs = UCUMFormat.getInstance(Variant.CASE_SENSITIVE);
-	var unit = cs.parse("m/s");
-	System.out.println(unit);
-
-	// unit = format.parse("m^1*s^-1");
-	// System.out.println(unit);
-
-	System.out.println(UCUM.PARSEC);
-	var print = UCUMFormat.getInstance(Variant.PRINT);
-	System.out.println(print.format(UCUM.PARSEC));
-
-	var hz = UCUM.HERTZ;
-	System.out.println(hz);
-	System.out.println(hz.getBaseUnits());
-	System.out.println(print.format(UCUM.HERTZ));
-
-	var khz = KILO(hz);
-	System.out.println(khz.getBaseUnits());
-
-	unit = cs.parse("Hz");
-	System.out.println(unit);
-	unit = cs.parse("kHz");
-	System.out.println(unit);
-	var oneLiter = Quantities.getQuantity(1, LITER);
-	System.out.println(oneLiter.to(LITER_DM3).getValue());
-    }
+module tech.uom.demo.systems.ucum {
+    requires transitive java.measure;
+    requires transitive si.uom.quantity;
+    requires transitive tech.units.indriya;
+    requires transitive systems.uom.quantity;
+    requires systems.uom.ucum;
+    
+    exports tech.uom.demo.systems.ucum;
 }
