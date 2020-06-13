@@ -129,6 +129,12 @@ public class UCUMFormatDemo {
 		System.out.println ("1.d = " + ucumFormatCS.format (ucumFormatCS.parse ("1.d")));
 		System.out.println ("2.d = " + ucumFormatCS.format (ucumFormatCS.parse ("2.d")));
 		System.out.println ("7.d = " + ucumFormatCS.format (ucumFormatCS.parse ("7.d")));
-		System.out.println ("24h = " + ucumFormatCS.format( ucumFormatCS.parse("24.h")));
+		System.out.println ("24.h = " + ucumFormatCS.format( ucumFormatCS.parse("24.h")));
+		
+		System.out.println ("d cI = " + ucumFormatCI.format (ucumFormatCI.parse ("d")));
+		System.out.println ("1.d cI = " + ucumFormatCI.format (ucumFormatCI.parse ("1.d")));
+		System.out.println ("2.d cI = " + ucumFormatCI.format (ucumFormatCI.parse ("2.d")));
+		System.out.println ("7.d cI = " + ucumFormatCI.format (ucumFormatCI.parse ("7.d")));
+		System.out.println ("24.h cI = " + ucumFormatCI.format( ucumFormatCI.parse("24.h")));
 	}
 }
