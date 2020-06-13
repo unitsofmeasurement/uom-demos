@@ -92,10 +92,10 @@ public class UCUMFormatDemo {
 		System.out.println("Square psi parsed (Unicode): " + u1);
 		// u1 =
 		// SimpleUnitFormat.getInstance().parse("lb²·(m/s²)*9.80665²/c(cm*254.0)^4");
-		u1 = ebnf.parse("psi^2");
-		System.out.println("Square psi parsed (EBNF): " + u1);
-		u1 = ebnf.parse("g_n²·lb_av²/in_i⁴");
-		System.out.println("Square psi parsed (EBNF 2): " + u1);
+		//u1 = ebnf.parse("psi^2");
+		//System.out.println("Square psi parsed (EBNF): " + u1);
+//		u1 = ebnf.parse("g_n²·lb_av²/in_i⁴");
+//		System.out.println("Square psi parsed (EBNF 2): " + u1);
 		u1 = ucumFormatCS.parse("[g]2.[lb_av]2/[in_i]4");
 		System.out.println("Square psi parsed (UCUM CS): " + u1);
 		System.out.println();
@@ -122,5 +122,13 @@ public class UCUMFormatDemo {
 		ComparableQuantity<Angle> parsedQty = (ComparableQuantity<Angle>) ucumQuantFormatCS.parse(originalQtyString);
 		System.out.println(parsedQty); // + "(" + parsedQty. .equals(originalQty) + ")");
 		System.out.println(parsedQty.isEquivalentTo(originalQty));
+		
+		System.out.println(ucumFormatCS.format(UCUM.GRAM.divide(UCUM.METER.pow(3))));
+		
+		System.out.println ("d = " + ucumFormatCS.format (ucumFormatCS.parse ("d")));
+		System.out.println ("1.d = " + ucumFormatCS.format (ucumFormatCS.parse ("1.d")));
+		System.out.println ("2.d = " + ucumFormatCS.format (ucumFormatCS.parse ("2.d")));
+		System.out.println ("7.d = " + ucumFormatCS.format (ucumFormatCS.parse ("7.d")));
+		System.out.println ("24h = " + ucumFormatCS.format( ucumFormatCS.parse("24.h")));
 	}
 }
