@@ -25,8 +25,9 @@
  */
 module tech.uom.demo.systems.ucum {
     requires transitive java.measure;
-    requires transitive si.uom.quantity;
+    requires transitive tech.uom.lib.common;
     requires transitive tech.units.indriya;
+    requires transitive si.uom.quantity;
     requires transitive systems.uom.quantity;
     requires systems.uom.ucum;
     
