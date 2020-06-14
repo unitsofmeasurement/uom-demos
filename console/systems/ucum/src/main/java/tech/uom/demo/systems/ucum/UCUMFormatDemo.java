@@ -59,7 +59,7 @@ public class UCUMFormatDemo {
 		UnitConverter conv = microliter.getConverterTo(STERE);
 		System.out.println(conv);
 		UnitConverter conv2 = microliter.getConverterTo(Units.CUBIC_METRE);
-		System.out.println(conv);
+		System.out.println(conv2);
 
 		final Unit<?> microliter2 = ucumFormatCI.parse("uL");
 		System.out.println(ucumFormatCI.format(microliter2));
@@ -123,6 +123,7 @@ public class UCUMFormatDemo {
 		System.out.println(parsedQty); // + "(" + parsedQty. .equals(originalQty) + ")");
 		System.out.println(parsedQty.isEquivalentTo(originalQty));
 		
+		// demonstrating resolution for https://github.com/unitsofmeasurement/uom-systems/issues/135
 		System.out.println(ucumFormatCS.format(UCUM.GRAM.divide(UCUM.METER.pow(3))));
 		
 		System.out.println ("d = " + ucumFormatCS.format (ucumFormatCS.parse ("d")));
@@ -133,7 +134,8 @@ public class UCUMFormatDemo {
 		
 		System.out.println ("d cI = " + ucumFormatCI.format (ucumFormatCI.parse ("d")));
 		System.out.println ("1.d cI = " + ucumFormatCI.format (ucumFormatCI.parse ("1.d")));
-		System.out.println ("2.d cI = " + ucumFormatCI.format (ucumFormatCI.parse ("2.d")));
+		Unit d2 = ucumFormatCI.parse ("2.d");
+		System.out.println ("2.d cI = " + ucumFormatCI.format (d2));
 		System.out.println ("7.d cI = " + ucumFormatCI.format (ucumFormatCI.parse ("7.d")));
 		System.out.println ("24.h cI = " + ucumFormatCI.format( ucumFormatCI.parse("24.h")));
 	}
