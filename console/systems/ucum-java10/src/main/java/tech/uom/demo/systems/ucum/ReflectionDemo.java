@@ -66,11 +66,11 @@ public class ReflectionDemo {
 	public static void main(String... args) {
 		reflect(new BaseUnit<Length>("m"));
 //		Unit<Length> len = new BaseUnit<Length>("m");
-		Unit<Length> len = Units.METRE;
+		var len = Units.METRE;
 		reflect(len.multiply(len)); // this works under SE 8u20
 		reflect(len.multiply(len).asType(Area.class));  // this won't compile under SE 8u20
 		
-		for (Unit<?> u : Units.getInstance().getUnits()) {
+		for (var u : Units.getInstance().getUnits()) {
 			reflect(u);
 		}
 		
