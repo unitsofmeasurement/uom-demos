@@ -47,7 +47,7 @@ public class UCUMDemo {
 		var massInKg = mass.to(Units.KILOGRAM);
 		System.out.println(massInKg);
 
-		var cs = UCUMFormat.getInstance(CASE_SENSITIVE);
+		final var cs = UCUMFormat.getInstance(CASE_SENSITIVE);
 		var unit = cs.parse("m/s");
 		System.out.println(unit);
 
