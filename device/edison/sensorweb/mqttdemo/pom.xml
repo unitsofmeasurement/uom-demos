@@ -3,7 +3,7 @@
   <parent>
     <groupId>tech.uom.demo.device.edison</groupId>
     <artifactId>uom-edison-sensorweb</artifactId>
-    <version>0.3-SNAPSHOT</version>
+    <version>0.3</version>
   </parent>
   <artifactId>uom-edison-mqttdemo</artifactId>
   <name>Edison Sensor Web MQTT Demo</name>
