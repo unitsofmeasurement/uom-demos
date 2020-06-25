@@ -94,10 +94,12 @@
 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 						</manifest>
 						<manifestEntries>
-							<Specification-Title>Units of Measurement Demos</Specification-Title>
-							<Specification-Version>${project.version}</Specification-Version>
-							<Specification-Vendor>${project.organization.name}</Specification-Vendor>
-							<Implementation-Vendor>Units of Measurement contributors</Implementation-Vendor>
+							<Specification-Title>Units of Measurement Specification</Specification-Title>
+							<Specification-Version>${jsr.version}</Specification-Version>
+							<Specification-Vendor>Jean-Marie Dautelle, Werner Keil, Otavio Santana</Specification-Vendor>
+							<Implementation-Title>Units of Measurement Demos</Implementation-Title>
+							<Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
+							<Implementation-Version>${project.version}</Implementation-Version>
 							<Implementation-URL>${project.organization.url}</Implementation-URL>
 						</manifestEntries>
 					</archive>
@@ -105,12 +107,14 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<!-- Modules -->
 	<modules>
 		<module>console</module>
+		<module>device</module>
 		<module>javafx</module>
 		<module>lang</module>
-		<module>web</module>
-		<module>device</module>
+		<module>web</module>		
 	</modules>
 
 	<!-- Additional repositories -->

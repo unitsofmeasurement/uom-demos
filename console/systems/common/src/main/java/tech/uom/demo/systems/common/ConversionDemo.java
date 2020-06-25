@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2018, Jean-Marie Dautelle, Werner Keil and others.
+ *  Copyright (c) 2005-2020, Jean-Marie Dautelle, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -27,25 +27,45 @@ package tech.uom.demo.systems.common;
 
 import javax.measure.Quantity;
 import javax.measure.quantity.*;
+
 import tech.units.indriya.quantity.Quantities;
 
 import static si.uom.SI.*;
 import static systems.uom.common.USCustomary.METER;
 import static systems.uom.common.USCustomary.MILE;
+import static systems.uom.common.USCustomary.MILE_PER_HOUR;
 import static javax.measure.MetricPrefix.*;
 
-public class UoMDemo {
+public class ConversionDemo {
   public static void main(String[] args) {
     // Conversion between units.
-    System.out.println(KILO(METER).getConverterTo(MILE).convert(10.0));
+	final Quantity<Length> m = Quantities.getQuantity(10, MILE);
+	System.out.println(m);
+	System.out.println(KILO(METER).getConverterTo(MILE).convert(10.0));
     // Retrieval of the system unit (identifies the measurement type).
     System.out.println(REVOLUTION.divide(MINUTE).getSystemUnit());
     // Dimension checking (allows/disallows conversions)
     System.out.println(ELECTRON_VOLT.isCompatible(WATT.multiply(HOUR)));
     // Retrieval of the unit dimension (depends upon the current model).
     System.out.println(ELECTRON_VOLT.getDimension());
+        
+    final Quantity<Time> oneSecond = Quantities.getQuantity(1.0, SECOND);
+
+    double distance = Quantities.getQuantity(4, MILE_PER_HOUR)
+        .to(MILE.divide(SECOND).asType(Speed.class))
+        .multiply(oneSecond)
+        .asType(Length.class)
+        .getValue()
+        .doubleValue();
+    System.out.println(String.format("%s (in system unit: %s)", distance, MILE.getSystemUnit()));
     
-    Quantity<Length> m = Quantities.getQuantity(10, MILE);
-    System.out.println(m);
+    distance = Quantities.getQuantity(4, MILE_PER_HOUR)
+    	.to(MILE.divide(SECOND).asType(Speed.class))
+        .multiply(oneSecond)
+        .asType(Length.class)
+        .to(MILE) // <-- explicit conversion to MILE
+        .getValue()
+        .doubleValue();
+    System.out.println(String.format("%s (in %s)", distance, MILE));
   }
 }
