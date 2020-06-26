@@ -1,5 +1,5 @@
-﻿Unit-API Edison Tutorial
-========================
+﻿UoM Edison Tutorial
+===================
 Werner Keil
 v0.5, 2020-06-26
 :doctype: book
