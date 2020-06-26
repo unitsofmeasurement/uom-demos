@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>tech.uom.demo.console.systems</groupId>
 		<artifactId>uom-console-system-demos</artifactId>
-		<version>2.0.1</version>
+		<version>2.0.2-SNAPSHOT</version>
 	</parent>
 	<name>UoM Common Console Demos</name>
 	<artifactId>uom-console-demos-common</artifactId>
