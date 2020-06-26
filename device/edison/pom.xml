@@ -17,7 +17,7 @@
 	</modules>
 	<profiles>
 		<profile>
-			<id>documentation</id>
+			<id>documents</id>
 			<modules>
 				<module>tutorial</module>
 			</modules>
