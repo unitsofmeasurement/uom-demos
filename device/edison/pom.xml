@@ -13,7 +13,6 @@
 	<description>Demos for Intel Edison</description>
 	<modules>
 		<module>hello</module>
-		<module>dio</module>
 	</modules>
 	<profiles>
 		<profile>
