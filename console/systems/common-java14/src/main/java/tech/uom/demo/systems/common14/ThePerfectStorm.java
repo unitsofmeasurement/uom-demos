@@ -113,7 +113,6 @@ public class ThePerfectStorm {
 		var distance = Quantities.getQuantity(500, KILO(METRE));
 		System.out.println(String.format("Distance: %s", distance));
 		var timeToEvacuate = distance.divide(metricSpeed).asType(Time.class);
-		//Quantity<?> timeToEvacuate = l.divide(metricSpeed); if you don't want to cast ;-)
 		SimpleUnitFormat.getInstance().label(timeToEvacuate.getUnit(), "h");
 		System.out.println(String.format("Time to evacuate: %s", timeToEvacuate));
 	}

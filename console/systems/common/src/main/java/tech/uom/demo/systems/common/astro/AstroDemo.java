@@ -25,6 +25,9 @@
  */
 package tech.uom.demo.systems.common.astro;
 
+import javax.measure.Quantity;
+import javax.measure.Unit;
+import javax.measure.quantity.Force;
 import javax.measure.quantity.Length;
 import javax.measure.spi.ServiceProvider;
 
@@ -33,12 +36,13 @@ import tech.units.indriya.unit.Units;
 public class AstroDemo {
 
 	public static void main(String[] args) {
-		var au = AstronomicalSystemOfUnits.ASTRONOMICAL_UNIT;
-		var peri = ServiceProvider.current().getQuantityFactory(
+		Unit<Length> au = AstronomicalSystemOfUnits.ASTRONOMICAL_UNIT;
+		Quantity<Length> peri = ServiceProvider.current().getQuantityFactory(
 				Length.class).create(0.9832687, au);
 		System.out.println(peri);
 		
-		var u = Units.NEWTON;
+		Unit<Force> u = Units.NEWTON;
 		System.out.println(u);
 	}
+
 }
