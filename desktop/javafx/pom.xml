@@ -5,26 +5,25 @@
 	<name>Units of Measurement JavaFX Demos</name>
 	<packaging>pom</packaging>
 	<parent>
-		<groupId>tech.uom.demo</groupId>
-		<artifactId>uom-demos</artifactId>
+		<groupId>tech.uom.demo.desktop</groupId>
+		<artifactId>uom-desktop-demos</artifactId>
 		<version>2.0.2-SNAPSHOT</version>
 	</parent>
-	<groupId>tech.uom.demo.javafx</groupId>
 	<description>Demos of the Units of Measurement API using JavaFX</description>
     <properties>
-    	<ucum.version>0.9</ucum.version>
+    	<ucum.version>2.0</ucum.version>
     </properties>
     
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>systems.uom</groupId>
-				<artifactId>systems-common-java8</artifactId> <!-- TODO use common-java8 when available -->
+				<artifactId>systems-common</artifactId> <!-- TODO use common-java8 when available -->
 				<version>${systems.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>si.uom</groupId>
-				<artifactId>si-units-java8</artifactId>
+				<artifactId>si-units</artifactId>
 				<version>${si.version}</version>
 			</dependency>
 		</dependencies>

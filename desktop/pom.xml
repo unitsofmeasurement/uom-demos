@@ -5,12 +5,12 @@
     <artifactId>uom-demos</artifactId>
     <version>2.0.2-SNAPSHOT</version>
   </parent>
-  <artifactId>uom-device-demos</artifactId>
+  <groupId>tech.uom.demo.desktop</groupId>
+  <artifactId>uom-desktop-demos</artifactId>
   <packaging>pom</packaging>
-  <name>Units of Measurement Device Demos</name>
-  <description>Demos for a particular device or family of devices</description>
+  <name>Desktop Demos</name>
+  <description>Desktop application demos</description>
   <modules>
-  	<module>edison</module>
-  </modules>
-  <groupId>tech.uom.demo.device</groupId>
+  	<module>javafx</module>
+  </modules>  
 </project>

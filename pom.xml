@@ -111,8 +111,8 @@
 	<!-- Modules -->
 	<modules>
 		<module>console</module>
-		<module>device</module>
-		<module>javafx</module>
+		<module>desktop</module>
+		<module>device</module>		
 		<module>lang</module>
 		<module>web</module>		
 	</modules>
