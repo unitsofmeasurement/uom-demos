@@ -12,7 +12,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<mainClass>tech.uom.demo.javafx.fxlib.FXlib</mainClass>
+		<mainClass>tech.uom.demo.desktop.jfx.fxlib.FXlib</mainClass>
 	</properties>
 
 	<organization>
@@ -28,12 +28,10 @@
 		<dependency>
 			<groupId>si.uom</groupId>
 			<artifactId>si-units</artifactId>
-			<version>${si.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>systems.uom</groupId>
 			<artifactId>systems-common</artifactId>
-			<version>${systems.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openjfx</groupId>

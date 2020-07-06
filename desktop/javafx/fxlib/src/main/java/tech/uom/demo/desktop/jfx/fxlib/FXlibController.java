@@ -1,6 +1,6 @@
-/**
- *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2018, Jean-Marie Dautelle, Werner Keil, V2COM.
+/*
+ *  Units of Measurement Desktop Demos for Java
+ *  Copyright (c) 2019-2020, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -10,7 +10,7 @@
  *
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363, Unit-API nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ * 3. Neither the name of Units of Measurement nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -23,7 +23,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.javafx.fxlib;
+package tech.uom.demo.desktop.jfx.fxlib;
 
 import java.net.URL;
 import java.text.NumberFormat;
@@ -32,8 +32,6 @@ import java.util.ResourceBundle;
 import javax.measure.IncommensurableException;
 import javax.measure.UnconvertibleException;
 import javax.measure.Unit;
-import javax.measure.UnitConverter;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -54,7 +52,7 @@ import static systems.uom.common.USCustomary.*;
 
 /**
  * @author Werner Keil
- * @version 0.6
+ * @version 0.7
  */
 public class FXlibController implements Initializable {
     private static final NumberFormat FORMAT = NumberFormat.getNumberInstance();

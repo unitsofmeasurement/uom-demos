@@ -23,7 +23,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.javafx.fxlib;
+package tech.uom.demo.desktop.jfx.fxlib;
 
 import javafx.scene.Node;
 import javafx.scene.Parent;
