@@ -138,5 +138,16 @@ public class UCUMFormatDemo {
 		System.out.println ("2.d cI = " + ucumFormatCI.format (d2));
 		System.out.println ("7.d cI = " + ucumFormatCI.format (ucumFormatCI.parse ("7.d")));
 		System.out.println ("24.h cI = " + ucumFormatCI.format( ucumFormatCI.parse("24.h")));
+		
+		Unit yd = ucumFormatCS.parse("[yd_i]");
+		System.out.println("Parsing (CS): " + yd);
+		System.out.println("Formating (CS): " + ucumFormatCS.format(yd));
+		System.out.println("Formating (Print): " + ucumFormatCS.format(yd));
+		Unit yd2 = ucumFormatCI.parse("[YD_I]");
+		System.out.println("Parsing (CI): " + yd2);
+		System.out.println("Formating (CI): " + ucumFormatCI.format(yd2));
+		System.out.println("Formating (CS): " + ucumFormatCS.format(yd2));
+		System.out.println("Formating (Print): " + ucumFormatPrint.format(yd2));
+		System.out.println("Equals: " + yd.equals(yd2));
 	}
 }

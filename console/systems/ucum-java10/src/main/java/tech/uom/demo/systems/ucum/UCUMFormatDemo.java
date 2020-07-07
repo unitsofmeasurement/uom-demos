@@ -33,12 +33,13 @@ import javax.measure.spi.ServiceProvider;
 import tech.units.indriya.format.SimpleUnitFormat;
 import tech.units.indriya.format.EBNFUnitFormat;
 import javax.measure.MetricPrefix;
+
 import tech.units.indriya.unit.Units;
 
 public class UCUMFormatDemo {
 
     public static void main(String[] args) {
-        final var ucumFormatCI = ServiceProvider.current().getUnitFormatService().getUnitFormat("CI");
+        final var ucumFormatCI = ServiceProvider.current().getFormatService().getUnitFormat("CI");
         final var microliter = MetricPrefix.MICRO(Units.LITRE);
         System.out.println(ucumFormatCI.format(microliter)); // prints "nst"!
         var conv = microliter.getConverterTo(STERE);
@@ -49,7 +50,7 @@ public class UCUMFormatDemo {
         final var microliter2 = ucumFormatCI.parse("uL");
         System.out.println(ucumFormatCI.format(microliter2));
 
-        final var ucumFormatCS = ServiceProvider.current().getUnitFormatService().getUnitFormat("CS");
+        final var ucumFormatCS = ServiceProvider.current().getFormatService().getUnitFormat("CS");
         final var microliter3 = ucumFormatCS.parse("ul");
         System.out.println(ucumFormatCS.format(microliter3));
 
@@ -58,7 +59,7 @@ public class UCUMFormatDemo {
         System.out.println();
 
         final var ebnf = EBNFUnitFormat.getInstance();
-        final var ucumFormatPrint = ServiceProvider.current().getUnitFormatService().getUnitFormat("Print");
+        final var ucumFormatPrint = ServiceProvider.current().getFormatService().getUnitFormat("Print");
 
         //Unit<Force> lbf = Units.NEWTON.multiply(4.4482216152605); // pound-force
         //Unit<Area> sqin = USCustomary.INCH.pow(2).asType(Area.class); // square inch
@@ -93,5 +94,15 @@ public class UCUMFormatDemo {
         System.out.println("Square psi: " + anotherPsi.pow(2));
         System.out.println("Square psi (EBNF): " + ebnf.format(anotherPsi.pow(2)));
         System.out.println("Square psi (UCUM): " + ucumFormatPrint.format(anotherPsi.pow(2)));
+        
+		var yd = ucumFormatCS.parse("[yd_i]");
+		System.out.println("Parsing (CS): " + yd);
+		System.out.println("Formating (CS): " + ucumFormatCS.format(yd));
+		System.out.println("Formating (Print): " + ucumFormatCS.format(yd));
+		yd = ucumFormatCI.parse("[YD_I]");
+		System.out.println("Parsing (CI): " + yd);
+		System.out.println("Formating (CI): " + ucumFormatCI.format(yd));
+		System.out.println("Formating (Print): " + ucumFormatCS.format(yd));
+		System.out.println("Formating: " + ucumFormatPrint.format(yd));
     }
 }
