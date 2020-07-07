@@ -28,7 +28,7 @@ public class HealthTest {
 	public void test() {
 		HeartRateAmount amount = HeartRateAmount.of(Integer.valueOf(60), BPM);
 		assertNotNull(amount);
-		assertEquals("b", amount.getUnit().getSymbol());
+		assertEquals("b/min", amount.getUnit().toString());
 		assertEquals(60, amount.getValue().intValue());
 		
 		assertEquals("60 b/min", amount.toString());
