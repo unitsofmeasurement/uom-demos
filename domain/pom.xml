@@ -4,7 +4,7 @@
 	<artifactId>uom-domain-demos</artifactId>
 	<name>Units of Measurement Domain Specific Demos</name>
 	<packaging>pom</packaging>
-	<url>http://unitsofmeasurement.github.io/</url>
+	<url>https://unitsofmeasurement.github.io/uom-demos/</url>
 	<parent>
 		<groupId>tech.uom.demo</groupId>
 		<artifactId>uom-demos</artifactId>
