@@ -27,7 +27,6 @@ package tech.uom.demo.energy;
 
 import static javax.measure.MetricPrefix.KILO;
 import static javax.measure.Quantity.Scale.*;
-
 import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Energy;
@@ -48,13 +47,14 @@ import java.util.ResourceBundle;
  * @author Werner
  * @see <a href="http://www.dagego.de/info_waermebedarf.html">Dageto
  *      Wärmebedarfsermittlung (DE)</a>
+ * @version 0.8
  */
 public class HeatRequirementDemo {
 
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		//setting default locale to German
-		Locale.setDefault(new Locale("de", "DE"));
+		Locale.setDefault(Locale.GERMAN);
 		ResourceBundle resourceBundle = ResourceBundle.getBundle("Labels");
 
 		Quantity<Volume> volume = Quantities.getQuantity(1000, Units.LITRE);
@@ -65,14 +65,14 @@ public class HeatRequirementDemo {
 		Quantity<Energy> W = (energy.multiply(4200)).divide(3600);
 		final Unit<Energy> wattHour = W.getUnit();
 		SimpleUnitFormat.getInstance().label(wattHour, "Wh");
-		Quantity<Energy> kwH = W.to(KILO(wattHour));
-		SimpleUnitFormat.getInstance().label(KILO(wattHour), "KWh");
+		Quantity<Energy> kwH = W.to(KILO(wattHour)).multiply(1000); 
+		// TODO check if this could be avoided, see https://github.com/unitsofmeasurement/uom-demos/issues/91  
 		System.out.println(kwH);
 		Quantity<Power> kiloWatt = Quantities.getQuantity(9.5, KILO(Units.WATT));
 		Quantity<Time> time = (Quantity<Time>) kwH.divide(kiloWatt);
 		SimpleUnitFormat.getInstance().label(time.getUnit(), "h");
-		System.out.println(String.format(resourceBundle.getString("If_only%_s_are_available,_it_will_take_longer."),
+		System.out.println(String.format(resourceBundle.getString("If_only_s_are_available_it_will_take_longer"),
 				kiloWatt));
-		System.out.println(String.format(resourceBundle.getString("Namely"),time));
+		System.out.println(String.format(resourceBundle.getString("Namely"), time));
 	}
 }
