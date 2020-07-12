@@ -55,9 +55,9 @@ public class HeatRequirementDemo {
 	public static void main(String[] args) {
 		//setting default locale to German
 		Locale.setDefault(Locale.GERMAN);
-		ResourceBundle resourceBundle = ResourceBundle.getBundle("Labels");
+		final ResourceBundle resourceBundle = ResourceBundle.getBundle("Labels");
 
-		Quantity<Volume> volume = Quantities.getQuantity(1000, Units.LITRE);
+		final Quantity<Volume> volume = Quantities.getQuantity(1000, Units.LITRE);
 		System.out.println(String.format(resourceBundle.getString("what_work_is_required_to_heat_water"),
 				volume));
 		Quantity<Temperature> deltaT = Quantities.getQuantity(20, Units.KELVIN, RELATIVE);
@@ -65,11 +65,11 @@ public class HeatRequirementDemo {
 		Quantity<Energy> W = (energy.multiply(4200)).divide(3600);
 		final Unit<Energy> wattHour = W.getUnit();
 		SimpleUnitFormat.getInstance().label(wattHour, "Wh");
-		Quantity<Energy> kwH = W.to(KILO(wattHour)).multiply(1000); 
+		Quantity<Energy> kWh = W.to(KILO(wattHour)).multiply(1000); 
 		// TODO check if this could be avoided, see https://github.com/unitsofmeasurement/uom-demos/issues/91  
-		System.out.println(kwH);
+		System.out.println(kWh);
 		Quantity<Power> kiloWatt = Quantities.getQuantity(9.5, KILO(Units.WATT));
-		Quantity<Time> time = (Quantity<Time>) kwH.divide(kiloWatt);
+		Quantity<Time> time = (Quantity<Time>) kWh.divide(kiloWatt);
 		SimpleUnitFormat.getInstance().label(time.getUnit(), "h");
 		System.out.println(String.format(resourceBundle.getString("If_only_s_are_available_it_will_take_longer"),
 				kiloWatt));
