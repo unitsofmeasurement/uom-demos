@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Health Demos for Java
- *  Copyright (c) 2005-2019, Werner Keil and others.
+ *  Copyright (c) 2005-2020, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -37,7 +37,7 @@ import tech.units.indriya.quantity.Quantities;
 public class BodyWeightDemo {
     public static void main(String[] args) {
 	
-	UnitFormat format = ServiceProvider.current().getUnitFormatService().getUnitFormat();
+	UnitFormat format = ServiceProvider.current().getFormatService().getUnitFormat();
 	Unit mg_per_25g = format.parse("mg/25/g");
 	format.label(mg_per_25g, "bw25g");
 	Quantity mg_per_25g_Bodyweight = Quantities.getQuantity(new BigDecimal("1"), mg_per_25g);
