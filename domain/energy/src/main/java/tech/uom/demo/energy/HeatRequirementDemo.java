@@ -40,6 +40,9 @@ import tech.units.indriya.format.SimpleUnitFormat;
 import tech.units.indriya.quantity.Quantities;
 import tech.units.indriya.unit.Units;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 /**
  * 
  * @author Werner
@@ -50,8 +53,12 @@ public class HeatRequirementDemo {
 
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
+		//setting default locale to German
+		Locale.setDefault(new Locale("de", "DE"));
+		ResourceBundle resourceBundle = ResourceBundle.getBundle("Labels");
+
 		Quantity<Volume> volume = Quantities.getQuantity(1000, Units.LITRE);
-		System.out.println(String.format("Welche Arbeit ist nötig um %s Wasser von 50°C auf 70°C zu erhitzen?", 
+		System.out.println(String.format(resourceBundle.getString("what_work_is_required_to_heat_water"),
 				volume));
 		Quantity<Temperature> deltaT = Quantities.getQuantity(20, Units.KELVIN, RELATIVE);
 		Quantity<Energy> energy = (Quantity<Energy>) volume.multiply(deltaT);
@@ -64,8 +71,8 @@ public class HeatRequirementDemo {
 		Quantity<Power> kiloWatt = Quantities.getQuantity(9.5, KILO(Units.WATT));
 		Quantity<Time> time = (Quantity<Time>) kwH.divide(kiloWatt);
 		SimpleUnitFormat.getInstance().label(time.getUnit(), "h");
-		System.out.println(String.format("Wenn nur %s zur Verfügung stehen dauert es entsprechend länger.",
+		System.out.println(String.format(resourceBundle.getString("If_only%_s_are_available,_it_will_take_longer."),
 				kiloWatt));
-		System.out.println(String.format("Nämlich: %s",	time));
+		System.out.println(String.format(resourceBundle.getString("Namely"),time));
 	}
 }
