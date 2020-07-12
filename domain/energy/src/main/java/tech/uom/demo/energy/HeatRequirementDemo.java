@@ -61,12 +61,12 @@ public class HeatRequirementDemo {
 		System.out.println(String.format(resourceBundle.getString("what_work_is_required_to_heat_water"),
 				volume));
 		Quantity<Temperature> deltaT = Quantities.getQuantity(20, Units.KELVIN, RELATIVE);
-		Quantity<Energy> energy = (Quantity<Energy>) volume.multiply(deltaT);
+		Quantity<Energy> energy = (Quantity<Energy>) volume.multiply(deltaT).multiply(1000);
+		// TODO check if this could be avoided, see https://github.com/unitsofmeasurement/uom-demos/issues/91
 		Quantity<Energy> W = (energy.multiply(4200)).divide(3600);
 		final Unit<Energy> wattHour = W.getUnit();
 		SimpleUnitFormat.getInstance().label(wattHour, "Wh");
-		Quantity<Energy> kWh = W.to(KILO(wattHour)).multiply(1000); 
-		// TODO check if this could be avoided, see https://github.com/unitsofmeasurement/uom-demos/issues/91  
+		Quantity<Energy> kWh = W.to(KILO(wattHour));  
 		System.out.println(kWh);
 		Quantity<Power> kiloWatt = Quantities.getQuantity(9.5, KILO(Units.WATT));
 		Quantity<Time> time = (Quantity<Time>) kWh.divide(kiloWatt);
