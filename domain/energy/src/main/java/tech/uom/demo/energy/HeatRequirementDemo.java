@@ -86,8 +86,7 @@ public class HeatRequirementDemo {
                 ENERGY_NEEDED_PER_MILLILITRE_AND_KELVIN
                 .multiply(givenVolume) // 1000 Litre
                 .multiply(deltaT) // 20ºC
-                .asType(Energy.class)
-                ; 
+                .asType(Energy.class); 
 
         // convert to kWh
         final Quantity<Energy> kWh = energyRequirementToHeatUpGivenVolume
@@ -113,7 +112,7 @@ public class HeatRequirementDemo {
     static ResourceBundle resourceBundle;
 
     private static void print(final String format, final Object ...args) {
-        if(resourceBundle==null) {
+        if(resourceBundle == null) {
             // using German locale 
             resourceBundle = ResourceBundle.getBundle("Labels", Locale.GERMAN);
         }
