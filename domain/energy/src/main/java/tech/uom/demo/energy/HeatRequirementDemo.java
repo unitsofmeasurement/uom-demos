@@ -90,14 +90,14 @@ public class HeatRequirementDemo {
                 ; 
 
         // convert to kWh
-        Quantity<Energy> kWh = energyRequirementToHeatUpGivenVolume
+        final Quantity<Energy> kWh = energyRequirementToHeatUpGivenVolume
                 .to(UNIT_KILO_WATT_HOUR);
 
         print("%s", kWh);
 
         // question (2)
-        // how log does it take to heat up given volume of water (delta 20ºC),
-        // if we put given  power (9.5kW) into our heater?
+        // how long does it take to heat up given volume of water (delta 20ºC),
+        // if we put given power (9.5kW) into our heater?
 
         final Quantity<Power> givenPower = Quantities.getQuantity(9.5, KILO(Units.WATT));
 
