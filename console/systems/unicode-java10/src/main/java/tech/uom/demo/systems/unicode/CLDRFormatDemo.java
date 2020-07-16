@@ -1,6 +1,6 @@
 /*
  *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2017, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2020, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -13,7 +13,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
  *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the names of JSR-363, Units of Measurement nor the names of its contributors may be used to endorse or promote products
+ * 3. Neither the names of JSR-385, Units of Measurement nor the names of its contributors may be used to endorse or promote products
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -29,8 +29,6 @@
  */
 package tech.uom.demo.systems.unicode;
 
-import javax.measure.Unit;
-import javax.measure.format.UnitFormat;
 import javax.measure.spi.ServiceProvider;
 
 import systems.uom.quantity.Information;
@@ -39,21 +37,20 @@ import tech.units.indriya.format.SimpleUnitFormat;
 
 public class CLDRFormatDemo {
     public static void main(String[] args) {
-	ServiceProvider.current().getSystemOfUnitsService().getSystemOfUnits("CLDR");
-//	Unit test = BYTE; // To initialize the system (lazy loading, otherwise Format is not updated)
-	Unit x = AbstractUnit.parse("B");
-	System.out.println(x);
-
-	Unit y = AbstractUnit.parse("N");
-	System.out.println(y);
+		ServiceProvider.current().getSystemOfUnitsService().getSystemOfUnits("CLDR");
+	//	Unit test = BYTE; // To initialize the system (lazy loading, otherwise Format is not updated)
+		var x = AbstractUnit.parse("B");
+		System.out.println(x);
 	
-        UnitFormat unitFormat = SimpleUnitFormat.getInstance();
-        Unit<Information> bit = unitFormat.parse("bit").asType(Information.class);
+		var y = AbstractUnit.parse("N");
+		System.out.println(y);
+	
+        var unitFormat = SimpleUnitFormat.getInstance();
+        var bit = unitFormat.parse("bit").asType(Information.class);
         System.out.println(bit);
         
-        Unit<Information> byteU = unitFormat.parse("byte").asType(Information.class);
+        var byteU = unitFormat.parse("byte").asType(Information.class);
         System.out.println(byteU);
 //        System.out.println(BYTE.equals(byteU));
     }
-
 }

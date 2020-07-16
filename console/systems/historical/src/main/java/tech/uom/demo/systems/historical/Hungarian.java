@@ -45,8 +45,8 @@ import tech.units.indriya.format.SimpleUnitFormat;
  * 
  * @noextend This class is not intended to be extended by clients.
  * 
- * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.3, $Date: 2020-02-11 $
+ * @author <a href="mailto:werner@uom.technology">Werner Keil</a>
+ * @version 0.4, $Date: 2020-07-17 $
  * @see <a href="http://en.wikipedia.org/wiki/Hungarian_units_of_measurement">Wikipedia: Hungarian units of measurement</a>
  */
 public final class Hungarian extends AbstractSystemOfUnits {

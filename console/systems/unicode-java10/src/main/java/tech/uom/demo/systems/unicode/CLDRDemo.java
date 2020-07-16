@@ -29,35 +29,31 @@
  */
 package tech.uom.demo.systems.unicode;
 
-import javax.measure.Quantity;
-import javax.measure.Unit;
-import javax.measure.quantity.Length;
-import javax.measure.quantity.Mass;
-
-import systems.uom.quantity.Information;
 import tech.units.indriya.quantity.Quantities;
-import tech.units.indriya.unit.Units;
+
 import static systems.uom.unicode.CLDR.*;
+import static tech.units.indriya.unit.Units.KILOGRAM;
+import static tech.units.indriya.unit.Units.PASCAL;
 
 public class CLDRDemo {
     public static void main(String[] args) {
-	Quantity<Mass> carat = Quantities.getQuantity(100, CARAT);
-	System.out.println(carat);
-	Quantity<Mass> caratsInKg = carat.to(Units.KILOGRAM);
-	System.out.println(caratsInKg);
-
-	Quantity<Information> bit = Quantities.getQuantity(20, BIT);
-	System.out.println(bit);
-	Quantity<Information> bytes = bit.to(BYTE);
-	System.out.println(bytes);
-
-	Unit pressure = Units.PASCAL;
-	System.out.println(pressure);
+		var carat = Quantities.getQuantity(100, CARAT);
+		System.out.println(carat);
+		var caratsInKg = carat.to(KILOGRAM);
+		System.out.println(caratsInKg);
 	
-//	Quantity<InformationRate> bps = Quantities.getQuantity(10, BIT_PER_SECOND);
-//	System.out.println(bps);
+		var bit = Quantities.getQuantity(20, BIT);
+		System.out.println(bit);
+		var bytes = bit.to(BYTE);
+		System.out.println(bytes);
 	
-	Quantity<Length> len = Quantities.getQuantity(10, PARSEC);
-	System.out.println(len);
+		var pressure = PASCAL;
+		System.out.println(pressure);
+		
+	//	Quantity<InformationRate> bps = Quantities.getQuantity(10, BIT_PER_SECOND);
+	//	System.out.println(bps);
+		
+		var len = Quantities.getQuantity(10, PARSEC);
+		System.out.println(len);
     }
 }

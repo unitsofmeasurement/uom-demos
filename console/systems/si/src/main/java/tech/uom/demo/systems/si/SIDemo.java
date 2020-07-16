@@ -23,46 +23,36 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.edison.hello;
+package tech.uom.demo.systems.si;
 
-import java.text.MessageFormat;
+import static si.uom.SI.*;
+import static si.uom.NonSI.DEGREE_ANGLE;
 
-import javax.measure.Quantity; 
+import javax.measure.Quantity;
 import javax.measure.Unit;
-import javax.measure.quantity.LuminousFlux;
-import javax.measure.quantity.Power;
+import javax.measure.quantity.Angle;
+import javax.measure.quantity.Mass;
 
 import tech.units.indriya.quantity.Quantities;
-import tech.units.indriya.unit.Units;
 
-public class HelloEdison {
-
+public class SIDemo {
 	public static void main(String[] args) {
-		int iLumen;
-		int iLumEfficiacy;
-		if(args.length > 0) {
-			iLumen = Integer.parseInt(args[0]);
-			iLumEfficiacy = Integer.parseInt(args[1]);
-		} else {
-			iLumen = 900;
-			iLumEfficiacy = 15;
-		}
-		
-		System.out.println("Hello Edison.");
-		System.out.println("How about a little lightbulb efficiency calculation?;-)");
-		final MessageFormat question = new MessageFormat(
-				"What is the power consumption of a lamp with a luminous flux of {0} and luminous efficacy of {1} lumens per watt (lm/W)?");
-		final MessageFormat answer = new MessageFormat("You need a {0} lightbulb.");
-		
-		Quantity<LuminousFlux> luminousFlux = Quantities.getQuantity(iLumen, Units.LUMEN);
-		final Unit<LuminousEfficacy> LM_PER_WATT = Units.LUMEN.divide(Units.WATT).asType(LuminousEfficacy.class); // TODO make available in unit system
-		final Integer LE_VALUE = iLumEfficiacy;
-		final Object[] questionArgs = {luminousFlux, LE_VALUE};
-		System.out.println(question.format(questionArgs));
-		Quantity<LuminousEfficacy>  luminousEfficacy = Quantities.getQuantity(LE_VALUE, LM_PER_WATT);
-		Quantity<Power> p = luminousFlux.divide(luminousEfficacy).asType(Power.class);
-		
-		final Object[] answerArgs = {p};
-		System.out.println(answer.format(answerArgs));
+		Unit<Mass> atomicMassUnit = UNIFIED_ATOMIC_MASS;
+		System.out.println(atomicMassUnit + " (" + atomicMassUnit.getName() + "; " + atomicMassUnit.getSymbol() + ")");
+
+		Quantity<Mass> mass = Quantities.getQuantity(10, atomicMassUnit);
+		System.out.println(mass);
+
+		Quantity<Mass> massInKg = mass.to(KILOGRAM);
+		System.out.println(massInKg);
+
+		System.out.println(WATT_PER_STERADIAN);
+		System.out.println(WATT_PER_STERADIAN_PER_SQUARE_METRE);
+
+		Quantity<Angle> angle = Quantities.getQuantity(Math.PI, RADIAN);
+		System.out.println(angle.to(DEGREE_ANGLE));
+
+		System.out.println(AVOGADRO_CONSTANT);
 	}
+
 }
