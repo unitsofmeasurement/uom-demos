@@ -10,7 +10,7 @@ import tech.units.indriya.unit.AlternateUnit;
 import tech.units.indriya.unit.UnitDimension;
 import tech.units.indriya.unit.Units;
 
-public class _07_DetectMassAndHeight {
+public class _05_DetectMassAndHeight {
 
 	public static void main(String[] args) {
 		final Quantity<?> first = Quantities.getQuantity("188 cm");
