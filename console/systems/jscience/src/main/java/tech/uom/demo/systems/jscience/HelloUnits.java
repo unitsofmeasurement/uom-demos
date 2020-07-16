@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2020, Werner Keil, Jean-Marie Dautelle and others.
  *
  * All rights reserved.
  *
@@ -10,7 +10,7 @@
  *
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363, Unit-API nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ * 3. Neither the name of JSR-385, Unit-API nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -23,7 +23,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.demo.systems.jscience;
+package tech.uom.demo.systems.jscience;
 
 import javax.measure.Measurable;
 import javax.measure.Measure;
@@ -46,24 +46,24 @@ public class HelloUnits {
      */
     @SuppressWarnings("unchecked")
     public static void main(String[] args) {
-	@SuppressWarnings("rawtypes")
-	Measure length = Measure.valueOf(10, SI.METRE);
-	// LengthAmount length = new LengthAmount(10, SI.KILOGRAM);
-	// this won't work ;-)
-
-	System.out.println(length);
-	Unit<Length> lenUnit = length.getUnit();
-	System.out.println(lenUnit);
-
-	System.out.println(length.doubleValue(NonSI.FOOT));
-	// System.out.println(length.doubleValue(USCustomary.POUND));
-	// this won't work either.
-	// UnitConverter footConv = lenUnit.getConverterTo(NonSI.INCH);
-	System.out.print(((Measurable<Length>) length).doubleValue(NonSI.INCH));
-	System.out.println(" " + NonSI.FOOT);
-
-	Measurable<Mass> mass = Measure.valueOf(1000, SI.GRAM);
-	Measurable<Mass> mass2 = Measure.valueOf(1, SI.KILOGRAM);
-	System.out.println(mass.equals(mass2));
+		@SuppressWarnings("rawtypes")
+		Measure length = Measure.valueOf(10, SI.METRE);
+		// LengthAmount length = new LengthAmount(10, SI.KILOGRAM);
+		// this won't work ;-)
+	
+		System.out.println(length);
+		Unit<Length> lenUnit = length.getUnit();
+		System.out.println(lenUnit);
+	
+		System.out.println(length.doubleValue(NonSI.FOOT));
+		// System.out.println(length.doubleValue(USCustomary.POUND));
+		// this won't work either.
+		// UnitConverter footConv = lenUnit.getConverterTo(NonSI.INCH);
+		System.out.print(((Measurable<Length>) length).doubleValue(NonSI.INCH));
+		System.out.println(" " + NonSI.FOOT);
+	
+		Measurable<Mass> mass = Measure.valueOf(1000, SI.GRAM);
+		Measurable<Mass> mass2 = Measure.valueOf(1, SI.KILOGRAM);
+		System.out.println(mass.equals(mass2));
     }
 }
