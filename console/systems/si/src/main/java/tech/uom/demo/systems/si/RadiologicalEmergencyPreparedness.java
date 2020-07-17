@@ -42,7 +42,8 @@ import tech.units.indriya.quantity.Quantities;
  * @see <a
  *      href="http://www.nema.ne.gov/technological/dose-limits.html">NEMA:
  *      Radiological Emergency Preparedness</a>
- */
+ * @version 0.9, Jul 17, 2020
+ */      
 public class RadiologicalEmergencyPreparedness {
 
 	/**

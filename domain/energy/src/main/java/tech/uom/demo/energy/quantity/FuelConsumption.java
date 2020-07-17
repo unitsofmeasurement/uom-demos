@@ -27,5 +27,10 @@ package tech.uom.demo.energy.quantity;
 
 import javax.measure.Quantity;
 
+/**
+ * @deprecated Use from API
+ * @author werner
+ *
+ */
 public interface FuelConsumption extends Quantity<FuelConsumption> {
 }

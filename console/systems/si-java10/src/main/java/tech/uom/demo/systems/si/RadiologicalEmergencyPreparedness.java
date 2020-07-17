@@ -29,11 +29,6 @@ import static si.uom.NonSI.ROENTGEN;
 import static javax.measure.MetricPrefix.MILLI;
 
 import java.util.HashMap;
-import java.util.Map;
-
-import javax.measure.Quantity;
-
-import si.uom.quantity.IonizingRadiation;
 import tech.units.indriya.quantity.Quantities;
 
 /**
@@ -42,6 +37,7 @@ import tech.units.indriya.quantity.Quantities;
  * @see <a
  *      href="http://www.nema.ne.gov/technological/dose-limits.html">NEMA:
  *      Radiological Emergency Preparedness</a>
+ * @version 0.9, Jul 17, 2020
  */
 public class RadiologicalEmergencyPreparedness {
 
@@ -49,8 +45,8 @@ public class RadiologicalEmergencyPreparedness {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		final Map <Quantity<IonizingRadiation>, String> repMap = new HashMap<>();
-		Quantity<IonizingRadiation> ira = Quantities.getQuantity(500, MILLI(ROENTGEN));
+		final var repMap = new HashMap<>();
+		var ira = Quantities.getQuantity(500, MILLI(ROENTGEN));
 		
 		repMap.put(ira, String.format("Call supervisor for further instructions. Dosimeter reading up to and including %s allowed for emergency Worker assignments.", ira));
 		ira = Quantities.getQuantity(1, ROENTGEN);
@@ -58,7 +54,7 @@ public class RadiologicalEmergencyPreparedness {
 		ira = Quantities.getQuantity(2.5, ROENTGEN);
 		repMap.put(ira, "Dose allowed for assignments involving LIFESAVING protection of large populations.");
 		
-		for (Quantity<IonizingRadiation> dosimeterLimit : repMap.keySet()) {			
+		for (var dosimeterLimit : repMap.keySet()) {			
 			System.out.println(dosimeterLimit + " :: " + repMap.get(dosimeterLimit));
 		}
 	}
