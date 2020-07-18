@@ -29,7 +29,7 @@ import static tech.uom.domain.health.unit.Health.BPM;
 
 import java.math.BigDecimal;
 
-import tec.uom.domain.health.HeartRate;
+import tech.uom.domain.health.HeartRate;
 import tech.uom.domain.health.types.HeartRateAmount;
 
 /**
