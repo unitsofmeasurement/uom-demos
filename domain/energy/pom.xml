@@ -28,11 +28,10 @@
             <groupId>tech.units</groupId>
             <artifactId>indriya</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
+            <groupId>tech.uom.domain</groupId>
+            <artifactId>uom-energy-quantity</artifactId>
+            <version>${domain.version}</version>
         </dependency>
     </dependencies>
 	<build>

@@ -13,6 +13,10 @@
 	   <description>Domain Specific Demos of the Units of Measurement API</description>
     <groupId>tech.uom.demo.domain</groupId>
     
+    <properties>
+        <domain.version>2.0</domain.version>
+    </properties>
+    
 	<modules>
         <module>health</module>
         <module>energy</module>

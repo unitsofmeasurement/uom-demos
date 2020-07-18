@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2019, Werner Keil and others.
+ *  Copyright (c) 2005-2020, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -35,15 +35,15 @@ import javax.measure.quantity.Volume;
 
 import tech.units.indriya.format.SimpleUnitFormat;
 import tech.units.indriya.quantity.Quantities;
-import tech.uom.demo.energy.quantity.CarbonFootprint;
-import tech.uom.demo.energy.quantity.FuelConsumption;
+import tech.uom.domain.energy.quantity.CarbonFootprint;
+import tech.uom.domain.energy.quantity.FuelConsumption;
 import tech.uom.lib.common.function.DoubleFactorSupplier;
 
 /**
  * Carbon Footprint calculator for cars
  * @author Werner
  * @see <a href="https://spritrechner.biz/co2-rechner-fuer-autos.html">CO2-Rechner für Autos (DE)</a>
- * @version 1.5
+ * @version 1.6
  */
 public class CO2CarDemo {
 	
