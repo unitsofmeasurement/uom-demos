@@ -47,11 +47,11 @@ import tech.units.indriya.unit.Units;
 
 /**
  * 
- * @author Werner
+ * @author Werner Keil
  * @author Andi Huber
  * @see <a href="http://www.dagego.de/info_waermebedarf.html">Dageto
  *      Wärmebedarfsermittlung (DE)</a>
- * @version 0.9
+ * @version 1.0
  */
 public class HeatRequirementDemo {
 

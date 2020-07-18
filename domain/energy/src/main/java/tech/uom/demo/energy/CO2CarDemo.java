@@ -53,9 +53,15 @@ public class CO2CarDemo {
 		} else {
 			System.out.println(String.format("Car: %s", args[0]));
 			FuelType fuelType = FuelType.valueOf(args[1]);
-			Quantity<Length> km100 = Quantities.getQuantity(100, KILO(METRE));
+			final Quantity<Length> km100 = Quantities.getQuantity(100, KILO(METRE));
 			Quantity<Volume> fuel = Quantities.getQuantity(Double.valueOf(args[2]), LITRE);
-			Quantity<FuelConsumption> fuelConsumption = fuel.divide(km100).multiply(100).asType(FuelConsumption.class);
+			
+			// Debug outputs, TODO could be removed later
+			//System.out.println(km100);
+			//System.out.println(fuel);
+			//System.out.println(fuel.to(fuel.getUnit().getSystemUnit()));
+			
+			Quantity<FuelConsumption> fuelConsumption = fuel.to(fuel.getUnit().getSystemUnit()).divide(km100).multiply(100).asType(FuelConsumption.class);
 			SimpleUnitFormat.getInstance().label(fuelConsumption.getUnit(), "l/100 km");
 			System.out.println(fuelConsumption);
 			Quantity<CarbonFootprint> carbon100 = fuelConsumption.multiply(fuelType.getFactor()).asType(CarbonFootprint.class);
