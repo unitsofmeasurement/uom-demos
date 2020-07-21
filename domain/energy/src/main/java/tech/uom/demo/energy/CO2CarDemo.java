@@ -29,21 +29,22 @@ import static javax.measure.MetricPrefix.KILO;
 import static tech.units.indriya.unit.Units.*;
 
 import javax.measure.Quantity;
+import javax.measure.Unit;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Mass;
-import javax.measure.quantity.Volume;
 
 import tech.units.indriya.format.SimpleUnitFormat;
 import tech.units.indriya.quantity.Quantities;
-import tech.uom.domain.energy.quantity.CarbonFootprint;
+import tech.units.indriya.unit.Units;
 import tech.uom.domain.energy.quantity.FuelConsumption;
 import tech.uom.lib.common.function.DoubleFactorSupplier;
 
 /**
  * Carbon Footprint calculator for cars
  * @author Werner
+ * @author Andi Huber
  * @see <a href="https://spritrechner.biz/co2-rechner-fuer-autos.html">CO2-Rechner für Autos (DE)</a>
- * @version 1.6
+ * @version 1.7
  */
 public class CO2CarDemo {
 	
@@ -51,37 +52,55 @@ public class CO2CarDemo {
 		if (args == null || args.length < 4) {
 			usage();
 		} else {
-			System.out.println(String.format("Car: %s", args[0]));
-			FuelType fuelType = FuelType.valueOf(args[1]);
-			final Quantity<Length> km100 = Quantities.getQuantity(100, KILO(METRE));
-			Quantity<Volume> fuel = Quantities.getQuantity(Double.valueOf(args[2]), LITRE);
-			
-			// Debug outputs, TODO could be removed later
-			//System.out.println(km100);
-			//System.out.println(fuel);
-			//System.out.println(fuel.to(fuel.getUnit().getSystemUnit()));
-			
-			Quantity<FuelConsumption> fuelConsumption = fuel.to(fuel.getUnit().getSystemUnit()).divide(km100).multiply(100).asType(FuelConsumption.class);
-			SimpleUnitFormat.getInstance().label(fuelConsumption.getUnit(), "l/100 km");
-			System.out.println(fuelConsumption);
-			Quantity<CarbonFootprint> carbon100 = fuelConsumption.multiply(fuelType.getFactor()).asType(CarbonFootprint.class);
-			SimpleUnitFormat.getInstance().label(carbon100.getUnit(), "g CO2/km");
-			System.out.println(carbon100);
-			Quantity<Length> distance = Quantities.getQuantity(Double.valueOf(args[3]), KILO(METRE));
-			System.out.println(distance);
-			Quantity<?> carbonTotal = carbon100.multiply(distance);
-			Quantity<Mass> carbonGrams = Quantities.getQuantity(carbonTotal.getValue(), GRAM);
-			System.out.println(carbonGrams.to(KILOGRAM));
+		    
+	        // definitions
+	        final Unit<Length> UNIT_100_KM = KILO(METRE).multiply(100);
+
+	        final Unit<FuelConsumption> UNIT_LITRE_PER_100KM = LITRE.divide(UNIT_100_KM)
+	                .asType(FuelConsumption.class);
+	        SimpleUnitFormat.getInstance().label(UNIT_LITRE_PER_100KM, "l/100 km");
+	        
+	        final Unit<SpecificCarbonEmission> UNIT_GRAM_CO2_PER_LITRE = Units.GRAM.divide(LITRE)
+                    .asType(SpecificCarbonEmission.class);
+	        SimpleUnitFormat.getInstance().label(UNIT_GRAM_CO2_PER_LITRE, "g CO2/l");
+	        
+	        // given
+	        print("Car: %s", args[0]);
+	        FuelType fuelType = FuelType.valueOf(args[1]);
+	        
+	        Quantity<FuelConsumption> fuelConsumption = Quantities.getQuantity(Double.valueOf(args[2]), UNIT_LITRE_PER_100KM);
+	        print("FuelConsumption: %s", fuelConsumption);
+	        
+	        Quantity<Length> distance = Quantities.getQuantity(Double.valueOf(args[3]), KILO(METRE));
+	        print("Distance: %s", distance);
+	        
+	        Quantity<SpecificCarbonEmission> specificCarbonEmission = 
+	                Quantities.getQuantity(fuelType.getFactor(), UNIT_GRAM_CO2_PER_LITRE);
+	        print("Specific Carbon Emission of %s: %s", fuelType, specificCarbonEmission);
+	        
+	        Quantity<Mass> carbonEmissionTotal = specificCarbonEmission
+	                .multiply(distance)
+	                .multiply(fuelConsumption)
+	                .asType(Mass.class);
+	        print("Carbon Emission Total: %s", carbonEmissionTotal.to(KILOGRAM));
 		}
 	}
+    
+	private static interface SpecificCarbonEmission extends Quantity<SpecificCarbonEmission> {
+    }
+
+    private static void print(String format, Object ...args) {
+        System.out.println(String.format(format, args));
+    }
+	
 	
 	private static void usage() {
 		System.out.println("Usage: CO2CarDemo <Car> <FuelType> (PETROL/DIESEL) <Consumption per 100 km> <Distance in km>");
 	}
 
 	enum FuelType implements DoubleFactorSupplier {
-		PETROL(23.8), DIESEL(26.5);
-
+	    PETROL(2392), DIESEL(2640); // gram CO2 per liter of fuel
+	    
 		private final double factor;
 		
 		private FuelType(double factor) {
@@ -92,5 +111,6 @@ public class CO2CarDemo {
 		public double getFactor() {
 			return factor;
 		}
+		
 	}
 }
