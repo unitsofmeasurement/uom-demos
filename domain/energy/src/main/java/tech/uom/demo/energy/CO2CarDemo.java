@@ -41,7 +41,7 @@ import tech.uom.lib.common.function.DoubleFactorSupplier;
 
 /**
  * Carbon Footprint calculator for cars
- * @author Werner
+ * @author Werner Keil
  * @author Andi Huber
  * @see <a href="https://spritrechner.biz/co2-rechner-fuer-autos.html">CO2-Rechner für Autos (DE)</a>
  * @version 1.7
@@ -92,8 +92,7 @@ public class CO2CarDemo {
     private static void print(String format, Object ...args) {
         System.out.println(String.format(format, args));
     }
-	
-	
+		
 	private static void usage() {
 		System.out.println("Usage: CO2CarDemo <Car> <FuelType> (PETROL/DIESEL) <Consumption per 100 km> <Distance in km>");
 	}
@@ -110,7 +109,6 @@ public class CO2CarDemo {
 		@Override
 		public double getFactor() {
 			return factor;
-		}
-		
+		}		
 	}
 }
