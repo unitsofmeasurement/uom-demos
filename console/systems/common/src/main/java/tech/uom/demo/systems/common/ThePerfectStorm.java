@@ -114,7 +114,8 @@ public class ThePerfectStorm {
 				scale = STD;
 		}
 
-		if (scale !=null) {
+		if (scale != null) {
+			// If the wind scale has a maximum we take that assuming the worst case, otherwise the minimum
 			final Quantity<Speed> metricSpeed = scale.hasMaximum() ?
 					scale.getMaximum().to(KILOMETRE_PER_HOUR) :
 					scale.getMinimum().to(KILOMETRE_PER_HOUR);
@@ -122,10 +123,10 @@ public class ThePerfectStorm {
 			System.out.print(metricSpeed);
 			System.out.println(" (" +  Messages.getString("SaffirSimpsonHurricaneWindScale." + scale.getCategory(), true) 
 			  + ")"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-			Quantity<Length> l = Quantities.getQuantity(500, KILO(METRE));
-			System.out.println(String.format(Messages.getString("ThePerfectStorm.1"), l)); //$NON-NLS-1$
+			final Quantity<Length> distance = Quantities.getQuantity(500, KILO(METRE));
+			System.out.println(String.format(Messages.getString("ThePerfectStorm.1"), distance)); //$NON-NLS-1$
 			
-			Quantity<Time> timeToEvacuate = l.divide(metricSpeed).asType(Time.class);
+			final Quantity<Time> timeToEvacuate = distance.divide(metricSpeed).asType(Time.class);
 			//Quantity<?> timeToEvacuate = l.divide(metricSpeed); //if you don't want to cast ;-)
 			SimpleUnitFormat.getInstance().label(timeToEvacuate.getUnit(), Messages.getString("ThePerfectStorm.2")); //$NON-NLS-1$
 			System.out.println(String.format(Messages.getString("ThePerfectStorm.3"), timeToEvacuate)); //$NON-NLS-1$
