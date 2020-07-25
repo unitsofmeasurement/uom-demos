@@ -52,6 +52,7 @@ import tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale;
  * @see {@link SaffirSimpsonHurricaneWindScale}
  */
 public class ThePerfectStorm {
+	// Constants
 	private static final SaffirSimpsonHurricaneWindScale STD = SaffirSimpsonHurricaneWindScale.of(
 			null, Quantities.getQuantity(38, MILE_PER_HOUR), TROPICAL_DEPRESSION);
 	private static final SaffirSimpsonHurricaneWindScale STS = SaffirSimpsonHurricaneWindScale.of(
@@ -85,7 +86,7 @@ public class ThePerfectStorm {
 		System.out.println(s5);
 
 		int argument = -1;
-		if (args != null && args.length>0) {
+		if (args != null && args.length > 0) {
 			argument = Integer.valueOf(args[0]).intValue();
 		}
 
