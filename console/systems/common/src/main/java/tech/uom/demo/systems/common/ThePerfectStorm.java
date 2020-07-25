@@ -48,60 +48,54 @@ import tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale;
 
 /**
  * @author Werner Keil
- * @version 1.0
+ * @version 1.1
  * @see {@link SaffirSimpsonHurricaneWindScale}
  */
 public class ThePerfectStorm {
+	private static final SaffirSimpsonHurricaneWindScale STD = SaffirSimpsonHurricaneWindScale.of(
+			null, Quantities.getQuantity(38, MILE_PER_HOUR), TROPICAL_DEPRESSION);
+	private static final SaffirSimpsonHurricaneWindScale STS = SaffirSimpsonHurricaneWindScale.of(
+			Quantities.getQuantity(39, MILE_PER_HOUR),
+			Quantities.getQuantity(73, MILE_PER_HOUR), TROPICAL_STORM);
+	private static final SaffirSimpsonHurricaneWindScale S1 = SaffirSimpsonHurricaneWindScale.of(
+			Quantities.getQuantity(74, MILE_PER_HOUR),
+			Quantities.getQuantity(95, MILE_PER_HOUR), ONE);
+	private static final SaffirSimpsonHurricaneWindScale s2 = SaffirSimpsonHurricaneWindScale.of(
+			Quantities.getQuantity(96, MILE_PER_HOUR),
+			Quantities.getQuantity(110, MILE_PER_HOUR), TWO);
+	private static final SaffirSimpsonHurricaneWindScale s3 = SaffirSimpsonHurricaneWindScale.of(
+			Quantities.getQuantity(111, MILE_PER_HOUR),
+			Quantities.getQuantity(129, MILE_PER_HOUR), THREE);
+	private static final SaffirSimpsonHurricaneWindScale s4 = SaffirSimpsonHurricaneWindScale.of(
+			Quantities.getQuantity(130, MILE_PER_HOUR),
+			Quantities.getQuantity(156, MILE_PER_HOUR), FOUR);
+	private static final SaffirSimpsonHurricaneWindScale s5 = SaffirSimpsonHurricaneWindScale.of(
+			Quantities.getQuantity(157, MILE_PER_HOUR), null, FIVE);
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {	
-		final SaffirSimpsonHurricaneWindScale std = SaffirSimpsonHurricaneWindScale.of(
-				null, Quantities.getQuantity(38, MILE_PER_HOUR), TROPICAL_DEPRESSION);
-		System.out.println(std);
-
-		final SaffirSimpsonHurricaneWindScale sts = SaffirSimpsonHurricaneWindScale.of(
-				Quantities.getQuantity(39, MILE_PER_HOUR),
-				Quantities.getQuantity(73, MILE_PER_HOUR), TROPICAL_STORM);
-		System.out.println(sts);
-
-		final SaffirSimpsonHurricaneWindScale s1 = SaffirSimpsonHurricaneWindScale.of(
-				Quantities.getQuantity(74, MILE_PER_HOUR),
-				Quantities.getQuantity(95, MILE_PER_HOUR), ONE);
-		System.out.println(s1);
-
-		final SaffirSimpsonHurricaneWindScale s2 = SaffirSimpsonHurricaneWindScale.of(
-				Quantities.getQuantity(96, MILE_PER_HOUR),
-				Quantities.getQuantity(110, MILE_PER_HOUR), TWO);
+		System.out.println(STD);
+		System.out.println(STS);
+		System.out.println(S1);
 		System.out.println(s2);
-
-		final SaffirSimpsonHurricaneWindScale s3 = SaffirSimpsonHurricaneWindScale.of(
-				Quantities.getQuantity(111, MILE_PER_HOUR),
-				Quantities.getQuantity(129, MILE_PER_HOUR), THREE);
 		System.out.println(s3);
-
-		final SaffirSimpsonHurricaneWindScale s4 = SaffirSimpsonHurricaneWindScale.of(
-				Quantities.getQuantity(130, MILE_PER_HOUR),
-				Quantities.getQuantity(156, MILE_PER_HOUR), FOUR);
 		System.out.println(s4);
-
-		final SaffirSimpsonHurricaneWindScale s5 = SaffirSimpsonHurricaneWindScale.of(
-				Quantities.getQuantity(157, MILE_PER_HOUR), null, FIVE);
 		System.out.println(s5);
 
 		int argument = -1;
-		if (args!= null && args.length>0) {
+		if (args != null && args.length>0) {
 			argument = Integer.valueOf(args[0]).intValue();
 		}
 
 		SaffirSimpsonHurricaneWindScale scale = null;
 		switch (argument) {
 			case 0:
-				scale = sts;
+				scale = STS;
 				break;
 			case 1:
-				scale = s1;
+				scale = S1;
 				break;
 			case 2:
 				scale = s2;
@@ -116,7 +110,7 @@ public class ThePerfectStorm {
 				scale = s5;
 				break;
 			default:
-				scale = std;
+				scale = STD;
 		}
 
 		if (scale !=null) {
