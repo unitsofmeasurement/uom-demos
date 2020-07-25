@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2019, Werner Keil and others.
+ *  Copyright (c) 2005-2020, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -47,7 +47,7 @@ import tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale;
 
 /**
  * @author Werner Keil
- * @version 0.9
+ * @version 1.0
  * @see {@link SaffirSimpsonHurricaneWindScale}
  */
 public class ThePerfectStorm {
@@ -56,7 +56,7 @@ public class ThePerfectStorm {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		final SaffirSimpsonHurricaneWindScale std = SaffirSimpsonHurricaneWindScale.of(
+		final var std = SaffirSimpsonHurricaneWindScale.of(
 				null, Quantities.getQuantity(38, MILE_PER_HOUR), TROPICAL_DEPRESSION);
 		System.out.println(std);
 
@@ -127,7 +127,6 @@ public class ThePerfectStorm {
 		Quantity<Length> l = Quantities.getQuantity(500, KILO(METRE));
 		System.out.println(String.format("Distance: %s", l));
 		Quantity<Time> timeToEvacuate = l.divide(metricSpeed).asType(Time.class);
-		//Quantity<?> timeToEvacuate = l.divide(metricSpeed); if you don't want to cast ;-)
 		System.out.println(String.format("Time to evacuate: %s", timeToEvacuate));
 	}
 }

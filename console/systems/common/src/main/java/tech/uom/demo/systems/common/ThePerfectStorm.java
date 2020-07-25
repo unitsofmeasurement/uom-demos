@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2019, Werner Keil and others.
+ *  Copyright (c) 2005-2020, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -56,7 +56,7 @@ public class ThePerfectStorm {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) {	
 		final SaffirSimpsonHurricaneWindScale std = SaffirSimpsonHurricaneWindScale.of(
 				null, Quantities.getQuantity(38, MILE_PER_HOUR), TROPICAL_DEPRESSION);
 		System.out.println(std);
@@ -125,16 +125,17 @@ public class ThePerfectStorm {
 					scale.getMinimum().to(KILOMETRE_PER_HOUR);
 
 			System.out.print(metricSpeed);
-			System.out.println(" (" + scale.getCategory() + ")");
+			System.out.println(" (" +  Messages.getString("SaffirSimpsonHurricaneWindScale." + scale.getCategory(), true) 
+			  + ")"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 			Quantity<Length> l = Quantities.getQuantity(500, KILO(METRE));
-			System.out.println(String.format("Distance: %s", l));
+			System.out.println(String.format(Messages.getString("ThePerfectStorm.1"), l)); //$NON-NLS-1$
 			
 			Quantity<Time> timeToEvacuate = l.divide(metricSpeed).asType(Time.class);
 			//Quantity<?> timeToEvacuate = l.divide(metricSpeed); //if you don't want to cast ;-)
-			SimpleUnitFormat.getInstance().label(timeToEvacuate.getUnit(), "h");
-			System.out.println(String.format("Time to evacuate: %s", timeToEvacuate));
+			SimpleUnitFormat.getInstance().label(timeToEvacuate.getUnit(), Messages.getString("ThePerfectStorm.2")); //$NON-NLS-1$
+			System.out.println(String.format(Messages.getString("ThePerfectStorm.3"), timeToEvacuate)); //$NON-NLS-1$
 		} else {
-			System.out.println("No scale given.");
+			System.out.println(Messages.getString("ThePerfectStorm.4")); //$NON-NLS-1$
 		}
 	}
 }

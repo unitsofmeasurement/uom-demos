@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2019, Werner Keil and others.
+ *  Copyright (c) 2005-2020, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -40,7 +40,7 @@ import static tech.uom.demo.systems.common14.types.SaffirSimpsonHurricaneWindSca
 
 /**
  * @author Werner Keil
- * @version 1.1
+ * @version 1.2
  * @see {@link SaffirSimpsonHurricaneWindScale}
  */
 public class ThePerfectStorm {
@@ -54,7 +54,7 @@ public class ThePerfectStorm {
 			if ("-v".equals(args[0])) verbose = true;
 		}
 
-		final SaffirSimpsonHurricaneWindScale std = SaffirSimpsonHurricaneWindScale.of(
+		final var std = SaffirSimpsonHurricaneWindScale.of(
 				null, Quantities.getQuantity(38, MILE_PER_HOUR), TROPICAL_DEPRESSION);
 		System.out.println(std);
 
@@ -88,12 +88,13 @@ public class ThePerfectStorm {
 		if (verbose) System.out.println(s5);
 
 		int argument = -1;
-		if (args!= null && args.length>0) {
+		if (args != null && args.length>0) {
 			if (isNumeric(args[0])) {
 				argument = Integer.valueOf(args[0]).intValue();
 			}
 		}
 
+		// With Java 14 the switch/case segment gets much more compact
 		var scale = switch (argument) {
 			case 0 -> sts;
 			case 1 -> s1;
