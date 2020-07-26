@@ -1,5 +1,5 @@
 /*
- *  Units of Measurement Console Demos
+ *  Units of Measurement Demos for Java
  *  Copyright (c) 2005-2020, Werner Keil and others.
  *
  * All rights reserved.
@@ -25,7 +25,7 @@
  */
 package tech.uom.demo.systems.common;
 
-import static tech.units.indriya.unit.Units.KILOMETRE_PER_HOUR;
+import static javax.measure.MetricPrefix.KILO;
 import static tech.units.indriya.unit.Units.METRE;
 import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.FIVE;
 import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.FOUR;
@@ -34,99 +34,101 @@ import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale
 import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_DEPRESSION;
 import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_STORM;
 import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.TWO;
-import static javax.measure.MetricPrefix.KILO;
 import static systems.uom.common.USCustomary.MILE_PER_HOUR;
+import static tech.units.indriya.quantity.Quantities.getQuantity;
+import static tech.units.indriya.unit.Units.KILOMETRE_PER_HOUR;
 
-import javax.measure.Quantity;
-import javax.measure.quantity.Length;
-import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
 
-import tech.units.indriya.quantity.Quantities;
+import tech.units.indriya.format.SimpleUnitFormat;
 import tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale;
 
 /**
  * @author Werner Keil
- * @version 1.0
+ * @version 1.2
  * @see {@link SaffirSimpsonHurricaneWindScale}
  */
 public class ThePerfectStorm {
+	// Constants
+	private static final SaffirSimpsonHurricaneWindScale STD = SaffirSimpsonHurricaneWindScale.of(
+			null, getQuantity(38, MILE_PER_HOUR), TROPICAL_DEPRESSION);
+	private static final SaffirSimpsonHurricaneWindScale STS = SaffirSimpsonHurricaneWindScale.of(
+			getQuantity(39, MILE_PER_HOUR),	getQuantity(73, MILE_PER_HOUR), TROPICAL_STORM);
+	private static final SaffirSimpsonHurricaneWindScale S1 = SaffirSimpsonHurricaneWindScale.of(
+			getQuantity(74, MILE_PER_HOUR),	getQuantity(95, MILE_PER_HOUR), ONE);
+	private static final SaffirSimpsonHurricaneWindScale S2 = SaffirSimpsonHurricaneWindScale.of(
+			getQuantity(96, MILE_PER_HOUR),	getQuantity(110, MILE_PER_HOUR), TWO);
+	private static final SaffirSimpsonHurricaneWindScale S3 = SaffirSimpsonHurricaneWindScale.of(
+			getQuantity(111, MILE_PER_HOUR), getQuantity(129, MILE_PER_HOUR), THREE);
+	private static final SaffirSimpsonHurricaneWindScale S4 = SaffirSimpsonHurricaneWindScale.of(
+			getQuantity(130, MILE_PER_HOUR), getQuantity(156, MILE_PER_HOUR), FOUR);
+	private static final SaffirSimpsonHurricaneWindScale S5 = SaffirSimpsonHurricaneWindScale.of(
+			getQuantity(157, MILE_PER_HOUR), null, FIVE);
 
+	private static final double DEFAULT_DIST_KM = 500d;
+	
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		final var std = SaffirSimpsonHurricaneWindScale.of(
-				null, Quantities.getQuantity(38, MILE_PER_HOUR), TROPICAL_DEPRESSION);
-		System.out.println(std);
+	public static void main(String[] args) {	
+		System.out.println(STD);
+		System.out.println(STS);
+		System.out.println(S1);
+		System.out.println(S2);
+		System.out.println(S3);
+		System.out.println(S4);
+		System.out.println(S5);
 
-		final var sts = SaffirSimpsonHurricaneWindScale.of(
-				Quantities.getQuantity(39, MILE_PER_HOUR),
-				Quantities.getQuantity(73, MILE_PER_HOUR), TROPICAL_STORM);
-		System.out.println(sts);
-
-		final var s1 = SaffirSimpsonHurricaneWindScale.of(
-				Quantities.getQuantity(74, MILE_PER_HOUR),
-				Quantities.getQuantity(95, MILE_PER_HOUR), ONE);
-		System.out.println(s1);
-
-		final var s2 = SaffirSimpsonHurricaneWindScale.of(
-				Quantities.getQuantity(96, MILE_PER_HOUR),
-				Quantities.getQuantity(110, MILE_PER_HOUR), TWO);
-		System.out.println(s2);
-
-		final var s3 = SaffirSimpsonHurricaneWindScale.of(
-				Quantities.getQuantity(111, MILE_PER_HOUR),
-				Quantities.getQuantity(129, MILE_PER_HOUR), THREE);
-		System.out.println(s3);
-
-		final var s4 = SaffirSimpsonHurricaneWindScale.of(
-				Quantities.getQuantity(130, MILE_PER_HOUR),
-				Quantities.getQuantity(156, MILE_PER_HOUR), FOUR);
-		System.out.println(s4);
-
-		final var s5 = SaffirSimpsonHurricaneWindScale.of(
-				Quantities.getQuantity(157, MILE_PER_HOUR), null, FIVE);
-		System.out.println(s5);
-
-		int argument = -1;
-		if (args!= null && args.length>0) {
+		var argument = -1;
+		if (args != null && args.length > 0) {
 			argument = Integer.valueOf(args[0]).intValue();
 		}
-
-		SaffirSimpsonHurricaneWindScale scale = null;
+		var distKm = DEFAULT_DIST_KM;
+		if (args != null && args.length > 1) {
+			distKm = Double.valueOf(args[1]).doubleValue();
+		}
+		
+		var scale = STS;
 		switch (argument) {
 			case 0:
-				scale = sts;
+				scale = STS;
 				break;
 			case 1:
-				scale = s1;
+				scale = S1;
 				break;
 			case 2:
-				scale = s2;
+				scale = S2;
 				break;
 			case 3:
-				scale = s3;
+				scale = S3;
 				break;
 			case 4:
-				scale = s4;
+				scale = S4;
 				break;
 			case 5:
-				scale = s5;
+				scale = S5;
 				break;
 			default:
-				scale = std;
+				scale = STD;
 		}
 
-		final Quantity<Speed> metricSpeed = scale.hasMaximum() ?
-				scale.getMaximum().to(KILOMETRE_PER_HOUR) :
-				scale.getMinimum().to(KILOMETRE_PER_HOUR);
+		if (scale != null) {
+			// If the wind scale has a maximum we take that assuming the worst case, otherwise the minimum
+			final var metricSpeed = scale.hasMaximum() ?
+					scale.getMaximum().to(KILOMETRE_PER_HOUR) :
+					scale.getMinimum().to(KILOMETRE_PER_HOUR);
 
-		System.out.print(metricSpeed);
-		System.out.println(" (" + scale.getCategory() + ")");
-		Quantity<Length> l = Quantities.getQuantity(500, KILO(METRE));
-		System.out.println(String.format("Distance: %s", l));
-		Quantity<Time> timeToEvacuate = l.divide(metricSpeed).asType(Time.class);
-		System.out.println(String.format("Time to evacuate: %s", timeToEvacuate));
+			System.out.print(metricSpeed);
+			System.out.println(" (" +  Messages.getString("SaffirSimpsonHurricaneWindScale." + scale.getCategory(), true) 
+			  + ")"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			final var distance = getQuantity(distKm, KILO(METRE));
+			System.out.println(String.format(Messages.getString("ThePerfectStorm.1"), distance)); //$NON-NLS-1$
+			
+			final var timeToEvacuate = distance.divide(metricSpeed).asType(Time.class);
+			SimpleUnitFormat.getInstance().label(timeToEvacuate.getUnit(), Messages.getString("ThePerfectStorm.2")); //$NON-NLS-1$
+			System.out.println(String.format(Messages.getString("ThePerfectStorm.3"), timeToEvacuate)); //$NON-NLS-1$
+		} else {
+			System.out.println(Messages.getString("ThePerfectStorm.4")); //$NON-NLS-1$
+		}
 	}
 }
