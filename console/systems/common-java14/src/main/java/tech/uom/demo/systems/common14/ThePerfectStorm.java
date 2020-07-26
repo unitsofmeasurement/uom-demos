@@ -109,6 +109,7 @@ public class ThePerfectStorm {
 			default -> STD;
 		};
 
+		// If the wind scale has a maximum we take that assuming the worst case, otherwise the minimum
 		final var metricSpeed = scale.hasMaximum() ?
 				scale.getMaximum().to(KILOMETRE_PER_HOUR) :
 				scale.getMinimum().to(KILOMETRE_PER_HOUR);
