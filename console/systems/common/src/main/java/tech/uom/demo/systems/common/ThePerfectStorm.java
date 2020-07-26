@@ -48,7 +48,7 @@ import tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale;
 
 /**
  * @author Werner Keil
- * @version 1.1
+ * @version 1.2
  * @see {@link SaffirSimpsonHurricaneWindScale}
  */
 public class ThePerfectStorm {
@@ -61,18 +61,20 @@ public class ThePerfectStorm {
 	private static final SaffirSimpsonHurricaneWindScale S1 = SaffirSimpsonHurricaneWindScale.of(
 			Quantities.getQuantity(74, MILE_PER_HOUR),
 			Quantities.getQuantity(95, MILE_PER_HOUR), ONE);
-	private static final SaffirSimpsonHurricaneWindScale s2 = SaffirSimpsonHurricaneWindScale.of(
+	private static final SaffirSimpsonHurricaneWindScale S2 = SaffirSimpsonHurricaneWindScale.of(
 			Quantities.getQuantity(96, MILE_PER_HOUR),
 			Quantities.getQuantity(110, MILE_PER_HOUR), TWO);
-	private static final SaffirSimpsonHurricaneWindScale s3 = SaffirSimpsonHurricaneWindScale.of(
+	private static final SaffirSimpsonHurricaneWindScale S3 = SaffirSimpsonHurricaneWindScale.of(
 			Quantities.getQuantity(111, MILE_PER_HOUR),
 			Quantities.getQuantity(129, MILE_PER_HOUR), THREE);
-	private static final SaffirSimpsonHurricaneWindScale s4 = SaffirSimpsonHurricaneWindScale.of(
+	private static final SaffirSimpsonHurricaneWindScale S4 = SaffirSimpsonHurricaneWindScale.of(
 			Quantities.getQuantity(130, MILE_PER_HOUR),
 			Quantities.getQuantity(156, MILE_PER_HOUR), FOUR);
-	private static final SaffirSimpsonHurricaneWindScale s5 = SaffirSimpsonHurricaneWindScale.of(
+	private static final SaffirSimpsonHurricaneWindScale S5 = SaffirSimpsonHurricaneWindScale.of(
 			Quantities.getQuantity(157, MILE_PER_HOUR), null, FIVE);
 
+	private static final double DEFAULT_DIST_KM = 500d;
+	
 	/**
 	 * @param args
 	 */
@@ -80,16 +82,20 @@ public class ThePerfectStorm {
 		System.out.println(STD);
 		System.out.println(STS);
 		System.out.println(S1);
-		System.out.println(s2);
-		System.out.println(s3);
-		System.out.println(s4);
-		System.out.println(s5);
+		System.out.println(S2);
+		System.out.println(S3);
+		System.out.println(S4);
+		System.out.println(S5);
 
 		int argument = -1;
 		if (args != null && args.length > 0) {
 			argument = Integer.valueOf(args[0]).intValue();
 		}
-
+		double distKm = DEFAULT_DIST_KM;
+		if (args != null && args.length > 1) {
+			distKm = Double.valueOf(args[1]).doubleValue();
+		}
+		
 		SaffirSimpsonHurricaneWindScale scale = null;
 		switch (argument) {
 			case 0:
@@ -99,16 +105,16 @@ public class ThePerfectStorm {
 				scale = S1;
 				break;
 			case 2:
-				scale = s2;
+				scale = S2;
 				break;
 			case 3:
-				scale = s3;
+				scale = S3;
 				break;
 			case 4:
-				scale = s4;
+				scale = S4;
 				break;
 			case 5:
-				scale = s5;
+				scale = S5;
 				break;
 			default:
 				scale = STD;
@@ -123,7 +129,7 @@ public class ThePerfectStorm {
 			System.out.print(metricSpeed);
 			System.out.println(" (" +  Messages.getString("SaffirSimpsonHurricaneWindScale." + scale.getCategory(), true) 
 			  + ")"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-			final Quantity<Length> distance = Quantities.getQuantity(500, KILO(METRE));
+			final Quantity<Length> distance = Quantities.getQuantity(distKm, KILO(METRE));
 			System.out.println(String.format(Messages.getString("ThePerfectStorm.1"), distance)); //$NON-NLS-1$
 			
 			final Quantity<Time> timeToEvacuate = distance.divide(metricSpeed).asType(Time.class);
