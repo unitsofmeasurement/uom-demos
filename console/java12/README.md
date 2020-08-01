@@ -6,7 +6,7 @@ The best way to run this demo is using Maven:
 mvn exec:java
 ```
 
-Note, you must **build** the demo with **Java 13** or above because **Java 12** (at least to 12.0.1) contains a **bug** which doesn't even recognize the correct multi-release-jar version. If you use Java 13 or above, this works. You can however execute the demo with Maven under Java 12. 
+Note, you must **build** the demo with **Java 13** or above because **Java 12** (at least to 12.0.1) contains a **bug** which doesn't recognize the correct multi-release-jar version. If you use Java 13 or above, this works. You can however execute the demo with Maven under Java 12. 
 
 This demo further shows a conflict between `module-info` and **multi-release-JAR** dependencies. 
 
