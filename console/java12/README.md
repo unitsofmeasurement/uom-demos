@@ -10,7 +10,8 @@ module tech.uom.demo.java12 {
     requires tech.uom.lib.common;
     requires tech.units.indriya;
 
-    exports tech.uom.demo.java12;
+    exports tech.uom.demo.java12.format;
+    exports tech.uom.demo.java12.function;
 }
 ```
 is declared, the build fails:

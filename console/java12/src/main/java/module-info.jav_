@@ -1,0 +1,8 @@
+module tech.uom.demo.java12 {
+    requires transitive java.measure;
+    requires tech.uom.lib.common;
+    requires tech.units.indriya;
+
+    exports tech.uom.demo.java12.format;
+    exports tech.uom.demo.java12.function;
+}
