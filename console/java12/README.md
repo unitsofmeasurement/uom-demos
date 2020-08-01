@@ -1,14 +1,21 @@
 # uom-console-demos-java12
 Java 12 Demos for JSR 385
 
-This shows a conflict between `module-info` and **multi-release-JAR** dependencies. 
+The best way to run this demo is using Maven:
+```
+mvn exec:java
+```
+
+Note, you must **build** the demo with **Java 13** or above because **Java 12** (at least to 12.0.1) contains a **bug** which doesn't even recognize the correct multi-release-jar version. If you use Java 13 or above, this works. You can however execute the demo with Maven under Java 12. 
+
+This demo further shows a conflict between `module-info` and **multi-release-JAR** dependencies. 
 
 If an explicit `module-info` like:
 ```
 module tech.uom.demo.java12 {
-    requires transitive java.measure;
-    requires tech.uom.lib.common;
-    requires tech.units.indriya;
+   requires transitive java.measure;
+   requires tech.uom.lib.common;
+   requires tech.units.indriya;
 
     exports tech.uom.demo.java12.format;
     exports tech.uom.demo.java12.function;
@@ -30,4 +37,4 @@ is declared, the build fails:
   location: class tech.units.indriya.format.NumberDelimiterQuantityFormat
 ```
 
-If the `module-info` is removed, it passes.
+If the `module-info` is removed or renamed (e.g. `module-info.jav_` in our demo code), it passes.
