@@ -37,4 +37,5 @@ is declared, the build fails:
   location: class tech.units.indriya.format.NumberDelimiterQuantityFormat
 ```
 
+So far it fails all the way up to **Java 14**. 
 If the `module-info` is removed or renamed (e.g. `module-info.jav_` in our demo code), it passes.
