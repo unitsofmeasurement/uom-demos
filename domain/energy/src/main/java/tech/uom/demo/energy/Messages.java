@@ -23,19 +23,14 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.systems.common;
+package tech.uom.demo.energy;
 
 import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
-/**
- * Local helper class for i18n and resource bundles
- * @author werner
- *
- */
 class Messages {
-	private static final String BUNDLE_NAME = "messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "tech.uom.demo.energy.messages"; //$NON-NLS-1$
 
 	private static ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
 
@@ -56,6 +51,7 @@ class Messages {
 				RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME, new Locale(language));
 			}
 		}
+
 		try {
 			return RESOURCE_BUNDLE.getString(key);
 		} catch (MissingResourceException e) {
@@ -64,7 +60,7 @@ class Messages {
 	}
 	
 	/**
-	 * Retrieves the string 
+	 * Loads the string 
 	 * @param key
 	 * @return
 	 */

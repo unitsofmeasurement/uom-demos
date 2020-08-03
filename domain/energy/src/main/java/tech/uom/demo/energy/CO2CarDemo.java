@@ -44,7 +44,7 @@ import tech.uom.lib.common.function.DoubleFactorSupplier;
  * @author Werner Keil
  * @author Andi Huber
  * @see <a href="https://spritrechner.biz/co2-rechner-fuer-autos.html">CO2-Rechner für Autos (DE)</a>
- * @version 1.7
+ * @version 1.8
  */
 public class CO2CarDemo {
 	
@@ -58,31 +58,33 @@ public class CO2CarDemo {
 
 	        final Unit<FuelConsumption> UNIT_LITRE_PER_100KM = LITRE.divide(UNIT_100_KM)
 	                .asType(FuelConsumption.class);
-	        SimpleUnitFormat.getInstance().label(UNIT_LITRE_PER_100KM, "l/100 km");
+	        SimpleUnitFormat.getInstance().label(UNIT_LITRE_PER_100KM, "l/100 km"); //$NON-NLS-1$
 	        
 	        final Unit<SpecificCarbonEmission> UNIT_GRAM_CO2_PER_LITRE = Units.GRAM.divide(LITRE)
                     .asType(SpecificCarbonEmission.class);
-	        SimpleUnitFormat.getInstance().label(UNIT_GRAM_CO2_PER_LITRE, "g CO2/l");
+	        SimpleUnitFormat.getInstance().label(UNIT_GRAM_CO2_PER_LITRE, Messages.getString("CO2CarDemo.0")); //$NON-NLS-1$
 	        
 	        // given
-	        print("Car: %s", args[0]);
+	        print(Messages.getString("CO2CarDemo.2"), args[0]); //$NON-NLS-1$
 	        FuelType fuelType = FuelType.valueOf(args[1]);
 	        
 	        Quantity<FuelConsumption> fuelConsumption = Quantities.getQuantity(Double.valueOf(args[2]), UNIT_LITRE_PER_100KM);
-	        print("FuelConsumption: %s", fuelConsumption);
+	        print(Messages.getString("CO2CarDemo.3"), fuelConsumption); //$NON-NLS-1$
 	        
 	        Quantity<Length> distance = Quantities.getQuantity(Double.valueOf(args[3]), KILO(METRE));
-	        print("Distance: %s", distance);
+	        print(Messages.getString("CO2CarDemo.4"), distance); //$NON-NLS-1$
 	        
 	        Quantity<SpecificCarbonEmission> specificCarbonEmission = 
 	                Quantities.getQuantity(fuelType.getFactor(), UNIT_GRAM_CO2_PER_LITRE);
-	        print("Specific Carbon Emission of %s: %s", fuelType, specificCarbonEmission);
+	        print(Messages.getString("CO2CarDemo.5"), 
+	        		Messages.getString("CO2CarDemo." + fuelType.name(), true), 
+	        		specificCarbonEmission); //$NON-NLS-1$ //$NON-NLS-2$
 	        
 	        Quantity<Mass> carbonEmissionTotal = specificCarbonEmission
 	                .multiply(distance)
 	                .multiply(fuelConsumption)
 	                .asType(Mass.class);
-	        print("Carbon Emission Total: %s", carbonEmissionTotal.to(KILOGRAM));
+	        print(Messages.getString("CO2CarDemo.6"), carbonEmissionTotal.to(KILOGRAM)); //$NON-NLS-1$
 		}
 	}
     
@@ -94,7 +96,7 @@ public class CO2CarDemo {
     }
 		
 	private static void usage() {
-		System.out.println("Usage: CO2CarDemo <Car> <FuelType> (PETROL/DIESEL) <Consumption per 100 km> <Distance in km>");
+		System.out.println(Messages.getString("CO2CarDemo.7")); //$NON-NLS-1$
 	}
 
 	enum FuelType implements DoubleFactorSupplier {
