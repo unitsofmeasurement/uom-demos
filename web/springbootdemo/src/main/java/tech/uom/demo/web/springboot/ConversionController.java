@@ -13,11 +13,11 @@ public class ConversionController {
 	/** 
 	 * Demo conversion, kilometers into millimeters
 	 * @param kilometers
-	 * @return
+	 * @return the ConversionOutput
 	 */
 	@GetMapping("/demo/{kilometers}")
 	public ConversionOutput doDemo(@PathVariable("kilometers") String kilometers)	{
-		return doTransformFromPrefix(ConversionInput.createForDemo(new Long(kilometers)));
+		return doTransformFromPrefix(ConversionInput.createForDemo(Long.valueOf(kilometers)));
 	}
 
 	
