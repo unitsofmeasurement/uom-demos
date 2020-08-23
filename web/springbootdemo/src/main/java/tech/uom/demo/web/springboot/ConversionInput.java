@@ -1,4 +1,4 @@
-package tec.uom.demo.web.springboot;
+package tech.uom.demo.web.springboot;
 
 public class ConversionInput {
 	private Number value;

@@ -1,4 +1,4 @@
-package tec.uom.demo.web.springboot;
+package tech.uom.demo.web.springboot;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

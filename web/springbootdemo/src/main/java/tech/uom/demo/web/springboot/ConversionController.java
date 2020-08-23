@@ -1,4 +1,4 @@
-package tec.uom.demo.web.springboot;
+package tech.uom.demo.web.springboot;
 
 import org.springframework.web.bind.annotation.*;
 import tech.units.indriya.unit.Units;

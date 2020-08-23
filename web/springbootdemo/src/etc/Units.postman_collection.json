@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "7fb7769d-527e-4f05-90e4-f5627e240f60",
+		"name": "Units",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UoM Spring Boot Demo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"prefix\": \"KILO\",\r\n        \"targetPrefix\": \"MILLI\",\r\n        \"targetUnit\": \"g\",\r\n        \"unit\": \"g\",\r\n        \"value\": 80\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7070/conversion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"conversion"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

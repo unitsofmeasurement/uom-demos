@@ -34,6 +34,9 @@ The response will look similar to the output below:
 ### Original reference
 The original repository that was created during our [Adopt-a-JSR Day](https://www.meetup.com/Utrecht-Java-User-Group/events/261238917/) can be found [here](https://github.com/NLxAROSA/uom-sb-demo).
 
+### Postman
+In [src/etc](src/etc) you find a Postman collection to test the service.
+
 ### Contributors
 [<img alt="NLxAROSA" src="https://avatars1.githubusercontent.com/u/2574658?s=200&v=4">](https://github.com/NLxAROSA) |[<img alt="koaben" src="https://avatars0.githubusercontent.com/u/964063?s=200&v=4">](https://github.com/koaben)
 |:---:|:---:|
