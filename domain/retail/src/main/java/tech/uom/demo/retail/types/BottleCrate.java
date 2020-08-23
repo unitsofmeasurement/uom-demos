@@ -1,6 +1,6 @@
 /*
  * Units of Measurement Demos
- * Copyright © 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ * Copyright © 2005-2020, Jean-Marie Dautelle, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -36,7 +36,7 @@ import javax.measure.Unit;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
-import tec.uom.domain.retail.Crate;
+import tech.uom.domain.retail.quantity.Crate;
 import tech.uom.lib.common.function.UnitSupplier;
 
 public class BottleCrate implements Supplier<Collection<Bottle>>, UnitSupplier<Crate> {

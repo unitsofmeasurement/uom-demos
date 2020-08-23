@@ -1,6 +1,6 @@
 /*
  * Units of Measurement Demos
- * Copyright © 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ * Copyright © 2005-2020, Jean-Marie Dautelle, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -39,7 +39,7 @@ import javax.measure.UnconvertibleException;
 import javax.measure.Unit;
 import javax.measure.UnitConverter;
 
-import tec.uom.domain.retail.Crate;
+import tech.uom.domain.retail.quantity.Crate;
 import tech.uom.lib.common.function.ValueSupplier;
 
 public enum Crates implements Unit<Crate>, ValueSupplier<Integer> {
