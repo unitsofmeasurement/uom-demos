@@ -21,7 +21,6 @@ import java.util.regex.Pattern;
 
 import tech.units.indriya.quantity.NumberQuantity;
 import tech.units.indriya.unit.Units;
-//import tec.uom.se.unit.US;
 
 import javax.measure.quantity.Temperature;
 import javax.measure.Unit;

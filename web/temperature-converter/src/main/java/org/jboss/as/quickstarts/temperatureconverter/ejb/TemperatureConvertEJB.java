@@ -19,7 +19,6 @@ package org.jboss.as.quickstarts.temperatureconverter.ejb;
 
 import static tech.units.indriya.unit.Units.CELSIUS;
 import static tech.units.indriya.unit.Units.KELVIN;
-//import static tec.uom.se.unit.US.FAHRENHEIT;
 
 import javax.ejb.Stateless;
 import javax.faces.application.FacesMessage;
