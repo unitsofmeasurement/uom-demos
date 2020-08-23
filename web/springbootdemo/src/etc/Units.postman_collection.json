@@ -36,7 +36,8 @@
 					"path": [
 						"conversion"
 					]
-				}
+				},
+				"description": "Units of Measurement Spring Boot Demo"
 			},
 			"response": []
 		}
