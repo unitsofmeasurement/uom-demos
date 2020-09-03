@@ -9,7 +9,9 @@
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE" value="true"/>
     <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="tech.uom.demo.energy.CO2CarDemo"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="uom-energy-demos"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="Porsche-Cayenne PETROL 14 231.5"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="uom-energy-demos"/>
     <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dlanguage=de"/>
 </launchConfiguration>
