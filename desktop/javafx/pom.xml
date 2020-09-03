@@ -10,15 +10,12 @@
 		<version>2.0.2-SNAPSHOT</version>
 	</parent>
 	<description>Demos of the Units of Measurement API using JavaFX</description>
-    <properties>
-    	<ucum.version>2.0</ucum.version>
-    </properties>
-    
+  
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>systems.uom</groupId>
-				<artifactId>systems-common</artifactId> <!-- TODO use common-java8 when available -->
+				<artifactId>systems-common</artifactId>
 				<version>${systems.version}</version>
 			</dependency>
 			<dependency>

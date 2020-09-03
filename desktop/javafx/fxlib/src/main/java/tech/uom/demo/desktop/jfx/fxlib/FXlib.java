@@ -41,7 +41,7 @@ public class FXlib extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/FXlibDocument.fxml"));
-        stage.setTitle("Unit API - JavaFX Converter Demo");
+        stage.setTitle("Units of Measurement - JavaFX Converter Demo");
         stage.getIcons().add(new Image("/images/flib.png"));
         var scene = new Scene(root);
         
