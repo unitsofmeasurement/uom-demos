@@ -66,7 +66,7 @@
           </execution>
         </executions>
         <configuration>
-          <mainClass>tech.uom.demo.java12.format.UnitFormatDemo</mainClass>
+          <mainClass>tech.uom.demo.java13.format.UnitFormatDemo</mainClass>
         </configuration>
       </plugin>
 		</plugins>

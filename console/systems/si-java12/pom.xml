@@ -6,13 +6,13 @@
 		<artifactId>uom-console-system-demos</artifactId>
 		<version>2.0.2-SNAPSHOT</version>
 	</parent>
-	<artifactId>uom-si-console-demos-java10</artifactId>
+	<artifactId>uom-si-console-demos-java12</artifactId>
 	
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
 	<properties>
-		<jdkVersion>10</jdkVersion>
+		<jdkVersion>12</jdkVersion>
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>

@@ -69,7 +69,7 @@
 	</build>
 	<modules>
 		<module>basic</module>
-		<module>java10</module>
+		<module>java12</module>
 		<module>java13</module>		
 		<module>java14</module>
         <!--  >module>valhalla</module currently disabled because it requires partial JDK 14+ preview -->

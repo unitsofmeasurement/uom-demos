@@ -13,14 +13,14 @@
 	
 	<modules>
 		<module>common</module>
-		<module>common-java10</module>
+		<module>common-java12</module>
 		<module>common-java14</module>
 		<module>si</module>
-		<module>si-java10</module>
+		<module>si-java12</module>
 		<module>unicode</module>
-		<module>unicode-java10</module>
+		<module>unicode-java12</module>
 		<module>ucum</module>
-		<module>ucum-java10</module>
+		<module>ucum-java12</module>
 		<module>historical</module>
 		<module>jscience</module>
 	</modules>
