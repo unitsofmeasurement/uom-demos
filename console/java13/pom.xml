@@ -8,15 +8,15 @@
 		<artifactId>uom-console-demos</artifactId>
 		<version>2.0.2-SNAPSHOT</version>
 	</parent>
-	<name>Basic UoM Console Demos for Java 12</name>
-	<description>Java 12 Units of Measurement Console Demos</description>
-	<artifactId>uom-console-demos-java12</artifactId>
+	<name>Basic UoM Console Demos for Java 13</name>
+	<description>Java 13 Units of Measurement Console Demos</description>
+	<artifactId>uom-console-demos-java13</artifactId>
 
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
 	<properties>
-		<jdkVersion>12</jdkVersion>
+		<jdkVersion>13</jdkVersion>
 		<sourceEncoding>UTF-8</sourceEncoding>
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
