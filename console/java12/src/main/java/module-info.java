@@ -29,9 +29,9 @@ module tech.uom.demo.java10 {
     requires tech.uom.lib.common;
     requires jdk.jshell;
 
-    exports tech.uom.demo.java10;
-    exports tech.uom.demo.java10.format;
-    exports tech.uom.demo.java10.jshell;
-    exports tech.uom.demo.java10.spi;
-    exports tech.uom.demo.java10.planet;
+    exports tech.uom.demo.java12;
+    exports tech.uom.demo.java12.format;
+    exports tech.uom.demo.java12.jshell;
+    exports tech.uom.demo.java12.spi;
+    exports tech.uom.demo.java12.planet;
 }
