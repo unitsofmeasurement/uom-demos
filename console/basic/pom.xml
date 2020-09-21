@@ -9,14 +9,14 @@
 	<name>Basic UoM Console Demos</name>
 	<artifactId>uom-console-demos-basic</artifactId>
 	<dependencies>
-				<dependency>
-				<groupId>tech.units</groupId>
-				<artifactId>indriya</artifactId>
-			</dependency>
-			<dependency>
-				<groupId>tech.uom.lib</groupId>
-				<artifactId>uom-lib-common</artifactId>
-			</dependency>
+		<dependency>
+			<groupId>tech.units</groupId>
+			<artifactId>indriya</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>tech.uom.lib</groupId>
+			<artifactId>uom-lib-common</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
