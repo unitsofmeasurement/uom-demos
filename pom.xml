@@ -11,8 +11,7 @@
 	<artifactId>uom-demos</artifactId>
 	<packaging>pom</packaging>
 	<name>Units of Measurement Demos</name>
-	<version>2.0.2-SNAPSHOT</version>
-	<url>http://github.com/unitsofmeasurement/uom-demos</url>
+	<url>https://unitsofmeasurement.github.io/uom-demos/</url>
 	<organization>
 		<name>Units of Measurement project</name>
 		<url>http://unitsofmeasurement.github.io</url>
@@ -36,7 +35,7 @@
 		<jsr.version>2.0</jsr.version>
 		<ri.version>2.0.4</ri.version>
 		<lib.version>2.0.1</lib.version>
-		<si.version>2.0.2-SNAPSHOT</si.version>
+		<si.version>2.0.1</si.version>
 		<systems.version>2.0.2</systems.version>
 	</properties>
 

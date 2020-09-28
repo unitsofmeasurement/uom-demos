@@ -1,7 +1,7 @@
 === Example Code
 Now you are ready to run a first "Hello World" project.
 
-. We called it +HelloEdison+ in the package +tec.uom.demo.edison.hello+
+. We called it +HelloEdison+ in the package +tech.uom.demo.edison.hello+
 . The following code: 
 +
 [source,java]

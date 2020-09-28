@@ -9,6 +9,6 @@
 <listAttribute key="org.eclipse.debug.ui.favoriteGroups">
 <listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="tec.uom.demo.energy.se.HeatingDemo"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="tech.uom.demo.energy.se.HeatingDemo"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="energy-se"/>
 </launchConfiguration>
