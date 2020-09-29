@@ -90,7 +90,7 @@ public enum Crates implements Unit<Crate>, ValueSupplier<Integer> {
 
     @Override
     public boolean isCompatible(Unit<?> that) {
-	return this.equals(that);
+    	return this.equals(that);
     }
 
     @Override
@@ -196,5 +196,10 @@ public enum Crates implements Unit<Crate>, ValueSupplier<Integer> {
 	public Unit<Crate> prefix(Prefix prefix) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public boolean isEquivalentTo(Unit<Crate> that) {
+		return this.equals(that);
 	}
 }

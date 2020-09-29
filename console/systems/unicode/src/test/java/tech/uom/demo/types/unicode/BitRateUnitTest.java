@@ -1,20 +1,16 @@
-/**
- *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+/*
+ *  Units of Measurement Console Demos
+ *  Copyright (c) 2005-2020, Werner Keil and others.
  *
  * All rights reserved.
  *
- * Redistribution and use in source and binary forms, with or without modification,
- * are permitted provided that the following conditions are met:
+ * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
  *
- * 1. Redistributions of source code must retain the above copyright notice,
- *    this list of conditions and the following disclaimer.
+ * 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
  *
- * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
- *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363 nor the names of its contributors may be used to endorse or promote products
- *    derived from this software without specific prior written permission.
+ * 3. Neither the name of JSR-385, Unit-API nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -29,16 +25,16 @@
  */
 package tech.uom.demo.types.unicode;
 
-import org.hamcrest.Matchers;
-import org.junit.Test;
+import static org.hamcrest.MatcherAssert.assertThat;
+
+import org.hamcrest.Matchers; 
+import org.junit.jupiter.api.Test;
 
 import tech.uom.demo.systems.unicode.types.BitRateUnit;
 
-import static org.junit.Assert.assertThat;
-
 /**
  * @author Werner Keil
- * Date: 7/23/11
+ * Date: 9/29/20
  * Time: 4:50 PM
  */
 public class BitRateUnitTest {

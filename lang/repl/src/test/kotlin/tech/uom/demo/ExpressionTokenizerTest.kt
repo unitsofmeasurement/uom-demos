@@ -1,16 +1,16 @@
 package tech.uom.demo
 
-import org.junit.Assert
-import org.junit.Test
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
 
 class ExpressionTokenizerTest {
 
 	@Test
 	fun `can tokenize the input`() {
 		val tokekenizedInput = ExpressionTokerizer().tokenize("2 m");
-		Assert.assertEquals("Expected 2 tokens", tokekenizedInput.size, 2)
-		Assert.assertEquals("Expected 2 as value", tokekenizedInput[0], Token("2"))
-		Assert.assertEquals("Expected meter as unit", tokekenizedInput[1], Token("m"))
+		Assertions.assertEquals(tokekenizedInput.size, 2, "Expected 2 tokens")
+		Assertions.assertEquals(tokekenizedInput[0], Token("2"), "Expected 2 as value")
+		Assertions.assertEquals(tokekenizedInput[1], Token("m"), "Expected meter as unit")
 	}
 
 

@@ -24,8 +24,9 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 module tech.uom.demo.systems.common {
-    requires transitive java.measure;
+    requires transitive java.measure;    
     requires transitive si.uom.quantity;
+    requires transitive si.uom.units;
     requires transitive tech.units.indriya;
     requires transitive systems.uom.quantity;
     requires systems.uom.common;

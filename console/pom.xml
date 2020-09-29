@@ -9,7 +9,7 @@
 	<parent>
 		<groupId>tech.uom.demo</groupId>
 		<artifactId>uom-demos</artifactId>
-		<version>2.0.2</version>
+		<version>2.1-SNAPSHOT</version>
 	</parent>
 
 	<build>
@@ -69,7 +69,7 @@
 	</build>
 	<modules>
 		<module>basic</module>
-		<module>java12</module>
+		<module>java11</module>
 		<module>java13</module>		
 		<module>java14</module>
         <!--  >module>valhalla</module currently disabled because it requires partial JDK 14+ preview -->

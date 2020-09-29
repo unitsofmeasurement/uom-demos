@@ -2,15 +2,16 @@ package tech.uom.demo
 
 import org.hamcrest.core.Is.`is`
 import org.hamcrest.core.IsInstanceOf.instanceOf
-import org.junit.Assert.assertThat
-import org.junit.Assert.fail
-import org.junit.Ignore
-import org.junit.Test
+import org.hamcrest.MatcherAssert.assertThat
+
+import org.junit.jupiter.api.Assertions.fail
+import org.junit.jupiter.api.Disabled
+import org.junit.jupiter.api.Test
 
 class ExpressionParserTest {
 
     @Test
-    @Ignore
+    @Disabled
     fun `can parse quantity`() {
         val tokens = listOf(
                 Token("3"),

@@ -2,9 +2,9 @@ package tech.uom.demo
 
 import org.hamcrest.core.Is.`is`
 import org.hamcrest.core.IsNull.nullValue
-import org.junit.Assert.assertThat
-import org.junit.Ignore
-import org.junit.Test
+import org.hamcrest.MatcherAssert.assertThat
+import org.junit.jupiter.api.Disabled
+import org.junit.jupiter.api.Test
 import tech.units.indriya.unit.Units
 import javax.measure.Quantity
 
@@ -44,7 +44,7 @@ class OperationEvaluatorTest {
 
     }
 
-    @Ignore("Rational numbers are not properly implemented it seems")
+    @Disabled("Rational numbers are not properly implemented it seems")
     @Test
     fun `can divide`() {
         val inputTree = Operation(

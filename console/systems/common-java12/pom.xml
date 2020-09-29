@@ -1,10 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>tech.uom.demo.console.systems</groupId>
 		<artifactId>uom-console-system-demos</artifactId>
-		<version>2.0.2</version>
+		<version>2.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>uom-console-demos-common-java12</artifactId>
 
@@ -43,14 +44,15 @@
 			<groupId>tech.uom.lib</groupId>
 			<artifactId>uom-lib-common</artifactId>
 		</dependency>
+		
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
-		<build>
+
+	<build>
 		<plugins>
 			<!-- ======================================================= -->
 			<!-- Compilation -->
@@ -61,15 +63,8 @@
 				<configuration>
 					<release>${jdkversion}</release>
 				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>org.ow2.asm</groupId>
-						<artifactId>asm</artifactId>
-						<version>6.1.1</version> <!-- Use newer version of ASM -->
-					</dependency>
-				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
-		<name>UoM Common Console Demos for Java 10</name>
+	<name>UoM Common Console Demos for Java 12</name>
 </project>

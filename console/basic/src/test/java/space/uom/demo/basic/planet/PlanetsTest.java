@@ -15,12 +15,12 @@
  */
 package space.uom.demo.basic.planet;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import tech.uom.demo.basic.planet.Celestial;
 import tech.uom.demo.basic.planet.DwarfPlanet;

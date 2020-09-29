@@ -15,10 +15,10 @@
  */
 package tech.uom.demo.health;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 import static tech.uom.domain.health.unit.Health.BPM;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import tech.uom.domain.health.types.HeartRateAmount;
 
