@@ -26,7 +26,7 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>tech.uom</groupId>
+				<groupId>tech.uom.lib</groupId>
 				<artifactId>uom-lib</artifactId>
 				<version>${lib.version}</version>
 			</dependency>
