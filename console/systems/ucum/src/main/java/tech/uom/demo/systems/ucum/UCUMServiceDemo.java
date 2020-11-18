@@ -25,12 +25,14 @@
  */
 package tech.uom.demo.systems.ucum;
 
+import static javax.measure.spi.FormatService.FormatType.UNIT_FORMAT;
+
 import java.util.List;
 
 import javax.measure.Unit;
 import javax.measure.format.UnitFormat;
 import javax.measure.spi.ServiceProvider;
-import javax.measure.spi.UnitFormatService;
+import javax.measure.spi.FormatService;
 
 public class UCUMServiceDemo {
 
@@ -42,7 +44,7 @@ public class UCUMServiceDemo {
         System.out.println();
         System.out.println(ServiceProvider.current());
         
-        for (String formatName : ServiceProvider.current().getFormatService().getAvailableFormatNames()) {
+        for (String formatName : ServiceProvider.current().getFormatService().getAvailableFormatNames(UNIT_FORMAT)) {
             System.out.println(formatName);
         }
         
@@ -67,7 +69,7 @@ public class UCUMServiceDemo {
         
         List<ServiceProvider> providers = ServiceProvider.available();
         ServiceProvider ucumProvider = providers.get(0);
-        UnitFormatService ucumFormatService = ucumProvider.getFormatService();
+        FormatService ucumFormatService = ucumProvider.getFormatService();
         UnitFormat ucumFormatter = ucumFormatService.getUnitFormat("CS");
         System.out.println("m3 dimension =" + ucumFormatter.parse("m3").getDimension());        
         System.out.println("ft3 (wrong) dimension =" + ucumFormatter.parse("ft3").getDimension());

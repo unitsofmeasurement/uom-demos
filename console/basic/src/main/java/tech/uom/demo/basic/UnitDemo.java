@@ -33,6 +33,7 @@ import javax.measure.quantity.Mass;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Volume;
 
+import tech.units.indriya.AbstractUnit;
 import tech.units.indriya.quantity.Quantities;
 import javax.measure.MetricPrefix;
 import javax.measure.Quantity;
@@ -55,6 +56,7 @@ public class UnitDemo {
 //		System.out.println(UCUM.POUND.getName());
 		
 		System.out.println(Units.KILOGRAM);
+		//System.out.println(Units.KILOGRAM.isEquivalentTo(AbstractUnit.ONE)); doesn't compile
 		System.out.println(Units.KILOGRAM.getSymbol());
 		System.out.println(Units.KILOGRAM.getName());
 		
