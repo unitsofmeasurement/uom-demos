@@ -34,6 +34,11 @@ import javax.measure.format.UnitFormat;
 import javax.measure.spi.ServiceProvider;
 import javax.measure.spi.FormatService;
 
+/**
+ * UCUM Service Demo
+ * @author Werner
+ * @version 1.0
+ */
 public class UCUMServiceDemo {
 
     public static void main(String[] args) {
@@ -49,14 +54,17 @@ public class UCUMServiceDemo {
         }
         
     	UnitFormat unitFormat = ServiceProvider.current().getFormatService().getUnitFormat("UCUM");
-    	System.out.println(unitFormat);
+    	System.out.println("Format: " + unitFormat);
     	
     	UnitFormat cs = ServiceProvider.current().getFormatService().getUnitFormat("CS");
-    	System.out.println(cs);
+    	System.out.println("Format 2: " + cs);
     	Unit<?> unit = cs.parse("m/s");
     	System.out.println(unit);
     	
-        //System.out.println("Square m (EBNF): " + ebnf.parse("m^2"));
+    	unitFormat = ServiceProvider.current().getFormatService().getUnitFormat("UCUM", "CI");
+    	System.out.println("Format: " + unitFormat);
+    	
+    	//System.out.println("Square m (EBNF): " + ebnf.parse("m^2"));
     	ServiceProvider defaultProvider = ServiceProvider.current();
         for (ServiceProvider provider : ServiceProvider.available()) {
             if ("DefaultServiceProvider".equals(provider.getClass().getSimpleName())) {
