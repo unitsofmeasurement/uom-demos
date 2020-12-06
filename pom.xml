@@ -32,7 +32,8 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>2.1</ri.version>
+		<jsr.version>2.1.1</jsr.version>
+		<ri.version>2.1.1</ri.version>
 		<lib.version>2.1</lib.version>
 		<si.version>2.1-SNAPSHOT</si.version>
 		<systems.version>2.1-SNAPSHOT</systems.version>
