@@ -54,21 +54,21 @@
 					<target>${jdkVersion}</target>
 				</configuration>
 			</plugin>
-	   <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>3.0.0</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>java</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <mainClass>tech.uom.demo.java13.format.UnitFormatDemo</mainClass>
-        </configuration>
-      </plugin>
+		   <plugin>
+	        <groupId>org.codehaus.mojo</groupId>
+	        <artifactId>exec-maven-plugin</artifactId>
+	        <version>3.0.0</version>
+	        <executions>
+	          <execution>
+	            <goals>
+	              <goal>java</goal>
+	            </goals>
+	          </execution>
+	        </executions>
+	        <configuration>
+	          <mainClass>tech.uom.demo.java13.format.UnitFormatDemo</mainClass>
+	        </configuration>
+	      </plugin>
 		</plugins>
 	</build>
 	

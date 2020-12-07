@@ -25,14 +25,18 @@
  */
 package tech.uom.demo.systems.ucum;
 
+import static javax.measure.MetricPrefix.KILO;
 import static systems.uom.ucum.UCUM.*;
 
+import javax.measure.quantity.Force;
 import javax.measure.quantity.Pressure;
 import javax.measure.spi.ServiceProvider;
 
+import systems.uom.ucum.UCUM;
 import tech.units.indriya.format.SimpleUnitFormat;
 import tech.units.indriya.format.EBNFUnitFormat;
 import javax.measure.MetricPrefix;
+import javax.measure.Unit;
 
 import tech.units.indriya.unit.Units;
 
@@ -104,5 +108,13 @@ public class UCUMFormatDemo {
 		System.out.println("Formating (CI): " + ucumFormatCI.format(yd));
 		System.out.println("Formating (Print): " + ucumFormatCS.format(yd));
 		System.out.println("Formating: " + ucumFormatPrint.format(yd));
+		
+    	final var newton = KILO(UCUM.GRAM).multiply(UCUM.METER).divide(UCUM.SECOND).divide(UCUM.SECOND).asType(Force.class);    	
+    	System.out.println("Formating (Print): " + ucumFormatCS.format(newton));
+    	System.out.println("Is equivalent to NEWTON: " +  Units.NEWTON.isEquivalentTo(newton));
+    	
+    	final var u  = UCUM.METER.divide(UCUM.SECOND).divide(UCUM.SECOND);
+    	System.out.println(String.format("Formating (%s): %s", 
+    			ucumFormatCS.toString(), ucumFormatCS.format(u)));
     }
 }
