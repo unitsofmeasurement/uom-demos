@@ -17,6 +17,7 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+		<runClass>tech.uom.demo.systems.common.CommonDemo</runClass>
 	</properties>
 
 	<dependencies>
@@ -64,6 +65,22 @@
 					<release>${jdkversion}</release>
 				</configuration>
 			</plugin>
+			
+			<plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+	            <version>3.0.0</version>
+	            <executions>
+	              <execution>
+	                <goals>
+	                  <goal>java</goal>
+	                </goals>
+	              </execution>
+	            </executions>
+	            <configuration>
+	              <mainClass>${runClass}</mainClass>
+	            </configuration>
+            </plugin>
 		</plugins>
 	</build>
 	<name>UoM Common Console Demos for Java 12</name>

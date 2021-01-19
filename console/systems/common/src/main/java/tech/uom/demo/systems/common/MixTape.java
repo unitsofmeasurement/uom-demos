@@ -32,7 +32,7 @@ import tech.units.indriya.quantity.MixedQuantity;
 
 import static systems.uom.common.USCustomary.*;
 
-public class MixDemo {
+public class MixTape {
 	public static void main(String[] args) {
 		MixedRadix<Length> mixedRadix = MixedRadix.of(FOOT).mix(INCH);
 		System.out.println(mixedRadix);
