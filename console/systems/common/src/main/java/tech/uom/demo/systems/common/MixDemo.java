@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2019, Jean-Marie Dautelle, Werner Keil and others.
+ *  Copyright (c) 2005-2021, Jean-Marie Dautelle, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -28,15 +28,16 @@ package tech.uom.demo.systems.common;
 import javax.measure.quantity.*;
 
 import tech.units.indriya.function.MixedRadix;
-import tech.units.indriya.quantity.CompoundQuantity;
+import tech.units.indriya.quantity.MixedQuantity;
+
 import static systems.uom.common.USCustomary.*;
 
-public class CompoundDemo {
+public class MixDemo {
 	public static void main(String[] args) {
 		MixedRadix<Length> mixedRadix = MixedRadix.of(FOOT).mix(INCH);
 		System.out.println(mixedRadix);
-		CompoundQuantity<Length> compoundLength = 
-				mixedRadix.createCompoundQuantity(6, 2);
-		System.out.println(compoundLength);
+		MixedQuantity<Length> mixedLength = 
+				mixedRadix.createMixedQuantity(6, 2);
+		System.out.println(mixedLength);
 	}
 }
