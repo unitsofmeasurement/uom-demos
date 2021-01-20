@@ -22,6 +22,7 @@
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<project.build.sourceEncoding>${sourceEncoding}</project.build.sourceEncoding>
+		<runClass>tech.uom.demo.java13.format.UnitFormatDemo</runClass>
 	</properties>
 
 	<dependencies>
@@ -66,7 +67,7 @@
 	          </execution>
 	        </executions>
 	        <configuration>
-	          <mainClass>tech.uom.demo.java13.format.UnitFormatDemo</mainClass>
+	          <mainClass>${runClass}</mainClass>
 	        </configuration>
 	      </plugin>
 		</plugins>
