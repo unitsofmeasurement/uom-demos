@@ -13,8 +13,9 @@
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
  *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the names of JSR-363, Units of Measurement nor the names of its contributors may be used to endorse or promote products
- *    derived from this software without specific prior written permission.
+ * 3. Neither the name of JSR-385, Unit-API nor the names of their contributors may be used to endorse 
+ *    or promote products derived from this software without specific prior written permission.
+ *
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -44,24 +45,24 @@ public class Beerfest {
 
 	public static void main(String[] args) {
 		System.out.println("Ozapft is!");
-		Quantity<Volume> v = Quantities.getQuantity(1, Units.LITRE);
-		System.out.println(v);
+		var beer = Quantities.getQuantity(1, Units.LITRE);
+		System.out.println(beer);
 		
 		System.out.println();
 		System.out.println("Very British");
-		System.out.println(v.to(Imperial.PINT)); 
+		System.out.println(beer.to(Imperial.PINT)); 
 		
 		System.out.println();
 		System.out.println("Für die Amis");
-		System.out.println(v.to(USCustomary.FLUID_OUNCE)); 
-		System.out.println(v.to(USCustomary.PINT));
+		System.out.println(beer.to(USCustomary.FLUID_OUNCE)); 
+		System.out.println(beer.to(USCustomary.PINT));
 		
 		System.out.println();
 		System.out.println("Oktoberfest 1900");		
-		v = Quantities.getQuantity(1, MASS_HISTORIC);
-		System.out.println(v);
-		System.out.println(v.to(SCHOPPEN_BAYERN));
-		System.out.println(v.to(Units.LITRE));
+		beer = Quantities.getQuantity(1, MASS_HISTORIC);
+		System.out.println(beer);
+		System.out.println(beer.to(SCHOPPEN_BAYERN));
+		System.out.println(beer.to(Units.LITRE));
 	}
 
 }

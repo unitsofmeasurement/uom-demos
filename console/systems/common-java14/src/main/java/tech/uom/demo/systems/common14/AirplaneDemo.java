@@ -52,7 +52,7 @@ public class AirplaneDemo {
 
     public static void main(String[] args) {
         final String model;
-        final double dist;
+        double dist;
         if (args != null && args.length > 0) {
             dist = Double.parseDouble(args[0]);
             if (args.length > 1) {
@@ -66,14 +66,14 @@ public class AirplaneDemo {
         }
 
         // Quantity<Length> distance = Quantities.getQuantity(10427d, KILO(METRE));
-        Quantity<Length> distance = Quantities.getQuantity(dist, MILE);
-        Airplane airplane = new Airplane(model);
-        Quantity<Speed> airplaneSpeed = airplane.getSpeed();
+        var distance = Quantities.getQuantity(dist, MILE);
+        var airplane = new Airplane(model);
+        var airplaneSpeed = airplane.getSpeed();
         System.out.println(airplane + " flying " + airplaneSpeed);
         System.out.println(airplane + " flying " + airplaneSpeed.to(MILE_PER_HOUR));
-        Quantity<Time> timeToDest = distance.divide(airplaneSpeed).asType(Time.class);
+        var timeToDest = distance.divide(airplaneSpeed).asType(Time.class);
 
-        TemporalQuantity tuqToDest = TimeQuantities.toTemporalSeconds(timeToDest);
+        var tuqToDest = TimeQuantities.toTemporalSeconds(timeToDest);
         System.out.println("TTD: " + timeToDest.to(HOUR));
         System.out.println("TTD (Duration): " + Duration.from(tuqToDest.getTemporalAmount()));
     }
@@ -86,17 +86,14 @@ public class AirplaneDemo {
         }
 
         final Quantity<Speed> getSpeed() {
-            switch (id) {
-                case "A380":
-                    return Quantities.getQuantity(945, KILOMETRE_PER_HOUR);
-                // Airbus A 380 Cruise speed
-                case "B777":
-                    return Quantities.getQuantity(892, KILOMETRE_PER_HOUR);
-                // Boeing 777 Cruise speed, see
-                // https://en.wikipedia.org/wiki/Boeing_777#Specifications
-                default:
-                    return AbstractQuantity.NONE.asType(Speed.class);
-            }
+        	return switch (id) {        	
+                case "A380" ->  Quantities.getQuantity(945, KILOMETRE_PER_HOUR); // Airbus A 380 Cruise speed
+                case "B777" -> Quantities.getQuantity(892, KILOMETRE_PER_HOUR);
+                // Boeing 777 Cruise speed, see https://en.wikipedia.org/wiki/Boeing_777#Specifications
+                case "B787" -> Quantities.getQuantity(903, KILOMETRE_PER_HOUR);
+                // Boeing 787 Cruise speed, see https://en.wikipedia.org/wiki/Boeing_787_Dreamliner#Specifications
+                default -> AbstractQuantity.NONE.asType(Speed.class);
+            };
         }
 
         @Override

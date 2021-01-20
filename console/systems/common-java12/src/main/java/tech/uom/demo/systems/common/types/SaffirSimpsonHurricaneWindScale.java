@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2019, Werner Keil and others.
+ *  Copyright (c) 2005-2021, Werner Keil and others.
  *
  * All rights reserved.
  *
