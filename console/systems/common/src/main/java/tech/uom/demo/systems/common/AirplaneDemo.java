@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2019, Werner Keil and others.
+ *  Copyright (c) 2005-2021, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -72,14 +72,14 @@ public class AirplaneDemo {
     }
 
     private static class Airplane {
-        private final String id;
+        private final String model;
 
-        private Airplane(String id) {
-            this.id = id;
+        private Airplane(String m) {
+            this.model = m;
         }
 
         final Quantity<Speed> getSpeed() {
-            switch (id) {
+            switch (model) {
                 case "A380":
                     return Quantities.getQuantity(945, KILOMETRE_PER_HOUR);
                 // Airbus A 380 Cruise speed
@@ -94,7 +94,7 @@ public class AirplaneDemo {
 
         @Override
         public String toString() {
-            return "Airplane [" + id + "]";
+            return "Airplane [" + model + "]";
         }
     }
 }

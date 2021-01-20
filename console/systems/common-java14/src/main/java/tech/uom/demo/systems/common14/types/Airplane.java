@@ -23,59 +23,32 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.systems.common14;
+package tech.uom.demo.systems.common14.types;
 
-import static systems.uom.common.USCustomary.MILE_PER_HOUR;
-import static systems.uom.common.USCustomary.MILE;
-import static tech.units.indriya.unit.Units.HOUR;
 import static tech.units.indriya.unit.Units.KILOMETRE_PER_HOUR;
 
-import java.time.Duration;
-
 import javax.measure.Quantity;
-import javax.measure.quantity.Length;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
 
 import tech.units.indriya.AbstractQuantity;
 import tech.units.indriya.quantity.Quantities;
-import tech.units.indriya.quantity.time.TemporalQuantity;
-import tech.units.indriya.quantity.time.TimeQuantities;
-
-import tech.uom.demo.systems.common14.types.Airplane;
 
 /**
- * This is a simple example for an In-Flight Infotainment (IFI) system showing the plane's cruising speed or time to destination.
- * 
+ * This is a demonstrator for the Java 14 {@link Record} preview and the new <code>switch</code> expression.
  * @author Werner Keil
- * @see <a href="https://en.wikipedia.org/wiki/In-flight_entertainment">Wikipedia: In-flight entertainment</a>
+ *
  */
-public class AirplaneDemo {
+public record Airplane( String model) {
 
-    public static void main(String[] args) {
-        final String model;
-        double dist;
-        if (args != null && args.length > 0) {
-            dist = Double.parseDouble(args[0]);
-            if (args.length > 1) {
-                model = args[1];
-            } else {
-                model = "A380";
-            }
-        } else { // default fallback
-            dist = 6089d;
-            model = "A380";
-        }
-
-        var distance = Quantities.getQuantity(dist, MILE);
-        var airplane = new Airplane(model);
-        var airplaneSpeed = airplane.getSpeed();
-        System.out.println(airplane + " flying " + airplaneSpeed);
-        System.out.println(airplane + " flying " + airplaneSpeed.to(MILE_PER_HOUR));
-        var timeToDest = distance.divide(airplaneSpeed).asType(Time.class);
-
-        var tuqToDest = TimeQuantities.toTemporalSeconds(timeToDest);
-        System.out.println("TTD: " + timeToDest.to(HOUR));
-        System.out.println("TTD (Duration): " + Duration.from(tuqToDest.getTemporalAmount()));
+    public final Quantity<Speed> getSpeed() {
+    	return switch (model) {        	
+            case "A380" ->  Quantities.getQuantity(945, KILOMETRE_PER_HOUR); // Airbus A 380 Cruise speed
+            case "B777" -> Quantities.getQuantity(892, KILOMETRE_PER_HOUR);
+            // Boeing 777 Cruise speed, see https://en.wikipedia.org/wiki/Boeing_777#Specifications
+            case "B787" -> Quantities.getQuantity(903, KILOMETRE_PER_HOUR);
+            // Boeing 787 Cruise speed, see https://en.wikipedia.org/wiki/Boeing_787_Dreamliner#Specifications
+            default -> AbstractQuantity.NONE.asType(Speed.class);
+        };
     }
 }
