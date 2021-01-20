@@ -66,7 +66,7 @@ public class AirplaneDemo {
             dist = 6089d;
             model = "A380";
         }
-
+        // TODO make distance parseable as a quantity like "6089 mi" or similar
         var distance = Quantities.getQuantity(dist, MILE);
         var airplane = new Airplane(model);
         var airplaneSpeed = airplane.getSpeed();
