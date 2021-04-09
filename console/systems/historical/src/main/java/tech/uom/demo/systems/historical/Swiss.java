@@ -25,7 +25,6 @@
  */
 package tech.uom.demo.systems.historical;
 
-import static javax.measure.MetricPrefix.*;
 import static tech.units.indriya.unit.Units.*;
 
 import javax.measure.Unit;
@@ -37,31 +36,31 @@ import tech.units.indriya.format.SimpleUnitFormat;
 
 /**
  * <p>
- * This class contains units from the Historical Hungarian system.
+ * This class contains units from the Historical Swiss units of measurement system.
  * </p>
  * <p>
  * 
  * @noextend This class is not intended to be extended by clients.
  * 
  * @author <a href="mailto:werner@uom.technology">Werner Keil</a>
- * @version 0.5, $Date: 2021-04-09 $
- * @see <a href="http://en.wikipedia.org/wiki/Hungarian_units_of_measurement">Wikipedia: Hungarian units of measurement</a>
+ * @version 0.1, $Date: 2021-04-09 $
+ * @see <a href="https://en.wikipedia.org/wiki/Swiss_units_of_measurement">Wikipedia: Swiss units of measurement</a>
  */
-public final class Hungarian extends AbstractSystemOfUnits {
+public final class Swiss extends AbstractSystemOfUnits {
     /**
      * Default constructor (prevents this class from being instantiated).
      */
-    private Hungarian() {
+    private Swiss() {
     }
 
     /**
-     * The singleton instance of {@code Hungarian}.
+     * The singleton instance of {@code Swiss}.
      */
-    private static final Hungarian INSTANCE = new Hungarian();
+    private static final Swiss INSTANCE = new Swiss();
 
     @Override
     public String getName() {
-        return "Hungarian units of measurement";
+        return "Swiss units of measurement";
     }
 
     /**
@@ -77,20 +76,33 @@ public final class Hungarian extends AbstractSystemOfUnits {
     }
 
     /**
-     * A unit of length equal to <code>8.3536 km</code> (standard name <code>mtf</code>).
+     * A unit of length equal to <code>0.3 m</code> (standard name <code>pied</code>).
+     * One pied (1 fuss) was equal to 0.30 m, according to the fixed value defined during the transition to the metric system.
      */
-    public static final Unit<Length> MERTFOELD = addUnit(KILO(METRE).multiply(8.3536));
-
+    public static final Unit<Length> PIED = addUnit(METRE.multiply(0.3));
+    
     /**
-     * A unit of volume equal to <code>54.30 l</code> (standard name <code>e</code>). While a bit larger, the eimer would roughly be comparable to a
-     * "pitcher" of beer or a similar drink.
+     * A unit of length equal to <code>1/144 pied</code> (standard name <code>ligne</code>).
      */
-    public static final Unit<Volume> EIMER = addUnit(LITRE.multiply(54.30));
+    public static final Unit<Length> LIGNE = addUnit(PIED.divide(144));
+    
+    /**
+     * A unit of volume equal to <code>1.5 l</code> (standard name <code>pot</code>). 
+     * 1 pot = 1.5 l (1.585 quarts).[3] Pot was the bulk of 3 livres weight of pure water at the temperature of 4° Celsius. Pot was equal to 1/18 pied3 and was subdivided into 1/2, 1/4 and 1/8
+     */
+    public static final Unit<Volume> POT = addUnit(LITRE.multiply(1.5));
+    
+    /**
+     * A unit of volume equal to <code>25 pot</code> (standard name <code>sct</code>).
+     */
+    public static final Unit<Volume> SCTIER = addUnit(POT.multiply(25));
 
     // //////////////////////////////////////////////////////////////////////////
-    // Label adjustments for Hungarian system
+    // Label adjustments for unit system
     static {
-        SimpleUnitFormat.getInstance().label(MERTFOELD, "mtf");
-        SimpleUnitFormat.getInstance().label(EIMER, "e");
-    }
+        SimpleUnitFormat.getInstance().label(PIED, "pied");
+        SimpleUnitFormat.getInstance().label(POT, "pot");
+        SimpleUnitFormat.getInstance().label(SCTIER, "sct");
+        SimpleUnitFormat.getInstance().label(LIGNE, "ligne");
+        SimpleUnitFormat.getInstance().alias(LIGNE, "linie");    }
 }

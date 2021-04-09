@@ -35,10 +35,19 @@ import tech.units.indriya.unit.Units;
 public class HistoricalSystemsDemo {
 
 	public static void main(String[] args) {
-		Quantity<Length> mertfoelds = Quantities.getQuantity(10, Hungarian.MERTFOELD);
-		System.out.println(mertfoelds);
+//		Quantity<Length> mertfoelds = Quantities.getQuantity(10, Hungarian.MERTFOELD);
+//		System.out.println(mertfoelds);
+//		
+//		Quantity<Volume> eimer = Quantities.getQuantity(2, Hungarian.EIMER);
+//		System.out.println(eimer);
+//		Quantity<Volume> inLiter = eimer.to(Units.LITRE);
+//		System.out.println(inLiter);
 		
-		Quantity<Volume> eimer = Quantities.getQuantity(2, Hungarian.EIMER);
+		Quantity<Length> pieds = Quantities.getQuantity(10, Swiss.PIED);
+		System.out.println(pieds);
+		System.out.println(pieds.to(Swiss.LIGNE));
+		
+		Quantity<Volume> eimer = Quantities.getQuantity(2, Swiss.POT);
 		System.out.println(eimer);
 		Quantity<Volume> inLiter = eimer.to(Units.LITRE);
 		System.out.println(inLiter);
