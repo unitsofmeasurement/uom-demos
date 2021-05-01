@@ -16,103 +16,209 @@
  */
 package org.jboss.as.quickstarts.temperatureconverter.ejb;
 
+import java.util.function.BinaryOperator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import tech.units.indriya.quantity.NumberQuantity;
+import tech.units.indriya.AbstractQuantity;
+import tech.units.indriya.ComparableQuantity;
+import tech.units.indriya.internal.function.Calculator;
+import tech.units.indriya.quantity.Quantities;
 import tech.units.indriya.unit.Units;
 
 import javax.measure.quantity.Temperature;
+import javax.measure.Quantity;
 import javax.measure.Unit;
 
 /**
- * A domain object that can store a temperature and scale. Additionally, it can parse a string to a temperature and scale.
+ * A domain object that can store a temperature and scale. Additionally, it can
+ * parse a string to a temperature and scale.
  * 
  * @author Pete Muir
  * @author Bruce Wolfe
  * @author Werner Keil
- * 
+ * @deprecated try to get rid of it in a follow-up version, factor parse method into TemperatureParser 
  */
-public class TemperatureAmount extends NumberQuantity<Temperature> {
+public class TemperatureAmount extends AbstractQuantity<Temperature> {
 
-    /**
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 2441230969280534926L;
-	static final double ABSOLUTE_ZERO_C = -273.150;
-    static final double ABSOLUTE_ZERO_F = -459.670;
 
-    /*
-     * Create a regular expression to extract the temperature and scale (if passed).
-     */
-    private static Pattern PATTERN = Pattern.compile("^([-+]?[0-9]*\\.?[0-9]+)([CF]?)");
+	private final double temperature;
 
-    /**
-     * Parse a string, with an optional scale suffix. If no scale suffix is on the string, the defaultScale will be used.
-     * 
-     * @param temperature the temperature to parse
-     * @param defaultScale the default scale to use
-     */
-    public static TemperatureAmount parse(String temperature, Unit<Temperature> defaultScale) {
-        double t;
-        Unit<Temperature> s;
+	/*
+	 * Create a regular expression to extract the temperature and scale (if passed).
+	 */
+	private static Pattern PATTERN = Pattern.compile("^([-+]?[0-9]*\\.?[0-9]+)([CF]?)");
 
-        /**
-         * Extract temperature and scale
-         */
-        Matcher matcher = PATTERN.matcher(temperature);
+	/**
+	 * Parse a string, with an optional scale suffix. If no scale suffix is on the
+	 * string, the defaultScale will be used.
+	 * 
+	 * @param temperature  the temperature to parse
+	 * @param defaultScale the default scale to use
+	 */
+	public static Quantity<Temperature> parse(String temperature, Unit<Temperature> defaultScale) {
 
-        // Extract the temperature
-        if (matcher.find()) {
-            t = Double.parseDouble(matcher.group());
-        } else {
-            throw new IllegalArgumentException("You must provide a valid temperature to convert- 'XX.XXX'");
-        }
+		Unit<Temperature> s;
+		Number t;
 
-        // Use the scale included with the sourceTemperature OR the defaultScale provided.
-        if (matcher.find()) {
-            try {
-                s = valueOfAbbreviation(matcher.group());
-            } catch (IllegalArgumentException e) {
-                throw new IllegalArgumentException("You must provide a valid temperature scale- 'C|F'");
-            }
-        } else {
-            s = defaultScale;
-        }
-        return new TemperatureAmount(t, s);
-    }
+		/**
+		 * Extract temperature and scale
+		 */
+		Matcher matcher = PATTERN.matcher(temperature);
 
-    public TemperatureAmount(double temperature, Unit<Temperature> scale) {
-        super(Double.valueOf(temperature), scale);
-//    	this.temperature = temperature;
+		// Extract the temperature
+		if (matcher.find()) {
+			t = Double.parseDouble(matcher.group());
+		} else {
+			throw new IllegalArgumentException("You must provide a valid temperature to convert- 'XX.XXX'");
+		}
+
+		// Use the scale included with the sourceTemperature OR the defaultScale
+		// provided.
+		if (matcher.find()) {
+			try {
+				s = valueOfAbbreviation(matcher.group());
+			} catch (IllegalArgumentException e) {
+				throw new IllegalArgumentException("You must provide a valid temperature scale- 'C|F'");
+			}
+		} else {
+			s = defaultScale;
+		}
+		return Quantities.getQuantity(t, s);
+	}
+
+	TemperatureAmount(Number value, Unit<Temperature> scale) {
+		this(value.doubleValue(), scale);
+	}
+
+	TemperatureAmount(double temperature, Unit<Temperature> scale) {
+		super(scale);
+		// super(Double.valueOf(temperature), scale);
+		this.temperature = temperature;
 //        this.scale = scale;
-    }
+	}
 
-    public  Unit<Temperature> getReference() {
-        return getUnit();
-    }
-
-    private static Unit<Temperature> valueOfAbbreviation(String value) {
-        if (value == null) {
-            throw new IllegalArgumentException("value must not be null");
-        } else if ("C".equals(value.toUpperCase())) {
-            return Units.CELSIUS;
-        } else if ("K".equals(value.toUpperCase())) {
-            return Units.KELVIN;
+	private static Unit<Temperature> valueOfAbbreviation(String value) {
+		if (value == null) {
+			throw new IllegalArgumentException("value must not be null");
+		} else if ("C".equals(value.toUpperCase())) {
+			return Units.CELSIUS;
+		} else if ("K".equals(value.toUpperCase())) {
+			return Units.KELVIN;
 //        } else if ("F".equals(value.toUpperCase())) {
 //            return US.FAHRENHEIT;
-        } else {
-            throw new IllegalArgumentException(value + " not recognized as a valid scale");
-        }
-    }
-    
-    public double getTemperature() {
-        return getValue().doubleValue();
+		} else {
+			throw new IllegalArgumentException(value + " not recognized as a valid scale");
+		}
+	}
+
+	public double getTemperature() {
+		return temperature;
+	}
+
+	@Override
+	public ComparableQuantity<Temperature> add(Quantity<Temperature> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ComparableQuantity<Temperature> subtract(Quantity<Temperature> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Number getValue() {
+		return getTemperature();
+	}
+
+	private static <R extends Quantity<R>> Number quantityValue(Quantity<R> that) {
+		return convertedQuantityValue(that, that.getUnit());
+	}
+
+	private static <R extends Quantity<R>> Number convertedQuantityValue(Quantity<R> that, Unit<R> unit) {
+		return that.getUnit().getConverterTo(unit).convert(that.getValue());
+	}
+
+	/**
+	 * @deprecated temporary solution
+	 */
+	private ComparableQuantity<?> applyMultiplicativeQuantityOperation(Quantity<?> that,
+			BinaryOperator<Number> valueOperator, BinaryOperator<Unit<?>> unitOperator) {
+
+		final Number thisValue = quantityValue(this);
+		final Number thatValue = quantityValue(that);
+		final Number result = valueOperator.apply(thisValue, thatValue);
+		final Unit<?> resultUnit = unitOperator.apply(getUnit(), that.getUnit());
+		return Quantities.getQuantity(result, resultUnit);
+	}
+
+	/**
+	 * @deprecated temporary solution
+	 */
+	private ComparableQuantity<Temperature> applyMultiplicativeNumberOperation(Number that,
+			BinaryOperator<Number> valueOperator) {
+		final Number thisValue = this.getValue();
+		final Number thatValue = that;
+		final Number result = valueOperator.apply(thisValue, thatValue);
+		return Quantities.getQuantity(result, getUnit());
+	}
+
+	/**
+	 * @deprecated temporary solution
+	 */
+	@Override
+	public ComparableQuantity<?> multiply(Quantity<?> that) {
+		return applyMultiplicativeQuantityOperation(that, (a, b) -> Calculator.of(a).multiply(b).peek(),
+				Unit::multiply);
+	}
+
+	/**
+	 * @deprecated temporary solution
+	 */
+	@Override
+	public ComparableQuantity<Temperature> multiply(Number that) {
+		return applyMultiplicativeNumberOperation(that, (a, b) -> Calculator.of(a).multiply(b).peek());
+	}
+
+	/**
+	 * @deprecated temporary solution
+	 */
+    @Override
+    public ComparableQuantity<?> inverse() {
+        final Number resultValueInThisUnit = Calculator
+                .of(getValue())
+                .reciprocal()
+                .peek();
+        return Quantities.getQuantity(resultValueInThisUnit, getUnit().inverse(), getScale());
     }
 
-//    @Override
-//    public String toString() {
-//        return new DecimalFormat("###.00").format(value()) + " " + String.valueOf(unit());
-//    }
+	/**
+	 * @deprecated temporary solution
+	 */
+	@Override
+	public Quantity<Temperature> negate() {
+		return new TemperatureAmount(Calculator.of(temperature).negate().peek(), getUnit());
+	}
 
+	/**
+	 * @deprecated temporary solution
+	 */
+	@Override
+	public ComparableQuantity<Temperature> divide(Number that) {
+		return applyMultiplicativeNumberOperation(that, (a, b) -> Calculator.of(a).divide(b).peek());
+	}
+
+	/**
+	 * @deprecated temporary solution
+	 */
+	@Override
+	public ComparableQuantity<?> divide(Quantity<?> that) {
+		return applyMultiplicativeQuantityOperation(that, (a, b) -> Calculator.of(a).divide(b).peek(), Unit::divide);
+	}
 }

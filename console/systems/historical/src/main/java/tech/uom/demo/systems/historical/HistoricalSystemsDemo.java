@@ -32,24 +32,59 @@ import javax.measure.quantity.Volume;
 import tech.units.indriya.quantity.Quantities;
 import tech.units.indriya.unit.Units;
 
+/**
+ * <p>
+ * This class demonstrates Historical units of measurement systems.
+ * </p>
+ * 
+ * @author <a href="mailto:werner@uom.technology">Werner Keil</a>
+ * @version 0.7, $Date: 2021-04-09 $
+ * @see <a href="https://en.wikipedia.org/wiki/History_of_measurement">Wikipedia: History of measurement</a>
+ * @see <a href="https://en.wikipedia.org/wiki/System_of_measurement#Historical_systems_of_measurement">Wikipedia: Historical systems of measurement</a>
+ * @see <a href="https://en.wikipedia.org/wiki/History_of_the_metric_system">Wikipedia: History of the metric system</a>
+ * @see <a href="https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems">Wikipedia: History of the metric system</a>  
+ */
 public class HistoricalSystemsDemo {
-
 	public static void main(String[] args) {
-//		Quantity<Length> mertfoelds = Quantities.getQuantity(10, Hungarian.MERTFOELD);
-//		System.out.println(mertfoelds);
-//		
-//		Quantity<Volume> eimer = Quantities.getQuantity(2, Hungarian.EIMER);
-//		System.out.println(eimer);
-//		Quantity<Volume> inLiter = eimer.to(Units.LITRE);
-//		System.out.println(inLiter);
-		
-		Quantity<Length> pieds = Quantities.getQuantity(10, Swiss.PIED);
-		System.out.println(pieds);
-		System.out.println(pieds.to(Swiss.LIGNE));
-		
-		Quantity<Volume> eimer = Quantities.getQuantity(2, Swiss.POT);
-		System.out.println(eimer);
-		Quantity<Volume> inLiter = eimer.to(Units.LITRE);
-		System.out.println(inLiter);
+		if (args == null || args.length < 1) {
+			usage();
+		} else {
+			final String country = args[0];
+			switch (country) {
+				case "Switzerland":
+					System.out.println(String.format(MSG_DEMO_COUNTRY, country));
+					Quantity<Length> pieds = Quantities.getQuantity(10, Swiss.PIED);
+					System.out.println(pieds);
+					System.out.println(pieds.to(Swiss.LIGNE));
+					
+					Quantity<Volume> pot = Quantities.getQuantity(2, Swiss.POT);
+					System.out.println(pot); 
+					System.out.println(pot.to(Units.LITRE));
+					break;
+				case "Hungary":
+					System.out.println(String.format(MSG_DEMO_COUNTRY, country));
+					Quantity<Length> mertfoelds = Quantities.getQuantity(10, Hungarian.MERTFOELD);
+					System.out.println(mertfoelds);
+					
+					Quantity<Volume> eimer = Quantities.getQuantity(2, Hungarian.EIMER);
+					System.out.println(eimer);
+					System.out.println(eimer.to(Units.LITRE));
+					break;
+				default:
+					System.out.println(String.format(MSG_UNKNOWN_COUNTRY, country));
+			}
+		}
 	}
+		
+	private static void usage() {
+		System.out.println(MSG_USAGE); //$NON-NLS-1$
+	}
+
+	private static final String MSG_USAGE = "Usage: HistoricalSystemsDemo <Country>" + 
+	  System.lineSeparator() + 
+	  "See \"https://en.wikipedia.org/wiki/System_of_measurement#Historical_systems_of_measurement\" for a list of countries.";
+	
+	private static final String MSG_UNKNOWN_COUNTRY = "Unknown country: \"%s\"";
+	
+	private static final String MSG_DEMO_COUNTRY = "Demo for: \"%s\"";
 }

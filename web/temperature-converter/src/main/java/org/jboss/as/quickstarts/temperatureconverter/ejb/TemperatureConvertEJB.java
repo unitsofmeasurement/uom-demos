@@ -19,6 +19,7 @@ package org.jboss.as.quickstarts.temperatureconverter.ejb;
 
 import static tech.units.indriya.unit.Units.CELSIUS;
 import static tech.units.indriya.unit.Units.KELVIN;
+import static org.jboss.as.quickstarts.temperatureconverter.ejb.TemperatureParser.*;
 
 import javax.ejb.Stateless;
 import javax.faces.application.FacesMessage;
@@ -41,26 +42,26 @@ public class TemperatureConvertEJB {
      * @param source the temperature to convert from
      * @return the converted temperature.
      */
-    public Quantity<Temperature> convert(TemperatureAmount source) {
+    public Quantity<Temperature> convert(Quantity<Temperature> source) {
         
         // Convert our Temperature
-        if (source.getReference() == CELSIUS) { // Celsius to Fahrenheit (Kelvin)
+        if (source.getUnit() == CELSIUS) { // Celsius to Fahrenheit (Kelvin)
             // Easter egg for Absolute Zero.
-            if (source.getTemperature() < TemperatureAmount.ABSOLUTE_ZERO_C) {
+            if (source.getValue().doubleValue() < ABSOLUTE_ZERO_C) {
                 FacesContext.getCurrentInstance().addMessage(null,
                         new FacesMessage("Below Absolute Zero!"));
-            } else if (source.getTemperature() == TemperatureAmount.ABSOLUTE_ZERO_C) {
+            } else if (source.getValue().equals(ABSOLUTE_ZERO_C)) {
                 FacesContext.getCurrentInstance().addMessage(null,
                         new FacesMessage("Absolute Zero!"));
             }
             return source.to(KELVIN);
             //return new TemperatureAmount( (source.getTemperature() * 9 / 5) + 32, FAHRENHEIT);
-        } else if (source.getReference() == KELVIN) { // Fahrenheit to Celsius
+        } else if (source.getUnit() == KELVIN) { // Fahrenheit to Celsius
             // Easter egg for Absolute Zero.
-            if (source.getTemperature() < TemperatureAmount.ABSOLUTE_ZERO_F) {
+            if (source.getValue().doubleValue() < ABSOLUTE_ZERO_F) {
                 FacesContext.getCurrentInstance().addMessage(null,
                         new FacesMessage("Below Absolute Zero!"));
-            } else if (source.getTemperature() == TemperatureAmount.ABSOLUTE_ZERO_F) {
+            } else if (source.getValue().equals(ABSOLUTE_ZERO_F)) {
                 FacesContext.getCurrentInstance().addMessage(null,
                         new FacesMessage("Absolute Zero!"));
             }

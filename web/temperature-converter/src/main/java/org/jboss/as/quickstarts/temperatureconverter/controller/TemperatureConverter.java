@@ -96,5 +96,4 @@ public class TemperatureConverter implements Serializable, ValueSupplier<String>
     public String getValue() {
         return temperature;
     }
-
 }
