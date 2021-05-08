@@ -31,7 +31,6 @@ package tech.uom.demo.java13.format;
 
 import tech.units.indriya.AbstractUnit;
 import tech.units.indriya.format.FormatBehavior;
-import tech.units.indriya.format.NumberFormatStyle;
 import tech.units.indriya.quantity.Quantities;
 import tech.units.indriya.format.NumberDelimiterQuantityFormat;
 
@@ -55,9 +54,7 @@ public class UnitFormatDemo {
 
         var u = ServiceProvider.current().getFormatService().getUnitFormat().parse("g/l");
         System.out.println(u);
-        var formatStyle = NumberFormatStyle.DEFAULT;
         var quantFormat = NumberDelimiterQuantityFormat.getCompactInstance(FormatBehavior.LOCALE_NEUTRAL);
-        System.out.println(formatStyle);
         var vQuant = Quantities.getQuantity(10000, VOLT);
         System.out.println(quantFormat.format(vQuant));
         var vQuant2 = Quantities.getQuantity(10, KILO(VOLT));
