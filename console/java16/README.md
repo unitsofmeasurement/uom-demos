@@ -6,7 +6,7 @@ The best way to run this demo is using Maven:
 mvn exec:java
 ```
 
-This demo shows a conflict between `module-info` and **multi-release-JAR** dependencies below Java 16. 
+This demo also shows a conflict between `module-info` and **multi-release-JAR** dependencies **below Java 16**.
 
 If an explicit `module-info` like:
 ```
@@ -19,7 +19,7 @@ module tech.uom.demo.java16 {
    exports tech.uom.demo.java16.function;
 }
 ```
-is declared with a Java version prior to Java 16, the build fails:
+is declared with a Java version **prior to Java 16**, the build **fails**:
 ```
 [INFO] -------------------------------------------------------------
 [ERROR] COMPILATION ERROR :
@@ -46,6 +46,4 @@ is declared with a Java version prior to Java 16, the build fails:
 [ERROR] Re-run Maven using the -X switch to enable full debug logging.
 ```
 
-This fails all the way up to **Java 15**. 
-
-If the `module-info` is removed or renamed (e.g. `module-info.jav_` in our demo code), it passes.
+Prior to **Java 16** if the `module-info` is removed or renamed (e.g. `module-info.jav_` it passes again.
