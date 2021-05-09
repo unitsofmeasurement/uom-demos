@@ -13,7 +13,7 @@
     <modules>
         <module>temperature-converter</module>
         <module>sparkdemo</module>
-        <module>vaadindemo</module>
+        <!-- module>vaadindemo</module-->
 		<module>springbootdemo</module>
 	</modules>
 	<dependencies>

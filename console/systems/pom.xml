@@ -14,7 +14,7 @@
 	<modules>
 		<module>common</module>
 		<module>common-java12</module>
-		<module>common-java14</module>
+		<module>common-java16</module>
 		<module>si</module>
 		<module>si-java12</module>
 		<module>unicode</module>

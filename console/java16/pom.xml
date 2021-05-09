@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>tech.uom.demo.console</groupId>
+		<artifactId>uom-console-demos</artifactId>
+		<version>2.1-SNAPSHOT</version>
+	</parent>
+	<name>Basic UoM Console Demos for Java 16</name>
+	<description>Basic Units of Measurement Console Demos for Java 16</description>
+	<artifactId>uom-console-demos-java16</artifactId>
+
+	<!-- ======================================================= -->
+	<!-- Build Settings -->
+	<!-- ======================================================= -->
+	<properties>
+		<jdkVersion>16</jdkVersion>
+		<sourceEncoding>UTF-8</sourceEncoding>
+		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
+		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
+		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+		<project.build.sourceEncoding>${sourceEncoding}</project.build.sourceEncoding>
+		<runClass>tech.uom.demo.java13.format.UnitFormatDemo</runClass>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.measure</groupId>
+			<artifactId>unit-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>tech.uom.lib</groupId>
+			<artifactId>uom-lib-common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>tech.units</groupId>
+			<artifactId>indriya</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- ======================================================= -->
+			<!-- Compilation -->
+			<!-- ======================================================= -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+				    <compilerArgs>--enable-preview</compilerArgs>
+					<release>${jdkVersion}</release>
+					<parameters>true</parameters>					
+					<source>${jdkVersion}</source>
+					<target>${jdkVersion}</target>
+				</configuration>
+			</plugin>
+ 			
+			<plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <argLine>--enable-preview</argLine>
+                </configuration>
+            </plugin>
+
+		   <plugin>
+	        <groupId>org.codehaus.mojo</groupId>
+	        <artifactId>exec-maven-plugin</artifactId>
+	        <version>3.0.0</version>
+	        <executions>
+	          <execution>
+	            <goals>
+	              <goal>java</goal>
+	            </goals>
+	          </execution>
+	        </executions>
+	        <configuration>
+	          <mainClass>${runClass}</mainClass>
+	        </configuration>
+	      </plugin>
+		</plugins>
+	</build>
+	
+	<!-- Additional repositories -->
+    <!-- Helps to resolve Parent POM and Snapshot artifacts -->
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>ossrh-snapshot</id>
+            <name>OSSRH Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
+</project>

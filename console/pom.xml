@@ -70,8 +70,7 @@
 	<modules>
 		<module>basic</module>
 		<module>java11</module>
-		<module>java13</module>		
-		<module>java14</module>
+		<module>java16</module>
         <!--  >module>valhalla</module currently disabled because it requires partial JDK 14+ preview -->
     	<module>systems</module>
     	<module>conference</module>
