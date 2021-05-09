@@ -27,11 +27,19 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-module tech.uom.demo.java16 {
-    requires transitive java.measure;
-    requires tech.uom.lib.common;
-    requires tech.units.indriya;
+package tech.uom.demo.java16;
 
-    exports tech.uom.demo.java16;
-    exports tech.uom.demo.java16.types;
+import tech.units.indriya.function.AbstractConverter;
+import tech.units.indriya.function.AddConverter;
+import tech.units.indriya.function.MultiplyConverter;
+import tech.units.indriya.function.RationalNumber;
+
+public class ConverterDemo {
+    public static void main(String[] args) {
+        final AbstractConverter fahrenheitToKelvin = (AbstractConverter) 
+                new AddConverter(RationalNumber.of(27315, 100))
+                .concatenate(MultiplyConverter.ofRational(5, 9))
+                .concatenate(new AddConverter(-32));
+        System.out.println(fahrenheitToKelvin.linearFactor());
+    }
 }

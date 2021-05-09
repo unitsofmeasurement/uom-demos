@@ -15,8 +15,8 @@ module tech.uom.demo.java16 {
    requires tech.uom.lib.common;
    requires tech.units.indriya;
 
-   exports tech.uom.demo.java16.format;
-   exports tech.uom.demo.java16.function;
+   exports tech.uom.demo.java16;
+   exports tech.uom.demo.java16.types;
 }
 ```
 is declared with a Java version **prior to Java 16**, the build **fails**:
@@ -24,7 +24,7 @@ is declared with a Java version **prior to Java 16**, the build **fails**:
 [INFO] -------------------------------------------------------------
 [ERROR] COMPILATION ERROR :
 [INFO] -------------------------------------------------------------
-[ERROR] ~/git/uom-demos/console/java13/src/main/java/tech/uom/demo/java16/format/UnitFormatDemo.java:[57,56] cannot find symbol
+[ERROR] ~/git/uom-demos/console/java16/src/main/java/tech/uom/demo/java16/UnitFormatDemo.java:[57,56] cannot find symbol
   symbol:   method getCompactInstance(tech.units.indriya.format.FormatBehavior)
   location: class tech.units.indriya.format.NumberDelimiterQuantityFormat
 [INFO] 1 error
@@ -36,7 +36,7 @@ is declared with a Java version **prior to Java 16**, the build **fails**:
 [INFO] Finished at: 2021-05-08T23:43:11+02:00
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project uom-console-demos-java16: Compilation failure
-[ERROR] ~/git/uom-demos/console/java16/src/main/java/tech/uom/demo/java15/format/UnitFormatDemo.java:[57,56] cannot find symbol
+[ERROR] ~/git/uom-demos/console/java16/src/main/java/tech/uom/demo/java16/UnitFormatDemo.java:[57,56] cannot find symbol
 [ERROR]   symbol:   method getCompactInstance(tech.units.indriya.format.FormatBehavior)
 [ERROR]   location: class tech.units.indriya.format.NumberDelimiterQuantityFormat
 [ERROR]

@@ -26,7 +26,7 @@
 package tech.uom.demo.java16;
 
 import tech.units.indriya.quantity.Quantities;
-import tech.uom.demo.java16.rec.Person;
+import tech.uom.demo.java16.types.Person;
 
 import static tech.units.indriya.unit.Units.KILOGRAM;
 import static tech.units.indriya.unit.Units.METRE;

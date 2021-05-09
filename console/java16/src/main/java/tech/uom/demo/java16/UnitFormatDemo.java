@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2020, Werner Keil and others.
+ *  Copyright (c) 2005-2021, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -27,19 +27,38 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.java16.function;
+package tech.uom.demo.java16;
 
-import tech.units.indriya.function.AbstractConverter;
-import tech.units.indriya.function.AddConverter;
-import tech.units.indriya.function.MultiplyConverter;
-import tech.units.indriya.function.RationalNumber;
+import tech.units.indriya.AbstractUnit;
+import tech.units.indriya.format.FormatBehavior;
+import tech.units.indriya.quantity.Quantities;
+import tech.units.indriya.format.NumberDelimiterQuantityFormat;
 
-public class ConverterDemo {
+import static javax.measure.MetricPrefix.KILO;
+import static tech.units.indriya.unit.Units.VOLT;
+
+import javax.measure.spi.ServiceProvider;
+
+public class UnitFormatDemo {
+
     public static void main(String[] args) {
-        final AbstractConverter fahrenheitToKelvin = (AbstractConverter) 
-                new AddConverter(RationalNumber.of(27315, 100))
-                .concatenate(MultiplyConverter.ofRational(5, 9))
-                .concatenate(new AddConverter(-32));
-        System.out.println(fahrenheitToKelvin.linearFactor());
+        var parsed = AbstractUnit.parse("%");
+        System.out.println(parsed);
+
+        parsed = AbstractUnit.parse("W");
+        System.out.println(parsed);
+
+        var unitFormat = ServiceProvider.current().getFormatService().getUnitFormat();
+        parsed = unitFormat.parse("V");
+        System.out.println(parsed);
+
+        var u = ServiceProvider.current().getFormatService().getUnitFormat().parse("g/l");
+        System.out.println(u);
+        var quantFormat = NumberDelimiterQuantityFormat.getCompactInstance(FormatBehavior.LOCALE_NEUTRAL);
+        var vQuant = Quantities.getQuantity(10000, VOLT);
+        System.out.println(quantFormat.format(vQuant));
+        var vQuant2 = Quantities.getQuantity(10, KILO(VOLT));
+        System.out.println(quantFormat.format(vQuant2));
+        System.out.println(vQuant.isEquivalentTo(vQuant2));
     }
 }
