@@ -36,7 +36,7 @@ is declared with a Java version **prior to Java 16**, the build **fails**:
 [INFO] Finished at: 2021-05-08T23:43:11+02:00
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project uom-console-demos-java16: Compilation failure
-[ERROR] ~/git/uom-demos/console/java16/src/main/java/tech/uom/demo/java16/UnitFormatDemo.java:[57,56] cannot find symbol
+[ERROR] ~/git/uom-demos/console/java16/src/main/java/tech/uom/demo/java16/format/UnitFormatDemo.java:[57,56] cannot find symbol
 [ERROR]   symbol:   method getCompactInstance(tech.units.indriya.format.FormatBehavior)
 [ERROR]   location: class tech.units.indriya.format.NumberDelimiterQuantityFormat
 [ERROR]
@@ -47,3 +47,5 @@ is declared with a Java version **prior to Java 16**, the build **fails**:
 ```
 
 Prior to **Java 16** if the `module-info` is removed or renamed (e.g. `module-info.jav_` it passes again.
+
+**NOTE** Other demos in this module only work in Java 14 or 15 if `--enable-preview` was also used prior to Java 16.
