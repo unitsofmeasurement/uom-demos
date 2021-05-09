@@ -12,7 +12,7 @@ The project currently contains the following modules:
 - [Console Demos](console)
   - [Basic Console Demos](console/basic)
   - [Java 11 Console Demos](console/java11)
-  - [Java 16 Console Demos](console/java16) (**May use Preview Features**)
+  - [Java 16 Console Demos](console/java16)
   - [Valhalla Demos](console/valhalla) (**Early-Access Build**)
   - [System Specific demos](console/systems)
 - [Desktop Demos](desktop)
