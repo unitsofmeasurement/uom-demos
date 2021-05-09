@@ -11,18 +11,18 @@
 <description>Demo project for a Unit conversion using Vaadin</description>
 
 <properties>
-    <vaadin.version>13.0.1</vaadin.version>
-    <vaadin.plugin.version>13.0.1</vaadin.plugin.version>
-    <vaadin-spring-boot-starter.version>10.0.11</vaadin-spring-boot-starter.version>
+    <jdkVersion>9</jdkVersion>
+    <vaadin.version>14.4.10</vaadin.version>
+    <vaadin.plugin.version>14.4.10</vaadin.plugin.version>
+    <vaadin-spring-boot-starter.version>14.5.4</vaadin-spring-boot-starter.version>
     <jetty.plugin.version>9.3.9.v20160517</jetty.plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>${jdkVersion}</maven.compiler.source>
+    <maven.compiler.target>${jdkVersion}</maven.compiler.target>
     <vaadin.widgetset.mode>local</vaadin.widgetset.mode>
     <vaadin.theme>mytheme</vaadin.theme>
     <maven-war-plugin.version>3.0.0</maven-war-plugin.version>
     <maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
-
 </properties>
 
 <dependencyManagement>
@@ -89,12 +89,13 @@
         <version>2.1.1.RELEASE</version>
         <scope>test</scope>
     </dependency>
-
+<!-- 
     <dependency>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
         <version>1.18.4</version>
     </dependency>
+-->    
     <dependency>
         <groupId>systems.uom</groupId>
         <artifactId>systems-common</artifactId>
@@ -103,6 +104,16 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <release>${jdkVersion}</release>
+                    <parameters>true</parameters>                   
+                    <source>${jdkVersion}</source>
+                    <target>${jdkVersion}</target>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
