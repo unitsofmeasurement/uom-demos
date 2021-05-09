@@ -6,7 +6,7 @@ The best way to run this demo is using Maven:
 mvn exec:java
 ```
 
-This demo also shows a conflict between `module-info` and **multi-release-JAR** dependencies **below Java 16**.
+This demo also shows a conflict between **JPMS** `module-info` and **multi-release-JAR** dependencies **below Java 16**.
 
 If an explicit `module-info` like:
 ```
@@ -48,4 +48,4 @@ is declared with a Java version **prior to Java 16**, the build **fails**:
 
 Prior to **Java 16** if the `module-info` is removed or renamed (e.g. `module-info.jav_` it passes again.
 
-**NOTE** Other demos in this module only work in Java 14 or 15 if `--enable-preview` was also used prior to Java 16.
+**NOTE:** Other demos in this module only work in Java 14 or 15 if `--enable-preview` was also used prior to Java 16.
