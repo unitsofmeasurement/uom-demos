@@ -27,12 +27,35 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-module tech.uom.demo.java16 {
-    requires transitive java.measure;
-    requires tech.uom.lib.common;
-    requires tech.units.indriya;
+package tech.uom.demo.java16.format;
 
-    exports tech.uom.demo.java16;
-    exports tech.uom.demo.java16.format;
-    exports tech.uom.demo.java16.types;
+import tech.units.indriya.format.FormatBehavior;
+import tech.units.indriya.quantity.Quantities;
+import tech.units.indriya.format.NumberDelimiterQuantityFormat;
+import tech.units.indriya.format.SimpleUnitFormat;
+
+import static javax.measure.MetricPrefix.KILO;
+import static tech.units.indriya.unit.Units.VOLT;
+
+import java.text.CompactNumberFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+
+public class QuantityFormatDemo {
+
+    public static void main(String[] args) {        
+        var quantFormat = NumberDelimiterQuantityFormat.getCompactInstance(FormatBehavior.LOCALE_NEUTRAL);        
+        var vQuant = Quantities.getQuantity(10000, VOLT);
+        System.out.println(quantFormat.format(vQuant));
+        var vQuant2 = Quantities.getQuantity(10, KILO(VOLT));
+        System.out.println(quantFormat.format(vQuant2));
+        System.out.println(vQuant.isEquivalentTo(vQuant2));
+        
+        var symbols = DecimalFormatSymbols.getInstance(Locale.ROOT);
+        String[] cnPatterns = new String [] {"", ""};
+        var compactFormat = new CompactNumberFormat("",
+                        symbols, cnPatterns);
+        var quantFormat2 = NumberDelimiterQuantityFormat.getCompactInstance(compactFormat, SimpleUnitFormat.getInstance());
+        
+    }
 }

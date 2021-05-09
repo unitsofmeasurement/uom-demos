@@ -27,12 +27,37 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-module tech.uom.demo.java16 {
-    requires transitive java.measure;
-    requires tech.uom.lib.common;
-    requires tech.units.indriya;
+package tech.uom.demo.java16.format;
 
-    exports tech.uom.demo.java16;
-    exports tech.uom.demo.java16.format;
-    exports tech.uom.demo.java16.types;
+import tech.units.indriya.AbstractUnit;
+import tech.units.indriya.format.FormatBehavior;
+import tech.units.indriya.quantity.Quantities;
+import tech.units.indriya.format.NumberDelimiterQuantityFormat;
+import tech.units.indriya.format.SimpleUnitFormat;
+
+import static javax.measure.MetricPrefix.KILO;
+import static tech.units.indriya.unit.Units.VOLT;
+
+import java.text.CompactNumberFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+
+import javax.measure.spi.ServiceProvider;
+
+public class UnitFormatDemo {
+
+    public static void main(String[] args) {
+        var parsed = AbstractUnit.parse("%");
+        System.out.println(parsed);
+
+        parsed = AbstractUnit.parse("W");
+        System.out.println(parsed);
+
+        var unitFormat = ServiceProvider.current().getFormatService().getUnitFormat();
+        parsed = unitFormat.parse("V");
+        System.out.println(parsed);
+
+        var u = ServiceProvider.current().getFormatService().getUnitFormat().parse("g/l");
+        System.out.println(u);
+    }
 }
