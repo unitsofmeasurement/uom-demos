@@ -12,7 +12,7 @@
 
 <properties>
     <jdkVersion>9</jdkVersion>
-    <vaadin.version>14.4.10</vaadin.version>
+    <vaadin.version>14.5.3</vaadin.version>
     <vaadin.plugin.version>14.4.10</vaadin.plugin.version>
     <vaadin-spring-boot-starter.version>14.5.4</vaadin-spring-boot-starter.version>
     <jetty.plugin.version>9.3.9.v20160517</jetty.plugin.version>
