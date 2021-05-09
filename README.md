@@ -12,8 +12,7 @@ The project currently contains the following modules:
 - [Console Demos](console)
   - [Basic Console Demos](console/basic)
   - [Java 11 Console Demos](console/java11)
-  - [Java 13 Console Demos](console/java13)
-  - [Java 14 Console Demos](console/java14) (**Using Preview Features**)
+  - [Java 16 Console Demos](console/java16) (**May use Preview Features**)
   - [Valhalla Demos](console/valhalla) (**Early-Access Build**)
   - [System Specific demos](console/systems)
 - [Desktop Demos](desktop)
@@ -27,7 +26,7 @@ The project currently contains the following modules:
 - [Web Demos](web)
   - [Spark Sensor Web API Demo](web/sparkdemo)
   - [Improved JBoss Temperature Converter](web/temperature-converter)
-  - [Vaadin](web/vaadindemo)
+  - [Vaadin](web/vaadindemo)  (**Currently Disabled**)
   - [Spring Boot](/web/springbootdemo)
 
 
