@@ -49,21 +49,23 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-				    <compilerArgs>--enable-preview</compilerArgs>
+				<!-- 
+				    <compilerArgs>+-enable-preview</compilerArgs> FIXME change + to - if needed
+				 -->
 					<release>${jdkVersion}</release>
 					<parameters>true</parameters>					
 					<source>${jdkVersion}</source>
 					<target>${jdkVersion}</target>
 				</configuration>
 			</plugin>
- 			
+<!--  			
 			<plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
-                    <argLine>--enable-preview</argLine>
+                    <argLine>+-enable-preview</argLine> FIXME change + to - if needed
                 </configuration>
             </plugin>
-
+ -->
 		   <plugin>
 	        <groupId>org.codehaus.mojo</groupId>
 	        <artifactId>exec-maven-plugin</artifactId>
