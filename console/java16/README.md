@@ -16,29 +16,22 @@ module tech.uom.demo.java16 {
    requires tech.units.indriya;
 
    exports tech.uom.demo.java16;
+   exports tech.uom.demo.java16.format;
    exports tech.uom.demo.java16.types;
 }
 ```
 is declared with a Java version **prior to Java 16**, the build **fails**:
 ```
-[INFO] -------------------------------------------------------------
-[ERROR] COMPILATION ERROR :
-[INFO] -------------------------------------------------------------
-[ERROR] ~/git/uom-demos/console/java16/src/main/java/tech/uom/demo/java16/UnitFormatDemo.java:[57,56] cannot find symbol
-  symbol:   method getCompactInstance(tech.units.indriya.format.FormatBehavior)
-  location: class tech.units.indriya.format.NumberDelimiterQuantityFormat
-[INFO] 1 error
-[INFO] -------------------------------------------------------------
-[INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  4.024 s
-[INFO] Finished at: 2021-05-08T23:43:11+02:00
+[INFO] Total time:  3.850 s
+[INFO] Finished at: 2021-05-10T12:56:18+02:00
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project uom-console-demos-java16: Compilation failure
-[ERROR] ~/git/uom-demos/console/java16/src/main/java/tech/uom/demo/java16/format/UnitFormatDemo.java:[57,56] cannot find symbol
-[ERROR]   symbol:   method getCompactInstance(tech.units.indriya.format.FormatBehavior)
-[ERROR]   location: class tech.units.indriya.format.NumberDelimiterQuantityFormat
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project uom-console-demos-java12: Compilation failure
+[ERROR] ~/git/uom-demos/console/java12/src/main/java/tech/uom/demo/java12/format/QuantityFormatDemo.java:[58,57] method getCompactInstance in class tech.units.indriya.format.NumberDelimiterQuantityFormat cannot be applied to given types;
+[ERROR]   required: tech.units.indriya.format.FormatBehavior
+[ERROR]   found:    java.text.CompactNumberFormat,tech.units.indriya.format.SimpleUnitFormat
+[ERROR]   reason: actual and formal argument lists differ in length
 [ERROR]
 [ERROR] -> [Help 1]
 [ERROR]

@@ -55,7 +55,6 @@ public class QuantityFormatDemo {
         String[] cnPatterns = new String [] {"", ""};
         var compactFormat = new CompactNumberFormat("",
                         symbols, cnPatterns);
-        var quantFormat2 = NumberDelimiterQuantityFormat.getCompactInstance(compactFormat, SimpleUnitFormat.getInstance());
-        
+        var quantFormat2 = NumberDelimiterQuantityFormat.getCompactInstance(compactFormat, SimpleUnitFormat.getInstance());        
     }
 }

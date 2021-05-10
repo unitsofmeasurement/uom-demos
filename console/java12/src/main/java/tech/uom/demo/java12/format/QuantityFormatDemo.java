@@ -51,7 +51,7 @@ public class QuantityFormatDemo {
         System.out.println(quantFormat.format(vQuant2));
         System.out.println(vQuant.isEquivalentTo(vQuant2));
         
-/*      This only works after Java 16 or by removing the module-info.
+/*      This only works after Java 16 or by removing the module-info. 
         var symbols = DecimalFormatSymbols.getInstance(Locale.ROOT);
         String[] cnPatterns = new String [] {"", ""};
         var compactFormat = new CompactNumberFormat("",
