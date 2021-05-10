@@ -6,7 +6,7 @@ The best way to run this demo is using Maven:
 mvn exec:java
 ```
 
-This demo also shows a conflict between **JPMS** `module-info` and **multi-release-JAR** dependencies **below Java 16**.
+This demo shows a conflict between **JPMS** `module-info` and **multi-release-JAR** dependencies **below Java 16**.
 
 If an explicit `module-info` like:
 ```
