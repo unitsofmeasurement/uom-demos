@@ -41,4 +41,6 @@ is declared with a Java version **prior to Java 16**, the build **fails**:
 
 Prior to **Java 16** if the `module-info` is removed or renamed (e.g. `module-info.jav_` it passes again.
 
+This is related to https://bugs.openjdk.java.net/browse/JDK-8235229
+
 **NOTE:** Other demos in this module only work in Java 14 or 15 if `--enable-preview` was also used prior to Java 16.
