@@ -39,7 +39,7 @@ import static tech.units.indriya.unit.Units.VOLT;
 public class QuantityFormatDemo {
 
     public static void main(String[] args) {        
-        var quantFormat = NumberDelimiterQuantityFormat.getCompactInstance(FormatBehavior.LOCALE_NEUTRAL);
+        var quantFormat = NumberDelimiterQuantityFormat.getInstance(FormatBehavior.LOCALE_NEUTRAL);
         var vQuant = Quantities.getQuantity(10000, VOLT);
         System.out.println(quantFormat.format(vQuant));
         var vQuant2 = Quantities.getQuantity(10, KILO(VOLT));

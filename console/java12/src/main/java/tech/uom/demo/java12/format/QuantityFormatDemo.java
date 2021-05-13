@@ -39,12 +39,15 @@ import static tech.units.indriya.unit.Units.VOLT;
 
 import java.text.CompactNumberFormat;
 import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
 import java.util.Locale;
 
 public class QuantityFormatDemo {
 
     public static void main(String[] args) {        
-        var quantFormat = NumberDelimiterQuantityFormat.getCompactInstance(FormatBehavior.LOCALE_NEUTRAL);        
+        var quantFormat = new NumberDelimiterQuantityFormat.Builder()
+                .setNumberFormat(NumberFormat.getCompactNumberInstance(Locale.ROOT, NumberFormat.Style.SHORT))
+                .setUnitFormat(SimpleUnitFormat.getInstance()).build();
         var vQuant = Quantities.getQuantity(10000, VOLT);
         System.out.println(quantFormat.format(vQuant));
         var vQuant2 = Quantities.getQuantity(10, KILO(VOLT));

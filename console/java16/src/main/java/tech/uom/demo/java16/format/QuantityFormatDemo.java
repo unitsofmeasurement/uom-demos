@@ -39,22 +39,26 @@ import static tech.units.indriya.unit.Units.VOLT;
 
 import java.text.CompactNumberFormat;
 import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
 import java.util.Locale;
 
 public class QuantityFormatDemo {
 
     public static void main(String[] args) {        
-        var quantFormat = NumberDelimiterQuantityFormat.getCompactInstance(FormatBehavior.LOCALE_NEUTRAL);        
+        var quantFormat = new NumberDelimiterQuantityFormat.Builder()
+                .setNumberFormat(NumberFormat.getCompactNumberInstance(Locale.ROOT, NumberFormat.Style.SHORT))
+                .setUnitFormat(SimpleUnitFormat.getInstance()).build();        
         var vQuant = Quantities.getQuantity(10000, VOLT);
         System.out.println(quantFormat.format(vQuant));
         var vQuant2 = Quantities.getQuantity(10, KILO(VOLT));
         System.out.println(quantFormat.format(vQuant2));
         System.out.println(vQuant.isEquivalentTo(vQuant2));
-        
+/*        
         var symbols = DecimalFormatSymbols.getInstance(Locale.ROOT);
         String[] cnPatterns = new String [] {"", ""};
         var compactFormat = new CompactNumberFormat("",
                         symbols, cnPatterns);
-        var quantFormat2 = NumberDelimiterQuantityFormat.getCompactInstance(compactFormat, SimpleUnitFormat.getInstance());        
+        var quantFormat2 = NumberDelimiterQuantityFormat.getCompactInstance(compactFormat, SimpleUnitFormat.getInstance());
+*/                
     }
 }
