@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2020, Werner Keil and others.
+ *  Copyright (c) 2005-2022, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -29,8 +29,13 @@ import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
+/**
+ * Local helper class for i18n and resource bundles
+ * @author werner
+ *
+ */
 class Messages {
-	private static final String BUNDLE_NAME = "tech.uom.demo.energy.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "messages"; //$NON-NLS-1$
 
 	private static ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
 
@@ -51,7 +56,6 @@ class Messages {
 				RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME, new Locale(language));
 			}
 		}
-
 		try {
 			return RESOURCE_BUNDLE.getString(key);
 		} catch (MissingResourceException e) {
@@ -60,7 +64,7 @@ class Messages {
 	}
 	
 	/**
-	 * Loads the string 
+	 * Retrieves the string 
 	 * @param key
 	 * @return
 	 */

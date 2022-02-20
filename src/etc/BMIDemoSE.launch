@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-        <listEntry value="/uom-health-demos-se/src/main/java/tec/uom/demo/health/se/BMIDemoSE.java"/>
+        <listEntry value="/uom-health-demos-se"/>
     </listAttribute>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
-        <listEntry value="1"/>
+        <listEntry value="4"/>
     </listAttribute>
     <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="tech.uom.demo.health.se.BMIDemoSE"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="uom-health-demos-se"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="${string_prompt:height} ${string_prompt:weight}"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="uom-health-demos-se"/>
     <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>

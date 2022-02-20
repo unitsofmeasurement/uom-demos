@@ -48,10 +48,15 @@ import tech.uom.domain.weather.wind.SaffirSimpsonHurricaneWindScale;
 
 /**
  * @author Werner Keil
- * @version 1.2
+ * @version 1.3
  * @see {@link SaffirSimpsonHurricaneWindScale}
  */
 public class ThePerfectStorm {
+	
+	private static enum Scale {
+		SAFFIR_SIMPSON, BEAUFORT
+	}
+	
 	// Constants TODO move them to the scale
 	private static final SaffirSimpsonHurricaneWindScale STD = SaffirSimpsonHurricaneWindScale.of(
 			null, Quantities.getQuantity(38, MILE_PER_HOUR), TROPICAL_DEPRESSION);
@@ -75,6 +80,9 @@ public class ThePerfectStorm {
 
 	private static final double DEFAULT_DIST_KM = 500d;
 	
+	private static Scale scale;
+	
+	
 	/**
 	 * @param args
 	 */
@@ -88,6 +96,7 @@ public class ThePerfectStorm {
 		System.out.println(S5);
 
 		int argument = -1;
+		
 		if (args != null && args.length > 0) {
 			argument = Integer.valueOf(args[0]).intValue();
 		}
