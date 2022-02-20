@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Health Demos for Java
- *  Copyright (c) 2005-2019, Werner Keil and others.
+ *  Copyright (c) 2005-2022, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -29,18 +29,21 @@ import static tech.uom.domain.health.unit.Health.BPM;
 
 import java.math.BigDecimal;
 
+import javax.measure.Quantity;
+
+import tech.units.indriya.quantity.Quantities;
 import tech.uom.domain.health.HeartRate;
-import tech.uom.domain.health.types.HeartRateAmount;
+
 
 /**
- * @version 0.8
+ * @version 0.9
  * @author Werner Keil
  *
  */
 public class HealthDemo {
 
 	public static void main(String[] args) {
-		HeartRate rate =  HeartRateAmount.of(BigDecimal.valueOf(90), BPM);
+		Quantity<HeartRate> rate = Quantities.getQuantity(BigDecimal.valueOf(90), BPM);
 //		OldProxyQuantityFactory<HeartRate> rateFactory = OldProxyQuantityFactory.getInstance(HeartRate.class);
 //		HeartRate rate = rateFactory.create(BigDecimal.valueOf(90), BPM);
 		System.out.println(rate);

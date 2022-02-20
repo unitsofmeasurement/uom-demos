@@ -35,8 +35,8 @@
 		<jsr.version>2.1.2</jsr.version>
 		<ri.version>2.1.3-SNAPSHOT</ri.version>
 		<lib.version>2.1</lib.version>
-		<si.version>2.1-SNAPSHOT</si.version>
-		<systems.version>2.1-SNAPSHOT</systems.version>
+		<si.version>2.1</si.version>
+		<systems.version>2.1</systems.version>
 	</properties>
 
 	<dependencyManagement>

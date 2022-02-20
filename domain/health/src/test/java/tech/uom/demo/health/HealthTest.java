@@ -18,20 +18,22 @@ package tech.uom.demo.health;
 import static org.junit.jupiter.api.Assertions.*;
 import static tech.uom.domain.health.unit.Health.BPM;
 
+import javax.measure.Quantity;
+
 import org.junit.jupiter.api.Test;
 
-import tech.uom.domain.health.types.HeartRateAmount;
+import tech.units.indriya.quantity.Quantities;
+import tech.uom.domain.health.HeartRate;
 
 public class HealthTest {
 
 	@Test
 	public void test() {
-		HeartRateAmount amount = HeartRateAmount.of(Integer.valueOf(60), BPM);
+		Quantity<HeartRate> amount = Quantities.getQuantity(Integer.valueOf(60), BPM);
 		assertNotNull(amount);
 		assertEquals("b/min", amount.getUnit().toString());
 		assertEquals(60, amount.getValue().intValue());
 		
 		assertEquals("60 b/min", amount.toString());
 	}
-
 }

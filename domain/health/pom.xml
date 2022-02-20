@@ -13,7 +13,7 @@
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
 	<properties>
-	    <domain.version>2.0-SNAPSHOT</domain.version>
+	    <domain.version>2.1-SNAPSHOT</domain.version>
 		<jdkVersion>1.8</jdkVersion>
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>1.8</maven.compile.targetLevel>

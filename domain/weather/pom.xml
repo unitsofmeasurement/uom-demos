@@ -1,56 +1,43 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>uom-domain-demos</artifactId>
-	<name>Units of Measurement Domain Specific Demos</name>
-	<packaging>pom</packaging>
-	<url>https://unitsofmeasurement.github.io/uom-demos/</url>
 	<parent>
-		<groupId>tech.uom.demo</groupId>
-		<artifactId>uom-demos</artifactId>
+		<groupId>tech.uom.demo.domain</groupId>
+		<artifactId>uom-domain-demos</artifactId>
 		<version>2.1-SNAPSHOT</version>
 	</parent>
-	   <description>Domain Specific Demos of the Units of Measurement API</description>
-    <groupId>tech.uom.demo.domain</groupId>
+	<artifactId>uom-weather-demos</artifactId>
+    <name>Units of Measurement Weather Demos</name>
     
-    <properties>
-        <domain.version>2.1-SNAPSHOT</domain.version>
-    </properties>
-    
-	<modules>
-        <module>health</module>
-        <module>energy</module>
-        <module>retail</module>
-        <module>weather</module>
-	</modules>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>tech.uom.lib</groupId>
-				<artifactId>uom-lib</artifactId>
-				<version>${lib.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>systems.uom</groupId>
-				<artifactId>systems-common</artifactId>
-				<version>${systems.version}</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
-	<dependencies>
-		<dependency>
-			<groupId>javax.measure</groupId>
-			<artifactId>unit-api</artifactId>
+	<!-- ======================================================= -->
+	<!-- Build Settings -->
+	<!-- ======================================================= -->
+	<properties>
+		<jdkVersion>1.8</jdkVersion>
+		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
+		<maven.compile.targetLevel>1.8</maven.compile.targetLevel>
+		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+	</properties>
+	
+    <dependencies>
+        <dependency>
+            <groupId>javax.measure</groupId>
+            <artifactId>unit-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>tech.units</groupId>
+            <artifactId>indriya</artifactId>
+        </dependency>
+        <dependency>
+			<groupId>systems.uom</groupId>
+			<artifactId>systems-common</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
+        <dependency>
+            <groupId>tech.uom.domain</groupId>
+            <artifactId>uom-weather</artifactId>
+            <version>${domain.version}</version>
+        </dependency>
+    </dependencies>
 	<build>
 		<plugins>
 			<!-- ======================================================= -->
@@ -78,10 +65,10 @@
 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 						</manifest>
 						<manifestEntries>
-							<Specification-Title>Units of Measurement Demos</Specification-Title>
+							<Specification-Title>Units of Measurement Weather Demos</Specification-Title>
 							<Specification-Version>${project.version}</Specification-Version>
 							<Specification-Vendor>${project.organization.name}</Specification-Vendor>
-							<Implementation-Vendor>Unit-API contributors</Implementation-Vendor>
+							<Implementation-Vendor>Units of Measurement contributors</Implementation-Vendor>
 							<Implementation-URL>${project.organization.url}</Implementation-URL>
 						</manifestEntries>
 					</archive>
@@ -98,7 +85,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
-						<Export-Package>tech.uom.demo.*</Export-Package>
+						<Export-Package>tech.uom.demo.energy.*</Export-Package>
 						<Private-Package>!*</Private-Package>
 					</instructions>
 				</configuration>

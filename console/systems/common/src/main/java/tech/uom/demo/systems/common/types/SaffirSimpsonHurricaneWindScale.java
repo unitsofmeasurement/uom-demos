@@ -36,10 +36,11 @@ import tech.uom.lib.common.function.Nameable;
 
 /**
  * @author Werner Keil
- * @version 1.1, April 15, 2019
+ * @version 1.2, February 20, 2022
  * @see <a
  *      href="http://en.wikipedia.org/wiki/Saffir%E2%80%93Simpson_hurricane_wind_scale">
  *      Wikipedia: Saffir–Simpson hurricane wind scale</a>
+ * @deprecated Use uom-weather types
  */
 public class SaffirSimpsonHurricaneWindScale extends QuantityRange<Speed> implements Nameable {
 
