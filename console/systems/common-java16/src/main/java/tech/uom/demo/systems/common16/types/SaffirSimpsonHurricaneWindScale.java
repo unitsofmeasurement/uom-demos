@@ -112,7 +112,7 @@ public class SaffirSimpsonHurricaneWindScale extends QuantityRange<Speed>
 	}
 
 	@Override
-	public String toString() {
+	public String toString () {
 		return getName() + " [category=" + category + ", minimum="
 				+ getMinimum() + ", maximum=" + getMaximum() + "]";
 	}

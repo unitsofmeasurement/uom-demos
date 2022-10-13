@@ -28,12 +28,13 @@ package tech.uom.demo.basic;
 import static javax.measure.MetricPrefix.NANO;
 import static tech.units.indriya.unit.Units.LITRE;
 
+import java.math.BigDecimal;
+
 import javax.measure.Unit;
 import javax.measure.quantity.Mass;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Volume;
 
-import tech.units.indriya.AbstractUnit;
 import tech.units.indriya.quantity.Quantities;
 import javax.measure.MetricPrefix;
 import javax.measure.Quantity;
@@ -77,5 +78,16 @@ public class UnitDemo {
 		System.out.println(fivedivFiveKg.getValue());
 		Quantity<Volume> l3 = l6.divide(2);
 		System.out.println(l3);
+		
+		Quantity<?> result1 = Quantities.getQuantity(0.0, Units.MOLE).add(Quantities.getQuantity(1.1, Units.MOLE));
+		Quantity<?> comparative1 = Quantities.getQuantity(1.1, Units.MOLE);
+		System.out.println(result1.equals(comparative1));
+		
+		Quantity<?> result2 = Quantities.getQuantity(0, Units.MOLE).add(Quantities.getQuantity(1, Units.MOLE));
+		Quantity<?> comparative2 = Quantities.getQuantity(1, Units.MOLE);
+		System.out.println(result2.equals(comparative2));
+		
+		BigDecimal b1 = BigDecimal.ZERO.add(BigDecimal.ONE);
+		System.out.println(b1.equals(BigDecimal.ONE));
 	}
 }

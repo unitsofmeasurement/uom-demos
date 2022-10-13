@@ -28,18 +28,12 @@ package tech.uom.demo.systems.common16;
 import static systems.uom.common.USCustomary.MILE_PER_HOUR;
 import static systems.uom.common.USCustomary.MILE;
 import static tech.units.indriya.unit.Units.HOUR;
-import static tech.units.indriya.unit.Units.KILOMETRE_PER_HOUR;
-
 import java.time.Duration;
+import java.util.List;
 
-import javax.measure.Quantity;
-import javax.measure.quantity.Length;
-import javax.measure.quantity.Speed;
 import javax.measure.quantity.Time;
 
-import tech.units.indriya.AbstractQuantity;
 import tech.units.indriya.quantity.Quantities;
-import tech.units.indriya.quantity.time.TemporalQuantity;
 import tech.units.indriya.quantity.time.TimeQuantities;
 import tech.uom.demo.systems.common16.types.Airplane;
 
@@ -52,6 +46,9 @@ import tech.uom.demo.systems.common16.types.Airplane;
 public class AirplaneDemo {
 
     public static void main(String[] args) {
+    	List<String> emptyList = List.of();
+    	emptyList.add("Test");
+    	
         final String model;
         double dist;
         if (args != null && args.length > 0) {
