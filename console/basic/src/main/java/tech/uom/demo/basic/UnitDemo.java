@@ -78,16 +78,5 @@ public class UnitDemo {
 		System.out.println(fivedivFiveKg.getValue());
 		Quantity<Volume> l3 = l6.divide(2);
 		System.out.println(l3);
-		
-		Quantity<?> result1 = Quantities.getQuantity(0.0, Units.MOLE).add(Quantities.getQuantity(1.1, Units.MOLE));
-		Quantity<?> comparative1 = Quantities.getQuantity(1.1, Units.MOLE);
-		System.out.println(result1.equals(comparative1));
-		
-		Quantity<?> result2 = Quantities.getQuantity(0, Units.MOLE).add(Quantities.getQuantity(1, Units.MOLE));
-		Quantity<?> comparative2 = Quantities.getQuantity(1, Units.MOLE);
-		System.out.println(result2.equals(comparative2));
-		
-		BigDecimal b1 = BigDecimal.ZERO.add(BigDecimal.ONE);
-		System.out.println(b1.equals(BigDecimal.ONE));
 	}
 }

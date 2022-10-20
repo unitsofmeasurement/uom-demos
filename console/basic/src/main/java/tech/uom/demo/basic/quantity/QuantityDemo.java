@@ -1,5 +1,8 @@
 package tech.uom.demo.basic.quantity;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
 import javax.measure.Quantity;
 
 import tech.units.indriya.quantity.Quantities;
@@ -15,5 +18,8 @@ public class QuantityDemo {
 		Quantity<?> result2 = Quantities.getQuantity(0, Units.MOLE).add(Quantities.getQuantity(1, Units.MOLE));
 		Quantity<?> comparative2 = Quantities.getQuantity(1, Units.MOLE);
 		System.out.println(result2.equals(comparative2));
+				
+//		BigDecimal b1 = BigDecimal.ZERO.add(BigDecimal.ONE);
+//		System.out.println(b1.equals(BigDecimal.ONE));
 	}	
 }
