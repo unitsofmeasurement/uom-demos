@@ -1,8 +1,5 @@
 package tech.uom.demo.basic.quantity;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
-
 import javax.measure.Quantity;
 
 import tech.units.indriya.quantity.Quantities;
