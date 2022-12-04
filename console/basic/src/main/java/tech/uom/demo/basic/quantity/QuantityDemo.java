@@ -1,6 +1,10 @@
 package tech.uom.demo.basic.quantity;
 
+import static tech.units.indriya.unit.Units.*;
+
+import javax.measure.MetricPrefix;
 import javax.measure.Quantity;
+import javax.measure.quantity.Mass;
 
 import tech.units.indriya.quantity.Quantities;
 import tech.units.indriya.unit.Units;
@@ -18,5 +22,14 @@ public class QuantityDemo {
 				
 //		BigDecimal b1 = BigDecimal.ZERO.add(BigDecimal.ONE);
 //		System.out.println(b1.equals(BigDecimal.ONE));
+		
+	    // uses TransformedUnit
+	    Quantity<Mass> w1 = Quantities.getQuantity(12.5, KILOGRAM);
+
+	    // uses BasicUnit
+	    Quantity<Mass> w2 = (Quantity<Mass>) Quantities.getQuantity("12,5 kg");
+
+	    System.out.println(w1.equals(w2));
+	    System.out.println(w2.equals(w1));
 	}	
 }
