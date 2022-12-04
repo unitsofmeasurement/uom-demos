@@ -11,6 +11,10 @@
 	</parent>
 	<description>Demos of the Units of Measurement API using JavaFX</description>
   
+  	<properties>
+		<jfxVersion>17.0.2</jfxVersion>
+	</properties>
+  
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
