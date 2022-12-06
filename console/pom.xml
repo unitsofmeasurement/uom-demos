@@ -12,6 +12,10 @@
 		<version>2.1-SNAPSHOT</version>
 	</parent>
 
+    <properties>
+        <domain.version>2.1-SNAPSHOT</domain.version>
+    </properties>
+    
 	<build>
 		<pluginManagement>
 			<plugins>

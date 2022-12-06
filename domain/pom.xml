@@ -36,6 +36,11 @@
 				<artifactId>systems-common</artifactId>
 				<version>${systems.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>tech.uom.domain</groupId>
+				<artifactId>uom-weather</artifactId>
+				<version>${domain.version}</version>
+		</dependency>
 		</dependencies>
 	</dependencyManagement>
 

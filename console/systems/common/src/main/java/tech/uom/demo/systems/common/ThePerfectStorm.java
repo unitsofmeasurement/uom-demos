@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2020, Werner Keil and others.
+ *  Copyright (c) 2005-2022, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -27,13 +27,13 @@ package tech.uom.demo.systems.common;
 
 import static javax.measure.MetricPrefix.KILO;
 import static tech.units.indriya.unit.Units.METRE;
-import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.FIVE;
-import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.FOUR;
-import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.ONE;
-import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.THREE;
-import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_DEPRESSION;
-import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_STORM;
-import static tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale.Category.TWO;
+import static tech.uom.domain.weather.wind.SaffirSimpsonHurricaneWindScale.Category.FIVE;
+import static tech.uom.domain.weather.wind.SaffirSimpsonHurricaneWindScale.Category.FOUR;
+import static tech.uom.domain.weather.wind.SaffirSimpsonHurricaneWindScale.Category.ONE;
+import static tech.uom.domain.weather.wind.SaffirSimpsonHurricaneWindScale.Category.THREE;
+import static tech.uom.domain.weather.wind.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_DEPRESSION;
+import static tech.uom.domain.weather.wind.SaffirSimpsonHurricaneWindScale.Category.TROPICAL_STORM;
+import static tech.uom.domain.weather.wind.SaffirSimpsonHurricaneWindScale.Category.TWO;
 import static systems.uom.common.USCustomary.MILE_PER_HOUR;
 import static tech.units.indriya.unit.Units.KILOMETRE_PER_HOUR;
 
@@ -44,11 +44,11 @@ import javax.measure.quantity.Time;
 
 import tech.units.indriya.format.SimpleUnitFormat;
 import tech.units.indriya.quantity.Quantities;
-import tech.uom.demo.systems.common.types.SaffirSimpsonHurricaneWindScale;
+import tech.uom.domain.weather.wind.SaffirSimpsonHurricaneWindScale;
 
 /**
  * @author Werner Keil
- * @version 1.2
+ * @version 2.0
  * @see {@link SaffirSimpsonHurricaneWindScale}
  */
 public class ThePerfectStorm {
