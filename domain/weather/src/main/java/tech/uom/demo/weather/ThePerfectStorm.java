@@ -48,7 +48,7 @@ import tech.uom.domain.weather.wind.SaffirSimpsonHurricaneWindScale;
 
 /**
  * @author Werner Keil
- * @version 1.3
+ * @version 2.0
  * @see {@link SaffirSimpsonHurricaneWindScale}
  */
 public class ThePerfectStorm {

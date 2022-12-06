@@ -9,3 +9,5 @@ Covering the following domains:
   - [Health Demos](health)
 - Retail
   - [Retail Demos](retail)
+- Weather & Climate
+  - [Weather Demos](weather)
