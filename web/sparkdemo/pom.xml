@@ -13,8 +13,6 @@
     <!-- Build Settings -->
     <!-- ======================================================= -->
     <properties>
-        <jsr.version>1.0</jsr.version>
-        <lib.version>1.0.1</lib.version>
         <sourceEncoding>UTF-8</sourceEncoding> <!-- in Maven 3. -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${sourceEncoding}</project.reporting.outputEncoding>
