@@ -30,17 +30,17 @@ import static systems.uom.common.USCustomary.MILE_PER_HOUR;
 import static tech.units.indriya.quantity.Quantities.getQuantity;
 import static tech.units.indriya.unit.Units.KILOMETRE_PER_HOUR;
 import static tech.units.indriya.unit.Units.METRE;
-import static tech.uom.demo.systems.common16.types.SaffirSimpsonHurricaneWindScale.Category.*;
+import static tech.uom.domain.weather.wind.SaffirSimpsonHurricaneWindScale.Category.*;
 
 import tech.units.indriya.format.SimpleUnitFormat;
-import tech.uom.demo.systems.common16.types.SaffirSimpsonHurricaneWindScale;
+import tech.uom.domain.weather.wind.SaffirSimpsonHurricaneWindScale;
 
 import javax.measure.quantity.Time;
 import java.util.regex.Pattern;
 
 /**
  * @author Werner Keil
- * @version 1.3
+ * @version 2.3
  * @see {@link SaffirSimpsonHurricaneWindScale}
  */
 public class ThePerfectStorm {

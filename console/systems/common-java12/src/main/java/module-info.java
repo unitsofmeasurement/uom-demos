@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2020, Werner Keil and others.
+ *  Copyright (c) 2005-2022, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -30,6 +30,7 @@ module tech.uom.demo.systems.common {
     requires transitive tech.units.indriya;
     requires transitive systems.uom.quantity;
     requires systems.uom.common;
+    requires tech.uom.domain.weather;
     
     exports tech.uom.demo.systems.common;
     exports tech.uom.demo.systems.common.types;

@@ -28,7 +28,8 @@ module tech.uom.demo.systems.common16 {
     requires transitive tech.units.indriya;
     requires tech.uom.lib.common;
     requires systems.uom.common;
-
+    requires tech.uom.domain.weather;
+    
     exports tech.uom.demo.systems.common16;
     exports tech.uom.demo.systems.common16.types;
 }

@@ -45,7 +45,10 @@
 			<groupId>tech.uom.lib</groupId>
 			<artifactId>uom-lib-common</artifactId>
 		</dependency>
-		
+		<dependency>
+			<groupId>tech.uom.domain</groupId>
+			<artifactId>uom-weather</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter</artifactId>

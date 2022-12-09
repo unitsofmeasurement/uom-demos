@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2021, Werner Keil and others.
+ *  Copyright (c) 2005-2022, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -35,7 +35,7 @@ import tech.units.indriya.AbstractQuantity;
 import tech.units.indriya.quantity.Quantities;
 
 /**
- * This is a demonstrator for the Java 14 {@link Record} preview and the new <code>switch</code> expression.
+ * This is a demonstrator for the Java 17 {@link Record} preview and the new <code>switch</code> expression.
  * @author Werner Keil
  *
  */
@@ -44,6 +44,7 @@ public record Airplane( String model) {
     public final Quantity<Speed> getSpeed() {
     	return switch (model) {        	
             case "A380" ->  Quantities.getQuantity(945, KILOMETRE_PER_HOUR); // Airbus A 380 Cruise speed
+            case "B747" -> Quantities.getQuantity(933, KILOMETRE_PER_HOUR); // Jumbo Cruise speed
             case "B777" -> Quantities.getQuantity(892, KILOMETRE_PER_HOUR);
             // Boeing 777 Cruise speed, see https://en.wikipedia.org/wiki/Boeing_777#Specifications
             case "B787" -> Quantities.getQuantity(903, KILOMETRE_PER_HOUR);

@@ -29,8 +29,6 @@ import static systems.uom.common.USCustomary.MILE_PER_HOUR;
 import static systems.uom.common.USCustomary.MILE;
 import static tech.units.indriya.unit.Units.HOUR;
 import java.time.Duration;
-import java.util.List;
-
 import javax.measure.quantity.Time;
 
 import tech.units.indriya.quantity.Quantities;
@@ -42,13 +40,11 @@ import tech.uom.demo.systems.common16.types.Airplane;
  * 
  * @author Werner Keil
  * @see <a href="https://en.wikipedia.org/wiki/In-flight_entertainment">Wikipedia: In-flight entertainment</a>
+ * @version 1.2
  */
 public class AirplaneDemo {
 
     public static void main(String[] args) {
-    	List<String> emptyList = List.of();
-    	emptyList.add("Test");
-    	
         final String model;
         double dist;
         if (args != null && args.length > 0) {
