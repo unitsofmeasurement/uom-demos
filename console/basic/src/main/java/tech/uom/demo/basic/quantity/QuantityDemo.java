@@ -4,6 +4,7 @@ import static tech.units.indriya.unit.Units.*;
 
 import javax.measure.MetricPrefix;
 import javax.measure.Quantity;
+import javax.measure.Unit;
 import javax.measure.quantity.Mass;
 
 import tech.units.indriya.quantity.Quantities;
@@ -30,6 +31,11 @@ public class QuantityDemo {
 	    Quantity<Mass> w2 = (Quantity<Mass>) Quantities.getQuantity("12,5 kg");
 
 	    System.out.println(w1.equals(w2));
-	    System.out.println(w2.equals(w1));
+	    //System.out.println(w2.equals(w1));
+	    
+	    Unit unit = Units.WATT.multiply(Units.HOUR);
+		Quantity q1 = Quantities.getQuantity(0.0, unit).add(Quantities.getQuantity(1.1, unit));
+		Quantity q2 = Quantities.getQuantity(1.1, unit);
+		System.out.println(q1.equals(q2));
 	}	
 }
