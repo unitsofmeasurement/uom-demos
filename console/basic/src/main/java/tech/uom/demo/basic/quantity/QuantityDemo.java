@@ -2,6 +2,8 @@ package tech.uom.demo.basic.quantity;
 
 import static tech.units.indriya.unit.Units.*;
 
+import java.math.BigDecimal;
+
 import javax.measure.MetricPrefix;
 import javax.measure.Quantity;
 import javax.measure.Unit;
@@ -23,6 +25,7 @@ public class QuantityDemo {
 				
 //		BigDecimal b1 = BigDecimal.ZERO.add(BigDecimal.ONE);
 //		System.out.println(b1.equals(BigDecimal.ONE));
+		//System.out.println("BD=D? " + BigDecimal.ONE.equals(new Double(1)));
 		
 	    // uses TransformedUnit
 	    Quantity<Mass> w1 = Quantities.getQuantity(12.5, KILOGRAM);
