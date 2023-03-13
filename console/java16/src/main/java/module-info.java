@@ -34,5 +34,6 @@ module tech.uom.demo.java16 {
 
     exports tech.uom.demo.java16;
     exports tech.uom.demo.java16.format;
+    exports tech.uom.demo.java16.quantity;
     exports tech.uom.demo.java16.types;
 }
