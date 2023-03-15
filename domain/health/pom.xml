@@ -4,16 +4,15 @@
 	<parent>
 		<groupId>tech.uom.demo.domain</groupId>
 		<artifactId>uom-domain-demos</artifactId>
-		<version>2.1-SNAPSHOT</version>
+		<version>2.1</version>
 	</parent>
-	<artifactId>uom-health-demos-se</artifactId>
-    <name>Units of Measurement Health Demos for Java SE</name>
+	<artifactId>uom-health-demos</artifactId>
+    <name>Units of Measurement Health Demos</name>
     
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
 	<properties>
-	    <domain.version>2.1-SNAPSHOT</domain.version>
 		<jdkVersion>1.8</jdkVersion>
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>1.8</maven.compile.targetLevel>

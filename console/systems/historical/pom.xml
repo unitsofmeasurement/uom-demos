@@ -3,7 +3,7 @@
   <parent>
     <groupId>tech.uom.demo.console.systems</groupId>
     <artifactId>uom-console-system-demos</artifactId>
-    <version>2.1-SNAPSHOT</version>
+    <version>2.1</version>
   </parent>
   <artifactId>historical</artifactId>
   <name>Historical Unit Systems</name>

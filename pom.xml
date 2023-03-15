@@ -17,6 +17,7 @@
 		<url>http://unitsofmeasurement.github.io</url>
 	</organization>
 	<description>Parent for Units of Measurement Demos</description>
+	<version>2.1</version>
 	<licenses>
 		<license>
 			<name>BSD 3-Clause</name>
@@ -32,8 +33,8 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<jsr.version>2.2-SNAPSHOT</jsr.version>
-		<ri.version>2.2-SNAPSHOT</ri.version>
+		<jsr.version>2.1.3</jsr.version>
+		<ri.version>2.1.4</ri.version>
 		<lib.version>2.1</lib.version>
 		<si.version>2.1</si.version>
 		<systems.version>2.1</systems.version>
@@ -118,6 +119,7 @@
 	<modules>
 		<module>console</module>
 		<module>desktop</module>
+		<module>domain</module>
 		<module>device</module>
 		<module>lang</module>
 		<module>web</module>
@@ -140,5 +142,4 @@
             <url>http://repository.jboss.org/maven2</url>
         </repository>
     </repositories>
-	<version>2.1-SNAPSHOT</version>
 </project>
