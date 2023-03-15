@@ -8,7 +8,7 @@
 		<version>2.1</version>
 	</parent>
 	<artifactId>retail</artifactId>
-	<name>Retail Demos for Java SE</name>
+	<name>Units of Measurement Retail Demos</name>
 
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
@@ -62,30 +62,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<!-- Additional repositories -->
-	<!-- Helps to resolve Parent POM and Snapshot artifacts -->
-	<repositories>
-		<repository>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<id>bintray-release</id>
-			<name>libs-release</name>
-			<url>http://oss.jfrog.org/artifactory/libs-release</url>
-		</repository>
-		<repository>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<id>bintray-snapshot</id>
-			<name>libs-snapshot</name>
-			<url>http://oss.jfrog.org/artifactory/libs-snapshot</url>
-		</repository>
-		<repository>
-			<id>jcenter</id>
-			<name>JCenter</name>
-			<url>http://jcenter.bintray.com</url>
-		</repository>
-	</repositories>
 </project>
