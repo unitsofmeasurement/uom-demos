@@ -1,6 +1,6 @@
 /*
  * Units of Measurement Demos
- * Copyright © 2005-2018, Werner Keil and others.
+ * Copyright © 2005-2023, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -33,6 +33,7 @@ package tech.uom.demo.retail.types;
 import tech.uom.lib.common.function.Coded;
 
 // TODO add remaining ISO parts as per https://www.csiu.co/resources-and-links/iso-container-size-and-type-iso-6346
+// TODO try using records in a Java 17+ demo
 public class Container implements Coded<String> {
     final ContainerLength length;
     final ContainerHeight height;
