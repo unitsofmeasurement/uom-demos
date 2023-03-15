@@ -36,15 +36,15 @@ import javax.measure.Unit;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
-import tech.uom.domain.retail.quantity.Crate;
+import tech.uom.domain.retail.quantity.Each;
 import tech.uom.lib.common.function.UnitSupplier;
 
-public class BottleCrate implements Supplier<Collection<Bottle>>, UnitSupplier<Crate> {
+public class BottleCrate implements Supplier<Collection<Bottle>>, UnitSupplier<Each> {
 
 	private final Collection<Bottle> bottles;
-	private final Unit<Crate> unit;
+	private final Unit<Each> unit;
 	
-	public BottleCrate(Collection<Bottle> b, Unit<Crate> u) {
+	public BottleCrate(Collection<Bottle> b, Unit<Each> u) {
 		this.bottles = b;
 		this.unit = u;
 	}
@@ -55,7 +55,7 @@ public class BottleCrate implements Supplier<Collection<Bottle>>, UnitSupplier<C
 	}
 
 	@Override
-	public Unit<Crate> getUnit() {
+	public Unit<Each> getUnit() {
 		return unit;
 	}
 

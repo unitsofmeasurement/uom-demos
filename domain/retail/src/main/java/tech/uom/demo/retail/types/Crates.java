@@ -39,10 +39,10 @@ import javax.measure.UnconvertibleException;
 import javax.measure.Unit;
 import javax.measure.UnitConverter;
 
-import tech.uom.domain.retail.quantity.Crate;
+import tech.uom.domain.retail.quantity.Each;
 import tech.uom.lib.common.function.ValueSupplier;
 
-public enum Crates implements Unit<Crate>, ValueSupplier<Integer> {
+public enum Crates implements Unit<Each>, ValueSupplier<Integer> {
     DOZEN("Dozen", "d", 12), // reference Unit
     SIXPACK("Half a Dozen", "hd", 6);
 
@@ -78,7 +78,7 @@ public enum Crates implements Unit<Crate>, ValueSupplier<Integer> {
     }
 
     @Override
-    public Unit<Crate> getSystemUnit() {
+    public Unit<Each> getSystemUnit() {
 	return DOZEN;
     }
 
@@ -101,7 +101,7 @@ public enum Crates implements Unit<Crate>, ValueSupplier<Integer> {
     }
 
     @Override
-    public UnitConverter getConverterTo(Unit<Crate> that)
+    public UnitConverter getConverterTo(Unit<Each> that)
 	    throws UnconvertibleException {
 	// TODO Auto-generated method stub
 	return null;
@@ -115,19 +115,19 @@ public enum Crates implements Unit<Crate>, ValueSupplier<Integer> {
     }
 
     @Override
-    public Unit<Crate> alternate(String symbol) {
+    public Unit<Each> alternate(String symbol) {
 	// TODO Auto-generated method stub
 	return null;
     }
 
     @Override
-    public Unit<Crate> shift(double offset) {
+    public Unit<Each> shift(double offset) {
 	// TODO Auto-generated method stub
 	return null;
     }
 
     @Override
-    public Unit<Crate> multiply(double multiplier) {
+    public Unit<Each> multiply(double multiplier) {
 	// TODO Auto-generated method stub
 	return null;
     }
@@ -145,7 +145,7 @@ public enum Crates implements Unit<Crate>, ValueSupplier<Integer> {
     }
 
     @Override
-    public Unit<Crate> divide(double divisor) {
+    public Unit<Each> divide(double divisor) {
 	// TODO Auto-generated method stub
 	return null;
     }
@@ -169,37 +169,37 @@ public enum Crates implements Unit<Crate>, ValueSupplier<Integer> {
     }
 
     @Override
-    public Unit<Crate> transform(UnitConverter converter) {
+    public Unit<Each> transform(UnitConverter converter) {
 	// TODO Auto-generated method stub
 	return null;
     }
 
 	@Override
-	public Unit<Crate> shift(Number offset) {
+	public Unit<Each> shift(Number offset) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Unit<Crate> multiply(Number multiplier) {
+	public Unit<Each> multiply(Number multiplier) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Unit<Crate> divide(Number divisor) {
+	public Unit<Each> divide(Number divisor) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Unit<Crate> prefix(Prefix prefix) {
+	public Unit<Each> prefix(Prefix prefix) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean isEquivalentTo(Unit<Crate> that) {
+	public boolean isEquivalentTo(Unit<Each> that) {
 		return this.equals(that);
 	}
 }
