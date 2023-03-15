@@ -7,7 +7,7 @@ jobs:
   clean:
     docker:
       # specify the version you desire here
-      - image: cimg/openjdk:16.0
+      - image: cimg/openjdk:17.0.6
 
     working_directory: ~/repo
 
@@ -18,12 +18,14 @@ jobs:
     steps:
       - checkout
         
-      # run coverage!
-      - run: mvn clean
+      # run clean!
+      - run:
+          name: Clean
+          command: mvn clean
   build:
     docker:
       # specify the version you desire here
-      - image: cimg/openjdk:16.0
+      - image: cimg/openjdk:17.0.6
 
     working_directory: ~/repo
 
@@ -35,7 +37,9 @@ jobs:
       - checkout
         
       # run tests!
-      - run: mvn integration-test
+      - run:
+          name: Test
+          command: mvn integration-test
 
 workflows:
   version: 2
