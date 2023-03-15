@@ -2,9 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>tech.uom.demo.console.systems</groupId>
-		<artifactId>uom-console-system-demos</artifactId>
-		<version>2.1</version>
+		<groupId>tech.uom.demo.console.impl</groupId>
+		<artifactId>uom-console-impl-demos</artifactId>
+		<version>2.2-SNAPSHOT</version>
 	</parent>
 	<artifactId>jscience</artifactId>
 	<name>JScience 4 Console Demos</name>
@@ -15,5 +15,4 @@
 			<version>4.3.1</version>
 		</dependency>
 	</dependencies>
-
 </project>

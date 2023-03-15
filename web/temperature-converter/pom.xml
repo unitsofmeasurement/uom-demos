@@ -16,7 +16,7 @@
 	<parent>
 		<groupId>tech.uom.demo.web</groupId>
 		<artifactId>uom-web-demos</artifactId>
-		<version>2.1</version>
+		<version>2.2-SNAPSHOT</version>
 	</parent>
 	<artifactId>temperature-converter</artifactId>
 	<packaging>war</packaging>
@@ -39,7 +39,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- JBoss dependency versions -->
-		<version.wildfly.maven.plugin>2.1.0.Beta1</version.wildfly.maven.plugin>
+		<version.wildfly.maven.plugin>2.2-SNAPSHOT.0.Beta1</version.wildfly.maven.plugin>
 		<version.thorntail>2.5.0.Final</version.thorntail>
   		<!-- Version of BOMs
         	note: a SNAPSHOT version *requires* checkout of BOMs at https://github.com/wildfly/boms and build through "mvn clean install"
@@ -105,7 +105,7 @@
 			<exclusions> <exclusion> < declare the exclusion here > <groupId>tech.uom.lib</groupId> 
 			<artifactId>uom-lib-common</artifactId> </exclusion> </exclusions> </dependency> 
 			<dependency> <groupId>tech.uom.lib</groupId> <artifactId>uom-lib-common</artifactId> 
-			<version>2.1.1-SNAPSHOT</version> </dependency> -->
+			<version>2.2-SNAPSHOT.1-SNAPSHOT</version> </dependency> -->
 	</dependencies>
 
 	<build>

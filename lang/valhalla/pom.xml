@@ -3,9 +3,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
-		<artifactId>uom-console-demos</artifactId>
-		<groupId>tech.uom.demo.console</groupId>
-		<version>2.1</version>
+		<artifactId>uom-language-demos</artifactId>
+		<groupId>tech.uom.demo.lang</groupId>
+		<version>2.2-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>valhalla</artifactId>

@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>tech.uom.demo.console</groupId>
 		<artifactId>uom-console-demos</artifactId>
-		<version>2.1</version>
+		<version>2.2-SNAPSHOT</version>
 	</parent>
 	<groupId>tech.uom.demo.console.systems</groupId>
 	<artifactId>uom-console-system-demos</artifactId>
@@ -22,7 +22,6 @@
 		<module>ucum</module>
 		<module>ucum-java12</module>
 		<module>historical</module>
-		<module>jscience</module>
 	</modules>
 
 	<dependencyManagement>

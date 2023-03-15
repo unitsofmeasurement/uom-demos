@@ -13,4 +13,3 @@ The project currently contains the following modules:
 - [Java 12 Console Demos](java12)
 - [Java 16 Console Demos](java16)
 - [Unit System Console Demos](systems)
-- [Valhalla Preview](valhalla)

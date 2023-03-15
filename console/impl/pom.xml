@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>tech.uom.demo.console</groupId>
+		<artifactId>uom-console-demos</artifactId>
+		<version>2.2-SNAPSHOT</version>
+	</parent>
+	<groupId>tech.uom.demo.console.impl</groupId>
+	<artifactId>uom-console-impl-demos</artifactId>
+	<packaging>pom</packaging>
+	<name>Implementation Specific UoM Console Demos</name>
+	
+	<modules>
+		<module>jscience</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>si.uom</groupId>
+				<artifactId>si-quantity</artifactId>
+				<version>${si.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>si.uom</groupId>
+				<artifactId>si-units</artifactId>
+				<version>${si.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>systems.uom</groupId>
+				<artifactId>systems-quantity</artifactId>
+				<version>${systems.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
