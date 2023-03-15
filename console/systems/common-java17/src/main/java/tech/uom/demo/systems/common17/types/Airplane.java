@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2020, Werner Keil and others.
+ *  Copyright (c) 2005-2022, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -23,15 +23,33 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-module tech.uom.demo.basic {
-    requires transitive java.measure;
-    requires transitive tech.units.indriya;
-    requires tech.uom.lib.common;
-    requires jdk.jshell;
+package tech.uom.demo.systems.common17.types;
 
-    exports tech.uom.demo.basic;
-    exports tech.uom.demo.basic.format;
-    exports tech.uom.demo.basic.jshell;
-    exports tech.uom.demo.basic.spi;
-    exports tech.uom.demo.basic.planet;
+import static tech.units.indriya.unit.Units.KILOMETRE_PER_HOUR;
+
+import javax.measure.Quantity;
+import javax.measure.quantity.Speed;
+import javax.measure.quantity.Time;
+
+import tech.units.indriya.AbstractQuantity;
+import tech.units.indriya.quantity.Quantities;
+
+/**
+ * This is a demonstrator for the Java 17 {@link Record} preview and the new <code>switch</code> expression.
+ * @author Werner Keil
+ *
+ */
+public record Airplane( String model) {
+
+    public final Quantity<Speed> getSpeed() {
+    	return switch (model) {        	
+            case "A380" ->  Quantities.getQuantity(945, KILOMETRE_PER_HOUR); // Airbus A 380 Cruise speed
+            case "B747" -> Quantities.getQuantity(933, KILOMETRE_PER_HOUR); // Jumbo Cruise speed
+            case "B777" -> Quantities.getQuantity(892, KILOMETRE_PER_HOUR);
+            // Boeing 777 Cruise speed, see https://en.wikipedia.org/wiki/Boeing_777#Specifications
+            case "B787" -> Quantities.getQuantity(903, KILOMETRE_PER_HOUR);
+            // Boeing 787 Cruise speed, see https://en.wikipedia.org/wiki/Boeing_787_Dreamliner#Specifications
+            default -> AbstractQuantity.NONE.asType(Speed.class);
+        };
+    }
 }

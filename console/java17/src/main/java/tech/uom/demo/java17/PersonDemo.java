@@ -1,6 +1,6 @@
 /*
- *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2020, Werner Keil and others.
+ * Units of Measurement Demos Java
+ * Copyright (c) 2005-2020, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -23,15 +23,25 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-module tech.uom.demo.basic {
-    requires transitive java.measure;
-    requires transitive tech.units.indriya;
-    requires tech.uom.lib.common;
-    requires jdk.jshell;
+package tech.uom.demo.java17;
 
-    exports tech.uom.demo.basic;
-    exports tech.uom.demo.basic.format;
-    exports tech.uom.demo.basic.jshell;
-    exports tech.uom.demo.basic.spi;
-    exports tech.uom.demo.basic.planet;
+import tech.units.indriya.quantity.Quantities;
+import tech.uom.demo.java17.types.Person;
+
+import static tech.units.indriya.unit.Units.KILOGRAM;
+import static tech.units.indriya.unit.Units.METRE;
+
+/**
+ * @version 0.4
+ * @author werner
+ */
+public class PersonDemo {
+
+    public static void main(String[] args) {
+        var person1 = new Person("John", "Doe",
+                Quantities.getQuantity(1.8, METRE),
+                Quantities.getQuantity(80, KILOGRAM));
+        System.out.println(person1);
+        System.out.println(person1.getFullName());
+    }
 }

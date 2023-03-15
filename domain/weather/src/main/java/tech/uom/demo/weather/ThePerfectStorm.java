@@ -48,12 +48,12 @@ import tech.uom.domain.weather.wind.SaffirSimpsonHurricaneWindScale;
 
 /**
  * @author Werner Keil
- * @version 2.0
+ * @version 2.1
  * @see {@link SaffirSimpsonHurricaneWindScale}
  */
 public class ThePerfectStorm {
 	
-	private static enum Scale {
+	private static enum ScaleType {
 		SAFFIR_SIMPSON, BEAUFORT
 	}
 	
@@ -80,7 +80,7 @@ public class ThePerfectStorm {
 
 	private static final double DEFAULT_DIST_KM = 500d;
 	
-	private static Scale scale;
+	private static ScaleType scaleType;
 	
 	
 	/**

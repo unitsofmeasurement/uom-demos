@@ -73,9 +73,8 @@
 	</build>
 	<modules>
 		<module>basic</module>
-		<module>java11</module>
 		<module>java12</module>
-		<module>java16</module>
+		<module>java17</module>
     	<module>systems</module>
     	<module>impl</module>
     	<module>conference</module>

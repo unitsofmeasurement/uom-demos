@@ -14,13 +14,13 @@
 	<modules>
 		<module>common</module>
 		<module>common-java12</module>
-		<module>common-java16</module>
+		<module>common-java17</module>
 		<module>si</module>
-		<module>si-java12</module>
+		<module>si-java17</module>
 		<module>unicode</module>
-		<module>unicode-java12</module>
+		<module>unicode-java17</module>
 		<module>ucum</module>
-		<module>ucum-java12</module>
+		<module>ucum-java17</module>
 		<module>historical</module>
 	</modules>
 
@@ -51,11 +51,6 @@
 				<artifactId>systems-common</artifactId>
 				<version>${systems.version}</version>
 			</dependency>
-			<dependency>
-				<groupId>systems.uom</groupId>
-				<artifactId>systems-common-java8</artifactId>
-				<version>${systems.version}</version>
-			</dependency>
 			 <dependency>
                 <groupId>systems.uom</groupId>
                 <artifactId>systems-unicode</artifactId>
@@ -63,17 +58,7 @@
             </dependency>
             <dependency>
                 <groupId>systems.uom</groupId>
-                <artifactId>systems-unicode-java8</artifactId>
-                <version>${systems.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>systems.uom</groupId>
                 <artifactId>systems-ucum</artifactId>
-                <version>${systems.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>systems.uom</groupId>
-                <artifactId>systems-ucum-java8</artifactId>
                 <version>${systems.version}</version>
             </dependency>
          	<dependency>
