@@ -1,6 +1,6 @@
 /*
- * Units of Measurement Demos
- * Copyright © 2005-2020, Werner Keil and others.
+ * Units of Measurement Retail Demos
+ * Copyright © 2005-2023, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -13,7 +13,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
  *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-385, Unit-API nor the names of their contributors may be used to endorse or promote products
+ * 3. Neither the name of JSR-385, Units of Measurement nor the names of their contributors may be used to endorse or promote products
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -29,38 +29,15 @@
  */
 package tech.uom.demo.retail.types;
 
-import java.util.Collection;
-import java.util.function.Supplier;
+import javax.measure.Quantity;
+import javax.measure.quantity.Volume;
 
-import javax.measure.Unit;
+import tech.uom.lib.common.function.QuantitySupplier;
 
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-
-import tech.uom.domain.retail.quantity.Crate;
-import tech.uom.lib.common.function.UnitSupplier;
-
-public class BottleCrate implements Supplier<Collection<Bottle>>, UnitSupplier<Crate> {
-
-	private final Collection<Bottle> bottles;
-	private final Unit<Crate> unit;
-	
-	public BottleCrate(Collection<Bottle> b, Unit<Crate> u) {
-		this.bottles = b;
-		this.unit = u;
-	}
-	
-	@Override
-	public Collection<Bottle> get() {
-		return bottles;
-	}
+public record Bottle(Quantity<Volume> volume) implements QuantitySupplier<Volume> {
 
 	@Override
-	public Unit<Crate> getUnit() {
-		return unit;
-	}
-
-	@Override
-	public String toString() {
-		return ReflectionToStringBuilder.toString(this);
+	public Quantity<Volume> getQuantity() {
+		return volume;
 	}
 }

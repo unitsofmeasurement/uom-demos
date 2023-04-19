@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>tech.uom.demo.domain</groupId>
+		<artifactId>uom-domain-demos</artifactId>
+		<version>2.2-SNAPSHOT</version>
+	</parent>
+	<artifactId>retail-java17</artifactId>
+	<name>Units of Measurement Retail Demos for Java 17</name>
+
+	<!-- ======================================================= -->
+	<!-- Build Settings -->
+	<!-- ======================================================= -->
+	<properties>
+		<jdkVersion>17</jdkVersion>
+		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
+		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
+		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.measure</groupId>
+			<artifactId>unit-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>tech.units</groupId>
+			<artifactId>indriya</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>tech.uom.domain</groupId>
+			<artifactId>uom-retail-quantity</artifactId>
+			<version>${domain.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>systems.uom</groupId>
+			<artifactId>systems-quantity</artifactId>
+			<version>${systems.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>systems.uom</groupId>
+			<artifactId>systems-common</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- ======================================================= -->
+			<!-- Compilation -->
+			<!-- ======================================================= -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${project.build.javaVersion}</source>
+					<target>${project.build.javaVersion}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

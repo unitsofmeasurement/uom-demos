@@ -21,6 +21,7 @@
         <module>health</module>
         <module>energy</module>
         <module>retail</module>
+        <module>retail-java17</module>
         <module>weather</module>
 	</modules>
 

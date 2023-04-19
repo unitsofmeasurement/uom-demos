@@ -9,5 +9,6 @@ Covering the following domains:
   - [Health Demos](health)
 - Retail
   - [Retail Demos](retail)
+  - [Retail Demos for Java 17 and above](retail-java17)
 - Weather & Climate
   - [Weather Demos](weather)

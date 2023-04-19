@@ -1,6 +1,6 @@
 /*
- * Units of Measurement Demos
- * Copyright © 2005-2020, Werner Keil and others.
+ * Units of Measurement Retail Demos
+ * Copyright © 2005-2023, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -13,7 +13,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
  *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-385, Unit-API nor the names of their contributors may be used to endorse or promote products
+ * 3. Neither the name of JSR-385, Units of Measurement nor the names of their contributors may be used to endorse or promote products
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -27,40 +27,27 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.retail.types;
+package tech.uom.demo.retail;
 
+import static javax.measure.MetricPrefix.MILLI;
+import static tech.units.indriya.unit.Units.LITRE;
+
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.function.Supplier;
 
-import javax.measure.Unit;
+import tech.units.indriya.quantity.Quantities;
+import tech.uom.demo.retail.types.Bottle;
+import tech.uom.demo.retail.types.BottleCrate;
+import tech.uom.demo.retail.types.Crates;
 
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+public class BottleDemo {
 
-import tech.uom.domain.retail.quantity.Crate;
-import tech.uom.lib.common.function.UnitSupplier;
-
-public class BottleCrate implements Supplier<Collection<Bottle>>, UnitSupplier<Crate> {
-
-	private final Collection<Bottle> bottles;
-	private final Unit<Crate> unit;
-	
-	public BottleCrate(Collection<Bottle> b, Unit<Crate> u) {
-		this.bottles = b;
-		this.unit = u;
-	}
-	
-	@Override
-	public Collection<Bottle> get() {
-		return bottles;
-	}
-
-	@Override
-	public Unit<Crate> getUnit() {
-		return unit;
-	}
-
-	@Override
-	public String toString() {
-		return ReflectionToStringBuilder.toString(this);
+	public static void main(String[] args) {
+		Collection<Bottle> bottles = new ArrayList<>();
+		var bottle = new Bottle(Quantities.getQuantity(250, MILLI(LITRE)));
+		bottles.add(bottle);
+		var crate = new BottleCrate(bottles, Crates.SIXPACK);
+		System.out.println(crate);
+		System.out.println(crate.getUnit());
 	}
 }
