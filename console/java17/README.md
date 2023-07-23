@@ -1,5 +1,5 @@
-# uom-console-demos-java16
-Java 16 Demos for JSR 385
+# uom-console-demos-java17
+Java 17 Demos for JSR 385
 
 The best way to run this demo is using Maven:
 ```
