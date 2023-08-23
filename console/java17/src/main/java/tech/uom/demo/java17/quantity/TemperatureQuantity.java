@@ -44,23 +44,30 @@ import tech.uom.lib.common.function.QuantityConverter;
  * @author Werner Keil
  * @version 1.3, $Date: 2023-08-22 $
  */
-public record TemperatureQuantity(double scalar, double value, TemperatureUnit unit) implements 
+public record TemperatureQuantity(double value, TemperatureUnit unit) implements 
 Quantity<Temperature>, QuantityConverter<Temperature>, Comparable<Quantity<Temperature>> {
-    
-    public TemperatureQuantity(Number val, TemperatureUnit u) {
-    	this(0d, val.doubleValue(), u);
-    }
-    
+	@Override
+	public Quantity<Temperature> add(Quantity<Temperature> addend) {
+        final TemperatureQuantity dn = new TemperatureQuantity(Double.valueOf(
+                this.value + addend.getValue().doubleValue()), this.unit);
+        return dn;
+	}
+
+	@Override
+	public Quantity<Temperature> divide(Number divisor) {
+		return new TemperatureQuantity(value / divisor.doubleValue(), unit);
+	}
+	
+	public Quantity<?> divide(Quantity<?> that) {
+		return divide(that.getValue());
+	}
+	
 	public Quantity<Temperature> multiply(Number that) {
 		return new TemperatureQuantity(value * that.doubleValue(), unit);
 	}
 	
 	public Quantity<?> multiply(Quantity<?> that) {
 		return new TemperatureQuantity(value * that.getValue().doubleValue(), unit);
-	}
-    
-	public Quantity<?> divide(Quantity<?> that) {
-		return divide(that.getValue());
 	}
 
 	public Quantity<Temperature> subtract(Quantity<Temperature> that) {
@@ -78,8 +85,7 @@ Quantity<Temperature>, QuantityConverter<Temperature>, Comparable<Quantity<Tempe
 	}
 
 	public Quantity<Temperature> inverse() {
-		// TODO Auto-generated method stub
-		return null;
+		return convert((TemperatureUnit)unit.inverse());
 	}
 	
 	public Quantity<Temperature> to(Unit<Temperature> unit) {
@@ -93,34 +99,16 @@ Quantity<Temperature>, QuantityConverter<Temperature>, Comparable<Quantity<Tempe
         }
 	}
 
-    protected TemperatureQuantity convert(TemperatureUnit newUnit) {
-        return new TemperatureQuantity(value /  
-                newUnit.getFactor(), newUnit);
-    }
-    
 	@Override
 	public Quantity<Temperature> negate() {
 		return new TemperatureQuantity(-value, unit);
-	}
-
-	@Override
-	public Quantity<Temperature> add(Quantity<Temperature> addend) {
-        final TemperatureQuantity dn = new TemperatureQuantity(Double.valueOf(
-                this.value + addend.getValue().doubleValue()),
-        		this.unit);
-        return dn;
-	}
-
-	@Override
-	public Quantity<Temperature> divide(Number divisor) {
-		return new TemperatureQuantity(value / divisor.doubleValue(), unit);
 	}
 	
 	@Override
 	public boolean isEquivalentTo(Quantity<Temperature> that) {
 		return this.compareTo(that) == 0;
 	}
-		
+    
 	public int compareTo(Quantity<Temperature> o) {
 		return 0;
 	}
@@ -137,30 +125,33 @@ Quantity<Temperature>, QuantityConverter<Temperature>, Comparable<Quantity<Tempe
                 ABSOLUTE : RELATIVE);
 	}
 	
-
-    protected boolean eq(TemperatureQuantity dq) {
+	private TemperatureQuantity convert(TemperatureUnit newUnit) {
+        return new TemperatureQuantity(value /  
+                newUnit.getFactor(), newUnit);
+    }
+	
+    private boolean eq(TemperatureQuantity dq) {
          return dq!=null && dq.getValue().equals(getValue()) && 
-                 dq.getUnit().equals(getUnit()) &&
-                 (dq.scalar() == scalar());
+                 dq.getUnit().equals(getUnit());
     }
 
-    boolean ne(TemperatureQuantity d1) {
+    private boolean ne(TemperatureQuantity d1) {
         return ne((TemperatureQuantity) d1);
     }
 
-    boolean gt(TemperatureQuantity d1) {
+    private boolean gt(TemperatureQuantity d1) {
         return gt((TemperatureQuantity) d1);
     }
 
-    boolean lt(TemperatureQuantity d1) {
+    private boolean lt(TemperatureQuantity d1) {
         return lt((TemperatureQuantity) d1);
     }
 
-    boolean ge(TemperatureQuantity d1) {
+    private boolean ge(TemperatureQuantity d1) {
         return ge((TemperatureQuantity)d1);
     }
 
-    boolean le(TemperatureQuantity d1) {
+    private boolean le(TemperatureQuantity d1) {
         return le((TemperatureQuantity) d1);
     }
 
@@ -170,7 +161,7 @@ Quantity<Temperature>, QuantityConverter<Temperature>, Comparable<Quantity<Tempe
 	 * @see
 	 * Quantity#doubleValue(javax.measure.Unit)
 	 */
-	protected double doubleValue(Unit<Temperature> unit) {
+	private double doubleValue(Unit<Temperature> unit) {
 		Unit<Temperature> myUnit = getUnit();
 		try {
 			UnitConverter converter = unit.getConverterTo(myUnit);

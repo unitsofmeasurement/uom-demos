@@ -29,11 +29,30 @@
  */
 package tech.uom.demo.java17.quantity;
 
+import java.util.Objects;
+
 import javax.measure.Quantity;
 
-public record RangeRec<Q extends Quantity<Q>>(Quantity<Q> minimum, Quantity<Q> maximum) {
-    public RangeRec(Quantity<Q> minimum, Quantity<Q> maximum) {
-        this.minimum = minimum;
-        this.maximum = maximum;
-    }
+/**
+ * A Quantity Range is a pair of {@link Quantity} items that represent a range
+ * of values.
+ * <p>
+ * Range limits MUST be presented in the same scale and have the same unit as
+ * measured data values.<br>
+ * Subclasses of QuantityRange should be <code>final</code> and immutable.
+ * 
+ * @param <Q> The value of the range.
+ * 
+ * @author <a href="mailto:werner@units.tech">Werner Keil</a>
+ * @version 1.0, Aug 23, 2023
+ */
+public record QuantityRange<Q extends Quantity<Q>>(Quantity<Q> minimum, Quantity<Q> maximum) {    
+	public boolean contains(final Quantity<Q> q) {
+		Objects.requireNonNull(q);
+		return q.getValue() != null && q.getUnit() != null && 
+				q.getUnit().equals(minimum.getUnit()) && 
+				q.getUnit().equals(maximum.getUnit()) && 
+				minimum.getValue().doubleValue() < q.getValue().doubleValue() &&
+				maximum.getValue().doubleValue() > q.getValue().doubleValue();
+	}
 }

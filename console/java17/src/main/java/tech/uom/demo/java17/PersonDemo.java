@@ -25,32 +25,29 @@
  */
 package tech.uom.demo.java17;
 
-import tech.units.indriya.quantity.Quantities;
-import tech.uom.demo.java17.quantity.RangeRec;
+import tech.uom.demo.java17.quantity.QuantityRange;
 import tech.uom.demo.java17.types.Person;
 
+import static tech.units.indriya.quantity.Quantities.getQuantity;
 import static tech.units.indriya.unit.Units.KILOGRAM;
 import static tech.units.indriya.unit.Units.METRE;
 
 import javax.measure.quantity.Mass;
 
 /**
- * @version 0.5
+ * @version 0.6
  * @author werner
  */
 public class PersonDemo {
 
     public static void main(String[] args) {
-        var person1 = new Person("John", "Doe",
-                Quantities.getQuantity(1.8, METRE),
-                Quantities.getQuantity(80, KILOGRAM));
+        var person1 = new Person("John", "Doe", getQuantity(1.8, METRE), getQuantity(80, KILOGRAM));
         System.out.println(person1);
         System.out.println(person1.getFullName());
-        var min = Quantities.getQuantity(50, KILOGRAM);
-        var max = Quantities.getQuantity(100, KILOGRAM);
-        var range = new RangeRec<Mass>(min, max);
-        if (person1.mass().getValue().doubleValue() < range.maximum().getValue().doubleValue() && 
-        		person1.mass().getValue().doubleValue() > range.minimum().getValue().doubleValue()) {
+        var min = getQuantity(50, KILOGRAM);
+        var max = getQuantity(100, KILOGRAM);
+        var range = new QuantityRange<Mass>(min, max);
+        if (range.contains(person1.mass())) {
         	System.out.println("mass within range.");
         } else {
         	System.out.println("mass not within range.");

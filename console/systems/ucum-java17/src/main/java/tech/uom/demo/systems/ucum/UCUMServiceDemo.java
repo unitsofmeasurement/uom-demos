@@ -29,6 +29,9 @@ import static javax.measure.spi.FormatService.FormatType.UNIT_FORMAT;
 
 import javax.measure.spi.ServiceProvider;
 
+import tech.units.indriya.format.SimpleUnitFormat;
+import tech.units.indriya.unit.Units;
+
 public class UCUMServiceDemo {
 
     public static void main(String[] args) {
@@ -37,7 +40,7 @@ public class UCUMServiceDemo {
         }
         
         System.out.println();
-        System.out.println(ServiceProvider.current());
+        System.out.println(String.format("Current provider: %s", ServiceProvider.current()));
         
         for (String formatName : ServiceProvider.current().getFormatService().
                 getAvailableFormatNames(UNIT_FORMAT)) {
@@ -52,15 +55,19 @@ public class UCUMServiceDemo {
     	var unit = cs.parse("m/s");
     	System.out.println(unit);
     	
-    	ServiceProvider defaultProvider = ServiceProvider.current();
+    	ServiceProvider defaultProvider = null;
         for (ServiceProvider provider : ServiceProvider.available()) {
             if ("DefaultServiceProvider".equals(provider.getClass().getSimpleName())) {
                 defaultProvider = provider;
                 break;
             }
         }
-        final var f = defaultProvider.getFormatService().getUnitFormat();
+        System.out.println(defaultProvider);
+        
+        final var f = SimpleUnitFormat.getInstance();
         System.out.println("Square m: " + f.parse("m^2"));
+        var squareM = Units.SQUARE_METRE;
+        System.out.println(squareM);
         
         var providers = ServiceProvider.available();
         var ucumProvider = providers.get(0);
@@ -68,6 +75,6 @@ public class UCUMServiceDemo {
         var ucumFormatter = ucumFormatService.getUnitFormat("CS");
         System.out.println("m3 dimension =" + ucumFormatter.parse("m3").getDimension());        
         System.out.println("ft3 (wrong) dimension =" + ucumFormatter.parse("ft3").getDimension());
-        System.out.println("ft3 dimension =" + ucumFormatter.parse("[cft_i]").getDimension());        
+        System.out.println("ft3 dimension =" + ucumFormatter.parse("[cft_i]").getDimension());
     }
 }
