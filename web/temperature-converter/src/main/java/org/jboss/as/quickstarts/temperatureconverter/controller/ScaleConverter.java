@@ -21,7 +21,7 @@ import java.util.Set;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
-import javax.inject.Named;
+import jakarta.inject.Named;
 
 import tech.units.indriya.AbstractUnit;
 import tech.units.indriya.unit.UnitDimension;

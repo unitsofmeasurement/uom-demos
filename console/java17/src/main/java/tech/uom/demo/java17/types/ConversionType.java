@@ -1,6 +1,6 @@
 /*
- *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2021, Werner Keil and others.
+ * Units of Measurement Enum Implementation
+ * Copyright © 2005-2021, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -13,7 +13,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
  *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-385, Units of Measurement nor the names of their contributors may be used to endorse or promote products
+ * 3. Neither the name of JSR-385, Unit-API nor the names of their contributors may be used to endorse or promote products
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -27,14 +27,12 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-module tech.uom.demo.java16 {
-    requires transitive java.measure;
-    requires tech.uom.lib.common;
-    requires tech.units.indriya;
+package tech.uom.demo.java17.types;
 
-    exports tech.uom.demo.java17;
-    exports tech.uom.demo.java17.format;
-    exports tech.uom.demo.java17.quantity;
-    exports tech.uom.demo.java17.types;
-    exports tech.uom.demo.java17.unit;
+/**
+ * @author Werner Keil
+ *
+ */
+public enum ConversionType {
+	ADD, MULTIPLY, EXPONENT, LOG
 }

@@ -13,7 +13,7 @@ import tech.units.indriya.function.RationalNumber;
 import tech.units.indriya.quantity.Quantities;
 import tech.units.indriya.unit.Units;
 
-public class QuantityDemo {
+public class ComparisonDemo {
 
 	public static void main(String[] args) {
 		var result1 = Quantities.getQuantity(0.0, Units.MOLE).add(Quantities.getQuantity(1.1, Units.MOLE));

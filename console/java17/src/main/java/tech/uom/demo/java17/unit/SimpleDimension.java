@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2021, Werner Keil and others.
+ *  Copyright (c) 2005-2023, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -27,14 +27,50 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-module tech.uom.demo.java16 {
-    requires transitive java.measure;
-    requires tech.uom.lib.common;
-    requires tech.units.indriya;
 
-    exports tech.uom.demo.java17;
-    exports tech.uom.demo.java17.format;
-    exports tech.uom.demo.java17.quantity;
-    exports tech.uom.demo.java17.types;
-    exports tech.uom.demo.java17.unit;
+package tech.uom.demo.java17.unit;
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.measure.Dimension;
+
+/**
+ * 
+ * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 0.3, Date: 2014-08-03
+ */
+public record SimpleDimension() implements Dimension {
+    public static final Dimension INSTANCE = new SimpleDimension();
+    
+    public static final Dimension getInstance() {
+    	return INSTANCE;
+    }
+   
+    public Dimension multiply(Dimension dimension) {
+        return this;
+    }
+
+   
+    public Dimension divide(Dimension dimension) {
+        return this;
+    }
+
+   
+    public Dimension pow(int i) {
+        return this;
+    }
+
+   
+    public Dimension root(int i) {
+        return this;
+    }
+
+   
+    public Map<? extends Dimension, Integer> getBaseDimensions() {
+        Map<Dimension, Integer> products = new HashMap<Dimension, Integer>();
+        products.put(this, Integer.valueOf(1));
+        return products;
+    }
 }

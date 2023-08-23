@@ -33,11 +33,11 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<jsr.version>2.2-SNAPSHOT</jsr.version><!-- for overloading parent -->
-		<ri.version>2.2-SNAPSHOT</ri.version>
-		<lib.version>2.1</lib.version>
+		<jsr.version>2.2</jsr.version><!-- for overloading parent -->
+		<ri.version>2.2</ri.version>
+		<lib.version>2.2</lib.version>
 		<si.version>2.1</si.version>
-		<systems.version>2.1</systems.version>
+		<systems.version>2.2-SNAPSHOT</systems.version>
 	</properties>
 
 	<dependencyManagement>

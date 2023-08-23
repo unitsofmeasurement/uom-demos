@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2021, Werner Keil and others.
+ *  Copyright (c) 2005-2023, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -27,14 +27,8 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-module tech.uom.demo.java16 {
-    requires transitive java.measure;
-    requires tech.uom.lib.common;
-    requires tech.units.indriya;
+package tech.uom.demo.java17.unit;
 
-    exports tech.uom.demo.java17;
-    exports tech.uom.demo.java17.format;
-    exports tech.uom.demo.java17.quantity;
-    exports tech.uom.demo.java17.types;
-    exports tech.uom.demo.java17.unit;
+abstract class Constants {
+	static final char DEG = '\u00B0';
 }

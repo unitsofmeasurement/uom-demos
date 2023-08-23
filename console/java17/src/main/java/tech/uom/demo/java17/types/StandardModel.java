@@ -1,6 +1,6 @@
 /*
- *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2023, Werner Keil and others.
+ * Units of Measurement Enum Implementation
+ * Copyright © 2005-2021, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -13,7 +13,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
  *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-385, Units of Measurement nor the names of their contributors may be used to endorse or promote products
+ * 3. Neither the name of JSR-385, Unit-API nor the names of their contributors may be used to endorse or promote products
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -29,13 +29,45 @@
  */
 package tech.uom.demo.java17.types;
 
-import javax.measure.Quantity;
+import java.util.HashMap;
+import java.util.Map;
 
-public record RangeRec<Q extends Quantity<Q>>(Quantity<Q> minimum, Quantity<Q> maximum) {
-    public RangeRec(Quantity<Q> minimum, Quantity<Q> maximum) {
-//        if (lo > hi)
-//            throw new IllegalArgumentException(String.format("%d, %d", lo, hi));
-        this.minimum = minimum;
-        this.maximum = maximum;
+import javax.measure.Quantity;
+import javax.measure.Unit;
+
+/**
+ * This class represents the standard model. 
+ *
+ * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
+ * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 0.5.1, December 20, 2014
+ */
+public class StandardModel extends DimensionalModel {
+
+	private static final StandardModel INSTANCE = new StandardModel();
+	
+    /**
+     * Default constructor.
+     */
+    public StandardModel() {
     }
+    
+    /**
+     * Returns the singleton instance of this class.
+     *
+     * @return the metric system instance.
+     */
+    public static StandardModel getInstance() {
+        return INSTANCE;
+    }
+
+    @SuppressWarnings("rawtypes")
+	protected final Map<Class<? extends Quantity>, Unit>
+            quantityToUnit = new HashMap<Class<? extends Quantity>, Unit>(); // Diamond (Java 7+)
+    
+    @SuppressWarnings("unchecked")
+    public <Q extends Quantity<Q>> Unit<Q> getUnit(Class<Q> quantityType) {
+        return quantityToUnit.get(quantityType);
+    }
+	
 }
