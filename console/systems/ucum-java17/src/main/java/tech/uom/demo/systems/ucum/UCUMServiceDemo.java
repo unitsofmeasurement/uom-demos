@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2020, Werner Keil and others.
+ *  Copyright (c) 2005-2023, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -35,17 +35,13 @@ import tech.units.indriya.unit.Units;
 public class UCUMServiceDemo {
 
     public static void main(String[] args) {
-        for (ServiceProvider provider : ServiceProvider.available()) {
-            System.out.println(String.valueOf(provider.getClass().getSimpleName()));
-        }
+        ServiceProvider.available().forEach(p -> System.out.println(p.getClass().getSimpleName()));
         
         System.out.println();
         System.out.println(String.format("Current provider: %s", ServiceProvider.current()));
         
-        for (String formatName : ServiceProvider.current().getFormatService().
-                getAvailableFormatNames(UNIT_FORMAT)) {
-            System.out.println(formatName);
-        }
+        ServiceProvider.current().getFormatService().
+          getAvailableFormatNames(UNIT_FORMAT).forEach(System.out::println);
         
     	var unitFormat = ServiceProvider.current().getFormatService().getUnitFormat("UCUM");
     	System.out.println(unitFormat);
