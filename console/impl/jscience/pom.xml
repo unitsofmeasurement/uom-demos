@@ -6,7 +6,7 @@
 		<artifactId>uom-console-impl-demos</artifactId>
 		<version>2.2-SNAPSHOT</version>
 	</parent>
-	<artifactId>jscience</artifactId>
+	<artifactId>jscience-demo</artifactId>
 	<name>JScience 4 Console Demos</name>
 	<dependencies>
 		<dependency>

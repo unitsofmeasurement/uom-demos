@@ -13,6 +13,7 @@
 	
 	<modules>
 		<module>jscience</module>
+		<module>seshat</module>
 	</modules>
 
 	<dependencyManagement>
