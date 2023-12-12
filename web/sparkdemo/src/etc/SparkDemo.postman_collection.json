@@ -1,0 +1,43 @@
+{
+	"info": {
+		"_postman_id": "6531489f-6098-4d6e-b27b-86077aebc4f9",
+		"name": "SparkDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1911400"
+	},
+	"item": [
+		{
+			"name": "Temp1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4567/sensors?name=temp1&value=10&unit=Cel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"sensors"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "temp1"
+						},
+						{
+							"key": "value",
+							"value": "10"
+						},
+						{
+							"key": "unit",
+							"value": "Cel"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
