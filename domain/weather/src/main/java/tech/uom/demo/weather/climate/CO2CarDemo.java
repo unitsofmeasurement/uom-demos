@@ -23,7 +23,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.energy;
+package tech.uom.demo.weather.climate;
 
 import static javax.measure.MetricPrefix.KILO;
 import static tech.units.indriya.unit.Units.*;
@@ -44,7 +44,7 @@ import tech.uom.lib.common.function.DoubleFactorSupplier;
  * @author Werner Keil
  * @author Andi Huber
  * @see <a href="https://spritrechner.biz/co2-rechner-fuer-autos.html">CO2-Rechner für Autos (DE)</a>
- * @version 1.8
+ * @version 1.9
  */
 public class CO2CarDemo {
 	

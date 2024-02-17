@@ -23,14 +23,14 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.energy;
+package tech.uom.demo.weather.climate;
 
 import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 class Messages {
-	private static final String BUNDLE_NAME = "tech.uom.demo.energy.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "tech.uom.demo.weather.climate.messages"; //$NON-NLS-1$
 
 	private static ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
 
