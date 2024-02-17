@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2020, Werner Keil and others.
+ *  Copyright (c) 2005-2024, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -44,7 +44,7 @@ import tech.uom.lib.common.function.DoubleFactorSupplier;
  * @author Werner Keil
  * @author Andi Huber
  * @see <a href="https://spritrechner.biz/co2-rechner-fuer-autos.html">CO2-Rechner für Autos (DE)</a>
- * @version 1.9
+ * @version 2.0
  */
 public class CO2CarDemo {
 	
