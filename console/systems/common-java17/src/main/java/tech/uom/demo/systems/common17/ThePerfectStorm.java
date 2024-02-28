@@ -38,10 +38,12 @@ import tech.uom.domain.weather.wind.SaffirSimpsonHurricaneWindScale;
 import javax.measure.quantity.Time;
 import java.util.regex.Pattern;
 
+// TODO Move to Weather Demos Java 17
+
 /**
  * @author Werner Keil
  * @version 2.5
- * @see {@link SaffirSimpsonHurricaneWindScale}
+ * @see {@link SaffirSimpsonHurricaneWindScale} 
  */
 public class ThePerfectStorm {
 	private static enum ScaleType {
