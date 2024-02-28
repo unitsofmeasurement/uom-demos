@@ -88,6 +88,12 @@ public class CO2CarDemo {
 		}
 	}
     
+	/**
+	 * Specific Carbon Dioxide Emission
+	 * @see <a
+     *   href="https://www.volker-quaschning.de/datserv/CO2-spez/index_e.php#:~:text=Different%20fossil%20fuels%20produce%20different,comes%20to%20carbon%20dioxide%20emissions.">
+     *   Specific Carbon Dioxide Emissions of Various Fuels</a> 
+	 */
 	private static interface SpecificCarbonEmission extends Quantity<SpecificCarbonEmission> {
     }
 
