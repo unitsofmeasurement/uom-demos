@@ -35,7 +35,7 @@ import static tech.units.indriya.unit.Units.METRE;
 import javax.measure.quantity.Mass;
 
 /**
- * @version 0.6
+ * @version 0.7
  * @author werner
  */
 public class PersonDemo {
