@@ -41,7 +41,8 @@ import javax.measure.quantity.Mass;
 public class PersonDemo {
 
     public static void main(String[] args) {
-        var person1 = new Person("John", "Doe", getQuantity(1.8, METRE), getQuantity(80, KILOGRAM));
+        var height = getQuantity(1.8, METRE);
+    	var person1 = new Person("John", "Doe", height, getQuantity(80, KILOGRAM));
         System.out.println(person1);
         System.out.println(person1.getFullName());
         var min = getQuantity(50, KILOGRAM);
