@@ -7,7 +7,7 @@ import javax.measure.UnitConverter;
 import tech.uom.seshat.UnitServices;
 import tech.uom.seshat.Units;
 
-public class TemperatureConverterDemo {
+public class TemperatureUnitConverterDemo {
 
 	public static void main(String[] args) {
 		var format = UnitServices.current().getFormatService().getUnitFormat();
