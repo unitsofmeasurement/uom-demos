@@ -1,12 +1,17 @@
 package tech.uom.demo.valhalla;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 	/*
 	 * @test
-	 * @summary Test inline classes for equality
+	 * @summary Test value classes for equality
 	 */
 	public class EqualityTest {
 

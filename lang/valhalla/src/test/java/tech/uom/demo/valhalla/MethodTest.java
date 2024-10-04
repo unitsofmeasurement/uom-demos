@@ -1,12 +1,15 @@
 package tech.uom.demo.valhalla;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 	/*
 	 * @test
-	 * @summary Test inline classes and its methods
+	 * @summary Test value classes and their methods
 	 */
 	public class MethodTest {
 

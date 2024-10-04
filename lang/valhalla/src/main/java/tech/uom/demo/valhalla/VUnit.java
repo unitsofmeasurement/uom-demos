@@ -3,8 +3,7 @@ package tech.uom.demo.valhalla;
 import javax.measure.*;
 import java.util.Map;
 
-public inline class VUnit<Q extends Quantity<Q>> implements Unit?<Q> {
-
+public value class VUnit<Q extends Quantity<Q>> implements Unit<Q> {
 
 		private final String x;
         private final String y;
@@ -45,21 +44,6 @@ public inline class VUnit<Q extends Quantity<Q>> implements Unit?<Q> {
     }
 
     @Override
-    public boolean isCompatible(Unit<?> that) {
-        return false;
-    }
-
-    @Override
-    public <T extends Quantity<T>> Unit<T> asType(Class<T> type) throws ClassCastException {
-        return null;
-    }
-
-    @Override
-    public UnitConverter getConverterToAny(Unit<?> that) throws IncommensurableException, UnconvertibleException {
-        return null;
-    }
-
-    @Override
     public Unit<Q> alternate(String symbol) {
         return null;
     }
@@ -85,11 +69,6 @@ public inline class VUnit<Q extends Quantity<Q>> implements Unit?<Q> {
     }
 
     @Override
-    public Unit<?> multiply(Unit<?> multiplier) {
-        return null;
-    }
-
-    @Override
     public Unit<?> inverse() {
         return null;
     }
@@ -104,10 +83,6 @@ public inline class VUnit<Q extends Quantity<Q>> implements Unit?<Q> {
         return null;
     }
 
-    @Override
-    public Unit<?> divide(Unit<?> divisor) {
-        return null;
-    }
 
     @Override
     public Unit<?> root(int n) {
@@ -130,13 +105,50 @@ public inline class VUnit<Q extends Quantity<Q>> implements Unit?<Q> {
     }
 
     @Override
-    public UnitConverter getConverterTo(Unit<Q> that) throws UnconvertibleException {
-        return null;
-    }
-    
-    @Override
     public String toString() {
     	return "VUnit [symbol=" + x + ", name=" + y + "]";
     }
+
+	@Override
+	public boolean isEquivalentTo(Unit that) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isCompatible(Unit that) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Unit asType(Class type) throws ClassCastException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UnitConverter getConverterTo(Unit that) throws UnconvertibleException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UnitConverter getConverterToAny(Unit that) throws IncommensurableException, UnconvertibleException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Unit multiply(Unit multiplier) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Unit divide(Unit divisor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

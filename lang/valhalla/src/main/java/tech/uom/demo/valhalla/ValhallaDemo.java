@@ -1,13 +1,15 @@
 package tech.uom.demo.valhalla;
 
+import javax.measure.quantity.Mass;
+
 public class ValhallaDemo {
 	private static final String PATTERN = "%s and %s are %s.";
 	private static final String SAME = "the same";
 	private static final String NOT_SAME = "not the same";
 	
 	public static void main(String[] args) {
-        VUnit m1 = VUnit.of("kg","kilogram");
-        VUnit m2 = VUnit.of("kg","kilogram");
+        VUnit<Mass> m1 = VUnit.of("kg","kilogram");
+        VUnit<Mass> m2 = VUnit.of("kg","kilogram");
         System.out.println(m1);
         if (m1 == m2) {
         	System.out.println(String.format(PATTERN, m1, m2, SAME));
