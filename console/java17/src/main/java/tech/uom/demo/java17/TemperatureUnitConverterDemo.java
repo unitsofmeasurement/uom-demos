@@ -1,4 +1,4 @@
-package tech.uom.demo.java17.format;
+package tech.uom.demo.java17;
 
 import static javax.measure.Quantity.Scale.*;
 

@@ -1,4 +1,4 @@
-package tech.uom.demo.java17.format;
+package tech.uom.demo.java17.quantity;
 
 import static javax.measure.Quantity.Scale.*;
 import static tech.units.indriya.unit.Units.CELSIUS;
