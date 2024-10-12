@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2021, Werner Keil and others.
+ *  Copyright (c) 2005-2024, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -42,6 +42,8 @@ import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+import javax.measure.format.QuantityFormat;
+
 public class QuantityFormatDemo {
 
     public static void main(String[] args) {        
@@ -59,6 +61,9 @@ public class QuantityFormatDemo {
         var compactFormat = new CompactNumberFormat("",
                         symbols, cnPatterns);
         var quantFormat2 = NumberDelimiterQuantityFormat.getCompactInstance(compactFormat, SimpleUnitFormat.getInstance());
-*/                
+*/
+    	QuantityFormat qf = NumberDelimiterQuantityFormat.getInstance(FormatBehavior.LOCALE_NEUTRAL, 
+    			NumberDelimiterQuantityFormat.COMPACTSTYLE);
+    	System.out.println(qf.format(vQuant));
     }
 }

@@ -47,7 +47,8 @@ public class CommonFormatDemo {
 	Quantity q = Quantities.getQuantity("30000 " + Units.DAY.getSymbol());
 	System.out.println(q);
 	
-	QuantityFormat qf = NumberDelimiterQuantityFormat.getInstance(FormatBehavior.LOCALE_NEUTRAL, NumberDelimiterQuantityFormat.COMPACTSTYLE);
+	QuantityFormat qf = NumberDelimiterQuantityFormat.getInstance(FormatBehavior.LOCALE_NEUTRAL, 
+			NumberDelimiterQuantityFormat.COMPACTSTYLE);
 	System.out.println(qf.format(q));
     }
 }

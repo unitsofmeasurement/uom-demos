@@ -23,35 +23,34 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.systems.common;
-
-import static javax.measure.MetricPrefix.KILO;
-import static javax.measure.MetricPrefix.NANO;
-import static systems.uom.common.USCustomary.LITER;
+package tech.uom.demo.systems.common17;
 
 import javax.measure.Quantity;
-import javax.measure.format.UnitFormat;
-import javax.measure.quantity.Length;
-import javax.measure.quantity.Mass;
-import javax.measure.quantity.Volume;
+import javax.measure.spi.ServiceProvider;
 
-import systems.uom.common.IndianPrefix;
+import systems.uom.common.USCustomary;
+import tech.units.indriya.format.EBNFUnitFormat;
 import tech.units.indriya.format.SimpleUnitFormat;
-import tech.units.indriya.quantity.Quantities;
-import tech.units.indriya.unit.Units;
 
-public class CommonPrefixDemo {
-	public static void main(String... args) {
-		Quantity<Length> len = Quantities.getQuantity(10, IndianPrefix.LAKH(Units.METRE));
-		System.out.println(len);
-		Quantity<Mass> kg = Quantities.getQuantity(50, KILO(Units.GRAM));
-		System.out.println(kg);
-		
-		System.out.println(Quantities.getQuantity(3.3, LITER).toString());
-		Quantity<Volume> nl = Quantities.getQuantity(3.3, NANO(LITER));
-		System.out.println(nl.toString());
-		//UnitFormat format = EBNFUnitFormat.getInstance();
-		UnitFormat format = SimpleUnitFormat.getInstance();
-		System.out.println(format.format(nl.getUnit()));
+public class QuantityFormatDemo {
+
+	public static void main(String[] args) {
+        SimpleUnitFormat.getInstance().alias(USCustomary.MILE, "mile");
+        EBNFUnitFormat.getInstance().label(USCustomary.MILE, "mi");
+        EBNFUnitFormat.getInstance().alias(USCustomary.MILE, "mile");
+        // TODO this should go into Systems Common and similar libraries
+        
+        Quantity<?> q1 = ServiceProvider.current().getFormatService().getQuantityFormat().parse("3 km");
+        Quantity<?> q2 = ServiceProvider.current().getFormatService().getQuantityFormat().parse("3 mi");
+        Quantity<?> q3 = ServiceProvider.current().getFormatService().getQuantityFormat().parse("3 mile");
+        //Quantity<?> q4 = ServiceProvider.current().getFormatService().getQuantityFormat().parse("3 2/km"); // Exception in SimpleUnitFormat
+        Quantity<?> q5 = ServiceProvider.current().getFormatService().getQuantityFormat("EBNF").parse("3 1/km");
+        Quantity<?> q6 = ServiceProvider.current().getFormatService().getQuantityFormat("EBNF").parse("3 1/mi");
+        System.out.println(q6);
+        Quantity<?> q7 = ServiceProvider.current().getFormatService().getQuantityFormat("EBNF").parse("3 1/mile");
+        System.out.println(q7);
+        Quantity<?> q8 = ServiceProvider.current().getFormatService().getQuantityFormat("EBNF").parse("3 mile");
+        System.out.println(q8);
 	}
+
 }
