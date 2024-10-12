@@ -1,6 +1,6 @@
 /*
- *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2020, Werner Keil and others.
+ *  Units of Measurement Console Demos
+ *  Copyright (c) 2005-2019, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -23,22 +23,18 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.systems.common.astro;
+package tech.uom.demo.systems.common17;
 
-import javax.measure.quantity.Length;
+import tech.uom.lib.common.util.SystemOfUnitsReporter;
+
 import javax.measure.spi.ServiceProvider;
+import javax.measure.spi.SystemOfUnits;
 
-import tech.units.indriya.unit.Units;
-
-public class AstroDemo {
-
-	public static void main(String[] args) {
-		var au = AstronomicalSystemOfUnits.ASTRONOMICAL_UNIT;
-		var peri = ServiceProvider.current().getQuantityFactory(
-				Length.class).create(0.9832687, au);
-		System.out.println(peri);
-		
-		var u = Units.NEWTON;
-		System.out.println(u);
+public class CommonDemo {
+	public static void main(String... args) {
+		for (SystemOfUnits s : ServiceProvider.current().getSystemOfUnitsService().getAvailableSystemsOfUnits()) {
+			SystemOfUnitsReporter.of(s).report();
+			System.out.println();
+		}
 	}
 }

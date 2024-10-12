@@ -9,8 +9,7 @@ The project currently contains the following modules:
 
 - Common Unit Systems
   - [Common Console Demos](common)
-  - [Java 12 Console Demos](common-java12)
-  - [Java 17 Console Demos](common-java17)
+  - [Common Java 17 Console Demos](common-java17)
 - [SI Units](https://en.wikipedia.org/wiki/International_System_of_Units)
   - [SI Console Demos](si)
   - [Java 17 based SI Console Demos](si-java17)

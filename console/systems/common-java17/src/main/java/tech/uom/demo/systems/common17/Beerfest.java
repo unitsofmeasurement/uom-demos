@@ -29,12 +29,9 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package tech.uom.demo.systems.common;
+package tech.uom.demo.systems.common17;
 
-import static tech.uom.demo.systems.common.types.BeerUnits.*;
-
-import javax.measure.Quantity;
-import javax.measure.quantity.Volume;
+import static tech.uom.demo.systems.common17.types.BeerUnits.*;
 
 import systems.uom.common.Imperial;
 import systems.uom.common.USCustomary;

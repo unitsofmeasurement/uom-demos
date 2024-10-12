@@ -1,6 +1,6 @@
 /*
- *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2019, Werner Keil and others.
+ *  Units of Measurement Demos for Java
+ *  Copyright (c) 2005-2020, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -23,25 +23,22 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.systems.common;
+package tech.uom.demo.systems.common17.astro;
 
-import javax.measure.Quantity;
-import javax.measure.Unit;
-import systems.uom.common.USCustomary;
-import tech.units.indriya.format.SimpleUnitFormat;
-import tech.units.indriya.quantity.Quantities;
+import javax.measure.quantity.Length;
+import javax.measure.spi.ServiceProvider;
+
 import tech.units.indriya.unit.Units;
 
-public class CommonFormatDemo {
-    public static void main(String... args) {
-	SimpleUnitFormat.getInstance().alias(USCustomary.MILE, "mile");
+public class AstroDemo {
 
-	Unit u = SimpleUnitFormat.getInstance().parse("mile");
-	System.out.println(u);
-	Unit v = SimpleUnitFormat.getInstance().parse("mi");
-	System.out.println(v);
-
-	Quantity q = Quantities.getQuantity("300 " + Units.DAY.getSymbol());
-	System.out.println(q);
-    }
+	public static void main(String[] args) {
+		var au = AstronomicalSystemOfUnits.ASTRONOMICAL_UNIT;
+		var peri = ServiceProvider.current().getQuantityFactory(
+				Length.class).create(0.9832687, au);
+		System.out.println(peri);
+		
+		var u = Units.NEWTON;
+		System.out.println(u);
+	}
 }

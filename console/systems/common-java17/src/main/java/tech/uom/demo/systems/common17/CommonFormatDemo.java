@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2019, Werner Keil and others.
+ *  Copyright (c) 2005-2024, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -23,18 +23,31 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.demo.systems.common;
+package tech.uom.demo.systems.common17;
 
-import tech.uom.lib.common.util.SystemOfUnitsReporter;
+import javax.measure.Quantity;
+import javax.measure.Unit;
+import javax.measure.format.QuantityFormat;
+import systems.uom.common.USCustomary;
+import tech.units.indriya.format.NumberDelimiterQuantityFormat;
+import tech.units.indriya.format.FormatBehavior;
+import tech.units.indriya.format.SimpleUnitFormat;
+import tech.units.indriya.quantity.Quantities;
+import tech.units.indriya.unit.Units;
 
-import javax.measure.spi.ServiceProvider;
-import javax.measure.spi.SystemOfUnits;
+public class CommonFormatDemo {
+    public static void main(String... args) {
+	SimpleUnitFormat.getInstance().alias(USCustomary.MILE, "mile");
 
-public class CommonDemo {
-	public static void main(String... args) {
-		for (SystemOfUnits s : ServiceProvider.current().getSystemOfUnitsService().getAvailableSystemsOfUnits()) {
-			SystemOfUnitsReporter.of(s).report();
-			System.out.println();
-		}
-	}
+	Unit u = SimpleUnitFormat.getInstance().parse("mile");
+	System.out.println(u);
+	Unit v = SimpleUnitFormat.getInstance().parse("mi");
+	System.out.println(v);
+
+	Quantity q = Quantities.getQuantity("30000 " + Units.DAY.getSymbol());
+	System.out.println(q);
+	
+	QuantityFormat qf = NumberDelimiterQuantityFormat.getInstance(FormatBehavior.LOCALE_NEUTRAL, NumberDelimiterQuantityFormat.COMPACTSTYLE);
+	System.out.println(qf.format(q));
+    }
 }
