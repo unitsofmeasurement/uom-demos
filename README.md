@@ -32,4 +32,4 @@ The project currently contains the following modules:
 
 Launch Config for Eclipse
 -------------------------------------
-If you use an Eclipse based IDE, there are some launch configurations for your convenience under [src/etc](src/etc/).
+If you use an [Eclipse](https://www.eclipse.org/) based IDE, there are some launch configurations for your convenience under [src/etc](src/etc/).
