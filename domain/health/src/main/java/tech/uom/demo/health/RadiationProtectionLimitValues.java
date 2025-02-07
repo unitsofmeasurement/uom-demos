@@ -30,7 +30,7 @@ import static tech.units.indriya.unit.Units.SIEVERT;
 import static tech.units.indriya.unit.Units.YEAR;
 import static tech.uom.domain.imaging.unit.Imaging.IMAGE;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import javax.measure.Quantity;
@@ -60,23 +60,22 @@ public class RadiationProtectionLimitValues {
 		final Unit<?> mSvPerYear = mSv.divide(YEAR);
 		final Unit<?> mSvPerImage = mSv.divide(IMAGE);
 		
-		final Map <Object, String> importantLimitValues  = new HashMap<>();
+		final Map <Object, String> importantLimitValues  = new LinkedHashMap<>();
 
-		
+		Quantity<?> annualMaximumDose = Quantities.getQuantity(0.01, mSvPerYear);
+		importantLimitValues.put(annualMaximumDose, "Calculated order of magnitude of the annual maximum dose for the Germany population due to nuclear power plants in normal operation." + "\n" + "(These calculations are based on conservative assumptions regarding, among other things, location and diet so that the actual exposure values are lower.)");
+
 		Range<?> xRayDoseRange = QuantityRange.of(Quantities.getQuantity(0.01, mSvPerImage), 
 				Quantities.getQuantity(0.03, mSvPerImage));
 		importantLimitValues.put(xRayDoseRange, "Typical dose range for an X-ray of the thorax");
 		
+		Quantity<?> limitValueForAnnualRadiation = Quantities.getQuantity(1, mSvPerYear);
+		importantLimitValues.put(limitValueForAnnualRadiation, "Limit value (maximum permissible dose) for annual radiation exposure of members of the general public" + "\n" + "(e.g. resulting from the release of radioactive substances from nuclear facilities)");
+				
 		Range<?> headCTDoseRange = QuantityRange.of(Quantities.getQuantity(1, mSvPerImage), 
 				Quantities.getQuantity(3, mSvPerImage));
 		importantLimitValues.put(headCTDoseRange, "Typical dose range for a cranial CT (head CT)");
 		
-		Quantity<?> limitValueForAnnualRadiation = Quantities.getQuantity(1, mSvPerYear);
-		importantLimitValues.put(limitValueForAnnualRadiation, "Limit value (maximum permissible dose) for annual radiation exposure of members of the general public" + "\n" + "(e.g. resulting from the release of radioactive substances from nuclear facilities)");
-		
-		Quantity<?> annualMaximumDose = Quantities.getQuantity(0.01, mSvPerYear);
-		importantLimitValues.put(annualMaximumDose, "Calculated order of magnitude of the annual maximum dose for the Germany population due to nuclear power plants in normal operation." + "\n" + "(These calculations are based on conservative assumptions regarding, among other things, location and diet so that the actual exposure values are lower.)");
-
 		
 		System.out.println("Important limit values and typical dose values in comparison");
 		importantLimitValues.forEach((key, value) -> {
@@ -84,7 +83,7 @@ public class RadiationProtectionLimitValues {
 		});
 		System.out.println();
 		
-		final Map <Quantity<RadiationDoseEffective>, String> importantThresholds  = new HashMap<>();
+		final Map <Quantity<RadiationDoseEffective>, String> importantThresholds  = new LinkedHashMap<>();
 		Quantity<RadiationDoseEffective> dose = Quantities.getQuantity(100, mSv);		
 		importantThresholds.put(dose, "Lower estimate for the threshold for damage to the unborn child.");
 		dose = Quantities.getQuantity(1000, mSv);
