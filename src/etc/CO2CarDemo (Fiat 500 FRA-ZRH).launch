@@ -12,5 +12,4 @@
     <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="uom-energy-demos"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="Fiat500 PETROL 5.1 409.4"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="uom-weather-demos"/>
-    <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
 </launchConfiguration>
