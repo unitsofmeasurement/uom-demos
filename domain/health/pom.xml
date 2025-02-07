@@ -32,6 +32,11 @@
 				<version>${domain.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>tech.uom.domain</groupId>
+				<artifactId>uom-imaging</artifactId>
+				<version>${domain.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>si.uom</groupId>
 				<artifactId>si-quantity</artifactId>
 				<version>${si.version}</version>
@@ -52,7 +57,11 @@
 			<groupId>tech.uom.domain</groupId>
 			<artifactId>uom-health-api</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>tech.uom.domain</groupId>
+			<artifactId>uom-imaging</artifactId>
+		</dependency>
+		
 		<dependency>
 			<groupId>tech.units</groupId>
 			<artifactId>indriya</artifactId>
