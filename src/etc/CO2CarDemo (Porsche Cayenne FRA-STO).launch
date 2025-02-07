@@ -11,4 +11,5 @@
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="tech.uom.demo.weather.climate.CO2CarDemo"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="Porsche-Cayenne PETROL 14 1465.5"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="uom-weather-demos"/>
+    <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
 </launchConfiguration>
