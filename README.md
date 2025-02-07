@@ -30,6 +30,6 @@ The project currently contains the following modules:
   - [Spring Boot](/web/springbootdemo)
 
 
-Launch Config for JBoss Developer Studio or Eclipse
+Launch Config for Eclipse
 -------------------------------------
-If you use JBoss Developer Studio, Intel® IoT Developer Kit (for C/C++) or another Eclipse based solution, there are some launch configurations for your convenience under [src/etc](src/etc/).
+If you use an Eclipse based IDE, there are some launch configurations for your convenience under [src/etc](src/etc/).
