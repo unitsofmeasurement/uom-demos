@@ -18,8 +18,16 @@
             <artifactId>uom-lib-common</artifactId>
         </dependency>
         <dependency>
+            <groupId>si.uom</groupId>
+            <artifactId>si-quantity</artifactId>
+        </dependency>
+        <dependency>
             <groupId>systems.uom</groupId>
             <artifactId>systems-quantity</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>systems.uom</groupId>
+            <artifactId>systems-ucum</artifactId>
         </dependency>
     </dependencies>
 </project>

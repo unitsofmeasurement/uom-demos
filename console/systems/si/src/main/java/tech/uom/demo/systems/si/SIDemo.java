@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Demos for Java
- *  Copyright (c) 2015-2020, Werner Keil and others.
+ *  Copyright (c) 2015-2025, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -27,6 +27,7 @@ package tech.uom.demo.systems.si;
 
 import static si.uom.SI.*;
 import static si.uom.NonSI.DEGREE_ANGLE;
+import static si.uom.NonSI.UNIFIED_ATOMIC_MASS;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;

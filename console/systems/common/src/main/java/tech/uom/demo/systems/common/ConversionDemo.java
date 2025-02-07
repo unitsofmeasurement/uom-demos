@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2020, Jean-Marie Dautelle, Werner Keil and others.
+ *  Copyright (c) 2005-2025, Jean-Marie Dautelle, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -31,6 +31,7 @@ import javax.measure.quantity.*;
 import tech.units.indriya.quantity.Quantities;
 
 import static si.uom.SI.*;
+import static si.uom.NonSI.*;
 import static systems.uom.common.USCustomary.METER;
 import static systems.uom.common.USCustomary.MILE;
 import static systems.uom.common.USCustomary.MILE_PER_HOUR;
@@ -41,9 +42,8 @@ public class ConversionDemo {
     // Conversion between units.
 	final Quantity<Length> m = Quantities.getQuantity(10, MILE);
 	System.out.println(m);
-	System.out.println(KILO(METER).getConverterTo(MILE).convert(10.0));
     // Retrieval of the system unit (identifies the measurement type).
-    System.out.println(REVOLUTION.divide(MINUTE).getSystemUnit());
+	System.out.println(KILO(METER).getConverterTo(MILE).convert(10.0));
     // Dimension checking (allows/disallows conversions)
     System.out.println(ELECTRON_VOLT.isCompatible(WATT.multiply(HOUR)));
     // Retrieval of the unit dimension (depends upon the current model).

@@ -34,9 +34,9 @@
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<jsr.version>2.2</jsr.version><!-- for overloading parent -->
-		<ri.version>2.2.1-SNAPSHOT</ri.version>
+		<ri.version>2.2.3-SNAPSHOT</ri.version>
 		<lib.version>2.2</lib.version>
-		<si.version>2.2-SNAPSHOT</si.version>
+		<si.version>2.2</si.version>
 		<systems.version>2.2-SNAPSHOT</systems.version>
 	</properties>
 
