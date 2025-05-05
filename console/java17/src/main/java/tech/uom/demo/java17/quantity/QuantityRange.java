@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Demos for Java
- *  Copyright (c) 2005-2023, Werner Keil and others.
+ *  Copyright (c) 2005-2025, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -44,9 +44,9 @@ import javax.measure.Quantity;
  * @param <Q> The value of the range.
  * 
  * @author <a href="mailto:werner@units.tech">Werner Keil</a>
- * @version 1.0, Aug 23, 2023
+ * @version 1.1, Mar 29, 2025
  */
-public record QuantityRange<Q extends Quantity<Q>>(Quantity<Q> minimum, Quantity<Q> maximum) {    
+public record QuantityRange<Q extends Quantity<Q>>(Quantity<Q> minimum, Quantity<Q> maximum, Quantity<Q> resolution) {    
 	public boolean contains(final Quantity<Q> q) {
 		Objects.requireNonNull(q);
 		return q.getValue() != null && q.getUnit() != null && 

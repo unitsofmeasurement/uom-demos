@@ -47,7 +47,7 @@ public class PersonDemo {
         System.out.println(person1.getFullName());
         var min = getQuantity(50, KILOGRAM);
         var max = getQuantity(100, KILOGRAM);
-        var range = new QuantityRange<Mass>(min, max);
+        var range = new QuantityRange<Mass>(min, max, null);
         System.out.println(range);
         if (range.contains(person1.mass())) {
         	System.out.println("mass within range.");
