@@ -7,5 +7,6 @@ Console applications demonstrating Units of Measurement API in various JVM langu
 
 The project currently contains the following modules:
 
+- [JShell Demo](jshell)
 - [Kotlin Repl Demos](repl)
 - [Valhalla Preview](valhalla)

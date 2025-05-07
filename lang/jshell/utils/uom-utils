@@ -1,0 +1,17 @@
+// convenience utils for using Units of Measurement
+
+public Quantity<?> quant(String s) {
+	return Quantities.getQuantity(s);
+}
+
+public Quantity<Q> add(Quantity<Q> a, Quantity<Q> b) {
+	return a.add(b);
+}
+
+public Quantity<Q> sub(Quantity<Q> a, Quantity<Q> b) {
+	return a.subtract(b);
+}
+
+public Quantity<?> mult(Quantity<?> a, Quantity<?> b) {
+	return a.multiply(b);
+}

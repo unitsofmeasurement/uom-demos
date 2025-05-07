@@ -1,0 +1,10 @@
+// custom startup code
+
+/open PRINTING
+/open imports/uom-imports
+/open utils/uom-utils
+
+println("#####################")
+println("Loaded UoM Startup")
+println("#####################")
+println("")
