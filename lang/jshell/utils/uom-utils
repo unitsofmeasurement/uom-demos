@@ -1,14 +1,21 @@
 // convenience utils for using Units of Measurement
 
-public Quantity<?> quant(String s) {
+public Quantity<?> q(String s) {
 	return Quantities.getQuantity(s);
 }
 
-public Quantity<Q> add(Quantity<Q> a, Quantity<Q> b) {
+@SuppressWarnings({"unchecked", "rawtypes"})
+public Quantity q(Number n, Unit u) {
+	return Quantities.getQuantity(n, u);
+}
+
+@SuppressWarnings({"unchecked", "rawtypes"})
+public Quantity add(Quantity a, Quantity b) {    
 	return a.add(b);
 }
 
-public Quantity<Q> sub(Quantity<Q> a, Quantity<Q> b) {
+@SuppressWarnings({"unchecked", "rawtypes"})
+public Quantity sub(Quantity a, Quantity b) {
 	return a.subtract(b);
 }
 
