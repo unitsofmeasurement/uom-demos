@@ -32,9 +32,9 @@ We all know how verbose Java can be. This directory, as it's aptly named, is mea
 
 ## Running
 Use
-`jshell -class-path libs\unit-api-2.1.jar;libs\indriya-2.2.3.jar;libs\uom-lib-common-2.2.jar --startup startups\uom-startup`
+`jshell -class-path libs\unit-api-2.2.jar;libs\indriya-2.2.3.jar;libs\uom-lib-common-2.2.jar --startup startups\uom-startup`
 on Windows or
-`jshell -class-path libs/unit-api-2.1.jar:libs/indriya-2.2.3.jar:libs/uom-lib-common-2.2.jar --startup startups/uom-startup`
+`jshell -class-path libs/unit-api-2.2.jar:libs/indriya-2.2.3.jar:libs/uom-lib-common-2.2.jar --startup startups/uom-startup`
 on Linux/Unix
 
 ## Thank You
