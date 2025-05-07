@@ -31,6 +31,7 @@ These files are similar, in nature, to the type of files located in the imports 
 We all know how verbose Java can be. This directory, as it's aptly named, is meant to contain any utility or "shortcut code", that will make your time spent with JShell more enjoyable. The type of files you would store here are very similiar to the special PRINTING file that comes with JShell, which defines a number of shortcut methods for printing text.
 
 ## Running
+Use
 `jshell -class-path libs\unit-api-2.1.jar;libs\indriya-2.2.3.jar;libs\uom-lib-common-2.2.jar --startup startups\uom-startup`
 on Windows or
 `jshell -class-path libs/unit-api-2.1.jar:libs/indriya-2.2.3.jar:libs/uom-lib-common-2.2.jar --startup startups/uom-startup`

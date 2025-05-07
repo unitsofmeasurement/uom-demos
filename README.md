@@ -18,6 +18,7 @@ The project currently contains the following modules:
   - [JavaFX Demos](desktop/javafx)
     - [FXlib Demo Application](desktop/javafx/fxlib) (**Uses OpenJFX**)
 - [Language Specific Demos](lang)
+  - [JShell Demo](lang/jshell)
   - [Kotlin Repl Demos](lang/repl)
   - [Valhalla Demos](lang/valhalla) (**Early-Access Build**)
 - [Device Specific demos](device)
