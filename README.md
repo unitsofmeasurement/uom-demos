@@ -13,7 +13,7 @@ The project currently contains the following modules:
   - [Basic Console Demos](console/basic)
   - [Java 12 Console Demos](console/java12)
   - [Java 17 Console Demos](console/java17)
-  - [System Specific demos](console/systems)
+  - [System Specific Console Demos](console/systems)
 - [Desktop Demos](desktop)
   - [JavaFX Demos](desktop/javafx)
     - [FXlib Demo Application](desktop/javafx/fxlib) (**Uses OpenJFX**)
