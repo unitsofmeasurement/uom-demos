@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2021, Werner Keil and others.
+ *  Copyright (c) 2005-2025, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -40,7 +40,7 @@ import tech.uom.demo.systems.common17.types.Airplane;
  * 
  * @author Werner Keil
  * @see <a href="https://en.wikipedia.org/wiki/In-flight_entertainment">Wikipedia: In-flight entertainment</a>
- * @version 1.2
+ * @version 1.3
  */
 public class AirplaneDemo {
 
