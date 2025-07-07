@@ -35,6 +35,11 @@
 			<version>${domain.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>si.uom</groupId>
+			<artifactId>si-quantity</artifactId>
+			<version>${si.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>systems.uom</groupId>
 			<artifactId>systems-quantity</artifactId>
 			<version>${systems.version}</version>
