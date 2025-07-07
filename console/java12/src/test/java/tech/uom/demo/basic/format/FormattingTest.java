@@ -42,7 +42,7 @@ class FormattingTest {
 	    	    assertEquals("3.0001", floorAfter4Digits.format(double30001));
 	    	    assertEquals("3", floorAfter2Digits.format(double30001));
 	    	    assertEquals("3", floorAfter2Digits.format(quantity30001.getValue()));
-	    	    assertEquals("3.0001 N", floorQuantityAfter2Digits.format(quantity30001));
+	    	    assertEquals("3 N", floorQuantityAfter2Digits.format(quantity30001));
 	    	    assertEquals("3.0001 N", floorQuantityAfter4Digits.format(quantity30001));
 	}
 
