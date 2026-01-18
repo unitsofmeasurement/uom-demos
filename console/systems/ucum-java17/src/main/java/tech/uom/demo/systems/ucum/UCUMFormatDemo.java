@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2020, Werner Keil and others.
+ *  Copyright (c) 2005-2026, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -36,7 +36,6 @@ import systems.uom.ucum.UCUM;
 import tech.units.indriya.format.SimpleUnitFormat;
 import tech.units.indriya.format.EBNFUnitFormat;
 import javax.measure.MetricPrefix;
-import javax.measure.Unit;
 
 import tech.units.indriya.unit.Units;
 
@@ -116,5 +115,8 @@ public class UCUMFormatDemo {
     	final var u  = UCUM.METER.divide(UCUM.SECOND).divide(UCUM.SECOND);
     	System.out.println(String.format("Formating (%s): %s", 
     			ucumFormatCS.toString(), ucumFormatCS.format(u)));
+    	
+		final var ftUS2 = ucumFormatCS.parse("[ft_us]2");
+		System.out.println(ucumFormatCS.format(ftUS2));
     }
 }

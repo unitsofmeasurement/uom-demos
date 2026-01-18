@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Console Demos
- *  Copyright (c) 2005-2020, Werner Keil and others.
+ *  Copyright (c) 2005-2026, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -149,5 +149,8 @@ public class UCUMFormatDemo {
 		System.out.println("Formating (CS): " + ucumFormatCS.format(yd2));
 		System.out.println("Formating (Print): " + ucumFormatPrint.format(yd2));
 		System.out.println("Equals: " + yd.equals(yd2));
+		
+		Unit ftUS2 = ucumFormatCS.parse("[ft_us]2");
+		System.out.println(ucumFormatCS.format(ftUS2));
 	}
 }

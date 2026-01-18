@@ -92,6 +92,9 @@ public class UnitFormatDemo {
 				setUnitFormat(SimpleUnitFormat.getInstance()).
 				build();
 		System.out.println(ndqf2.format(l3));
+		
+		Unit u4 = SimpleUnitFormat.getInstance().parse("invalid");
+		System.out.println(u4);
 	}
 
 }
