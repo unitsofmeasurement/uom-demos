@@ -16,7 +16,7 @@ The project currently contains the following modules:
 - [Unicode](https://de.wikipedia.org/wiki/Unicode) CLDR
   - [Unicode Console Demos](unicode)
   - [Java 17 based Unicode Console Demos](unicode-java17)
-- [Unified Code for Units of Measure](http://unitsofmeasure.org)
+- [Unified Code for Units of Measure](http://ucum.org)
   - [UCUM Console Demos](ucum)
   - [Java 17 based UCUM Console Demos](ucum-java17)
 - [Historical Unit Systems](https://en.wikipedia.org/wiki/History_of_measurement)
