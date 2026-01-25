@@ -39,7 +39,7 @@ public class UnitFormatDemo {
         //var formatted = unitFormat.format(USCustomary.SQUARE_FOOT);
         //System.out.println(formatted);
         
-        var parsed = unitFormat.parse("sft");
+        var parsed = unitFormat.parse("ft^2");
         System.out.println(parsed);        
 	}
 
