@@ -1,4 +1,4 @@
-package tech.uom.demo.basic.format;
+package tech.uom.demo.java17.format;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,8 +23,8 @@ class FormattingTest {
 	    floorAfter4Digits.setRoundingMode(RoundingMode.FLOOR);	    
 	    
 	    final var floorAfter2Digits = NumberFormat.getNumberInstance(Locale.ENGLISH);
-	    floorAfter2Digits.setMaximumFractionDigits(2);
 	    floorAfter2Digits.setRoundingMode(RoundingMode.FLOOR);
+	    floorAfter2Digits.setMaximumFractionDigits(0);
 	    
 	    var floorQuantityAfter4Digits = NumberDelimiterQuantityFormat
 	    	      .builder()
