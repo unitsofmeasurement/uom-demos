@@ -22,6 +22,11 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>jakarta.annotation</groupId>
+			<artifactId>jakarta.annotation-api</artifactId>
+			<version>[${jakarta.annotation.version},)</version>
+		</dependency>
+		<dependency>
 			<groupId>javax.measure</groupId>
 			<artifactId>unit-api</artifactId>
 		</dependency>
