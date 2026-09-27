@@ -11,5 +11,4 @@
     <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="uom-health-demos"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="1.88 85"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="uom-health-demos"/>
-    <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
 </launchConfiguration>

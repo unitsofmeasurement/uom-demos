@@ -143,4 +143,149 @@
             <url>https://repository.jboss.org/maven2</url>
         </repository>
     </repositories>
+</project><project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>tech.uom</groupId>
+		<artifactId>uom-parent</artifactId>
+		<version>2.2.5</version>
+	</parent>
+	<groupId>tech.uom.demo</groupId>
+	<artifactId>uom-demos</artifactId>
+	<packaging>pom</packaging>
+	<name>Units of Measurement Demos</name>
+	<url>https://unitsofmeasurement.github.io/uom-demos/</url>
+	<organization>
+		<name>Units of Measurement project</name>
+		<url>http://unitsofmeasurement.github.io</url>
+	</organization>
+	<description>Parent for Units of Measurement Demos</description>
+	<version>2.2-SNAPSHOT</version>
+	<licenses>
+		<license>
+			<name>BSD 3-Clause</name>
+			<url>LICENSE</url>
+		</license>
+	</licenses>
+
+	<!-- ======================================================= -->
+	<!-- Build Settings -->
+	<!-- ======================================================= -->
+	<properties>
+		<jdkVersion>1.8</jdkVersion><!-- minimal JDK version -->
+		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
+		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
+		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+		<jsr.version>2.2</jsr.version><!-- for overloading parent -->
+		<ri.version>2.2.4</ri.version>
+		<lib.version>2.2</lib.version>
+		<si.version>2.2.3</si.version>
+		<systems.version>2.2.1</systems.version>
+		<jakarta.annotation.version>2.0.1</jakarta.annotation.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>tech.units</groupId>
+				<artifactId>indriya</artifactId>
+				<version>${ri.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>tech.uom.lib</groupId>
+				<artifactId>uom-lib</artifactId>
+				<version>${lib.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>tech.uom.lib</groupId>
+				<artifactId>uom-lib-common</artifactId>
+				<version>${lib.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter</artifactId>
+				<version>${junit.jupiter.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.hamcrest</groupId>
+				<artifactId>hamcrest</artifactId>
+				<version>${hamcrest.version}</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<!-- ======================================================= -->
+			<!-- Compilation -->
+			<!-- ======================================================= -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${maven.compile.sourceLevel}</source>
+					<target>${maven.compile.targetLevel}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+
+			<!-- ======================================================= -->
+			<!-- JAR packaging -->
+			<!-- ======================================================= -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+						</manifest>
+						<manifestEntries>
+							<Specification-Title>Units of Measurement Specification</Specification-Title>
+							<Specification-Version>${jsr.version}</Specification-Version>
+							<Specification-Vendor>Jean-Marie Dautelle, Werner Keil, Otavio
+								Santana</Specification-Vendor>
+							<Implementation-Title>Units of Measurement Demos</Implementation-Title>
+							<Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
+							<Implementation-Version>${project.version}</Implementation-Version>
+							<Implementation-URL>${project.organization.url}</Implementation-URL>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- Modules -->
+	<modules>
+		<module>console</module>
+		<module>desktop</module>
+		<module>domain</module>
+		<module>device</module>
+		<module>lang</module>
+		<module>web</module>
+	</modules>
+
+    <!-- Additional repositories -->
+    <!-- Helps to resolve Parent POM and Snapshot artifacts -->
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>central-snapshot</id>
+            <name>Central Snapshots</name>
+            <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+        </repository>  
+        <repository>
+            <id>repository.jboss.org</id>
+            <name>JBoss Repository</name>
+            <url>https://repository.jboss.org/maven2</url>
+        </repository>
+    </repositories>
 </project>
